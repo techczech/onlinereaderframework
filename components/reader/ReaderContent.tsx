@@ -4,22 +4,26 @@ import { SAMPLE_CONTENT } from '../../data/content/sampleContent';
 import { BlockRenderer } from '../blocks/BlockRenderer';
 import { ScrollLayout } from '../layouts/ScrollLayout';
 import { TocItem } from './TableOfContents';
+import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats';
 
 interface ReaderContentProps {
   sectionId: SectionId;
   onActiveHeadingChange: (id: string | null) => void;
   onTocItems: (items: TocItem[]) => void;
   highlightQuery?: string | null;
+  showReadingStats?: boolean;
 }
 
 export function ReaderContent({
   sectionId,
   onActiveHeadingChange,
   onTocItems,
-  highlightQuery
+  highlightQuery,
+  showReadingStats
 }: ReaderContentProps) {
   const section = SAMPLE_CONTENT.find((item) => item.id === sectionId);
   const articleRef = useRef<HTMLElement | null>(null);
+  const readingStats = section ? getSectionWordCount(section) : 0;
 
   const tocItems = useMemo(() => {
     if (!section) return [];
@@ -28,7 +32,7 @@ export function ReaderContent({
       .map((block) => ({
         id: block.id,
         text: block.content,
-        level: block.variant === 'heading' ? 2 : 3
+        level: block.level || (block.variant === 'heading' ? 2 : 3)
       }));
   }, [section]);
 
@@ -97,8 +101,13 @@ export function ReaderContent({
   }
 
   return (
-    <article ref={articleRef} className="max-w-3xl">
-      <h1 className="text-3xl font-bold">{section.title}</h1>
+    <article ref={articleRef}>
+      <h1 className="text-[2em] font-bold">{section.title}</h1>
+      {showReadingStats && (
+        <div className="mt-1 text-sm text-slate-500">
+          {readingStats} words · {getReadingTimeMinutes(readingStats)} min read
+        </div>
+      )}
       <ScrollLayout>
         {section.blocks.map((block) => (
           <BlockRenderer key={block.id} block={block} />
