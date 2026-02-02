@@ -1,0 +1,178 @@
+# Reader Framework
+
+A reader-first framework for teaching materials and guides.
+
+## Contents
+- Online Reader Framework Prototype
+- Getting Started
+- Content Authoring
+- Architecture
+- Reader Features
+- Build & Sharing
+
+## Source
+- Generated from `data/content/*`
+
+## Content
+# Online Reader Framework Prototype
+## Online Reader Framework Prototype
+This document is the single source of truth for using and understanding the reader framework. It starts with a quick start and usage notes, then provides a complete, end‑to‑end explanation of the prototype for developers and designers.
+
+# Getting Started
+## Quick Start
+- Install dependencies:
+- Run the dev server:
+- Open the URL printed by Vite (typically `http://localhost:5173`).
+## Local Deployment Test (README in the Reader)
+This prototype is configured to load `README.md` as the guide content so you can test every feature against real, long-form text.
+- Build the app (also regenerates search index + `llms.txt`):
+- Preview the build locally:
+- Open the URL Vite prints and navigate to the reader. You will see this README rendered as the guide content.
+
+# Content Authoring
+## What You Get Out of the Box
+- Content-as-data model (`data/content/*`)
+- Block renderer (`components/blocks/BlockRenderer.tsx`) with code blocks and inline code styling
+- Reader shell with sidebar + TOC (`components/reader/*`)
+- Landing view (`components/home/Home.tsx`)
+- Search modal (`components/tools/SearchModal.tsx`)
+- Highlights with export to Markdown
+- EPUB export from content data
+- Progress tracking + bookmarks
+- Readability controls (font size, line height, width)
+- Per-section word count + read time (toggle in sidebar)
+- Collapsible TOC with level-based indentation
+- `llms.txt` output for LLM-friendly text export
+## Authoring Content
+Add or edit sections under `data/content`.
+Example section:
+## Import a Markdown File
+Use the import script to convert a `.md` file into reader content:
+This writes `data/content/importedContent.ts`. To display that file, swap it into `data/content/sampleContent.ts`.
+## Build Outputs
+- Search index is generated on build.
+- `llms.txt` is generated on build and served from `/llms.txt`.
+
+# Architecture
+## 1. Overview
+The prototype delivers a reusable reading experience for teaching materials. It emphasizes:
+- Content as data
+- Reader-first UI
+- Local-first persistence
+- Optional enhancements (search, highlights, EPUB, llms.txt)
+The reader is a single-page app (SPA) that switches between a landing view and the reader view.
+## 2. Architecture Summary
+The app is intentionally small and flat:
+The app is built with React + TypeScript and runs with Vite.
+## 3. Content Model (Content as Data)
+Content lives in `data/content/*` as typed objects. This allows the same content to drive:
+- The reader UI
+- Search index
+- EPUB export
+- `llms.txt`
+## 3.1 Section Model
+Each guide is composed of `SectionConfig` objects:
+## 3.2 Block Model
+Blocks represent semantic units such as text, lists, and callouts:
+Example content:
+
+# Reader Features
+## 4. Reader Shell (Layout + Navigation)
+The reader is composed of:
+- Sidebar navigation
+- Main content area
+- Table of contents
+- Selection toolbar
+## 4.1 Reader Shell Composition
+## 4.2 Landing vs Reader
+`App.tsx` decides whether to show the landing page or the reader view based on `useReaderNavigation()`.
+## 5. Block Renderer
+Blocks are rendered by `components/blocks/BlockRenderer.tsx`. This isolates presentation from content.
+The renderer supports fenced code blocks and inline code (backticks). Code blocks include a copy button and wrap long lines by default.
+## 5.1 Rendering Logic
+## 5.2 Anchorable Headings
+Headings set `id` so TOC links can target them:
+## 6. Table of Contents (TOC)
+TOC items are generated from heading and subheading blocks. The TOC can be collapsed to hide H3+ subheadings while keeping top-level headings visible.
+## 6.1 TOC Extraction
+## 6.2 Active Heading Highlight
+IntersectionObserver tracks the current visible heading.
+## 7. Search Modal
+Search is performed locally against an index built from content.
+## 7.1 Build Index
+## 7.2 Keyboard Shortcut
+`Ctrl+K` / `Cmd+K` opens the search modal.
+## 8. Highlights
+Highlights are created by selecting text in the reader.
+## 8.1 Selection Toolbar
+When text is selected:
+## 8.2 Persistence
+Highlights are stored in `localStorage`:
+## 8.3 Export
+Markdown export is available from the sidebar:
+## 9. Deep Linking
+Deep links embed both section and selected text.
+Example URL:
+The reader will:
+- Navigate to the section
+- Locate the text
+- Highlight it using `<mark>`
+## 10. Progress Tracking
+Progress is local and section-based.
+## 10.1 Read State
+## 10.2 Progress Panel
+Shows total and completed sections with a progress bar.
+## 11. Bookmarks
+Bookmarks are stored separately and displayed as a star in the sidebar.
+## 12. Readability Controls
+Readers can adjust:
+- Font size
+- Line height
+- Content width
+Heading sizes and code block text scale proportionally with the base font size.
+## 12.1 State and Persistence
+## 12.2 CSS Mapping
+## 13. EPUB Export
+The EPUB is generated client-side from the same content source.
+## 13.1 Generator
+## 13.2 Output
+The user clicks **Download EPUB** in the sidebar.
+## 14. llms.txt Export
+An LLM-friendly plain-text export is generated for scraping and ingestion.
+## 14.1 Generator
+## 14.2 Output
+The file is saved to:
+## 15. Markdown Import Script
+The script converts a `.md` file into `SectionConfig` data.
+## 15.1 Usage
+## 15.2 Output
+Generated file:
+
+# Build & Sharing
+## 16. Build Pipeline
+The build process auto-generates:
+- Search index
+- `llms.txt`
+## 16.1 Build Script
+## 17. How To Extend
+Common extensions include:
+- More block types (tables, images, comparisons)
+- AI tools
+- Export to PDF
+- Cloud sync
+## 18. Running Locally
+## 19. Recommended Usage for Sharing
+To share this framework with others:
+- Publish the repo on GitHub
+- Add a short demo guide under `data/content/`
+- Include screenshots and a `llms.txt` output
+- Provide a one-command setup in the README
+## 20. Quick Reference
+Key files:
+- `App.tsx`
+- `components/reader/ReaderShell.tsx`
+- `components/blocks/BlockRenderer.tsx`
+- `components/tools/SearchModal.tsx`
+- `services/epub/epubGenerator.ts`
+- `scripts/build-llms.ts`
+- `scripts/build-search-index.ts`

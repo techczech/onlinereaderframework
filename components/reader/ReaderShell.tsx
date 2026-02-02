@@ -12,6 +12,7 @@ import { SearchModal } from '../tools/SearchModal';
 import { ReadabilityControls, FontSize, LineHeight, ContentWidth } from '../tools/ReadabilityControls';
 import { ProgressPanel } from '../tools/ProgressPanel';
 import { BookmarkButton } from '../tools/BookmarkButton';
+import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats';
 
 interface ReaderShellProps {
   activeSectionId: SectionId;
@@ -24,6 +25,7 @@ const BOOKMARK_KEY = 'reader_bookmarks';
 const FONT_SIZE_KEY = 'reader_font_size';
 const LINE_HEIGHT_KEY = 'reader_line_height';
 const CONTENT_WIDTH_KEY = 'reader_content_width';
+const READING_STATS_KEY = 'reader_show_reading_stats';
 
 export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
   const [tocItems, setTocItems] = useState<TocItem[]>([]);
@@ -67,6 +69,10 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
   const [contentWidth, setContentWidth] = useState<ContentWidth>(() => {
     return (localStorage.getItem(CONTENT_WIDTH_KEY) as ContentWidth) || 'md';
   });
+  const [showReadingStats, setShowReadingStats] = useState<boolean>(() => {
+    const saved = localStorage.getItem(READING_STATS_KEY);
+    return saved ? JSON.parse(saved) : false;
+  });
 
   useEffect(() => {
     localStorage.setItem(FONT_SIZE_KEY, fontSize);
@@ -79,6 +85,10 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
   useEffect(() => {
     localStorage.setItem(CONTENT_WIDTH_KEY, contentWidth);
   }, [contentWidth]);
+
+  useEffect(() => {
+    localStorage.setItem(READING_STATS_KEY, JSON.stringify(showReadingStats));
+  }, [showReadingStats]);
 
   useEffect(() => {
     localStorage.setItem(READ_KEY, JSON.stringify(Array.from(readSections)));
@@ -173,8 +183,8 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
     const sizeMap: Record<FontSize, string> = {
       sm: 'text-sm',
       base: 'text-base',
-      lg: 'text-lg',
-      xl: 'text-xl'
+      lg: 'text-xl',
+      xl: 'text-3xl'
     };
     const lineMap: Record<LineHeight, string> = {
       tight: 'leading-snug',
@@ -182,14 +192,25 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
       relaxed: 'leading-relaxed',
       loose: 'leading-loose'
     };
-    const widthMap: Record<ContentWidth, string> = {
-      sm: 'max-w-prose',
-      md: 'max-w-3xl',
-      lg: 'max-w-5xl',
-      full: 'max-w-none'
+    const baseWidths: Record<ContentWidth, number> = {
+      sm: 55,
+      md: 60,
+      lg: 75,
+      full: 85
     };
 
-    return `${sizeMap[fontSize]} ${lineMap[lineHeight]} ${widthMap[contentWidth]}`;
+    const sizeBump: Record<FontSize, number> = {
+      sm: 0,
+      base: 0,
+      lg: 5,
+      xl: 10
+    };
+
+    const minWidth = 55;
+    const targetWidth = Math.max(minWidth, baseWidths[contentWidth] + sizeBump[fontSize]);
+    const widthClass = `max-w-[${targetWidth}ch]`;
+
+    return `w-full min-w-0 px-4 md:px-8 ${sizeMap[fontSize]} ${lineMap[lineHeight]} ${widthClass}`;
   }, [fontSize, lineHeight, contentWidth]);
 
   return (
@@ -207,6 +228,10 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
         onDownloadEpub={handleDownloadEpub}
         onSearch={() => setIsSearchOpen(true)}
         bookmarkedIds={bookmarks}
+        sections={SAMPLE_CONTENT}
+        showReadingStats={showReadingStats}
+        onToggleReadingStats={() => setShowReadingStats((prev) => !prev)}
+        fontSize={fontSize}
       >
         <ProgressPanel
           total={SAMPLE_CONTENT.length}
@@ -239,6 +264,7 @@ export function ReaderShell({ activeSectionId, onNavigate }: ReaderShellProps) {
             sectionId={activeSectionId}
             onActiveHeadingChange={setActiveHeadingId}
             onTocItems={setTocItems}
+            showReadingStats={showReadingStats}
           />
         </div>
         <TableOfContents

@@ -4,6 +4,8 @@ export type BlockType =
   | 'text'
   | 'list'
   | 'callout'
+  | 'code'
+  | 'hr'
   | 'comparison'
   | 'image'
   | 'table'
@@ -20,6 +22,7 @@ export interface TextBlock extends BlockBase {
   type: 'text';
   variant: 'heading' | 'subheading' | 'paragraph' | 'quote';
   content: string;
+  level?: number;
 }
 
 export interface ListBlock extends BlockBase {
@@ -35,7 +38,17 @@ export interface CalloutBlock extends BlockBase {
   content: string;
 }
 
-export type Block = TextBlock | ListBlock | CalloutBlock;
+export interface CodeBlock extends BlockBase {
+  type: 'code';
+  language?: string;
+  content: string;
+}
+
+export interface HrBlock extends BlockBase {
+  type: 'hr';
+}
+
+export type Block = TextBlock | ListBlock | CalloutBlock | CodeBlock | HrBlock;
 
 export interface SectionConfig {
   id: SectionId;
@@ -45,6 +58,7 @@ export interface SectionConfig {
   order: number;
   blocks: Block[];
   tags?: string[];
+  level?: number;
 }
 
 export interface SearchIndexEntry {
