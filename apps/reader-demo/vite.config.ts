@@ -7,6 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       'reader-core': path.resolve(__dirname, '../../packages/reader-core/src/index.ts')
-    }
+    },
+    dedupe: ['react', 'react-dom']
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom']
   }
 });
