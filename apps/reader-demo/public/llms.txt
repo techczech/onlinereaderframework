@@ -11,9 +11,6 @@ A reader-first framework for teaching materials and guides.
 - Core Features
 - Reuse
 
-## Source
-- Generated from defaultMarkdown.md
-
 ## Content
 # Online Reader Framework
 ## Online Reader Framework

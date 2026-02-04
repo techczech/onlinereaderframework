@@ -16,6 +16,9 @@ npm install
 npm run dev
 ```
 
+**Live Demo**
+- https://onlinereader.pages.dev
+
 **Build Demo**
 ```bash
 cd packages/reader-core
