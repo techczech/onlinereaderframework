@@ -1,20 +1,37 @@
-# Online Reader Framework
+# Reader Framework
 
+A reader-first framework for teaching materials and guides.
+
+## Contents
+- Online Reader Framework
+- Structure
+- Quick Start (Demo)
+- Build Demo
+- Demo Features
+- Core Features
+- Reuse
+
+## Source
+- Generated from defaultMarkdown.md
+
+## Content
+# Online Reader Framework
+## Online Reader Framework
 A reusable reader framework (core library) plus a demo app for converting Markdown into a clean, readable web experience.
 
-## Structure
+# Structure
 - `packages/reader-core`: reusable library (components + parsing + utilities)
-- `apps/reader-demo`: demo app with Markdown uploader and heading-level controls (`src/defaultMarkdown.md` is the default sample)
+- `apps/reader-demo`: demo app with Markdown uploader and heading-level controls
 - `docs/REUSE.md`: integration guide
 
-## Quick Start (Demo)
+# Quick Start (Demo)
 ```
 cd apps/reader-demo
 npm install
 npm run dev
 ```
 
-## Build Demo
+# Build Demo
 ```
 cd packages/reader-core
 npm install
@@ -26,17 +43,17 @@ npm run build
 npm run preview
 ```
 
-## Demo Features
+# Demo Features
 - Upload Markdown locally (client-only).
 - Choose section heading level (Auto / H1 / H2).
 - Choose TOC minimum level (H2 / H3 / H4).
 - Preview in the reader with TOC, highlights, bookmarks, readability controls.
 
-## Core Features
+# Core Features
 - Markdown parsing to `SectionConfig[]`.
 - Reader UI: TOC, highlights, bookmarks, progress, readability controls.
 - Search, EPUB export, `llms.txt` export.
 - Inline code, code blocks with copy + wrapping, horizontal rules.
 
-## Reuse
+# Reuse
 See `docs/REUSE.md` for integration steps and adapter guidance.

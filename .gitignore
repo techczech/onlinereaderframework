@@ -1,0 +1,7 @@
+node_modules/
+**/node_modules/
+**/dist/
+apps/reader-demo/.vite/
+.DS_Store
+
+_legacy/

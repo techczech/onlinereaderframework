@@ -4,7 +4,7 @@ A reusable reader framework (core library) plus a demo app for converting Markdo
 
 ## Structure
 - `packages/reader-core`: reusable library (components + parsing + utilities)
-- `apps/reader-demo`: demo app with Markdown uploader and heading-level controls (`src/defaultMarkdown.md` is the default sample)
+- `apps/reader-demo`: demo app with Markdown uploader and heading-level controls
 - `docs/REUSE.md`: integration guide
 
 ## Quick Start (Demo)

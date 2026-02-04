@@ -1,28 +1,10 @@
 {
   "name": "onlinereaderframework",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
+  "version": "0.2.0",
   "scripts": {
-    "dev": "vite",
-    "build": "npm run build:search-index && npm run build:llms && vite build",
-    "preview": "vite preview",
-    "build:search-index": "tsx scripts/build-search-index.ts",
-    "build:llms": "tsx scripts/build-llms.ts",
-    "import:md": "tsx scripts/import-markdown.ts"
-  },
-  "dependencies": {
-    "jszip": "^3.10.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
-    "vite": "^7.3.1"
+    "dev": "cd apps/reader-demo && npm install && npm run dev",
+    "build": "cd packages/reader-core && npm install && npm run build && cd ../../apps/reader-demo && npm install && npm run build",
+    "preview": "cd apps/reader-demo && npm run preview"
   }
 }
