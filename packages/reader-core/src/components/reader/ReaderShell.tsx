@@ -6,6 +6,7 @@ import { TableOfContents, TocItem } from './TableOfContents';
 import { SelectionToolbar } from './SelectionToolbar';
 import { HighlightsPanel } from '../tools/HighlightsPanel';
 import { exportHighlightsToMarkdown } from '../../utils/highlightExport';
+import { downloadLlmsTxt } from '../../utils/llmsExport';
 import { generateEpub } from '../../services/epub/epubGenerator';
 import { SearchModal } from '../tools/SearchModal';
 import { ReadabilityControls, FontSize, LineHeight, ContentWidth } from '../tools/ReadabilityControls';
@@ -172,6 +173,10 @@ export function ReaderShell({
     await generateEpub(sections, 'Reader Framework');
   };
 
+  const handleDownloadLlms = () => {
+    downloadLlmsTxt(sections, 'Reader Framework');
+  };
+
   const handleTocNavigate = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -263,6 +268,7 @@ export function ReaderShell({
         activeSectionId={activeSectionId}
         onNavigate={setActiveSectionId}
         onDownloadEpub={handleDownloadEpub}
+        onDownloadLlms={handleDownloadLlms}
         onSearch={() => setIsSearchOpen(true)}
         bookmarkedIds={bookmarks}
         sections={sections}

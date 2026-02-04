@@ -6,6 +6,7 @@ interface SidebarProps {
   activeSectionId: SectionId;
   onNavigate: (id: SectionId) => void;
   onDownloadEpub: () => void;
+  onDownloadLlms?: () => void;
   onSearch: () => void;
   bookmarkedIds: Set<string>;
   sections: SectionConfig[];
@@ -20,6 +21,7 @@ export function Sidebar({
   activeSectionId,
   onNavigate,
   onDownloadEpub,
+  onDownloadLlms,
   onSearch,
   bookmarkedIds,
   sections,
@@ -78,6 +80,15 @@ export function Sidebar({
       >
         Download EPUB
       </button>
+
+      {onDownloadLlms && (
+        <button
+          onClick={onDownloadLlms}
+          className="mt-3 w-full px-3 py-2 text-sm rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100"
+        >
+          Download llms.txt
+        </button>
+      )}
 
       <button
         onClick={onToggleReadingStats}
