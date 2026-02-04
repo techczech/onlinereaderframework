@@ -137,12 +137,18 @@ Acceptance:
 - Choose section heading level (Auto / H1 / H2).
 - Choose TOC minimum level (H2 / H3 / H4).
 - Preview in the reader with TOC, highlights, bookmarks, readability controls.
+- Download `llms.txt` from the reader sidebar (uses the current loaded content).
 
 ## Core Features
 - Markdown parsing to `SectionConfig[]`.
 - Reader UI: TOC, highlights, bookmarks, progress, readability controls.
-- Search, EPUB export, `llms.txt` export.
+- Search, EPUB export, `llms.txt` export (runtime + build-time).
 - Inline code, code blocks with copy + wrapping, horizontal rules.
 
 ## Reuse Guide
 See `docs/REUSE.md` for step-by-step integration and adapter guidance.
+
+## `llms.txt` Export
+There are two ways to generate `llms.txt`:
+- **Runtime (recommended for user uploads):** Use the “Download llms.txt” button in the reader sidebar. This exports the **currently loaded** sections.
+- **Build-time (demo default):** `npm run build` in `apps/reader-demo` generates `public/llms.txt` from `src/defaultMarkdown.md`.

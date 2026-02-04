@@ -3,6 +3,7 @@ export * from './utils/markdownParser';
 export * from './utils/search';
 export * from './utils/readingStats';
 export * from './utils/highlightExport';
+export * from './utils/llmsExport';
 export * from './services/epub/epubGenerator';
 
 export * from './components/blocks/BlockRenderer';
