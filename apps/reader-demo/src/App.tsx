@@ -20,6 +20,7 @@ export default function App() {
   const [isHome, setIsHome] = useState(true);
   const [showUpload, setShowUpload] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const sections = useMemo<SectionConfig[]>(() => parseMarkdown(markdown, options), [markdown, options]);
   const firstSectionId = sections[0]?.id;
@@ -55,6 +56,24 @@ export default function App() {
     }));
   };
 
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+    const file = event.dataTransfer.files?.[0] ?? null;
+    if (file) {
+      setSelectedFile(file);
+    }
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
   if (isHome) {
     return (
       <div>
@@ -84,10 +103,23 @@ export default function App() {
               <div className="mt-6 space-y-4">
                 <div>
                   <label className="text-sm font-medium text-slate-700">Markdown file</label>
+                  <div
+                    className={`mt-2 rounded-lg border border-dashed px-4 py-6 text-center text-sm transition ${
+                      isDragging
+                        ? 'border-slate-900 bg-slate-50 text-slate-900'
+                        : 'border-slate-200 text-slate-500'
+                    }`}
+                    onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                  >
+                    <p>Drag and drop a .md file here</p>
+                    <p className="mt-1 text-xs text-slate-400">or choose a file below</p>
+                  </div>
                   <input
                     type="file"
                     accept=".md"
-                    className="mt-2 w-full rounded border border-slate-200 px-3 py-2 text-sm"
+                    className="mt-3 w-full rounded border border-slate-200 px-3 py-2 text-sm"
                     onChange={(event) => {
                       const file = event.target.files?.[0] ?? null;
                       setSelectedFile(file);
