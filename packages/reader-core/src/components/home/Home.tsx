@@ -3,9 +3,10 @@ import React from 'react';
 interface HomeProps {
   onStart: () => void;
   onSearch: () => void;
+  onUpload?: () => void;
 }
 
-export function Home({ onStart, onSearch }: HomeProps) {
+export function Home({ onStart, onSearch, onUpload }: HomeProps) {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <section className="max-w-4xl mx-auto px-6 py-20">
@@ -17,6 +18,11 @@ export function Home({ onStart, onSearch }: HomeProps) {
           <button className="px-6 py-3 bg-slate-900 text-white rounded-lg" onClick={onStart}>
             Start Reading
           </button>
+          {onUpload ? (
+            <button className="px-6 py-3 border border-slate-300 rounded-lg" onClick={onUpload}>
+              Upload Markdown
+            </button>
+          ) : null}
           <button className="px-6 py-3 border border-slate-300 rounded-lg" onClick={onSearch}>
             Search Guide
           </button>
