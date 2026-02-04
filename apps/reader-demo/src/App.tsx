@@ -28,6 +28,13 @@ export default function App() {
     setIsHome(false);
   };
 
+  const loadTemplate = async () => {
+    const response = await fetch('/upload.md');
+    const text = await response.text();
+    setMarkdown(text);
+    setIsHome(false);
+  };
+
   const updateSectionLevel = (value: string) => {
     setOptions((prev) => ({
       ...prev,
@@ -55,7 +62,7 @@ export default function App() {
             <p className="mt-2 text-sm text-slate-600">
               Upload a Markdown file and preview it in the reader. Files are processed locally.
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-3">
               <input
                 type="file"
                 accept=".md"
@@ -64,6 +71,12 @@ export default function App() {
                   if (file) handleFile(file);
                 }}
               />
+              <button
+                onClick={loadTemplate}
+                className="px-3 py-2 text-sm rounded border border-slate-200 text-slate-700 hover:bg-slate-100"
+              >
+                Use upload template
+              </button>
             </div>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className="text-sm text-slate-600">
