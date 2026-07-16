@@ -1,3 +1,12 @@
+---
+name: "Online Reader Framework"
+description: "Provides a reusable way to turn Markdown into a clean, readable web publication."
+categories: [content-distribution, web-app, built-by-ai]
+updated: 2026-07-16
+deployments:
+  Appsite:
+    "Online Reader Framework": https://onlinereader.pages.dev/
+---
 # Online Reader Framework
 
 A reusable reader framework (core library) plus a demo app for converting Markdown into a clean, readable web experience.
