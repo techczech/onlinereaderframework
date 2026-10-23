@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SectionId } from '../types';
+import { SectionId } from '../types.js';
 
 const DEFAULT_SECTION: SectionId = 'home';
 

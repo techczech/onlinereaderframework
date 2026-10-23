@@ -18,12 +18,22 @@ const linguistics = argument('--linguistics');
 const python = argument('--python');
 const practiceFile = resolve(practice, 'data.ts');
 const languageFile = resolve(language, 'bookContent.ts');
+// Home copy below is a deliberate adapter of the selected originals. Refuse to
+// silently recapture a new source hash while keeping old hardcoded home wording.
+for (const [file, expected] of [
+  [resolve(practice, 'components/Home.tsx'), 'ad3f4bd48f4e8b3155bb5cfc8275906ba4d2df6dfc06eacfddf5913c73dce4f0'],
+  [resolve(language, 'App.tsx'), '3f4dc58cf67fd1c840a2b5cbe7a6e959b24b789117a8bda4aed7061a340b4654']
+]) {
+  const actual = createHash('sha256').update(readFileSync(file)).digest('hex');
+  if (actual !== expected) throw new Error('The original home has changed. Review the home-copy adapter before recapturing source provenance.');
+}
 const { GUIDE_CONTENT } = await import(pathToFileURL(practiceFile).href);
 const { BOOK_CONTENT } = await import(pathToFileURL(languageFile).href);
 const qa = JSON.parse(execFileSync(python, [resolve(here, 'import-linguistics-book.py'), linguistics], { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }));
 const adaptLanguage = (sections: any[], category?: string): any[] => sections.map(s => ({
   id: s.id, title: s.title, category: category || s.title,
   content: s.content || '', format: 'html',
+  ...(s.defaultExpanded !== undefined ? { defaultExpanded: s.defaultExpanded } : {}),
   ...(s.children ? { children: adaptLanguage(s.children, category || s.title) } : {})
 }));
 const books = [
@@ -61,6 +71,7 @@ writeFileSync(resolve(here, '../src/books/original-publications-provenance.json'
     { book: 'deliberate-practice', repository: 'deliberate-practice-guide', source: 'data.ts', sha256: digest(practiceFile) },
     { book: 'deliberate-practice', repository: 'deliberate-practice-guide', source: 'components/Home.tsx', sha256: digest(resolve(practice, 'components/Home.tsx')) },
     { book: 'language-muscle', repository: 'building-your-language-muscle', source: 'bookContent.ts', sha256: digest(languageFile) },
+    { book: 'language-muscle', repository: 'building-your-language-muscle', source: 'App.tsx', sha256: digest(resolve(language, 'App.tsx')) },
     ...qa.sources
   ],
   counts: { practiceSections: GUIDE_CONTENT.length, languageTopLevelSections: BOOK_CONTENT.length, linguisticsThemes: qa.book.sections.length, linguisticsAnswers: qa.answerCount }

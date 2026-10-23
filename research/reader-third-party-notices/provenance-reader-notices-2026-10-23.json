@@ -1,0 +1,595 @@
+{
+  "captured_at_utc": "2026-10-23T12:42:40.142575+00:00",
+  "agent": "Codex implementation sub-agent",
+  "sources": [
+    {
+      "url": "https://registry.npmjs.org/encode-utf8/1.0.3",
+      "path": "encode-utf8-1.0.3/npm-version.json",
+      "bytes": 2225,
+      "sha256": "b11fd2e0b01606a57d7cde5f99161fe424f52400d1d797473ea6328265a0ac4b",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:43.056649+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/git/ref/tags/v1.0.3",
+      "path": "encode-utf8-1.0.3/github-tag-ref.json",
+      "bytes": 339,
+      "sha256": "80f5a65501d361d7ce5577d91b55ac4a6641a363c60838b22b09d46d59f45fd3",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:43.840625+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/git/tags/2e99f76d9e4578d71859aa267e529f2747d2a1a8",
+      "path": "encode-utf8-1.0.3/github-tag-object.json",
+      "bytes": 671,
+      "sha256": "56f287bfee712a6e2de7815ad884b646cf0e4e04442a699b48c65bf6418af8cd",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:44.588452+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LinusU/encode-utf8/b8e591da66e5942caa59cf7b1922d91b95ed49ea/package.json",
+      "path": "encode-utf8-1.0.3/upstream-package.json",
+      "bytes": 237,
+      "sha256": "0c836ff17f16e0ad66c6c30e35285dc8648cff309b06f148c3c8eabad0387840",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:45.051238+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/encode-utf8/-/encode-utf8-1.0.3.tgz",
+      "path": "encode-utf8-1.0.3/npm-tarball.tgz",
+      "bytes": 1794,
+      "sha256": "552a3adc5ceff56a0ba775c37e86106e4528808946c6f3426dda6aacc2cd3f77",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:45.493212+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/git/trees/b8e591da66e5942caa59cf7b1922d91b95ed49ea?recursive=1",
+      "path": "encode-utf8-1.0.3/github-release-tree.json",
+      "bytes": 1708,
+      "sha256": "d6af9db2f96cc1a920e66e21f4ddbcbef49a266e8aa16624a3805e0a34d67fe7",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:46.204730+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LinusU/encode-utf8/b8e591da66e5942caa59cf7b1922d91b95ed49ea/index.js",
+      "path": "encode-utf8-1.0.3/upstream-index.js",
+      "bytes": 1366,
+      "sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:46.545869+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LinusU/encode-utf8/b8e591da66e5942caa59cf7b1922d91b95ed49ea/LICENCE",
+      "http_status": 404,
+      "retained": false
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/commits/87cba02f7ddf8792f2e60c4b1a7c1eccf6daa3d2",
+      "path": "encode-utf8-1.0.3/github-licence-addition-commit.json",
+      "bytes": 5627,
+      "sha256": "3462e3cf254cfaa09240891d706d38569eb501d23f80f13c4754ccc6ad704a1b",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:47.660206+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LinusU/encode-utf8/87cba02f7ddf8792f2e60c4b1a7c1eccf6daa3d2/LICENCE",
+      "path": "encode-utf8-1.0.3/upstream-later-LICENCE.txt",
+      "bytes": 1077,
+      "sha256": "48f761956f2709d24a8750e2fd37cf347f421125d625f48a53f03d72834d2ab8",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:48.009103+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LinusU/encode-utf8/87cba02f7ddf8792f2e60c4b1a7c1eccf6daa3d2/index.js",
+      "path": "encode-utf8-1.0.3/upstream-later-index.js",
+      "bytes": 1356,
+      "sha256": "9f150528e867e9b025a5b527fd5584cdca0f6bacc8f227064afc8099e5ffd43c",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:48.431404+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/issues/6",
+      "path": "encode-utf8-1.0.3/github-licence-issue-6.json",
+      "bytes": 3439,
+      "sha256": "1427102a93ea65582ffc704e7990018ac77500bf0736ec117520439301a39b0e",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:49.233454+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/LinusU/encode-utf8/issues/6/comments",
+      "path": "encode-utf8-1.0.3/github-licence-issue-6-comments.json",
+      "bytes": 1584,
+      "sha256": "c578d04a5a2db397869ebf0531ba454de283a2c26d5d62a49441bacad4939189",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:50.006381+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/dlv/1.1.3",
+      "path": "dlv-1.1.3/npm-version.json",
+      "bytes": 2584,
+      "sha256": "4203b1373bc97e4132afa78a94503a14d6952329544bc20460d4188664348105",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:50.409894+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/developit/dlv/git/ref/tags/1.1.3",
+      "path": "dlv-1.1.3/github-tag-ref.json",
+      "bytes": 329,
+      "sha256": "ffc27280de55144b1d9fd59d22eed35ff91b61ae0b7a7d4281bfca6adee87e49",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:51.138733+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/developit/dlv/e636db817a96e4ca4710b407163fb992748b3b80/package.json",
+      "path": "dlv-1.1.3/upstream-package.json",
+      "bytes": 794,
+      "sha256": "d0355a98f75d3547e341ff1cbade270c5d5e9b109dd2b03163178c58b8d525d2",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:51.577308+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz",
+      "path": "dlv-1.1.3/npm-tarball.tgz",
+      "bytes": 2160,
+      "sha256": "7c316193a4d49e70b3f552e4d52573ecb5b8154075f049cb30c9c2dc9ebb7c90",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:51.977621+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/developit/dlv/git/trees/e636db817a96e4ca4710b407163fb992748b3b80?recursive=1",
+      "path": "dlv-1.1.3/github-release-tree.json",
+      "bytes": 1460,
+      "sha256": "ebacde9239546c979dff6150562e027f94b466be9799bfe650f3b4d3279dd9e4",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:52.730847+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/developit/dlv/e636db817a96e4ca4710b407163fb992748b3b80/index.js",
+      "path": "dlv-1.1.3/upstream-index.js",
+      "bytes": 207,
+      "sha256": "621dcd396a2ae770327bfaca6f1ecd0efc7b33c06d28350d373be0f7714e0794",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:53.147277+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/@esbuild%2fdarwin-arm64/0.28.2",
+      "path": "esbuild-darwin-arm64-0.28.2/npm-version.json",
+      "bytes": 1795,
+      "sha256": "71ef3c7d38a4eac3247e08b72b6a1801745139043f20c1c3d3f58c031bfa6495",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:53.704159+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/evanw/esbuild/git/ref/tags/v0.28.2",
+      "path": "esbuild-darwin-arm64-0.28.2/github-tag-ref.json",
+      "bytes": 337,
+      "sha256": "594584e6b96c47668899ebbc45864ecdcc5facb36d5be6cf825f5a8e24a0fec2",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:54.406271+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/npm/@esbuild/darwin-arm64/package.json",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-package.json",
+      "bytes": 382,
+      "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:54.759408+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.28.2.tgz",
+      "final_url": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.28.2.tgz",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:42.844582+00:00",
+      "bytes": 4434422,
+      "sha256": "1980cde09749094452b20d36ff267585ccb3f72749c7bc97291cd9996ccf5a2a",
+      "retained": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/LICENSE.md",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-LICENSE.md",
+      "bytes": 1069,
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:57.519783+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/npm/esbuild/LICENSE.md",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-npm-esbuild-LICENSE.md",
+      "bytes": 1069,
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:57.867609+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/internal/xxhash/LICENSE.txt",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-xxhash-LICENSE.txt",
+      "bytes": 1068,
+      "sha256": "f566a9f97bacdaf00d9f21dd991e81dc11201c4e016c86b470799429a1c9a79c",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:58.218769+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/go.mod",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-go.mod",
+      "bytes": 428,
+      "sha256": "2d48dbed6151e653adc9ab5d8869cba012d167f13352e45880e59104e1e02b9b",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:59.062787+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evanw/esbuild/609683d892977362a0f99026cb74b96263d728a9/lib/npm/node-platform.ts",
+      "path": "esbuild-darwin-arm64-0.28.2/upstream-node-platform.ts",
+      "bytes": 12914,
+      "sha256": "50c5522b87e9e993dfe030f39298d27d6288e61daedc9c02beb9f7d46eada443",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:59.475338+00:00"
+    },
+    {
+      "url": "https://registry.npmjs.org/@rollup%2frollup-darwin-arm64/4.64.7",
+      "path": "rollup-darwin-arm64-4.64.7/npm-version.json",
+      "bytes": 1974,
+      "sha256": "51e604ed33b62cc72af531b8d3cc425ba159e445aa2fbd42c52fe8cef258aa09",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:41:59.995743+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/rollup/rollup/git/ref/tags/v4.64.7",
+      "path": "rollup-darwin-arm64-4.64.7/github-tag-ref.json",
+      "bytes": 337,
+      "sha256": "2f4327279676356527d0dd3cdcbb244fbf9d8c6884d77ac960ec665041fd9323",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:42:00.664797+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/npm/darwin-arm64/package.json",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-package.json",
+      "bytes": 451,
+      "sha256": "0c4afddcf997019e1f47ae12136bda781edaa56fca22ebc1d81cf227b1a2d121",
+      "read_from_prior_attempt": true,
+      "archive_mtime_utc": "2026-10-23T12:42:01.034099+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/package.json",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/package.json",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:43.753418+00:00",
+      "bytes": 11544,
+      "sha256": "859ee64d4524a7463641ff02f2962458b6579a0104c99513274211e180e44668",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-root-package.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/scripts/prepublish.js",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/scripts/prepublish.js",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:44.198123+00:00",
+      "bytes": 2080,
+      "sha256": "66f739bf5b5f6938d318413d3b2c50f618e6dd41d5511e8499472de9c7e6aaa3",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-prepublish.js"
+    },
+    {
+      "url": "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.64.7.tgz",
+      "final_url": "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.64.7.tgz",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:45.383581+00:00",
+      "bytes": 848306,
+      "sha256": "ec8942e259f9883443545ab47492e70b5cbd614e1af04ace6346ca4dfd80e60a",
+      "retained": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/LICENSE.md",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/LICENSE.md",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:45.985490+00:00",
+      "bytes": 35231,
+      "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-LICENSE.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/LICENSE-CORE.md",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/LICENSE-CORE.md",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:46.379468+00:00",
+      "bytes": 1135,
+      "sha256": "9dff12bb776f199482bc21fb2aba9615032c0403d19cfd1fa0bf101a9379b146",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-LICENSE-CORE.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/native.js",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/native.js",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:46.842980+00:00",
+      "bytes": 5527,
+      "sha256": "6a572b30932083031c7e34ae82dab6e95bddcefc8a3397adab53736a6b2ddde2",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-native.js"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/rust/bindings_napi/Cargo.toml",
+      "final_url": "https://raw.githubusercontent.com/rollup/rollup/5f658604845ca7fb4d8e8a27a9e68e166c6f9973/rust/bindings_napi/Cargo.toml",
+      "http_status": 200,
+      "captured_at_utc": "2026-10-23T12:42:47.327324+00:00",
+      "bytes": 2086,
+      "sha256": "500562ce1d06dc832b1908b42c4014cb025e5bd2d96a8207b9878a7294b27c44",
+      "path": "rollup-darwin-arm64-4.64.7/upstream-native-Cargo.toml"
+    }
+  ],
+  "packages": [
+    {
+      "name": "encode-utf8",
+      "version": "1.0.3",
+      "slug": "encode-utf8-1.0.3",
+      "commit": "b8e591da66e5942caa59cf7b1922d91b95ed49ea",
+      "tag": "v1.0.3",
+      "tag_equals_npm_gitHead": true,
+      "npm_sha512_integrity_verified": true,
+      "npm_sha1_verified": true,
+      "tarball_sha256": "552a3adc5ceff56a0ba775c37e86106e4528808946c6f3426dda6aacc2cd3f77",
+      "tar_members": [
+        {
+          "tar_member": "package/index.js",
+          "bytes": 1366,
+          "sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+          "installed_path": "packages/reader-core/node_modules/encode-utf8/index.js",
+          "installed_exists": true,
+          "installed_sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+          "installed_bytes_equal": true,
+          "archive_copy": "encode-utf8-1.0.3/tar-members/index.js"
+        },
+        {
+          "tar_member": "package/test.js",
+          "bytes": 1865,
+          "sha256": "f7719bcd36c5ae98f4020aa0364770969b8e69dae003ce8a05ce7086afbd39a3",
+          "installed_path": "packages/reader-core/node_modules/encode-utf8/test.js",
+          "installed_exists": true,
+          "installed_sha256": "f7719bcd36c5ae98f4020aa0364770969b8e69dae003ce8a05ce7086afbd39a3",
+          "installed_bytes_equal": true,
+          "archive_copy": "encode-utf8-1.0.3/tar-members/test.js"
+        },
+        {
+          "tar_member": "package/package.json",
+          "bytes": 237,
+          "sha256": "0c836ff17f16e0ad66c6c30e35285dc8648cff309b06f148c3c8eabad0387840",
+          "installed_path": "packages/reader-core/node_modules/encode-utf8/package.json",
+          "installed_exists": true,
+          "installed_sha256": "0c836ff17f16e0ad66c6c30e35285dc8648cff309b06f148c3c8eabad0387840",
+          "installed_bytes_equal": true,
+          "archive_copy": "encode-utf8-1.0.3/tar-members/package.json"
+        },
+        {
+          "tar_member": "package/readme.md",
+          "bytes": 488,
+          "sha256": "233870e40290291eaf293caf283d25a5ea31dd3b96f7ff706af1e9f5a22fe896",
+          "installed_path": "packages/reader-core/node_modules/encode-utf8/readme.md",
+          "installed_exists": true,
+          "installed_sha256": "233870e40290291eaf293caf283d25a5ea31dd3b96f7ff706af1e9f5a22fe896",
+          "installed_bytes_equal": true,
+          "archive_copy": "encode-utf8-1.0.3/tar-members/readme.md"
+        },
+        {
+          "tar_member": "package/index.d.ts",
+          "bytes": 77,
+          "sha256": "2b44e85fc287f986d90b482a675eba3e6ce24513d4177f92a502562436fea7ca",
+          "installed_path": "packages/reader-core/node_modules/encode-utf8/index.d.ts",
+          "installed_exists": true,
+          "installed_sha256": "2b44e85fc287f986d90b482a675eba3e6ce24513d4177f92a502562436fea7ca",
+          "installed_bytes_equal": true,
+          "archive_copy": "encode-utf8-1.0.3/tar-members/index.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "dlv",
+      "version": "1.1.3",
+      "slug": "dlv-1.1.3",
+      "commit": "e636db817a96e4ca4710b407163fb992748b3b80",
+      "tag": "1.1.3",
+      "tag_equals_npm_gitHead": true,
+      "npm_sha512_integrity_verified": true,
+      "npm_sha1_verified": true,
+      "tarball_sha256": "7c316193a4d49e70b3f552e4d52573ecb5b8154075f049cb30c9c2dc9ebb7c90",
+      "tar_members": [
+        {
+          "tar_member": "package/package.json",
+          "bytes": 794,
+          "sha256": "d0355a98f75d3547e341ff1cbade270c5d5e9b109dd2b03163178c58b8d525d2",
+          "installed_path": "apps/reader-demo/node_modules/dlv/package.json",
+          "installed_exists": true,
+          "installed_sha256": "d0355a98f75d3547e341ff1cbade270c5d5e9b109dd2b03163178c58b8d525d2",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/package.json"
+        },
+        {
+          "tar_member": "package/index.js",
+          "bytes": 207,
+          "sha256": "621dcd396a2ae770327bfaca6f1ecd0efc7b33c06d28350d373be0f7714e0794",
+          "installed_path": "apps/reader-demo/node_modules/dlv/index.js",
+          "installed_exists": true,
+          "installed_sha256": "621dcd396a2ae770327bfaca6f1ecd0efc7b33c06d28350d373be0f7714e0794",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/index.js"
+        },
+        {
+          "tar_member": "package/README.md",
+          "bytes": 2020,
+          "sha256": "9c859d9401ff1e3c62d84595ae8fb368787a6e89cd819b811be06abb2cde26db",
+          "installed_path": "apps/reader-demo/node_modules/dlv/README.md",
+          "installed_exists": true,
+          "installed_sha256": "9c859d9401ff1e3c62d84595ae8fb368787a6e89cd819b811be06abb2cde26db",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/README.md"
+        },
+        {
+          "tar_member": "package/dist/dlv.es.js",
+          "bytes": 150,
+          "sha256": "4d4b6d701f3f9817d1d882114212b12dc98d60c39b9bbdec172fab3ee0f7a27f",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.es.js",
+          "installed_exists": true,
+          "installed_sha256": "4d4b6d701f3f9817d1d882114212b12dc98d60c39b9bbdec172fab3ee0f7a27f",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.es.js"
+        },
+        {
+          "tar_member": "package/dist/dlv.es.js.map",
+          "bytes": 545,
+          "sha256": "0fb1d506c73cc58eaded2170d9f8803eb635e363ec18e7973d987abe58512f17",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.es.js.map",
+          "installed_exists": true,
+          "installed_sha256": "0fb1d506c73cc58eaded2170d9f8803eb635e363ec18e7973d987abe58512f17",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.es.js.map"
+        },
+        {
+          "tar_member": "package/dist/dlv.js",
+          "bytes": 148,
+          "sha256": "4f054c9cffd8bbdd79799b804923b6a6bbc7ddd5d94a26fd2b361377a4847ba9",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.js",
+          "installed_exists": true,
+          "installed_sha256": "4f054c9cffd8bbdd79799b804923b6a6bbc7ddd5d94a26fd2b361377a4847ba9",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.js"
+        },
+        {
+          "tar_member": "package/dist/dlv.js.map",
+          "bytes": 542,
+          "sha256": "469d5ae1bef43bbfc16cef4f52e209e544ee6b4705b27ff368622b076401b69e",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.js.map",
+          "installed_exists": true,
+          "installed_sha256": "469d5ae1bef43bbfc16cef4f52e209e544ee6b4705b27ff368622b076401b69e",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.js.map"
+        },
+        {
+          "tar_member": "package/dist/dlv.umd.js",
+          "bytes": 498,
+          "sha256": "72172cb7c7e92d6342b7fc31ba381e0ebb1d131d79341217286ecb93bdb89829",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.umd.js",
+          "installed_exists": true,
+          "installed_sha256": "72172cb7c7e92d6342b7fc31ba381e0ebb1d131d79341217286ecb93bdb89829",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.umd.js"
+        },
+        {
+          "tar_member": "package/dist/dlv.umd.js.map",
+          "bytes": 898,
+          "sha256": "bdd64112890aa130925c14ef441ba0906773c93d653aff487d4c76c07ad83392",
+          "installed_path": "apps/reader-demo/node_modules/dlv/dist/dlv.umd.js.map",
+          "installed_exists": true,
+          "installed_sha256": "bdd64112890aa130925c14ef441ba0906773c93d653aff487d4c76c07ad83392",
+          "installed_bytes_equal": true,
+          "archive_copy": "dlv-1.1.3/tar-members/dist/dlv.umd.js.map"
+        }
+      ]
+    },
+    {
+      "name": "@esbuild/darwin-arm64",
+      "version": "0.28.2",
+      "slug": "esbuild-darwin-arm64-0.28.2",
+      "commit": "609683d892977362a0f99026cb74b96263d728a9",
+      "tag": "v0.28.2",
+      "tag_equals_npm_gitHead": true,
+      "npm_sha512_integrity_verified": true,
+      "npm_sha1_verified": true,
+      "tarball_sha256": "1980cde09749094452b20d36ff267585ccb3f72749c7bc97291cd9996ccf5a2a",
+      "tar_members": [
+        {
+          "tar_member": "package/bin/esbuild",
+          "bytes": 10590882,
+          "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384",
+          "installed_path": "apps/reader-demo/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+          "installed_exists": true,
+          "installed_sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384",
+          "installed_bytes_equal": true
+        },
+        {
+          "tar_member": "package/package.json",
+          "bytes": 382,
+          "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9",
+          "installed_path": "apps/reader-demo/node_modules/@esbuild/darwin-arm64/package.json",
+          "installed_exists": true,
+          "installed_sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9",
+          "installed_bytes_equal": true
+        },
+        {
+          "tar_member": "package/README.md",
+          "bytes": 145,
+          "sha256": "ee16cb15a2211accccb38f378786bfe48bc5dcfae5db554352424cd710470efa",
+          "installed_path": "apps/reader-demo/node_modules/@esbuild/darwin-arm64/README.md",
+          "installed_exists": true,
+          "installed_sha256": "ee16cb15a2211accccb38f378786bfe48bc5dcfae5db554352424cd710470efa",
+          "installed_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "name": "@rollup/rollup-darwin-arm64",
+      "version": "4.64.7",
+      "slug": "rollup-darwin-arm64-4.64.7",
+      "commit": "5f658604845ca7fb4d8e8a27a9e68e166c6f9973",
+      "tag": "v4.64.7",
+      "tag_equals_npm_gitHead": true,
+      "npm_sha512_integrity_verified": true,
+      "npm_sha1_verified": true,
+      "tarball_sha256": "ec8942e259f9883443545ab47492e70b5cbd614e1af04ace6346ca4dfd80e60a",
+      "tar_members": [
+        {
+          "tar_member": "package/package.json",
+          "bytes": 451,
+          "sha256": "8b5c90a37cc62342b2fdfe564899134d09d56c3f33403797a099b201a9f2d05d",
+          "installed_path": "apps/reader-demo/node_modules/@rollup/rollup-darwin-arm64/package.json",
+          "installed_exists": true,
+          "installed_sha256": "8b5c90a37cc62342b2fdfe564899134d09d56c3f33403797a099b201a9f2d05d",
+          "installed_bytes_equal": true
+        },
+        {
+          "tar_member": "package/README.md",
+          "bytes": 90,
+          "sha256": "6529dcd9e87e25a13c98a6ce7faa78973e9137f8db4acdf910e2158bb7184a38",
+          "installed_path": "apps/reader-demo/node_modules/@rollup/rollup-darwin-arm64/README.md",
+          "installed_exists": true,
+          "installed_sha256": "6529dcd9e87e25a13c98a6ce7faa78973e9137f8db4acdf910e2158bb7184a38",
+          "installed_bytes_equal": true
+        },
+        {
+          "tar_member": "package/rollup.darwin-arm64.node",
+          "bytes": 1880160,
+          "sha256": "3dd2a59fd79b3027b7b8aa2e5a37f64fdbcb03e16ff85d522effdae01f30ab22",
+          "installed_path": "apps/reader-demo/node_modules/@rollup/rollup-darwin-arm64/rollup.darwin-arm64.node",
+          "installed_exists": true,
+          "installed_sha256": "3dd2a59fd79b3027b7b8aa2e5a37f64fdbcb03e16ff85d522effdae01f30ab22",
+          "installed_bytes_equal": true
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "label": "encode-utf8-1.0.3: installed index vs exact tagged upstream index",
+      "left_sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+      "right_sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+      "bytes_equal": true
+    },
+    {
+      "label": "encode-utf8: exact 1.0.3 index vs licence-addition index",
+      "left_sha256": "ba56e54548f07a0b3799c520fd9ae07ee0e4b2cfd1b2994dcfb164b732158c2b",
+      "right_sha256": "9f150528e867e9b025a5b527fd5584cdca0f6bacc8f227064afc8099e5ffd43c",
+      "bytes_equal": false
+    },
+    {
+      "label": "dlv-1.1.3: installed index vs exact tagged upstream index",
+      "left_sha256": "621dcd396a2ae770327bfaca6f1ecd0efc7b33c06d28350d373be0f7714e0794",
+      "right_sha256": "621dcd396a2ae770327bfaca6f1ecd0efc7b33c06d28350d373be0f7714e0794",
+      "bytes_equal": true
+    },
+    {
+      "label": "esbuild exact upstream notice vs installed sibling esbuild notice",
+      "left_sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "right_sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes_equal": true
+    },
+    {
+      "label": "rollup exact upstream notice vs installed sibling rollup notice",
+      "left_sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+      "right_sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+      "bytes_equal": true
+    }
+  ]
+}

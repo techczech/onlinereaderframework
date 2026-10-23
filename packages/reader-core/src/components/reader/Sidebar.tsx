@@ -1,6 +1,6 @@
 import React from 'react';
-import { SectionConfig, SectionId } from '../../types';
-import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats';
+import { SectionConfig, SectionId } from '../../types.js';
+import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats.js';
 
 interface SidebarProps {
   activeSectionId: SectionId;

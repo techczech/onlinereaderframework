@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import { SectionConfig } from '../../types';
+import { SectionConfig } from '../../types.js';
 
 export async function generateEpub(sections: SectionConfig[], title: string) {
   const zip = new JSZip();

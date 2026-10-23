@@ -196,6 +196,7 @@
         "category": "Introduction",
         "content": "<h1 class=\"text-3xl font-bold mb-6 text-emerald-800\">Introduction</h1><p class=\"text-lg text-slate-600 mb-4\">Welcome to your new language learning journey. This section sets the stage for deliberate practice.</p>",
         "format": "html",
+        "defaultExpanded": true,
         "children": [
           {
             "id": "about-guide",
@@ -226,6 +227,7 @@
         "category": "Building Your Muscle",
         "content": "<h1 class=\"text-3xl font-bold mb-6 text-emerald-800\">How to do it: 3 Steps to Strength</h1><p class=\"mb-6 text-slate-600\">Follow these three steps to transform your approach to language learning.</p>",
         "format": "html",
+        "defaultExpanded": true,
         "children": [
           {
             "id": "step-1",
@@ -263,6 +265,7 @@
         "category": "Appendices",
         "content": "<h1 class=\"text-3xl font-bold mb-6 text-emerald-800\">Appendices</h1>",
         "format": "html",
+        "defaultExpanded": false,
         "children": [
           {
             "id": "appendix-3",

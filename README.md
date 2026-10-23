@@ -27,7 +27,7 @@ The demonstration contains read-only snapshots of three real publications. Choos
 - `?book=language-muscle` opens Language Muscle's nested HTML chapters.
 - `?book=linguistics` opens nine themes and 253 answers with source attribution.
 
-The snapshots are demonstration content, separate from the reusable software package. Regeneration instructions and source hashes live beside the demo in `apps/reader-demo/src/books/` and `apps/reader-demo/scripts/`. No editorial proposals have been applied by this framework upgrade.
+The snapshots are demonstration content, separate from the reusable software package. The source comparison script verifies every recorded hash and original chapter object; home-copy adapters refuse changed original homes until their wording is reviewed. Regeneration instructions and source hashes live beside the demo in `apps/reader-demo/src/books/` and `apps/reader-demo/scripts/`. No editorial proposals have been applied by this framework upgrade.
 
 ## Use the original publication reader
 
@@ -51,11 +51,13 @@ export default function App() {
 }
 ```
 
+The original ebook buttons generate a self-contained EPUB in the browser. Books with images supply their bytes through `epub={{ assets: [{ href, mediaType, data }] }}`; the exporter makes no hidden image requests. Set `epub={false}` to disable generated ebooks, or provide prebuilt links in `book.downloads`. The demo embeds the original practice-book icon explicitly. Unknown image rights remain a release question for the book distribution.
+
 The core receives content; it does not fetch manuscripts or call AI services. Stable book IDs isolate saved reading data. Section IDs must be unique within each book; `home` is reserved. Sections may have recursive `children`; `format` may be `markdown` or `html`. Optional home copy, concept cards, downloads, attribution and licence are supplied by the publication.
 
 ## Build and verification
 
-`npm run build` builds both the core package and the source-linked demonstration, including the original reader stylesheet and locally bundled fonts and icons. `npm run test:books` checks real-book completeness, identities, internal links, source attribution and provenance. Content and interaction checks are recorded with the upgrade evidence; package-consumer verification is separate from source-linked verification.
+`npm run build` builds both the core package and the source-linked demonstration, including the original reader stylesheet and locally bundled fonts and icons. `npm test` runs the content, routing, storage and real-book regressions. `npm run test:books` checks real-book completeness, identities, internal links, source attribution and provenance. Content and interaction checks are recorded with the upgrade evidence; package-consumer verification is separate from source-linked verification.
 
 The core remains private. This upgrade prepares a public release; it does not publish a package, deploy a site or change repository visibility. The release plan records remaining licensing and release decisions before any public distribution.
 

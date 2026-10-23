@@ -69,12 +69,16 @@ sources = [
     root / 'packages/reader-core/src/original/types.ts',
     root / 'apps/reader-demo/src/books/original-publications.json',
 ]
+sources.extend(sorted(Path(__file__).parent.glob('*.ts')))
+sources.extend(sorted(Path(__file__).parent.glob('*.mjs')))
+sources.append(Path(__file__).resolve())
+sources.append(root / 'packages/reader-core/src/original/publication-model.ts')
 if asset_file: sources.append(asset_file.resolve())
 evidence = {
     'date': datetime.now(timezone.utc).isoformat(),
     'scope': 'Browser service, actual archive bytes, XML, EPUBCheck; parent owns packaged integration and UI acceptance.',
     'runtime': {'playwright': version('playwright'), 'chromium': browser_version, 'executable': str(cached_shells[-1]) if cached_shells else 'Playwright default'},
-    'ssr_import': 'passed without DOM globals; generation rejected with browser requirement',
+    'ssr_import': 'isolated TypeScript output imported natively as ESM and bundled as CJS without DOM globals; generation rejected with browser requirement',
     **result, 'network_requests': requests, 'archives': reports,
     'sources': [{'path': str(source), 'sha256': hashlib.sha256(source.read_bytes()).hexdigest()} for source in sources],
 }

@@ -1,4 +1,4 @@
-import { SectionConfig } from '../types';
+import { SectionConfig } from '../types.js';
 
 type Block = SectionConfig['blocks'][number];
 

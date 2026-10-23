@@ -1,0 +1,46 @@
+{
+  "verified_at_utc": "2026-10-23T12:47:07.917841+00:00",
+  "agent": "Codex implementation sub-agent",
+  "saved_primary_sources_hash_verified": 35,
+  "tarball_member_installation_matches": 20,
+  "package_tag_and_npm_gitHead_matches": 4,
+  "npm_tarball_sha512_and_sha1_matches": 4,
+  "release_trees_not_truncated": [
+    "encode-utf8-1.0.3",
+    "dlv-1.1.3"
+  ],
+  "licence_addition_commit_changed_files": [
+    "LICENCE"
+  ],
+  "runtime_graph_nodes": [
+    105,
+    114
+  ],
+  "unresolved_declared_runtime_edges": [
+    0,
+    0
+  ],
+  "runtime_target_packages": [
+    "encode-utf8@1.0.3"
+  ],
+  "existing_core_and_demo_output_file_counts": [
+    202,
+    118
+  ],
+  "output_verbatim_tool_or_target_name_matches": 0,
+  "python_method_scripts_syntax_checked": true,
+  "local_markdown_links_exist": true,
+  "prose_review": "Drafting agent reviewed report and archive guide against saved source evidence; exact release and later notice remain distinct.",
+  "report": {
+    "path": "docs/result-reader-distribution-notices-2026-10-23.md",
+    "sha256": "f9077f0b1426d68598f60acd2a573fa786f3f43f4eed54a52dbb1b79ec4ba2b3"
+  },
+  "not_performed": [
+    "fresh build",
+    "pack",
+    "current audit rerun",
+    "npm signature or attestation verification",
+    "native binary rebuild",
+    "exact-version licence grant confirmation"
+  ]
+}

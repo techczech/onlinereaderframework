@@ -1,0 +1,15 @@
+{
+  "package": "qrcode",
+  "version": "1.5.4",
+  "officialMetadata": "https://registry.npmjs.org/qrcode/1.5.4",
+  "dependencies": {
+    "dijkstrajs": "^1.0.1",
+    "pngjs": "^5.0.0",
+    "yargs": "^15.3.1"
+  },
+  "noticeFile": "license",
+  "noticeSha256": "8df47c6ad9ac2c41eb9b2a72def9908959da0ede8dadd56c7b249c1bdb0c5ce6",
+  "legacyEncodeUtf8Installed": false,
+  "coreAudit": "zero advisories from npm install audit; final audit recorded separately",
+  "reason": "Compatible original QR API patch removes the dependency with unconfirmed exact-version notice coverage."
+}

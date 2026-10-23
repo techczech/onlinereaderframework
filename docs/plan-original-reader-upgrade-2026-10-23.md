@@ -29,3 +29,9 @@ Three real-book demos: Deliberate Practice, Language Muscle, and Linguistics (25
 ## Public-release boundary
 
 Prepare package documentation, provenance, licensing inventory, reproducible build/test instructions and release steps. Do not publish packages, deploy sites, alter repository visibility or enable paid AI services during this task. Identify any concrete remaining release decisions in the release plan.
+
+## Implementation checkpoints
+
+The original reader and content extraction is committed as `cbcb1cb`; reusable EPUB export and clean package integration as `0832455`. Real home ebook buttons work for all three books. Public API `PublicationReaderProps.epub` accepts explicit image assets or `false`; no hidden resource fetching occurs. Source comparison now verifies 515 inputs and preserves original recursive expansion flags.
+
+Astra's first implementation review found two concrete defects: Unicode case expansion shifts restored annotation offsets, and a split book title loses the identifying subtitle on quote cards. Sol High repairs are active; do not treat this plan or the initial passing tests as acceptance. The ebook/package review is independent and still active. Supplemental third-party notice evidence is being collected without inventing a software licence.

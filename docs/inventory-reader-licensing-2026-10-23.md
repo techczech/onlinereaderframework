@@ -118,3 +118,9 @@ The full-output snapshot was 789,420 bytes; SHA-256: `5906ee6454579c9782e738ddcc
 | Original Language Muscle `bookContent.ts` | `bda8e81df46e5c633969a695fc0fc26994b62aac472bcd8787bdfd4268411698` |
 
 No build, package creation, installed-consumer check, public permission verification or release occurred in this inventory task. The [release plan](plan-public-reader-release-2026-10-23.md) assigns those remaining steps.
+
+## Parent integration: runtime gap removed through the supported QR patch
+
+After this historical inventory, the framework updated `qrcode` from 1.5.3 to the compatible official 1.5.4 patch. The patch retains the original sharing API and removes `encode-utf8` from its dependency graph. The framework installation no longer contains that package. No later notice was relabelled as version-matched coverage for 1.0.3. The original application worktrees remain unchanged.
+
+The new QR package includes its complete notice; installed manifest/dependency and notice hashes are recorded in `research/evidence-reader-qr-patch-2026-10-23.json`. The current inventory has three missing-notice entries, all for demo build tools with the exclusion evidence above. The inventory deliberately retains those findings. Runtime QR/browser regression verification follows integration; this resolution alone does not establish public-release acceptance.

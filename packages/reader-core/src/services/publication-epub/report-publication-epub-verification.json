@@ -1,13 +1,32 @@
 {
-  "date": "2026-10-23T12:32:49.902994+00:00",
+  "date": "2026-10-23T13:03:48.712126+00:00",
   "scope": "Browser service, actual archive bytes, XML, EPUBCheck; parent owns packaged integration and UI acceptance.",
   "runtime": {
     "playwright": "1.64.0",
     "chromium": "153.0.8010.12",
     "executable": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
   },
-  "ssr_import": "passed without DOM globals; generation rejected with browser requirement",
+  "ssr_import": "isolated TypeScript output imported natively as ESM and bundled as CJS without DOM globals; generation rejected with browser requirement",
   "checks": [
+    "query routes, legacy queries and encoded fragments (no source URL)",
+    "query routes, legacy queries and encoded fragments (source URL)",
+    "book identity, unrelated host parameters, home route and genuine external links",
+    "external URLs retain fragments and never use the route parser fallback as host identity",
+    "XML-forbidden IDs a+U+0001+b versus ab reject before collapsing",
+    "XML-forbidden SVG gradient IDs reject before collapsing",
+    "entity-decoded XML-forbidden IDs reject explicitly",
+    "missing local fragment rejects explicitly",
+    "missing chapter fragment rejects explicitly",
+    "missing query chapter rejects explicitly",
+    "encoded local fragments and repeated footnote backlinks remain paired",
+    "SVG paint references resolve to final gradient IDs",
+    "supplied SVG missing fragment rejects explicitly",
+    "final validation rejects duplicate IDs and unresolved SVG paint after serialisation",
+    "full book identity: Building Your Language Muscle (Building Your)",
+    "full book identity: Deliberate Practice: A Universal Learning Method (Deliberate Practice:)",
+    "full book identity: Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013–2016 (Introduction to Key Issues in Language Through Stack Exchange Answers)",
+    "full book identity: Linguistics (Linguistics)",
+    "full book identity: Building Your Language Muscle (Building Your Language Muscle)",
     "missing asset reported without fetching",
     "metadata, safe paths, nested navigation, XHTML, images, code, tables, paired notes, SVG, MathML, routes",
     "duplicate IDs, unknown chapter routes, invalid image bytes, SVG scripts/events/CSS/external references/entities rejected; Blob and ArrayBuffer assets supported",
@@ -36,40 +55,40 @@
   "archives": [
     {
       "archive": "rich-fixture",
-      "bytes": 4851,
-      "sha256": "0b4be12c7a25030d7c8dccd8acdbde28c0d71b933b840bd9870d58396c4534bd",
+      "bytes": 4880,
+      "sha256": "6f569b4a43a11bc833b7a5d83aad16ad02dc1e0027aceec835f7e18c8d254958",
       "zip_xml": "passed",
       "epubcheck_exit": 0,
       "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
     },
     {
       "archive": "svg-asset",
-      "bytes": 3473,
-      "sha256": "61e8a16aae40a7a8136736f429ccc86b5efbe29fc66a9b58b693f74ed32a607b",
+      "bytes": 3506,
+      "sha256": "ad84175ac227879d8940684d196d6ebd5f06a93564f494a9b307cd6b6f62c38a",
       "zip_xml": "passed",
       "epubcheck_exit": 0,
       "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
     },
     {
       "archive": "deliberate-practice",
-      "bytes": 101109,
-      "sha256": "42397218d11ca201793606117bcded7a944e094859e372c15815a31da65a9812",
+      "bytes": 101158,
+      "sha256": "b3eae0c982396795b6358ea2eb69829d1b91e08c82e37cdec6926c6d2f7c89cf",
       "zip_xml": "passed",
       "epubcheck_exit": 0,
       "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
     },
     {
       "archive": "language-muscle",
-      "bytes": 42666,
-      "sha256": "a3979d1ba04bb11871554159787bf0c1e9fe9cd390e5794a68ece420a62c5b8f",
+      "bytes": 42694,
+      "sha256": "f2e918f65312e565b959c4b6d9c86448710ca5386e97c967b891be0d85d90519",
       "zip_xml": "passed",
       "epubcheck_exit": 0,
       "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
     },
     {
       "archive": "linguistics",
-      "bytes": 372718,
-      "sha256": "b7655dd86cbd57760ae537f523ef56ed5b039c911cbb50fab6de2e66bfad5292",
+      "bytes": 372755,
+      "sha256": "4cfa96ce2d6cf716eb27554bec5817dfd6e6d21cf7d3ee30169f2c56037f7565",
       "zip_xml": "passed",
       "epubcheck_exit": 0,
       "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
@@ -90,11 +109,51 @@
     },
     {
       "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/original/types.ts",
-      "sha256": "afa729ef5084ac703b01ed1a87a3fc999c074ee6854034bbca782b9e223ced56"
+      "sha256": "8d42f917a78ed71086ffef62becec3db35a214ac40d408e1c678a4b67aba8395"
     },
     {
       "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/original-publications.json",
-      "sha256": "4ce3a5916f9deacaf53ca1d98b6a6dec3ff7eda4519484162f0b107bfa1e0190"
+      "sha256": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/epub-assets.ts",
+      "sha256": "fbe3bcd5f651a45859174c19dd2b5514e9f5dd5de74c218bb271883a7cb412ce"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/epub-references.ts",
+      "sha256": "21f3e8c6668f4f612bf2beee9e971b7d0a5654b1a877064232bf278c606d34b8"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/epub-xhtml.ts",
+      "sha256": "3d12792c6f193bba8ae79100b511e343ac4bab8ebfcc8b0a5edc8744b87fdaf6"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/index.ts",
+      "sha256": "8180abf19943303f3f5761386922c431da3dcd6623d4343df4d9ed6f1f512a72"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/publication-epub-regressions.browser-test.mjs",
+      "sha256": "3d980ab5686f0eaeac4ad431057d6be656be67c81a05b8d90b321555ccb936ee"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/publication-epub.browser-test.mjs",
+      "sha256": "648555d63648d16ec72aa97dff73ee597bb4d547e36c89dd9ffa00cd7f0433a6"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/verify-publication-epub-regressions.mjs",
+      "sha256": "938faf2c9bb2ea962ef2bc712566b04cc2a6991f5b115cb453562d5b9e1d04d8"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/verify-publication-epub.mjs",
+      "sha256": "885083e874e07ed5a49dc8f220501bed885d7da7f0020f679effc111bb37a6b9"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/services/publication-epub/check-publication-epub.py",
+      "sha256": "4014947e87dea7ebe42c9f7282ff945d9c36633fd57b0bfefbb9962ab1e939d0"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/original/publication-model.ts",
+      "sha256": "ac8d7633b770e0a39df57db4b4afb1ea2947ac462450be333a2f36a1d6c0d826"
     },
     {
       "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-epub-assets.json",

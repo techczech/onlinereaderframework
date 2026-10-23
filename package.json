@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "npm ci --prefix packages/reader-core && npm ci --prefix apps/reader-demo",
     "dev": "npm run dev --prefix apps/reader-demo -- --host 127.0.0.1",
-    "build": "npm run build --prefix packages/reader-core && node scripts/build-reader-styles.mjs && npm run build --prefix apps/reader-demo",
+    "build": "npm run build --prefix packages/reader-core && npm run build --prefix apps/reader-demo",
     "test:books": "npm run test:books --prefix apps/reader-demo",
     "preview": "npm run preview --prefix apps/reader-demo -- --host 127.0.0.1",
     "verify:package": "node scripts/verify-reader-package.mjs",

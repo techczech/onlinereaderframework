@@ -1,4 +1,4 @@
-import { SectionConfig, SearchIndexEntry } from '../types';
+import { SectionConfig, SearchIndexEntry } from '../types.js';
 
 export function buildSearchIndex(sections: SectionConfig[]): SearchIndexEntry[] {
   return sections.map((section) => {

@@ -20,6 +20,12 @@
       "sha256": "bda8e81df46e5c633969a695fc0fc26994b62aac472bcd8787bdfd4268411698"
     },
     {
+      "book": "language-muscle",
+      "repository": "building-your-language-muscle",
+      "source": "App.tsx",
+      "sha256": "3f4dc58cf67fd1c840a2b5cbe7a6e959b24b789117a8bda4aed7061a340b4654"
+    },
+    {
       "book": "linguistics",
       "repository": "writing",
       "source": "_report-structure.json",

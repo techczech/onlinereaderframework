@@ -1,5 +1,5 @@
-import { MarkdownParseOptions, parseMarkdownToSections } from '../utils/markdownParser';
-import { SectionConfig } from '../types';
+import { MarkdownParseOptions, parseMarkdownToSections } from '../utils/markdownParser.js';
+import { SectionConfig } from '../types.js';
 
 export function parseMarkdown(markdown: string, options: MarkdownParseOptions = {}): SectionConfig[] {
   return parseMarkdownToSections(markdown, options);

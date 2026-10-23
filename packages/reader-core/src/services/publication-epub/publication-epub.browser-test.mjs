@@ -1,6 +1,8 @@
-import { generatePublicationEpub, downloadPublicationEpub } from './index.ts';
+import { generatePublicationEpub, downloadPublicationEpub } from './index.js';
 import JSZip from 'jszip';
-import { renderPublicationContent } from '../../publication-content/index.ts';
+import { publicationDisplayTitle } from '../../original/publication-model.js';
+import { runPublicationEpubRegressions } from './publication-epub-regressions.browser-test.mjs';
+import { renderPublicationContent } from '../../publication-content/index.js';
 
 function assert(value, message) { if (!value) throw new Error(message); }
 const xml = source => {
@@ -26,7 +28,9 @@ const canvas = document.createElement('canvas'); canvas.width = 1; canvas.height
 const png = Uint8Array.from(atob(canvas.toDataURL('image/png').split(',')[1]), c => c.charCodeAt(0));
 
 window.runPublicationEpubChecks = async (books, realAssets = {}) => {
-  const checks = [];
+  const regressions = await runPublicationEpubRegressions();
+  for (const result of regressions) assert(result.passed, `${result.name}: ${result.error}`);
+  const checks = regressions.map(result => result.name);
   const book = fixture();
   let missing;
   try { await generatePublicationEpub(book); } catch (error) { missing = String(error); }
@@ -37,7 +41,7 @@ window.runPublicationEpubChecks = async (books, realAssets = {}) => {
   const zip = await JSZip.loadAsync(await blob.arrayBuffer());
   const opf = xml(await zip.file('OEBPS/content.opf').async('string'));
   assert(opf.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier').length === 1, 'Single book identifier');
-  assert(opf.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0].textContent === book.title, 'Escaped title roundtrip');
+  assert(opf.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0].textContent === publicationDisplayTitle(book), 'Escaped full title roundtrip');
   assert(opf.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'language')[0].textContent === 'cs', 'Typed book language');
   const chapters = Object.keys(zip.files).filter(name => /Text\/chapter-\d+\.xhtml$/.test(name));
   assert(chapters.length === 3, 'Every recursive section included once');
@@ -102,6 +106,8 @@ window.runPublicationEpubChecks = async (books, realAssets = {}) => {
     if ([...hrefs].every(href => realAssets[href])) {
       const realBlob = await generatePublicationEpub(original, { assets });
       const realZip = await JSZip.loadAsync(await realBlob.arrayBuffer());
+      const metadata = xml(await realZip.file('OEBPS/content.opf').async('string'));
+      assert(metadata.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0].textContent === publicationDisplayTitle(original), `Full real-book title retained: ${original.id}`);
       const sections = [];
       const flatten = values => { for (const section of values) { sections.push(section); flatten(section.children ?? []); } };
       flatten(original.sections);

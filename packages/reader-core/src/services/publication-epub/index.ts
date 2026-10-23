@@ -1,7 +1,9 @@
 /** Adapted from the actual Language Muscle EPUB 3 service and DP EPUB generator. See README.md. */
 import JSZip from 'jszip';
+import { publicationDisplayTitle } from '../../original/publication-model.js';
+import { validateEpubReferences } from './epub-references.js';
 import type { PublicationBook, PublicationSection } from '../../original/types.js';
-import { addTextElement, appendPublicationContent, createXhtml, escapeXml, MATH_NS, requireBrowserXml, serializeXml, SVG_NS, XHTML_NS } from './epub-xhtml.js';
+import { addTextElement, appendPublicationContent, createXhtml, escapeXml, MATH_NS, parseXml, requireBrowserXml, serializeXml, SVG_NS, XHTML_NS } from './epub-xhtml.js';
 import { assertTotalAssetSize, prepareAsset, type PreparedAsset, type PublicationEpubOptions } from './epub-assets.js';
 export type { PublicationEpubAsset, PublicationEpubImageType, PublicationEpubOptions } from './epub-assets.js';
 
@@ -59,7 +61,7 @@ function safeSourceLink(document: Document, parent: Element, label: string, href
 }
 
 function createIntroduction(book: PublicationBook, language: string): string {
-  const document = createXhtml(book.title, language, 'style.css');
+  const document = createXhtml(publicationDisplayTitle(book), language, 'style.css');
   const body = document.getElementsByTagNameNS(XHTML_NS, 'body')[0];
   const titlePage = addTextElement(document, body, 'div', '');
   titlePage.setAttribute('class', 'title-page');
@@ -73,35 +75,52 @@ function createIntroduction(book: PublicationBook, language: string): string {
   return serializeXml(document);
 }
 
-function rewriteChapterLinks(chapter: Chapter, byId: Map<string, Chapter>, sourceUrl?: string): void {
+function rewriteChapterLinks(chapter: Chapter, byId: Map<string, Chapter>, book: PublicationBook): void {
+  // A base is only needed to interpret routes. It never becomes an external URL
+  // when the host has not supplied its real source URL.
+  const base = new URL(book.sourceUrl ?? 'https://publication.invalid/reader');
   for (const anchor of Array.from(chapter.document!.getElementsByTagNameNS(XHTML_NS, 'a'))) {
     const href = anchor.getAttribute('href') ?? '';
-    if (!href.startsWith('#/')) {
-      if (href.startsWith('#')) continue;
-      if (!href) { anchor.removeAttribute('href'); continue; }
+    if (href.startsWith('#') && !href.startsWith('#/')) continue;
+    if (!href) { anchor.removeAttribute('href'); continue; }
+    let url: URL;
+    try { url = new URL(href, base); } catch { anchor.removeAttribute('href'); continue; }
+    const sameBook = !url.searchParams.has('book') || url.searchParams.get('book') === book.id;
+    const sameLocation = book.sourceUrl ? url.origin === base.origin && url.pathname === base.pathname
+      : href.startsWith('?') || href.startsWith('#/');
+    const legacy = url.hash.startsWith('#/');
+    const route = sameBook && sameLocation && (href.startsWith('?') || legacy || url.searchParams.has('section') || url.searchParams.has('book'));
+    if (!route) {
       try {
-        const url = new URL(href, sourceUrl);
+        if (!book.sourceUrl) new URL(href);
         if (!['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol)) throw new Error();
         if (['http:', 'https:'].includes(url.protocol) && /[%\s"'<>\\^|]/.test(url.hostname)) throw new Error();
         anchor.setAttribute('href', url.href);
       } catch {
-        // The real Linguistics source contains a malformed http host. Keep its
-        // visible citation text rather than emitting an invalid EPUB hyperlink.
+        // Retain the real source's malformed citation text without an invalid URL.
         anchor.removeAttribute('href');
       }
       continue;
     }
-    const [encodedId, ...fragments] = href.slice(2).split('#');
-    let id: string;
-    try { id = decodeURIComponent(encodedId); } catch { throw new Error(`Invalid publication chapter link: ${href}`); }
+    let id = url.searchParams.get('section');
+    let requested = legacy ? '' : url.hash.slice(1);
+    if (legacy) {
+      const [encodedId, ...fragments] = url.hash.slice(2).split('#');
+      try { id = decodeURIComponent(encodedId.split('?')[0]); }
+      catch { throw new Error(`Invalid publication chapter link: ${href}`); }
+      requested = fragments.join('#');
+    }
+    if (!id || id === 'home') {
+      if (requested) throw new Error(`Publication home link targets a missing fragment: ${href}`);
+      anchor.setAttribute('href', '../intro.xhtml');
+      continue;
+    }
     const target = byId.get(id);
     if (!target) throw new Error(`Publication chapter link targets a section outside the EPUB: ${id}`);
     let fragment = '';
-    if (fragments.length) {
-      let requested: string;
-      try { requested = decodeURIComponent(fragments.join('#')); } catch { throw new Error(`Invalid publication fragment: ${href}`); }
-      const targetDocument = target.document!;
-      const targets = Array.from(targetDocument.querySelectorAll('[id]'));
+    if (requested) {
+      try { requested = decodeURIComponent(requested); } catch { throw new Error(`Invalid publication fragment: ${href}`); }
+      const targets = Array.from(target.document!.querySelectorAll('[id]'));
       const found = targets.find(element => element.id === requested) ?? targets.find(element => element.id === 'reader-content-' + requested);
       if (!found) throw new Error(`Publication chapter link targets a missing fragment: ${href}`);
       fragment = '#' + encodeURIComponent(found.id);
@@ -151,7 +170,7 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
       if (!image.hasAttribute('alt')) image.setAttribute('alt', '');
     }
   }
-  for (const chapter of flat) rewriteChapterLinks(chapter, byId, book.sourceUrl);
+  for (const chapter of flat) rewriteChapterLinks(chapter, byId, book);
 
   const zip = new JSZip();
   // Language Muscle/DP: mimetype first and stored, followed by the container.
@@ -166,12 +185,18 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
   // Original Language Muscle createNavLi recursion, using escaped labels and
   // traversal-generated hrefs instead of interpolating unsafe section IDs.
   const createNavLi = (chapter: Chapter): string => `<li><a href="${chapter.filename}">${escapeXml(chapter.section.title)}</a>${chapter.children.length ? `<ol>${chapter.children.map(createNavLi).join('')}</ol>` : ''}</li>`;
-  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(book.title)}</a></li>${roots.map(createNavLi).join('')}</ol></nav></body></html>`);
+  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>${escapeXml(publicationDisplayTitle(book))} — Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(publicationDisplayTitle(book))}</a></li>${roots.map(createNavLi).join('')}</ol></nav></body></html>`);
   const manifestItems = flat.map(chapter => `<item id="${chapter.id}" href="${chapter.filename}" media-type="application/xhtml+xml"${chapter.properties!.length ? ` properties="${chapter.properties!.join(' ')}"` : ''}/>`).join('\n');
   const assetItems = [...embedded.values()].map((asset, index) => `<item id="asset-${index + 1}" href="${asset.filename}" media-type="${asset.mediaType}"/>`).join('\n');
   const spineItems = flat.map(chapter => `<itemref idref="${chapter.id}"/>`).join('\n');
   const modified = new Date().toISOString().split('.')[0] + 'Z';
-  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(book.title)}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${manifestItems}${assetItems}</manifest><spine><itemref idref="intro"/>${spineItems}</spine></package>`);
+  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(publicationDisplayTitle(book))}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${manifestItems}${assetItems}</manifest><spine><itemref idref="intro"/>${spineItems}</spine></package>`);
+  // Validate the final serialised documents, after content, route and asset rewrites.
+  const documents = new Map<string, Document>();
+  for (const [path, file] of Object.entries(zip.files)) {
+    if (/\.(xhtml|svg)$/.test(path)) documents.set(path, parseXml(await file.async('string'), path));
+  }
+  validateEpubReferences(documents);
   return zip.generateAsync({ type: 'blob', mimeType: 'application/epub+zip', compression: 'DEFLATE' });
 }
 
@@ -180,7 +205,7 @@ export async function downloadPublicationEpub(book: PublicationBook, options: Pu
   const blob = await generatePublicationEpub(book, options);
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
-  const name = book.title.normalize('NFKC').replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s+/g, '-').slice(0, 100) || 'publication';
+  const name = publicationDisplayTitle(book).normalize('NFKC').replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s+/g, '-').slice(0, 100) || 'publication';
   anchor.href = url;
   anchor.download = `${name}.epub`;
   try {
