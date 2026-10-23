@@ -4,7 +4,7 @@ import type { FontSize, Highlight, LineHeight, MaxWidth, PublicationBook, Reflec
 import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import type { TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
-import { findPublicationTextRange, normalisePublicationText } from './publication-html.js';
+import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
@@ -133,7 +133,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
       if (!rect.width && !rect.height) { clearSelection(); return; }
-      setSelectedText(normalisePublicationText(selection.toString()));
+      setSelectedText(publicationTextModel(range.cloneContents()).text);
       setSelectionRect(rect);
     };
     document.addEventListener('selectionchange', update);

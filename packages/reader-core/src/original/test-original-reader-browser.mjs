@@ -75,3 +75,111 @@ export async function runOriginalReaderAnnotationChecks() {
   } finally { root.remove(); }
   return results;
 }
+
+
+/** MathML alternatives stay in the DOM, but never enter the shared visible-text model. */
+export async function runOriginalReaderMathMLChecks() {
+  const html = await import('./publication-html.ts');
+  const { renderPublicationContent, publicationContentToText } = await import('../publication-content/index.ts');
+  const results = [];
+  const check = (name, actual, expected) => results.push({ name, actual, expected, pass: actual === expected });
+  const root = document.createElement('div');
+  document.body.append(root);
+  try {
+    const source = 'Before $x$ after.';
+    const safe = renderPublicationContent(source);
+    root.innerHTML = safe;
+    check('rendered Markdown contains actual MathML semantics and TeX annotation', !!root.querySelector('math semantics mi') && root.querySelector('math annotation')?.textContent, 'x');
+    check('generated maths enters reader text exactly once', html.publicationPlainText(safe), 'Before x after.');
+    check('canonical TeX content helper keeps its existing contract', publicationContentToText(source), 'Before  x  after.');
+    check('visible phrase is searchable across generated maths', html.publicationTextModel(root).text.includes('Before x after.'), true);
+    const crossRange = html.findPublicationTextRange(root, 'Before x after.');
+    check('range spans visible phrase across generated maths', crossRange ? html.publicationTextModel(crossRange.cloneContents()).text : null, 'Before x after.');
+    results[results.length - 1].nativeRangeText = crossRange?.toString() ?? null;
+    check('cross-maths range has painted geometry', !!crossRange && [...crossRange.getClientRects()].some(rect => rect.width > 0 && rect.height > 0), true);
+
+    const mathsBefore = root.querySelector('math').outerHTML;
+    const after = html.findPublicationTextRange(root, 'after.');
+    check('ordinary range after maths restores exact text', after?.toString(), 'after.');
+    root.innerHTML = html.preparePublicationHTML(safe, [{ id: 'after-maths', text: 'after.', sectionId: 'check', sectionTitle: 'Check', date: 1 }]);
+    const mark = root.querySelector('[data-publication-highlight="after-maths"]');
+    check('ordinary highlight after maths restores exact text', mark?.textContent, 'after.');
+    check('ordinary highlight after maths is painted', !!mark && mark.getBoundingClientRect().width > 0 && getComputedStyle(mark).backgroundColor !== 'rgba(0, 0, 0, 0)', true);
+    check('highlight restoration preserves complete authored maths markup', root.querySelector('math').outerHTML, mathsBefore);
+    check('decoration leaves shared visible text unchanged', html.publicationTextModel(root).text, 'Before x after.');
+
+    const mathNS = 'http://www.w3.org/1998/Math/MathML';
+    // Trusted DOM fixture: annotation-xml exercises nested HTML as well as plain TeX.
+    root.innerHTML = '<p>Before <math xmlns="' + mathNS + '"><semantics><mrow><mi>x</mi><mo>+</mo><mn>1</mn><mtext> unit</mtext></mrow><annotation encoding="application/x-tex">hidden-tex</annotation><annotation-xml encoding="application/xhtml+xml"><span xmlns="http://www.w3.org/1999/xhtml">hidden-alternative</span></annotation-xml></semantics></math> after.</p>';
+    check('visible MathML tokens survive while both annotation kinds are excluded', html.publicationTextModel(root).text, 'Before x+1 unit after.');
+    check('invisible TeX annotation cannot restore a quote', html.findPublicationTextRange(root, 'hidden-tex'), null);
+    check('invisible annotation-xml subtree cannot restore a quote', html.findPublicationTextRange(root, 'hidden-alternative'), null);
+    root.innerHTML = html.preparePublicationHTML(root.innerHTML, [{ id: 'hidden', text: 'hidden-alternative', sectionId: 'check', sectionTitle: 'Check', date: 1 }]);
+    check('invisible alternative cannot acquire a saved highlight', !!root.querySelector('[data-publication-highlight="hidden"]'), false);
+
+    root.innerHTML = '<p>Before <math xmlns="' + mathNS + '"><mrow><mi>x</mi><mphantom><mi>hidden-phantom</mi></mphantom><mo>+</mo><mn>1</mn></mrow></math> after.</p>';
+    check('MathML phantom text is excluded without losing visible siblings', html.publicationTextModel(root).text, 'Before x+1 after.');
+    check('MathML phantom text cannot restore a quote', html.findPublicationTextRange(root, 'hidden-phantom'), null);
+    check('phantom markup remains intact', root.querySelector('mphantom mi')?.textContent, 'hidden-phantom');
+
+    root.replaceChildren();
+    for (const name of ['annotation', 'annotation-xml', 'mphantom']) {
+      const element = document.createElement(name);
+      element.textContent = 'ordinary-' + name + ' ';
+      root.append(element);
+    }
+    check('ordinary HTML with MathML element names remains readable', html.publicationTextModel(root).text, 'ordinary-annotation ordinary-annotation-xml ordinary-mphantom');
+    check('ordinary HTML annotation text still restores a range', html.findPublicationTextRange(root, 'ordinary-annotation')?.toString(), 'ordinary-annotation');
+  } finally { root.remove(); }
+  return results;
+}
+
+
+/** The headless runner drives this public React reader with real Playwright UI events. */
+export async function mountOriginalReaderSelectionFixture() {
+  const { default: React } = await import('react');
+  const { createRoot } = await import('react-dom/client');
+  const { flushSync } = await import('react-dom');
+  const { PublicationReader } = await import('./PublicationReader.tsx');
+  const mount = document.createElement('div');
+  document.body.append(mount);
+  const root = createRoot(mount);
+  const book = {
+    id: 'reader-mathml-selection-check', title: 'Selection regression', author: 'Reader test', description: 'Browser regression fixture.',
+    sections: [
+      { id: 'simple', title: 'Simple maths', category: 'Checks', content: 'Before $x$ after.' },
+      { id: 'rich', title: 'Rich maths', category: 'Checks', content: 'İ 😀 Before **bold** $x+1$ and [linked](https://example.test) after.' },
+      { id: 'ordinary', title: 'Ordinary markup', category: 'Checks', content: 'İ 😀 Working **memory** and a [link boundary](https://example.test) later.' },
+      { id: 'math-only', title: 'Maths only', category: 'Checks', content: 'Before $x$ after.' },
+    ],
+  };
+  flushSync(() => root.render(React.createElement(PublicationReader, { book, epub: false })));
+  return true;
+}
+
+/** Serialize only source structure, excluding the existing yellow annotation attributes. */
+export async function originalReaderSelectionSnapshot() {
+  const { publicationTextModel, normalisePublicationText } = await import('./publication-html.ts');
+  const root = document.querySelector('[data-publication-content]');
+  const math = [...root.querySelectorAll('math')].map(element => {
+    const copy = element.cloneNode(true);
+    for (const node of [copy, ...copy.querySelectorAll('*')]) {
+      if (node.hasAttribute('data-publication-highlight')) {
+        node.removeAttribute('data-publication-highlight');
+        node.removeAttribute('class');
+      }
+    }
+    return copy.outerHTML;
+  });
+  const decorated = [...root.querySelectorAll('[data-publication-highlight]')];
+  return {
+    math,
+    text: publicationTextModel(root).text,
+    paintedText: normalisePublicationText(decorated.map(node => node.textContent).join('')),
+    mathGeometry: [...root.querySelectorAll('math')].map(node => { const rect = node.getBoundingClientRect(); return [rect.width, rect.height]; }),
+    foreignMath: [...root.querySelectorAll('math *')].filter(node => node.namespaceURI !== 'http://www.w3.org/1998/Math/MathML').map(node => node.outerHTML),
+    decorated: decorated.map(node => ({ text: node.textContent, namespace: node.namespaceURI, color: getComputedStyle(node).backgroundColor, width: node.getBoundingClientRect().width, height: node.getBoundingClientRect().height })),
+    strong: root.querySelector('strong')?.textContent ?? null,
+    link: root.querySelector('a')?.getAttribute('href') ?? null,
+  };
+}

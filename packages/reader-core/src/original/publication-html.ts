@@ -1,6 +1,7 @@
 import type { Highlight } from './types.js';
 
 const blockTags = new Set(['ADDRESS', 'ARTICLE', 'ASIDE', 'BLOCKQUOTE', 'BR', 'DD', 'DIV', 'DL', 'DT', 'FIGCAPTION', 'FIGURE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'HR', 'LI', 'OL', 'P', 'PRE', 'SECTION', 'TABLE', 'TD', 'TH', 'TR', 'UL']);
+const nonRenderedMathMLTags = new Set(['annotation', 'annotation-xml', 'mphantom']);
 export const normalisePublicationText = (text: string): string => text.replace(/[\s\u00a0]+/g, ' ').trim();
 
 type TextPoint = { node: Text; offset: number };
@@ -31,6 +32,8 @@ export function publicationTextModel(root: Node): PublicationTextModel {
     if (node.nodeType === 1) {
       const element = node as Element;
       if (element.matches('script, style, template, noscript, [hidden], [aria-hidden="true"], .publication-margin-note')) return;
+      // MathML alternatives and phantoms retain markup but contribute no visible text.
+      if (element.namespaceURI === 'http://www.w3.org/1998/Math/MathML' && nonRenderedMathMLTags.has(element.localName)) return;
       if (blockTags.has(element.tagName)) space();
       node.childNodes.forEach(visit);
       if (blockTags.has(element.tagName)) space();
@@ -128,6 +131,13 @@ export function preparePublicationHTML(html: string, highlights: Highlight[] = [
     }
   });
   slices.forEach((ranges, node) => ranges.sort((a, b) => b.from - a.from).forEach(slice => {
+    const mathToken = node.parentElement;
+    if (mathToken?.namespaceURI === 'http://www.w3.org/1998/Math/MathML') {
+      // HTML marks are foreign children of MathML tokens; colour the source token itself.
+      mathToken.classList.add('bg-amber-200', 'dark:bg-amber-700', 'text-gray-900', 'dark:text-white', 'rounded-sm');
+      mathToken.setAttribute('data-publication-highlight', slice.id);
+      return;
+    }
     const range = document.createRange();
     range.setStart(node, slice.from);
     range.setEnd(node, slice.to);
