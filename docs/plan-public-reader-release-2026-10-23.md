@@ -2,15 +2,17 @@
 title: Online Reader Framework public-release plan
 date: 2026-10-23
 register: FOR DOMINIK
-status: prepared-final-source-review-pending
+status: prepared-independent-technical-review-complete
 scope: Original-derived reader framework; no publication authorised
 ---
 
 # Online Reader Framework public-release plan
 
-**Prepare the reusable framework for release while keeping the real books separate.** The original reader and EPUB implementations are built, and Astra's follow-ups close their six demonstrated defects and packaging limitations. The remaining source-candidate audit covers the completed MathML selection correction and final release artefacts. React 18.3.1 and 19.2.0 installed-consumer compatibility is verified.
+**Prepare the reusable framework for release while keeping the real books separate.** The original reader and EPUB implementations are built, and Astra's follow-ups close their six demonstrated defects and packaging limitations. The final independent source-candidate audit closes the MathML selection and release-artefact checks with no remaining material findings within scope. React 18.3.1 and 19.2.0 installed-consumer compatibility is verified.
 
 The existing `techczech/onlinereaderframework` GitHub repository is already public. The local working branch contains internal reviews and real-book fixtures: **do not push that branch or open a public pull request from it**. Use the allowlisted source candidate for a later authorised release. The package's `private: true` guard prevents npm publication; it does not make GitHub pushes private.
+
+The final reviewed code is `280b667`. Immutable artefacts and exact checksums are retained under `build/final-280b667/`; [the final independent review](review-reader-final-source-2026-10-23.md) reproduces both archives. [The final status](status-original-reader-framework-2026-10-23.md) records the local previews and handoff.
 
 ## Prepared local artefacts
 
@@ -31,7 +33,7 @@ The source candidate includes no software licence grant. Its README and licensin
 - The core builds its exported stylesheet, all 66 original Language Muscle HTML classes, local fonts and three font notices without the demo or manuscripts. Installed-package tests cover native Node imports and a Vite consumer. Browser checks cover local font loading, rich content and mobile navigation.
 - The three actual ebook buttons work. Five service archives pass EPUBCheck; route, XML identifier and final reference regressions pass. Browser generation makes no hidden network requests and requires explicit image bytes.
 - Astra independently closes the Unicode annotation and quote-identity findings in [the reader follow-up](review-original-reader-followup-2026-10-23.md), and all four export/package findings in [the package follow-up](review-reader-epub-package-followup-2026-10-23.md).
-- Final integration propagates the complete book identity to Notebook/browser titles and retains the actual verified tarball beside its hash. Authored release and test templates are separate files. The final narrow audit covers these changes and the exact clean source candidate.
+- Final integration propagates the complete book identity to Notebook/browser titles and retains the actual verified tarball beside its hash. Authored release and test templates are separate files. The final narrow audit passes these changes and the exact clean source candidate.
 - A final check found invisible MathML annotations duplicated in the reader text model. The hidden-text and actual selection/save/restoration corrections pass, including 160 browser checks. Both React runtime versions pass normal npm resolution, strict host types and browser interactions without migrating the demo. Their receipts and the final status record determine the final supported scope.
 
 Passing technical checks is not author acceptance of a new interface or authority to publish.

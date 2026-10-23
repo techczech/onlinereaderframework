@@ -15,6 +15,14 @@ scope: Allowlisted core source export only
 - The software licence and actual public scope remain for Dominik to select. Both package manifests retain `private: true` and their existing versions.
 - This is a working-tree snapshot. The parent must rerun the exporter after checkpointing all final source repairs before treating it as frozen.
 
+## Frozen candidate after the final repairs
+
+The initial snapshot described below is historical. The current candidate was regenerated from clean code commit `280b66761e8a4436066bd05040f9167dedcfc01b`, after the MathML selection repairs and React compatibility update. Its evidence records the same commit at the start and end, no tracked input changes at the start and no inputs changed during generation.
+
+The immutable files are retained under `build/final-280b667/`. The source archive contains 66 files and has SHA-256 `5b50174e1fac17ccb4419a89c5eaa37a43a9d6f7ba2a196796b8cca3eaf95ada`. The 205-file runtime tarball has SHA-256 `ed01649710a154c0d8b0ad202e39e8160f962345cfcf1f90636c7faf46452d9c`. Both actual files were read back and hashed. The separate source manifest, installation/build evidence and React matrix are retained beside them.
+
+The source export passed its actual isolated installation, build, 29 public-safe Node tests and native imports. Both installed React consumers passed the package verifier. The final independent review in `docs/review-reader-final-source-2026-10-23.md` finds no remaining material findings within scope and independently reproduces both exact archives. None of these checks authorises publication.
+
 ## Rebuild the local candidate
 
 Run from the framework repository root:
