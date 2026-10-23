@@ -30,3 +30,5 @@ export { renderPublicationContent, publicationContentToText, getPublicationHeadi
 
 export { generatePublicationEpub, downloadPublicationEpub } from './services/publication-epub/index.js';
 export type { PublicationEpubOptions, PublicationEpubAsset } from './services/publication-epub/index.js';
+
+export { publicationDisplayTitle } from './original/publication-model.js';

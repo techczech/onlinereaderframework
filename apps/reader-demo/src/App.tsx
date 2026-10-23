@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PublicationReader, type PublicationBook } from 'reader-core';
+import { PublicationReader, publicationDisplayTitle, type PublicationBook } from 'reader-core';
 import commandLineIcon from './books/assets/command-line_gray.svg?raw';
 import publications from './books/original-publications.json';
 
@@ -17,7 +17,7 @@ export default function App() {
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
-  useEffect(() => { document.title = `${book.title} ${book.subtitle ?? ''} — Online Reader Framework`; }, [book]);
+  useEffect(() => { document.title = `${publicationDisplayTitle(book)} — Online Reader Framework`; }, [book]);
   const epub = book.id === 'deliberate-practice' ? { assets: [{
     href: 'https://www.notion.so/icons/command-line_gray.svg',
     mediaType: 'image/svg+xml' as const,

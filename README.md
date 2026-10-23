@@ -9,7 +9,7 @@ deployments:
 ---
 # Online Reader Framework
 
-The shared reader is being upgraded using the actual **Deliberate Practice** and **Building Your Language Muscle** application code. Their designed reading experience is the baseline: typography, navigation, reading controls, annotations and sharing. The original applications remain unchanged.
+The shared reader uses the actual **Deliberate Practice** and **Building Your Language Muscle** application code. Their designed reading experience is the baseline: typography, navigation, reading controls, annotations and sharing. The original applications remain unchanged. Installed consumers are verified with React 18.3.1 and React 19.2.0; the demo continues to use React 18.
 
 The previous generic reader API remains available for compatibility. The new publication reader accepts Markdown or HTML sections and nested books directly, without flattening rich source content into the old block format.
 
@@ -59,7 +59,7 @@ The core receives content; it does not fetch manuscripts or call AI services. St
 
 `npm run build` builds both the core package and the source-linked demonstration, including the original reader stylesheet and locally bundled fonts and icons. `npm test` runs the content, routing, storage and real-book regressions. `npm run test:books` checks real-book completeness, identities, internal links, source attribution and provenance. Content and interaction checks are recorded with the upgrade evidence; package-consumer verification is separate from source-linked verification.
 
-The core remains private. This upgrade prepares a public release; it does not publish a package, deploy a site or change repository visibility. The release plan records remaining licensing and release decisions before any public distribution.
+The npm package retains its private publication guard. The existing GitHub repository is public, so this working branch remains local. This upgrade prepares a public release; it does not publish a package, deploy a site or change repository visibility. The release plan records remaining licensing and release decisions before any public distribution.
 
 ## Project map
 

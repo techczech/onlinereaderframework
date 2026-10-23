@@ -2,110 +2,78 @@
 title: Online Reader Framework public-release plan
 date: 2026-10-23
 register: FOR DOMINIK
-status: prepared-not-authorised-to-publish
-scope: Existing original-derived reader framework
+status: prepared-final-source-review-pending
+scope: Original-derived reader framework; no publication authorised
 ---
 
 # Online Reader Framework public-release plan
 
-**Prepare a reusable core release first, with books supplied by the consumer.** Keep `reader-core` private throughout this work. Publishing, deployment and repository visibility changes require later explicit authorisation.
+**Prepare the reusable framework for release while keeping the real books separate.** The original reader and EPUB implementations are built, and Astra's follow-ups close their six demonstrated defects and packaging limitations. The remaining source-candidate audit follows the final MathML selection correction. React 18.3.1 and 19.2.0 installed-consumer compatibility is verified.
 
-- The release must preserve the actual Deliberate Practice reader and Language Muscle navigation, alongside the framework's existing API.
-- The package must contain working styles, assets and notices, while excluding real manuscripts and private working material.
-- Only two author choices remain: the software licence and the intended public scope. Installation, packaging, testing and notice collection belong to implementation.
+The existing `techczech/onlinereaderframework` GitHub repository is already public. The local working branch contains internal reviews and real-book fixtures: **do not push that branch or open a public pull request from it**. Use the allowlisted source candidate for a later authorised release. The package's `private: true` guard prevents npm publication; it does not make GitHub pushes private.
 
-This plan follows the [original-reader upgrade](plan-original-reader-upgrade-2026-10-23.md), the [architecture review](review-original-reader-architecture-2026-10-23.md) and the [licensing evidence](inventory-reader-licensing-2026-10-23.md). It does not replace their acceptance requirements. The parent implementation session owns builds, adapters, demo integration and packaged-consumer checks; this task owns the plan, inventory and offline audit script.
+## Prepared local artefacts
 
-## Author decisions needed before a release can proceed
+| Artefact | Boundary and purpose |
+| --- | --- |
+| `build/reader-core-verified.tgz` | The actual successfully installed runtime package. JavaScript, declarations, original stylesheet, fonts and notices; no manuscripts, source maps or internal reports. Its hash is recorded in `build/evidence-reader-package.json`. |
+| `build/reader-source-release.tar.gz` | The allowlisted source candidate, with standalone build inputs and public-safe Node tests. No real books, demo application, installed dependencies, private review material or author-local paths. |
+| `build/reader-source-release.manifest.json` | Every exported source path and hash. The exporter independently audits the materialised tree and archive. |
+| `build/reader-source-release.evidence.json` | Actual isolated installation, build, Node/native-import results, source-input hashes, installation mode and cleanup. |
+| Local reader on port 8773 | Private acceptance fixtures for Deliberate Practice, Language Muscle and all 253 linguistics answers. This is separate from a public framework distribution. |
 
-| Choice | Concrete decision | Recommended preparation |
+The source candidate includes no software licence grant. Its README and licensing document explicitly identify it as an unreleased review draft. The source boundary and exclusions are documented in [the source-candidate receipt](plan-reader-source-release-boundary-2026-10-23.md).
+
+## Verified implementation and remaining final checks
+
+- The actual Deliberate Practice component markup, typography, controls, notes and sharing are reused. Language Muscle supplies recursive navigation and the original EPUB construction pattern. Original source locations, hashes and adaptations are recorded in the module receipts.
+- Source comparison verifies 515 input hashes, every original practice chapter and Language Muscle section, all 253 complete answer bodies, and canonical Folio reading order. Author files and editorial proposals remain unchanged.
+- The core builds its exported stylesheet, all 66 original Language Muscle HTML classes, local fonts and three font notices without the demo or manuscripts. Installed-package tests cover native Node imports and a Vite consumer. Browser checks cover local font loading, rich content and mobile navigation.
+- The three actual ebook buttons work. Five service archives pass EPUBCheck; route, XML identifier and final reference regressions pass. Browser generation makes no hidden network requests and requires explicit image bytes.
+- Astra independently closes the Unicode annotation and quote-identity findings in [the reader follow-up](review-original-reader-followup-2026-10-23.md), and all four export/package findings in [the package follow-up](review-reader-epub-package-followup-2026-10-23.md).
+- Final integration propagates the complete book identity to Notebook/browser titles and retains the actual verified tarball beside its hash. Authored release and test templates are separate files. The final narrow audit covers these changes and the exact clean source candidate.
+- A final check found invisible MathML annotations duplicated in the reader text model. The hidden-text correction passes; an actual selection/save/restoration follow-up is in progress. Both React runtime versions pass normal npm resolution, strict host types and browser interactions without migrating the demo. Their receipts and the final status record determine the final supported scope.
+
+Passing technical checks is not author acceptance of a new interface or authority to publish.
+
+## Reproduce and freeze
+
+From the framework repository root:
+
+```sh
+npm run setup
+npm run build
+npm test
+npm run verify:package
+node scripts/prepare-reader-source-release.mjs --self-test
+node scripts/prepare-reader-source-release.mjs --online
+```
+
+Setup uses the per-package npm lockfiles. The supported standalone core build is `npm --prefix packages/reader-core run build`; it creates every exported stylesheet/font as well as JavaScript and declarations. The public source candidate has its own core-only setup/build/test commands and requires no demo or original worktree.
+
+The package verifier installs its actual tarball offline by default. The source exporter also attempts strict offline installation by default; `--online` explicitly permits registry fetches into disposable isolated cache when needed. Both preserve the seven-day release-age policy and disable install scripts. Record the actual mode rather than describing a registry-assisted run as offline.
+
+Freeze a reviewed commit, rerun the relevant checks, retain the actual package/archive and their manifests, then compare their recorded hashes with the files. The old reviewed package is preserved separately under `build/review-e1bd378/`; do not confuse that checkpoint with later artefacts. Publish neither the whole working directory nor private Git history.
+
+## Notices and technical limits
+
+The compatible `qrcode` 1.5.4 patch removes the old `encode-utf8` runtime notice gap. No later notice has been relabelled as coverage of the removed version. The production dependency audit reports zero advisories.
+
+The broad installed inventory retains four missing-notice paths: demo esbuild, demo Rollup, demo `dlv`, and core's development `dlv`. The latter is the same Tailwind build utility. Those host/build implementations are not vendored into the runtime or source candidates; retain and revalidate the exact exclusion evidence. The inventory therefore exits 1 even when package-content checks pass. Do not call it a fully clean inventory or erase the findings to obtain green output.
+
+Development-tool advisories in the retained Tailwind 3 toolchain are recorded separately from the runtime audit. No forced stack migration was performed. Font licences, dependency notices, the framework's future software licence and each book's content rights are distinct.
+
+Native import is supported after the ESM repairs; EPUB generation still requires browser DOMParser and XMLSerializer. Browser read-aloud is not a production audiobook. Annotation data remains in per-book browser storage; original unnamespaced annotations are not silently imported. No paid AI service is enabled.
+
+## Two author choices before release
+
+| Choice | Concrete decision | Preparation recommendation |
 | --- | --- | --- |
-| Software licence | Choose the licence for the framework and the reused original application code the author is entitled to license. Existing manifests and original reader files do not establish a separate software grant. | Prepare for a permissive software licence such as MIT, but add no grant or `license` field until the author selects it and confirms its software scope. Keep book and third-party notices separate. |
-| Public scope | Decide whether the release exposes core source/package and a synthetic example only, or also distributes named real books and their demo assets. | Release core with a synthetic example first. Keep the three real books as private acceptance fixtures unless explicitly selected for public distribution and their content evidence is completed. |
+| Software licence | Select the licence for the framework and original application code the author is entitled to license. | Prepare for MIT, while adding no grant or manifest licence field until selected. Keep book and third-party terms separate. |
+| Public scope | Select core source/package alone, or also named real-book demos and their assets. | Release the core first. Keep the three books as private acceptance fixtures until explicitly included and their separate rights evidence is complete. |
 
-The choice of public scope does not itself authorise publication. Selecting a software licence does not confer rights over quotations, third-party code or fonts. If the author wants real books included, the implementation team must complete their existing-rights evidence; that work is not another interface-design decision.
+Those choices do not themselves authorise publishing. Once the chosen scope and exact artefacts are approved, a release session can prepare a clean branch from the existing public base, apply only the reviewed source export, verify registry-name availability, select the release version, add the authorised software licence, rerun affected checks and publish only the approved outputs.
 
-## Define the public artefacts
+Real-book publication additionally preserves answer/question/editor credits, source licence versions and change notices. It needs its actual content and asset checks, including CEFR material and the captured original Notion icon. Store submission, canonical editorial acceptance and full audiobook production remain separate programme work.
 
-**Core package.** Retain existing exports and add `PublicationReader` and its documented types. Export a compiled reader stylesheet at `reader-core/reader.css`; document its import. Include JavaScript, declarations, styles, any deliberately shipped assets, the selected software licence and applicable third-party notices. Keep the `files` allowlist narrow. Do not ship demo manuscripts, importer scripts, search indexes, `llms.txt` book exports, test fixtures, local provenance records or planning documents.
-
-**Public source and example.** If selected, assemble a reviewed export containing reusable core source, reproducible build inputs and a small synthetic example. Do not make the working repository or its history public as a shortcut: the existing working documents and import workflow contain local source context. Use repository-relative paths and public source links in published documentation. Keep source-to-destination hashes and adaptation reasons in working evidence; publish a sanitised provenance statement crediting the two original readers.
-
-**Public documentation.** Describe supported React versions, imports, CSS/assets, book IDs and state isolation, routes, content formats, downloads, attribution and the optional coaching boundary. Show a synthetic book with no author-local paths. Explain that annotation data stays in browser storage, including its actual export/reset behaviour. Document the existing `ReaderShell` and parsing/export APIs as well as the new reader. Replace source-relative integration instructions with imports that work from the installed tarball.
-
-**Real-book demos.** The three books are required private integration evidence. They are separate potential public artefacts. A core package can be ready while these demos remain private. If public scope includes books, preserve original author, question/editor and answer-level licence credits, review copied CEFR descriptors and image rights, and audit downloadable EPUB/search/`llms.txt` outputs as book distributions too.
-
-## Complete implementation and package evidence
-
-1. **Finish source provenance and dependencies.** Record which original components supply the shell, home, notes, sharing and recursive navigation, with source hashes and adaptation reasons. The compatible `qrcode` 1.5.4 patch now removes the old `encode-utf8` dependency and includes its own complete notice; retain the patch evidence and verify real QR sharing. Do not apply a later notice to the removed 1.0.3 version by inference. Keep coaching optional and exclude credential/service imports from core. Rerun the dependency inventory after these changes.
-2. **Finish style delivery.** A CSS export now exists in the core manifest, but its presence does not prove the build creates it. Produce the stylesheet from the original typography, dark-mode and animation requirements. Ensure book HTML classes survive production styling. If fonts remain host-provided, document exact supported setup; if bundled, include their OFL notices. Preserve the original font/icon appearance in the private demos.
-3. **Set reproducible build inputs.** Retain npm and the existing per-package lockfiles. Pin a supported Node/npm toolchain in the release instructions; the content plugin requires Node 22 or later. In a clean authorised checkout, run `npm ci` separately in core and demo using reviewed lockfiles, then run their documented build/test commands. Record exact runtime versions, lock hashes and exit results. The root setup uses `npm ci` for each package; build commands do not install dependencies implicitly. Record the final corrected core build contract after independent-review repairs.
-4. **Build clean distribution output.** Remove stale core output before rebuilding in the isolated release checkout. Disable declaration maps or explicitly omit them from the package, remove stale maps and their references, and keep tests/manuscripts outside `dist`. The current TypeScript configuration enables declaration maps; the audit rejects all source maps to prevent source/path leakage. This task does not change that configuration.
-5. **Supply licence and notices.** After the software decision, add the selected software text and manifest metadata through the parent. Preserve dependency notices and the separate OFL texts for shipped fonts. Use JSZip's documented MIT option without deleting its supplied dual-licence notice, and include pako's Zlib headers as well as its MIT text. The runtime notice gap has been removed by the compatible QR patch. Revalidate the documented exclusions for the three remaining demo-tool notices listed in the inventory; do not replace them with guessed boilerplate.
-6. **Test an installed consumer.** Consume the actual tarball with no source alias or imports into this checkout. Exercise both old exports and `PublicationReader`, importing the exported CSS. Check desktop/mobile appearance, dark mode, fonts/icons, inline math and rich tables/footnotes. Record the exact tarball hash. The source-linked demo alone cannot establish package acceptance.
-7. **Close the original architecture findings.** Verify annotations across inline markup and table cells; restored TOC/footnote targets; the real Language Muscle internal cross-reference; shared URLs and Back/Forward across books; separate state after switching books without reloading; and correct home/quote identity for each book. Verify all 253 linguistics answers and nine themes, unsafe HTML at the actual DOM boundary, full-content search and retained publication downloads. Obtain the planned independent review of the final implementation and keep its findings with the release evidence.
-
-Commands for the parent, after dependencies and build configuration are ready, run from repository root:
-
-```sh
-npm --prefix packages/reader-core run build
-npm --prefix packages/reader-core run test:publication-content
-npm --prefix apps/reader-demo run build
-node scripts/audit-reader-distribution.mjs --self-test
-node scripts/audit-reader-distribution.mjs
-```
-
-Do not mark the release ready from a failed or partial build. `test:publication-content` covers content processing; it does not replace the browser and installed-consumer checks above.
-
-## Rehearse and inspect the actual package
-
-The parent creates the local tarball after reviewing package lifecycle scripts. A local pack is preparation, not registry publication. The following commands define the repeatable rehearsal. Parent checkpoints have exercised actual tarballs; final acceptance requires rerunning them against the repaired frozen head. The release directory stays inside the owning repository.
-
-```sh
-mkdir -p build/release-evidence
-cd packages/reader-core
-npm pack --ignore-scripts --pack-destination ../../build/release-evidence
-cd ../..
-node scripts/audit-reader-distribution.mjs --pack build/release-evidence/reader-core-0.1.0.tgz
-```
-
-Substitute the actual versioned filename if the parent changes the package version. Avoid `npm pack --dry-run` as the sole evidence: the audit consumes the actual gzip/tar bytes without extraction or lifecycle execution.
-
-The audit records the tarball and each file's SHA-256, checks required entry points and manifest export targets, and enforces these exclusions:
-
-- Only core `dist` code, declarations, CSS and supported asset formats, package metadata, README and notice files may appear.
-- Demo/book directories, source maps, book exports, provenance files, tests, secret/configuration filenames and bundled `node_modules` are rejected.
-- Text is checked for private home paths on Unix/Windows, local file URLs and known private workspace references. Findings identify the file and rule, without echoing a matching private passage.
-- Long manuscript spans are derived from the actual local demo books and checked against packed text, including common escaped forms. The report records only the book identifier and anchor hash. A missing manuscript input makes the audit incomplete.
-- Archive traversal paths, links, duplicate entries, bad checksums, unsupported metadata and malformed archives fail before acceptance. The package must retain `private: true`.
-
-The manuscript/path checks are **heuristics**, not a guarantee that all transformed text or private information is absent. Review the full file list and public README/source export manually as well. Binary font/image rights and final dependency inclusion require the separate inventory and bundle evidence. `--pack` only audits core; it does not approve demo or repository publication.
-
-The script returns 1 for any inventory gap even if packed-core exclusions pass. Resolve each notice gap with evidence, or record an explicit output-exclusion assessment beside the audit result. Do not treat a non-zero exit as a pass. A separate packaging result in the JSON lets the reviewer see whether `pack.issues` is empty while dependency evidence remains incomplete.
-
-## Release checklist and stop point
-
-- [ ] The author has selected the software licence and public scope, with no inferred grant over other materials.
-- [ ] The parent has frozen build inputs and completed the original-code provenance/adaptation record.
-- [ ] Clean builds, content tests, three private real-book checks and the installed-tarball consumer pass have recorded evidence.
-- [ ] The complete installed inventory has been rerun after final dependencies; all missing notices have been resolved or excluded from the stated public artefacts with evidence.
-- [ ] The packed-core audit has no distribution findings; its inventory findings and any exclusion assessments are visible in the release record.
-- [ ] Required notices, software licence, asset licences and public-safe documentation are present in the actual selected outputs.
-- [ ] Independent review has closed material implementation and packaging findings against the frozen artefacts.
-- [ ] The core manifest still has `private: true`; no package, site or repository has been published by this preparation.
-
-**Stop here and present the exact artefacts, hashes, evidence and remaining findings for release authorisation.** A later authorised release session can verify registry-name availability, select the final version, deliberately change the publication guard if registry publishing is approved, rerun the relevant checks, and publish only the approved artefacts. None of those external actions is authorised by this plan.
-
-## Evidence from this task
-
-The offline script passes its in-memory checks for a clean core file set, Unix/Windows and escaped private paths, manuscript text, source maps, demo/secret filenames, a valid tar, traversal, symlinks, duplicate entries and malformed archives. The actual installed inventory ran and identified 259 package locations, 275 notice records and four missing-notice findings. Full snapshot hashes and exact notice sources appear in the licensing inventory.
-
-No actual pack, package/build changes, demo edits, browser test, dependency installation, Git mutation, deployment or publication was performed by this task. No secret or `.env` file was read. Concurrent implementation means the parent must rerun the audit against its final installation and tarball. **No action is required from Dominik at this preparation handoff; the parent should complete integration and bring back the two concrete author choices when the release artefacts are ready.**
-
-## Parent integration evidence and open repairs
-
-The actual reader and reusable original EPUB implementation are committed separately. Root build, 34 repeatable regressions, three real home-button downloads, XML validation and five service EPUBCheck archives passed before the independent-review repairs. An actual tarball installed offline and its browser consumer loaded Inter, Merriweather and Material Symbols locally, preserved rich content, and opened/closed mobile navigation with no page errors, external requests or horizontal overflow. Package exclusions found no manuscripts, private paths or source maps.
-
-Astra then demonstrated two reader defects (Unicode highlight offsets and incomplete quote-card identity), two EPUB defects (supported route forms and final ID/reference integrity), and an incomplete core-only build recipe. Sol High repairs are in progress, including explicit native ESM compatibility. These earlier passing results are checkpoint evidence, not acceptance of the repaired final head. Preserve both independent reviews and their dispositions. Final command results, runtime/lock/artifact hashes, visual evidence and unresolved release choices belong in the final status receipt.
-
-The standalone build and native-package fixes are being implemented; the command sequence above is not release-ready until the core command independently produces every exported stylesheet/font and native imports are exercised. Public release still requires the selected software licence and public scope. Real-book scope additionally carries its actual content/asset rights, including the captured original Notion icon. No publication authority is implied by a clean technical check.
+No package publication, public branch push, deployment, WriteFlex import or store submission occurred during this preparation.

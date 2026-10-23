@@ -1,0 +1,10 @@
+import React from 'react';
+  import {createRoot} from 'react-dom/client';
+  import {PublicationReader, ReaderShell, renderPublicationContent} from 'reader-core';
+  import 'reader-core/reader.css';
+  if(typeof ReaderShell !== 'function' || !renderPublicationContent('**Available**').includes('<strong>')) throw new Error('Public API unavailable');
+  const book={id:'package-verification',title:'Installed reader package',author:'Framework verification',description:'Original reader components, loaded through the packaged public API.',home:{features:[{title:'Installed package',description:'Styles and fonts are distributed with the reader.'}]},sections:[{id:'introduction',title:'Introduction',category:'Verification',content:'# Rich content\n\nText with **working memory**, a [reference](https://example.org), and a note.[^1]\n\n[^1]: Preserved note.\n\n| First | Second |\n| --- | --- |\n| One | Two |'}]};
+  book.sections.push({id:'next-section',title:'Next section',category:'Verification',content:'# Second chapter\n\nNavigation through the installed package.'});
+  const legacySections=[{id:'legacy-intro',title:'Legacy introduction',order:1,blocks:[{id:'legacy-text',type:'text',variant:'paragraph',content:'Legacy consumer content.'}]},{id:'legacy-next',title:'Legacy next section',order:2,blocks:[{id:'legacy-next-text',type:'text',variant:'heading',level:2,content:'Legacy second chapter'}]}];
+  const reader=new URLSearchParams(location.search).has('legacy') ? <ReaderShell sections={legacySections}/> : <PublicationReader book={book}/>;
+  createRoot(document.getElementById('root')).render(<React.StrictMode>{reader}</React.StrictMode>);

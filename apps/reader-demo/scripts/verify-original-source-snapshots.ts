@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
+import { resolve, dirname, basename } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 const args = process.argv.slice(2);
 function required(flag: string) { const i = args.indexOf(flag); if(i < 0 || !args[i+1]) throw new Error(`Required ${flag} <path>`); return resolve(args[i+1]); }
@@ -32,4 +32,19 @@ for (const original of flatten(BOOK_CONTENT)) {
   assert.equal(adapted.content, original.content ?? '');
   assert.equal(adapted.defaultExpanded, original.defaultExpanded);
 }
+const answers = books[2].sections.flatMap((section:any) => section.children);
+const manifest = JSON.parse(readFileSync(resolve(roots.writing, '_report-structure.json'), 'utf8'));
+const expectedOrder = manifest.files.filter((file:any) => (file.role ?? 'section') === 'section').map((file:any) => basename(file.path, '.md'));
+assert.deepEqual(answers.map((answer:any) => answer.id), expectedOrder, 'Linguistics reading order must match the canonical Folio manifest');
+for (const answer of answers) {
+  const source = readFileSync(resolve(roots.writing, 'answers', answer.id + '.md'), 'utf8');
+  const match = /^---\n[\s\S]*?\n---\n([\s\S]*)$/.exec(source);
+  assert.ok(match, answer.id);
+  const original = match[1].replace(/^\n+/, '');
+  const body = original.slice(original.indexOf('\n') + 1).replace(/^\n+|\n+$/g, '') + '\n';
+  assert.ok(body.trim(), answer.id);
+  assert.ok(answer.content.includes(body), `Authored answer body changed: ${answer.id}`);
+  assert.equal(answer.content.indexOf(body), answer.content.lastIndexOf(body), `Authored answer body duplicated: ${answer.id}`);
+}
+console.log(`Verified ${answers.length} complete linguistics answer bodies and their canonical manifest order.`);
 console.log(`Verified ${provenance.sources.length} source hashes, all practice chapter objects and all ${languageSections.length} Language Muscle sections against unchanged originals.`);

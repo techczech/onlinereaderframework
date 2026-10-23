@@ -363,7 +363,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
 
       <HighlightsDrawer
         bookId={book.id}
-        bookTitle={book.title}
+        bookTitle={publicationDisplayTitle(book)}
         isOpen={isHighlightsOpen}
         onClose={() => setIsHighlightsOpen(false)}
         highlights={highlights}

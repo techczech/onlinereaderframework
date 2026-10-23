@@ -1,0 +1,9 @@
+{
+  "source": "Before $x$ after.",
+  "selectionText": "Before \n𝑥\n after.",
+  "rangeText": "Before xx after.",
+  "visibleRangeText": "Before x after.",
+  "method": "Actual bundled headless Chromium Selection over findPublicationTextRange on the attached rendered MathML DOM.",
+  "finding": "The production selection handler still serialises browser Selection text, which uses a mathematical italic Unicode character; saved quotation can differ from the canonical reader text model.",
+  "expectedBoundary": "Capture selected quotation through the shared canonical DOM-range text model, preserving visible MathML and hidden annotations."
+}

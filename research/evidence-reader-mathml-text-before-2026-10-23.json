@@ -1,0 +1,10 @@
+{
+  "source": "Before $x$ after.",
+  "readerText": "Before xx after.",
+  "contentText": "Before  x  after.",
+  "method": "Compiled actual renderPublicationContent/publicationPlainText/publicationContentToText into an in-memory browser bundle and evaluated in installed bundled headless Chromium. No source edits; scratch removed.",
+  "sourceFile": "packages/reader-core/src/original/publication-html.ts",
+  "sourceSha256": "7bee6cfbd656bdb80971f6aa86ba92e6b71e15edc4d64b2b5dd1276bcf0fc98b",
+  "result": "Invisible MathML TeX annotation duplicates visible text in the DOM text model.",
+  "limit": "Single simple-math probe; not a general maths-speech assessment."
+}

@@ -1,0 +1,16 @@
+{
+  "result": "passed",
+  "styles": {
+    "font": "Merriweather, serif",
+    "size": "18px"
+  },
+  "loadedFontFamilies": [
+    "Inter",
+    "Material Symbols Outlined",
+    "Merriweather"
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "mobileNavigation": "opened and closed",
+  "mobileHorizontalOverflow": false
+}

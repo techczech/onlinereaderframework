@@ -7,6 +7,16 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const online = process.argv.includes('--online');
+const reactOption = process.argv.indexOf('--react-version');
+const reactVersion = reactOption < 0 ? '18.3.1' : process.argv[reactOption + 1];
+const typeVersions = {
+  '18.3.1': { react: '18.3.27', reactDOM: '18.3.7' },
+  '19.2.0': { react: '19.2.2', reactDOM: '19.2.2' },
+};
+assert.ok(Object.hasOwn(typeVersions, reactVersion), '--react-version must be 18.3.1 or 19.2.0');
+// This switch changes only the scratch package, allowing proof before a peer-range edit.
+const candidatePeers = process.argv.includes('--candidate-react19-peers');
+const suffix = reactOption < 0 ? '' : `-react-${reactVersion}`;
 const buildRoot = resolve(root, 'build');
 mkdirSync(buildRoot, { recursive: true });
 const scratch = mkdtempSync(resolve(buildRoot, 'package-consumer-'));
@@ -20,6 +30,15 @@ try {
     recursive: true,
     filter: source => !['node_modules', 'dist'].includes(source.split(/[\\/]/).at(-1)),
   });
+  if (candidatePeers) {
+    for (const filename of ['package.json', 'package-lock.json']) {
+      const path = resolve(isolatedCore, filename);
+      const manifest = JSON.parse(readFileSync(path, 'utf8'));
+      const target = filename === 'package.json' ? manifest : manifest.packages[''];
+      target.peerDependencies = { react: '^18.3.1 || ^19.2.0', 'react-dom': '^18.3.1 || ^19.2.0' };
+      writeFileSync(path, JSON.stringify(manifest, null, 2) + '\n');
+    }
+  }
   mkdirSync(resolve(isolatedRoot, 'scripts'), { recursive: true });
   for (const script of ['build-reader-core.mjs', 'build-reader-styles.mjs']) {
     cpSync(resolve(root, 'scripts', script), resolve(isolatedRoot, 'scripts', script));
@@ -66,32 +85,37 @@ try {
     }
     if (contents.some(name => /original-publications|\.env|^src\/|\.map$|^styles\/|^docs\/|^research\//.test(name))) throw new Error('Private/demo input leaked into package');
     writeFileSync(resolve(scratch, 'package.json'), JSON.stringify({ private: true, type: 'module' }));
-    execFileSync(npm, ['install', ...(online ? [] : ['--offline']), '--ignore-scripts', '--no-audit', '--no-fund', '--min-release-age=7', resolve(scratch, packed.filename), 'react@18.3.1', 'react-dom@18.3.1'], { cwd: scratch, stdio: 'inherit' });
+    execFileSync(npm, ['install', ...(online ? ['--registry=https://registry.npmjs.org'] : ['--offline']), '--ignore-scripts', '--no-audit', '--no-fund', '--min-release-age=7', '--strict-peer-deps', '--legacy-peer-deps=false', '--force=false', tarball, `react@${reactVersion}`, `react-dom@${reactVersion}`, `@types/react@${typeVersions[reactVersion].react}`, `@types/react-dom@${typeVersions[reactVersion].reactDOM}`, 'typescript@5.9.3'], { cwd: scratch, stdio: 'inherit' });
+    const dependencyTree = JSON.parse(execFileSync(npm, ['ls', '--all', '--json'], { cwd: scratch, encoding: 'utf8' }));
+    const installed = name => JSON.parse(readFileSync(resolve(scratch, 'node_modules', name, 'package.json'), 'utf8'));
+    const dependencyVersions = Object.fromEntries(['react', 'react-dom', '@types/react', '@types/react-dom', 'typescript', 'qrcode'].map(name => [name, installed(name).version]));
+    assert.equal(dependencyVersions.react, reactVersion);
+    assert.equal(dependencyVersions['react-dom'], reactVersion);
+    assert.equal(dependencyVersions['@types/react'], typeVersions[reactVersion].react);
+    assert.equal(dependencyVersions['@types/react-dom'], typeVersions[reactVersion].reactDOM);
+    assert.equal(dependencyVersions.qrcode, '1.5.4');
+    assert.equal(installed('reader-core').dependencies.qrcode, '1.5.4');
+    assert.equal(dependencyTree.dependencies['reader-core'].dependencies.react.version, reactVersion);
+    assert.equal(dependencyTree.dependencies['reader-core'].dependencies['react-dom'].version, reactVersion);
+    for (const filename of ['consumer-types.tsx', 'tsconfig.json']) {
+      cpSync(new URL(`templates/reader-package-consumer/${filename}`, import.meta.url), resolve(scratch, filename));
+    }
+    execFileSync(process.execPath, [resolve(scratch, 'node_modules/typescript/bin/tsc'), '--project', resolve(scratch, 'tsconfig.json')], { cwd: scratch, stdio: 'inherit' });
+    console.log(`Host TypeScript checks passed with React ${reactVersion}: PublicationReader/props and legacy ReaderShell, skipLibCheck=false.`);
     // Execute native ESM in a fresh Node process: no bundler or DOM globals.
-    execFileSync(process.execPath, ['--input-type=module', '-e', `
-  import assert from 'node:assert/strict';
-  for (const name of ['window', 'document', 'DOMParser', 'XMLSerializer']) assert.equal(typeof globalThis[name], 'undefined');
-  const api = await import('reader-core');
-  for (const name of ['PublicationReader', 'ReaderShell', 'parseMarkdownToSections', 'generateEpub', 'generatePublicationEpub', 'downloadPublicationEpub']) {
-    assert.equal(typeof api[name], 'function', name + ' must remain exported');
-  }
-  assert.ok(api.renderPublicationContent('**Available**').includes('<strong>Available</strong>'));
-  const book = {id:'native-import', title:'Native import', author:'Verification', sections:[]};
-  await assert.rejects(api.generatePublicationEpub(book), /requires browser DOMParser and XMLSerializer/);
-  await assert.rejects(api.downloadPublicationEpub(book), /requires browser DOMParser and XMLSerializer/);
-  console.log('Native Node tarball import and browser-only EPUB rejection passed.');
-  `], { cwd: scratch, stdio: 'inherit' });
-    writeFileSync(resolve(scratch, 'index.html'), '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Installed reader package verification</title></head><body><div id="root"></div><script type="module" src="/consumer.jsx"></script></body></html>');
-    writeFileSync(resolve(scratch, 'consumer.jsx'), `import React from 'react';
-  import {createRoot} from 'react-dom/client';
-  import {PublicationReader, ReaderShell, renderPublicationContent} from 'reader-core';
-  import 'reader-core/reader.css';
-  if(typeof ReaderShell !== 'function' || !renderPublicationContent('**Available**').includes('<strong>')) throw new Error('Public API unavailable');
-  const book={id:'package-verification',title:'Installed reader package',author:'Framework verification',description:'Original reader components, loaded through the packaged public API.',home:{features:[{title:'Installed package',description:'Styles and fonts are distributed with the reader.'}]},sections:[{id:'introduction',title:'Introduction',category:'Verification',content:'# Rich content\\n\\nText with **working memory**, a [reference](https://example.org), and a note.[^1]\\n\\n[^1]: Preserved note.\\n\\n| First | Second |\\n| --- | --- |\\n| One | Two |'}]};
-  createRoot(document.getElementById('root')).render(<PublicationReader book={book}/>);`);
+    execFileSync(process.execPath, ['--input-type=module', '-e', readFileSync(new URL('templates/reader-package-consumer/test-reader-native-import.mjs', import.meta.url), 'utf8')], { cwd: scratch, stdio: 'inherit' });
+    writeFileSync(resolve(scratch, 'index.html'), readFileSync(new URL('templates/reader-package-consumer/index.html', import.meta.url)));
+    writeFileSync(resolve(scratch, 'consumer.jsx'), readFileSync(new URL('templates/reader-package-consumer/consumer.jsx', import.meta.url)));
     const { build } = await import(pathToFileURL(resolve(root, 'apps/reader-demo/node_modules/vite/dist/node/index.js')).href);
-    await build({ logLevel: 'warn', configFile: false, root: scratch, base: './', build: { outDir: resolve(buildRoot, 'packaged-consumer-dist'), emptyOutDir: true }, resolve: { dedupe: ['react', 'react-dom'] } });
-    writeFileSync(resolve(buildRoot, 'evidence-reader-package.json'), JSON.stringify({ name: packed.name, version: packed.version, node: process.version, npm: execFileSync(npm, ['--version'], { encoding: 'utf8' }).trim(), sha256, integrity: packed.integrity, files: contents, fontReferences: fontURLs.length, stylesheetSha256: createHash('sha256').update(css).digest('hex'), coreLockSha256: createHash('sha256').update(readFileSync(resolve(isolatedCore, 'package-lock.json'))).digest('hex'), packIssues: audit.pack.issues, installedInventoryIssues: audit.issues, uncompressedBytes: packed.unpackedSize, standaloneCoreBuild: true, nativeNodeImport: true, browserOnlyEpubRejection: true, result: `tarball installed ${online ? 'with registry access' : 'offline'} and consumer production build passed` }, null, 2) + '\n');
+    await build({ logLevel: 'warn', configFile: false, root: scratch, base: './', build: { outDir: resolve(buildRoot, `packaged-consumer${suffix}-dist`), emptyOutDir: true }, resolve: { dedupe: ['react', 'react-dom'] } });
+    const retainedArtifact = resolve(buildRoot, 'reader-core-verified.tgz');
+    cpSync(tarball, retainedArtifact);
+    const versionedArtifact = `build/reader-core-react-${reactVersion}-verified.tgz`;
+    cpSync(tarball, resolve(root, versionedArtifact));
+    const evidence = { reactVersion, candidatePeers, dependencyVersions, peerDependencies: installed('reader-core').peerDependencies, dependencyTreeValid: true, hostTypeCheck: { skipLibCheck: false, apis: ['PublicationReader', 'PublicationReaderProps', 'PublicationCoaching', 'ReaderShell', 'ReaderProps', 'SectionConfig'] }, browserDist: `build/packaged-consumer${suffix}-dist`, versionedArtifact, artifact: 'build/reader-core-verified.tgz', name: packed.name, version: packed.version, node: process.version, npm: execFileSync(npm, ['--version'], { encoding: 'utf8' }).trim(), sha256, integrity: packed.integrity, files: contents, fontReferences: fontURLs.length, stylesheetSha256: createHash('sha256').update(css).digest('hex'), coreLockSha256: createHash('sha256').update(readFileSync(resolve(isolatedCore, 'package-lock.json'))).digest('hex'), packIssues: audit.pack.issues, installedInventoryIssues: audit.issues, uncompressedBytes: packed.unpackedSize, standaloneCoreBuild: true, nativeNodeImport: true, browserOnlyEpubRejection: true, result: `tarball installed ${online ? 'with registry access' : 'offline'} and consumer production build passed` };
+    for (const filename of ['evidence-reader-package.json', `evidence-reader-package-react-${reactVersion}.json`]) {
+      writeFileSync(resolve(buildRoot, filename), JSON.stringify(evidence, null, 2) + '\n');
+    }
     console.log('Installed package consumer built successfully; installation scratch removed.');
   }
 } finally {
