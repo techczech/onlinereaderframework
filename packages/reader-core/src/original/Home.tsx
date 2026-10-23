@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { PublicationBook } from './types';
 import { safePublicationHref } from './publication-model';
 
@@ -8,9 +8,15 @@ interface HomeProps {
   onStart: () => void;
   onSelectSection: (id: string) => void;
   onOpenSearch: () => void;
+  onDownloadEbook?: () => void | Promise<void>;
 }
 
-export const Home: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch }) => {
+export const Home: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook }) => {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const handleDownload = async () => {
+    setIsGenerating(true);
+    try { await onDownloadEbook?.(); } finally { setIsGenerating(false); }
+  };
   const GUIDE_CONTENT = book.sections;
   const categories = Array.from(new Set(GUIDE_CONTENT.map(s => s.category)));
   const downloads = (book.downloads ?? []).filter(download => safePublicationHref(download.href));
@@ -53,6 +59,13 @@ export const Home: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOp
                         Search Guide
                     </button>
                     
+                    {!downloads.length && onDownloadEbook && (
+                      <button onClick={() => { void handleDownload(); }} disabled={isGenerating}
+                        className="px-8 py-4 bg-indigo-800/50 border border-indigo-400/50 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-800/70 transition-all flex items-center gap-2 backdrop-blur-sm disabled:opacity-70 disabled:cursor-wait">
+                        <span className={`material-symbols-outlined ${isGenerating ? 'animate-spin' : ''}`}>{isGenerating ? 'progress_activity' : 'download'}</span>
+                        {isGenerating ? 'Generating...' : 'eBook'}
+                      </button>
+                    )}
                     {downloads.map(download => (
                       <a key={download.href} href={download.href}
                         className="px-8 py-4 bg-indigo-800/50 border border-indigo-400/50 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-800/70 transition-all flex items-center gap-2 backdrop-blur-sm">

@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-23T12:32:49.902994+00:00",
+  "scope": "Browser service, actual archive bytes, XML, EPUBCheck; parent owns packaged integration and UI acceptance.",
+  "runtime": {
+    "playwright": "1.64.0",
+    "chromium": "153.0.8010.12",
+    "executable": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+  },
+  "ssr_import": "passed without DOM globals; generation rejected with browser requirement",
+  "checks": [
+    "missing asset reported without fetching",
+    "metadata, safe paths, nested navigation, XHTML, images, code, tables, paired notes, SVG, MathML, routes",
+    "duplicate IDs, unknown chapter routes, invalid image bytes, SVG scripts/events/CSS/external references/entities rejected; Blob and ArrayBuffer assets supported",
+    "real book exported with exact chapter text and rich element counts: deliberate-practice (21 sections)",
+    "real book exported with exact chapter text and rich element counts: language-muscle (12 sections)",
+    "real book exported with exact chapter text and rich element counts: linguistics (262 sections)",
+    "download action completed"
+  ],
+  "imageReferences": [
+    {
+      "book": "deliberate-practice",
+      "hrefs": [
+        "https://www.notion.so/icons/command-line_gray.svg"
+      ]
+    },
+    {
+      "book": "language-muscle",
+      "hrefs": []
+    },
+    {
+      "book": "linguistics",
+      "hrefs": []
+    }
+  ],
+  "network_requests": [],
+  "archives": [
+    {
+      "archive": "rich-fixture",
+      "bytes": 4851,
+      "sha256": "0b4be12c7a25030d7c8dccd8acdbde28c0d71b933b840bd9870d58396c4534bd",
+      "zip_xml": "passed",
+      "epubcheck_exit": 0,
+      "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
+    },
+    {
+      "archive": "svg-asset",
+      "bytes": 3473,
+      "sha256": "61e8a16aae40a7a8136736f429ccc86b5efbe29fc66a9b58b693f74ed32a607b",
+      "zip_xml": "passed",
+      "epubcheck_exit": 0,
+      "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
+    },
+    {
+      "archive": "deliberate-practice",
+      "bytes": 101109,
+      "sha256": "42397218d11ca201793606117bcded7a944e094859e372c15815a31da65a9812",
+      "zip_xml": "passed",
+      "epubcheck_exit": 0,
+      "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
+    },
+    {
+      "archive": "language-muscle",
+      "bytes": 42666,
+      "sha256": "a3979d1ba04bb11871554159787bf0c1e9fe9cd390e5794a68ece420a62c5b8f",
+      "zip_xml": "passed",
+      "epubcheck_exit": 0,
+      "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
+    },
+    {
+      "archive": "linguistics",
+      "bytes": 372718,
+      "sha256": "b7655dd86cbd57760ae537f523ef56ed5b039c911cbb50fab6de2e66bfad5292",
+      "zip_xml": "passed",
+      "epubcheck_exit": 0,
+      "epubcheck": "Validating using EPUB version 3.4 rules.\nNo errors or warnings detected.\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\n\nEPUBCheck completed\n"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/dominiklukes/worktrees/guides/building-your-language-muscle/services/epubService.ts",
+      "sha256": "bd0a640040d4e3df275a0230a691b98c1d96211532ce4a2c931bc0b5f2fc362d"
+    },
+    {
+      "path": "/Users/dominiklukes/worktrees/guides/deliberate-practice-guide/utils/epubGenerator.ts",
+      "sha256": "11a2bd43654c362aac646a6e174c990870301d87ac08859234da1e83a90d9b15"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/publication-content/index.ts",
+      "sha256": "56b011d19c03b078c34ac91601d39546fe2883dc661bd50a71d3045ab7fdba5e"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/original/types.ts",
+      "sha256": "afa729ef5084ac703b01ed1a87a3fc999c074ee6854034bbca782b9e223ced56"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/original-publications.json",
+      "sha256": "4ce3a5916f9deacaf53ca1d98b6a6dec3ff7eda4519484162f0b107bfa1e0190"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-epub-assets.json",
+      "sha256": "86f53ae7afb277804b8b324e567d4e1efa1d63edbbb1e59c5edcbdbbf31b88dd"
+    }
+  ]
+}

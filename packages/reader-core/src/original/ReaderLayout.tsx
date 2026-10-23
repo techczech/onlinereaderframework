@@ -228,6 +228,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
         <div ref={contentRef} onClick={handleContentLink} className="flex-1 overflow-y-auto scroll-smooth bg-white dark:bg-gray-950">
             {isHome ? (
                 <Home
+                    onDownloadEbook={handleDownloadEbook}
                     book={book}
                     onStart={() => { if (sections[0]) handleSectionChange(sections[0].id); }} 
                     onSelectSection={handleSectionChange}
@@ -239,21 +240,21 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
                     <div className={`flex-1 min-w-0 px-4 sm:px-6 lg:px-8 py-8 lg:py-12 mx-auto ${!isImmersiveMode ? 'lg:mx-0' : ''}`}>
                          {/* Breadcrumb & Controls */}
                          {currentSection && !isImmersiveMode && (
-                            <div className="mb-6 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                                <div className="flex items-center">
+                            <div className="mb-6 flex min-w-0 items-center justify-between gap-3 text-sm text-gray-500 dark:text-gray-400">
+                                <div className="flex min-w-0 flex-1 items-center">
                                     <button 
                                         onClick={() => handleSectionChange('home')}
-                                        className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                        className="shrink-0 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                                     >
                                         Home
                                     </button>
-                                    <span className="mx-2">/</span>
-                                    <span className="uppercase tracking-wider font-medium text-xs">{currentSection.category}</span>
-                                    <span className="mx-2">/</span>
-                                    <span className="text-gray-900 dark:text-white font-medium truncate max-w-[150px] sm:max-w-none">{currentSection.title}</span>
+                                    <span className="mx-2 shrink-0">/</span>
+                                    <span title={currentSection.category} className="max-w-[40%] shrink-0 truncate uppercase tracking-wider font-medium text-xs">{currentSection.category}</span>
+                                    <span className="mx-2 shrink-0">/</span>
+                                    <span title={currentSection.title} className="min-w-0 truncate text-gray-900 dark:text-white font-medium">{currentSection.title}</span>
                                 </div>
                                 
-                                <div className="hidden lg:flex items-center gap-2">
+                                <div className="hidden shrink-0 lg:flex items-center gap-2">
                                      <button
                                         onClick={sharePageLink}
                                         className="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all border bg-white dark:bg-gray-900 text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-200 dark:hover:border-indigo-700"

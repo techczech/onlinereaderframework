@@ -1,3 +1,4 @@
+import type { PublicationEpubOptions } from '../services/publication-epub';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FontSize, Highlight, LineHeight, MaxWidth, PublicationBook, Reflection } from './types';
 import type { MarkdownRendererHandle } from './MarkdownRenderer';
@@ -20,7 +21,7 @@ function useBookState<T>(bookId: string, field: string, fallback: T, valid: (val
 }
 
 /** State is intentionally mounted beneath PublicationReader's book.id key. */
-export function usePublicationReader(book: PublicationBook) {
+export function usePublicationReader(book: PublicationBook, epub?: PublicationEpubOptions | false) {
   const sections = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
   const getInitialSection = useCallback(() => typeof window === 'undefined' ? 'home' : sectionFromUrl(window.location.href, book.id, sections), [book.id, sections]);
   const [currentSectionId, setCurrentSectionId] = useState(getInitialSection);
@@ -201,7 +202,19 @@ export function usePublicationReader(book: PublicationBook) {
   }, [currentSection, setBookmarkIds]);
   const handleOpenSearch = () => { setIsSidebarOpen(true); setIsSearchTriggered(true); };
   const download = book.downloads?.find(download => safePublicationHref(download.href));
-  const handleDownloadEbook = download ? () => { const anchor = document.createElement('a'); anchor.href = download.href; anchor.click(); } : undefined;
+  const handleDownloadEbook = !download && epub === false ? undefined : async () => {
+    try {
+      if (download) {
+        const anchor = document.createElement('a'); anchor.href = download.href; anchor.click();
+      } else {
+        const { downloadPublicationEpub } = await import('../services/publication-epub');
+        await downloadPublicationEpub(book, epub || undefined);
+      }
+    } catch (error) {
+      console.error('Publication ebook export failed', error);
+      showToast('Could not create the ebook. Please try again.');
+    }
+  };
 
   const handleContentLink = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;

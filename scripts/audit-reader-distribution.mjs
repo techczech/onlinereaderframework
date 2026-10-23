@@ -186,7 +186,7 @@ function inspectFiles(files,anchors) {
     if(/\.(?:woff2?|ttf|otf|png)$/.test(p)) continue;
     const text=file.body.toString('utf8');
     const decoded=text.replace(/\\u([a-f0-9]{4})/gi,(_,h)=>String.fromCharCode(parseInt(h,16))).replace(/\\n/g,'\n').replace(/\\"/g,'"').replace(/\\'/g,"'");
-    if(/(?:\/(?:Users|home)\/[^\s/"']+|[A-Z]:[\\/](?:Users|home)[\\/]|file:\/\/|nexus-onedrive|_COORDINATION|_MACHINECONFIG|_CONTEXT|_DTC|_BACKLOG|_agent-work-space)/i.test(decoded)) issues.push({code:'private-path-or-context',path:p});
+    if(/(?:(?:^|[\s"'=(:])\/(?:Users|home)\/[^\s/"']+|[A-Z]:[\\/](?:Users|home)[\\/]|file:\/\/|nexus-onedrive|_COORDINATION|_MACHINECONFIG|_CONTEXT|_DTC|_BACKLOG|_agent-work-space)/i.test(decoded)) issues.push({code:'private-path-or-context',path:p});
     const hit=anchors.find(a=>decoded.includes(a.value));
     if(hit) issues.push({code:'demo-manuscript-text',path:p,book:hit.book,anchorSha256:hit.sha256});
   }
@@ -209,6 +209,7 @@ function inspectFiles(files,anchors) {
 function selfTest() {
   const files=[{path:'package.json',body:Buffer.from('{"private":true}')},{path:'dist/index.js',body:Buffer.from('export {};')},{path:'dist/index.d.ts',body:Buffer.from('export {};')}];
   assert.deepEqual(inspectFiles(files,[]),[]);
+  assert.deepEqual(inspectFiles(files.map(file => file.path === 'dist/index.js' ? {...file,body:Buffer.from("export * from './components/home/Home';")} : file),[]),[]);
   for(const [path,text,code] of [
     ['dist/leak.js','const p="/Users/example/private"','private-path-or-context'],
     ['dist/leak.js','const p="C:\\Users\\example"','private-path-or-context'],

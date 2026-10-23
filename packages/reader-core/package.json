@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node ../../scripts/build-reader-core.mjs",
     "test:publication-content": "node src/publication-content/test-publication-content.mjs"
   },
   "peerDependencies": {

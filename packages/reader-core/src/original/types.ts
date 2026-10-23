@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { PublicationEpubOptions } from '../services/publication-epub';
 
 export type PublicationContentFormat = 'markdown' | 'html';
 export type FontSize = 'sm' | 'base' | 'lg' | 'xl';
@@ -46,6 +47,8 @@ export interface PublicationCoaching {
 export interface PublicationReaderProps {
   book: PublicationBook;
   coaching?: PublicationCoaching;
+  /** Supply image bytes for self-contained export; false disables generated EPUB. */
+  epub?: PublicationEpubOptions | false;
 }
 
 export interface Highlight {

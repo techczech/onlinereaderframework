@@ -8,6 +8,7 @@
     "build": "npm run build --prefix packages/reader-core && node scripts/build-reader-styles.mjs && npm run build --prefix apps/reader-demo",
     "test:books": "npm run test:books --prefix apps/reader-demo",
     "preview": "npm run preview --prefix apps/reader-demo -- --host 127.0.0.1",
-    "verify:package": "node scripts/verify-reader-package.mjs"
+    "verify:package": "node scripts/verify-reader-package.mjs",
+    "test": "npm run test:publication-content --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs && npm run test:books"
   }
 }

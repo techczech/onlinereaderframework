@@ -17,8 +17,8 @@ export function PublicationReader(props: PublicationReaderProps) {
   return <BookReader key={props.book.id} {...props} />;
 }
 
-function BookReader({ book, coaching }: PublicationReaderProps) {
-  const reader = usePublicationReader(book);
+function BookReader({ book, coaching, epub }: PublicationReaderProps) {
+  const reader = usePublicationReader(book, epub);
   return <ReaderLayout reader={reader} coaching={coaching} />;
 }
 

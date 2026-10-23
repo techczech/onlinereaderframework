@@ -2,6 +2,9 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json
+import re
+import zipfile
+import xml.etree.ElementTree as ET
 from urllib.parse import urlencode
 
 root = Path(__file__).resolve().parents[1]
@@ -21,13 +24,23 @@ with sync_playwright() as pw:
             page.locator('.publication-reader').wait_for()
             page.evaluate('document.fonts.ready')
             page.screenshot(path=str(out / f"{book['id']}-home.png"))
+            with page.expect_download() as download_event:
+                page.get_by_role('button', name=re.compile(r'eBook$')).click()
+            ebook = out / f"{book['id']}.epub"
+            download_event.value.save_as(str(ebook))
+            with zipfile.ZipFile(ebook) as archive:
+                assert archive.read('mimetype') == b'application/epub+zip'
+                ET.fromstring(archive.read('OEBPS/content.opf'))
+                for name in archive.namelist():
+                    if name.endswith('.xhtml'):
+                        ET.fromstring(archive.read(name))
             page.get_by_role('button', name='Start Reading', exact=True).click()
             page.locator('.publication-reader main').wait_for()
             if book['sections'][0].get('children'):
                 page.get_by_role('navigation', name='Chapters in this section').get_by_role('button').first.click()
             page.locator('.prose-content').wait_for()
             page.screenshot(path=str(out / f"{book['id']}-reader-desktop.png"))
-            entry = {'book':book['id'], 'url':page.url, 'title':page.title(), 'errors':errors, 'buttons':page.get_by_role('button').all_text_contents()[:35], 'content':page.locator('.prose-content').inner_text()[:1000]}
+            entry = {'book':book['id'], 'url':page.url, 'title':page.title(), 'errors':errors, 'ebookBytes':ebook.stat().st_size, 'buttons':page.get_by_role('button').all_text_contents()[:35], 'content':page.locator('.prose-content').inner_text()[:1000]}
             page.set_viewport_size({'width':390,'height':844})
             page.reload(wait_until='networkidle')
             page.evaluate('document.fonts.ready')

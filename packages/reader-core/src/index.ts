@@ -27,3 +27,6 @@ export * from './adapters/markdownAdapter';
 export { PublicationReader } from './original/PublicationReader';
 export type { PublicationBook, PublicationSection, PublicationReaderProps, PublicationCoaching } from './original/types';
 export { renderPublicationContent, publicationContentToText, getPublicationHeadings } from './publication-content';
+
+export { generatePublicationEpub, downloadPublicationEpub } from './services/publication-epub';
+export type { PublicationEpubOptions, PublicationEpubAsset } from './services/publication-epub';
