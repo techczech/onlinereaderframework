@@ -1,0 +1,3095 @@
+{
+  "description": "Read-only snapshots of original authored sources. No proposals applied. Do not bundle demo manuscripts into reader-core.",
+  "sources": [
+    {
+      "book": "deliberate-practice",
+      "repository": "deliberate-practice-guide",
+      "source": "data.ts",
+      "sha256": "d6bef0e8f811d06a7bfcf4d1386ba8dbd92667f9e0297c3bc174e7f2d83c5f30"
+    },
+    {
+      "book": "deliberate-practice",
+      "repository": "deliberate-practice-guide",
+      "source": "components/Home.tsx",
+      "sha256": "ad3f4bd48f4e8b3155bb5cfc8275906ba4d2df6dfc06eacfddf5913c73dce4f0"
+    },
+    {
+      "book": "language-muscle",
+      "repository": "building-your-language-muscle",
+      "source": "bookContent.ts",
+      "sha256": "bda8e81df46e5c633969a695fc0fc26994b62aac472bcd8787bdfd4268411698"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "_report-structure.json",
+      "sha256": "ac7e16bd650b3739c1dbdd1f30f2ab78944a1673e6d1e7f6f9cf12f35d2e40ba"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-01-is-the-very-concept-of-the-phoneme-disputed.md",
+      "sha256": "5d9ace0488a3eda8b091a64a05c62b585990e53c25b3aed5f2d83d55f06b0e19"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-03-checking-grammar-of-non-english-text-nlp.md",
+      "sha256": "2b07e1cb403d1d0b7f21a86aa0da83d4122521171b9c8afd02301dee62c01ea5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-03-convert-audio-recording-of-word-to-ipa-representation.md",
+      "sha256": "ce067a37f94bc86a3dadfc3afc8e07c44ff7b04099ebb99fe2c28ff4b38c98e6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-16-best-method-for-building-a-learner-corpus-for-ddl.md",
+      "sha256": "b288a4a4f21a9c2fd3a4d054fbb63069a2fc387391cc6793af7cfc2bc9ebfec5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-16-do-any-languages-have-clear-morpho-syntactic-constructions-that-mark-b.md",
+      "sha256": "57378e9e52da12ff564f54d12df20023bb14defc6a0762e0f876355ac8d0a335"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-16-how-does-language-produce-identities.md",
+      "sha256": "b2671619e5e3956657c52c585d2c81497abd1f76f5790296fb0da62ad09b5915"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-24-what-are-the-differences-between-the-french-and-english-i-and-how-does.md",
+      "sha256": "540da47d6b2156805d4cabec8621e4112a9f56d868ae93916c71af681c80b3be"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-06-24-what-are-the-exact-relations-between-slovak-and-slovene.md",
+      "sha256": "5fb0d6438c82b37cce1d6901d6952177a3a519069ff4cede8770d6be99beed1b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-07-23-do-all-languages-have-sentences.md",
+      "sha256": "ae16644a4c9c445eb8f4f3588d6d23e1bab2da09a020aa9be005205983d861b7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-07-23-do-languages-change-at-different-rates.md",
+      "sha256": "a1804a8995106cfe6794ccc7bcce09b467489561adbbf21f12a51c1a18f3f52f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-07-31-does-language-improve-over-time-or-does-it-just-change.md",
+      "sha256": "f93352dbeeb429f1b5eec998a8d0cb4404592928a320c18cd8ab0e6ba39aaf4b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-08-16-what-s-the-difference-between-phonetics-and-phonology.md",
+      "sha256": "53cd6f703035f8829d5466d9bf942f03a57b78db5f6f31e4abaef527e784f76a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-08-22-does-writing-influence-grammar.md",
+      "sha256": "f49ae75b6e226cc0cb61ba1c917f730041282026fbed78a0e59ba0f919382397"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-08-22-is-spoken-english-more-efficient-than-other-languages.md",
+      "sha256": "072a99e93c300268fcc1f46cf009ff1a0474a645066e54f6ed87d133b52cf59e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-11-16-is-it-possible-to-become-fluent-in-any-language-simply-by-reading-book.md",
+      "sha256": "501f0885fe6b0b39ca474975f7434bae42cae3467009a98eb1997c282a7e5c69"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-12-01-how-to-solve-48-2-9-3-from-a-linguistics-perspective.md",
+      "sha256": "220795c55b70520af5fd454e002ce0e814bb994b1bd22139592cb29f9b8b7b07"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac.md",
+      "sha256": "352e78273ee974d07d570d6b5cd333536b62356bfc1271b032b78e74fe5eb9d3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2013-12-23-universal-grammar-for-mathematics.md",
+      "sha256": "f338c89b3057e467a34e026eb333dd0c0550ff7db118969e3df4474680fce903"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-01-26-is-there-any-difference-between-imperfect-and-imperfective-aspect.md",
+      "sha256": "f51246a91250e67d06a16c686f493b0cd0966eba4d1d6aad5b064891221bee92"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-01-28-multiple-words-with-a-single-meaning.md",
+      "sha256": "6d7b20650812dc899b3a253e7e343f14f5740f48dbaa320c1f2f1cd4f74436f7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-02-06-a-comprehensive-list-of-conceptual-metaphors.md",
+      "sha256": "784a5f92c8179a7750ea3d5a1c0cadc1739ab060fff8920923860b544f4ad634"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-02-06-cohesion-within-a-sentence.md",
+      "sha256": "87d7241971b1a40343606e9d0b8b1a19c564a63b1b8035de5c60e1603d4ccfc0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-02-23-sentence-well-formedness.md",
+      "sha256": "0a321c5dea43bbc707555b82d4605567488e77f06cf78c98ff1aa8e0bf07bbdc"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-03-07-does-the-classification-of-languages-agglutinating-concern-itself-with.md",
+      "sha256": "5227de201bb15ff883716e17bd6c22725f62f860abf485a50c93ce4792d36c29"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-03-30-is-language-really-too-complex-for-children.md",
+      "sha256": "1fbef8f6112e78209a90c23467129bcc859a0317e4157dfb3f2aa2d71842ef24"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-03-30-is-there-an-accepted-objective-criterion-of-grammaticality.md",
+      "sha256": "96533b9e893338f850ef2a99a503963a7697e93a04015eb14a537a3a64f016ba"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-03-30-what-is-harder-speech-synthesis-or-speech-recognition.md",
+      "sha256": "ebae47f68eb67474d351375cb926ee67a53cf10efd16cff1e71ae56d23d26bcb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-05-how-old-is-linguistics-as-a-discipline.md",
+      "sha256": "a8d2782ef1b0467cf4c3aac64d19611cd8fb76153cbb955259cad35e73eff91e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-06-does-structural-linguistics-still-have-relevance-today.md",
+      "sha256": "2b171952bee34b9e782eb7ba0b0bb2b873152fc89f7cd3a05f3e6d09c16078ac"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-12-how-does-morphology-apply-to-reading-and-teaching-english-language-lea.md",
+      "sha256": "a8c969b0a90206233995f477639ecd8bb6c4b24b7532e4d4ac0299b9df3d7d2f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-19-how-do-idioms-and-metaphors-fit-into-the-principle-of-compositionality.md",
+      "sha256": "cbac9648d6ebe6bf33bc4f667ca072da608fbc5b0bc455cb5451c17ad078b90e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-20-is-a-sentence-s-deep-structure-representative-of-i-language.md",
+      "sha256": "9aa76b1eb62b850462b56ca13ace03534838ca5a48f2254d532fca0e6b2d691b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-20-is-linguistics-limited-to-natural-languages.md",
+      "sha256": "82ed04284b38df3d8e2b26bf9125c5d23565ff47d0f21b3e6a39f9b634931681"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-04-27-imperfective-aspect-or-future-tense.md",
+      "sha256": "e8165d8f0cfa92b7349ebd848354cbe117068a5c56116192e1903409e3c49fd8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-01-why-are-there-inflections.md",
+      "sha256": "07fc07ed3c4d5fd533f638309f4b29ed2f327156754ffd5fd5dbb126b16255a1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-02-is-there-a-technical-term-to-describe-a-sequence-of-letters-that-may-o.md",
+      "sha256": "b40fd6c5cfdb9800160d0cbba916cd38946784f53a13c0f8c06df97ad32a6bb6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-04-what-does-sense-mean-in-layman-s-terms.md",
+      "sha256": "15ff862400f5ab6db17a32b2ed749e228a77434972367bef075b22a83ee3de73"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-07-am-i-a-native-english-speaker-born-i-hungary-lived-in-us-from-age-3.md",
+      "sha256": "ff0020bef2a7da2d0e73fc3f78333f6a513481be4aa7381ffe8315bfeee19d7f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-07-why-are-spoken-languages-more-common-than-signed-languages.md",
+      "sha256": "8c71f01e12348325c6eb2b12ec8475c4c7f349f4b44969d8ce12cb01e27a1801"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-13-correct-syllabification-in-american-english.md",
+      "sha256": "a4c799c1c298d703c9cb468b28d8159fc3d88959132d4ac2600ea3839e5a9827"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-23-free-word-order-languages-how-much-freedom.md",
+      "sha256": "5c100103d70b27e3d64974759c995c0a1a3bbc689f9c88118be4c4227ca123af"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-27-how-far-can-we-decide-if-there-s-a-code-switching.md",
+      "sha256": "013019f10494089297837cf5d3be5ce2d17a9f2d267cdd5695c35d09dd9ca3ae"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-05-28-why-is-constituency-needed-since-dependency-gets-the-job-done-more-eas.md",
+      "sha256": "56ea1cc95577dced25b2f9799ba9c12edc565bb4369423e1eb1c987eabe7f4bc"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-06-28-are-languages-that-can-derive-more-meaning-from-context-more-advanced.md",
+      "sha256": "300ad90b936d10028578ae547c4af7f2ca0ad9f2b3db2b57941ce3468412f48b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-01-pro-drop-typology-in-indo-european-languages.md",
+      "sha256": "d5bea4a28c55e2eddeea5e34da53649507b8571701c7b66c4816f69045c03c91"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-08-does-subject-precede-object-in-all-natural-languages.md",
+      "sha256": "117abcfdcd2fb55cd6760ed1be24461ed93024c14974e1dcc672468a4d446462"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-12-what-do-all-languages-have-in-common.md",
+      "sha256": "6ca9ec4103de66db74282bb2e0e095b4cb111058596b441753ed6c81b09a05c3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-13-is-a-formal-grammar-of-a-formal-language-a-formal-language.md",
+      "sha256": "528c65ca9ca3a974d4ff9b1d65eee00efb0daa38f6ae33ebbc1001c820264648"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-17-is-the-semantic-component-of-a-generative-grammar-especially-difficult.md",
+      "sha256": "71d98d5a0c78c4ff9cbc8cef622a4fe2cbd77527c45081b961327ed117936038"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-20-any-difference-between-natural-and-programming-languages.md",
+      "sha256": "04cdd7bf31a2041569c704dfeebd22ac16202de349b6e00abb818bf8340489fa"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-20-what-s-the-opposite-of-a-pejorative-suffix.md",
+      "sha256": "1ae504c22d1d2046824361e3b9105c7590b9d3b6fb56086a090ebaa3c33b6bad"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-25-do-native-speakers-of-different-languages-make-different-mistakes-in-e.md",
+      "sha256": "a60a5bfd2bf53d6a58d79bfed3bfdba89cadc376165a56b79030cd777d2d0adb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-25-university-level-hieroglyphics-material.md",
+      "sha256": "0cf4e20d42befa6f5b07b9a6d4c541209c8add26260f17a5776aea5f597cc6b1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-26-does-your-dominant-language-proficiency-determine-the-degree-of-possib.md",
+      "sha256": "e9ef5a3269863828f7b2bfce10a4b4edeed11eb6ed59a80052582f9c4c843def"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-07-31-have-the-spelling-systems-of-lingua-francas-historically-been-less-pho.md",
+      "sha256": "4c8ac85ea00d0ba60555436f59e0a8d392df3b078d63c2d50d64ff04f7111b6c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-01-english-verbs-how-many-types-classifications.md",
+      "sha256": "841f94a3fcfe25c31ff20eaf4e14dd59f3330ab7a256debf0c657e50e7dcdc41"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-05-how-is-it-that-such-varied-sounds-in-major-european-languages-came-to.md",
+      "sha256": "dfd2298a9745e61b7437623fec6f35936fb3f3bb6f257c9fe97bed9065621f88"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-06-is-language-infinite.md",
+      "sha256": "ed453d8fad5c96b5c52a25959d5618e34b43be1b5c15637ff1b588db2a7b128d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-14-a-multilingual-home-a-pro-or-a-con.md",
+      "sha256": "24c54b2ef144810df4706079c6d9bc6609508688dc4d1dc779c1eeac1c660bf5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-16-question-re-connection-between-language-and-knowledge.md",
+      "sha256": "4658f8663971afda5f7f26215804d4031e3b3fc1f3467ba2ef0992554b3802fe"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-20-structural-ambiguity-and-because.md",
+      "sha256": "b90209dbca83eb7ef7a578c696d43fb99e6174d58b23bfad03e6ed7aaaca10b7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-26-where-does-english-need-a-lot-more-effort-to-say-the-same-thing-than-a.md",
+      "sha256": "99bb27b7c7e33706e1c956bcc78c7a5a675825ad09d049abd45c14af3f602a1d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-28-how-does-one-gloss-a-case-that-has-both-locative-and-genitive-meaning.md",
+      "sha256": "2676605a17fd86cb4d0e34efd86764e6b34ec24db89b62f8f8a1ca3097f5c477"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-28-how-to-cope-with-many-languages-at-the-same-time.md",
+      "sha256": "5603c9fae61dc91d52c62308bfad780beaa0323af08a0cd9bab2c526bb7d31f7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-08-31-is-there-a-paradigmatic-formalism-for-dependency-grammars.md",
+      "sha256": "1b137603875bd6b08ef0adb5b9a2c7ad6e4a7881c500064b58fc893802ea2a84"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-04-how-can-i-improve-my-writing-fluency-in-english.md",
+      "sha256": "0bc240eaf42a58bc1f1aebc6a0f313ed75a764f709cc9d04f76b8a1771d28b0f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-04-what-is-the-scope-of-negation.md",
+      "sha256": "faaf23d183f2af25b7a5a1f0b5067fafaa2aadf65b1ed12500546320f8b8fe45"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-08-languages-with-multiple-forms-of-the-verb-to-be.md",
+      "sha256": "cc3ea2e9597d86f1a89b22d0e2562054647205189aca786dc2f7e0102d4f3cde"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-09-do-individuals-have-an-occam-s-razor-for-word-meanings.md",
+      "sha256": "375ac22ea0f8f22f5f43f6f7317e5d35287b25df4bf014ebfcbf9ebdfee9779e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-09-how-is-writer-reader-responsible-language-correlated-with-synthetic-an.md",
+      "sha256": "582c9c150b1e14e7b306e40b03ff493a514bf5cf3eac9836ead5f13d60a4471d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-09-how-to-determine-whether-a-given-sentence-is-demanding-an-answer-or-is.md",
+      "sha256": "da263838ce82304d91dc09d0dd26a09ea9412dcb73c295a4700d76a01a7ef52b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-11-is-there-an-estimate-for-the-typical-number-of-morphemes-in-natural-la.md",
+      "sha256": "c28971494f1c3ca4410176df7418c75207df4f2577b17f6b5d621324e6f508df"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-11-what-are-some-alternative-communities-forums-that-are-home-to-engaged.md",
+      "sha256": "56223cadb9fb4a0cf8fc8d193e933326c3d3a2a9b6951a538dc9c3c7c3dbe750"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-14-what-is-the-scope-of-negation-again.md",
+      "sha256": "2c6d76d6e1f61f591fd5afa04b80c6446dff97ba90e800c7dcead2d973fbcced"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-25-given-a-verb-get-a-noun-that-corresponds-to-subject-or-object.md",
+      "sha256": "ca50703b37237b9fd8c2e63f188a134c18c8efeab9824e45231ca6e823778b7f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-25-list-of-collocations-in-english.md",
+      "sha256": "3631f3fbeec0a2e638824fdcfa80bc9b42cd7346c67c0cc3c7e73240edc4b062"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-28-telephone-game-effect-when-translating-between-languages.md",
+      "sha256": "ecc8b963bf622e364d4c8b299d8dee4e93ff4f1686aa81e8ac4dcc4b09c02769"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-29-examples-of-borrowing-languages.md",
+      "sha256": "069ed9bcec4b9e3df319400bf1552ed1441ba97141fe6ad4a73ae45fe439daa8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-09-29-is-the-ampersands-a-letter-in-the-latin-alphabet.md",
+      "sha256": "88a9307a8bc7be91d3988c756582d944672e4252a0ac426a7e3bef0bfeb46710"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-01-sampa-of-a-language-phones-or-phonemes.md",
+      "sha256": "6af7d2047e6a459fb4f4ea00d90405bb7683fe9e247539600790db83b605e27c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-02-has-anyone-attempted-to-simulate-the-creation-development-of-a-languag.md",
+      "sha256": "106c6236a1dfe302179f35b318b672ac0a9d442e7f2bf3d7ac655738a8f95a38"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-06-why-can-t-these-english-sentences-passivize.md",
+      "sha256": "2abb20303dc23ab6951d7ab64b08e38bdbc00cbae292e68492eabd049e7a6e79"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-08-is-it-true-that-one-can-be-bilingual-in-any-pair-of-languages-or-are-s.md",
+      "sha256": "bfc0ef2c203b51c5cf9865800bfac4ada489268a840c3312e2748efc4ba130e1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-13-did-language-originate-and-evolve-just-as-organisms-did-as-in-evolutio.md",
+      "sha256": "7c56f3a1f3afa4595b6c7fde28308ff6437fbffec70256c801ce49f0be0e97a7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-17-how-does-the-reaction-against-gender-specific-pronouns-relate-to-a-lan.md",
+      "sha256": "ca8c9d6e87f93fc8e51ee332b5fa5d0ee688962c75e136e95ba134419a4d094a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v.md",
+      "sha256": "d0ad5977cfb3155abcf5ac1773290c3a3d2b85e8825ecdde65c1f8479867a50f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-19-way-to-learn-foreign-languages.md",
+      "sha256": "a40c5d74e43c59ee68c18de6a38287086b7703e09544e4718f99a5a06d122f80"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-20-how-can-i-recognize-someone-s-voice-from-a-spectrogram-a-puzzler.md",
+      "sha256": "ebbc1c50d11a65e0e04dfbc29a3674508078693794f233c0f99b924304bde14f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-25-is-there-a-good-introduction-to-subjectivity-in-language.md",
+      "sha256": "43f5047bf4dd3bb3d44554d0c951151dcd95aca336057f035c2993ad68223ef3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-10-26-what-are-the-different-approaches-of-the-levels-of-language-analysis-a.md",
+      "sha256": "404d8675e876b69f1b78d3065b6dcbfcd73cb1d264369a93bd96dd897a127e0e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-10-why-does-there-seem-to-be-so-much-disagreement-among-linguists.md",
+      "sha256": "2cbf177da3167caf823c1c42cf068056e9b1d7012ead0069add142f35d0e9a55"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-12-what-sub-field-in-linguistics-should-i-study-to-help-me-learn-foreign.md",
+      "sha256": "a6c32cc92c7d19ce4e6f06116c10d32aefbadcf05a96d14f5b7e03c723fec027"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-23-what-s-the-use-of-grammar.md",
+      "sha256": "a269625a3ca4faf03b66aa6a4920d659a281232424cc72455c1fe7aaccb94b7e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per.md",
+      "sha256": "3734f7f97ee3a9f805f4ceb3fa13991f080f8c0781968fca1027fba5e5eba645"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-26-are-there-any-words-understood-by-speakers-of-any-language-in-the-worl.md",
+      "sha256": "111ea5d049c715783552fb8e531cca3d803f77a5975ee211a4f534f81ed6c99c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-11-26-can-you-give-some-examples-of-counter-intuitive-phenomena-discovered-b.md",
+      "sha256": "5a22061ebcb36852023ed903ee98a0c273618ca64fa936642f6030702ca7b8c8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-01-can-every-language-express-any-lexical-aspect.md",
+      "sha256": "ea9212e3c7482f2e30c265a62994bbc830ea1de993d51b04a582c26f543f0bdc"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-03-what-are-some-grammatical-features-found-only-in-modern-languages.md",
+      "sha256": "27a93875cb58caea0770cf3af793f689dbb794e83c6481801daf965a873d3c34"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-04-metaphor-metonymy.md",
+      "sha256": "78edcc9e5f2c6878f850b4178415aa8c33d435fb34d5da72c2c1a67f3fd9ddba"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-04-what-are-the-different-ways-used-to-ortographically-show-the-length-of.md",
+      "sha256": "8b3c82b2575329c03ee446205c762be7408f0af3d2784b6c8594b044380468ac"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-04-what-quantity-level-of-mutual-intelligible-words-are-needed-for-claimi.md",
+      "sha256": "8bad9cac50f370bf713b8abb0124f0b05c56ddf3b45978fb98e3d95e8f272acc"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-04-where-did-latin-come-from.md",
+      "sha256": "60877e2115dc3fd0f8bde3a79a858f1b44d66f894aaf9409368c86bb7a69d92c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-05-short-summary-of-cognitive-linguistics.md",
+      "sha256": "0b0b6275e430530319aafba5b3d8a81e31ba7e5bbf6c0b97247d0b3b8489f5cf"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-06-how-to-determine-difficulty-of-a-word-if-its-frequency-in-a-corpus-is.md",
+      "sha256": "27e2e109a20360e65b843c623a09dfa1600c85ab965c4c67d0ef6603cd7525fb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right.md",
+      "sha256": "577ded79831f483c90f5fc9f1cd3692ccaa4394aa288e34c2c2618aabf374a0b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-07-size-of-active-vocabulary-in-hunter-gather-tribes.md",
+      "sha256": "139bf76e59cf988a7dbd54e026c3a959e428c239bcbfac95ff87fb438ae04946"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-09-do-unschooled-people-use-cases-correctly-e-g-in-germany-and-in-russia.md",
+      "sha256": "bffc74fc508cfb976d50647b542015aae7bdae47d1f9b0942ca89e79eaa4380b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-11-why-are-native-american-names-translated.md",
+      "sha256": "207f2ab14827c73f764f2de723b039fdb8f96e7156a65971de41024427d49ead"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-12-which-language-has-the-biggest-vocabulary.md",
+      "sha256": "fc1e93bb1b6e6179483902d5c6d2caeb9b7204fd1df4ddca436ef08d0ee6eb93"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-13-what-are-common-non-lexical-indicators-of-sarcasm-expressed-orally-in.md",
+      "sha256": "083cb52dd333cac6691c4c8baa9bd6b2eddfa6ce01c819b9424b6d0aef1fb3fd"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-13-what-is-the-least-changed-language-in-use-today.md",
+      "sha256": "b387ff37c05726ce5243d425b236a13167138ed245dbd744edffb4188ea212f3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-15-is-the-sound-unique-to-czech.md",
+      "sha256": "d825f3261c6e7139d9e6960b10c354a1667c599bea8897203939972b600b82d8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-16-what-is-the-difference-between-a-filler-word-and-a-discourse-marker.md",
+      "sha256": "b0eee14708119eeb9fb37bd4f9228c0357cbbbf50cdf68090396ae47e4dd3433"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-16-why-don-t-any-languages-have-strictly-one-character-for-every-single-p.md",
+      "sha256": "5785bf2728d89e02c24b2f7f44354b26b044b809c9137f1975c693b280b49280"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-17-what-is-the-consonant-equivalent-of-well-s-lexical-sets-for-english-vo.md",
+      "sha256": "bd61994a4a091bce8acac376f187abe06514e61129e378910cee6552b748f5c8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2014-12-26-english-grammar-is-it-possible-to-automatically-verify-correctness.md",
+      "sha256": "eb9a1ed9d9ec64a2f3c7052c805e8a88a0f6e8bcf9b94956d4a4b8a4ddfed581"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-05-is-music-a-language.md",
+      "sha256": "53024e6c2d0c58954cf039edfcf4d5f21dcd1f3296a10b0078f0bbe4c340d0ed"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-08-what-s-the-difference-between-structural-and-generative-linguistics.md",
+      "sha256": "a1f41995ca9674bf39b398cfdba3089a9c2b5341d70df518e079513cc46e10f4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-17-how-did-the-same-perfect-tense-structure-become-so-widespread-in-europ.md",
+      "sha256": "d3529af281466f34e4f275524ded1a419a862af0e86567bca7a4da30e536c367"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-18-detecting-actions-within-text.md",
+      "sha256": "aa0c0441a05b407a11c8255c2b5c1f8f11e009f7442ae5367b2d625d401de6b8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-18-origin-of-language-as-commands.md",
+      "sha256": "7571285e9f7c58e69c8c791241757de3a61af7afb58a53399c42ae5b3f164551"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-20-how-do-various-frameworks-account-for-situations-when-multiple-cases-c.md",
+      "sha256": "7eaf4482a25295ca4b92a2ccdb1ddcda3d01847302579568cfa03ad098b4ec34"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-21-why-can-verbs-with-imperfective-morphology-have-a-perfective-meaning.md",
+      "sha256": "4498e16e610b6d96a161076f021bf741fbc0c0e5f32409fc981a8415fd28c38d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-01-25-why-does-google-translate-produce-awkward-sentences.md",
+      "sha256": "6595f83bfa3cef77557b662e012afd9ee1dfa785eeb29d1fff23df37fe6a9a41"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-02-do-other-languages-distinguish-the-verbs-to-drink-when-talking-about-a.md",
+      "sha256": "a8f5d15f8150df7cbb5cc52947c9fcc3d2aa7c32bed050387d6b3dbe3a07c958"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-02-which-comes-first-grammar-or-language.md",
+      "sha256": "a3295c1a5b114c3f55da9daa532e8f9b3f36f5729576f14a821537e010ed32ca"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-05-argot-vs-jargon.md",
+      "sha256": "f340f514a4fc833b1661d7407c18b284d62f4105aa391995dc466337a46d8aa1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-05-if-the-rosetta-stone-were-to-be-translated-today-would-the-process-be.md",
+      "sha256": "f062edb33828c4fbbbab59460727d77074efc1c5b670fe43d00fee9b3d0aecda"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-05-what-is-the-linguistic-term-for-an-environment-where-parents-teach-a-s.md",
+      "sha256": "28bfe5cb608e856419bb74a2bcce61fdba1da98e6353c7f6c006805a92c15bb4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-12-what-kind-of-wordplay-is-this.md",
+      "sha256": "50383a3caac082b0250626492a767d8431f8f4d903c7f1544a49c7e9bd3baeda"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-23-what-is-the-difference-between-coreference-resolution-and-anaphora-res.md",
+      "sha256": "2ca7e67abb447a0a500eec2aedc25cdc54def058e3ab641593e868e1c7912ae8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-23-where-did-generative-semantics-go-wrong-why-was-their-conception-of-la.md",
+      "sha256": "c3846fe8a6c96179b7a0a338977b16fafbc81388a6cd5e16e443749fbc1d2cc1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-23-why-do-european-languages-use-a-similar-alphabet-but-south-east-asian.md",
+      "sha256": "a640b10607335d30de42cbef8cc40793600c68d463ac9ae1647f6c909873faa9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-27-are-the-orthographies-of-the-slavic-languages-generally-consistent.md",
+      "sha256": "ec1bec88b55621a7e6ac589e05f3cc6c164b3819a5fa3fc7ab7aa9b1d3370d3c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-02-27-are-there-any-tools-on-the-market-that-employ-prosodic-research-to-hel.md",
+      "sha256": "50b289cd401da165f95ca71d8c4d76ec37fabc0921cb0b876dfe63dbc6d1de80"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-04-conversational-english-corpus-for-download.md",
+      "sha256": "cc43250e3d565ea173698bed383d3572882d341e4c4956af64ea82a367393818"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-04-what-languages-are-writer-responsible.md",
+      "sha256": "d4e6bbf89d20be75108bf170046bd36f0d6fe64d88769c5867b966c0c80d263e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-07-parts-of-speech-in-a-language.md",
+      "sha256": "e0998879e3c2ac496e4498fdd29426de643cb7c1230d9b1131c7fdc73951028a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-13-globalized-mass-media-deterring-language-or-dialects-differentiation.md",
+      "sha256": "352a259b13220a16d4d8560870688628a519fc52b5b8a8bb086343bc2c3d9945"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-17-is-there-a-theory-of-universal-meaning.md",
+      "sha256": "42b66d736a1c63065cf11426054422ad82bc18e636eae7962b5974999d212a36"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-17-why-should-cognitive-semantics-and-formal-semantics-co-exist.md",
+      "sha256": "db78693445571bba138af862229f21d073f0ce4eec24d37a52127100fde51469"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-26-vocatives-and-case-assignment.md",
+      "sha256": "6f62aefa2814d9d284254de632ddf75fe81e2e4458ef8c4dab18ee16ff262006"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-03-31-functionalism-vs-formalism.md",
+      "sha256": "dcb4ffaa9bd7dd1cd5776ea996da396ac2612e90f16a632812532c4161c9c9fd"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-02-why-do-many-languages-tend-to-use-plural-forms-to-impart-formality-or.md",
+      "sha256": "9c76846e7beeb6f373764365332fb76a53ae1a30cb7348d9e85630605a978cb6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-03-is-the-concept-of-a-verb-subject-complete-sentence-a-cultural-linguist.md",
+      "sha256": "d682860bc99c32f287e4ad87e9ed39952a40f62d71b5d77f17ba956ee0791fde"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-12-does-learning-ancestral-languages-enrich-a-daughter-language.md",
+      "sha256": "072484cfd177704dcb1599674e64f57c06c134cbb04e7965b7ef65468505c384"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-12-how-distinct-do-two-language-varieties-need-to-be-in-order-to-consider.md",
+      "sha256": "761d208139f9740b41e93b5bb70a2de6577ed6817642a9f81508e988ae5398b4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-12-what-are-the-stages-of-child-speech-and-language-development-and-why.md",
+      "sha256": "9389b05e4737d6dd0bbd6ba11b2568f24ec1e90cb485d5eaf30ca822323f3f23"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-16-etymology-of-english-suffix-logy.md",
+      "sha256": "2b05b43beb870e973c1764cc785dbb16516c538b4e24961041db0142e04a4592"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-16-what-are-the-blanket-or-general-terms-representing-these-linguistic-pi.md",
+      "sha256": "5d5d142a69cf878d37f573947a74e15baf25a4c79c7d4cca2adf76990bc4a187"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-18-name-of-theory-stating-worldview-affects-language-structure.md",
+      "sha256": "e1647b647f76aaede898da48695ae4b0b307e5c7c6b90b2d4873afd95ee532f8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-19-do-all-cultures-have-taboo-language.md",
+      "sha256": "b42883206c8c0d12719e33fe4effc2b4493cb11c3bbdee7716796c8225218181"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-19-is-the-english-perfect-really-monosemous.md",
+      "sha256": "d71b430aca0f8916d24b73026419e6744fd4cc15b05d72a2f3b733c6931b5a5a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-24-in-case-of-derivational-nouns-what-is-the-difference-between-affix-pol.md",
+      "sha256": "df7da81712fd7ff271206a6435575380d79c8e81fed6f88562e0953d08a4cdac"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-04-24-realization-of-person-in-conjugation.md",
+      "sha256": "a217eda2ca00fe057876312e1a4f0c86e12f53e6edf6b61c4d014c63fc3e06fb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-05-is-anglo-english-more-diverse-in-terms-of-accents-than-say-french-in-f.md",
+      "sha256": "eaebd2520a43acde3ef63871fec378223269783ff9da7ada022a3dbbd8e30ece"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-12-evolution-of-definite-articles-in-indo-european-languages.md",
+      "sha256": "60dddf671dad1771ea07f258c8074c51571648544586557c3b337bd038b3aa1a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-12-is-chechen-language-close-to-chinese.md",
+      "sha256": "2d0d576cad0064e90b412d3b293cd0a4505a687eea9abbe0b09b07cacc003606"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-15-does-majority-of-linguists-accept-universal-grammar.md",
+      "sha256": "5f62a62277679709bfa99313c48edddb1fb840891efaf251df1e9aa547ef65b9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-15-what-are-the-differences-between-phonology-phonetics-and-prosody.md",
+      "sha256": "f43deb205a0e6cfa21eba5031e89f347af2937cb85234c170fd10ba76a1eed66"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-16-how-do-concepts-folk-linguistics-and-language-ideology-relate-to-each.md",
+      "sha256": "d304419bef3f8068e42f0c0316c3b2e5a5d462ce76d4e192cd8d155da176f8a4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-18-are-there-instances-in-which-an-entire-sentence-constitutes-a-focus-ne.md",
+      "sha256": "5a2552c134c163291898df20b938741f9aa423a22f1a767f618bf2da28a74e06"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-27-how-do-you-search-for-nouns-that-contain-the-sequence-of-letters-sb-in.md",
+      "sha256": "f877a06a256a5392a10c33a63a6a138bb01185d2d7f2459fbd910df2fbf22cd3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-05-28-the-differences-between-signifier-signified-and-reference-sense.md",
+      "sha256": "4e9307b7e89a6733e5798b145ae77a2e7bfe662af1aaff7f4aabced2039293cd"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-01-how-many-gaps-should-a-sentence-have-to-be-solvable-but-not-too-easy.md",
+      "sha256": "2206d506c53afeeddd7cde3b77941dffcc3e9e9736ad827cf2f3f79179287b76"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-03-online-etymology-dictionary-for-english-more-explanatory-than-etymonli.md",
+      "sha256": "ac16db61666529fd3173ffa28c71e328d5180d4022adb89ae7a33f34b5c6ef8c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-04-a-question-about-pragmatics.md",
+      "sha256": "9c7e1291360ddff05905065e2e487c462fcf61c8f18221232515e64179ebe92b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-04-why-do-some-languages-partition-to-know-into-2-or-more-verbs.md",
+      "sha256": "038bf12ae041b8a0a6eb6f08345edadcb1840fae6878f057a95217aca1f3895a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-07-icon-index-and-symbol.md",
+      "sha256": "dd7114475837507e85292583aa3cb7d2fd01c84e1da4270898ee3113bcf320ce"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-08-does-changing-the-writing-system-for-a-language-change-the-language.md",
+      "sha256": "b500d6d813a06f2285cfc713212e60138c84da144409a69814d16ebf3bb0d3af"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-09-can-determinatives-be-semantically-plural.md",
+      "sha256": "40f963b2077ef41b8fe4ce2fe41c60f508aeb892f1d042f1a0ceeb0f824eb99b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-13-why-did-latin-fragment-so-much.md",
+      "sha256": "9b9f4c7b64a07caedfe63d51902889dbe6b6eee55100bc1dd4319c7b48f8c54e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-15-could-a-language-be-reconstructed-from-a-dictionary-and-lots-of-natura.md",
+      "sha256": "30ff66b013550f3100255ceff3f47a7a9a81c004eeb2573dbc58bcb204668b9a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-18-ergative-verbs-and-some-discussion-about-them.md",
+      "sha256": "02ae20383a8eaa59e025cc271ffbdd6aa95e999b985ff7e919d1093f1ed254b9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-19-which-linguistic-theories-account-for-non-native-accent.md",
+      "sha256": "a16f576b3fc873d98cfc152324f7800aca3be07ab41dd3db51e73a6daa05639a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-21-why-aren-t-there-any-czech-dictionaries-that-report-the-gender-of-noun.md",
+      "sha256": "a6379da557941d4ca94cf466304d92dd21f09644b6f018a61ae52dd55d7e5906"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-23-do-animals-have-foreign-languages.md",
+      "sha256": "953133de382df7788bf432f99f9112dbee7d77d1efa7d64d175212798ebb803b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-23-metaphor-and-metonymy-in-proverbs.md",
+      "sha256": "a0b93cad3d8dff1d9eb7ec844dd6ee657c839cb42918411ff129a25c723bb003"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-06-25-natural-vs-forced-language-learning.md",
+      "sha256": "1a46b73a8445f5e4eed678d268f194fc500c2188efa3292f982572201686a35a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-19-a-list-of-parts-of-speech.md",
+      "sha256": "c1d3b69ae8e05208db148a454cdbfea9db75d8d3359dea848d3450610a69d82a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-19-do-standard-corpus-analysis-tools-like-antconc-and-wordsmith-work-for.md",
+      "sha256": "9504feccffce1a735cd12d672f1ff9df021836ddf6a415832494ef6a86ae0c80"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-19-why-does-before-mean-both-in-front-of-and-prior-to.md",
+      "sha256": "a0a682d643f024a93acc3e032c6a948dec7094946c46b316905d3ca2190eaadf"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-20-is-sentence-a-useful-and-or-clearly-defined-term-in-linguistics.md",
+      "sha256": "d2e2e73af0c39d69b7b867fea7327b9674670450af906f457e968dcde7368c3f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-22-comprehensive-diacritics-normalization.md",
+      "sha256": "eff9ffddc552cf95366b94d97315d25caa557a7e28bcd122ecd1604b8b5813e0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-23-are-question-marks-universal.md",
+      "sha256": "89f2ca57f599378e349cf01fb0c6c6e74002a4cc46fdeb0f0a74102f3c35fe08"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-23-assuming-that-passives-need-verbal-morphology-which-languages-commonly.md",
+      "sha256": "b4089f1f85bab950eb09514916a89bbb31513a04956b60ad612ff98b4d35e37e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-24-should-common-short-words-be-left-out-of-a-concordance.md",
+      "sha256": "daac08e64a702c94f4a87837e6ba357a2dd5dae7c351e854ce2973b416ea5946"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-25-how-did-as-in-english-branch-into-many-meanings-that-look-unlinked.md",
+      "sha256": "135a16cc5b5e71765a53d38d89212160367544eff04f041ab633c7caf924ad8e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-26-what-s-the-etymology-of-of-after-verbs.md",
+      "sha256": "5917683cda7cebfedc90d64ffd375248b9291f130966702075e8eeb834f3c29b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-30-are-american-english-and-british-english-growing-closer-together-or-dr.md",
+      "sha256": "196742e806043f5d96293745338602c94c5a52dc0c7db1940acd295877839549"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-07-30-how-viable-is-the-star-wars-model-of-intercultural-communication.md",
+      "sha256": "cb033909b36fd7b25cc5b64667ba1d96e75c667e7d41f0d256f0c537e9cdc63b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-05-how-do-chomsky-and-pinker-s-monolingualism-explain-their-flaws-about-l.md",
+      "sha256": "354c50f920f2200088b4e7129b91b2bcf6b38a299255bb47b4210b532219348a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-05-how-does-inflection-evolve-in-languages.md",
+      "sha256": "d17c765953707e4b862d6bcbdead649c48a8daabb9200ea53a9bb31077f55ae6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-05-how-does-the-term-naturalistic-speech-differ-from-natural-language.md",
+      "sha256": "4114e3dd06a281344e694f30f0bbd76780a7ae49ccd6415741b758363c397724"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-05-measuring-semantic-complexity-of-a-text.md",
+      "sha256": "b6274c7ae0c33f7075c63fa4d448b130c5943cbeb3b6cda53e23402f325c5a5b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-05-was-sanskrit-first-complex-language.md",
+      "sha256": "1bc6acc2990345589faed364cd11ea3b411f2b12fcf8ae76492dcbc72a2cc585"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-13-how-to-convert-a-string-to-their-ipa-equivalent.md",
+      "sha256": "287c2167ce4dd365e496333225d4be73925724e7a59a33e403256ad67b82ccb3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-16-calculating-writing-system-efficiency-with-respect-to-reading-ambiguit.md",
+      "sha256": "0ef2bbd1eff9698e2df1d9653cf0bdfa3d1cd8da60ddf01051816140aa6cb7a6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-16-which-famous-linguists-embrace-historical-logic-to-understand-language.md",
+      "sha256": "b17b7c57b06bbc844831408e6e64ff3b6b871e174d8873fe030d12a0c17ba172"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-18-is-there-any-logic-to-required-double-negatives-or-is-that-just-the-wa.md",
+      "sha256": "5fd0653371207b6619f914487bb92ea9ceecda49026330f4e9ccc3f77a0c1059"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-29-what-are-some-canonical-or-seminal-corpus-linguistic-studies-using-the.md",
+      "sha256": "9432cddc00e436d26266ad05ff7426846e33fd5268ef795c4835ac654b2d33f8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-08-29-what-is-the-current-status-of-systemic-functional-grammar-linguistics.md",
+      "sha256": "6931fc941c45157abe1aa04b9f03ab621040f0535cf8b2f7e4e6290396243937"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-09-21-how-can-case-systems-emerge-diachronically.md",
+      "sha256": "ea8acb698b7e307ebe0dbbe656e785b5f072ededca89d04b7c967d6ff6724363"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-05-could-you-tell-which-pictures-which-depict-how-the-vowel-chart-is-posi.md",
+      "sha256": "5a41b96e607c9499c52b23291a4f2675b2c263a014cacda6ff93f66f139ff99c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-08-is-there-a-term-for-errors-by-native-speakers.md",
+      "sha256": "9aacba23f650261a2e9487f1cce635f4a031882137b5f239c70c38916062f603"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-08-meaning-of-surface-expressions.md",
+      "sha256": "0e965729b53a81b53005bd542562e45578d1e322783fbe172352eb4f51347e83"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-08-we-have-constructed-languages-but-are-there-constructed-accents.md",
+      "sha256": "5849581ee56db1d82e7dbca535c6aebaccc917f66df92313fbdccde98c93d63b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-09-does-adding-the-suffix-ly-to-a-noun-or-an-adjective-provide-morphologi.md",
+      "sha256": "ee6de86a676194894ca70d57593b401710beee35372675b1b3668ce085d2ecc0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-12-how-to-find-a-given-text-s-complexity.md",
+      "sha256": "32b6599afe4b7bdee091646ee29846ff9ba98be4d913db3c3e9b3647d2f38e08"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-13-is-there-any-language-which-doesn-t-have-hello-thank-you-or-please.md",
+      "sha256": "f9bd3bf2ede5f9dfc0629887a89ff67cb11ebdbea3942eec171d469a924369e3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-14-how-far-is-natural-semantic-metalanguage-really-natural.md",
+      "sha256": "fdb9659dfc0a4757072a6db2ec00f4cf910544ce5b67b95d9cd743c4fdd7352e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-15-sapir-whorf-vs-chomsky.md",
+      "sha256": "f416997a9b5cd69436a33c5dec947dd7959edb93cbc1c4ab5390b6aff774fc44"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-15-what-is-the-study-of-language-usage-types-a-question-an-answer-a-criti.md",
+      "sha256": "71cdd8483b762debe7a929362e2593fcb344a962e9ca505233d3af2fb7c977c4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-16-how-come-i-cannot-get-my-oral-english-to-a-native-speaker-level-after.md",
+      "sha256": "b2418781f9f1bb3a49f998de9e417eeaaff219ff9580f7e32331b6b5762e6bd1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-18-is-english-of-neutral-or-accusative-alignment-in-verbal-person-marking.md",
+      "sha256": "d4377c5c2e22ff2b27afd2aa50f3c82fa92d6387ac0c0baf762e4694f9c95e9c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-21-why-are-most-given-names-so-common.md",
+      "sha256": "148eeaaf37181a82797c76d65b4199cdc5736594a5a6c19bd76261f84a10b052"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-23-does-standardisation-restrain-naturally-occurring-grammar-change.md",
+      "sha256": "5e8c391e2157c359ff07f3cdfa46b40fc6fe5219b3a179326e31a63abeadb704"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-24-mapping-graphemes-to-phonemes-in-cmudict.md",
+      "sha256": "7e11837bac526d245114c4ecba054f1a855d7e4608f3dd211f19a39e4b70ef68"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-26-why-does-wordnet-lack-stopwords-the-of-her-etc.md",
+      "sha256": "39392eb18398b48c42dfe2bd2fa04a0df930a4171d29a3b19d869df824d3bb9b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-27-a-syntactician-must-read-list.md",
+      "sha256": "c5a9381967b5e68f6e77e001ca394f36653a5cb5900e9d5641242aafc787a325"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-27-how-to-automatically-determine-good-charades-words.md",
+      "sha256": "ec85da3bd2e59c6a2bf50b4f97dd27f3255a77b5101c99a6cf4682a74211b853"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-28-how-to-assess-the-language-register-of-speech.md",
+      "sha256": "9bf3e6c8af2ac0865c47b14034edc38b1a557ac6820e0be7ea99ae5c7c1fb701"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-28-slip-of-the-meaning-of-expressions.md",
+      "sha256": "72c7006e17bd624c6f7f648ee7995e52045a4cf62ba5a9e0dd3c0f15386cc11a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-29-co-occurrence-count-data-sets.md",
+      "sha256": "a0d2509d0f3a4333b9414ba6c11f9dada1c82e23d4473e84262c2fa8b1167da2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-10-30-have-there-ever-been-serious-attempts-to-replace-alphabets-with-phonet.md",
+      "sha256": "f9ae618ca565b2dca7a7a84e5c5299e79eeffc22fc5ab01925d998474ec4077c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-01-do-general-truths-entail-existence.md",
+      "sha256": "98ff351ca674227b693b5cdee068668ab5bd76d9fea1fca86bf3a29b5703b57a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-05-a-literal-response-to-satire.md",
+      "sha256": "77eafaa7e10e8f3876e2bfb51d5a22c37597c48fbde0fa138cea04ea0ae64b7e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-05-is-there-a-language-in-which-feminine-is-the-unmarked-gender.md",
+      "sha256": "3bde6b99e22661966e08378c841e0d55c655f3b87c534db10d2b11e7ae350e84"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-05-is-there-a-phylogenetic-tree-for-all-known-languages.md",
+      "sha256": "f535d1459a107604433ca22341d91dd64e9e805c3fb229f6e9ddb307c092ff45"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-07-characteristics-of-theoretical-linguistics.md",
+      "sha256": "e62e3bc4bf07613fcb25eb7f36955406f3cf87ae7c8b60f2ecaa498bc2ca56e1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-07-is-syllable-boundary-properly-annotated-at-the-phonetic-or-phonologica.md",
+      "sha256": "42743d11a46017defdbd89452920225309d8f473bf28410f63913e65d66930ac"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-07-is-this-a-nonce-word-or-is-there-another-name-for-a-regularly-construc.md",
+      "sha256": "0bea58776862dac4cc6138c5003ce774b305ca4a144c7d363b27c2ac87c644c9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-07-to-which-extent-are-people-s-perceptions-of-their-own-pronunciation-in.md",
+      "sha256": "36acf534849b1d1c2ec0524608a737b70b7d07a1d3e1df53dfc136f266720b4b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-13-how-are-affirmation-causality-similarity-time-etc-connected.md",
+      "sha256": "f341264ea83929e67d0b00204360c09d146201e5738fa576b0340867a2e08a3c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-13-how-can-i-find-which-words-don-t-exist-in-a-language.md",
+      "sha256": "90465e676cdaf156715a72074925a6f3af21411bfa46bc59bf51a010ee3fa5c9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-14-are-there-laws-of-semantic-change.md",
+      "sha256": "fbad02ebb1534dc5179bcd429ec1606fe55039981e2a83666f4ae1b507473679"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-14-linguistics-relativity-and-linguistic-determinism.md",
+      "sha256": "62c6f67462bdc59c7f4d3df9a9edde5655ba92ba7299ebd2480237a0fc28bf20"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-15-what-gives-rise-to-racial-accents-timbre.md",
+      "sha256": "e4769f8dfa70e9f0a22ccf3a3a20d326c04ca6168bcefef613b2b91d74db5b8a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-19-am-i-using-the-right-terms-in-referring-to-soft-and-hard-vowels-and-co.md",
+      "sha256": "05d5a7f0de2b0dfded61281de98c8b721efad839995d5d16326e950c91307418"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-19-for-a-toddler-who-has-just-begun-to-speak-is-hindi-easier-to-speak-as.md",
+      "sha256": "a875e3a82cf4c592502693892d1d1b4b80ee73b5cda3302dfd0d5d1394fa8a44"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-20-which-branch-of-linguistics-educates-on-affirmation-causality-similari.md",
+      "sha256": "abd097f77e1995e9554e789aa6c2772e61cf1ee38a6e2d270c719293d659ee6b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-22-arbitrariness-and-coinages.md",
+      "sha256": "77209f5dd26dbe84f401fe0ca36e6e1e2c1351203064fa5902fd9ee515075c4a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-22-why-givin-instead-of-giving.md",
+      "sha256": "9f8b07ebe40e26e84b4a5cdf83af6349b235dff50d7fd8a8901a145f1893f941"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-27-grammatical-aspect-and-lexical-aspect.md",
+      "sha256": "fd5766fb4871ea19ac53b3fc4b14d4a35fa50ec084abb56cb946d8017a6228ab"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-11-27-how-many-of-all-possible-english-words-are-actually-in-use-have-meanin.md",
+      "sha256": "6d8eee97914463f2e8324ecdb565de50636fb25a173470ab6173fbd075415923"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2015-12-01-has-any-research-been-done-on-the-effect-of-introversion-on-language-l.md",
+      "sha256": "f2cede9f07dc763b657bc5e43d66d61362e96d4cb4a659fd2dcf1aef2dcce573"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-18-will-my-child-learn-incorrect-grammar-from-me.md",
+      "sha256": "dce44f91c0082b79675e9179f11c0ccc7714033ad961150f546f854c8f7d075a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-19-are-british-and-american-english-two-different-dialects.md",
+      "sha256": "b1493d6d4ff82bb50eb018daf49daea7a502e39d8c8ccaf1486df4dfc8c47428"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-20-are-linguistic-units-organized-in-conceptual-categories.md",
+      "sha256": "a8e5cebe7f60186abb4bcce9655fe38acc0cf7f06367450cae0dfa55350a2f9b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-21-can-syntax-be-part-of-semantics.md",
+      "sha256": "2edd2356a6fbdb05ad15d3df38b819a235b22a3bbecb6512fa2feded690f3b53"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-21-is-there-a-grammar-of-syntax-that-takes-into-account-inherent-syntacti.md",
+      "sha256": "71f6e3e4338e4e998391b2b149cb5e6879824f7d63d4a9f52857723265f73dd0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-01-27-what-are-the-state-of-the-art-english-syntax-theories-there-are-that-c.md",
+      "sha256": "a258cc337b9e049c27ba43870d419695e7be7b426ebeb460ec89f70990378d45"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers/2016-02-14-where-is-american-english-not-chosen-as-the-dialect-of-english-taught.md",
+      "sha256": "0dfcecc7aeb59034494d142862ba359cfd3076eda78e59bdb326046348a8ac5c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "answers-edited-by-others-2026-10-22.json",
+      "sha256": "22159885da64a8fdb8c01bdcc2ec982189c2b225fbffadb6f2a23078f79a5a10"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "collected-linguistics-stack-exchange-answers-2013-2016.md",
+      "sha256": "cb15306d6fa549919a1f055560e0b389046546f634cbe318a2204418ff503d1f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-01-is-the-very-concept-of-the-phoneme-disputed.md",
+      "sha256": "a6b3f70d454534766851dd6aa0ddbdacda99dfe7fce0b468a5143152636181c3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-03-checking-grammar-of-non-english-text-nlp.md",
+      "sha256": "2f8f5a4959cd71702782be336ea4bee8ccdc7b9ca61ff583b4e0a68eab7264d5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-03-convert-audio-recording-of-word-to-ipa-representation.md",
+      "sha256": "e9938be7175a6f711d476979b8ef95295c28eadb431b585a6aa629db506ddf0e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-16-best-method-for-building-a-learner-corpus-for-ddl.md",
+      "sha256": "1c3a0451acd7d181c686787ad1ef0de9abc808921daa1db57b834ae0effd58af"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-16-do-any-languages-have-clear-morpho-syntactic-constructions-that-mark-b.md",
+      "sha256": "3d1261ea42541aa76c4b67f7bb8040ab34205ec6eb274c76d64910e833397d39"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-16-how-does-language-produce-identities.md",
+      "sha256": "c9167d00faf6554e71a2d7dd604cff1a9b439c55fdaa27528f79a047d92f6816"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-24-what-are-the-differences-between-the-french-and-english-i-and-how-does.md",
+      "sha256": "b49bfc52420be9560cbd2641c42936187109ad4b73cd16bf468db09535cd0216"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-06-24-what-are-the-exact-relations-between-slovak-and-slovene.md",
+      "sha256": "56b6841b8d80871aa3f27b78c3fa6971159eecef200255342609d037a5e0a23c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-07-23-do-all-languages-have-sentences.md",
+      "sha256": "7eead2f73f725d712bcbdf293a5918158d58a309ee223fe429d63f53b1180fe0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-07-23-do-languages-change-at-different-rates.md",
+      "sha256": "ffdf793b4bd0243fec6a3a2c0dbb0fe26915ce4b47d295abe8bce24acd303a54"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-07-31-does-language-improve-over-time-or-does-it-just-change.md",
+      "sha256": "44044960f87fcea19b6a89e3a63bb1318e546b42ac2bfd5fa05bfd124b028428"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-08-16-what-s-the-difference-between-phonetics-and-phonology.md",
+      "sha256": "5d95941b2d22e9b41c38f9340b9e054cc4f7901137ae480d33fa110d199410a1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-08-22-does-writing-influence-grammar.md",
+      "sha256": "7136cb72aebc27e5edc8202f889fc8a6f3c52f03f5fe5a57102a7b28a88b33ad"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-08-22-is-spoken-english-more-efficient-than-other-languages.md",
+      "sha256": "20041fd421fa1fd53ef92816bf8a1801884240fa60c728dd5eb2290aebcc40b3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-11-16-is-it-possible-to-become-fluent-in-any-language-simply-by-reading-book.md",
+      "sha256": "13471b87d0cdad4b8d1fcc3dc5bc220b5c97ac855a4f4039de8ded1dd6316e00"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-12-01-how-to-solve-48-2-9-3-from-a-linguistics-perspective.md",
+      "sha256": "504fa00a9fc34b102a9a3a5e95f34b42729c95b79317a513f6ea47f62badcd37"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac.md",
+      "sha256": "0139e6135b8e164f0cc645ccb0d86df3ddfac1e87fcfe11027bc282939ed8c21"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2013-12-23-universal-grammar-for-mathematics.md",
+      "sha256": "d042c3358450af0d9b141b2b48a49963e048dec89b5e22251c6d38e341ee8ef7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-01-26-is-there-any-difference-between-imperfect-and-imperfective-aspect.md",
+      "sha256": "71591a9e5693f6e93009af5a802256dfc4587a42e146e0231c9845aad0fc2182"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-01-28-multiple-words-with-a-single-meaning.md",
+      "sha256": "0bb73cde0214a4b239957fa6d2dec7ec6d9f36f3c3ff70d3f17c8489b5cd241a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-02-06-a-comprehensive-list-of-conceptual-metaphors.md",
+      "sha256": "83a5a59528556df49eb4e776f4ed433335b015652dfe65a790293a5446602ee1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-02-06-cohesion-within-a-sentence.md",
+      "sha256": "3e428baa2eb4b60f64f850333ee1b546f4a1e5ae83b2c91dbac2dd3d5a9cd71b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-02-23-sentence-well-formedness.md",
+      "sha256": "e26406dad78a2265172eb94b36fcb05909ad650fc9c0f30fb15c919e819a3cc3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-03-07-does-the-classification-of-languages-agglutinating-concern-itself-with.md",
+      "sha256": "249b5e0e3009a125c5623d05e7cc259f0ae325ba2f2462c7114feaa295b0c9fd"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-03-30-is-language-really-too-complex-for-children.md",
+      "sha256": "a39bd4587d05fb0117438692ae2417d13f365af86f7ffc94e08c2bc00a10bb4f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-03-30-is-there-an-accepted-objective-criterion-of-grammaticality.md",
+      "sha256": "9df78e3897eb7dbc6db60236d937df00f46c78a076a4d9e6cedeada89ce80d4c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-03-30-what-is-harder-speech-synthesis-or-speech-recognition.md",
+      "sha256": "557ed54bd62822811b01b868264eb2bd6d2624b6b87452f07feca44999282492"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-05-how-old-is-linguistics-as-a-discipline.md",
+      "sha256": "3c37c2e8e2bace45c084c8ed5b3aa54cd98c0a22e49875eeb6c1c43a1a1175cf"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-06-does-structural-linguistics-still-have-relevance-today.md",
+      "sha256": "9b8e529453e2af32adad6fae7bc881b25d43ae537560e1c0dc95e2c5d61af010"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-12-how-does-morphology-apply-to-reading-and-teaching-english-language-lea.md",
+      "sha256": "bbc2cc0c2f0dea546119ccedf9bfc267a3d2695bae5b63e72ae972e91a3ad02c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-19-how-do-idioms-and-metaphors-fit-into-the-principle-of-compositionality.md",
+      "sha256": "c7476323ca6af1cc6789b05e48349bf5cf022164a89adf416ab8a4d07131a23e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-20-is-a-sentence-s-deep-structure-representative-of-i-language.md",
+      "sha256": "af0a4401b9a43fd3f4cf828dbea467f64018ea2facd419a339bdbfb44fe23186"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-20-is-linguistics-limited-to-natural-languages.md",
+      "sha256": "70eee1465271d02d177dae5c806d639de756999659f2234fa4380cf04ca997b8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-04-27-imperfective-aspect-or-future-tense.md",
+      "sha256": "1a64157f813c2a125731ec4c3965e2c65d92b2994e36ad2e27dc24e7f86f3222"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-01-why-are-there-inflections.md",
+      "sha256": "36b58933a354cb7412419fddb129118a5032197c485bdc5eb9112aab0b5c1c5c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-02-is-there-a-technical-term-to-describe-a-sequence-of-letters-that-may-o.md",
+      "sha256": "c6306d8e68e3f097c1985cd9acefe1468e059aeccf4e695b0d3e6a046d1f9352"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-04-what-does-sense-mean-in-layman-s-terms.md",
+      "sha256": "c00efff8ed7d77aa1b6668bbdc6c214a24f8cd458559c6eba8f4c6299a6f3adf"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-07-am-i-a-native-english-speaker-born-i-hungary-lived-in-us-from-age-3.md",
+      "sha256": "1736952f6e30f88489dd3c30b9262f645ddce410bb130c6803cdd489e015e0a0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-07-why-are-spoken-languages-more-common-than-signed-languages.md",
+      "sha256": "bd14ac576c18f28e6e4c72f7a06ae7ee837b39b3448b1e1094d08c4542cfdce0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-13-correct-syllabification-in-american-english.md",
+      "sha256": "7a522a081d497551a488ca79b75297d47154a09f9b54ca2f2f5d6ea84686db40"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-23-free-word-order-languages-how-much-freedom.md",
+      "sha256": "2a003f298e8429ad5e14e46353423c12f8e6a0b617ee1ec536b5db6dc3b45674"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-27-how-far-can-we-decide-if-there-s-a-code-switching.md",
+      "sha256": "5f6e1401b6350f05f2da0b8724e595df7354c680a4757ba9b77108f6a9592e90"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-05-28-why-is-constituency-needed-since-dependency-gets-the-job-done-more-eas.md",
+      "sha256": "bb0b7b83c638b86ef73c9eb14b630f27182dbcc5a7c079963197e84fd477d062"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-06-28-are-languages-that-can-derive-more-meaning-from-context-more-advanced.md",
+      "sha256": "6487fef37c8cdf80cdf151b151f57604d5eabc6522f88058292fc177adb4ff49"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-01-pro-drop-typology-in-indo-european-languages.md",
+      "sha256": "9fe21b4e74116e7ffc56f8ecb684d09808579c700c98930de3325eeafe808515"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-08-does-subject-precede-object-in-all-natural-languages.md",
+      "sha256": "d05d5bb981f122c09a1491fc817adf17c0658febb3b7bf1e9a579fd5eef602be"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-12-what-do-all-languages-have-in-common.md",
+      "sha256": "45bd0b237066034de3ce504cbd4aa690e478363787b8b21981bc5210558f6f16"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-13-is-a-formal-grammar-of-a-formal-language-a-formal-language.md",
+      "sha256": "ca377618390870e30a07b7c32e99e852783b7e1161968bfe0845db12258d6d0e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-17-is-the-semantic-component-of-a-generative-grammar-especially-difficult.md",
+      "sha256": "bbd14c13581061a387ba4139c0fefcd1be7219da619c243f624f2a537fa3a01c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-20-any-difference-between-natural-and-programming-languages.md",
+      "sha256": "c0ed67f9d3c8ab66c6b660bf4d66c3a4e371169ca1cf5bece3e31656fa388b50"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-20-what-s-the-opposite-of-a-pejorative-suffix.md",
+      "sha256": "15666f52990c769c17341c73d2b02cb6e282624ee82172204d4cf8b21624d4fa"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-25-do-native-speakers-of-different-languages-make-different-mistakes-in-e.md",
+      "sha256": "b86427c2b5765f8998b729bb63c8dadb8086d003d77912853233c46507e67b8d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-25-university-level-hieroglyphics-material.md",
+      "sha256": "84664ac14a097ee6189251eff150733a8cfdb6eba4fe6648fff63f12e22c1542"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-26-does-your-dominant-language-proficiency-determine-the-degree-of-possib.md",
+      "sha256": "474180bdcabc50fcbff9c5d2d78ff3cce743fb8f16d6c926e4794af435ac14b8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-07-31-have-the-spelling-systems-of-lingua-francas-historically-been-less-pho.md",
+      "sha256": "a678f59032b843c037f5eec036c4a89f667c4feb55d4771e5c8b86d385d649a3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-01-english-verbs-how-many-types-classifications.md",
+      "sha256": "43e1922bdc88086cb7c71520a8dfe871110350caa8cb790b705c998104c04f9e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-05-how-is-it-that-such-varied-sounds-in-major-european-languages-came-to.md",
+      "sha256": "f16a32b1222549845c0117d328a7ff45dcf881aa368a4b7357b2a96eb321a7d7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-06-is-language-infinite.md",
+      "sha256": "58d3156996df80932950d6ea89bf0787b6f41015367de463237922036f921f54"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-14-a-multilingual-home-a-pro-or-a-con.md",
+      "sha256": "f25884fd5d443b8e2d12ed3a6c1df2212cb9f8d257e39af72d9439bca3f25d04"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-16-question-re-connection-between-language-and-knowledge.md",
+      "sha256": "4f3e2244ca91095c68a66f8bcbd2e71ee604749458a95e961c88f1b357aa2385"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-20-structural-ambiguity-and-because.md",
+      "sha256": "8197c8aa2e2527247b3314d55ff0dc8be5f0bb2b05800666d8dea6047e138d49"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-26-where-does-english-need-a-lot-more-effort-to-say-the-same-thing-than-a.md",
+      "sha256": "3a30e95a376f23df26f6c2a137ac98a396916f2b505ad157998e1defbb9c06d0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-28-how-does-one-gloss-a-case-that-has-both-locative-and-genitive-meaning.md",
+      "sha256": "d5879a974b1b52cf183f7c7a8702575985a4c2c42118aca8655c3bfa43a5384c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-28-how-to-cope-with-many-languages-at-the-same-time.md",
+      "sha256": "cc81b566b3aee04de78a64b304aea0c2648c7e7a290933ec648686e7004fa868"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-08-31-is-there-a-paradigmatic-formalism-for-dependency-grammars.md",
+      "sha256": "a489ffe7c6f6756ade34b66114acdf5803daa6b75ad8e7799bfbaa7b28ec6e1f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-04-how-can-i-improve-my-writing-fluency-in-english.md",
+      "sha256": "15894408b5469a187f00dd3c39ad05196a1cb4b70fbbfde18aa3e580faed6806"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-04-what-is-the-scope-of-negation.md",
+      "sha256": "bad78038c61b943359798ea840ffbcb6b78a3ac5f973b34a395f8752fb7d92f5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-08-languages-with-multiple-forms-of-the-verb-to-be.md",
+      "sha256": "4d6799a8bb78059cf7f6af6e202e58a67c704c2c168d4441d955b96fe1921a8d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-09-do-individuals-have-an-occam-s-razor-for-word-meanings.md",
+      "sha256": "4902e07e994c631ec585934d4d02181004e7ef497a8cb7249a31d9da976d2edc"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-09-how-is-writer-reader-responsible-language-correlated-with-synthetic-an.md",
+      "sha256": "43ab13416ff71ace2c542fdded4790b917a227342565abda2f3326de1b735a0d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-09-how-to-determine-whether-a-given-sentence-is-demanding-an-answer-or-is.md",
+      "sha256": "2731dff179e51ae5f1b6c819081456caac3e60f0cd18409a8dd254b87f74be0e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-11-is-there-an-estimate-for-the-typical-number-of-morphemes-in-natural-la.md",
+      "sha256": "298b6a2ce3644b458dd84eb7a6aea51695d6a243ea0e04887529c5a8e4429c09"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-11-what-are-some-alternative-communities-forums-that-are-home-to-engaged.md",
+      "sha256": "29354c428b6d1f7ace535ca3d8d55a5e388f85d67be98250efeb97eecbbc6dd5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-14-what-is-the-scope-of-negation-again.md",
+      "sha256": "d63ab4c0a2c1ae2f3ef4b48d38b13c63a622fec7cb1ae48b330babf249fd3d3b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-25-given-a-verb-get-a-noun-that-corresponds-to-subject-or-object.md",
+      "sha256": "c73cf951f44d30bb1e143530c85a95ec3e180151f299a8e5d863c6b5f816cb16"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-25-list-of-collocations-in-english.md",
+      "sha256": "0ceb4be7f2544ff95f2fba7893986ae16206aedd052b8a4499582ad0ae301130"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-28-telephone-game-effect-when-translating-between-languages.md",
+      "sha256": "9044b0b953947eb25e37bace948f1d8002ba1325eab6afc85ceddc2dd4c326b7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-29-examples-of-borrowing-languages.md",
+      "sha256": "215e9205d24f2ed4c0131f5a0ed9bfa9a0b6be3ea5e593fbbcd82e9105586022"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-09-29-is-the-ampersands-a-letter-in-the-latin-alphabet.md",
+      "sha256": "546d8c0f645fe95ee545d34dede87c3f6f957102354e031deb606dc26fdd2a82"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-01-sampa-of-a-language-phones-or-phonemes.md",
+      "sha256": "d8bdda7c51579efa380e9f07a9c30aa814e16db48a457b50ded0da30d122a990"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-02-has-anyone-attempted-to-simulate-the-creation-development-of-a-languag.md",
+      "sha256": "89ea8fea8f1dbce259eb22accfb624ba5097dfa78f27ce4911ea30411089bac4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-06-why-can-t-these-english-sentences-passivize.md",
+      "sha256": "6c2459f6a23de78ee293182883dc715427f57a550e8bfc1d173e6934c4ac119f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-08-is-it-true-that-one-can-be-bilingual-in-any-pair-of-languages-or-are-s.md",
+      "sha256": "3600965e57d3b2b6067a323bf9599f957d2e976de22b200491599da9847de1f0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-13-did-language-originate-and-evolve-just-as-organisms-did-as-in-evolutio.md",
+      "sha256": "5c4234c66eaba8aec5dc4c8c96291fd635a7112800a59749590b5b3ae187a917"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-17-how-does-the-reaction-against-gender-specific-pronouns-relate-to-a-lan.md",
+      "sha256": "8e71160655c225d2daff2d15f7a24f035ca1cb7884089d1cbc8eed990b39e2f7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v.md",
+      "sha256": "d974d7ce7e184f5b7ab6f704effcc9d5e5d92e1222cae588cc6fcf59957dc040"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-19-way-to-learn-foreign-languages.md",
+      "sha256": "0508b8ae306c4befd10758cc59d612c1a2c79fedd440dd76b67854779093720f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-20-how-can-i-recognize-someone-s-voice-from-a-spectrogram-a-puzzler.md",
+      "sha256": "4c9259aa051597cfcb0fc8f1485216e8b52e75be7fe700caed770146d427b969"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-25-is-there-a-good-introduction-to-subjectivity-in-language.md",
+      "sha256": "fee7ef1ead00bbcab7c3b8c249a8c2414a0eeb58b1af5e186c57901f5e66ceea"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-10-26-what-are-the-different-approaches-of-the-levels-of-language-analysis-a.md",
+      "sha256": "ea2abaf14ebde38aa1f183996dc38d907720bb650964b657e828b23f150eab6b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-10-why-does-there-seem-to-be-so-much-disagreement-among-linguists.md",
+      "sha256": "700b286ac4aad580cb3de33dda39635a13074c922db83aa45871165fb113ca85"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-12-what-sub-field-in-linguistics-should-i-study-to-help-me-learn-foreign.md",
+      "sha256": "ea988a5b255d349090910eb6543acb76dc49b49d9bdff556b353abda711a0a76"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-23-what-s-the-use-of-grammar.md",
+      "sha256": "39b039277f96b50a954786a5a9c263b8f653558ce189069ff3cf5945a546b8bd"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per.md",
+      "sha256": "0101bf4c2340c4a0088053b208dc957751913cfa1bc14f90bc5cf6a85774f8b6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-26-are-there-any-words-understood-by-speakers-of-any-language-in-the-worl.md",
+      "sha256": "686ac4f00b54980d8ba334f50352b268adca8c91519b9ca92873cf131debd105"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-11-26-can-you-give-some-examples-of-counter-intuitive-phenomena-discovered-b.md",
+      "sha256": "0ea416a2c4bede384750f10efe71af6ba6d0f66323912bef1b826aa5bb4988c8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-01-can-every-language-express-any-lexical-aspect.md",
+      "sha256": "315b25bc01db3dfcce902e62075343a87261f49be784588260f9acc54f6b84cf"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-03-what-are-some-grammatical-features-found-only-in-modern-languages.md",
+      "sha256": "caf1e76e6ebfdd14c010b160e024c21d985282d4d3448d5d2b3e41de7351267c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-04-metaphor-metonymy.md",
+      "sha256": "1c2af2278e9157b405111069e178a29ae97047e5dc599f9428d856e3c4c84b60"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-04-what-are-the-different-ways-used-to-ortographically-show-the-length-of.md",
+      "sha256": "208411f452fc85105cf4eaafcb4a4fa15396bf73eaafb869bf66f52f86eac7f9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-04-what-quantity-level-of-mutual-intelligible-words-are-needed-for-claimi.md",
+      "sha256": "b19edb45777871f16b2e7a2278ab9bf1346dc28b41dcb66ec6e1cb41cd772ce4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-04-where-did-latin-come-from.md",
+      "sha256": "8fde8a95f508b8a31c0c580c5d32cefe97b1a29075667ecb01c6b6fe57272548"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-05-short-summary-of-cognitive-linguistics.md",
+      "sha256": "f9623902aff9864baaa8a12dea9c4b67a3f539199eb4381178d862fc12a59f80"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-06-how-to-determine-difficulty-of-a-word-if-its-frequency-in-a-corpus-is.md",
+      "sha256": "66ed4cbad9a43325d2ffb91f91148b1be4e7ab563737a7331dca4b21033b9c49"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right.md",
+      "sha256": "71c5ef3fb2cbc55a3b40734daf1f6d6b638892d7e529d5a331984a39b7a08f9e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-07-size-of-active-vocabulary-in-hunter-gather-tribes.md",
+      "sha256": "b4cd30524747b2c1e1405c10bc4d870f20ea98f7c4faee7f768129a9112900b4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-09-do-unschooled-people-use-cases-correctly-e-g-in-germany-and-in-russia.md",
+      "sha256": "d9c0d4338b22784460d173c39a4953f2ac1901aa7bcdf2556d501867eaeae23e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-11-why-are-native-american-names-translated.md",
+      "sha256": "8c230b3ff2a7624eb4359e0ce9207fd744d7000e3959e1b13491c9714e76edd1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-12-which-language-has-the-biggest-vocabulary.md",
+      "sha256": "8f4221508a812ba319db4baa436c3f2a6a0cacc6397e1683d6d4f41773ab98c9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-13-what-are-common-non-lexical-indicators-of-sarcasm-expressed-orally-in.md",
+      "sha256": "ecdfb02f3b0d8d315119eaefa8aee360b57e9b529edb8fead8e435f6138a6333"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-13-what-is-the-least-changed-language-in-use-today.md",
+      "sha256": "a19b2247aa21ef1763404b23944b3c5297167abfc4d330d7c03b0ca2b7120f7f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-15-is-the-sound-unique-to-czech.md",
+      "sha256": "281459b6309617ba967498f70b19a1c7d55e4d2cd6d61b123cba48b45647f137"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-16-what-is-the-difference-between-a-filler-word-and-a-discourse-marker.md",
+      "sha256": "adeb9ab9277404656b4000276df33a95c9868c8b27c74b03462e8d5c5ffa83e8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-16-why-don-t-any-languages-have-strictly-one-character-for-every-single-p.md",
+      "sha256": "d9bedfe3af7a8ed0c17319109a4c50752ec8e54e2052262b0b8db6ee3ae3c105"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-17-what-is-the-consonant-equivalent-of-well-s-lexical-sets-for-english-vo.md",
+      "sha256": "a4cfdbe5ab497f4bf882d560f48fba57f6a0f9331be88babd6b40603aa941782"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2014-12-26-english-grammar-is-it-possible-to-automatically-verify-correctness.md",
+      "sha256": "f84808bf9fd1ff1d37f48691121d83004373928c4bb6c99ef218e71c2338b37e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-05-is-music-a-language.md",
+      "sha256": "3546d73624f3dcb320ba2dafb7c5bd3bbe4db3b98080edc1f0719b06bbcc5b7d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-08-what-s-the-difference-between-structural-and-generative-linguistics.md",
+      "sha256": "2c9fb1d5162bfbc456b9e9b08ff2a1704d827ea2fbecf82f96761ac97ab00f64"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-17-how-did-the-same-perfect-tense-structure-become-so-widespread-in-europ.md",
+      "sha256": "f5e79d3352da12be881bdb58fcae824e628db43db6cbb3945403bab03edee608"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-18-detecting-actions-within-text.md",
+      "sha256": "90ba43ec870ed4697de6ed211f869b41495aa4f89d800056e508f6e59c394d42"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-18-origin-of-language-as-commands.md",
+      "sha256": "7a8f8cd14546c31049e71aeae93ff06886fa1536a0ee7544478cdf9bef00852c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-20-how-do-various-frameworks-account-for-situations-when-multiple-cases-c.md",
+      "sha256": "bc4930ba5fd42500fb3e28efdac3f9af615008756719f7a214a6954e7f22c3ea"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-21-why-can-verbs-with-imperfective-morphology-have-a-perfective-meaning.md",
+      "sha256": "7437436586a43aa8d0e8f48b61685d39504dc58a32c1cffdf7382169f555db5e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-01-25-why-does-google-translate-produce-awkward-sentences.md",
+      "sha256": "6c31998b0f19216d912703f15d068ea4a850197dac418d9bd1d63c654ac81463"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-02-do-other-languages-distinguish-the-verbs-to-drink-when-talking-about-a.md",
+      "sha256": "85b994e0b9eca90415af2b80deb3115bad1308c63b64583caf1ac12146efe18a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-02-which-comes-first-grammar-or-language.md",
+      "sha256": "9878040f848cf4ad87b60978293c63ebff636a208e962912d17ad56dfd3094bb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-05-argot-vs-jargon.md",
+      "sha256": "536fca870993967470229c101b5ea5b4250eace39a8eb234f8d9b63a52c93438"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-05-if-the-rosetta-stone-were-to-be-translated-today-would-the-process-be.md",
+      "sha256": "d2b3d3941e9255d98045d4af9907d3777f45bf03c2b7c3c6d821798d7f9525e9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-05-what-is-the-linguistic-term-for-an-environment-where-parents-teach-a-s.md",
+      "sha256": "06f5da7665c3d6b7a644ed4272d324d5438fe6dc04a0e4d1b294410cd6a02c6c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-12-what-kind-of-wordplay-is-this.md",
+      "sha256": "8b46e32d4bcd7344177500cb81b3d7b0971774a30e3834dce489473645203a0b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-23-what-is-the-difference-between-coreference-resolution-and-anaphora-res.md",
+      "sha256": "7eddb61fc01480ac98552688677503cb0766a9faa25f4923637a9c4bbc405a3f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-23-where-did-generative-semantics-go-wrong-why-was-their-conception-of-la.md",
+      "sha256": "953449fe4b8416c268541fec5cad9bb1f4aad76ba75b9725a97a664f685a831d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-23-why-do-european-languages-use-a-similar-alphabet-but-south-east-asian.md",
+      "sha256": "8ea074d1468b8de53c1289f554c6f0999af3ab3c997c11de9f84fc7584bfc8ce"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-27-are-the-orthographies-of-the-slavic-languages-generally-consistent.md",
+      "sha256": "1cdc1332a99ca34419be9ba46d677b62129dd9b2b4fd18c5d3405007b0edb981"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-02-27-are-there-any-tools-on-the-market-that-employ-prosodic-research-to-hel.md",
+      "sha256": "2cccd39e4f911838d35cfd22626b5963fcc2c1a13864809b88dabba6d849e736"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-04-conversational-english-corpus-for-download.md",
+      "sha256": "83984843b38586bd23f13826780a79e23a555a8feb1ad0065385ea048d64a3d0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-04-what-languages-are-writer-responsible.md",
+      "sha256": "784817680899f4e300a1e7828ad9f3420d237464219a5d37f0b7329dc199ea02"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-07-parts-of-speech-in-a-language.md",
+      "sha256": "89bedd06d025a90e6ff6f66c617323df99eeaba9d4151436206f08e3dea7f673"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-13-globalized-mass-media-deterring-language-or-dialects-differentiation.md",
+      "sha256": "af6916058709cd70dff0244304dcbfa111f3c603bc0d388203e2df1fcb9e0b7e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-17-is-there-a-theory-of-universal-meaning.md",
+      "sha256": "1897e1fb978f27b2fb25c72d58577345bc9842257e17898fccf530bf49b4a874"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-17-why-should-cognitive-semantics-and-formal-semantics-co-exist.md",
+      "sha256": "5b337e1e10bb6665638842057579c19b5c96cb7a57ed1b4329dade95084bb68e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-26-vocatives-and-case-assignment.md",
+      "sha256": "cc2e49aba539f3cdf95253be03d61857d1c9dde520ef2842b836d0c49e4e147f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-03-31-functionalism-vs-formalism.md",
+      "sha256": "5c5ab43136aa86ba6586556cbbec31756682584373792e948e1c58faacf8785e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-02-why-do-many-languages-tend-to-use-plural-forms-to-impart-formality-or.md",
+      "sha256": "406c996806284ab1f4ec82f065cb81a9d4c318e851c9be49f37c8b9f3d6f7313"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-03-is-the-concept-of-a-verb-subject-complete-sentence-a-cultural-linguist.md",
+      "sha256": "d6cf25d949e9efe62388a290d2bfc04ba40c949c86c85478121fe8d845999b6b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-12-does-learning-ancestral-languages-enrich-a-daughter-language.md",
+      "sha256": "6f6d670354f79c98b2691ec4c23c67cc387c9f8ff84d93afa2c33dca524de49f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-12-how-distinct-do-two-language-varieties-need-to-be-in-order-to-consider.md",
+      "sha256": "8dd9acccc8a663ffe72b1b26c9d1a90afb0e0126aa39915130f52a2269da2b08"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-12-what-are-the-stages-of-child-speech-and-language-development-and-why.md",
+      "sha256": "4114308b005520f53f6f1b4a9bf55a8cd9bc417cf20f6ba7a90da5c7eb5ca47d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-16-etymology-of-english-suffix-logy.md",
+      "sha256": "18e9c32f1914521a47396a7a53e2cf152cc5ff86dc434b265bb4129043685af0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-16-what-are-the-blanket-or-general-terms-representing-these-linguistic-pi.md",
+      "sha256": "dfcd9147e33c9729ac503cf750edcad66aa645ae334229f0a33072bcec321a7e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-18-name-of-theory-stating-worldview-affects-language-structure.md",
+      "sha256": "2b8464186d468c4bfa6dfb97d30783b4f1ffded10ca6454116c0e2124f8709c2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-19-do-all-cultures-have-taboo-language.md",
+      "sha256": "cb71a676fc59f3a2013d76d7e016c2d6d7dd153a40ec82ab0b86ac6ac51486ce"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-19-is-the-english-perfect-really-monosemous.md",
+      "sha256": "eeb1cf6b0f2ad387aee21f61785c5fcb1d99d9c8930060b978d19f0caee5a36d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-24-in-case-of-derivational-nouns-what-is-the-difference-between-affix-pol.md",
+      "sha256": "cad2272c7f8e2b173327a4966954b914e9647a8ef3bbb64077a7e169c2f8fcbb"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-04-24-realization-of-person-in-conjugation.md",
+      "sha256": "a13689ae18ce0426dfe2a61fec5591d4e75abadbd2cea80cf19c6226acae3235"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-05-is-anglo-english-more-diverse-in-terms-of-accents-than-say-french-in-f.md",
+      "sha256": "8433763b6d2eb7a3e393cf8828ff1608928854dcb7be4390240577abeb3c7e6e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-12-evolution-of-definite-articles-in-indo-european-languages.md",
+      "sha256": "274777b3a9127cece46cb8211e1db67ca0b2d3d188b4a7e01cb4bfddf12e7ee9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-12-is-chechen-language-close-to-chinese.md",
+      "sha256": "36cbdefc387470052e67c7d2ccfa51ff44ecf270cc9e767d35b341ff29f89e00"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-15-does-majority-of-linguists-accept-universal-grammar.md",
+      "sha256": "8ff20ed6e565af2356f474db8632a8a01ba16f0caeae437ade653a4784858989"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-15-what-are-the-differences-between-phonology-phonetics-and-prosody.md",
+      "sha256": "3d944d8014aca15b8d0401652119924843001a3499510b3bce161b44d44d9d27"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-16-how-do-concepts-folk-linguistics-and-language-ideology-relate-to-each.md",
+      "sha256": "475f430784ff6c2c0e91eeaf67d5e38d6ce14cf258bba141e16ce47f48d1a133"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-18-are-there-instances-in-which-an-entire-sentence-constitutes-a-focus-ne.md",
+      "sha256": "7e422d7bfdf8e4dd7df1862e9b7328ff79813f0b5eb6261f26c6b269bc79fef5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-27-how-do-you-search-for-nouns-that-contain-the-sequence-of-letters-sb-in.md",
+      "sha256": "4b89dc71141270ce1b3aefb13fd7895ea3b55f8d79fea2ef1adb3390a8e53196"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-05-28-the-differences-between-signifier-signified-and-reference-sense.md",
+      "sha256": "30ca118325c4e0fd268839895f2025399c5f4774eabfb6067cadfab04fdbf5f0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-01-how-many-gaps-should-a-sentence-have-to-be-solvable-but-not-too-easy.md",
+      "sha256": "1a42e313cf00dda1ee0af4094bf83afd8732ebe8ad270800fc8b5bf6fde5dcf7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-03-online-etymology-dictionary-for-english-more-explanatory-than-etymonli.md",
+      "sha256": "74da3f5a4ec97890797b42ee2431ff80cebb62d3c4ef30836cd6a6f478778cd5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-04-a-question-about-pragmatics.md",
+      "sha256": "3677fd04f66f139d9ffde70e843751d5f4211b9dc5229f837898114a5fea1445"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-04-why-do-some-languages-partition-to-know-into-2-or-more-verbs.md",
+      "sha256": "ec9dd21cda2c020637930ab7b53f68d0a39cce48ffffab0689b516db005c7fc2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-07-icon-index-and-symbol.md",
+      "sha256": "e1c8a0a40a94c059f4475d350a26025f504daa2cbdd22f8e5b3c9ae6db05e1c6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-08-does-changing-the-writing-system-for-a-language-change-the-language.md",
+      "sha256": "1e610744ae2dbcde248826a00ca9e837d2ebb7c102ff2b465921aa7960d72b56"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-09-can-determinatives-be-semantically-plural.md",
+      "sha256": "78706fd024277d335382d997d95ebc5f6de0f095ed594d5af67232c93a69527e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-13-why-did-latin-fragment-so-much.md",
+      "sha256": "8c43f42976a9cc9fbae9315969c62afe8a3789a0587de8a1cc720eda01ae956c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-15-could-a-language-be-reconstructed-from-a-dictionary-and-lots-of-natura.md",
+      "sha256": "908eaacbc203f671bbf574ca08e686781a4dc5a5376637bca5d33f1a69132a97"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-18-ergative-verbs-and-some-discussion-about-them.md",
+      "sha256": "0ce0bcd80965a7309af27b0c6e6e932a960b4d8c16c80b1be96ca32766361d80"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-19-which-linguistic-theories-account-for-non-native-accent.md",
+      "sha256": "171f1f85b634b51933194edd3677bf83a694efeb0052964d4a80e985b235ddc1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-21-why-aren-t-there-any-czech-dictionaries-that-report-the-gender-of-noun.md",
+      "sha256": "0fb00ee2afded2f0c6283131b86ff6307b8c49c0ababb00fa2ac5e4038979805"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-23-do-animals-have-foreign-languages.md",
+      "sha256": "7301e8c1a1458c6066f5dcb38a4bc5bdfb0240260f202f05cf3cf7ce715fdc73"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-23-metaphor-and-metonymy-in-proverbs.md",
+      "sha256": "b4ad2ad8043021dfe7daa811d8110bb373be25f1fb2b3ef6a7aebea32774baac"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-06-25-natural-vs-forced-language-learning.md",
+      "sha256": "89d9ef06cab995ed7f64cdc587829fd90e1cb355e536771762829b830c67cd56"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-19-a-list-of-parts-of-speech.md",
+      "sha256": "085dd8a5dcbff7014ecc930e18ebfd0448dc120b0db4e73173021329ebf6967e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-19-do-standard-corpus-analysis-tools-like-antconc-and-wordsmith-work-for.md",
+      "sha256": "65fb4421569e4a525dd9a2ef9a26b94618d5eb3c515733808688f62324d1f992"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-19-why-does-before-mean-both-in-front-of-and-prior-to.md",
+      "sha256": "ccda3abd5e55c1deeab438e8de9dbb13e99bc069878ffff15cc94222fb115836"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-20-is-sentence-a-useful-and-or-clearly-defined-term-in-linguistics.md",
+      "sha256": "0c82e579acdcde4841a2bb37172ef8374e61f7c79d7d0329e1b5b1572a587c78"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-22-comprehensive-diacritics-normalization.md",
+      "sha256": "828a5fc9ab610df97cfa75a5d195ac70d7c9ffdfda66cfa76c8ae48028a2f6c0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-23-are-question-marks-universal.md",
+      "sha256": "a596260d1c0038d1edfdb14ba1956be69d4a3ead9852019f38192984736c1930"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-23-assuming-that-passives-need-verbal-morphology-which-languages-commonly.md",
+      "sha256": "5bf8ac86c9301e0c2b57bcc0c8844b61e53d2818ffcd6496a5db2c3b3e971421"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-24-should-common-short-words-be-left-out-of-a-concordance.md",
+      "sha256": "63097106a3dda52575a93b0aa2ac6200b148a47ebf95e467345e9a075ff12d99"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-25-how-did-as-in-english-branch-into-many-meanings-that-look-unlinked.md",
+      "sha256": "c1a668643ddeb8baa542b545693bda67ae2f4533e0f5dd41422194624ec0c3f2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-26-what-s-the-etymology-of-of-after-verbs.md",
+      "sha256": "8a6162b447f45a498b64491952a569fefcf97b2cbc48730df360e79107c9ea83"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-30-are-american-english-and-british-english-growing-closer-together-or-dr.md",
+      "sha256": "a923c64af7aa67b4029f81f46afcbcaf3d11acbbb75b8e68f67ff90f35704990"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-07-30-how-viable-is-the-star-wars-model-of-intercultural-communication.md",
+      "sha256": "c8b5b05dd0c657671c3d7c17c38a09fe39b09db605bc8f976ff8c95eb9526a4e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-05-how-do-chomsky-and-pinker-s-monolingualism-explain-their-flaws-about-l.md",
+      "sha256": "d9caa9b9f06cc1223eb8365561ecf856983c2743e74222d35cdf9bc8674a8772"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-05-how-does-inflection-evolve-in-languages.md",
+      "sha256": "3c935e0bd3969a8bae222fab4316a7d7b80afd7e6db02339eff3da51d378e2d5"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-05-how-does-the-term-naturalistic-speech-differ-from-natural-language.md",
+      "sha256": "7448bfb9d03daa7b25fa5e3b049aa8e30f38067e65e441606be4da651a37ace1"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-05-measuring-semantic-complexity-of-a-text.md",
+      "sha256": "2f25044f17472d07396c12df0c0e6aed738dabf093c4604d6d5c441953aeb266"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-05-was-sanskrit-first-complex-language.md",
+      "sha256": "7211e061a1a36eeb936f0094494fc54c7dedd9a8b42c068c3934d7afe33edc4c"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-13-how-to-convert-a-string-to-their-ipa-equivalent.md",
+      "sha256": "68c0b259d6f4fa78fbec1fbeca7f2f46e661fd382ef82b40afe89b1b5a656f35"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-16-calculating-writing-system-efficiency-with-respect-to-reading-ambiguit.md",
+      "sha256": "b58a45bf477d5033f01c997db12b6fb5fac67df5a6860dfc7eb338e57412c9ff"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-16-which-famous-linguists-embrace-historical-logic-to-understand-language.md",
+      "sha256": "6cc445479540e7051bdb3abb954e1cb0137277ed0a915742154f96e34cd0c88b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-18-is-there-any-logic-to-required-double-negatives-or-is-that-just-the-wa.md",
+      "sha256": "fe63287339551e20ce9c4afb590b34653632c2a373125fe8b02d496b02d203f0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-29-what-are-some-canonical-or-seminal-corpus-linguistic-studies-using-the.md",
+      "sha256": "92029a65874db4531498ee4c63532d82036ccc34fc62074c6cc237cb298ef12f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-08-29-what-is-the-current-status-of-systemic-functional-grammar-linguistics.md",
+      "sha256": "502a72a795ab10b5e19f2a6b451d357d8744fb8e952a645588fd0d13f835ba92"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-09-21-how-can-case-systems-emerge-diachronically.md",
+      "sha256": "31e852d89f6a65016bcb9d47680adedbaf5a11e89ba0d33d0c2e60c138cc74c9"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-05-could-you-tell-which-pictures-which-depict-how-the-vowel-chart-is-posi.md",
+      "sha256": "2a19553143d7379f29c2f9e6ddf58f927b4a2fd5026beccaf0a1d6119ce3fff7"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-08-is-there-a-term-for-errors-by-native-speakers.md",
+      "sha256": "5ed38cc50616fbeefe7ee81ba217b8b78cbfaf4d778e55254916e48c82b21fd4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-08-meaning-of-surface-expressions.md",
+      "sha256": "cdb5e3befcb173b7f1bdb27ff624c6669134ed2797261a9685c56d6bd706b146"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-08-we-have-constructed-languages-but-are-there-constructed-accents.md",
+      "sha256": "6da89ff5805b50c9778250b7ccab040db6f613a2550ff0a29382c742a902c362"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-09-does-adding-the-suffix-ly-to-a-noun-or-an-adjective-provide-morphologi.md",
+      "sha256": "e983ac79e124ab333424a1efb01f7ff53019aba87957ba631f0bc8f67f6b0a68"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-12-how-to-find-a-given-text-s-complexity.md",
+      "sha256": "ad7d23c1ef0f8f90419248853b13f253d3262055e4ae7263a5e90f69857db65b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-13-is-there-any-language-which-doesn-t-have-hello-thank-you-or-please.md",
+      "sha256": "c3571416491450b7aff1cf607672f63b1fdcfbc4fa10251cdf19d2a8ea523b94"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-14-how-far-is-natural-semantic-metalanguage-really-natural.md",
+      "sha256": "a5d7a4cd08ec3fbdb97cf554c74c3fd76f7bd88267e2c2b9066a7868f282e3b2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-15-sapir-whorf-vs-chomsky.md",
+      "sha256": "b78fd732979a0af5c9282297319e3b97d7e473e3c5179d81194de2674fae6f87"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-15-what-is-the-study-of-language-usage-types-a-question-an-answer-a-criti.md",
+      "sha256": "fe23179819c6b2129024df06f0431715c7eac694ad8bf36d5b38c4e0943c0d4e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-16-how-come-i-cannot-get-my-oral-english-to-a-native-speaker-level-after.md",
+      "sha256": "73e70bcf1acb68b528ad229ae851c522cc870f27c6396d1509f224d2cd0b673b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-18-is-english-of-neutral-or-accusative-alignment-in-verbal-person-marking.md",
+      "sha256": "147b14b806f8494281bbd8461abd2e5348aba702979e1f41c96e7fffa3c33e89"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-21-why-are-most-given-names-so-common.md",
+      "sha256": "7ca88ae78e43c7a773ff789be12d5cf74e7da85abc5b3b5b85d9fd3b4394ee47"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-23-does-standardisation-restrain-naturally-occurring-grammar-change.md",
+      "sha256": "16be237e651d54a428e5d264b0b72a434527f9b68db81fb428f47550aa914c8e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-24-mapping-graphemes-to-phonemes-in-cmudict.md",
+      "sha256": "f933854fe38bf4114c7787cd6e95a4893d2a1982437475f79fefdc93850d3e24"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-26-why-does-wordnet-lack-stopwords-the-of-her-etc.md",
+      "sha256": "8093fb00e20a713f952af3950c0f3d77391d32084f17d2360608d07fb03bd194"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-27-a-syntactician-must-read-list.md",
+      "sha256": "fa05d4d55cdb63e37cc6679e200883caeb9ce9f15ba731c0f3dea861671a5964"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-27-how-to-automatically-determine-good-charades-words.md",
+      "sha256": "a59e2bedb881caab3548c10261dd20c0d65b1d5324e034b893f4dc2301969687"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-28-how-to-assess-the-language-register-of-speech.md",
+      "sha256": "f498249005b5ddc62fd2b14d04f5ab9722592d2269a57fa1ae896ed700ef8a28"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-28-slip-of-the-meaning-of-expressions.md",
+      "sha256": "608ab8f773811885770b2c820ce38753575d0a2ff0e943ba6c49c9ebf8765d0e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-29-co-occurrence-count-data-sets.md",
+      "sha256": "9f53477a785662d58a732be87c1b0f72e61560549342a89257d42b1ed91d951a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-10-30-have-there-ever-been-serious-attempts-to-replace-alphabets-with-phonet.md",
+      "sha256": "eb5c93372effcb2c7ada3277f7082425e7c37984b8717e025b5a33e3ae415767"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-01-do-general-truths-entail-existence.md",
+      "sha256": "bb80cc4f19346d102fd2ae30098e4ad2de7164916f554cae601e0c776e7ecab0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-05-a-literal-response-to-satire.md",
+      "sha256": "452db2ab1b0f1ba9812b2521a7ea823595f0eb9f3135ca9187d7c3f4234c74df"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-05-is-there-a-language-in-which-feminine-is-the-unmarked-gender.md",
+      "sha256": "3d17c4daeee87403a82b4dcf53e572f62ea26b0986e8940556ff84eeeae3989f"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-05-is-there-a-phylogenetic-tree-for-all-known-languages.md",
+      "sha256": "e158d3d22732fe22a14ee9baf1235842f6bef2004b656efb5b37e80d7581bdf8"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-07-characteristics-of-theoretical-linguistics.md",
+      "sha256": "1c24f705169d9e07ed650047f89e501540c472bdb17adbd1b9d32827f2b0ffb0"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-07-is-syllable-boundary-properly-annotated-at-the-phonetic-or-phonologica.md",
+      "sha256": "7b7b85d3f5cad3b2c96f3e7e2fab7cf03d7a71cc25eb119f49b6867aec7a7ce6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-07-is-this-a-nonce-word-or-is-there-another-name-for-a-regularly-construc.md",
+      "sha256": "77774fee14c745186bb28b8e99825cbfdf9ff1338699a526109490365b2cff04"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-07-to-which-extent-are-people-s-perceptions-of-their-own-pronunciation-in.md",
+      "sha256": "51b3d0cd92b92e753f9e1ca58db26984d457d0b2ddb02aa6a129e0c2a9236e56"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-13-how-are-affirmation-causality-similarity-time-etc-connected.md",
+      "sha256": "bd2feb3c5c2446292c23110884e98d611a85b0e97aec5888fa745795d7d655b3"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-13-how-can-i-find-which-words-don-t-exist-in-a-language.md",
+      "sha256": "b003ab9dd449d42aa7c16dabdc57c18d192d10549780bc53b8f37d86ac4151c6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-14-are-there-laws-of-semantic-change.md",
+      "sha256": "c0ac5d24558524b222fa8a9010e2d62c1a86f4d3a2915bc01771f53830be7409"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-14-linguistics-relativity-and-linguistic-determinism.md",
+      "sha256": "f61e58d78098dba457bcecd9ee537bf0cafac3843bdc0c6247c1578a83301832"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-15-what-gives-rise-to-racial-accents-timbre.md",
+      "sha256": "bda3ef9b85cf3c0a23ad97e80b95d3bc2b9cfd9d1a53c7fea9c8e4831ccca180"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-19-am-i-using-the-right-terms-in-referring-to-soft-and-hard-vowels-and-co.md",
+      "sha256": "2b990233b6099ab933e011e86b2512917d71501947b5885f1e7448a99c3d34d2"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-19-for-a-toddler-who-has-just-begun-to-speak-is-hindi-easier-to-speak-as.md",
+      "sha256": "a64485766f9e01a4717e8ceb9243a051b0f8531bf6e6d569db03287989f81518"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-20-which-branch-of-linguistics-educates-on-affirmation-causality-similari.md",
+      "sha256": "2f43dcf31b113f9f8f6e061ce7d8a732b3dfafb21438572f8738d2283d4d1759"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-22-arbitrariness-and-coinages.md",
+      "sha256": "1259603a3383391475ebda06f7f4a7c3fae4bd2227294d756dc860520f273131"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-22-why-givin-instead-of-giving.md",
+      "sha256": "cdd92140cd88676e8d997c90e7e461ea439d0706c5bfe6806de74da480e4bb1b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-27-grammatical-aspect-and-lexical-aspect.md",
+      "sha256": "7b0d4813c297a05ab7b6691418721abcce6c1b3b79608a1c7dcaf334ac2a51e6"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-11-27-how-many-of-all-possible-english-words-are-actually-in-use-have-meanin.md",
+      "sha256": "4c87a80b0fdfb988e74dcf14053beafd9a2b94e068d0f160407472d55b002b2b"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2015-12-01-has-any-research-been-done-on-the-effect-of-introversion-on-language-l.md",
+      "sha256": "2af6cedb0f48f1e001b0d314602d43692732c03bc136a70143e7ea1e921f525a"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-18-will-my-child-learn-incorrect-grammar-from-me.md",
+      "sha256": "71d56b54e5009bb38dcb4ff51d82e3e4cf971fe9a62ace0b373d997fc883fe99"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-19-are-british-and-american-english-two-different-dialects.md",
+      "sha256": "802a95c1656d45f6fc5f97eb0b4ed85ce7b93494dad6e01d4ff7bd94b702a50d"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-20-are-linguistic-units-organized-in-conceptual-categories.md",
+      "sha256": "00d058ef2939dc727edb8469902f3c44c2d9a548f4e875d4084085ed0325f3ee"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-21-can-syntax-be-part-of-semantics.md",
+      "sha256": "f60a5e75a0b42cf86fe8d7912b9ee563cfa76371d700fe5a74448184c331c25e"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-21-is-there-a-grammar-of-syntax-that-takes-into-account-inherent-syntacti.md",
+      "sha256": "c3ab2a5b446dd5500b0f275a2769c9263b292201ed0a421883718deb23b44415"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-01-27-what-are-the-state-of-the-art-english-syntax-theories-there-are-that-c.md",
+      "sha256": "6935d5383a4602cca60bbb21fe667efaed91451b8163ad2c74e6136153dcbbb4"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "questions-of-answers/2016-02-14-where-is-american-english-not-chosen-as-the-dialect-of-english-taught.md",
+      "sha256": "de4ac597e450f33eb3ff8ea8e12d076758c6199502d6871f3076cc8ec67fa096"
+    },
+    {
+      "book": "linguistics",
+      "repository": "writing",
+      "source": "themes-linguistics-stack-exchange-answers.json",
+      "sha256": "5be440c3d9a4162f730e1ea3310e43aaf0eae6b15f86ede603028e2e57749919"
+    },
+    {
+      "book": "linguistics",
+      "repository": "linguistics-stack-exchange-answers",
+      "source": "book.toml",
+      "sha256": "89d76bca71c2329ff8972eeaf13ca9db733c10ddfc71f2663c46e5353ae5b1e2"
+    }
+  ],
+  "counts": {
+    "practiceSections": 21,
+    "languageTopLevelSections": 4,
+    "linguisticsThemes": 9,
+    "linguisticsAnswers": 253
+  }
+}

@@ -2,165 +2,71 @@
 name: "Online Reader Framework"
 description: "Provides a reusable way to turn Markdown into a clean, readable web publication."
 categories: [content-distribution, web-app, built-by-ai]
-updated: 2026-07-16
+updated: 2026-10-23
 deployments:
   Appsite:
     "Online Reader Framework": https://onlinereader.pages.dev/
 ---
 # Online Reader Framework
 
-A reusable reader framework (core library) plus a demo app for converting Markdown into a clean, readable web experience.
+The shared reader is being upgraded using the actual **Deliberate Practice** and **Building Your Language Muscle** application code. Their designed reading experience is the baseline: typography, navigation, reading controls, annotations and sharing. The original applications remain unchanged.
 
-The goal is reuse: keep the reader logic in `reader-core` and adapt content sources via adapters so future projects do not copy-paste features.
+The previous generic reader API remains available for compatibility. The new publication reader accepts Markdown or HTML sections and nested books directly, without flattening rich source content into the old block format.
 
-**Structure**
-- `packages/reader-core`: reusable library (components + parsing + utilities)
-- `apps/reader-demo`: demo app with Markdown uploader and heading-level controls (`src/defaultMarkdown.md` is the default sample)
-- `docs/REUSE.md`: integration guide
+## Run locally
 
-**Quick Start (Demo)**
-```bash
-cd apps/reader-demo
-npm install
+```sh
+npm run setup
+npm run build
 npm run dev
 ```
 
-**Live Demo**
-- https://onlinereader.pages.dev
+The demonstration contains read-only snapshots of three real publications. Choose one with the URL query parameter:
 
-**Build Demo**
-```bash
-cd packages/reader-core
-npm install
-npm run build
+- `?book=deliberate-practice` opens the original Deliberate Practice content.
+- `?book=language-muscle` opens Language Muscle's nested HTML chapters.
+- `?book=linguistics` opens nine themes and 253 answers with source attribution.
 
-cd ../../apps/reader-demo
-npm install
-npm run build
-npm run preview
-```
+The snapshots are demonstration content, separate from the reusable software package. Regeneration instructions and source hashes live beside the demo in `apps/reader-demo/src/books/` and `apps/reader-demo/scripts/`. No editorial proposals have been applied by this framework upgrade.
 
-## Architecture Overview
+## Use the original publication reader
 
-This project is intentionally split into a **Core** package and a **Demo** app so you can reuse the reader in other projects.
-
-**Core: `packages/reader-core`**
-- Owns all data types and UI primitives.
-- Does not fetch content. It only receives `sections` and renders.
-- Ships parsing helpers to convert Markdown into `SectionConfig[]`.
-- Exports utilities for search, reading stats, highlights, and EPUB.
-
-**Demo: `apps/reader-demo`**
-- A thin integration layer.
-- Handles file upload and user configuration.
-- Converts Markdown into sections using the core adapter.
-- Displays sections through the reader UI.
-
-**Adapters**
-- Adapters translate external content into `SectionConfig[]`.
-- Current adapter: Markdown (`parseMarkdown`).
-- Future adapters: MDX, Notion, CMS, Google Docs, etc.
-
-## Code Organization (Core)
-
-**Key modules**
-- `types`: `SectionConfig`, `Block`, `SearchIndexEntry`, settings types.
-- `utils/markdownParser.ts`: Markdown to `SectionConfig[]`.
-- `adapters/markdownAdapter.ts`: `parseMarkdown(markdown, options)` wrapper.
-- `components/reader/*`: `ReaderShell`, `ReaderContent`, `Sidebar`, `TableOfContents`.
-- `components/tools/*`: search, highlights, progress, readability controls.
-- `services/epub`: EPUB export.
-
-**Data flow**
-1. Content source produces Markdown (or another format).
-2. Adapter converts into `SectionConfig[]`.
-3. `ReaderShell` renders sections and manages reader state.
-4. Tools and panels (search, highlights, bookmarks) use `SectionConfig[]` and local storage.
-
-## Reuse in Other Projects
-
-The core idea: **bring your content, keep your UI**. You only need to produce `SectionConfig[]` and pass it into `ReaderShell`.
-
-**Minimal integration**
 ```tsx
-import { ReaderShell, parseMarkdown, SectionConfig } from 'reader-core';
+import { PublicationReader, type PublicationBook } from 'reader-core';
+import 'reader-core/reader.css';
 
-const sections: SectionConfig[] = parseMarkdown(markdown, {
-  sectionHeadingLevel: 'auto',
-  tocMinLevel: 2,
-  fallbackTitle: 'My Guide'
-});
+const book: PublicationBook = {
+  id: 'your-stable-book-id',
+  title: 'Your book title',
+  author: 'Your author name',
+  description: 'Your existing introduction.',
+  sections: [
+    { id: 'introduction', title: 'Introduction', category: 'Getting started',
+      content: '# Introduction\n\nYour existing chapter.', format: 'markdown' }
+  ]
+};
 
-export function MyReader() {
-  return <ReaderShell sections={sections} initialSectionId={sections[0]?.id} />;
+export default function App() {
+  return <PublicationReader book={book} />;
 }
 ```
 
-**Adapter pattern**
-```ts
-import { SectionConfig } from 'reader-core';
+The core receives content; it does not fetch manuscripts or call AI services. Stable book IDs isolate saved reading data. Section IDs must be unique within each book; `home` is reserved. Sections may have recursive `children`; `format` may be `markdown` or `html`. Optional home copy, concept cards, downloads, attribution and licence are supplied by the publication.
 
-export function parseMySource(input: string): SectionConfig[] {
-  // Convert your source into SectionConfig[]
-  return [
-    {
-      id: 'intro',
-      title: 'Introduction',
-      order: 1,
-      level: 2,
-      blocks: [{ id: 'p-1', type: 'text', variant: 'paragraph', content: input }]
-    }
-  ];
-}
-```
+## Build and verification
 
-## For LLM Agents (Codex, Claude Code)
+`npm run build` builds both the core package and the source-linked demonstration, including the original reader stylesheet and locally bundled fonts and icons. `npm run test:books` checks real-book completeness, identities, internal links, source attribution and provenance. Content and interaction checks are recorded with the upgrade evidence; package-consumer verification is separate from source-linked verification.
 
-This repo is structured to make automated refactors and reuse straightforward. The key concept is **Core + Adapters**.
+The core remains private. This upgrade prepares a public release; it does not publish a package, deploy a site or change repository visibility. The release plan records remaining licensing and release decisions before any public distribution.
 
-**Workflow for LLM-driven reuse**
-- Keep `packages/reader-core` unchanged unless you are adding new shared capabilities.
-- Build a new app in `apps/<your-app>` that imports from `reader-core`.
-- Add an adapter if your content source is not Markdown.
-- Do not copy-paste components into the app. Keep changes inside core when they are reusable.
+## Project map
 
-**Rules of engagement**
-- Any UI change needed in multiple apps belongs in `reader-core`.
-- Any content ingestion change belongs in an adapter.
-- Any app-specific UX (landing pages, prompts, upload flows) stays in the app.
+- `packages/reader-core/src/original/` contains components extracted from the original applications and their provenance.
+- `packages/reader-core/src/publication-content/` provides sanitised rich Markdown and HTML rendering.
+- `apps/reader-demo/` integrates the real books.
+- `scripts/build-reader-styles.mjs` packages the original reader styling, fonts, icons and font notices.
+- [Original-code upgrade contract](docs/plan-original-reader-upgrade-2026-10-23.md) records the selected design and implementation boundaries.
+- [Architecture review](docs/review-original-reader-architecture-2026-10-23.md) records the initial integration risks.
+- [Existing API integration](docs/REUSE.md) documents the earlier block-based API; its generic interface is not the design baseline for this upgrade.
 
-**Template instructions for an agent**
-```text
-Goal: Build a new reader app using reader-core.
-Constraints:
-- Do not modify reader-core unless functionality is reusable across apps.
-- Use an adapter to convert source content to SectionConfig[].
-- The app should be thin: no duplicate reader logic.
-Acceptance:
-- App renders ReaderShell with sections.
-- Upload/import flow works locally.
-- No feature regressions in existing demo.
-```
-
-## Demo Features
-- Upload Markdown locally (client-only).
-- Drag-and-drop file input.
-- Upload template via `public/upload.md`.
-- Choose section heading level (Auto / H1 / H2).
-- Choose TOC minimum level (H2 / H3 / H4).
-- Preview in the reader with TOC, highlights, bookmarks, readability controls.
-- Download `llms.txt` from the reader sidebar (uses the current loaded content).
-
-## Core Features
-- Markdown parsing to `SectionConfig[]`.
-- Reader UI: TOC, highlights, bookmarks, progress, readability controls.
-- Search, EPUB export, `llms.txt` export (runtime + build-time).
-- Inline code, code blocks with copy + wrapping, horizontal rules.
-
-## Reuse Guide
-See `docs/REUSE.md` for step-by-step integration and adapter guidance.
-
-## `llms.txt` Export
-There are two ways to generate `llms.txt`:
-- **Runtime (recommended for user uploads):** Use the “Download llms.txt” button in the reader sidebar. This exports the **currently loaded** sections.
-- **Build-time (demo default):** `npm run build` in `apps/reader-demo` generates `public/llms.txt` from `src/defaultMarkdown.md`.
+The previously deployed demo predates this work. Local build success and technical checks do not constitute author acceptance of the upgraded interface.

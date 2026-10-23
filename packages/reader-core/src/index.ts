@@ -23,3 +23,7 @@ export * from './components/tools/ReadabilityControls';
 export * from './components/tools/SearchModal';
 
 export * from './adapters/markdownAdapter';
+
+export { PublicationReader } from './original/PublicationReader';
+export type { PublicationBook, PublicationSection, PublicationReaderProps, PublicationCoaching } from './original/types';
+export { renderPublicationContent, publicationContentToText, getPublicationHeadings } from './publication-content';

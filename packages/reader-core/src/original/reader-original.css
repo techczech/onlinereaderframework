@@ -1,0 +1,56 @@
+/* Original Deliberate Practice index.html typography, icons and animation settings.
+   Tailwind utilities and typography are built by the consuming app; see README.md. */
+.publication-reader { font-family: 'Inter', sans-serif; }
+.publication-reader .prose-content { font-family: 'Merriweather', serif; }
+.publication-reader aside::-webkit-scrollbar { width: 4px; }
+.publication-reader aside::-webkit-scrollbar-thumb { background-color: #e5e7eb; border-radius: 4px; }
+.publication-reader .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
+}
+.publication-reader .material-symbols-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+@keyframes publication-fade-in-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes publication-bounce-in { 0% { opacity: 0; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+.publication-reader .animate-fade-in-up { animation: publication-fade-in-up .3s ease-out; }
+.publication-reader .animate-bounce-in { animation: publication-bounce-in .3s cubic-bezier(.68,-.55,.265,1.55); }
+/* These reproduce the original block treatments around the rich HTML seam. */
+.publication-content h1 { margin-top: 3rem; margin-bottom: 1.5rem; letter-spacing: -.025em; }
+.publication-content h2 { margin-top: 2.5rem; margin-bottom: 1.25rem; }
+.publication-content h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.publication-content :is(h1,h2,h3,h4,h5,h6) { scroll-margin-top: 5rem; }
+.publication-content p { margin-bottom: 1.5rem; }
+.publication-content :is(ul,ol) { padding-left: 1.5rem; margin: 1.5rem 0; }
+.publication-content li { padding-left: .5rem; margin: .75rem 0; }
+.publication-content li::marker { color: #818cf8; }
+.publication-content a { color: #4f46e5; text-decoration: underline; text-decoration-color: #a5b4fc; text-underline-offset: 2px; }
+.publication-content blockquote { padding: .5rem 1rem .5rem 1.5rem; border-left: 4px solid #c7d2fe; font-style: italic; line-height: 2; background: #f9fafb; border-radius: 0 .5rem .5rem 0; margin: 2rem 0; }
+.publication-content aside { background: #eef2ff; color: #312e81; border-left: 4px solid #6366f1; padding: 1.25rem; margin: 2rem 0; border-radius: 0 .5rem .5rem 0; font-size: 1rem; line-height: 1.625; font-weight: 500; box-shadow: 0 1px 2px rgb(0 0 0 / .05); }
+.publication-content aside::before { content: 'lightbulb'; font-family: 'Material Symbols Outlined'; font-style: normal; float: left; margin-right: 1rem; color: #4f46e5; font-size: 24px; }
+.publication-content table { display: block; overflow-x: auto; border: 1px solid #e5e7eb; border-radius: .75rem; box-shadow: 0 1px 2px rgb(0 0 0 / .05); margin: 2rem 0; border-spacing: 0; }
+.publication-content :is(td,th) { padding: 1rem 1.5rem; border: 1px solid #e5e7eb; font-size: .875rem; }
+.publication-content tr:nth-child(2n) { background: #f9fafb; }
+.publication-content thead { background: #f3f4f6; }
+.publication-content pre { overflow-x: auto; }
+.publication-content img { max-width: 100%; height: auto; }
+.publication-content { overflow-wrap: anywhere; }
+.publication-reader.dark .publication-content a { color: #818cf8; text-decoration-color: #6366f1; }
+.publication-reader.dark .publication-content blockquote { border-color: #4338ca; background: rgb(31 41 55 / .5); color: #d1d5db; }
+.publication-reader.dark .publication-content aside { background: rgb(49 46 129 / .3); color: #e0e7ff; }
+.publication-reader.dark .publication-content :is(table,td,th) { border-color: #374151; }
+.publication-reader.dark .publication-content :is(thead,tr:nth-child(2n)) { background: rgb(31 41 55 / .5); }
+.publication-content mark { font: inherit; }
+@media (prefers-reduced-motion: reduce) {
+  .publication-reader *, .publication-reader *::before { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

@@ -5,3 +5,7 @@ apps/reader-demo/.vite/
 .DS_Store
 
 _legacy/
+
+/build/
+
+/research/.manifest.lock
