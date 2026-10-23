@@ -1,4 +1,20 @@
-import type { PublicationSection } from './types';
+import type { PublicationBook, PublicationSection } from './types.js';
+
+/** Join the authored title/subtitle without adding punctuation or repeating their overlap. */
+export function publicationDisplayTitle(book: Pick<PublicationBook, 'title' | 'subtitle'>): string {
+  const title = book.title.trim();
+  const subtitle = book.subtitle?.trim();
+  if (!subtitle) return title;
+  if (!title) return subtitle;
+  const titleWords = title.split(/\s+/);
+  const subtitleWords = subtitle.split(/\s+/);
+  for (let overlap = Math.min(titleWords.length, subtitleWords.length); overlap > 0; overlap--) {
+    if (titleWords.slice(-overlap).every((word, index) => word.toLowerCase() === subtitleWords[index].toLowerCase())) {
+      return [...titleWords, ...subtitleWords.slice(overlap)].join(' ');
+    }
+  }
+  return `${title} ${subtitle}`;
+}
 
 /** Preorder includes parents with content as well as every descendant. */
 export function flattenPublicationSections(sections: PublicationSection[]): PublicationSection[] {

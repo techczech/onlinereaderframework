@@ -1,4 +1,4 @@
-import type { Highlight } from './types';
+import type { Highlight } from './types.js';
 
 const blockTags = new Set(['ADDRESS', 'ARTICLE', 'ASIDE', 'BLOCKQUOTE', 'BR', 'DD', 'DIV', 'DL', 'DT', 'FIGCAPTION', 'FIGURE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'HR', 'LI', 'OL', 'P', 'PRE', 'SECTION', 'TABLE', 'TD', 'TH', 'TR', 'UL']);
 export const normalisePublicationText = (text: string): string => text.replace(/[\s\u00a0]+/g, ' ').trim();
@@ -41,6 +41,39 @@ export function publicationTextModel(root: Node): PublicationTextModel {
   return { text, points };
 }
 
+/** Search in lowercase, but return only complete original code-point boundaries.
+ * Lowercase the whole string to retain contextual casing (for example Greek sigma).
+ * Per-code-point lowercase lengths map expansions such as İ -> i + combining dot.
+ */
+function publicationTextMatcher(text: string) {
+  const folded = text.toLowerCase();
+  const offsets = new Map<number, number>([[0, 0]]);
+  let originalOffset = 0;
+  let foldedOffset = 0;
+  for (const character of text) {
+    originalOffset += character.length;
+    foldedOffset += character.toLowerCase().length;
+    offsets.set(foldedOffset, originalOffset);
+  }
+  return function* (phrase: string): Generator<{ from: number; to: number }> {
+    const needle = normalisePublicationText(phrase).toLowerCase();
+    if (!needle) return;
+    let start = folded.indexOf(needle);
+    while (start !== -1) {
+      const end = start + needle.length;
+      const from = offsets.get(start);
+      const to = offsets.get(end);
+      if (from !== undefined && to !== undefined) {
+        yield { from, to };
+        start = folded.indexOf(needle, end);
+      } else {
+        // Do not restore half a surrogate pair or part of an expanded character.
+        start = folded.indexOf(needle, start + 1);
+      }
+    }
+  };
+}
+
 function templateFor(html: string): HTMLTemplateElement {
   const template = document.createElement('template');
   template.innerHTML = html;
@@ -75,14 +108,11 @@ export function preparePublicationHTML(html: string, highlights: Highlight[] = [
   });
   // Find ranges before changing any text nodes. Longer overlapping selections win.
   const model = publicationTextModel(template.content);
+  const matchText = publicationTextMatcher(model.text);
   const claimed = new Uint8Array(model.text.length);
   const slices = new Map<Text, { from: number; to: number; id: string }[]>();
   [...highlights].sort((a, b) => b.text.length - a.text.length).forEach(highlight => {
-    const needle = normalisePublicationText(highlight.text).toLowerCase();
-    if (!needle) return;
-    let from = model.text.toLowerCase().indexOf(needle);
-    while (from !== -1) {
-      const to = from + needle.length;
+    for (const { from, to } of matchText(highlight.text)) {
       if (!claimed.subarray(from, to).some(Boolean)) {
         const nodes = new Map<Text, { from: number; to: number }>();
         for (let i = from; i < to; i++) {
@@ -95,7 +125,6 @@ export function preparePublicationHTML(html: string, highlights: Highlight[] = [
         }
         nodes.forEach((slice, node) => slices.set(node, [...(slices.get(node) ?? []), { ...slice, id: highlight.id }]));
       }
-      from = model.text.toLowerCase().indexOf(needle, to);
     }
   });
   slices.forEach((ranges, node) => ranges.sort((a, b) => b.from - a.from).forEach(slice => {
@@ -113,10 +142,9 @@ export function preparePublicationHTML(html: string, highlights: Highlight[] = [
 /** Locate a visible phrase across emphasis, links and table-cell text nodes. */
 export function findPublicationTextRange(root: Node, phrase: string): Range | null {
   const model = publicationTextModel(root);
-  const needle = normalisePublicationText(phrase).toLowerCase();
-  const start = model.text.toLowerCase().indexOf(needle);
-  if (!needle || start === -1) return null;
-  const points = model.points.slice(start, start + needle.length).filter((point): point is TextPoint => point !== null);
+  const [match] = publicationTextMatcher(model.text)(phrase);
+  if (!match) return null;
+  const points = model.points.slice(match.from, match.to).filter((point): point is TextPoint => point !== null);
   if (!points.length) return null;
   const range = document.createRange();
   range.setStart(points[0].node, points[0].offset);

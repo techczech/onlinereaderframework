@@ -1,4 +1,7 @@
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import ts from '../../node_modules/typescript/lib/typescript.js';
@@ -73,4 +76,29 @@ test('download boundaries reject executable schemes and retain same-origin asset
   assert.equal(model.safePublicationHref('javascript:alert(1)'), undefined);
   assert.equal(model.safePublicationHref('data:text/html,<script>bad</script>'), undefined);
   assert.equal(model.safePublicationHref('/downloads/book.epub'), '/downloads/book.epub');
+});
+
+
+test('full publication identity uses actual adapter words without added punctuation or duplicates', () => {
+  const books = JSON.parse(readFileSync(new URL('../../../../apps/reader-demo/src/books/original-publications.json', import.meta.url), 'utf8'));
+  assert.equal(model.publicationDisplayTitle(books.find(book => book.id === 'language-muscle')), 'Building Your Language Muscle');
+  assert.equal(model.publicationDisplayTitle(books.find(book => book.id === 'deliberate-practice')), 'Deliberate Practice: A Universal Learning Method');
+  assert.equal(model.publicationDisplayTitle({ title: 'Complete Title' }), 'Complete Title');
+  assert.equal(model.publicationDisplayTitle({ title: 'Building Your Language Muscle', subtitle: 'Language Muscle' }), 'Building Your Language Muscle');
+  assert.equal(model.publicationDisplayTitle({ title: 'Building Your Language', subtitle: 'Language Muscle' }), 'Building Your Language Muscle');
+  assert.equal(model.publicationDisplayTitle({ title: '  Building Your  ', subtitle: '  Language Muscle  ' }), 'Building Your Language Muscle');
+});
+
+
+test('native ESM imports the original reader without a bundler or browser globals', async () => {
+  const directory = fileURLToPath(new URL('.', import.meta.url));
+  const core = resolve(directory, '../..');
+  const scratch = mkdtempSync(resolve(directory, '.test-original-reader-esm-'));
+  try {
+    execFileSync(process.execPath, [resolve(core, 'node_modules/typescript/bin/tsc'), '-p', resolve(core, 'tsconfig.json'), '--outDir', scratch, '--declaration', 'false'], { stdio: 'pipe' });
+    const api = await import(pathToFileURL(resolve(scratch, 'original/PublicationReader.js')).href);
+    assert.equal(typeof api.PublicationReader, 'function');
+  } finally {
+    rmSync(scratch, { recursive: true, force: true });
+  }
 });

@@ -1,9 +1,9 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import type { PublicationBook, PublicationSection } from './types';
-import { containsSection, flattenPublicationSections } from './publication-model';
-import { renderPublicationContent } from '../publication-content';
-import { publicationPlainText } from './publication-html';
+import type { PublicationBook, PublicationSection } from './types.js';
+import { containsSection, flattenPublicationSections } from './publication-model.js';
+import { renderPublicationContent } from '../publication-content/index.js';
+import { publicationPlainText } from './publication-html.js';
 
 // Import types locally or redefine if needed for independent component usage
 type FontSize = 'sm' | 'base' | 'lg' | 'xl';

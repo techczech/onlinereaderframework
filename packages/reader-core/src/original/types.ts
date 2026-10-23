@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { PublicationEpubOptions } from '../services/publication-epub';
+import type { PublicationEpubOptions } from '../services/publication-epub/index.js';
 
 export type PublicationContentFormat = 'markdown' | 'html';
 export type FontSize = 'sm' | 'base' | 'lg' | 'xl';

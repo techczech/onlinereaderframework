@@ -1,10 +1,10 @@
-import type { PublicationEpubOptions } from '../services/publication-epub';
+import type { PublicationEpubOptions } from '../services/publication-epub/index.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { FontSize, Highlight, LineHeight, MaxWidth, PublicationBook, Reflection } from './types';
-import type { MarkdownRendererHandle } from './MarkdownRenderer';
-import type { TableOfContentsHandle } from './TableOfContents';
-import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model';
-import { findPublicationTextRange, normalisePublicationText } from './publication-html';
+import type { FontSize, Highlight, LineHeight, MaxWidth, PublicationBook, Reflection } from './types.js';
+import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
+import type { TableOfContentsHandle } from './TableOfContents.js';
+import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
+import { findPublicationTextRange, normalisePublicationText } from './publication-html.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
@@ -207,7 +207,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
       if (download) {
         const anchor = document.createElement('a'); anchor.href = download.href; anchor.click();
       } else {
-        const { downloadPublicationEpub } = await import('../services/publication-epub');
+        const { downloadPublicationEpub } = await import('../services/publication-epub/index.js');
         await downloadPublicationEpub(book, epub || undefined);
       }
     } catch (error) {

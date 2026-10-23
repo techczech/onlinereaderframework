@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Highlight, Reflection } from './types';
-import { exportPublicationNotes } from './publication-notes';
+import { Highlight, Reflection } from './types.js';
+import { exportPublicationNotes } from './publication-notes.js';
 
 interface HighlightsDrawerProps {
   bookTitle: string;

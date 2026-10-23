@@ -1,8 +1,8 @@
 import React from 'react';
-import type { PublicationReaderProps } from './types';
-import { flattenPublicationSections } from './publication-model';
-import { usePublicationReader } from './use-publication-reader';
-import { ReaderLayout } from './ReaderLayout';
+import type { PublicationReaderProps } from './types.js';
+import { flattenPublicationSections } from './publication-model.js';
+import { usePublicationReader } from './use-publication-reader.js';
+import { ReaderLayout } from './ReaderLayout.js';
 
 /** Original Deliberate Practice reader, generalised without changing its visual baseline.
  * The inner key is part of the public isolation guarantee when a host switches books.
@@ -22,4 +22,4 @@ function BookReader({ book, coaching, epub }: PublicationReaderProps) {
   return <ReaderLayout reader={reader} coaching={coaching} />;
 }
 
-export type { PublicationBook, PublicationSection, PublicationContentFormat, PublicationReaderProps, PublicationCoaching } from './types';
+export type { PublicationBook, PublicationSection, PublicationContentFormat, PublicationReaderProps, PublicationCoaching } from './types.js';

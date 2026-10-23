@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import type { PublicationBook } from './types';
-import { safePublicationHref } from './publication-model';
+import type { PublicationBook } from './types.js';
+import { safePublicationHref } from './publication-model.js';
 
 interface HomeProps {
   book: PublicationBook;

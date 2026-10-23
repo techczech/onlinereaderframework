@@ -1,15 +1,15 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
-import { MarkdownRenderer } from './MarkdownRenderer';
-import { HighlightsDrawer } from './HighlightsDrawer';
-import { Home } from './Home';
-import { TableOfContents } from './TableOfContents';
-import { QuoteImageModal } from './QuoteImageModal';
-import { Toast } from './Toast';
-import { ShortcutsModal } from './ShortcutsModal';
-import type { PublicationCoaching } from './types';
-import { publicationUrl } from './publication-model';
-import type { usePublicationReader } from './use-publication-reader';
+import { Sidebar } from './Sidebar.js';
+import { MarkdownRenderer } from './MarkdownRenderer.js';
+import { HighlightsDrawer } from './HighlightsDrawer.js';
+import { Home } from './Home.js';
+import { TableOfContents } from './TableOfContents.js';
+import { QuoteImageModal } from './QuoteImageModal.js';
+import { Toast } from './Toast.js';
+import { ShortcutsModal } from './ShortcutsModal.js';
+import type { PublicationCoaching } from './types.js';
+import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
+import type { usePublicationReader } from './use-publication-reader.js';
 
 /** Deliberate Practice App.tsx's original reader layout and control markup. */
 export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof usePublicationReader>; coaching?: PublicationCoaching }) {
@@ -386,7 +386,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
               text={quoteModalData.text} 
               title={quoteModalData.title}
               author={book.author}
-              bookTitle={book.title}
+              bookTitle={publicationDisplayTitle(book)}
               bookId={book.id}
               url={publicationUrl(window.location.href, book.id, quoteModalData.sectionId, quoteModalData.text).href}
               onClose={() => setQuoteModalData(null)} 

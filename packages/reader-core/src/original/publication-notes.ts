@@ -1,4 +1,4 @@
-import type { Highlight, Reflection } from './types';
+import type { Highlight, Reflection } from './types.js';
 
 /** Original grouped Markdown export, now including section reflections and book identity. */
 export function publicationNotesMarkdown(title: string, highlights: Highlight[], reflections: Reflection[]): string {

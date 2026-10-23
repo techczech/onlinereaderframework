@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useRef, memo, forwardRef, useImperativeHandle, useMemo } from 'react';
-import { Highlight, Reflection, PublicationContentFormat } from './types';
-import { renderPublicationContent } from '../publication-content';
-import { preparePublicationHTML, publicationPlainText } from './publication-html';
+import { Highlight, Reflection, PublicationContentFormat } from './types.js';
+import { renderPublicationContent } from '../publication-content/index.js';
+import { preparePublicationHTML, publicationPlainText } from './publication-html.js';
 
 export interface MarkdownRendererHandle {
     toggleReadAloud: () => void;
