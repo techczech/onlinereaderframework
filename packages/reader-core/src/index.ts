@@ -32,3 +32,8 @@ export { generatePublicationEpub, downloadPublicationEpub } from './services/pub
 export type { PublicationEpubOptions, PublicationEpubAsset } from './services/publication-epub/index.js';
 
 export { publicationDisplayTitle } from './original/publication-model.js';
+
+export { ListeningPanel } from './original/listening/index.js';
+export type { PublicationAudioTrack, PublicationAudioAlignment, ListeningBoundary } from './original/listening/index.js';
+export { ReadingSupportControls, ReadingSupportSurface, useReadingSupport } from './original/reading-support/index.js';
+export type { ReadingSupportPreferences } from './original/reading-support/index.js';

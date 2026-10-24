@@ -1,0 +1,156 @@
+{
+  "checks": [
+    {
+      "name": "deliberate-practice cover loaded",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice neutral search label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice contents label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "language-muscle cover loaded",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "language-muscle neutral search label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "language-muscle contents label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "linguistics cover loaded",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "linguistics neutral search label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "linguistics contents label",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "1440 article visible",
+      "passed": true,
+      "detail": {
+        "x": 553,
+        "y": 241,
+        "width": 366,
+        "height": 2169.25
+      }
+    },
+    {
+      "name": "1440 desktop article width",
+      "passed": false,
+      "detail": {
+        "x": 553,
+        "y": 241,
+        "width": 366,
+        "height": 2169.25
+      }
+    },
+    {
+      "name": "1440 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440 no repeated local chapter title",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "1920 article visible",
+      "passed": true,
+      "detail": {
+        "x": 793,
+        "y": 241,
+        "width": 366,
+        "height": 2169.25
+      }
+    },
+    {
+      "name": "1920 desktop article width",
+      "passed": false,
+      "detail": {
+        "x": 793,
+        "y": 241,
+        "width": 366,
+        "height": 2169.25
+      }
+    },
+    {
+      "name": "1920 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1920 no repeated local chapter title",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "1024 article visible",
+      "passed": true,
+      "detail": {
+        "x": 361,
+        "y": 241,
+        "width": 590,
+        "height": 1650.25
+      }
+    },
+    {
+      "name": "1024 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024 no repeated local chapter title",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "390 article visible",
+      "passed": true,
+      "detail": {
+        "x": 41,
+        "y": 264,
+        "width": 308,
+        "height": 2454.25
+      }
+    },
+    {
+      "name": "390 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 no repeated local chapter title",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "result": "failed"
+}

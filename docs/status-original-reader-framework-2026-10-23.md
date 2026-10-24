@@ -2,10 +2,13 @@
 title: Original reader framework and release preparation status
 date: 2026-10-23
 register: FOR DOMINIK
-status: prepared-independent-technical-review-complete
+status: superseded-by-author-corrections-2026-10-24
 code_commit: 280b66761e8a4436066bd05040f9167dedcfc01b
 publication_authorised: false
 ---
+
+**24 October update:** The author’s local review identified presentation and navigation defects. The technical evidence below describes the prior checkpoint. The working redesign is recorded in `docs/design/2026-10-24-reader-corrections/brief-reader-corrections.md`; do not treat these older release artefacts as acceptance of the revised interface.
+
 
 # Original reader framework status
 

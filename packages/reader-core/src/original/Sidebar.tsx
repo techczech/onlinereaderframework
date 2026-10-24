@@ -3,12 +3,8 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import type { PublicationBook, PublicationSection } from './types.js';
 import { containsSection, flattenPublicationSections } from './publication-model.js';
 import { renderPublicationContent } from '../publication-content/index.js';
+import { publicationLabels, publicationNavigation } from './publication-navigation.js';
 import { publicationPlainText } from './publication-html.js';
-
-// Import types locally or redefine if needed for independent component usage
-type FontSize = 'sm' | 'base' | 'lg' | 'xl';
-type LineHeight = 'tight' | 'normal' | 'relaxed' | 'loose';
-type MaxWidth = 'sm' | 'md' | 'lg' | 'full';
 
 interface SidebarProps {
   book: PublicationBook;
@@ -20,21 +16,7 @@ interface SidebarProps {
   bookmarkedSections: Set<string>;
   onOpenHighlights?: () => void;
   shouldFocusSearch?: boolean;
-  // Read Your Way Actions
-  onToggleTheme: () => void;
-  onToggleFocus: () => void;
-  onToggleRuler: () => void;
-  onToggleReadAloud: () => void;
-  onToggleCoach?: () => void;
-  onToggleShortcuts: () => void;
-  onDownloadEbook?: () => void;
-  // Readability Settings
-  fontSize: FontSize;
-  onCycleFontSize: () => void;
-  lineHeight: LineHeight;
-  onCycleLineHeight: () => void;
-  maxWidth: MaxWidth;
-  onCycleMaxWidth: () => void;
+
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ 
@@ -47,25 +29,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
   bookmarkedSections,
   onOpenHighlights,
   shouldFocusSearch,
-  onToggleTheme,
-  onToggleFocus,
-  onToggleRuler,
-  onToggleReadAloud,
-  onToggleCoach,
-  onToggleShortcuts,
-  onDownloadEbook,
-  fontSize,
-  onCycleFontSize,
-  lineHeight,
-  onCycleLineHeight,
-  maxWidth,
-  onCycleMaxWidth
+
 }) => {
   const GUIDE_CONTENT = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
   const searchIndex = useMemo(() => GUIDE_CONTENT.map(section => ({ section, text: publicationPlainText(renderPublicationContent(section.content, section.format ?? 'markdown')) })), [GUIDE_CONTENT]);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const [isReadOptionsOpen, setIsReadOptionsOpen] = useState(false);
+  const labels = publicationLabels(book);
+  const navigation = publicationNavigation(book.sections, book.navigation?.sidebarDepth);
 
   // Auto-focus search input when requested
   useEffect(() => {
@@ -121,9 +92,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const handleClearSearch = () => setSearchQuery('');
 
-  // Group content by category (for normal view), excluding 'App Guide' which is accessed via Read Your Way
-  const categories = Array.from(new Set(book.sections.map(s => s.category))).filter(c => c !== 'App Guide');
-  
   // Get bookmarked section objects
   const bookmarks = GUIDE_CONTENT.filter(s => bookmarkedSections.has(s.id));
 
@@ -134,42 +102,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
       return section && section.category !== 'App Guide' && section.content.trim();
   }).length;
   const progress = totalSections > 0 ? Math.min(100, Math.round((validReadCount / totalSections) * 100)) : 0;
-
-  const handleAction = (action: () => void) => {
-      action();
-      // On mobile, close sidebar after picking a tool so they can see the effect (e.g. Ruler/Focus)
-      if (window.innerWidth < 1024) {
-          onClose();
-      }
-  };
-
-  // Helper for formatting setting labels
-  const getFontSizeLabel = (s: FontSize) => {
-      switch(s) {
-          case 'sm': return 'Small';
-          case 'base': return 'Medium';
-          case 'lg': return 'Large';
-          case 'xl': return 'X-Large';
-      }
-  };
-  
-  const getSpacingLabel = (s: LineHeight) => {
-      switch(s) {
-          case 'tight': return 'Tight';
-          case 'normal': return 'Normal';
-          case 'relaxed': return 'Relaxed';
-          case 'loose': return 'Loose';
-      }
-  };
-
-  const getWidthLabel = (w: MaxWidth) => {
-      switch(w) {
-          case 'sm': return 'Narrow';
-          case 'md': return 'Normal';
-          case 'lg': return 'Wide';
-          case 'full': return 'Full';
-      }
-  };
 
   return (
     <>
@@ -183,7 +115,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Sidebar Content */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-full w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
+        publication-sidebar fixed top-0 left-0 z-50 h-full w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
         transform transition-transform duration-300 ease-in-out overflow-y-auto
         lg:translate-x-0 lg:static lg:h-screen flex flex-col
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -197,10 +129,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <input 
                     ref={searchInputRef}
                     type="search"
-                    aria-label="Search publication"
+                    aria-label={labels.search}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search guide..."
+                    placeholder={labels.search}
                     className="w-full pl-9 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500"
                 />
                 <span className="material-symbols-outlined absolute left-2.5 top-2 text-gray-400 text-lg">search</span>
@@ -307,8 +239,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 // Normal Navigation View
                 <div className="flex flex-col min-h-full">
                     <div className="p-6 border-b border-gray-100 dark:border-gray-800 flex-shrink-0">
-                        <h1 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{book.title}</h1>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 mb-4">{book.subtitle ?? book.author}</p>
+                        <div className="publication-sidebar-identity">
+                          {book.appearance?.cover && <img src={book.appearance.cover.src} alt="" className="publication-sidebar-cover" />}
+                          <div><h2 className="font-bold text-gray-900 dark:text-white leading-tight">{book.title}</h2>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{book.author}</p></div>
+                        </div>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 mb-4">{book.subtitle}</p>
                         
                         {/* Progress Bar */}
                         <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mb-1">
@@ -354,183 +290,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </div>
                         )}
 
-                        {/* Chapters */}
-                        <div className="space-y-8">
-                            {categories.map(category => (
-                                <div key={category}>
-                                    <h3 className="px-2 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">
-                                        {category}
-                                    </h3>
-                                    <div className="space-y-1">
-                                        {book.sections.filter(section => section.category === category).map(section => (
-                                          <SidebarItem key={section.id} section={section} currentSectionId={currentSectionId}
-                                            readSections={readSections} onSelectSection={onSelectSection} />
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
+                        <h2 className="px-2 mb-3 text-sm font-semibold">{labels.tableOfContents}</h2>
+                        <div className="space-y-1">
+                          {navigation.map(node => <SidebarItem key={node.section.id} section={node.section}
+                            visibleChildren={node.children} currentSectionId={currentSectionId} readSections={readSections}
+                            onSelectSection={onSelectSection} />)}
                         </div>
                     </nav>
 
-                    {/* Read Your Way Section (Collapsible) */}
-                    <div className="border-t border-gray-100 dark:border-gray-800 mt-auto">
-                        <button 
-                            onClick={() => setIsReadOptionsOpen(!isReadOptionsOpen)}
-                            className="w-full p-6 flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors text-left"
-                        >
-                            <div className="flex items-center gap-2">
-                                <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-lg">tune</span>
-                                <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">Read Your Way</h3>
-                            </div>
-                            <span className={`material-symbols-outlined text-gray-400 transition-transform duration-200 ${isReadOptionsOpen ? 'rotate-180' : ''}`}>
-                                expand_more
-                            </span>
-                        </button>
-                        
-                        {isReadOptionsOpen && (
-                            <div className="px-6 pb-6 bg-gray-50 dark:bg-gray-900/50 grid grid-cols-4 gap-y-4 gap-x-2 animate-fade-in-up">
-                                <button 
-                                    onClick={() => handleAction(onToggleTheme)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Toggle Dark/Light Mode"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">contrast</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Theme</span>
-                                </button>
 
-                                <button 
-                                    onClick={() => handleAction(onToggleFocus)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Toggle Focus Mode (Hides sidebar)"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">fullscreen</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Focus</span>
-                                </button>
-
-                                <button 
-                                    onClick={() => handleAction(onToggleRuler)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Toggle Reading Ruler (Focus on lines)"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">horizontal_rule</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Ruler</span>
-                                </button>
-
-                                <button 
-                                    onClick={() => handleAction(onToggleReadAloud)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Toggle Text-to-Speech (Listen to guide)"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">volume_up</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Listen</span>
-                                </button>
-                                
-                                {/* Typography Controls Row */}
-                                
-                                <button 
-                                    onClick={onCycleFontSize}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title={`Current Size: ${getFontSizeLabel(fontSize)}`}
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">format_size</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">{getFontSizeLabel(fontSize)}</span>
-                                </button>
-
-                                <button 
-                                    onClick={onCycleLineHeight}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title={`Current Spacing: ${getSpacingLabel(lineHeight)}`}
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">format_line_spacing</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">{getSpacingLabel(lineHeight)}</span>
-                                </button>
-
-                                <button 
-                                    onClick={onCycleMaxWidth}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title={`Current Width: ${getWidthLabel(maxWidth)}`}
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">settings_overscan</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">{getWidthLabel(maxWidth)}</span>
-                                </button>
-
-                                {onToggleCoach && (                                <button 
-                                    onClick={() => handleAction(onToggleCoach)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Open AI Coach Chat"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">smart_toy</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Coach</span>
-                                </button>
-                                )}
-                                
-                                <button 
-                                    onClick={() => handleAction(onOpenHighlights || (() => {}))}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="View Notes & Highlights"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">ink_highlighter</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Notes</span>
-                                </button>
-
-                                <button 
-                                    onClick={() => handleAction(onToggleShortcuts)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="View Keyboard Shortcuts"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">keyboard</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">Keys</span>
-                                </button>
-                                
-                                {onDownloadEbook && (                                <button 
-                                    onClick={() => handleAction(onDownloadEbook)}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="Download as eBook (EPUB)"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">download</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-gray-500 dark:text-gray-400">eBook</span>
-                                </button>
-                                )}
-
-                                {GUIDE_CONTENT.some(section => section.id === 'reader-guide') && (                                <button 
-                                    onClick={() => {
-                                        onSelectSection('reader-guide');
-                                        if (window.innerWidth < 1024) onClose();
-                                    }}
-                                    className="flex flex-col items-center text-center group cursor-pointer" 
-                                    title="How to Use This Reader"
-                                >
-                                    <div className="w-8 h-8 rounded-full bg-indigo-50 dark:bg-indigo-900/30 shadow-sm border border-indigo-100 dark:border-indigo-700 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-1 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-800 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">help</span>
-                                    </div>
-                                    <span className="text-[9px] font-semibold text-indigo-600 dark:text-indigo-400">Guide</span>
-                                </button>
-                                )}
-                            </div>
-                        )}
-                    </div>
                 </div>
             )}
         </div>
@@ -543,8 +311,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 /** Language Muscle's recursive SidebarItem adapted to Deliberate Practice's colours.
  * Separate links and expand buttons keep parent chapters readable and keyboard accessible.
  */
-function SidebarItem({ section, currentSectionId, readSections, onSelectSection, depth = 0 }: {
+function SidebarItem({ section, visibleChildren, currentSectionId, readSections, onSelectSection, depth = 0 }: {
   section: PublicationSection;
+  visibleChildren: ReturnType<typeof publicationNavigation>;
   currentSectionId: string;
   readSections: Set<string>;
   onSelectSection: (id: string) => void;
@@ -552,7 +321,7 @@ function SidebarItem({ section, currentSectionId, readSections, onSelectSection,
 }) {
   const activeDescendant = containsSection(section, currentSectionId);
   const [expanded, setExpanded] = useState(section.defaultExpanded || activeDescendant);
-  const hasChildren = !!section.children?.length;
+  const hasChildren = visibleChildren.length > 0;
   useEffect(() => { if (activeDescendant) setExpanded(true); }, [activeDescendant]);
   const isRead = readSections.has(section.id);
   const isActive = currentSectionId === section.id;
@@ -566,8 +335,8 @@ function SidebarItem({ section, currentSectionId, readSections, onSelectSection,
         </button>
         {hasChildren && <button onClick={() => setExpanded(value => !value)} aria-expanded={expanded} aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.title}`} className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"><span className="material-symbols-outlined text-lg">{expanded ? 'expand_more' : 'chevron_right'}</span></button>}
       </div>
-      {hasChildren && expanded && <div className="border-l-2 border-gray-100 dark:border-gray-800 ml-3 my-1 transition-all">
-        {section.children!.map(child => <SidebarItem key={child.id} section={child} currentSectionId={currentSectionId} readSections={readSections} onSelectSection={onSelectSection} depth={depth + 1} />)}
+      {hasChildren && expanded && <div className="my-1 transition-all">
+        {visibleChildren.map(child => <SidebarItem key={child.section.id} section={child.section} visibleChildren={child.children} currentSectionId={currentSectionId} readSections={readSections} onSelectSection={onSelectSection} depth={depth + 1} />)}
       </div>}
     </div>
   );

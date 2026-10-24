@@ -1,0 +1,23 @@
+[
+  {
+    "book": "linguistics",
+    "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-covers/introduction-to-linguistics-through-stackexchange-answers/ai-art-05-risograph-voices.jpg",
+    "file": "linguistics.jpg",
+    "sha256": "4a63d955dd0132c8fee5e01390bd367e47e2e03f6c534be58c1504c3ad0f8b2b",
+    "status": "provisional existing cover candidate"
+  },
+  {
+    "book": "deliberate-practice",
+    "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-covers/deliberate-practice-guide/ai-art-04-ink-correction.jpg",
+    "file": "deliberate-practice.jpg",
+    "sha256": "e009ad3ac5a6e971e860bf7a4b072f5bf358c2c2c99178ed83a187685328528d",
+    "status": "provisional existing cover candidate"
+  },
+  {
+    "book": "language-muscle",
+    "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-covers/building-your-language-muscle/ai-art-01-woven-fluency.jpg",
+    "file": "language-muscle.jpg",
+    "sha256": "578f394f85ee72430e7a854ab7b9e89008efb33ccb25a7f57a0046e190ea9299",
+    "status": "provisional existing cover candidate"
+  }
+]

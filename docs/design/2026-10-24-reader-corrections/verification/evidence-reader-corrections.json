@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "name": "deliberate-practice cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice neutral search label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice contents label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice automatic home contents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle neutral search label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle contents label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle automatic home contents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics neutral search label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics contents label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics automatic home contents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440 article visible",
+      "passed": true,
+      "detail": {
+        "x": 454.5625,
+        "y": 217,
+        "width": 794.875,
+        "height": 1499.421875
+      }
+    },
+    {
+      "name": "1440 desktop article width",
+      "passed": true,
+      "detail": {
+        "x": 454.5625,
+        "y": 217,
+        "width": 794.875,
+        "height": 1499.421875
+      }
+    },
+    {
+      "name": "1440 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440 no repeated local chapter title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1920 article visible",
+      "passed": true,
+      "detail": {
+        "x": 694.5625,
+        "y": 217,
+        "width": 794.875,
+        "height": 1499.421875
+      }
+    },
+    {
+      "name": "1920 desktop article width",
+      "passed": true,
+      "detail": {
+        "x": 694.5625,
+        "y": 217,
+        "width": 794.875,
+        "height": 1499.421875
+      }
+    },
+    {
+      "name": "1920 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1920 no repeated local chapter title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024 article visible",
+      "passed": true,
+      "detail": {
+        "x": 296,
+        "y": 217,
+        "width": 696,
+        "height": 1586.75
+      }
+    },
+    {
+      "name": "1024 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024 no repeated local chapter title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 article visible",
+      "passed": true,
+      "detail": {
+        "x": 20,
+        "y": 241,
+        "width": 350,
+        "height": 2514.0625
+      }
+    },
+    {
+      "name": "390 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 no repeated local chapter title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric text size applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "sans serif applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "line window active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "settings do not change content",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "combined reset restores text size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "combined reset disables overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape returns focus to settings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recordings are explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "listening does not squeeze article",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "listening close returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "highlight still works with support wrapper",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "result": "passed"
+}

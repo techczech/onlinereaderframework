@@ -1,0 +1,28 @@
+/* Include through build-reader-styles.mjs, after reader-original.css; no JS CSS import. */
+.reading-support-surface { position: relative; isolation: isolate; }
+.reading-support-surface:focus-visible { outline: 2px solid #6366f1; outline-offset: 4px; }
+.reading-support-surface .publication-content,
+.reading-support-surface [data-publication-content],
+.reading-support-surface > :is(p,ul,ol,blockquote,article,section) {
+  font-family: var(--rs-font);
+  font-size: var(--rs-size);
+  line-height: var(--rs-line);
+  letter-spacing: var(--rs-letter);
+}
+.reading-support-surface :is(p,li) { line-height: var(--rs-line); }
+.reading-support-surface p { margin-top: 0; margin-bottom: var(--rs-paragraph); }
+.reading-support-surface :is(pre,code,kbd,samp,math) { letter-spacing: normal; }
+.reading-support-surface[data-rs-focus="paragraph"] [data-rs-paragraph]:not([data-rs-active]) { opacity: .45; }
+.reading-support-overlay { position: absolute; overflow: hidden; pointer-events: none; z-index: 1; }
+.reading-support-overlay * { pointer-events: none; }
+.reading-support-mask { position: absolute; left: 0; right: 0; background: #000; opacity: var(--rs-dim); }
+.reading-support-ruler { position: absolute; left: 0; right: 0; background: currentColor; opacity: var(--rs-dim); }
+.reading-support-controls { position: relative; font: 1rem/1.5 system-ui, sans-serif; }
+.reading-support-settings { padding: .75rem; max-width: 32rem; }
+.reading-support-settings fieldset { border: 1px solid currentColor; border-radius: .5rem; padding: .75rem; margin: 0 0 .75rem; min-width: 0; }
+.reading-support-settings legend { font-weight: 600; padding: 0 .25rem; }
+.reading-support-field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; margin-block: .5rem; }
+.reading-support-field input { width: 5rem; }
+.reading-support-controls :is(button,input,select) { font: inherit; color: inherit; background-color: inherit; border: 1px solid currentColor; border-radius: .25rem; padding: .35rem .5rem; }
+.reading-support-controls :is(button,input,select):focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.reading-support-actions { display: flex; flex-wrap: wrap; gap: .5rem; }

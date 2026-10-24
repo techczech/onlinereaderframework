@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Sidebar } from './Sidebar.js';
 import { MarkdownRenderer } from './MarkdownRenderer.js';
 import { HighlightsDrawer } from './HighlightsDrawer.js';
@@ -7,22 +7,44 @@ import { TableOfContents } from './TableOfContents.js';
 import { QuoteImageModal } from './QuoteImageModal.js';
 import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
-import type { PublicationCoaching } from './types.js';
+import { publicationLabels, publicationColour } from './publication-navigation.js';
+import type { MaxWidth, PublicationCoaching } from './types.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
 import type { usePublicationReader } from './use-publication-reader.js';
 
-/** Deliberate Practice App.tsx's original reader layout and control markup. */
-export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof usePublicationReader>; coaching?: PublicationCoaching }) {
+export interface ReaderLayoutProps {
+  reader: ReturnType<typeof usePublicationReader>;
+  coaching?: PublicationCoaching;
+  readingSettingsExtra?: React.ReactNode;
+  readingSurface?: (children: React.ReactNode) => React.ReactNode;
+  listeningPanel?: React.ReactNode;
+  onListen?: () => void;
+  onBrowserSpeechStart?: () => void;
+  onResetReadingSupport?: () => void;
+}
+
+/** Original reader actions and annotations, with independently measured article and navigation. */
+export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSurface, listeningPanel, onListen, onBrowserSpeechStart, onResetReadingSupport }: ReaderLayoutProps) {
+  const settingsRef = useRef<HTMLDialogElement>(null);
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
   const { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, fontSize, lineHeight, maxWidth, cycleFontSize, cycleLineHeight, cycleMaxWidth, getContainerWidthClass,
+    isDarkMode, setIsDarkMode, fontSize, lineHeight, maxWidth, setMaxWidth, resetReadingSettings, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isRulerActive, setIsRulerActive, rulerY, rulerLines, rulerHeightPx, isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
     contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
+  const labels = publicationLabels(book);
+  const browserSpeechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
+  const appearanceStyle = {
+    '--publication-accent': publicationColour(book.appearance?.accent),
+    '--publication-paper': publicationColour(book.appearance?.paper),
+    '--publication-ink': publicationColour(book.appearance?.ink),
+  } as React.CSSProperties;
+  const wrapReadingSurface = readingSurface ?? ((children: React.ReactNode) => children);
   return (
-    <div className={`publication-reader ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
+    <div style={appearanceStyle} className={`publication-reader ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
       {/* Reading Ruler Overlay */}
       {isRulerActive && (
         <div className="fixed inset-0 z-[90] pointer-events-none">
@@ -62,123 +84,56 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
           bookmarkedSections={bookmarkedSections}
           onOpenHighlights={() => setIsHighlightsOpen(true)}
           shouldFocusSearch={isSearchTriggered}
-          // Pass handlers for "Read Your Way" features
-          onToggleTheme={() => setIsDarkMode(!isDarkMode)}
-          onToggleFocus={() => setIsImmersiveMode(!isImmersiveMode)}
-          onToggleRuler={() => {
-              setIsRulerActive(!isRulerActive);
-              if (!isRulerActive) showToast("Ruler Active: Use Arrows to move");
-          }}
-          onToggleReadAloud={() => rendererRef.current?.toggleReadAloud()}
-          onToggleCoach={coaching ? () => setIsChatOpen(true) : undefined}
-          onToggleShortcuts={() => setIsShortcutsOpen(true)}
-          onDownloadEbook={handleDownloadEbook}
-          
-          // Readability Settings
-          fontSize={fontSize}
-          onCycleFontSize={cycleFontSize}
-          lineHeight={lineHeight}
-          onCycleLineHeight={cycleLineHeight}
-          maxWidth={maxWidth}
-          onCycleMaxWidth={cycleMaxWidth}
+
         />
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
-        {/* Mobile Header */}
-        {!isHome && (
-          <header className={`lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-4 flex items-center justify-between flex-shrink-0 z-20 relative shadow-sm transition-all duration-300 ${isImmersiveMode ? 'hidden' : ''}`}>
-              <div className="flex items-center gap-3">
-                  <button 
-                      onClick={() => setIsSidebarOpen(true)}
-                      aria-label="Open navigation"
-                      className="p-2 -ml-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md flex items-center"
-                  >
-                      <span className="material-symbols-outlined">menu</span>
-                  </button>
-                  <h1 className="font-semibold text-gray-900 dark:text-white truncate text-sm max-w-[150px]">
-                      {currentSection?.title}
-                  </h1>
-              </div>
-              <div className="flex items-center gap-1">
-                 <button
-                    onClick={sharePageLink}
-                    className="p-2 rounded-full flex items-center text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                    title="Copy Link"
-                >
-                    <span className="material-symbols-outlined">link</span>
-                </button>
-                 <button
-                    onClick={toggleBookmark}
-                    className={`p-2 rounded-full flex items-center transition-colors ${isBookmarked ? 'text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/30' : 'text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
-                    title={isBookmarked ? "Remove Bookmark" : "Bookmark Section"}
-                >
-                    <span className={`material-symbols-outlined ${isBookmarked ? 'material-symbols-filled' : ''}`}>
-                        {isBookmarked ? 'bookmark' : 'bookmark_border'}
-                    </span>
-                </button>
-                <button 
-                    onClick={() => setIsHighlightsOpen(true)}
-                    aria-label="Open notes and highlights"
-                    className="text-gray-600 dark:text-gray-300 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full flex items-center"
-                >
-                    <span className="material-symbols-outlined">bookmarks</span>
-                </button>
-              </div>
-          </header>
-        )}
-
-        {isImmersiveMode && <button onClick={() => setIsImmersiveMode(false)} aria-label="Exit focus mode" className="lg:hidden absolute top-2 right-2 z-30 p-2 rounded-full bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-300 shadow"><span className="material-symbols-outlined">fullscreen_exit</span></button>}
-        {/* Desktop Floating Controls - COMPACT */}
-        {!isHome && (
-          <div className="hidden lg:flex absolute top-6 right-8 z-30 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full p-1 shadow-sm gap-1">
-             {/* Dark Mode Toggle */}
-             <button
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full w-9 h-9 flex items-center justify-center transition-all"
-                title="Switch Mode"
-            >
-                <span className="material-symbols-outlined text-lg">
-                    {isDarkMode ? 'light_mode' : 'dark_mode'}
-                </span>
+      <main className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
+        <header className="publication-toolbar">
+          <button className="publication-navigation-toggle" onClick={() => { setIsSidebarOpen(value => !value); setIsImmersiveMode(false); }} aria-expanded={isSidebarOpen && !isImmersiveMode} aria-label={isSidebarOpen && !isImmersiveMode ? 'Close navigation' : 'Open navigation'}>
+            <span aria-hidden="true" className="material-symbols-outlined">menu</span>
+            <span>{labels.tableOfContents}</span>
+          </button>
+          <button className="publication-toolbar-identity" onClick={() => handleSectionChange('home')} title={publicationDisplayTitle(book)}>{publicationDisplayTitle(book)}</button>
+          <div className="publication-toolbar-actions">
+            <button ref={settingsButtonRef} aria-haspopup="dialog" onClick={() => settingsRef.current?.showModal()}>
+              <span aria-hidden="true" className="material-symbols-outlined">tune</span>{labels.readingSettings}
             </button>
-
-             {/* Ruler Mode Toggle */}
-             <button
-                onClick={() => {
-                    setIsRulerActive(!isRulerActive);
-                    if (!isRulerActive) showToast("Ruler Active: Use Arrows to move, 1-4 to resize");
-                }}
-                className={`rounded-full w-9 h-9 flex items-center justify-center transition-all ${
-                    isRulerActive 
-                    ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400'
-                    : 'text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                }`}
-                title={isRulerActive ? "Exit Reading Ruler (r)" : "Reading Ruler Mode (r)"}
-            >
-                <span className="material-symbols-outlined text-lg">horizontal_rule</span>
+            <button onClick={onListen ?? (() => rendererRef.current?.toggleReadAloud())} disabled={!onListen && (isHome || !browserSpeechAvailable)} title={!onListen && !browserSpeechAvailable ? 'Browser read-aloud is unavailable in this browser' : undefined}>
+              <span aria-hidden="true" className="material-symbols-outlined">headphones</span>{onListen ? labels.listen : 'Browser read-aloud'}
             </button>
-
-             {/* Immersive Mode Toggle */}
-             <button
-                onClick={() => setIsImmersiveMode(!isImmersiveMode)}
-                className={`rounded-full w-9 h-9 flex items-center justify-center transition-all ${
-                    isImmersiveMode 
-                    ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400'
-                    : 'text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                }`}
-                title={isImmersiveMode ? "Exit Focus Mode (f)" : "Enter Focus Mode (f)"}
-            >
-                <span className="material-symbols-outlined text-lg">
-                    {isImmersiveMode ? 'fullscreen_exit' : 'fullscreen'}
-                </span>
-            </button>
-
-             {/* Retained publication download, supplied by the book adapter. */}
-             {handleDownloadEbook && <button onClick={handleDownloadEbook} className="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full w-9 h-9 flex items-center justify-center transition-all" title="Download eBook"><span className="material-symbols-outlined text-lg">download</span></button>}
+            {!isHome && <button className="publication-toolbar-notes" onClick={() => setIsHighlightsOpen(true)} aria-label="Open notes and highlights">Notes</button>}
           </div>
-        )}
+        </header>
+        <dialog ref={settingsRef} className="publication-settings" aria-labelledby="publication-settings-title"
+          onClose={() => settingsButtonRef.current?.focus()} onClick={event => { if (event.target === event.currentTarget) {
+            const box = event.currentTarget.getBoundingClientRect();
+            if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) event.currentTarget.close();
+          } }}>
+          <div className="publication-settings-heading"><h2 id="publication-settings-title">{labels.readingSettings}</h2>
+            <button autoFocus aria-label="Close reading settings" onClick={() => settingsRef.current?.close()}>Close</button>
+          </div>
+          <fieldset><legend>Text layout</legend>
+            <label>Article width<select aria-label="Article width" value={maxWidth} onChange={event => setMaxWidth(event.target.value as MaxWidth)}>
+              <option value="sm">Narrow</option><option value="md">Normal</option><option value="lg">Wide</option><option value="full">Full width</option>
+            </select></label>
+            <p>The width controls the text column. Chapter navigation sits beside it.</p>
+          </fieldset>
+          <fieldset><legend>Page appearance and focus</legend>
+            <label>Colour theme<select aria-label="Colour theme" value={isDarkMode ? 'dark' : 'light'} onChange={event => setIsDarkMode(event.target.value === 'dark')}>
+              <option value="light">Light</option><option value="dark">Dark</option>
+            </select></label>
+            <label><input type="checkbox" checked={isImmersiveMode} onChange={event => setIsImmersiveMode(event.target.checked)} />Focus mode hides navigation</label>
+
+          </fieldset>
+          {readingSettingsExtra}
+          <div className="publication-settings-actions">
+            <button onClick={() => { resetReadingSettings(); onResetReadingSupport?.(); }}>Reset reading settings</button>
+            <button onClick={() => { settingsRef.current?.close(); setIsShortcutsOpen(true); }}>Keyboard shortcuts</button>
+            {handleDownloadEbook && <button onClick={handleDownloadEbook}>Download eBook</button>}
+          </div>
+        </dialog>
 
         {/* Floating Highlight Tooltip */}
         {selectionRect && (
@@ -225,7 +180,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
         )}
 
         {/* Content Body */}
-        <div ref={contentRef} onClick={handleContentLink} className="flex-1 overflow-y-auto scroll-smooth bg-white dark:bg-gray-950">
+        <div ref={contentRef} onClick={handleContentLink} className="publication-scroll flex-1 overflow-y-auto scroll-smooth bg-white dark:bg-gray-950">
             {isHome ? (
                 <Home
                     onDownloadEbook={handleDownloadEbook}
@@ -235,9 +190,9 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
                     onOpenSearch={handleOpenSearch}
                 />
             ) : (
-                <div className={`flex mx-auto w-full transition-all duration-500 ${getContainerWidthClass()}`}>
+                <div className={`publication-reading-layout ${getContainerWidthClass()}`}>
                     {/* Center Content */}
-                    <div className={`flex-1 min-w-0 px-4 sm:px-6 lg:px-8 py-8 lg:py-12 mx-auto ${!isImmersiveMode ? 'lg:mx-0' : ''}`}>
+                    <div className="publication-reading-column">
                          {/* Breadcrumb & Controls */}
                          {currentSection && !isImmersiveMode && (
                             <div className="mb-6 flex min-w-0 items-center justify-between gap-3 text-sm text-gray-500 dark:text-gray-400">
@@ -248,13 +203,13 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
                                     >
                                         Home
                                     </button>
-                                    <span className="mx-2 shrink-0">/</span>
-                                    <span title={currentSection.category} className="max-w-[40%] shrink-0 truncate uppercase tracking-wider font-medium text-xs">{currentSection.category}</span>
+                                    {currentSection.category !== currentSection.title && <><span className="mx-2 shrink-0">/</span>
+                                    <span title={currentSection.category} className="max-w-[40%] shrink-0 truncate uppercase tracking-wider font-medium text-xs">{currentSection.category}</span></>}
                                     <span className="mx-2 shrink-0">/</span>
                                     <span title={currentSection.title} className="min-w-0 truncate text-gray-900 dark:text-white font-medium">{currentSection.title}</span>
                                 </div>
                                 
-                                <div className="hidden shrink-0 lg:flex items-center gap-2">
+                                <div className="shrink-0 flex items-center gap-2">
                                      <button
                                         onClick={sharePageLink}
                                         className="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all border bg-white dark:bg-gray-900 text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-200 dark:hover:border-indigo-700"
@@ -284,12 +239,13 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
 
                         {/* Main Text */}
                         {currentSection && (
-                            <div className={`bg-white dark:bg-gray-900 transition-all duration-500 ${isImmersiveMode ? '' : 'shadow-sm border border-gray-200 dark:border-gray-800 rounded-xl'} p-6 sm:p-10 mb-12`}>
+                            <div className="publication-article">
                                 {!currentSection.content.trim() && <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{currentSection.title}</h1>}
-                                <MarkdownRenderer
+                                {wrapReadingSurface(<MarkdownRenderer
                                     key={currentSection.id}
                                     format={currentSection.format}
                                     language={book.language}
+                                    onBrowserSpeechStart={onBrowserSpeechStart}
                                     ref={rendererRef}
                                     content={currentSection.content} 
                                     highlights={currentSectionHighlights}
@@ -300,7 +256,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
                                     fontSize={fontSize}
                                     lineHeight={lineHeight}
                                     maxWidth={maxWidth}
-                                />
+                                />)}
                                 {!!currentSection.children?.length && <nav aria-label="Chapters in this section" className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6 space-y-3">
                                   {currentSection.children.map(child => <button key={child.id} onClick={() => handleSectionChange(child.id)} className="block text-left text-indigo-600 dark:text-indigo-400 hover:underline">{child.title}</button>)}
                                 </nav>}
@@ -361,6 +317,7 @@ export function ReaderLayout({ reader, coaching }: { reader: ReturnType<typeof u
         )}
       </main>
 
+      {listeningPanel}
       <HighlightsDrawer
         bookId={book.id}
         bookTitle={publicationDisplayTitle(book)}

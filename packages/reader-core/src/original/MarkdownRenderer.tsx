@@ -6,6 +6,7 @@ import { preparePublicationHTML, publicationPlainText } from './publication-html
 
 export interface MarkdownRendererHandle {
     toggleReadAloud: () => void;
+    stopReadAloud: () => void;
 }
 
 // Redefine types locally for component independence
@@ -21,6 +22,7 @@ interface MarkdownRendererProps {
   reflection?: Reflection;
   onSaveReflection?: (content: string) => void;
   onOpenHighlight?: () => void;
+  onBrowserSpeechStart?: () => void;
   // Readability Props
   fontSize?: FontSize;
   lineHeight?: LineHeight;
@@ -35,6 +37,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     reflection, 
     onSaveReflection,
     onOpenHighlight,
+    onBrowserSpeechStart,
     fontSize = 'base',
     lineHeight = 'relaxed',
     maxWidth = 'md'
@@ -93,6 +96,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
   const handleSpeak = () => {
     if (!synth.current) return;
 
+    if (!isSpeaking) onBrowserSpeechStart?.();
     if (isPaused) {
       synth.current.resume();
       setIsPaused(false);
@@ -138,6 +142,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
 
   // Expose methods to parent via Ref for Keyboard Shortcuts
   useImperativeHandle(ref, () => ({
+      stopReadAloud: handleStop,
       toggleReadAloud: () => {
           handleSpeak();
       }
@@ -204,7 +209,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
                             : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                     }
                 `}
-                title={isSpeaking ? "Pause (Shortcut: 'a')" : isPaused ? "Resume (Shortcut: 'a')" : "Read Aloud (Shortcut: 'a')"}
+                title={isSpeaking ? "Pause (Shortcut: 'a')" : isPaused ? "Resume (Shortcut: 'a')" : "Browser read-aloud (Shortcut: 'a')"}
             >
                 {isSpeaking ? (
                     <>
@@ -214,7 +219,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
                 ) : (
                     <>
                         <span className="material-symbols-outlined text-lg">volume_up</span>
-                        {isPaused ? "Resume" : "Read Aloud"}
+                        {isPaused ? "Resume browser speech" : "Browser read-aloud"}
                     </>
                 )}
             </button>

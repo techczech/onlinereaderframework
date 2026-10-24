@@ -66,7 +66,9 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const cycleFontSize = () => setFontSize(value => (['sm', 'base', 'lg', 'xl'] as const)[(['sm', 'base', 'lg', 'xl'].indexOf(value) + 1) % 4]);
   const cycleLineHeight = () => setLineHeight(value => (['tight', 'normal', 'relaxed', 'loose'] as const)[(['tight', 'normal', 'relaxed', 'loose'].indexOf(value) + 1) % 4]);
   const cycleMaxWidth = () => setMaxWidth(value => (['sm', 'md', 'lg', 'full'] as const)[(['sm', 'md', 'lg', 'full'].indexOf(value) + 1) % 4]);
-  const getContainerWidthClass = () => isImmersiveMode ? 'max-w-3xl' : ({ sm: 'max-w-prose', md: 'max-w-3xl', lg: 'max-w-5xl', full: 'max-w-none px-4 lg:px-12' })[maxWidth];
+  // The measure applies only to the article; navigation has its own width budget.
+  const getContainerWidthClass = () => `publication-width-${maxWidth}`;
+  const resetReadingSettings = () => { setFontSize('base'); setLineHeight('relaxed'); setMaxWidth('md'); setIsDarkMode(systemDark); setIsImmersiveMode(false); setIsRulerActive(false); };
   const showToast = useCallback((message: string) => setToastMessage(message), []);
   const clearSelection = useCallback(() => {
     setSelectionRect(null);
@@ -249,6 +251,8 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement;
+      // Native settings dialogs own their keyboard interaction, including Escape.
+      if (target.closest('dialog[open]')) return;
       if (event.key === 'Escape') {
         setIsRulerActive(false); setIsShortcutsOpen(false); setQuoteModalData(null); setIsHighlightsOpen(false); setIsChatOpen(false); setIsImmersiveMode(false); clearSelection();
         return;
@@ -290,7 +294,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   }, [selectedText, isRulerActive, rulerY, rulerLines, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection]);
 
   return { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, fontSize, lineHeight, maxWidth, cycleFontSize, cycleLineHeight, cycleMaxWidth, getContainerWidthClass,
+    isDarkMode, setIsDarkMode, fontSize, setFontSize, lineHeight, setLineHeight, maxWidth, setMaxWidth, resetReadingSettings, cycleFontSize, cycleLineHeight, cycleMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isRulerActive, setIsRulerActive, rulerY, rulerLines, rulerHeightPx: rulerLines * 42, isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,

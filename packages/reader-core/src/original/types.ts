@@ -28,6 +28,22 @@ export interface PublicationBook {
   downloads?: { label: string; href: string }[];
   sourceUrl?: string;
   language?: string;
+  labels?: { search?: string; tableOfContents?: string; readingSettings?: string; listen?: string };
+  navigation?: {
+    /** Number of visible tree levels, including roots. Default: 2. Zero hides the list. */
+    homeDepth?: number;
+    /** Maximum sidebar tree levels. Omit to allow every level. */
+    sidebarDepth?: number;
+    showHomeContents?: boolean;
+  };
+  appearance?: {
+    /** CSS colour values, validated as colours and scoped to this reader. */
+    accent?: string;
+    paper?: string;
+    ink?: string;
+    masthead?: 'editorial' | 'practical' | 'literary';
+    cover?: { src: string; alt: string };
+  };
   home?: {
     badge?: string;
     overviewTitle?: string;
@@ -47,6 +63,7 @@ export interface PublicationCoaching {
 export interface PublicationReaderProps {
   book: PublicationBook;
   coaching?: PublicationCoaching;
+  audio?: readonly import('./listening/listening-types.js').PublicationAudioTrack[];
   /** Supply image bytes for self-contained export; false disables generated EPUB. */
   epub?: PublicationEpubOptions | false;
 }

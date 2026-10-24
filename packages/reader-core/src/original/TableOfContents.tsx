@@ -37,7 +37,7 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
   }));
 
   useEffect(() => {
-    const extracted: Heading[] = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] h1, [data-publication-content] h2, [data-publication-content] h3, [data-publication-content] h4') ?? []).map(heading => ({
+    const extracted: Heading[] = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] h2, [data-publication-content] h3, [data-publication-content] h4, [data-publication-content] h5, [data-publication-content] h6') ?? []).map(heading => ({
       id: heading.id,
       text: heading.textContent?.trim() ?? '',
       level: Number(heading.tagName.slice(1))
@@ -113,8 +113,9 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
   return (
     <nav 
         id="toc-container"
+        aria-label="On this page"
         tabIndex={-1}
-        className="hidden xl:block w-64 shrink-0 order-last pt-12 pb-8 pr-8 h-screen sticky top-0 overflow-y-auto focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-l-lg"
+        className="publication-local-contents focus:outline-none focus:ring-2 focus:ring-indigo-500"
     >
       <div className="border-l border-gray-200 dark:border-gray-700 pl-4 py-2">
         <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
@@ -124,7 +125,7 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
           {headings.map((heading, index) => (
             <li 
               key={heading.id}
-              style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
+              style={{ paddingLeft: `${(heading.level - 2) * 0.5}rem` }}
             >
               <a
                 ref={el => { linkRefs.current[index] = el; }}

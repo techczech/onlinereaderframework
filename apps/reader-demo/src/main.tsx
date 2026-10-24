@@ -12,6 +12,9 @@ import '@fontsource/merriweather/700.css';
 import '@fontsource/merriweather/300-italic.css';
 import '@fontsource/material-symbols-outlined/400.css';
 import '../../../packages/reader-core/src/original/reader-original.css';
+import '../../../packages/reader-core/src/original/reading-support/support.css';
+import '../../../packages/reader-core/src/original/listening/listening.css';
+import '../../../packages/reader-core/src/original/reader-integrations.css';
 import './index.css';
 
 const rootElement = document.getElementById('root');
