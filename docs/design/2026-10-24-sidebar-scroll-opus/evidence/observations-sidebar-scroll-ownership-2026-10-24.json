@@ -1,0 +1,372 @@
+{
+ "deeplink": {
+  "asideTop": 0,
+  "innerTop": 0,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": 1026,
+  "rows": 42
+ },
+ "scrollers": [
+  {
+   "cls": "\n        publication-sidebar fixed top-0 left-0 z-50 h-full ",
+   "tag": "ASIDE",
+   "ch": 900,
+   "sh": 900,
+   "st": 0,
+   "scrolls": false
+  },
+  {
+   "cls": "flex-1 overflow-y-auto",
+   "tag": "DIV",
+   "ch": 701,
+   "sh": 2482,
+   "st": 0,
+   "scrolls": true
+  },
+  {
+   "cls": "publication-settings",
+   "tag": "DIALOG",
+   "ch": 0,
+   "sh": 0,
+   "st": 0,
+   "scrolls": false
+  },
+  {
+   "cls": "publication-scroll flex-1 overflow-y-auto scroll-smooth bg-w",
+   "tag": "DIV",
+   "ch": 835,
+   "sh": 2418,
+   "st": 0,
+   "scrolls": true
+  },
+  {
+   "cls": "w-full p-4 border border-indigo-200 dark:border-indigo-800 r",
+   "tag": "TEXTAREA",
+   "ch": 148,
+   "sh": 148,
+   "st": 0,
+   "scrolls": false
+  }
+ ],
+ "header": {
+  "fixedHeaderH": 199,
+  "identityBlockH": 223,
+  "asideH": 900
+ },
+ "wheelSidebar": {
+  "asideTop": 0,
+  "innerTop": 600,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": true,
+  "activeTop": 426,
+  "rows": 42
+ },
+ "wheelSidebarEnd": {
+  "asideTop": 0,
+  "innerTop": 1781,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": -755,
+  "rows": 42
+ },
+ "wheelSidebarPastEnd": {
+  "asideTop": 0,
+  "innerTop": 1781,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": -755,
+  "rows": 42
+ },
+ "wheelArticle": {
+  "asideTop": 0,
+  "innerTop": 1781,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 400,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": -755,
+  "rows": 42
+ },
+ "clickTarget": "Figurative language",
+ "afterClick": {
+  "asideTop": 0,
+  "innerTop": 1781,
+  "innerH": 701,
+  "innerSH": 3186,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "Figurative languagecheck <BUTTON>",
+  "activeVisible": true,
+  "activeTop": 843,
+  "rows": 53
+ },
+ "beforeClick": {
+  "asideTop": 0,
+  "innerTop": 500,
+  "innerH": 701,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": true,
+  "activeTop": 526,
+  "rows": 42
+ },
+ "key_PageDown": {
+  "before": {
+   "asideTop": 0,
+   "innerTop": 1781,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": true,
+   "activeTop": 843,
+   "rows": 53
+  },
+  "after": {
+   "asideTop": 0,
+   "innerTop": 2442,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": false,
+   "activeTop": 182,
+   "rows": 53
+  },
+  "url": "theme-figurative-language"
+ },
+ "key_Space": {
+  "before": {
+   "asideTop": 0,
+   "innerTop": 2442,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": false,
+   "activeTop": 182,
+   "rows": 53
+  },
+  "after": {
+   "asideTop": 0,
+   "innerTop": 2442,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": false,
+   "activeTop": 182,
+   "rows": 53
+  },
+  "url": "theme-figurative-language"
+ },
+ "key_ArrowDown": {
+  "before": {
+   "asideTop": 0,
+   "innerTop": 2442,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": false,
+   "activeTop": 182,
+   "rows": 53
+  },
+  "after": {
+   "asideTop": 0,
+   "innerTop": 2482,
+   "innerH": 701,
+   "innerSH": 3186,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "Figurative languagecheck <BUTTON>",
+   "activeVisible": false,
+   "activeTop": 142,
+   "rows": 53
+  },
+  "url": "theme-figurative-language"
+ },
+ "parentRow": {
+  "box": {
+   "x": 16,
+   "y": 2300.8125,
+   "width": 191,
+   "height": 36
+  },
+  "url": "book=linguistics&section=theme-typology",
+  "expandedButtons": 2,
+  "h1": "Typology"
+ },
+ "chevronBox": {
+  "x": 207,
+  "y": 529,
+  "width": 40,
+  "height": 41.625
+ },
+ "persist": {
+  "scrolled": {
+   "asideTop": 0,
+   "innerTop": 800,
+   "innerH": 701,
+   "innerSH": 2482,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+   "activeVisible": true,
+   "activeTop": 226,
+   "rows": 42
+  },
+  "afterHome": {
+   "asideTop": 0,
+   "innerTop": 800,
+   "innerH": 701,
+   "innerSH": 2482,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "homeHome <BUTTON>",
+   "activeVisible": null,
+   "activeTop": null,
+   "rows": 42
+  },
+  "afterToggleS": {
+   "asideTop": 0,
+   "innerTop": 0,
+   "innerH": 701,
+   "innerSH": 834,
+   "mainTop": 0,
+   "docTop": 0,
+   "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+   "activeVisible": null,
+   "activeTop": null,
+   "rows": 18
+  }
+ },
+ "w1100": {
+  "column": 772,
+  "sidebar": 264,
+  "sidebarOpenVisible": "matrix(1, 0, 0, 1, 0, 0)",
+  "localRail": null,
+  "toolbarH": 65,
+  "asideTop": 0,
+  "innerTop": 0,
+  "innerH": 601,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": 1026,
+  "rows": 42
+ },
+ "w1024": {
+  "column": 696,
+  "sidebar": 264,
+  "sidebarOpenVisible": "matrix(1, 0, 0, 1, 0, 0)",
+  "localRail": null,
+  "toolbarH": 65,
+  "asideTop": 0,
+  "innerTop": 0,
+  "innerH": 569,
+  "innerSH": 2482,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsIntr <BODY>",
+  "activeVisible": false,
+  "activeTop": 1026,
+  "rows": 42
+ },
+ "w1023": {
+  "column": 795,
+  "sidebar": 0,
+  "sidebarOpenVisible": null,
+  "localRail": null,
+  "toolbarH": 65,
+  "asideTop": null,
+  "innerTop": null,
+  "innerH": null,
+  "innerSH": null,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "menuTable of contentsIntroduction to Key Issues in <BODY>",
+  "activeVisible": null,
+  "activeTop": null,
+  "rows": 0
+ },
+ "w390": {
+  "column": 350,
+  "sidebar": 0,
+  "sidebarOpenVisible": null,
+  "localRail": null,
+  "toolbarH": 101,
+  "asideTop": null,
+  "innerTop": null,
+  "innerH": null,
+  "innerSH": null,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "menuTable of contentsIntroduction to Key Issues in <BODY>",
+  "activeVisible": null,
+  "activeTop": null,
+  "rows": 0
+ },
+ "deliberate-practice": {
+  "asideTop": 0,
+  "innerTop": 0,
+  "innerH": 701,
+  "innerSH": 1139,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsDeli <BODY>",
+  "activeVisible": true,
+  "activeTop": 502,
+  "rows": 21,
+  "column": 795,
+  "localRail": [
+   "Why you should target fluency in practic",
+   "Lessons from dyslexia about the importan",
+   "Fluency vs unconscious competence"
+  ]
+ },
+ "language-muscle": {
+  "asideTop": 0,
+  "innerTop": 0,
+  "innerH": 701,
+  "innerSH": 701,
+  "mainTop": 0,
+  "docTop": 0,
+  "focus": "closesearchhomeHomebookmarksNotes & HighlightsBuil <BODY>",
+  "activeVisible": true,
+  "activeTop": 504,
+  "rows": 13,
+  "column": 795,
+  "localRail": [
+   "How to read this document"
+  ]
+ }
+}

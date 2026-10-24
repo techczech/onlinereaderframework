@@ -2,11 +2,13 @@
 title: Book reader correction status
 date: 2026-10-24
 register: FOR DOMINIK
-status: implemented-independently-reviewed-local-preview
+status: opus-sidebar-scroll-proposals-ready
 reviewed_code: b415202c6bd79e0fe8338c7ad1082967920785e4
 ---
 
 # Book reader corrections
+
+**Later author feedback:** The author still reports substantial contents-sidebar and scrolling problems and has requested Claude Opus 5.5 design suggestions, with no further Astra use. The technical results below remain evidence for their limited scopes; they do not establish satisfactory navigation UX. Claude Opus 5.5 has completed the consultation in `docs/design/2026-10-24-sidebar-scroll-opus/`. Its recommended pinned-header/contents-list design and two alternatives are proposals, not an author-selected implementation. No production code changed during this consultation.
 
 The author’s screenshots led to changes in the existing shared reader. The local preview now gives each book its own cover, colours and masthead, uses configurable neutral labels, and derives home/sidebar contents from the actual ordered section tree. The manuscript snapshot is unchanged.
 
