@@ -3,10 +3,16 @@ from pathlib import Path
 from urllib.parse import urlencode
 from playwright.sync_api import sync_playwright, expect
 import json
+import sys
+import io
+import subprocess
+import wave
 
 root = Path(__file__).resolve().parents[1]
 out = root / 'docs/design/2026-10-24-reader-corrections/verification'
-out.mkdir(parents=True, exist_ok=True)
+closure_only = '--closure-only' in sys.argv
+if not closure_only:
+    out.mkdir(parents=True, exist_ok=True)
 books = json.loads((root / 'apps/reader-demo/src/books/original-publications.json').read_text())
 results = {'checks': [], 'errors': []}
 base = 'http://127.0.0.1:8773/'
@@ -14,10 +20,133 @@ base = 'http://127.0.0.1:8773/'
 def check(name, condition, detail=None):
     results['checks'].append({'name': name, 'passed': bool(condition), 'detail': detail})
 
+def check_correction_closure(browser):
+    context = browser.new_context(viewport={'width': 1440, 'height': 1000}, color_scheme='light')
+    try:
+        page = context.new_page()
+        page.on('pageerror', lambda error: results['errors'].append(str(error)))
+        page.goto(base + '?' + urlencode({'book': 'language-muscle', 'section': 'intro-group'}), wait_until='networkidle')
+        article = page.locator('[data-publication-content]').first
+        paragraph = article.locator('p').first
+        expect(paragraph).to_contain_text('Welcome to your new language learning journey.')
+        measure = '(el) => ({size:getComputedStyle(el).fontSize, font:getComputedStyle(el).fontFamily, height:el.getBoundingClientRect().height})'
+        before = paragraph.evaluate(measure)
+        page.evaluate("window.closureParagraph = document.querySelector('[data-publication-content] p'); window.closureText = window.closureParagraph.firstChild")
+        original_text = article.text_content()
+        settings = page.get_by_role('button', name='Reading settings', exact=True)
+        settings.click()
+        page.get_by_label('Text size', exact=True).fill('28')
+        page.get_by_label('Typeface', exact=True).select_option('sans')
+        page.get_by_role('button', name='Close reading settings', exact=True).click()
+        after = paragraph.evaluate(measure)
+        check('LM actual intro paragraph follows 28px preference', after['size'] == '28px' and before['size'] != after['size'], {'before': before, 'after': after})
+        check('LM actual intro paragraph follows sans preference', 'Inter' in after['font'], after)
+        check('LM source text and paragraph nodes survive settings', article.text_content() == original_text and paragraph.evaluate('(el) => el === window.closureParagraph && el.firstChild === window.closureText'))
+        paragraph.select_text()
+        check('LM paragraph remains selectable', page.evaluate('getSelection().toString()') == paragraph.text_content())
+        listen = page.get_by_role('button', name='Listen', exact=True)
+        surface = page.locator('.publication-listening-surface')
+        for attempt in ['initial', 'reopened']:
+            listen.focus()
+            listen.press('Enter')
+            expect(surface).to_be_visible()
+            page.evaluate('new Promise(requestAnimationFrame)')
+            check('Listen ' + attempt + ' Enter focuses player', surface.evaluate('(el) => el.contains(document.activeElement)'))
+            page.keyboard.press('Escape')
+            check('Listen ' + attempt + ' Escape hides player', not surface.is_visible())
+            check('Listen ' + attempt + ' Escape focuses trigger', listen.evaluate('(el) => el === document.activeElement'))
+            if surface.is_visible():
+                page.get_by_role('button', name='Close recorded audiobook', exact=True).click()
+        listen.focus()
+        listen.press('Enter')
+        settings.click()
+        size = page.get_by_label('Text size', exact=True)
+        size.fill('26')
+        check('Text setting rerender does not steal focus into player', size.evaluate('(el) => el === document.activeElement'))
+        page.keyboard.press('Escape')
+        page.get_by_role('button', name='Close recorded audiobook', exact=True).click()
+    finally:
+        context.close()
+
+def check_playing_closure(browser):
+    # Reuse the listening test's 24-second silent WAV with the actual reader host.
+    fixture = """
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {PublicationReader} from './packages/reader-core/src/original/PublicationReader.tsx';
+window.media=[];
+const NativeAudio=window.Audio;
+window.Audio=function(...args){const media=new NativeAudio(...args);window.media.push(media);return media;};
+createRoot(document.getElementById('root')).render(<PublicationReader book={window.closureBook} epub={false}
+ audio={[{sectionId:'intro-group',src:'/closure-listening.wav'}]}/>);
+"""
+    build = """
+import {build} from './apps/reader-demo/node_modules/esbuild/lib/main.js';
+import {resolve} from 'node:path';
+let contents='';for await (const chunk of process.stdin) contents+=chunk;
+const result=await build({stdin:{contents,resolveDir:process.cwd(),loader:'tsx'},bundle:true,write:false,format:'iife',platform:'browser',
+ alias:{react:resolve('apps/reader-demo/node_modules/react'),'react-dom':resolve('apps/reader-demo/node_modules/react-dom')}});
+process.stdout.write(result.outputFiles[0].text);
+"""
+    bundle = subprocess.run(['node', '--input-type=module', '-e', build], input=fixture, text=True, cwd=root, capture_output=True, check=True).stdout
+    stream = io.BytesIO()
+    with wave.open(stream, 'wb') as wav:
+        wav.setnchannels(1)
+        wav.setsampwidth(2)
+        wav.setframerate(8000)
+        wav.writeframes(b'\x00\x00' * 8000 * 24)
+    context = browser.new_context(viewport={'width': 1440, 'height': 1000})
+    try:
+        page = context.new_page()
+        page.on('pageerror', lambda error: results['errors'].append(str(error)))
+        page.route(base + 'closure-listening.wav', lambda route: route.fulfill(content_type='audio/wav', body=stream.getvalue(), headers={'Accept-Ranges': 'bytes'}))
+        page.route(base + 'closure-listening?*', lambda route: route.fulfill(content_type='text/html', body='<html><body><div id="root"></div></body></html>'))
+        page.goto(base + 'closure-listening?book=language-muscle&section=intro-group')
+        css = next((root / 'apps/reader-demo/dist/assets').glob('index-*.css'))
+        page.add_style_tag(url=base + 'assets/' + css.name)
+        page.evaluate('(book) => window.closureBook = book', next(book for book in books if book['id'] == 'language-muscle'))
+        page.add_script_tag(content=bundle)
+        page.locator('[data-publication-content] p').first.wait_for()
+        listen = page.get_by_role('button', name='Listen', exact=True)
+        surface = page.locator('.publication-listening-surface')
+        listen.focus()
+        listen.press('Enter')
+        expect(page.get_by_role('button', name='Close recorded audiobook', exact=True)).to_be_focused()
+        page.get_by_role('button', name='Play recording', exact=True).click()
+        expect(surface.get_by_role('status')).to_have_text('Playing')
+        page.evaluate('window.playingMedia = window.media.at(-1); window.mediaCount = window.media.length; window.playingMedia.currentTime = 2')
+        for attempt in ['first', 'second']:
+            page.keyboard.press('Escape')
+            expect(surface).to_be_hidden()
+            expect(listen).to_be_focused()
+            check('Playing audio survives ' + attempt + ' keyboard close', page.evaluate('window.media.at(-1) === window.playingMedia && window.media.length === window.mediaCount && !window.playingMedia.paused && window.playingMedia.currentTime >= 2'))
+            listen.press('Enter')
+            expect(page.get_by_role('button', name='Close recorded audiobook', exact=True)).to_be_focused()
+            check('Playing audio survives ' + attempt + ' keyboard reopen', page.evaluate('window.media.at(-1) === window.playingMedia && window.media.length === window.mediaCount && !window.playingMedia.paused && window.playingMedia.currentTime >= 2'))
+        page.get_by_role('button', name='Reading settings', exact=True).click()
+        size = page.get_by_label('Text size', exact=True)
+        size.fill('28')
+        check('Playing audio and settings focus survive text rerender', size.evaluate('(el) => el === document.activeElement') and page.evaluate('window.media.at(-1) === window.playingMedia && window.media.length === window.mediaCount && !window.playingMedia.paused && window.playingMedia.currentTime >= 2'))
+    finally:
+        context.close()
+
 with sync_playwright() as pw:
     shell = max((Path.home() / 'Library/Caches/ms-playwright').glob('chromium_headless_shell-*/chrome-headless-shell-mac-arm64/chrome-headless-shell'), key=lambda p: int(p.parents[1].name.rsplit('-', 1)[1]))
     browser = pw.chromium.launch(headless=True, executable_path=str(shell))
+    if closure_only:
+        try:
+            check_correction_closure(browser)
+            check_playing_closure(browser)
+            check('no page errors', not results['errors'], results['errors'])
+            results['result'] = 'passed' if all(c['passed'] for c in results['checks']) else 'failed'
+            print(json.dumps(results, indent=2))
+            assert results['result'] == 'passed'
+        finally:
+            browser.close()
+        raise SystemExit(0)
     try:
+        check_correction_closure(browser)
+        check_playing_closure(browser)
         for book in books:
             context = browser.new_context(viewport={'width': 1440, 'height': 1000}, color_scheme='light')
             page = context.new_page()

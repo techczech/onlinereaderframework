@@ -93,7 +93,7 @@ try:
             page.reload(wait_until='networkidle')
             page.get_by_role('heading', name='Second chapter', exact=True).wait_for()
             page.get_by_role('button', name='Open navigation', exact=True).click()
-            page.get_by_role('button', name='Close navigation', exact=True).click()
+            page.locator('.publication-sidebar').get_by_role('button', name='Close navigation', exact=True).click()
             assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
             page.screenshot(path=str(output / 'publication-reader-mobile.png'))
 

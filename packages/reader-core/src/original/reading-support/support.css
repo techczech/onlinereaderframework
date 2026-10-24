@@ -9,7 +9,13 @@
   line-height: var(--rs-line);
   letter-spacing: var(--rs-letter);
 }
-.reading-support-surface :is(p,li) { line-height: var(--rs-line); }
+/* Manuscript body-size classes must not override the reader's text preference.
+   Keep headings and code/MathML typography outside this body-text rule. */
+.reading-support-surface :is(p,li,blockquote,td,th,dt,dd,figcaption):not(:is(pre,code,kbd,samp,math) *) {
+  font-family: var(--rs-font);
+  font-size: var(--rs-size);
+  line-height: var(--rs-line);
+}
 .reading-support-surface p { margin-top: 0; margin-bottom: var(--rs-paragraph); }
 .reading-support-surface :is(pre,code,kbd,samp,math) { letter-spacing: normal; }
 .reading-support-surface[data-rs-focus="paragraph"] [data-rs-paragraph]:not([data-rs-active]) { opacity: .45; }

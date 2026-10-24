@@ -1,6 +1,101 @@
 {
   "checks": [
     {
+      "name": "LM actual intro paragraph follows 28px preference",
+      "passed": true,
+      "detail": {
+        "before": {
+          "size": "20px",
+          "font": "Merriweather, Georgia, serif",
+          "height": 68
+        },
+        "after": {
+          "size": "28px",
+          "font": "Inter, system-ui, sans-serif",
+          "height": 95.1875
+        }
+      }
+    },
+    {
+      "name": "LM actual intro paragraph follows sans preference",
+      "passed": true,
+      "detail": {
+        "size": "28px",
+        "font": "Inter, system-ui, sans-serif",
+        "height": 95.1875
+      }
+    },
+    {
+      "name": "LM source text and paragraph nodes survive settings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "LM paragraph remains selectable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen initial Enter focuses player",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen initial Escape hides player",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen initial Escape focuses trigger",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen reopened Enter focuses player",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen reopened Escape hides player",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Listen reopened Escape focuses trigger",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Text setting rerender does not steal focus into player",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Playing audio survives first keyboard close",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Playing audio survives first keyboard reopen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Playing audio survives second keyboard close",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Playing audio survives second keyboard reopen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Playing audio and settings focus survive text rerender",
+      "passed": true,
+      "detail": null
+    },
+    {
       "name": "deliberate-practice cover loaded",
       "passed": true,
       "detail": null

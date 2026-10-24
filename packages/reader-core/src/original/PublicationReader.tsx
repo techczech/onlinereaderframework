@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { PublicationReaderProps } from './types.js';
 import { flattenPublicationSections } from './publication-model.js';
 import { usePublicationReader } from './use-publication-reader.js';
@@ -27,6 +27,11 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
   const [pauseSignal, setPauseSignal] = useState(0);
   const [boundary, setBoundary] = useState<ListeningBoundary | null>(null);
   const listenTrigger = useRef<HTMLElement | null>(null);
+  const listeningSurface = useRef<HTMLDivElement>(null);
+  // The player stays mounted while hidden, so focus belongs to each opening.
+  useEffect(() => {
+    if (listeningOpen) listeningSurface.current?.querySelector<HTMLButtonElement>('[aria-label="Close recorded audiobook"]')?.focus();
+  }, [listeningOpen]);
   useListeningHighlight(reader.contentRef, reader.currentSectionId, boundary, reader.highlights);
   const openListening = () => {
     listenTrigger.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -38,7 +43,7 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
     onListen={openListening}
     onBrowserSpeechStart={() => { setPauseSignal(value => value + 1); setBoundary(null); }}
-    listeningPanel={<div hidden={!listeningOpen} className="publication-listening-surface">
+    listeningPanel={<div ref={listeningSurface} hidden={!listeningOpen} className="publication-listening-surface">
       <ListeningPanel bookId={book.id} sections={reader.sections} currentSectionId={reader.currentSectionId}
         onSelectSection={reader.handleSectionChange} tracks={audio} pauseSignal={pauseSignal}
         onPlaybackStart={() => reader.rendererRef.current?.stopReadAloud()}
