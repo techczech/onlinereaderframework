@@ -1,10 +1,11 @@
-
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import type { PublicationBook, PublicationSection } from './types.js';
-import { containsSection, flattenPublicationSections } from './publication-model.js';
+import { flattenPublicationSections } from './publication-model.js';
 import { renderPublicationContent } from '../publication-content/index.js';
 import { publicationLabels, publicationNavigation } from './publication-navigation.js';
+import { publicationDisplayTitle } from './publication-model.js';
 import { publicationPlainText } from './publication-html.js';
+import { chapterProgress, dropClosedOnPath, sectionAncestors, sidebarDepth, sidebarExpanded } from './sidebar-model.js';
 
 interface SidebarProps {
   book: PublicationBook;
@@ -14,29 +15,101 @@ interface SidebarProps {
   onClose: () => void;
   readSections: Set<string>;
   bookmarkedSections: Set<string>;
-  onOpenHighlights?: () => void;
   shouldFocusSearch?: boolean;
-
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ 
+// Layout effects warn during server rendering; the sidebar only measures in a browser.
+const useBrowserLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+
+interface SidebarSession { manual: Record<string, boolean>; scrollTop: number }
+const sessionKey = (bookId: string) => `publication-reader:${encodeURIComponent(bookId)}:sidebarSession`;
+/** Tab-scoped and keyed by book, so one book's open topics and list position never reach another. */
+function readSession(bookId: string): SidebarSession {
+  try {
+    const value: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey(bookId)) ?? 'null');
+    const { manual, scrollTop } = (value ?? {}) as Partial<SidebarSession>;
+    if (manual && typeof manual === 'object' && Object.values(manual).every(open => typeof open === 'boolean') && typeof scrollTop === 'number') return { manual, scrollTop };
+  } catch { /* An unavailable or malformed session store starts the list fresh. */ }
+  return { manual: {}, scrollTop: 0 };
+}
+function writeSession(bookId: string, session: SidebarSession) {
+  try { window.sessionStorage.setItem(sessionKey(bookId), JSON.stringify(session)); } catch { /* Session position is a convenience. */ }
+}
+
+/** Pinned compact header over one scrolling contents list. It stays mounted while hidden so its state survives. */
+export const Sidebar: React.FC<SidebarProps> = ({
   book,
-  currentSectionId, 
-  onSelectSection, 
-  isOpen, 
-  onClose, 
+  currentSectionId,
+  onSelectSection,
+  isOpen,
+  onClose,
   readSections,
   bookmarkedSections,
-  onOpenHighlights,
   shouldFocusSearch,
-
 }) => {
   const GUIDE_CONTENT = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
   const searchIndex = useMemo(() => GUIDE_CONTENT.map(section => ({ section, text: publicationPlainText(renderPublicationContent(section.content, section.format ?? 'markdown')) })), [GUIDE_CONTENT]);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const labels = publicationLabels(book);
-  const navigation = publicationNavigation(book.sections, book.navigation?.sidebarDepth);
+  const navigation = useMemo(() => publicationNavigation(book.sections, sidebarDepth(book.sections, book.navigation?.sidebarDepth)), [book.sections, book.navigation?.sidebarDepth]);
+  const displayTitle = publicationDisplayTitle(book);
+  const searching = searchQuery.length > 0;
+
+  const initialSession = useRef<SidebarSession>();
+  if (!initialSession.current) initialSession.current = typeof window === 'undefined' ? { manual: {}, scrollTop: 0 } : readSession(book.id);
+  const [manual, setManual] = useState(initialSession.current.manual);
+  const scrollTopRef = useRef(initialSession.current.scrollTop);
+  const saveTimer = useRef<ReturnType<typeof setTimeout>>();
+  // A row the reader clicked stays where it was under the pointer, even when topics above it open or close.
+  const clicked = useRef<{ id: string; top: number } | null>(null);
+  const arrival = useRef(true);
+
+  const pathIds = useMemo(() => [...sectionAncestors(book.sections, currentSectionId).map(section => section.id), currentSectionId], [book.sections, currentSectionId]);
+  const onPath = useMemo(() => new Set(pathIds), [pathIds]);
+  // Adjusting state while rendering applies the arrival before paint, so the current row exists to be revealed.
+  const [arrivedAt, setArrivedAt] = useState(currentSectionId);
+  if (arrivedAt !== currentSectionId) {
+    setArrivedAt(currentSectionId);
+    setManual(previous => dropClosedOnPath(previous, pathIds));
+  }
+
+  useEffect(() => { writeSession(book.id, { manual, scrollTop: scrollTopRef.current }); }, [book.id, manual]);
+  useEffect(() => () => clearTimeout(saveTimer.current), []);
+
+  const rowFor = (id: string) => Array.from(listRef.current?.querySelectorAll<HTMLElement>('[data-section-id]') ?? []).find(element => element.dataset.sectionId === id);
+  const reveal = (mode: 'center' | 'nearest', onlyIfHidden = true) => {
+    const list = listRef.current;
+    const row = list && rowFor(currentSectionId);
+    if (!list || !row) return;
+    const box = list.getBoundingClientRect(), rowBox = row.getBoundingClientRect();
+    if (onlyIfHidden && rowBox.top >= box.top && rowBox.bottom <= box.bottom) return;
+    const offset = rowBox.top - box.top + list.scrollTop;
+    list.scrollTop = mode === 'center' ? offset - (list.clientHeight - row.offsetHeight) / 2
+      : rowBox.top < box.top ? offset - 8 : offset - list.clientHeight + row.offsetHeight + 8;
+  };
+
+  useBrowserLayoutEffect(() => { if (listRef.current) listRef.current.scrollTop = scrollTopRef.current; }, []);
+  // Opening, including the first render at a deep link, brings the current row into view.
+  useBrowserLayoutEffect(() => {
+    if (!isOpen || searching) return;
+    // Leaving a search swaps the list back in at the top; put the reader's position back first.
+    if (listRef.current) listRef.current.scrollTop = scrollTopRef.current;
+    // Arriving at a link centres the row even if it is already on screen; reopening moves the list only if the row is hidden.
+    reveal('center', !arrival.current);
+    arrival.current = false;
+  }, [isOpen, searching]);
+  // Previous/Next and links move the list only when the new row is out of sight; a click in the list never does.
+  const firstRender = useRef(true);
+  useBrowserLayoutEffect(() => {
+    if (firstRender.current) { firstRender.current = false; return; }
+    const pointed = clicked.current;
+    clicked.current = null;
+    const list = listRef.current, row = pointed && rowFor(pointed.id);
+    if (list && row) { list.scrollTop += row.getBoundingClientRect().top - list.getBoundingClientRect().top - pointed.top; return; }
+    if (isOpen && !searching) reveal('nearest');
+  }, [currentSectionId]);
 
   // Auto-focus search input when requested
   useEffect(() => {
@@ -44,9 +117,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
       searchInputRef.current.focus();
     }
   }, [shouldFocusSearch, isOpen]);
-
-  // Clean text helper for searching
-
 
   // Search Logic
   const searchResults = useMemo(() => {
@@ -90,18 +160,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
     }).filter((result): result is NonNullable<typeof result> => result !== null);
   }, [searchQuery, searchIndex]);
 
+
   const handleClearSearch = () => setSearchQuery('');
+  const select = (id: string, text?: string) => {
+    const row = rowFor(id);
+    clicked.current = row && listRef.current && id !== currentSectionId ? { id, top: row.getBoundingClientRect().top - listRef.current.getBoundingClientRect().top } : null;
+    onSelectSection(id, text);
+  };
 
   // Get bookmarked section objects
   const bookmarks = GUIDE_CONTENT.filter(s => bookmarkedSections.has(s.id));
-
-  // Calculate Progress
-  const totalSections = GUIDE_CONTENT.filter(s => s.category !== 'App Guide' && s.content.trim()).length;
-  const validReadCount = Array.from(readSections).filter(id => {
-      const section = GUIDE_CONTENT.find(s => s.id === id);
-      return section && section.category !== 'App Guide' && section.content.trim();
-  }).length;
-  const progress = totalSections > 0 ? Math.min(100, Math.round((validReadCount / totalSections) * 100)) : 0;
+  const progress = chapterProgress(GUIDE_CONTENT, readSections);
+  const cover = book.appearance?.cover;
+  const homeHref = `?book=${encodeURIComponent(book.id)}`;
 
   return (
     <>
@@ -114,76 +185,54 @@ export const Sidebar: React.FC<SidebarProps> = ({
       )}
 
       {/* Sidebar Content */}
-      <aside className={`
-        publication-sidebar fixed top-0 left-0 z-50 h-full w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
-        transform transition-transform duration-300 ease-in-out overflow-y-auto
-        lg:translate-x-0 lg:static lg:h-screen flex flex-col
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-      `}>
-        
-        <button onClick={onClose} aria-label="Close navigation" className="lg:hidden self-end p-3 text-gray-500 dark:text-gray-300"><span className="material-symbols-outlined">close</span></button>
-        {/* Search & Nav Header */}
-        <div className="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 flex-shrink-0 space-y-4">
-             {/* Search Input */}
-             <div className="relative">
-                <input 
-                    ref={searchInputRef}
-                    type="search"
-                    aria-label={labels.search}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={labels.search}
-                    className="w-full pl-9 pr-8 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500"
-                />
-                <span className="material-symbols-outlined absolute left-2.5 top-2 text-gray-400 text-lg">search</span>
-                {searchQuery && (
-                    <button 
-                        aria-label="Clear search"
-                        onClick={handleClearSearch}
-                        className="absolute right-2 top-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
-                    >
-                        <span className="material-symbols-outlined text-lg">close</span>
-                    </button>
-                )}
-             </div>
-
-             {/* Standard Meta Links (only if not searching) */}
-             {!searchQuery && (
-                 <>
-                    <button
-                        onClick={() => {
-                            onSelectSection('home');
-                            if (window.innerWidth < 1024) onClose();
-                        }}
-                        className={`
-                            w-full text-left px-4 py-3 rounded-lg text-sm font-bold transition-all flex items-center gap-3 shadow-sm border
-                            ${currentSectionId === 'home' 
-                                ? 'bg-indigo-600 text-white border-indigo-600 shadow-indigo-200 dark:shadow-none' 
-                                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700 hover:border-indigo-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-md'}
-                        `}
-                    >
-                        <span className="material-symbols-outlined">home</span>
-                        Home
-                    </button>
-                    
-                    {onOpenHighlights && (
-                        <button
-                            onClick={() => {
-                                onOpenHighlights();
-                                if (window.innerWidth < 1024) onClose();
-                            }}
-                            className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-3 bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-900/40"
-                        >
-                            <span className="material-symbols-outlined">bookmarks</span>
-                            Notes & Highlights
-                        </button>
-                    )}
-                 </>
-             )}
+      <aside data-open={isOpen} aria-label={labels.tableOfContents}
+        className="publication-sidebar bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
+        <div className="publication-sidebar-header">
+          <div className="publication-sidebar-identity-row">
+            <a href={homeHref} className="publication-sidebar-identity" title={`${displayTitle}, ${book.author}`} aria-label={`${displayTitle}: book home`}
+              onClick={event => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; event.preventDefault(); select('home'); }}>
+              {cover && <img src={cover.src} alt="" className="publication-sidebar-cover" />}
+              <span className="publication-sidebar-book"><span className="publication-sidebar-book-title">{displayTitle}</span>
+                <span className="publication-sidebar-author">{book.author}</span></span>
+            </a>
+            <button onClick={onClose} aria-label="Close navigation" className="publication-sidebar-close"><span className="material-symbols-outlined">close</span></button>
+          </div>
+          <div className="relative">
+            <input 
+                ref={searchInputRef}
+                type="search"
+                aria-label={labels.search}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={labels.search}
+                className="publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500"
+            />
+            <span className="material-symbols-outlined publication-sidebar-search-icon text-gray-400 text-lg">search</span>
+            {searchQuery && (
+                <button 
+                    aria-label="Clear search"
+                    onClick={handleClearSearch}
+                    className="publication-sidebar-search-clear text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                >
+                    <span className="material-symbols-outlined text-lg">close</span>
+                </button>
+            )}
+          </div>
+          <div className="publication-sidebar-progress">
+            <div role="progressbar" aria-label="Chapters read" aria-valuemin={0} aria-valuemax={progress.total} aria-valuenow={progress.read} className="publication-sidebar-progress-bar">
+              <div style={{ width: `${progress.total ? Math.round(progress.read / progress.total * 100) : 0}%` }} />
+            </div>
+            <span>{progress.read} of {progress.total} read</span>
+          </div>
         </div>
 
-        {/* Main Sidebar Body */}
-        <div className="flex-1 overflow-y-auto">
+        {/* The only scrolling area in the sidebar */}
+        <div ref={listRef} className="publication-sidebar-list" onScroll={event => {
+          if (searching) return;
+          scrollTopRef.current = event.currentTarget.scrollTop;
+          clearTimeout(saveTimer.current);
+          saveTimer.current = setTimeout(() => writeSession(book.id, { manual, scrollTop: scrollTopRef.current }), 200);
+        }}>
             {searchQuery ? (
                 // Search Results View
                 <div className="p-4 space-y-4">
@@ -195,10 +244,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         searchResults.map((result) => (
                             <div key={result.section.id} className="space-y-2">
                                 <button
-                                    onClick={() => {
-                                        onSelectSection(result.section.id);
-                                        if (window.innerWidth < 1024) onClose();
-                                    }}
+                                    onClick={() => onSelectSection(result.section.id)}
+                                    title={result.section.title}
                                     className="w-full text-left font-semibold text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
                                 >
                                     {result.section.title}
@@ -207,10 +254,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                 {result.contentMatches.map((match, i: number) => (
                                     <button
                                         key={i}
-                                        onClick={() => {
-                                            onSelectSection(result.section.id, match.textToHighlight);
-                                            if (window.innerWidth < 1024) onClose();
-                                        }}
+                                        onClick={() => onSelectSection(result.section.id, match.textToHighlight)}
                                         className="w-full text-left text-xs text-gray-600 dark:text-gray-300 p-2 bg-gray-50 dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-gray-700 rounded border border-gray-100 dark:border-gray-700 transition-colors block"
                                     >
                                         <span className="line-clamp-2">
@@ -237,32 +281,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </div>
             ) : (
                 // Normal Navigation View
-                <div className="flex flex-col min-h-full">
-                    <div className="p-6 border-b border-gray-100 dark:border-gray-800 flex-shrink-0">
-                        <div className="publication-sidebar-identity">
-                          {book.appearance?.cover && <img src={book.appearance.cover.src} alt="" className="publication-sidebar-cover" />}
-                          <div><h2 className="font-bold text-gray-900 dark:text-white leading-tight">{book.title}</h2>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{book.author}</p></div>
-                        </div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 mb-4">{book.subtitle}</p>
-                        
-                        {/* Progress Bar */}
-                        <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mb-1">
-                            <div 
-                                className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500 ease-out" 
-                                style={{ width: `${progress}%` }}
-                            ></div>
-                        </div>
-                        <div className="flex justify-between text-xs text-gray-400 font-medium">
-                            <span>Progress</span>
-                            <span>{progress}%</span>
-                        </div>
-                    </div>
-
-                    <nav className="p-4 flex-1">
+                <nav aria-label={labels.tableOfContents} className="p-4">
                         {/* Saved Sections (Bookmarks) */}
                         {bookmarks.length > 0 && (
-                            <div className="mb-8">
+                            <div className="mb-6">
                                 <h3 className="px-2 text-xs font-semibold text-amber-600 dark:text-amber-500 uppercase tracking-wider mb-3 flex items-center gap-2">
                                     <span className="material-symbols-outlined text-sm material-symbols-filled">bookmark</span>
                                     Saved Sections
@@ -271,10 +293,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                      {bookmarks.map(section => (
                                         <button
                                             key={`bookmark-${section.id}`}
-                                            onClick={() => {
-                                                onSelectSection(section.id);
-                                                if (window.innerWidth < 1024) onClose();
-                                            }}
+                                            onClick={() => select(section.id)}
                                             className={`
                                                 w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors flex justify-between items-center
                                                 ${currentSectionId === section.id
@@ -282,7 +301,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'}
                                             `}
                                         >
-                                            <span className="truncate">{section.title}</span>
+                                            <span title={section.title} className="truncate">{section.title}</span>
                                         </button>
                                      ))}
                                 </div>
@@ -290,16 +309,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </div>
                         )}
 
-                        <h2 className="px-2 mb-3 text-sm font-semibold">{labels.tableOfContents}</h2>
+                        <h2 className="px-2 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{labels.tableOfContents}</h2>
                         <div className="space-y-1">
                           {navigation.map(node => <SidebarItem key={node.section.id} section={node.section}
-                            visibleChildren={node.children} currentSectionId={currentSectionId} readSections={readSections}
-                            onSelectSection={onSelectSection} />)}
+                            visibleChildren={node.children} currentSectionId={currentSectionId} onPath={onPath} manual={manual} readSections={readSections}
+                            onToggle={(id, open) => setManual(previous => ({ ...previous, [id]: open }))} onSelectSection={select} />)}
                         </div>
-                    </nav>
-
-
-                </div>
+                </nav>
             )}
         </div>
       </aside>
@@ -308,35 +324,42 @@ export const Sidebar: React.FC<SidebarProps> = ({
 };
 
 
-/** Language Muscle's recursive SidebarItem adapted to Deliberate Practice's colours.
- * Separate links and expand buttons keep parent chapters readable and keyboard accessible.
+/** Language Muscle's original rows: a topic row opens and closes its topic, and only chapters open pages.
+ * A topic's own page is reached from the breadcrumb and the home contents.
  */
-function SidebarItem({ section, visibleChildren, currentSectionId, readSections, onSelectSection, depth = 0 }: {
+function SidebarItem({ section, visibleChildren, currentSectionId, onPath, manual, readSections, onToggle, onSelectSection, depth = 0 }: {
   section: PublicationSection;
   visibleChildren: ReturnType<typeof publicationNavigation>;
   currentSectionId: string;
+  onPath: ReadonlySet<string>;
+  manual: Readonly<Record<string, boolean>>;
   readSections: Set<string>;
+  onToggle: (id: string, open: boolean) => void;
   onSelectSection: (id: string) => void;
   depth?: number;
 }) {
-  const activeDescendant = containsSection(section, currentSectionId);
-  const [expanded, setExpanded] = useState(section.defaultExpanded || activeDescendant);
   const hasChildren = visibleChildren.length > 0;
-  useEffect(() => { if (activeDescendant) setExpanded(true); }, [activeDescendant]);
+  const expanded = hasChildren && sidebarExpanded(section, onPath.has(section.id), manual);
   const isRead = readSections.has(section.id);
   const isActive = currentSectionId === section.id;
+  const colour = isActive ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300'
+    : hasChildren || isRead ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+    : 'text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white';
   return (
     <div className="select-none">
-      <div className="flex items-center" style={{ paddingLeft: `${Math.min(depth, 6) * 0.75}rem` }}>
-        <button onClick={() => onSelectSection(section.id)} aria-current={isActive ? 'page' : undefined}
-          className={`min-w-0 flex-1 w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors flex justify-between items-center group ${isActive ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300' : isRead ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800' : 'text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'}`}>
-          <span className={isRead && !isActive ? 'opacity-80' : ''}>{section.title}</span>
-          {isRead && <span className={`material-symbols-outlined text-base ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-green-500 dark:text-green-600'}`}>check</span>}
+      <div style={{ paddingLeft: `${Math.min(depth, 6) * 0.75}rem` }}>
+        <button data-section-id={section.id} aria-current={isActive ? 'page' : undefined} aria-expanded={hasChildren ? expanded : undefined}
+          onClick={() => hasChildren ? onToggle(section.id, !expanded) : onSelectSection(section.id)}
+          className={`publication-sidebar-row w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors flex justify-between items-center gap-2 ${colour}`}>
+          <span title={section.title} className={`publication-sidebar-title ${isActive ? 'is-active' : ''} ${isRead && !isActive && !hasChildren ? 'opacity-80' : ''}`}>{section.title}</span>
+          {hasChildren
+            ? <span aria-hidden="true" className="material-symbols-outlined text-lg text-gray-400">{expanded ? 'expand_more' : 'chevron_right'}</span>
+            : isRead && <span aria-hidden="true" className={`material-symbols-outlined text-base ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-green-500 dark:text-green-600'}`}>check</span>}
         </button>
-        {hasChildren && <button onClick={() => setExpanded(value => !value)} aria-expanded={expanded} aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.title}`} className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"><span className="material-symbols-outlined text-lg">{expanded ? 'expand_more' : 'chevron_right'}</span></button>}
       </div>
-      {hasChildren && expanded && <div className="my-1 transition-all">
-        {visibleChildren.map(child => <SidebarItem key={child.section.id} section={child.section} visibleChildren={child.children} currentSectionId={currentSectionId} readSections={readSections} onSelectSection={onSelectSection} depth={depth + 1} />)}
+      {expanded && <div className="my-1 transition-all">
+        {visibleChildren.map(child => <SidebarItem key={child.section.id} section={child.section} visibleChildren={child.children} currentSectionId={currentSectionId} onPath={onPath} manual={manual}
+          readSections={readSections} onToggle={onToggle} onSelectSection={onSelectSection} depth={depth + 1} />)}
       </div>}
     </div>
   );

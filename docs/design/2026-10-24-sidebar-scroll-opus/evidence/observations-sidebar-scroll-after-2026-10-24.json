@@ -1,0 +1,509 @@
+{
+ "checks": [
+  {
+   "name": "1 header is pinned and compact (<= 125px) over one list",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 182,
+    "listH": 782,
+    "listSH": 1928,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": 31,
+    "expanded": 1,
+    "rows": 33,
+    "focus": "BODY:Introduction to Key Issues in Language T",
+    "url": "?book=linguistics&section=2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per"
+   }
+  },
+  {
+   "name": "1 first topic row starts above 200px (was about 480px)",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "1 no duplicated Home or Notes & Highlights buttons in the sidebar",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "1 toolbar Notes button remains",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "1 read indicator counts chapters only",
+   "passed": true,
+   "detail": "1 of 253 read"
+  },
+  {
+   "name": "2 only the contents list scrolls (overscroll contained)",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "3 deep link: current row centred in the list (fault 3: was at 1026px offscreen)",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 182,
+    "listH": 782,
+    "listSH": 1928,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": 31,
+    "expanded": 1,
+    "rows": 33,
+    "focus": "BODY:Introduction to Key Issues in Language T",
+    "url": "?book=linguistics&section=2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per"
+   }
+  },
+  {
+   "name": "2 whole topic row toggles open (fault 2: used to navigate to an empty page)",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "2 topic row toggles closed again",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "3 auto-opened topic closes after leaving it, manual topic stays open",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "4 chapter starts at the top immediately (no smooth scroll)",
+   "passed": true,
+   "detail": 0
+  },
+  {
+   "name": "4 the clicked row stays where it was in the list (no jump)",
+   "passed": true,
+   "detail": {
+    "before": 139,
+    "after": 139
+   }
+  },
+  {
+   "name": "4 focus moved to the article heading",
+   "passed": true,
+   "detail": "H1:Is there a term for sentence ending phra"
+  },
+  {
+   "name": "4 ArrowDown moves the text, not the contents list (fault 4)",
+   "passed": true,
+   "detail": {
+    "before": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 0,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    },
+    "after": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 40,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    }
+   }
+  },
+  {
+   "name": "4 PageDown moves the text, not the contents list (fault 4)",
+   "passed": true,
+   "detail": {
+    "before": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 40,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    },
+    "after": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 835,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    }
+   }
+  },
+  {
+   "name": "4 Space moves the text, not the contents list (fault 4)",
+   "passed": true,
+   "detail": {
+    "before": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 835,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    },
+    "after": {
+     "open": "true",
+     "listTop": 2249,
+     "listH": 782,
+     "listSH": 3704,
+     "mainTop": 1137,
+     "docTop": 0,
+     "asideOverflow": 0,
+     "headerH": 118,
+     "activeVisible": true,
+     "activeMid": -204,
+     "expanded": 2,
+     "rows": 65,
+     "focus": "H1:Is there a term for sentence ending phra",
+     "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+    }
+   }
+  },
+  {
+   "name": "4 typing in search keeps its focus while results show",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "3 repeated Next keeps the current row visible in the list",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 2082,
+    "listH": 782,
+    "listSH": 3704,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": 345,
+    "expanded": 2,
+    "rows": 65,
+    "focus": "H1:Why does \"before\" mean both \"in front of",
+    "url": "?book=linguistics&section=2015-07-19-why-does-before-mean-both-in-front-of-and-prior-to"
+   }
+  },
+  {
+   "name": "3 Next into a visible row leaves the list where it is",
+   "passed": true,
+   "detail": {
+    "nextRowVisible": false,
+    "before": 2082,
+    "after": 2138
+   }
+  },
+  {
+   "name": "5 closing keeps the sidebar mounted with its rows (fault: S twice reset the list)",
+   "passed": true,
+   "detail": {
+    "open": "false",
+    "listTop": 2942,
+    "listH": 782,
+    "listSH": 4624,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": false,
+    "activeMid": -953,
+    "expanded": 3,
+    "rows": 81,
+    "focus": "BODY:Introduction to Key Issues in Language T",
+    "url": "?book=linguistics&section=2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per"
+   }
+  },
+  {
+   "name": "5 closed sidebar leaves the layout and the tab order",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 a desktop sidebar the reader closed stays closed across navigation",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 reopening keeps the open topics and shows the current row",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 2045,
+    "listH": 782,
+    "listSH": 4624,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": -0.0,
+    "expanded": 3,
+    "rows": 81,
+    "focus": "H1:Is there a term for sentence ending phra",
+    "url": "?book=linguistics&section=2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right"
+   }
+  },
+  {
+   "name": "5 home page keeps the sidebar mounted with the topic the reader opened",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 2045,
+    "listH": 782,
+    "listSH": 3236,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": null,
+    "activeMid": null,
+    "expanded": 2,
+    "rows": 57,
+    "focus": "BUTTON:Introduction to Key Issues in Language T",
+    "url": "?book=linguistics"
+   }
+  },
+  {
+   "name": "2 breadcrumb topic links to the topic page",
+   "passed": true,
+   "detail": "http://127.0.0.1:8773/?book=linguistics&section=theme-semantics-and-pragmatics"
+  },
+  {
+   "name": "2 no duplicated topic heading label on a topic page",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "1 book identity in the header goes to the book home",
+   "passed": true,
+   "detail": "http://127.0.0.1:8773/?book=linguistics"
+  },
+  {
+   "name": "2 Start Reading skips the empty first topic page",
+   "passed": true,
+   "detail": "http://127.0.0.1:8773/?book=linguistics&section=2013-08-16-what-s-the-difference-between-phonetics-and-phonology"
+  },
+  {
+   "name": "6 inactive titles take at most 2 lines",
+   "passed": true,
+   "detail": [
+    {
+     "a": false,
+     "h": 40,
+     "lh": 20,
+     "full": true,
+     "t": true
+    },
+    {
+     "a": false,
+     "h": 40,
+     "lh": 20,
+     "full": false,
+     "t": true
+    },
+    {
+     "a": false,
+     "h": 40,
+     "lh": 20,
+     "full": true,
+     "t": true
+    }
+   ]
+  },
+  {
+   "name": "6 every title carries the full text as a tooltip",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "6 the current title is fully visible",
+   "passed": true,
+   "detail": [
+    {
+     "a": true,
+     "h": 80,
+     "lh": 20,
+     "full": true,
+     "t": true
+    }
+   ]
+  },
+  {
+   "name": "7 On this page appears only with two or more headings",
+   "passed": true,
+   "detail": [
+    3,
+    4,
+    3,
+    7
+   ]
+  },
+  {
+   "name": "2 Language Muscle: whole topic row toggles (aria-expanded) as in the original",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "7 sidebar depth defaults to the book tree depth",
+   "passed": true,
+   "detail": 10
+  },
+  {
+   "name": "2 Language Muscle intro sections stay in Previous/Next order",
+   "passed": true,
+   "detail": "http://127.0.0.1:8773/?book=language-muscle&section=about-guide"
+  },
+  {
+   "name": "5 session state is stored per book",
+   "passed": true,
+   "detail": [
+    "publication-reader:language-muscle:sidebarSession",
+    "publication-reader:linguistics:sidebarSession"
+   ]
+  },
+  {
+   "name": "5 mobile drawer starts hidden but mounted",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 opening the drawer shows the current row, centred",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 241,
+    "listH": 726,
+    "listSH": 1928,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": -0.0,
+    "expanded": 1,
+    "rows": 33,
+    "focus": "BUTTON:menuTable of contents",
+    "url": "?book=linguistics&section=2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per"
+   }
+  },
+  {
+   "name": "5 a topic row keeps the drawer open",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 choosing a chapter closes the drawer and focuses the heading",
+   "passed": true,
+   "detail": {
+    "open": "false",
+    "listTop": 53,
+    "listH": 726,
+    "listSH": 2868,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": 40,
+    "expanded": 2,
+    "rows": 49,
+    "focus": "H1:How to determine whether a given sentenc",
+    "url": "?book=linguistics&section=2014-09-09-how-to-determine-whether-a-given-sentence-is-demanding-an-answer-or-is"
+   }
+  },
+  {
+   "name": "5 drawer is not scroll-trapping the page",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 reopening the drawer keeps topics open and the current row visible",
+   "passed": true,
+   "detail": {
+    "open": "true",
+    "listTop": 53,
+    "listH": 726,
+    "listSH": 2868,
+    "mainTop": 0,
+    "docTop": 0,
+    "asideOverflow": 0,
+    "headerH": 118,
+    "activeVisible": true,
+    "activeMid": 40,
+    "expanded": 2,
+    "rows": 49,
+    "focus": "BUTTON:menuTable of contents",
+    "url": "?book=linguistics&section=2014-09-09-how-to-determine-whether-a-given-sentence-is-demanding-an-answer-or-is"
+   }
+  },
+  {
+   "name": "5 widening shows the desktop sidebar by its own default",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 narrowing keeps the drawer choice (closed) separate from the desktop choice",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "5 desktop closed choice is remembered while the drawer was opened",
+   "passed": true,
+   "detail": null
+  }
+ ],
+ "errors": []
+}

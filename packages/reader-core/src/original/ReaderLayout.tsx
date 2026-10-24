@@ -10,6 +10,7 @@ import { ShortcutsModal } from './ShortcutsModal.js';
 import { publicationLabels, publicationColour } from './publication-navigation.js';
 import type { MaxWidth, PublicationCoaching } from './types.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
+import { isReadableSection, sectionAncestors } from './sidebar-model.js';
 import type { usePublicationReader } from './use-publication-reader.js';
 
 export interface ReaderLayoutProps {
@@ -42,6 +43,8 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
     '--publication-paper': publicationColour(book.appearance?.paper),
     '--publication-ink': publicationColour(book.appearance?.ink),
   } as React.CSSProperties;
+  // Each topic above the page is a link to its own page; the sidebar's topic rows only open and close.
+  const breadcrumbTopics = currentSection ? sectionAncestors(book.sections, currentSection.id) : [];
   const wrapReadingSurface = readingSurface ?? ((children: React.ReactNode) => children);
   return (
     <div style={appearanceStyle} className={`publication-reader ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
@@ -69,24 +72,20 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
         </div>
       )}
 
-      {/* Left Sidebar */}
-      {isSidebarOpen && !isImmersiveMode && (
-        <Sidebar
-          book={book}
-          currentSectionId={currentSectionId} 
-          onSelectSection={handleSectionChange}
-          isOpen={isSidebarOpen}
-          onClose={() => {
-            setIsSidebarOpen(false);
-            setIsSearchTriggered(false);
-          }}
-          readSections={readSections}
-          bookmarkedSections={bookmarkedSections}
-          onOpenHighlights={() => setIsHighlightsOpen(true)}
-          shouldFocusSearch={isSearchTriggered}
-
-        />
-      )}
+      {/* Left Sidebar: hidden rather than unmounted, so its list position and open topics survive */}
+      <Sidebar
+        book={book}
+        currentSectionId={currentSectionId} 
+        onSelectSection={handleSectionChange}
+        isOpen={isSidebarOpen && !isImmersiveMode}
+        onClose={() => {
+          setIsSidebarOpen(false);
+          setIsSearchTriggered(false);
+        }}
+        readSections={readSections}
+        bookmarkedSections={bookmarkedSections}
+        shouldFocusSearch={isSearchTriggered}
+      />
 
       {/* Main Content Area */}
       <main className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
@@ -185,7 +184,7 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
                 <Home
                     onDownloadEbook={handleDownloadEbook}
                     book={book}
-                    onStart={() => { if (sections[0]) handleSectionChange(sections[0].id); }} 
+                    onStart={() => { const first = sections.find(isReadableSection); if (first) handleSectionChange(first.id); }} 
                     onSelectSection={handleSectionChange}
                     onOpenSearch={handleOpenSearch}
                 />
@@ -203,7 +202,9 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
                                     >
                                         Home
                                     </button>
-                                    {currentSection.category !== currentSection.title && <><span className="mx-2 shrink-0">/</span>
+                                    {breadcrumbTopics.map(topic => <React.Fragment key={topic.id}><span className="mx-2 shrink-0">/</span>
+                                    <button onClick={() => handleSectionChange(topic.id)} title={topic.title} className="max-w-[40%] shrink truncate hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{topic.title}</button></React.Fragment>)}
+                                    {!breadcrumbTopics.length && currentSection.category !== currentSection.title && <><span className="mx-2 shrink-0">/</span>
                                     <span title={currentSection.category} className="max-w-[40%] shrink-0 truncate uppercase tracking-wider font-medium text-xs">{currentSection.category}</span></>}
                                     <span className="mx-2 shrink-0">/</span>
                                     <span title={currentSection.title} className="min-w-0 truncate text-gray-900 dark:text-white font-medium">{currentSection.title}</span>

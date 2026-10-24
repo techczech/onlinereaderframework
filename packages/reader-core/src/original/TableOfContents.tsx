@@ -41,7 +41,7 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
       id: heading.id,
       text: heading.textContent?.trim() ?? '',
       level: Number(heading.tagName.slice(1))
-    }));
+    })).filter(heading => heading.id && heading.text);
     setActiveId('');
     setHeadings(extracted);
     // Reset refs array
@@ -108,7 +108,8 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
     }
   };
 
-  if (headings.length === 0) return null;
+  // A single heading is not a map of the page; the chapter's own title is not listed here.
+  if (headings.length < 2) return null;
 
   return (
     <nav 

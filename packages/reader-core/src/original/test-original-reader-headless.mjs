@@ -112,7 +112,7 @@ with sync_playwright() as p:
                     page.get_by_role('button', name=re.compile(r'^Previous\s+Ordinary markup$')).click()
                 else:
                     page.get_by_role('button', name=re.compile(r'^Next\s+')).click()
-                page.get_by_role('button', name=re.compile(r'Notes & Highlights$')).click()
+                page.get_by_role('button', name='Open notes and highlights', exact=True).click()
                 page.get_by_role('textbox', name='Note on ' + title, exact=True).locator('xpath=../../..').get_by_role('button', name=title, exact=True).click()
                 page.wait_for_function('section => new URL(location.href).searchParams.get("section") === section', arg=section)
                 content.wait_for()
@@ -124,7 +124,7 @@ with sync_playwright() as p:
                 content.wait_for()
                 page.evaluate('document.fonts.ready')
                 inspect('full page reload')
-                page.get_by_role('button', name=re.compile(r'Notes & Highlights$')).click()
+                page.get_by_role('button', name='Open notes and highlights', exact=True).click()
                 expect(page.get_by_role('textbox', name='Note on ' + title, exact=True)).to_have_value('Saved note for ' + section)
                 check(section + ': full reload restores saved note input', True, True)
             return results

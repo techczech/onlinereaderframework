@@ -5,6 +5,7 @@ import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import type { TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
 import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
+import { readableNeighbours } from './sidebar-model.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
@@ -38,7 +39,10 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [maxWidth, setMaxWidth] = useBookState<MaxWidth>(book.id, 'maxWidth', 'md', oneOf(['sm', 'md', 'lg', 'full'] as const), storageFailure);
   const readSections = useMemo(() => new Set(readIds), [readIds]);
   const bookmarkedSections = useMemo(() => new Set(bookmarkIds), [bookmarkIds]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024 && getInitialSection() !== 'home');
+  // Desktop and drawer layouts keep separate open choices. Until the reader chooses on desktop, the sidebar follows the page: open for chapters, closed on home.
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
+  const [desktopChoice, setDesktopChoice] = useState<boolean | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isHighlightsOpen, setIsHighlightsOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
@@ -55,14 +59,20 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const contentRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<MarkdownRendererHandle>(null);
   const tocRef = useRef<TableOfContentsHandle>(null);
+  const focusArticleRef = useRef(false);
   const currentSection = sections.find(section => section.id === currentSectionId);
   const isHome = currentSectionId === 'home';
   const isBookmarked = bookmarkedSections.has(currentSectionId);
   const currentSectionHighlights = useMemo(() => highlights.filter(highlight => highlight.sectionId === currentSectionId), [highlights, currentSectionId]);
   const currentSectionReflection = reflections.find(reflection => reflection.sectionId === currentSectionId);
-  const currentIndex = sections.findIndex(section => section.id === currentSectionId);
-  const prevSection = currentIndex > 0 ? sections[currentIndex - 1] : null;
-  const nextSection = currentIndex >= 0 ? sections[currentIndex + 1] : null;
+  const { prev: prevSection, next: nextSection } = readableNeighbours(sections, currentSectionId);
+  const isSidebarOpen = isDesktop ? desktopChoice ?? !isHome : isDrawerOpen;
+  const layoutRef = useRef({ isDesktop, isHome });
+  layoutRef.current = { isDesktop, isHome };
+  const setIsSidebarOpen = useCallback((next: boolean | ((open: boolean) => boolean)) => {
+    if (layoutRef.current.isDesktop) setDesktopChoice(previous => typeof next === 'function' ? next(previous ?? !layoutRef.current.isHome) : next);
+    else setIsDrawerOpen(previous => typeof next === 'function' ? next(previous) : next);
+  }, []);
   const cycleFontSize = () => setFontSize(value => (['sm', 'base', 'lg', 'xl'] as const)[(['sm', 'base', 'lg', 'xl'].indexOf(value) + 1) % 4]);
   const cycleLineHeight = () => setLineHeight(value => (['tight', 'normal', 'relaxed', 'loose'] as const)[(['tight', 'normal', 'relaxed', 'loose'].indexOf(value) + 1) % 4]);
   const cycleMaxWidth = () => setMaxWidth(value => (['sm', 'md', 'lg', 'full'] as const)[(['sm', 'md', 'lg', 'full'].indexOf(value) + 1) % 4]);
@@ -85,29 +95,53 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     setHighlightToScroll(text ?? null);
     clearSelection();
     window.getSelection()?.removeAllRanges();
-    if (window.innerWidth >= 1024 && sectionId !== 'home') setIsSidebarOpen(true);
-    if (window.innerWidth < 1024) setIsSidebarOpen(false);
+    // A drawer closes after a choice; a desktop sidebar keeps whatever the reader chose.
+    if (!layoutRef.current.isDesktop) setIsDrawerOpen(false);
     setIsSearchTriggered(false);
+    focusArticleRef.current = !text;
     const url = publicationUrl(window.location.href, book.id, sectionId, text);
     if (url.href !== window.location.href) window.history.pushState({ section: sectionId, book: book.id }, '', url);
-    if (!text) contentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    // The CSS scroll-behavior of the text box is smooth; a new chapter starts at its top at once.
+    if (!text) contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [book.id, sections, clearSelection]);
 
   useEffect(() => {
     const restore = () => {
       const next = getInitialSection();
+      focusArticleRef.current = false;
       setCurrentSectionId(next);
       clearSelection();
       const params = new URL(window.location.href).searchParams;
       const legacy = new URLSearchParams(window.location.hash.split('?')[1] ?? '');
       setHighlightToScroll(params.get('text') ?? legacy.get('text'));
-      contentRef.current?.scrollTo({ top: 0 });
+      contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     };
     restore();
     window.addEventListener('popstate', restore);
     window.addEventListener('hashchange', restore);
     return () => { window.removeEventListener('popstate', restore); window.removeEventListener('hashchange', restore); };
   }, [getInitialSection, clearSelection]);
+
+  useEffect(() => {
+    const query = window.matchMedia?.('(min-width: 1024px)');
+    if (!query) return;
+    const update = () => setIsDesktop(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+
+  // Choosing a chapter puts the keyboard in the text, so Space, Page Down and the arrows read it rather than move the contents.
+  useEffect(() => {
+    if (!focusArticleRef.current) return;
+    focusArticleRef.current = false;
+    const active = document.activeElement as HTMLElement | null;
+    if (active?.closest('input, textarea, select, [contenteditable="true"], dialog[open], [role="dialog"]')) return;
+    const target = contentRef.current?.querySelector<HTMLElement>('[data-publication-content] h1') ?? contentRef.current?.querySelector<HTMLElement>('.publication-article');
+    if (!target) return;
+    target.tabIndex = -1;
+    target.focus({ preventScroll: true });
+  }, [currentSectionId]);
 
   useEffect(() => {
     const root = contentRef.current?.querySelector<HTMLElement>('[data-publication-content]');

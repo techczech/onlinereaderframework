@@ -9,7 +9,7 @@ const root = resolve(directory,'../../../..');
 const bundle = await build({absWorkingDir:root,stdin:{resolveDir:directory,contents:`
 import React from 'react'; import {createRoot} from 'react-dom/client';
 import {PublicationReader} from './PublicationReader.tsx';
-window.mount = (hasContents=true) => { window.root?.unmount(); document.body.innerHTML='<div id="root"></div>'; window.root=createRoot(document.getElementById('root')); window.root.render(React.createElement(PublicationReader,{epub:false,book:{id:'layout-fixture',title:'A real publication',author:'Author',description:'Description',appearance:{accent:'#9e352a',paper:'#fff9ee',ink:'#202a31'},sections:[{id:'chapter',title:'Chapter title',category:'Chapter title',content:'# Chapter title\\n\\n'+(hasContents?'## Local heading\\n\\n':'')+'A readable chapter. '.repeat(200)},{id:'other',title:'Other chapter',category:'Other',content:'# Other chapter'}]}}));};
+window.mount = (hasContents=true) => { window.root?.unmount(); document.body.innerHTML='<div id="root"></div>'; window.root=createRoot(document.getElementById('root')); window.root.render(React.createElement(PublicationReader,{epub:false,book:{id:'layout-fixture',title:'A real publication',author:'Author',description:'Description',appearance:{accent:'#9e352a',paper:'#fff9ee',ink:'#202a31'},sections:[{id:'chapter',title:'Chapter title',category:'Chapter title',content:'# Chapter title\\n\\n'+(hasContents?'## Local heading\\n\\nSome text.\\n\\n## Second heading\\n\\n':'')+'A readable chapter. '.repeat(200)},{id:'other',title:'Other chapter',category:'Other',content:'# Other chapter'}]}}));};
 `},bundle:true,write:false,format:'iife',platform:'browser',alias:{react:resolve(root,'apps/reader-demo/node_modules/react'),'react-dom':resolve(root,'apps/reader-demo/node_modules/react-dom')}});
 const css = readFileSync(resolve(root,'packages/reader-core/dist/reader.css'),'utf8')+'\n'+readFileSync(resolve(directory,'reader-original.css'),'utf8');
 const python=String.raw`
@@ -33,7 +33,7 @@ with sync_playwright() as p:
    return page.evaluate('''() => { const article=document.querySelector('[data-publication-content]'); const rail=document.querySelector('#toc-container');return {article:article.getBoundingClientRect().width,rail:rail&&getComputedStyle(rail).display!=='none',overflow:document.documentElement.scrollWidth>innerWidth,bodyOverflow:document.querySelector('main').scrollWidth>document.querySelector('main').clientWidth}; }''')
   desktop=measure();results.append({'desktop1440':desktop});print(json.dumps(results[-1]),flush=True);assert desktop['article']>=600,desktop
   assert desktop['rail'],desktop
-  assert page.locator('#toc-container a').all_text_contents()==['Local heading']
+  assert page.locator('#toc-container a').all_text_contents()==['Local heading','Second heading']
   page.get_by_role('button',name='Reading settings',exact=True).click()
   dialog=page.get_by_role('dialog',name='Reading settings');expect(dialog).to_be_visible()
   page.keyboard.press('b');page.keyboard.press('a')
@@ -48,7 +48,7 @@ with sync_playwright() as p:
   expect(page.get_by_role('button',name='Reading settings',exact=True)).to_be_focused()
   page.get_by_role('button',name='Reading settings',exact=True).click()
   dialog.get_by_label('Focus mode hides navigation',exact=True).check()
-  page.keyboard.press('Escape');assert page.locator('aside').count()==0
+  page.keyboard.press('Escape');assert page.locator('aside').get_attribute('data-open')=='false';expect(page.locator('aside')).not_to_be_visible()
   page.get_by_role('button',name='Reading settings',exact=True).click()
   dialog.get_by_label('Focus mode hides navigation',exact=True).uncheck()
   dialog.get_by_label('Colour theme',exact=True).select_option('dark')
@@ -64,7 +64,7 @@ with sync_playwright() as p:
    page.set_viewport_size({'width':width,'height':height});page.wait_for_timeout(150)
    value=measure();results.append({'viewport':[width,height],**value});assert not value['overflow'] and not value['bodyOverflow'],value
    if width<1280:assert not value['rail'],value
-  page.locator('aside').get_by_role('button',name='Close navigation',exact=True).click()
+  page.get_by_role('button',name='Open navigation',exact=True).click();page.locator('aside').get_by_role('button',name='Close navigation',exact=True).click()
   assert page.get_by_title('Copy Link to Page (l)',exact=True).is_visible()
   assert page.get_by_title('Bookmark (b)',exact=True).is_visible()
   page.get_by_role('button',name='Reading settings',exact=True).click()

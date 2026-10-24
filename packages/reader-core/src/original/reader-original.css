@@ -2,8 +2,8 @@
    Tailwind utilities and typography are built by the consuming app; see README.md. */
 .publication-reader { font-family: 'Inter', sans-serif; }
 .publication-reader .prose-content { font-family: 'Merriweather', serif; }
-.publication-reader aside::-webkit-scrollbar { width: 4px; }
-.publication-reader aside::-webkit-scrollbar-thumb { background-color: #e5e7eb; border-radius: 4px; }
+.publication-reader .publication-sidebar-list::-webkit-scrollbar { width: 4px; }
+.publication-reader .publication-sidebar-list::-webkit-scrollbar-thumb { background-color: #e5e7eb; border-radius: 4px; }
 .publication-reader .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
@@ -68,7 +68,36 @@
   --reader-ink: #e5e7eb;
   --reader-accent: color-mix(in srgb, var(--publication-accent, #818cf8), white 45%);
 }
-.publication-reader .publication-sidebar { width: 16.5rem; flex: 0 0 16.5rem; background: var(--reader-paper); }
+/* The sidebar is always mounted. Closed, it is only hidden, so the list keeps its position and open topics.
+   A pinned header sits over one scrolling list; nothing else in the sidebar scrolls. */
+.publication-reader .publication-sidebar { position: fixed; top: 0; left: 0; z-index: 50; height: 100%; width: 16.5rem; flex: 0 0 16.5rem; display: flex; flex-direction: column; overflow: hidden; background: var(--reader-paper);
+  transform: translateX(-100%); visibility: hidden; transition: transform .3s ease, visibility 0s linear .3s; }
+.publication-reader .publication-sidebar[data-open="true"] { transform: none; visibility: visible; transition: transform .3s ease, visibility 0s; }
+@media (min-width: 1024px) {
+  .publication-reader .publication-sidebar { position: static; transform: none; transition: margin-left .3s ease, visibility 0s linear .3s; }
+  .publication-reader .publication-sidebar[data-open="false"] { margin-left: -16.5rem; }
+  .publication-reader .publication-sidebar[data-open="true"] { transition: margin-left .3s ease, visibility 0s; }
+}
+.publication-reader .publication-sidebar-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.publication-reader .publication-sidebar-header { flex: none; display: flex; flex-direction: column; gap: .3rem; padding: .4rem .75rem; border-bottom: 1px solid color-mix(in srgb, var(--reader-ink), transparent 88%); }
+.publication-reader .publication-sidebar-identity-row { display: flex; align-items: center; gap: .25rem; }
+.publication-reader .publication-sidebar-identity { flex: 1; min-width: 0; display: flex; align-items: center; gap: .6rem; border-radius: .4rem; color: inherit; text-decoration: none; }
+.publication-reader .publication-sidebar-cover { width: 1.9rem; height: 2.65rem; object-fit: contain; flex: none; }
+.publication-reader .publication-sidebar-book { min-width: 0; display: flex; flex-direction: column; }
+.publication-reader .publication-sidebar-book-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .85rem; font-weight: 700; line-height: 1.2; }
+.publication-reader .publication-sidebar-author { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .7rem; opacity: .7; }
+.publication-reader .publication-sidebar-close { flex: none; display: inline-flex; padding: .4rem; color: var(--reader-ink); }
+@media (min-width: 1024px) { .publication-reader .publication-sidebar-close { display: none; } }
+.publication-reader .publication-sidebar-search { height: 1.75rem; font-size: .8rem; }
+.publication-reader .publication-sidebar-search-icon { position: absolute; left: .5rem; top: 50%; transform: translateY(-50%); }
+.publication-reader .publication-sidebar-search-clear { position: absolute; right: .4rem; top: 50%; transform: translateY(-50%); line-height: 1; }
+.publication-reader .publication-sidebar-progress { display: flex; align-items: center; gap: .5rem; font-size: .7rem; opacity: .85; white-space: nowrap; }
+.publication-reader .publication-sidebar-progress-bar { flex: 1; height: 3px; border-radius: 2px; overflow: hidden; background: color-mix(in srgb, var(--reader-ink), transparent 85%); }
+.publication-reader .publication-sidebar-progress-bar > div { height: 100%; background: var(--reader-accent); }
+.publication-reader .publication-sidebar-row { min-height: 2.25rem; }
+/* Inactive titles take at most two lines (the full title is in the tooltip); the current row always shows all of its title. */
+.publication-reader .publication-sidebar-title { min-width: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.publication-reader .publication-sidebar-title.is-active { display: block; overflow: visible; }
 .publication-reader .publication-main { container-type: inline-size; }
 .publication-reader .publication-scroll { min-height: 0; background: var(--reader-paper); }
 .publication-reader .publication-reading-layout {
@@ -94,8 +123,6 @@
   .publication-reader .publication-local-contents { display: block; }
   .publication-reader .publication-width-full:has(> .publication-local-contents) { max-width: none; }
 }
-.publication-reader .publication-sidebar-identity { display: flex; align-items: center; gap: .75rem; font-size: .9rem; }
-.publication-reader .publication-sidebar-cover { width: 2.5rem; height: 3.5rem; object-fit: contain; flex-shrink: 0; }
 .publication-reader .publication-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: .75rem 1.25rem; border-bottom: 1px solid color-mix(in srgb, var(--reader-ink), transparent 85%); background: var(--reader-paper); flex-shrink: 0; font-size: .8125rem; }
 .publication-reader .publication-toolbar button { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 2.5rem; padding: .4rem .7rem; border-radius: .4rem; }
 .publication-reader .publication-toolbar .publication-toolbar-identity { flex: 1; min-width: 0; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; font-weight: 600; }
