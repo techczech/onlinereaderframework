@@ -68,7 +68,7 @@ function Description({ c }: Ctx) {
 
 function Count({ c }: Ctx) {
   if (!c.showContents) return null;
-  return <p className="publication-front-count">{plural(c.contents.total, 'entry', 'entries')}</p>;
+  return <p className="publication-front-count">{plural(c.contents.total, 'chapter', 'chapters')}</p>;
 }
 
 function Progress({ c }: Ctx) {
@@ -148,7 +148,7 @@ function Filter({ c, className = '', large = false }: Ctx & { className?: string
       onChange={event => c.setQuery(event.target.value)}
       onKeyDown={event => { if (event.key === 'Escape' && c.query) { event.preventDefault(); event.stopPropagation(); c.setQuery(''); } }} />
     {c.query && <button type="button" className="publication-front-clear" aria-label={copy.clearFilter} onClick={() => { c.setQuery(''); c.filterRef.current?.focus(); }}><Icon name="close" /></button>}
-    <p id={statusId} role="status" className="publication-front-sr">{c.query.trim() ? (c.matches.length ? plural(c.matches.length, 'matching entry', 'matching entries') : copy.noMatches) : ''}</p>
+    <p id={statusId} role="status" className="publication-front-sr">{c.query.trim() ? (c.matches.length ? plural(c.matches.length, 'matching chapter', 'matching chapters') : copy.noMatches) : ''}</p>
   </div>;
 }
 
@@ -168,7 +168,7 @@ function EntryRow({ c, entry }: Ctx & { entry: FrontPageEntry }) {
 }
 
 function GroupCount({ group }: { group: FrontPageGroup }) {
-  return <span className="publication-front-group-count">{plural(group.count, 'entry', 'entries')}</span>;
+  return <span className="publication-front-group-count">{plural(group.count, 'chapter', 'chapters')}</span>;
 }
 
 type GroupVariant = 'list' | 'tiles' | 'parts';

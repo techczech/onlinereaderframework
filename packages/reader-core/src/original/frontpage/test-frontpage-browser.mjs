@@ -89,7 +89,7 @@ with sync_playwright() as p:
    check(page.locator('[data-front-layout]').count()==0 and page.locator('.publication-masthead').count()==1,f'unconfigured book keeps classic home {width}')
    page.goto(f"{base}/?book=deliberate-practice&frontpage=sol-jacket");page.locator('.publication-front-entry button').first.click();page.wait_for_selector('[data-publication-content]')
    tb=[b.inner_text().split('\n')[0] for b in page.locator('.publication-toolbar-actions > button').all()]
-   check(tb==['headphones','text_fields','eyeglasses','ink_highlighter'],f'toolbar controls unchanged {tb}')
+   check(tb==['headphones','text_fields','eyeglasses','ink_highlighter','brightness_auto'],f'toolbar controls unchanged {tb}')
    check('Browser storage is unavailable' not in page.content(),'storage available')
    check(not errors,f'page errors {errors}')
    page.close()

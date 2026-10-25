@@ -1,0 +1,29 @@
+✔ the six layout keys are exact and invalid values fall back to no layout (0.717375ms)
+✔ an omitted or invalid layout renders the classic home page; a valid one renders that layout (5.970875ms)
+✔ flat books group runs of one category for display only; ids and order are preserved (0.153667ms)
+✔ tree books group by top-level section; empty groups are skipped and group pages with text stay reachable (0.141583ms)
+✔ an explicit depth cap never removes a structural topic whose subtree has readable pages (0.273667ms)
+✔ Full contents opens first only for a short list; filtering finds entries in closed groups (0.118625ms)
+✔ Start is the first readable page; Continue needs a real, readable, stored page (0.9105ms)
+✔ progress counts read chapters with the sidebar rule and stays hidden until something is read (0.628375ms)
+✔ titles use the established display title and split only for layout (0.836333ms)
+✔ depth labels are Contents and Full contents, overridable, and absent when nothing differs (0.710459ms)
+✔ colour band numbers groups but not the app guide (0.219125ms)
+✔ real books list every readable page once, in tree order, in every layout (5.967333ms)
+✔ steppers stay inside the saved-preference bounds without float drift (0.420416ms)
+✔ dimming levels map to saved values; older in-between values are reported as custom (0.377ms)
+✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.079333ms)
+✔ assist summary states what is actually on (0.121875ms)
+✔ letter spacing reads Normal at zero (0.0515ms)
+✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.204875ms)
+✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.111708ms)
+✔ theme is its own small icon control and is not in Formatting (0.123333ms)
+✔ toolbar dim levels equal the preference levels (0.139666ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 174.648625

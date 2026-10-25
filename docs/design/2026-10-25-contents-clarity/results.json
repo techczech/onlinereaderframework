@@ -1,0 +1,1666 @@
+[
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 entries",
+   "37 entries",
+   "24 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    135,
+    310
+   ],
+   [
+    135,
+    362
+   ],
+   [
+    135,
+    401
+   ],
+   [
+    135,
+    453
+   ],
+   [
+    135,
+    492
+   ],
+   [
+    135,
+    544
+   ]
+  ],
+  "name": "main-before-linguistics-opus-colour-band-1280-light.png",
+  "build": "before",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 entries",
+   "37 entries",
+   "24 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    64,
+    196
+   ],
+   [
+    64,
+    249
+   ],
+   [
+    64,
+    301
+   ],
+   [
+    64,
+    353
+   ],
+   [
+    64,
+    406
+   ],
+   [
+    64,
+    458
+   ]
+  ],
+  "name": "main-before-linguistics-opus-colour-band-390-light.png",
+  "build": "before",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 entry",
+   "5 entries",
+   "2 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    135,
+    635
+   ],
+   [
+    135,
+    735
+   ],
+   [
+    135,
+    773
+   ],
+   [
+    506,
+    735
+   ],
+   [
+    506,
+    773
+   ],
+   [
+    878,
+    735
+   ]
+  ],
+  "name": "main-before-deliberate-practice-opus-colour-band-1280-light.png",
+  "build": "before",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 entry",
+   "5 entries",
+   "2 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    64,
+    476
+   ],
+   [
+    64,
+    576
+   ],
+   [
+    64,
+    615
+   ],
+   [
+    64,
+    653
+   ],
+   [
+    64,
+    691
+   ],
+   [
+    64,
+    730
+   ]
+  ],
+  "name": "main-before-deliberate-practice-opus-colour-band-390-light.png",
+  "build": "before",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 entries",
+   "4 entries",
+   "3 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    135,
+    551
+   ],
+   [
+    506,
+    551
+   ],
+   [
+    878,
+    551
+   ],
+   [
+    135,
+    659
+   ],
+   [
+    506,
+    659
+   ],
+   [
+    878,
+    659
+   ]
+  ],
+  "name": "main-before-language-muscle-opus-colour-band-1280-light.png",
+  "build": "before",
+  "book": "language-muscle",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 entries",
+   "4 entries",
+   "3 entries"
+  ],
+  "entriesWord": true,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    64,
+    441
+   ],
+   [
+    64,
+    480
+   ],
+   [
+    64,
+    518
+   ],
+   [
+    64,
+    626
+   ],
+   [
+    64,
+    665
+   ],
+   [
+    64,
+    703
+   ]
+  ],
+  "name": "main-before-language-muscle-opus-colour-band-390-light.png",
+  "build": "before",
+  "book": "language-muscle",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 chapters",
+   "37 chapters",
+   "24 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    143,
+    111
+   ],
+   [
+    416,
+    111
+   ],
+   [
+    690,
+    111
+   ],
+   [
+    963,
+    111
+   ],
+   [
+    143,
+    184
+   ],
+   [
+    416,
+    184
+   ]
+  ],
+  "name": "main-after-linguistics-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 chapters",
+   "37 chapters",
+   "24 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    72,
+    229
+   ],
+   [
+    72,
+    303
+   ],
+   [
+    72,
+    377
+   ],
+   [
+    72,
+    450
+   ],
+   [
+    72,
+    524
+   ],
+   [
+    72,
+    618
+   ]
+  ],
+  "name": "main-after-linguistics-opus-colour-band-390-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 chapter",
+   "5 chapters",
+   "2 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    143,
+    641
+   ],
+   [
+    143,
+    754
+   ],
+   [
+    416,
+    754
+   ],
+   [
+    690,
+    754
+   ],
+   [
+    963,
+    754
+   ],
+   [
+    143,
+    808
+   ]
+  ],
+  "name": "main-after-deliberate-practice-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 chapter",
+   "5 chapters",
+   "2 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    72,
+    475
+   ],
+   [
+    72,
+    588
+   ],
+   [
+    72,
+    642
+   ],
+   [
+    72,
+    695
+   ],
+   [
+    72,
+    749
+   ],
+   [
+    72,
+    803
+   ]
+  ],
+  "name": "main-after-deliberate-practice-opus-colour-band-390-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 chapters",
+   "4 chapters",
+   "3 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    143,
+    557
+   ],
+   [
+    416,
+    557
+   ],
+   [
+    690,
+    557
+   ],
+   [
+    143,
+    678
+   ],
+   [
+    416,
+    678
+   ],
+   [
+    690,
+    678
+   ]
+  ],
+  "name": "main-after-language-muscle-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 chapters",
+   "4 chapters",
+   "3 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    72,
+    425
+   ],
+   [
+    72,
+    479
+   ],
+   [
+    72,
+    532
+   ],
+   [
+    72,
+    654
+   ],
+   [
+    72,
+    708
+   ],
+   [
+    72,
+    761
+   ]
+  ],
+  "name": "main-after-language-muscle-opus-colour-band-390-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "253 chapters",
+   "32 chapters",
+   "37 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    51,
+    104
+   ],
+   [
+    341,
+    104
+   ],
+   [
+    51,
+    178
+   ],
+   [
+    341,
+    178
+   ],
+   [
+    51,
+    251
+   ],
+   [
+    341,
+    251
+   ]
+  ],
+  "name": "layouts-after-linguistics-sol-jacket-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "sol-jacket",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "21 chapters",
+   "1 chapter",
+   "5 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    51,
+    752
+   ],
+   [
+    51,
+    847
+   ],
+   [
+    341,
+    847
+   ],
+   [
+    51,
+    900
+   ],
+   [
+    341,
+    900
+   ],
+   [
+    51,
+    954
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-sol-jacket-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "sol-jacket",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "12 chapters",
+   "4 chapters",
+   "4 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    51,
+    700
+   ],
+   [
+    341,
+    700
+   ],
+   [
+    51,
+    754
+   ],
+   [
+    51,
+    861
+   ],
+   [
+    341,
+    861
+   ],
+   [
+    51,
+    914
+   ]
+  ],
+  "name": "layouts-after-language-muscle-sol-jacket-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "sol-jacket",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "253 chapters",
+   "32 chapters",
+   "37 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    633,
+    104
+   ],
+   [
+    934,
+    104
+   ],
+   [
+    633,
+    177
+   ],
+   [
+    934,
+    177
+   ],
+   [
+    633,
+    251
+   ],
+   [
+    934,
+    251
+   ]
+  ],
+  "name": "layouts-after-linguistics-sol-reading-desk-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "sol-reading-desk",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "21 chapters",
+   "1 chapter",
+   "5 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    633,
+    594
+   ],
+   [
+    633,
+    688
+   ],
+   [
+    934,
+    688
+   ],
+   [
+    633,
+    741
+   ],
+   [
+    934,
+    741
+   ],
+   [
+    633,
+    795
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-sol-reading-desk-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "sol-reading-desk",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "12 chapters",
+   "4 chapters",
+   "4 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    633,
+    489
+   ],
+   [
+    934,
+    489
+   ],
+   [
+    633,
+    543
+   ],
+   [
+    633,
+    650
+   ],
+   [
+    934,
+    650
+   ],
+   [
+    633,
+    704
+   ]
+  ],
+  "name": "layouts-after-language-muscle-sol-reading-desk-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "sol-reading-desk",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "253 chapters",
+   "32 chapters",
+   "37 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    379,
+    104
+   ],
+   [
+    665,
+    104
+   ],
+   [
+    950,
+    104
+   ],
+   [
+    379,
+    181
+   ],
+   [
+    665,
+    181
+   ],
+   [
+    950,
+    181
+   ]
+  ],
+  "name": "layouts-after-linguistics-sol-open-contents-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "sol-open-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "21 chapters",
+   "1 chapter",
+   "5 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    379,
+    290
+   ],
+   [
+    379,
+    388
+   ],
+   [
+    665,
+    388
+   ],
+   [
+    950,
+    388
+   ],
+   [
+    379,
+    443
+   ],
+   [
+    665,
+    443
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-sol-open-contents-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "sol-open-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "12 chapters",
+   "4 chapters",
+   "4 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    379,
+    264
+   ],
+   [
+    665,
+    264
+   ],
+   [
+    950,
+    264
+   ],
+   [
+    379,
+    372
+   ],
+   [
+    665,
+    372
+   ],
+   [
+    950,
+    372
+   ]
+  ],
+  "name": "layouts-after-language-muscle-sol-open-contents-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "sol-open-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "253 chapters",
+   "32 chapters",
+   "37 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    611,
+    122
+   ],
+   [
+    611,
+    195
+   ],
+   [
+    611,
+    269
+   ],
+   [
+    611,
+    342
+   ],
+   [
+    611,
+    416
+   ],
+   [
+    611,
+    510
+   ]
+  ],
+  "name": "layouts-after-linguistics-opus-title-contents-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-title-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "21 chapters",
+   "1 chapter",
+   "5 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    611,
+    220
+   ],
+   [
+    611,
+    315
+   ],
+   [
+    611,
+    368
+   ],
+   [
+    611,
+    422
+   ],
+   [
+    611,
+    475
+   ],
+   [
+    611,
+    529
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-opus-title-contents-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-title-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "12 chapters",
+   "4 chapters",
+   "4 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    611,
+    196
+   ],
+   [
+    611,
+    250
+   ],
+   [
+    611,
+    303
+   ],
+   [
+    611,
+    411
+   ],
+   [
+    611,
+    464
+   ],
+   [
+    611,
+    518
+   ]
+  ],
+  "name": "layouts-after-language-muscle-opus-title-contents-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "opus-title-contents",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 27,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 chapters",
+   "37 chapters",
+   "24 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-05-01-why-are-there-inflections",
+   "2014-08-01-english-verbs-how-many-types-classifications",
+   "2014-10-06-why-can-t-these-english-sentences-passivize"
+  ],
+  "tops": [
+   [
+    68,
+    529
+   ],
+   [
+    68,
+    623
+   ],
+   [
+    68,
+    697
+   ],
+   [
+    366,
+    529
+   ],
+   [
+    366,
+    583
+   ],
+   [
+    366,
+    656
+   ]
+  ],
+  "name": "layouts-after-linguistics-opus-search-map-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-search-map",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 chapter",
+   "5 chapters",
+   "2 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    68,
+    589
+   ],
+   [
+    68,
+    712
+   ],
+   [
+    356,
+    712
+   ],
+   [
+    644,
+    712
+   ],
+   [
+    931,
+    712
+   ],
+   [
+    68,
+    766
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-opus-search-map-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-search-map",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 chapters",
+   "4 chapters",
+   "3 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    68,
+    520
+   ],
+   [
+    68,
+    573
+   ],
+   [
+    68,
+    627
+   ],
+   [
+    366,
+    520
+   ],
+   [
+    366,
+    573
+   ],
+   [
+    366,
+    627
+   ]
+  ],
+  "name": "layouts-after-language-muscle-opus-search-map-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "opus-search-map",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 chapters",
+   "37 chapters",
+   "24 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    143,
+    111
+   ],
+   [
+    416,
+    111
+   ],
+   [
+    690,
+    111
+   ],
+   [
+    963,
+    111
+   ],
+   [
+    143,
+    184
+   ],
+   [
+    416,
+    184
+   ]
+  ],
+  "name": "layouts-after-linguistics-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 chapter",
+   "5 chapters",
+   "2 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    143,
+    641
+   ],
+   [
+    143,
+    754
+   ],
+   [
+    416,
+    754
+   ],
+   [
+    690,
+    754
+   ],
+   [
+    963,
+    754
+   ],
+   [
+    143,
+    808
+   ]
+  ],
+  "name": "layouts-after-deliberate-practice-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 9,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "4 chapters",
+   "4 chapters",
+   "3 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-guide",
+   "how-to-read",
+   "good-news",
+   "step-1",
+   "step-2",
+   "step-3"
+  ],
+  "tops": [
+   [
+    143,
+    557
+   ],
+   [
+    416,
+    557
+   ],
+   [
+    690,
+    557
+   ],
+   [
+    143,
+    678
+   ],
+   [
+    416,
+    678
+   ],
+   [
+    690,
+    678
+   ]
+  ],
+  "name": "layouts-after-language-muscle-opus-colour-band-1280-light.png",
+  "build": "after",
+  "book": "language-muscle",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "light"
+ },
+ {
+  "buttons": 32,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "32 chapters",
+   "37 chapters",
+   "24 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+   "2014-05-13-correct-syllabification-in-american-english",
+   "2014-12-01-can-every-language-express-any-lexical-aspect",
+   "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+   "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+   "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v"
+  ],
+  "tops": [
+   [
+    143,
+    111
+   ],
+   [
+    416,
+    111
+   ],
+   [
+    690,
+    111
+   ],
+   [
+    963,
+    111
+   ],
+   [
+    143,
+    184
+   ],
+   [
+    416,
+    184
+   ]
+  ],
+  "name": "dark-after-linguistics-opus-colour-band-1280-dark.png",
+  "build": "after",
+  "book": "linguistics",
+  "layout": "opus-colour-band",
+  "width": 1280,
+  "scheme": "dark"
+ },
+ {
+  "buttons": 21,
+  "titleMetaOverlap": 0,
+  "clippedTitles": 0,
+  "hOverflow": false,
+  "counts": [
+   "1 chapter",
+   "5 chapters",
+   "2 chapters"
+  ],
+  "entriesWord": false,
+  "firstIds": [
+   "about-this-guide",
+   "working-memory-limitations",
+   "fluency",
+   "schemas",
+   "memory-types",
+   "key-points-memory"
+  ],
+  "tops": [
+   [
+    72,
+    475
+   ],
+   [
+    72,
+    588
+   ],
+   [
+    72,
+    642
+   ],
+   [
+    72,
+    695
+   ],
+   [
+    72,
+    749
+   ],
+   [
+    72,
+    803
+   ]
+  ],
+  "name": "dark-after-deliberate-practice-opus-colour-band-390-dark.png",
+  "build": "after",
+  "book": "deliberate-practice",
+  "layout": "opus-colour-band",
+  "width": 390,
+  "scheme": "dark"
+ }
+]

@@ -13,7 +13,7 @@ export interface AssistState { overlay: 'off' | 'paragraph' | 'line-window' | 'r
 
 /** Overlay dimming. Kept equal to DIM_LEVELS in reading-preferences.ts; the toolbar model test checks it. */
 export const DIM_LEVELS = [{ label: 'Light', value: 0.72 }, { label: 'Medium', value: 0.9 }, { label: 'Dark', value: 1 }] as const;
-export const ASSIST_CHOICES = [{ value: 'off', label: 'Off' }, { value: 'paragraph', label: 'Paragraph' }, { value: 'line-window', label: 'Line window' }, { value: 'ruler', label: 'Ruler' }] as const;
+export const ASSIST_CHOICES = [{ value: 'off', label: 'Off', icon: 'block' }, { value: 'paragraph', label: 'Paragraph', icon: 'view_headline' }, { value: 'line-window', label: 'Line window', icon: 'crop_landscape' }, { value: 'ruler', label: 'Ruler', icon: 'straighten' }] as const;
 export const SIZE_LIMITS = { fontSize: [16, 28, 1], lineHeight: [1.2, 2.4, 0.1], paragraphSpacing: [0, 40, 2], letterSpacing: [0, 0.12, 0.02] } as const;
 
 /** Move a stepper value one step inside its bounds, without floating-point drift. */

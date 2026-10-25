@@ -14,7 +14,7 @@ export const frontPageCopy = {
   lastOpened: 'Last opened',
   read: 'Read',
   showFewer: 'Show fewer',
-  showAll: (n: number) => `Show all ${n} entries`,
-  toggleGroup: (title: string, open: boolean) => `${open ? 'Hide' : 'Show'} the entries under ${title}`,
+  showAll: (n: number) => `Show all ${n} chapters`,
+  toggleGroup: (title: string, open: boolean) => `${open ? 'Hide' : 'Show'} the chapters under ${title}`,
   searchBook: (search: string) => `${search} the whole book`,
 } as const;

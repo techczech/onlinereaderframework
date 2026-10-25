@@ -242,7 +242,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
 
         {open === 'assist' && <>
           <section aria-labelledby="menu-overlay"><h3 id="menu-overlay">Reading assistance <kbd>R</kbd></h3>
-            <ChoiceGroup label="Reading assistance" value={p.overlay} onChange={value => support.update({ overlay: value })} choices={ASSIST_CHOICES} />
+            <ChoiceGroup label="Reading assistance" stacked value={p.overlay} onChange={value => support.update({ overlay: value })} choices={ASSIST_CHOICES} />
             <small className="publication-menu-note">{p.overlay === 'paragraph' ? 'Fades the paragraphs you are not on.'
               : p.overlay === 'line-window' ? 'Shades the page except a window of lines.'
               : p.overlay === 'ruler' ? 'Covers the lines just below the one you are on.' : 'Choose one to help keep your place.'}</small>
