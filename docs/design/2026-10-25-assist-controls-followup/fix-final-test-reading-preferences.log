@@ -1,0 +1,15 @@
+✔ hostile storage and invalid ranges return safe preferences (1.314917ms)
+✔ per-book round trip and reset values remain bounded (0.2385ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.101959ms)
+✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.213709ms)
+✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.142541ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.082875ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.123917ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6.580667

@@ -1,0 +1,451 @@
+[
+  {
+    "name": "assist defaults navigation hidden",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "paragraph mode: only the current paragraph is clear; headings, cells and items carry the chosen dimming once",
+    "passed": true,
+    "detail": [
+      {
+        "tag": "H1",
+        "text": "Heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "First paragraph text",
+        "effective": 1,
+        "active": true
+      },
+      {
+        "tag": "H2",
+        "text": "Subheading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Second paragraph tex",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "text": "Table remains readab",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "text": "Second cell",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Nested item paragrap",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "H3",
+        "text": "Rich y+1 heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Third paragraph with",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Last paragraph.",
+        "effective": 0.1,
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "paragraph mode: a table cell can be the current clear block",
+    "passed": true,
+    "detail": [
+      {
+        "tag": "H1",
+        "text": "Heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "First paragraph text",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "H2",
+        "text": "Subheading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Second paragraph tex",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "text": "Table remains readab",
+        "effective": 1,
+        "active": true
+      },
+      {
+        "tag": "TD",
+        "text": "Second cell",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Nested item paragrap",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "H3",
+        "text": "Rich y+1 heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Third paragraph with",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Last paragraph.",
+        "effective": 0.1,
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "paragraph mode: a heading can be the current clear block",
+    "passed": true,
+    "detail": [
+      {
+        "tag": "H1",
+        "text": "Heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "First paragraph text",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "H2",
+        "text": "Subheading",
+        "effective": 1,
+        "active": true
+      },
+      {
+        "tag": "P",
+        "text": "Second paragraph tex",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "text": "Table remains readab",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "text": "Second cell",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Nested item paragrap",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "H3",
+        "text": "Rich y+1 heading",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Third paragraph with",
+        "effective": 0.1,
+        "active": false
+      },
+      {
+        "tag": "P",
+        "text": "Last paragraph.",
+        "effective": 0.1,
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "line window covers scroll page at opaque Dark",
+    "passed": true,
+    "detail": {
+      "w": 1440,
+      "h": 1453,
+      "sw": 1440,
+      "sh": 1453,
+      "m": [
+        {
+          "h": 690,
+          "bg": "rgb(28, 28, 32)"
+        },
+        {
+          "h": 661,
+          "bg": "rgb(28, 28, 32)"
+        }
+      ]
+    }
+  },
+  {
+    "name": "line window at Dark hides unrelated headings while another block is current",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "line window follows pointer onto heading",
+    "passed": true,
+    "detail": {
+      "before": [
+        [
+          0,
+          690
+        ],
+        [
+          792,
+          661
+        ]
+      ],
+      "afterHeadingHover": [
+        [
+          0,
+          16
+        ],
+        [
+          143,
+          1310
+        ]
+      ]
+    }
+  },
+  {
+    "name": "line window at Dark leaves the hovered heading readable",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "line window: heading with MathML is readable and its MathML is untouched",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "line window: a table cell is readable when current",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "margin note outside the window is beneath the shade",
+    "passed": true,
+    "detail": {
+      "inMask": true,
+      "topIsMask": true,
+      "top": "reading-support-mask",
+      "rect": [
+        1032.265625,
+        230.328125,
+        256,
+        159
+      ],
+      "win": [
+        1440,
+        900
+      ]
+    }
+  },
+  {
+    "name": "margin note can still be opened under the shade (overlay passes pointer events)",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "ruler has one mask instead of line windows two",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "assist leaves body text and MathML unchanged",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Notes drawer usable under assist",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "stored notes and highlights bytes unchanged across controls",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "toolbar icon has no native title duplicate",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "tooltip shows on hover",
+    "passed": true,
+    "detail": {
+      "op": "1",
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "pointer can travel from the icon onto the label without a dead zone",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "tooltip stays while the pointer rests on the label",
+    "passed": true,
+    "detail": {
+      "op": "1",
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "Escape dismisses a hovered tooltip",
+    "passed": true,
+    "detail": {
+      "op": "0",
+      "visibility": "hidden"
+    }
+  },
+  {
+    "name": "Escape on a tooltip opens no menu",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "a new hover rearms the tooltip",
+    "passed": true,
+    "detail": {
+      "op": "1",
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "moving within the same control does not rearm a dismissed tooltip",
+    "passed": true,
+    "detail": {
+      "op": "0",
+      "visibility": "hidden"
+    }
+  },
+  {
+    "name": "keyboard focus shows the tooltip",
+    "passed": true,
+    "detail": {
+      "op": "1",
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "Escape dismisses a focused tooltip and focus stays on the control",
+    "passed": true,
+    "detail": {
+      "op": "0",
+      "visibility": "hidden"
+    }
+  },
+  {
+    "name": "moving focus away and back rearms the tooltip",
+    "passed": false,
+    "detail": {
+      "op": "0.999598",
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "menu Escape closes Formatting and restores opener focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "reading Escape still turns assistance off",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "mixed nested list and table text outside active heading dims once",
+    "passed": true,
+    "detail": [
+      {
+        "id": "parent-text",
+        "opacity": 0,
+        "target": true
+      },
+      {
+        "id": "child",
+        "opacity": 0,
+        "target": true
+      },
+      {
+        "id": "cell-text",
+        "opacity": 0,
+        "target": true
+      }
+    ]
+  },
+  {
+    "name": "window follows the parent list item own text",
+    "passed": true,
+    "detail": {
+      "old": [
+        [
+          0,
+          16
+        ],
+        [
+          143,
+          1578
+        ]
+      ],
+      "new": [
+        [
+          0,
+          1226
+        ],
+        [
+          1409,
+          312
+        ]
+      ]
+    }
+  }
+]

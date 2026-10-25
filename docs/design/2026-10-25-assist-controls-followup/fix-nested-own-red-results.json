@@ -1,0 +1,2282 @@
+[
+  {
+    "name": "Paragraph Light: hovering lt-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering lt-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering c0 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c0."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering c7 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c7."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering sp-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "c7": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "SPAN#sp-lead."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering sp-child leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#sp-child."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering sp-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "EM#sp-tail."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering bq-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering bq-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#bq-p."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering bq-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering cell-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering cell-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#cell-p."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering cell-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering h1 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "H1#h1."
+    }
+  },
+  {
+    "name": "Paragraph Light: hovering plain leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#plain."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering lt-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering lt-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering c0 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c0."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering c7 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c7."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering sp-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "c7": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "SPAN#sp-lead."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering sp-child leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#sp-child."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering sp-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "EM#sp-tail."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering bq-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering bq-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#bq-p."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering bq-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering cell-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering cell-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#cell-p."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering cell-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering h1 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "H1#h1."
+    }
+  },
+  {
+    "name": "Paragraph Medium: hovering plain leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#plain."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering lt-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering lt-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "h1": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#lt."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering c0 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c0."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering c7 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#c7."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering sp-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "c7": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "SPAN#sp-lead."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering sp-child leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "LI#sp-child."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering sp-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "EM#sp-tail."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering bq-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-child": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering bq-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#bq-p."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering bq-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "BLOCKQUOTE#bq."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering cell-lead leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering cell-p leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#cell-p."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering cell-tail leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-p": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "TD#cell."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering h1 leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "H1#h1."
+    }
+  },
+  {
+    "name": "Paragraph Dark: hovering plain leaves it clear and every other reading unit dimmed once",
+    "passed": false,
+    "detail": {
+      "lt-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "lt-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "sp-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "bq-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-lead": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "cell-tail": {
+        "opacity": 1,
+        "highlights": 0,
+        "effective": 1
+      },
+      "pointerOn": "P#plain."
+    }
+  },
+  {
+    "name": "parent lead, a child and parent tail are three separately readable units",
+    "passed": false,
+    "detail": null
+  },
+  {
+    "name": "keyboard visits lead text, children and tail text in reading order",
+    "passed": false,
+    "detail": [
+      "h1",
+      "lt-lead"
+    ]
+  },
+  {
+    "name": "Line window Dark: lt-lead is clear when hovered",
+    "passed": true,
+    "detail": [
+      [
+        238.328125,
+        260.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: lt-tail is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        676.328125,
+        698.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: c0 is clear when hovered",
+    "passed": true,
+    "detail": [
+      [
+        296.328125,
+        318.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: sp-lead is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        471.328125,
+        493.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: sp-tail is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        471.328125,
+        493.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: bq-lead is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        429.328125,
+        451.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: bq-tail is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        513.328125,
+        535.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: cell-lead is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        585.328125,
+        607.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: cell-tail is clear when hovered",
+    "passed": false,
+    "detail": [
+      [
+        669.328125,
+        691.328125
+      ]
+    ]
+  },
+  {
+    "name": "Line window Dark: the window follows lead to tail and shades the other",
+    "passed": false,
+    "detail": {
+      "tailShadedWhenLeadCurrent": true,
+      "leadShadedWhenTailCurrent": false
+    }
+  },
+  {
+    "name": "Line window Dark: shade geometry differs between the lead and the tail",
+    "passed": false,
+    "detail": [
+      [
+        [
+          0,
+          102
+        ],
+        [
+          311,
+          1039
+        ]
+      ],
+      [
+        [
+          0,
+          102
+        ],
+        [
+          311,
+          1039
+        ]
+      ]
+    ]
+  },
+  {
+    "name": "assist off restores the exact authored markup, text and MathML",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "the original text and element nodes are the same live nodes (nothing wrapped or split)",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "while assist is on only data-rs attributes differ; text and MathML are identical",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "a text selection inside the parent text survives dimming and re-targeting",
+    "passed": true,
+    "detail": {
+      "s": "ad t",
+      "same": true
+    }
+  },
+  {
+    "name": "no page errors",
+    "passed": true,
+    "detail": []
+  }
+]

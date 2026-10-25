@@ -48,15 +48,43 @@ export function rulerShape(lines: readonly LineRect[], focus: number, covers: 1 
   return clampRect({ top: tiled[focus].bottom, bottom: tiled[last].bottom }, height);
 }
 
-/** The rendered visual lines of one block, merged from the client rectangles of its text and inline boxes, relative to `origin`.
- * A wrapped line is one entry whatever inline maths, emphasis or links it holds. Nothing in the DOM is changed.
+/** The parts of a block that belong to it and not to a readable block nested inside it: its direct text and the inline elements that hold no readable block,
+ * in runs. A nested readable block ends a run, so the text before it (lead) and after it (tail) are separate runs, each a contiguous stretch of reading.
+ * A list item with a sub-list, or a cell with a paragraph, keeps its own text this way. Nothing in the DOM is changed.
  */
-export function visualLines(block: Element, origin: number): LineRect[] {
-  const range = document.createRange();
-  range.selectNodeContents(block);
-  const boxes = Array.from(range.getClientRects()).filter(box => box.width > 0 && box.height > 0).sort((a, b) => a.top - b.top || a.left - b.left);
+export function ownContent(block: Element, readable: string, ignore: string): Node[][] {
+  const runs: Node[][] = [];
+  let run: Node[] = [];
+  const end = (): void => { if (run.length) runs.push(run); run = []; };
+  const walk = (parent: Node): void => {
+    parent.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) { if (child.textContent?.trim()) run.push(child); return; }
+      if (!(child instanceof Element) || child.matches(ignore)) return;
+      if (child.matches(readable)) end();
+      else if (child.querySelector(readable)) { end(); walk(child); end(); }
+      else if (child.textContent?.trim()) run.push(child);
+    });
+  };
+  walk(block);
+  end();
+  return runs;
+}
+
+/** The rendered visual lines of one block, merged from the client rectangles of its text and inline boxes, relative to `origin`.
+ * A wrapped line is one entry whatever inline maths, emphasis or links it holds. With `only`, just those nodes of the block are measured (its own text, not a nested block's).
+ * Nothing in the DOM is changed.
+ */
+export function visualLines(block: Element, origin: number, only?: readonly Node[]): LineRect[] {
+  const boxes: DOMRect[] = [];
+  for (const node of only ?? [block]) {
+    const range = document.createRange();
+    if (node === block || node.nodeType === Node.ELEMENT_NODE) range.selectNodeContents(node); else range.selectNode(node);
+    boxes.push(...Array.from(range.getClientRects()));
+  }
+  boxes.sort((a, b) => a.top - b.top || a.left - b.left);
   const lines: LineRect[] = [];
   for (const box of boxes) {
+    if (box.width <= 0 || box.height <= 0) continue;
     const last = lines[lines.length - 1];
     const centre = (box.top + box.bottom) / 2 - origin;
     if (last && centre >= last.top && centre <= last.bottom) { last.top = Math.min(last.top, box.top - origin); last.bottom = Math.max(last.bottom, box.bottom - origin); }

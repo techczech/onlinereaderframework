@@ -44,7 +44,7 @@ with sync_playwright() as p:
    page.evaluate('()=>{history.replaceState(null,"","/?book=a&section=one");window.root.unmount();window.root=window.__rc();}') if False else None
    page.reload();page.add_style_tag(content=payload['css']);page.add_script_tag(content=payload['bundle'])
    page.evaluate('window.mount("a")');page.locator('[data-publication-content] p').first.wait_for();page.wait_for_timeout(250)
-  control=lambda name:page.locator('.publication-toolbar-actions > button').filter(has_text=name)
+  control=lambda name:page.locator('.publication-toolbar-actions > button[aria-label^="%s"]'%name)
   menu=lambda name:page.get_by_role('dialog',name=name,exact=True)
   def openmenu(name):
    if menu(name).count()==0:control(name).click()
@@ -78,29 +78,31 @@ with sync_playwright() as p:
   masks=page.evaluate('()=>[...document.querySelectorAll(".reading-support-mask")].map(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom}})')
   above=min(masks,key=lambda m:m['top']);below=max(masks,key=lambda m:m['top'])
   check('line window 3: unshaded band spans the line above, the current and the line below',len(masks)==2 and abs(above['bottom']-lines[1]['top'])<=pitch/2+1 and abs(below['top']-lines[3]['bottom'])<=pitch/2+1,{'masks':masks,'lines':lines[1:4]})
-  # 3. Dark dimming is 90 per cent; older presets keep their name.
+  # 3. Dimming: Light .72, Medium .9, Dark 1 (fully opaque). First-release names keep their name; version 2 numbers keep their shade.
   mount({PREFS:{'overlay':'line-window','dim':0.5}})
   openmenu('Assist')
-  check('a saved first-release Dark (0.5) opens as Dark at 0.9',menu('Assist').get_by_role('radio',name='Dark',exact=True).get_attribute('aria-checked')=='true' and page.evaluate('getComputedStyle(document.querySelector(".reading-support-surface")).getPropertyValue("--rs-dim").trim()')=='0.9')
+  check('a saved first-release Dark (0.5) opens as Dark at 1',menu('Assist').get_by_role('radio',name='Dark',exact=True).get_attribute('aria-checked')=='true' and page.evaluate('getComputedStyle(document.querySelector(".reading-support-surface")).getPropertyValue("--rs-dim").trim()')=='1')
   page.keyboard.press('Escape')
   mount({PREFS:{'overlay':'line-window','dim':0.35}});openmenu('Assist')
   check('a saved first-release Medium (0.35) opens as Medium',menu('Assist').get_by_role('radio',name='Medium',exact=True).get_attribute('aria-checked')=='true')
+  page.keyboard.press('Escape')
+  mount({PREFS:{'overlay':'line-window','dim':0.9,'dimVersion':2}});openmenu('Assist')
+  check('a saved version-2 Dark (0.9) keeps its shade and is now Medium',menu('Assist').get_by_role('radio',name='Medium',exact=True).get_attribute('aria-checked')=='true')
   alphas={}
   for level in ('Light','Medium','Dark'):
    radio('Dimming',level);page.wait_for_timeout(120)
-   focus_line(1,2) if False else None
    alphas[level]=page.evaluate('()=>{const e=document.querySelector(".reading-support-mask");return e?getComputedStyle(e).backgroundColor:null}')
-  check('Light, Medium and Dark are three distinct shades, Dark at 90 per cent',alphas['Light']!=alphas['Medium']!=alphas['Dark'] and alphas['Dark'] in ('rgba(28, 28, 32, 0.9)',) and alphas['Medium']=='rgba(28, 28, 32, 0.72)' and alphas['Light']=='rgba(28, 28, 32, 0.5)',alphas)
+  check('Light, Medium and Dark are three distinct shades, Dark fully opaque',alphas['Dark'] in ('rgb(28, 28, 32)','rgba(28, 28, 32, 1)') and alphas['Medium']=='rgba(28, 28, 32, 0.9)' and alphas['Light']=='rgba(28, 28, 32, 0.72)',alphas)
   page.keyboard.press('Escape')
   # 4. No numeric badges; Assist shows an active state without a number.
-  mount({PREFS:{'overlay':'ruler','focus':'paragraph','fontSize':22}})
+  mount({PREFS:{'overlay':'ruler','fontSize':22}})
   names=page.locator('.publication-toolbar-actions > button').evaluate_all('els=>els.map(e=>e.getAttribute("aria-label"))')
-  check('no count badge and no count in any control name',page.locator('.publication-toolbar-badge').count()==0 and names==['Listen','Formatting','Assist','Open notes and highlights'],names)
+  check('no count badge, no count in any control name, icon-only controls',page.locator('.publication-toolbar-badge').count()==0 and len(names)==5 and names[:2]==['Listen','Formatting'] and names[2].startswith('Assist') and names[3]=='Open notes and highlights' and names[4].startswith('Theme'),names)
   check('Assist keeps an active state with the overlay on',control('Assist').get_attribute('data-active') is not None)
   # 5. Reset formatting leads the Formatting menu and keeps keyboard focus when it disables itself.
   openmenu('Formatting')
   reset=menu('Formatting').get_by_role('button',name='Reset formatting')
-  theme=menu('Formatting').get_by_role('heading',name='Theme')
+  theme=menu('Formatting').get_by_role('heading',name='Typeface')
   check('Reset formatting sits above the first setting',reset.bounding_box()['y']<theme.bounding_box()['y'])
   reset.click();page.wait_for_timeout(120)
   inside=lambda:page.evaluate('!!document.activeElement.closest("[data-reader-menu]")&&!document.activeElement.matches(":disabled")')

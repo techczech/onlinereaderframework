@@ -40,7 +40,15 @@ export function useReadingSupport(bookId: string): ReadingSupportController {
   return {
     ...current,
     // Choosing a text size ends the width-dependent default; a patch that says otherwise (Reset) wins.
-    update: patch => set(normaliseReadingPreferences({ ...snapshot(bookId).preferences, ...('fontSize' in patch && !('fontSizeChosen' in patch) ? { fontSizeChosen: true } : {}), ...patch })),
+    update: patch => {
+      const current = snapshot(bookId).preferences;
+      // Paragraph focus is one of the overlay choices. A patch that only names `focus` (older callers) turns that choice on, or off if it is the one on.
+      const legacyFocus = 'focus' in patch && !('overlay' in patch)
+        ? { overlay: patch.focus === 'paragraph' ? 'paragraph' as const : current.overlay === 'paragraph' ? 'off' as const : current.overlay } : {};
+      const merged = { ...current, ...('fontSize' in patch && !('fontSizeChosen' in patch) ? { fontSizeChosen: true } : {}), ...patch, ...legacyFocus };
+      // `focus` only mirrors the overlay here; the one-off migration of stored settings that kept it separately is in normaliseReadingPreferences.
+      set(normaliseReadingPreferences({ ...merged, focus: merged.overlay === 'paragraph' ? 'paragraph' : 'off' }));
+    },
     reset: () => set({ ...DEFAULT_READING_PREFERENCES }),
   };
 }

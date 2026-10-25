@@ -7,16 +7,18 @@ import type { ReadAloudSnapshot } from '../read-aloud/read-aloud-controller.js';
 import type { ReadAloudActions } from '../read-aloud/use-read-aloud.js';
 import { ReadAloudTransport, ReadAloudVoiceControls, readAloudStatusText } from '../read-aloud/ReadAloudControls.js';
 import {
-  DIM_LEVELS, WIDTH_CHOICES, assistChanges, assistSummary, atLimit, dimLevel, formattingChanges, letterSpacingLabel, lineHeightLabel, stepValue,
+  ASSIST_CHOICES, DIM_LEVELS, WIDTH_CHOICES, assistChanges, assistName, assistSummary, atLimit, dimLevel, formattingChanges, letterSpacingLabel, lineHeightLabel, stepValue,
   type FormattingState, type MaxWidthChoice, type ToolbarMenuId,
 } from './toolbar-model.js';
+import { THEME_CHOICES, themeDescription, themeIcon, type ThemeChoice } from '../reader-theme.js';
 
 
 export interface ReaderToolbarProps {
   navigationLabel: string; navigationOpen: boolean; onToggleNavigation(): void;
   title: string; onHome(): void; isHome: boolean; listenLabel: string;
   support: ReadingSupportController;
-  isDark: boolean; defaultDark: boolean; onDark(value: boolean): void;
+  /** Colour theme: its own small control, separate from Formatting. `systemDark` is what Follow computer currently resolves to. */
+  themeChoice: ThemeChoice; systemDark: boolean; onTheme(value: ThemeChoice): void;
   maxWidth: MaxWidthChoice; onMaxWidth(value: MaxWidthChoice): void;
   immersive: boolean; onImmersive(value: boolean): void;
   /** Null while no chapter is open (the front page) or the chapter has not mounted. */
@@ -25,14 +27,14 @@ export interface ReaderToolbarProps {
   onOpenNotes(): void; onOpenShortcuts(): void;
 }
 
-const MENUS: { id: ToolbarMenuId; label: string; icon: string }[] = [
+const MENUS: { id: Exclude<ToolbarMenuId, 'theme'>; label: string; icon: string }[] = [
   { id: 'listen', label: 'Listen', icon: 'headphones' },
   { id: 'formatting', label: 'Formatting', icon: 'text_fields' },
   { id: 'assist', label: 'Assist', icon: 'eyeglasses' },
 ];
 const FOCUSABLE = 'button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), [tabindex]:not([tabindex="-1"])';
 
-/** Listen, Formatting, Assist and Notes: four separate labelled controls. Menus are non-modal so text can still be selected. */
+/** Listen, Formatting, Assist, Notes and Theme: five separate icon-only controls whose names show on hover and keyboard focus. Menus are non-modal so text can still be selected. */
 export function ReaderToolbar(props: ReaderToolbarProps) {
   const { support, readAloud, readAloudActions } = props;
   const speech = readAloud?.status ?? 'idle';
@@ -91,15 +93,31 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
     return () => document.removeEventListener('pointerdown', outside);
   }, [open]);
 
+  // Escape dismisses a visible tooltip (hovered or focused) without moving focus or closing anything; a new hover or focus on a control shows it again.
+  const [tipDismissed, setTipDismissed] = useState(false);
+  const pointerOver = useRef(false);
+  const rearmTip = useCallback(() => setTipDismissed(false), []);
+  const tipProps = { onPointerEnter: rearmTip, onFocus: rearmTip };
+  useEffect(() => {
+    const dismiss = (event: KeyboardEvent) => {
+      const bar = actions.current;
+      if (event.key !== 'Escape' || event.defaultPrevented || !bar) return;
+      if (bar.querySelector('[aria-expanded="true"]') || !(pointerOver.current || bar.contains(document.activeElement))) return;
+      setTipDismissed(true);
+    };
+    document.addEventListener('keydown', dismiss);
+    return () => document.removeEventListener('keydown', dismiss);
+  }, []);
+
   const toggle = (id: ToolbarMenuId, from?: HTMLElement | null) => { opener.current = from ?? buttons.current[id] ?? null; focusOnOpen.current = open !== id; setOpen(open === id ? null : id); };
   const viewport = useViewportWidth();
   const fontSize = effectiveFontSize(p, viewport);
-  const formatting: FormattingState = { dark: props.isDark, fontFamily: p.fontFamily, fontSize, lineHeight: p.lineHeight, paragraphSpacing: p.paragraphSpacing, letterSpacing: p.letterSpacing, maxWidth: props.maxWidth };
+  const formatting: FormattingState = { fontFamily: p.fontFamily, fontSize, lineHeight: p.lineHeight, paragraphSpacing: p.paragraphSpacing, letterSpacing: p.letterSpacing, maxWidth: props.maxWidth };
   const d = DEFAULT_READING_PREFERENCES;
-  const formattingDefaults: FormattingState = { dark: props.defaultDark, fontFamily: d.fontFamily, fontSize: effectiveFontSize({ fontSize: d.fontSize, fontSizeChosen: false }, viewport), lineHeight: d.lineHeight, paragraphSpacing: d.paragraphSpacing, letterSpacing: d.letterSpacing, maxWidth: 'md' };
+  const formattingDefaults: FormattingState = { fontFamily: d.fontFamily, fontSize: effectiveFontSize({ fontSize: d.fontSize, fontSizeChosen: false }, viewport), lineHeight: d.lineHeight, paragraphSpacing: d.paragraphSpacing, letterSpacing: d.letterSpacing, maxWidth: 'md' };
   const counts: Record<ToolbarMenuId, number> = {
-    listen: 0, formatting: formattingChanges(formatting, formattingDefaults),
-    assist: assistChanges({ focus: p.focus, overlay: p.overlay, immersive: props.immersive }),
+    listen: 0, theme: 0, formatting: formattingChanges(formatting, formattingDefaults),
+    assist: assistChanges({ overlay: p.overlay, immersive: props.immersive }),
   };
   const shown = (key: 'fontSize' | 'lineHeight' | 'paragraphSpacing' | 'letterSpacing') => key === 'fontSize' ? fontSize : p[key];
   const step = (key: 'fontSize' | 'lineHeight' | 'paragraphSpacing' | 'letterSpacing') => (direction: 1 | -1) => support.update({ [key]: stepValue(key, shown(key), direction) });
@@ -131,19 +149,37 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
       <span aria-hidden="true" className="material-symbols-outlined">menu</span><span>{props.navigationLabel}</span>
     </button>
     <button className="publication-toolbar-identity" onClick={props.onHome} title={props.title}>{props.title}</button>
-    <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown}>
-      {MENUS.map(menu => <button key={menu.id} type="button" ref={element => { buttons.current[menu.id] = element; }} className="publication-toolbar-control"
-        data-active={open === menu.id || (menu.id === 'listen' && speech !== 'idle') || (menu.id === 'assist' && counts.assist > 0) || undefined}
-        aria-haspopup="dialog" aria-expanded={open === menu.id} aria-controls={open === menu.id ? `publication-menu-${menu.id}` : undefined}
-        aria-label={menu.id === 'listen' ? props.listenLabel : menu.label} onClick={() => toggle(menu.id)}>
-        <span aria-hidden="true" className="material-symbols-outlined">{menu.icon}</span>
-        <span aria-hidden="true">{menu.id === 'listen' ? props.listenLabel : menu.label}</span>
-      </button>)}
-      <button type="button" className="publication-toolbar-control publication-toolbar-notes" onClick={() => { close(false); props.onOpenNotes(); }} aria-label="Open notes and highlights">
-        <span aria-hidden="true" className="material-symbols-outlined">ink_highlighter</span><span aria-hidden="true">Notes</span>
+    <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
+      {MENUS.map(menu => {
+        // Icon only: the name is the accessible name and the tooltip (hover and keyboard focus), plus the current state where there is one.
+        const stateText = menu.id === 'listen' && speech !== 'idle' ? (speech === 'speaking' ? 'reading aloud' : 'paused') : menu.id === 'assist' ? assistName(p.overlay) : null;
+        const base = menu.id === 'listen' ? props.listenLabel : menu.label;
+        return <button key={menu.id} type="button" ref={element => { buttons.current[menu.id] = element; }} className="publication-toolbar-control"
+          data-tooltip={stateText ? `${base}: ${stateText}` : base}
+          data-active={open === menu.id || (menu.id === 'listen' && speech !== 'idle') || (menu.id === 'assist' && counts.assist > 0) || undefined}
+          aria-haspopup="dialog" aria-expanded={open === menu.id} aria-controls={open === menu.id ? `publication-menu-${menu.id}` : undefined}
+          aria-label={stateText ? `${base}: ${stateText}` : base} onClick={() => toggle(menu.id)} {...tipProps}>
+          <span aria-hidden="true" className="material-symbols-outlined">{menu.icon}</span>
+        </button>;
+      })}
+      <button type="button" className="publication-toolbar-control publication-toolbar-notes" data-tooltip="Notes" onClick={() => { close(false); props.onOpenNotes(); }} aria-label="Open notes and highlights" {...tipProps}>
+        <span aria-hidden="true" className="material-symbols-outlined">ink_highlighter</span>
+      </button>
+      <span className="publication-toolbar-divider" aria-hidden="true" />
+      <button type="button" ref={element => { buttons.current.theme = element; }} className="publication-toolbar-control publication-toolbar-theme" data-tooltip={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`}
+        data-active={open === 'theme' || undefined} aria-haspopup="dialog" aria-expanded={open === 'theme'} aria-controls={open === 'theme' ? 'publication-menu-theme' : undefined}
+        aria-label={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`} onClick={() => toggle('theme')} {...tipProps}>
+        <span aria-hidden="true" className="material-symbols-outlined">{themeIcon(props.themeChoice)}</span>
       </button>
 
-      {open && <div ref={panel} id={`publication-menu-${open}`} role="dialog" aria-label={MENUS.find(menu => menu.id === open)!.label} className="publication-menu" data-reader-menu>
+      {open === 'theme' && <div ref={panel} id="publication-menu-theme" role="dialog" aria-label="Theme" className="publication-menu publication-theme-menu" data-reader-menu>
+        <ChoiceGroup label="Theme" stacked value={props.themeChoice} onChange={props.onTheme} choices={THEME_CHOICES} />
+        <small className="publication-menu-note">{props.themeChoice === 'system'
+          ? `Follows your computer's light or dark setting, which is ${props.systemDark ? 'dark' : 'light'} now.`
+          : 'Kept for this book on this device. Choose Follow computer to follow your computer again.'}</small>
+      </div>}
+
+      {open && open !== 'theme' && <div ref={panel} id={`publication-menu-${open}`} role="dialog" aria-label={MENUS.find(menu => menu.id === open)!.label} className="publication-menu" data-reader-menu>
         <div className="publication-menu-sheet-head">
           <span className="publication-menu-handle" aria-hidden="true" />
           <div role="group" aria-label="Menu" className="publication-menu-switch">
@@ -185,13 +221,10 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
           <section aria-label="Reset" className="publication-menu-reset">
             <button type="button" className="publication-menu-action" disabled={counts.formatting === 0} onClick={() => {
               support.update({ fontFamily: d.fontFamily, fontSize: d.fontSize, fontSizeChosen: false, lineHeight: d.lineHeight, paragraphSpacing: d.paragraphSpacing, letterSpacing: d.letterSpacing });
-              props.onMaxWidth('md'); props.onDark(props.defaultDark);
+              props.onMaxWidth('md');
             }}><span aria-hidden="true" className="material-symbols-outlined">restart_alt</span>Reset formatting</button>
             <small>{support.storageStatus === 'unavailable' ? 'Settings work for this visit but could not be saved on this device.' : 'Saved for this book on this device.'}</small>
           </section>
-          <section aria-labelledby="menu-theme"><h3 id="menu-theme">Theme</h3>
-            <ChoiceGroup label="Theme" value={props.isDark ? 'dark' : 'paper'} onChange={value => props.onDark(value === 'dark')}
-              choices={[{ value: 'paper', label: 'Book paper' }, { value: 'dark', label: 'Dark' }]} /></section>
           <section aria-labelledby="menu-typeface"><h3 id="menu-typeface">Typeface</h3>
             <ChoiceGroup label="Typeface" value={p.fontFamily} onChange={value => support.update({ fontFamily: value })}
               choices={[{ value: 'serif', label: 'Serif', style: { fontFamily: 'Merriweather, Georgia, serif' } }, { value: 'sans', label: 'Sans', style: { fontFamily: 'Inter, system-ui, sans-serif' } }]} /></section>
@@ -208,27 +241,26 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
         </>}
 
         {open === 'assist' && <>
-          <section aria-labelledby="menu-focus"><h3 id="menu-focus">Focus on a paragraph</h3>
-            <Switch label="Paragraph focus" checked={p.focus === 'paragraph'} hint="Fades the paragraphs you are not on." onChange={value => support.update({ focus: value ? 'paragraph' : 'off' })} /></section>
-          <section aria-labelledby="menu-overlay"><h3 id="menu-overlay">Reading overlay <kbd>R</kbd></h3>
-            <ChoiceGroup label="Reading overlay" value={p.overlay} onChange={value => support.update({ overlay: value })}
-              choices={[{ value: 'off', label: 'Off' }, { value: 'line-window', label: 'Line window' }, { value: 'ruler', label: 'Ruler' }]} />
+          <section aria-labelledby="menu-overlay"><h3 id="menu-overlay">Reading assistance <kbd>R</kbd></h3>
+            <ChoiceGroup label="Reading assistance" value={p.overlay} onChange={value => support.update({ overlay: value })} choices={ASSIST_CHOICES} />
+            <small className="publication-menu-note">{p.overlay === 'paragraph' ? 'Fades the paragraphs you are not on.'
+              : p.overlay === 'line-window' ? 'Shades the page except a window of lines.'
+              : p.overlay === 'ruler' ? 'Covers the lines just below the one you are on.' : 'Choose one to help keep your place.'}</small>
             {p.overlay === 'line-window' && <><h4 id="menu-lines">Window height</h4>
               <ChoiceGroup label="Window height" value={p.lines} onChange={value => support.update({ lines: value })}
                 choices={[{ value: 1, label: '1 line' }, { value: 3, label: '3 lines' }, { value: 5, label: '5 lines' }]} /></>}
             {p.overlay === 'ruler' && <><h4 id="menu-ruler-lines">Ruler covers</h4>
               <ChoiceGroup label="Ruler covers" value={p.rulerLines} onChange={value => support.update({ rulerLines: value })}
-                choices={[{ value: 1, label: '1 line' }, { value: 2, label: '2 lines' }, { value: 3, label: '3 lines' }]} />
-              <small className="publication-menu-note">Covers the lines just below the one you are on.</small></>}
+                choices={[{ value: 1, label: '1 line' }, { value: 2, label: '2 lines' }, { value: 3, label: '3 lines' }]} /></>}
             {p.overlay !== 'off' && <><h4>Dimming</h4>
               <ChoiceGroup label="Dimming" value={level?.value ?? null} onChange={value => support.update({ dim: value })} choices={DIM_LEVELS.map(item => ({ value: item.value, label: item.label }))} />
               {!level && <small className="publication-menu-note">A saved custom dimming of {p.dim.toFixed(2)} is in use. Choose a level to replace it.</small>}</>}
-            <small className="publication-menu-note">Follows your pointer, a tap, or the Up and Down keys in the text. Escape in the text turns focus and overlay off.</small></section>
+            {p.overlay !== 'off' && <small className="publication-menu-note">Follows your pointer, a tap, or the Up and Down keys in the text. Escape in the text turns it off.</small>}</section>
           <section aria-labelledby="menu-page"><h3 id="menu-page">Page</h3>
-            <Switch label="Hide navigation" checked={props.immersive} hint="Hides the contents and the page outline. Key F." onChange={props.onImmersive} /></section>
+            <Switch label="Hide navigation" checked={props.immersive} hint={p.overlay !== 'off' ? 'Hidden while reading assistance is on; switch it on again to show it. Key F.' : 'Hides the contents and the page outline. Key F.'} onChange={props.onImmersive} /></section>
           <footer>
-            <p role="status" className="publication-menu-state">{assistSummary({ focus: p.focus, overlay: p.overlay, immersive: props.immersive, lines: p.lines, rulerLines: p.rulerLines })}</p>
-            <button type="button" className="publication-menu-action" disabled={counts.assist === 0} onClick={() => { support.update({ focus: 'off', overlay: 'off', lines: d.lines, rulerLines: d.rulerLines, dim: d.dim }); props.onImmersive(false); }}>
+            <p role="status" className="publication-menu-state">{assistSummary({ overlay: p.overlay, immersive: props.immersive, lines: p.lines, rulerLines: p.rulerLines })}</p>
+            <button type="button" className="publication-menu-action" disabled={counts.assist === 0} onClick={() => { if (p.overlay !== 'off') support.update({ overlay: 'off', lines: d.lines, rulerLines: d.rulerLines, dim: d.dim }); else props.onImmersive(false); }}>
               <span aria-hidden="true" className="material-symbols-outlined">restart_alt</span>Turn all off</button>
             <button type="button" className="publication-menu-action" onClick={() => { close(false); props.onOpenShortcuts(); }}><span aria-hidden="true" className="material-symbols-outlined">keyboard</span>Keyboard shortcuts</button>
           </footer>

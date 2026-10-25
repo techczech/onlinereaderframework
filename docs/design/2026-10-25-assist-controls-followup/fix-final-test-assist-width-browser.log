@@ -1,0 +1,40 @@
+PASS ruler 1: it starts just under the current line and never covers it
+PASS ruler 1: it covers 1 rendered line(s) beneath
+PASS ruler 1: the current line stays readable
+PASS ruler 2: it starts just under the current line and never covers it
+PASS ruler 2: it covers 2 rendered line(s) beneath
+PASS ruler 2: the current line stays readable
+PASS ruler 3: it starts just under the current line and never covers it
+PASS ruler 3: it covers 3 rendered line(s) beneath
+PASS ruler 3: the current line stays readable
+PASS ruler 3 on the last line of a paragraph covers lines of the next paragraph
+PASS line window 3: unshaded band spans the line above, the current and the line below
+PASS a saved first-release Dark (0.5) opens as Dark at 1
+PASS a saved first-release Medium (0.35) opens as Medium
+PASS a saved version-2 Dark (0.9) keeps its shade and is now Medium
+PASS Light, Medium and Dark are three distinct shades, Dark fully opaque
+PASS no count badge, no count in any control name, icon-only controls
+PASS Assist keeps an active state with the overlay on
+PASS Reset formatting sits above the first setting
+PASS Reset: focus stays inside the menu after Reset disables itself
+PASS Reset: Tab stays inside the menu
+PASS 1280, sidebar open: Narrow < Normal < Wide < Full by at least 100 px each
+PASS the four measures keep the 44 : 52 : 64 character ratio (Normal is the old Narrow, 52)
+PASS 1440: four distinct widths
+PASS 1024, sidebar open: Narrow < Normal, and Wide/Full never exceed the room
+PASS 390: every choice gives the same column and nothing overflows
+PASS an older saved Narrow keeps the column it was reading (becomes Normal)
+PASS an older saved Wide stays Wide
+PASS a width choice is saved under its own key
+PASS toolbar, sidebar and menu type is unchanged by a 28 px, 2.4, wide-spaced article
+PASS ...while the article itself did change
+PASS default text size: 20 px on a large desktop, easing to 19 and 18 on smaller windows
+PASS a size the reader chose (even 20) is honoured at every width
+PASS the Text size control shows the size in use
+PASS stepping up from the displayed size chooses 20 and keeps it
+PASS moving the pointer under an overlay keeps the selection
+PASS with the ruler on, the article markup (maths included) is byte-identical to the plain article
+PASS the overlay never takes pointer events and never sits inside the article
+PASS no browser exceptions
+ASSIST_JSON=[{"name": "ruler 1: it starts just under the current line and never covers it", "passed": true, "detail": {"bar": {"top": 544.203125, "bottom": 576.5, "h": 32.296875}, "focus": {"top": 517.5625, "bottom": 538.5625}}}, {"name": "ruler 1: it covers 1 rendered line(s) beneath", "passed": true, "detail": {"h": 32.296875, "pitch": 32.296875}}, {"name": "ruler 1: the current line stays readable", "passed": true, "detail": null}, {"name": "ruler 2: it starts just under the current line and never covers it", "passed": true, "detail": {"bar": {"top": 544.203125, "bottom": 608.796875, "h": 64.59375}, "focus": {"top": 517.5625, "bottom": 538.5625}}}, {"name": "ruler 2: it covers 2 rendered line(s) beneath", "passed": true, "detail": {"h": 64.59375, "pitch": 32.296875}}, {"name": "ruler 2: the current line stays readable", "passed": true, "detail": null}, {"name": "ruler 3: it starts just under the current line and never covers it", "passed": true, "detail": {"bar": {"top": 544.203125, "bottom": 641.09375, "h": 96.890625}, "focus": {"top": 517.5625, "bottom": 538.5625}}}, {"name": "ruler 3: it covers 3 rendered line(s) beneath", "passed": true, "detail": {"h": 96.890625, "pitch": 32.296875}}, {"name": "ruler 3: the current line stays readable", "passed": true, "detail": null}, {"name": "ruler 3 on the last line of a paragraph covers lines of the next paragraph", "passed": true, "detail": {"bar": {"top": 810.578125, "bottom": 915.46875}, "next": [{"top": 824.234375, "bottom": 845.234375}, {"top": 856.53125, "bottom": 877.53125}]}}, {"name": "line window 3: unshaded band spans the line above, the current and the line below", "passed": true, "detail": {"masks": [{"top": 49.78125, "bottom": 511.90625}, {"top": 608.796875, "bottom": 2468.765625}], "lines": [{"top": 517.5625, "bottom": 538.5625}, {"top": 549.859375, "bottom": 570.859375}, {"top": 582.15625, "bottom": 603.15625}]}}, {"name": "a saved first-release Dark (0.5) opens as Dark at 1", "passed": true, "detail": null}, {"name": "a saved first-release Medium (0.35) opens as Medium", "passed": true, "detail": null}, {"name": "a saved version-2 Dark (0.9) keeps its shade and is now Medium", "passed": true, "detail": null}, {"name": "Light, Medium and Dark are three distinct shades, Dark fully opaque", "passed": true, "detail": {"Light": "rgba(28, 28, 32, 0.72)", "Medium": "rgba(28, 28, 32, 0.9)", "Dark": "rgb(28, 28, 32)"}}, {"name": "no count badge, no count in any control name, icon-only controls", "passed": true, "detail": ["Listen", "Formatting", "Assist: Ruler", "Open notes and highlights", "Theme: Follow computer (now light)"]}, {"name": "Assist keeps an active state with the overlay on", "passed": true, "detail": null}, {"name": "Reset formatting sits above the first setting", "passed": true, "detail": null}, {"name": "Reset: focus stays inside the menu after Reset disables itself", "passed": true, "detail": null}, {"name": "Reset: Tab stays inside the menu", "passed": true, "detail": null}, {"name": "1280, sidebar open: Narrow < Normal < Wide < Full by at least 100 px each", "passed": true, "detail": {"sm": 440.46875, "md": 520.546875, "lg": 640.6875, "full": 960}}, {"name": "the four measures keep the 44 : 52 : 64 character ratio (Normal is the old Narrow, 52)", "passed": true, "detail": {"sm": 440.46875, "md": 520.546875, "lg": 640.6875, "full": 960}}, {"name": "1440: four distinct widths", "passed": true, "detail": {"sm": 440.46875, "md": 520.546875, "lg": 640.6875, "full": 1112}}, {"name": "1024, sidebar open: Narrow < Normal, and Wide/Full never exceed the room", "passed": true, "detail": {"sm": 440.46875, "md": 520.546875, "lg": 640.6875, "full": 704}}, {"name": "390: every choice gives the same column and nothing overflows", "passed": true, "detail": {"sm": 334, "md": 334, "lg": 334, "full": 334}}, {"name": "an older saved Narrow keeps the column it was reading (becomes Normal)", "passed": true, "detail": null}, {"name": "an older saved Wide stays Wide", "passed": true, "detail": null}, {"name": "a width choice is saved under its own key", "passed": true, "detail": null}, {"name": "toolbar, sidebar and menu type is unchanged by a 28 px, 2.4, wide-spaced article", "passed": true, "detail": ["12.48px|17.472px|normal|Inter, sans-serif||12.48px|17.472px|normal|Inter, sans-serif||16px|22.4px|normal|Inter, sans-serif||13.12px|18.368px|normal|Inter, sans-serif", "12.48px|17.472px|normal|Inter, sans-serif||12.48px|17.472px|normal|Inter, sans-serif||16px|22.4px|normal|Inter, sans-serif||13.12px|18.368px|normal|Inter, sans-serif"]}, {"name": "...while the article itself did change", "passed": true, "detail": null}, {"name": "default text size: 20 px on a large desktop, easing to 19 and 18 on smaller windows", "passed": true, "detail": {"1600": "20px", "1280": "19px", "1024": "18px", "390": "18px"}}, {"name": "a size the reader chose (even 20) is honoured at every width", "passed": true, "detail": {"1600": "20px", "1280": "20px", "390": "20px"}}, {"name": "the Text size control shows the size in use", "passed": true, "detail": "19 px"}, {"name": "stepping up from the displayed size chooses 20 and keeps it", "passed": true, "detail": null}, {"name": "moving the pointer under an overlay keeps the selection", "passed": true, "detail": null}, {"name": "with the ruler on, the article markup (maths included) is byte-identical to the plain article", "passed": true, "detail": null}, {"name": "the overlay never takes pointer events and never sits inside the article", "passed": true, "detail": null}, {"name": "no browser exceptions", "passed": true, "detail": []}]
+38/38 passed

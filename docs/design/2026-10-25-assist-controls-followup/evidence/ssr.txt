@@ -1,0 +1,1 @@
+{"ok":true,"window":"undefined","document":"undefined","hasToolbar":true,"themeIcon":true,"light":true,"noToolbarLabelText":true}

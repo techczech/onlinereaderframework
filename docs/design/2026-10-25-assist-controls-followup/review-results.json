@@ -1,0 +1,276 @@
+[
+  {
+    "name": "assist defaults navigation hidden",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "paragraph focus dims headings and tables as well as other paragraphs",
+    "passed": false,
+    "detail": [
+      {
+        "tag": "H1",
+        "opacity": "1",
+        "active": false
+      },
+      {
+        "tag": "P",
+        "opacity": "1",
+        "active": true
+      },
+      {
+        "tag": "H2",
+        "opacity": "1",
+        "active": false
+      },
+      {
+        "tag": "P",
+        "opacity": "0.1",
+        "active": false
+      },
+      {
+        "tag": "TD",
+        "opacity": "1",
+        "active": false
+      },
+      {
+        "tag": "P",
+        "opacity": "0.1",
+        "active": false
+      },
+      {
+        "tag": "P",
+        "opacity": "0.1",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "reflection is hidden without unmounting textarea",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "F overrides assist default",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "assist override survives resize",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "off restores original visible navigation and draft",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "F hides manually",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "F can show during assist after manual hide",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "off restores prior manual hidden state",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "line window covers scroll page at opaque Dark",
+    "passed": true,
+    "detail": {
+      "w": 1440,
+      "h": 1916,
+      "sw": 1440,
+      "sh": 1916,
+      "m": [
+        {
+          "h": 690,
+          "bg": "rgb(28, 28, 32)"
+        },
+        {
+          "h": 1124,
+          "bg": "rgb(28, 28, 32)"
+        }
+      ]
+    }
+  },
+  {
+    "name": "line window follows pointer onto heading",
+    "passed": false,
+    "detail": {
+      "before": [
+        [
+          0,
+          690
+        ],
+        [
+          792,
+          1124
+        ]
+      ],
+      "afterHeadingHover": [
+        [
+          0,
+          690
+        ],
+        [
+          792,
+          1124
+        ]
+      ]
+    }
+  },
+  {
+    "name": "ruler has one mask instead of line windows two",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "assist leaves body text and MathML unchanged",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Notes drawer usable under assist",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "stored notes and highlights bytes unchanged across controls",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "synthetic speech highlight survives assist change",
+    "passed": true,
+    "detail": {
+      "utterance": "Heading",
+      "before": "Heading",
+      "after": "Heading"
+    }
+  },
+  {
+    "name": "native body selection works after assist changes",
+    "passed": true,
+    "detail": "First"
+  },
+  {
+    "name": "tooltip shows on hover",
+    "passed": true,
+    "detail": {
+      "op": "1",
+      "visibility": "visible",
+      "pointer": "none",
+      "top": "44.3906px"
+    }
+  },
+  {
+    "name": "Escape dismisses tooltip without moving pointer",
+    "passed": false,
+    "detail": {
+      "op": "1",
+      "visibility": "visible",
+      "pointer": "none",
+      "top": "44.3906px"
+    }
+  },
+  {
+    "name": "tooltip can be hovered",
+    "passed": false,
+    "detail": {
+      "op": "0",
+      "visibility": "hidden",
+      "pointer": "none",
+      "top": "44.3906px"
+    }
+  },
+  {
+    "name": "another book defaults to Follow computer",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "system theme follows media live",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "book theme isolation restores explicit Dark",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "book remount with saved assist hides navigation",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "no browser runtime errors",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "legacy or malformed migration 0",
+    "passed": true,
+    "detail": {
+      "overlay": "paragraph",
+      "dim": "0.9"
+    }
+  },
+  {
+    "name": "legacy or malformed migration 1",
+    "passed": true,
+    "detail": {
+      "overlay": "ruler",
+      "dim": "0.72"
+    }
+  },
+  {
+    "name": "legacy or malformed migration 2",
+    "passed": true,
+    "detail": {
+      "overlay": "off",
+      "dim": "0.5"
+    }
+  },
+  {
+    "name": "legacy or malformed migration 3",
+    "passed": true,
+    "detail": {
+      "overlay": "paragraph",
+      "dim": "0.9"
+    }
+  },
+  {
+    "name": "legacy or malformed migration 4",
+    "passed": true,
+    "detail": {
+      "overlay": "line-window",
+      "dim": "0.9"
+    }
+  },
+  {
+    "name": "matching legacy boolean becomes live System",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "denied storage permits in-memory settings and reports unsaved",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "real DP book at 390 has no main overflow",
+    "passed": true,
+    "detail": {
+      "client": 390,
+      "scroll": 390
+    }
+  }
+]

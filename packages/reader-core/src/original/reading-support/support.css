@@ -18,10 +18,18 @@
 }
 .reading-support-surface p { margin-top: 0; margin-bottom: var(--rs-paragraph); }
 .reading-support-surface :is(pre,code,kbd,samp,math) { letter-spacing: normal; }
-.reading-support-surface[data-rs-focus="paragraph"] [data-rs-paragraph]:not([data-rs-active]) { opacity: .45; }
+/* Margin note cards sit in their own layer below the shade, so a window leaves them shaded like the rest of the page; they stay clickable because the shade ignores the pointer.
+   Paragraph focus is one of the overlay choices. Every other readable block (paragraph, heading, list item, table cell) fades by the Dimming choice (Dark hides them); the active one stays clear. One opacity, never layered. */
+.reading-support-surface[data-rs-overlay="paragraph"] [data-rs-paragraph]:not([data-rs-active], [data-rs-owner]) { opacity: calc(1 - var(--rs-dim)); }
+/* A block that holds its own text beside a nested block fades only that text, so the nested block's own fade is never multiplied. Inline elements take the opacity;
+   bare text takes the matching text colour (Dark is transparent). */
+.reading-support-surface[data-rs-overlay="paragraph"] [data-rs-own] { opacity: calc(1 - var(--rs-dim)); }
+::highlight(rs-dim) { color: color-mix(in srgb, currentColor calc((1 - var(--rs-dim)) * 100%), transparent); }
+.reading-support-surface .publication-margin-note { z-index: 0; }
 .reading-support-overlay { position: absolute; overflow: hidden; pointer-events: none; z-index: 1; }
 .reading-support-overlay * { pointer-events: none; }
-/* Shade colours follow WriteFlex's line overlay: a cool dark on paper, black on a dark page. The strength is the Dimming choice. */
+/* The overlay covers the whole scrolling page (placed by the surface) and only the window is clear. Shade colours follow WriteFlex's line overlay:
+   a cool dark on paper, black on a dark page. The strength is the Dimming choice, applied once as the colour's own alpha (Dark is 1, fully opaque). */
 .reading-support-mask, .reading-support-ruler { position: absolute; left: 0; right: 0; background: rgb(28 28 32 / var(--rs-dim)); }
 .dark .reading-support-mask, .dark .reading-support-ruler { background: rgb(0 0 0 / var(--rs-dim)); }
 .reading-support-controls { position: relative; font: 1rem/1.5 system-ui, sans-serif; }

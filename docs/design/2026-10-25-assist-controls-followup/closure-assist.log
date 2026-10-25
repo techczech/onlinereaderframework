@@ -1,0 +1,32 @@
+PASS assist defaults navigation hidden
+PASS paragraph mode: only the current paragraph is clear; headings, cells and items carry the chosen dimming once
+PASS paragraph mode: a table cell can be the current clear block
+PASS paragraph mode: a heading can be the current clear block
+PASS line window covers scroll page at opaque Dark
+PASS line window at Dark hides unrelated headings while another block is current
+PASS line window follows pointer onto heading
+PASS line window at Dark leaves the hovered heading readable
+PASS line window: heading with MathML is readable and its MathML is untouched
+PASS line window: a table cell is readable when current
+PASS margin note outside the window is beneath the shade
+PASS margin note can still be opened under the shade (overlay passes pointer events)
+PASS ruler has one mask instead of line windows two
+PASS assist leaves body text and MathML unchanged
+PASS Notes drawer usable under assist
+PASS stored notes and highlights bytes unchanged across controls
+PASS toolbar icon has no native title duplicate
+PASS tooltip shows on hover
+PASS pointer can travel from the icon onto the label without a dead zone
+PASS tooltip stays while the pointer rests on the label
+PASS Escape dismisses a hovered tooltip
+PASS Escape on a tooltip opens no menu
+PASS a new hover rearms the tooltip
+PASS moving within the same control does not rearm a dismissed tooltip
+PASS keyboard focus shows the tooltip
+PASS Escape dismisses a focused tooltip and focus stays on the control
+PASS moving focus away and back rearms the tooltip
+PASS menu Escape closes Formatting and restores opener focus
+PASS reading Escape still turns assistance off
+FAIL mixed nested list and table text outside active heading dims once
+FAIL window follows the parent list item own text
+{"checks": 31, "failed": ["mixed nested list and table text outside active heading dims once", "window follows the parent list item own text"]}

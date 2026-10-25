@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 
-export interface Choice<T extends string | number> { value: T; label: string; style?: React.CSSProperties }
+export interface Choice<T extends string | number> { value: T; label: string; style?: React.CSSProperties; icon?: string }
 
 /** Radio group of pressed buttons; arrow keys move the choice, as for native radios. */
-export function ChoiceGroup<T extends string | number>({ label, value, choices, onChange }: { label: string; value: T | null; choices: readonly Choice<T>[]; onChange(value: T): void }) {
+export function ChoiceGroup<T extends string | number>({ label, value, choices, onChange, stacked }: { label: string; value: T | null; choices: readonly Choice<T>[]; onChange(value: T): void; /** One choice per line, each with its icon. */ stacked?: boolean }) {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const selected = choices.findIndex(choice => choice.value === value);
   const move = (event: React.KeyboardEvent, index: number) => {
@@ -14,10 +14,10 @@ export function ChoiceGroup<T extends string | number>({ label, value, choices, 
     onChange(choices[next].value);
     refs.current[next]?.focus();
   };
-  return <div role="radiogroup" aria-label={label} className="publication-choice-group">
+  return <div role="radiogroup" aria-label={label} className="publication-choice-group" data-stacked={stacked || undefined}>
     {choices.map((choice, index) => <button key={String(choice.value)} type="button" role="radio" aria-checked={index === selected}
       tabIndex={index === selected || (selected < 0 && index === 0) ? 0 : -1} ref={element => { refs.current[index] = element; }} style={choice.style}
-      onClick={() => onChange(choice.value)} onKeyDown={event => move(event, index)}>{choice.label}</button>)}
+      onClick={() => onChange(choice.value)} onKeyDown={event => move(event, index)}>{choice.icon && <span aria-hidden="true" className="material-symbols-outlined">{choice.icon}</span>}{choice.label}</button>)}
   </div>;
 }
 

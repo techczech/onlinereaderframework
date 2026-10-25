@@ -28,6 +28,8 @@ interface MarkdownRendererProps {
   /** The toolbar owns the read-aloud controls and shows this state; null once the chapter goes away. */
   onReadAloudChange?: (snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => void;
   maxWidth?: MaxWidth;
+  /** Reading assistance is on: the reflection prompt and editor are hidden, not unmounted, so a draft and the saved reflection are kept. */
+  reflectionHidden?: boolean;
 }
 
 const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRendererProps>(({ 
@@ -41,7 +43,8 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     bookId = 'reader',
     onBrowserSpeechStart,
     onReadAloudChange,
-    maxWidth = 'md'
+    maxWidth = 'md',
+    reflectionHidden = false
 }, ref) => {
   const [reflectionText, setReflectionText] = useState('');
   const contentElement = useRef<HTMLDivElement>(null);
@@ -123,7 +126,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
 
         {/* Key Lessons & Reflections Section */}
         {onSaveReflection && (
-            <div className="mt-16 pt-8 border-t-2 border-gray-100 dark:border-gray-800">
+            <div className="mt-16 pt-8 border-t-2 border-gray-100 dark:border-gray-800" hidden={reflectionHidden} data-publication-reflection>
                 <div className="bg-gradient-to-b from-indigo-50 to-white dark:from-indigo-950/30 dark:to-gray-900 rounded-xl p-8 border border-indigo-100 dark:border-indigo-900/50 shadow-sm">
                     <div className="flex items-center gap-3 mb-4 text-indigo-900 dark:text-indigo-100">
                         <div className="p-2 bg-indigo-100 dark:bg-indigo-900 rounded-lg">

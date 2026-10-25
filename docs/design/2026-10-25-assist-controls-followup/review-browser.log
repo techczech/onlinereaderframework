@@ -1,0 +1,34 @@
+PASS assist defaults navigation hidden
+OBSERVATION paragraph focus dims headings and tables as well as other paragraphs
+PASS reflection is hidden without unmounting textarea
+PASS F overrides assist default
+PASS assist override survives resize
+PASS off restores original visible navigation and draft
+PASS F hides manually
+PASS F can show during assist after manual hide
+PASS off restores prior manual hidden state
+PASS line window covers scroll page at opaque Dark
+OBSERVATION line window follows pointer onto heading
+PASS ruler has one mask instead of line windows two
+PASS assist leaves body text and MathML unchanged
+PASS Notes drawer usable under assist
+PASS stored notes and highlights bytes unchanged across controls
+PASS synthetic speech highlight survives assist change
+PASS native body selection works after assist changes
+PASS tooltip shows on hover
+OBSERVATION Escape dismisses tooltip without moving pointer
+OBSERVATION tooltip can be hovered
+PASS another book defaults to Follow computer
+PASS system theme follows media live
+PASS book theme isolation restores explicit Dark
+PASS book remount with saved assist hides navigation
+PASS no browser runtime errors
+PASS legacy or malformed migration 0
+PASS legacy or malformed migration 1
+PASS legacy or malformed migration 2
+PASS legacy or malformed migration 3
+PASS legacy or malformed migration 4
+PASS matching legacy boolean becomes live System
+PASS denied storage permits in-memory settings and reports unsaved
+PASS real DP book at 390 has no main overflow
+{"checks": 33, "observations": ["paragraph focus dims headings and tables as well as other paragraphs", "line window follows pointer onto heading", "Escape dismisses tooltip without moving pointer", "tooltip can be hovered"]}

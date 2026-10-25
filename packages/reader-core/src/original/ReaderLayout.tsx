@@ -41,7 +41,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
     });
   }, []);
   const { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, defaultDarkMode, maxWidth, setMaxWidth, getContainerWidthClass,
+    isDarkMode, themeChoice, setThemeChoice, systemDark, isAssistActive, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
@@ -81,9 +81,9 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
       <main className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
         <ReaderToolbar
           navigationLabel={labels.tableOfContents} navigationOpen={isSidebarOpen && !isImmersiveMode}
-          onToggleNavigation={() => { setIsSidebarOpen(value => !value); setIsImmersiveMode(false); }}
+          onToggleNavigation={() => { if (isImmersiveMode) { setIsSidebarOpen(true); setIsImmersiveMode(false); } else setIsSidebarOpen(value => !value); }}
           title={publicationDisplayTitle(book)} onHome={() => handleSectionChange('home')} isHome={isHome} listenLabel={labels.listen}
-          support={support} isDark={isDarkMode} defaultDark={defaultDarkMode} onDark={setIsDarkMode}
+          support={support} themeChoice={themeChoice} systemDark={systemDark} onTheme={setThemeChoice}
           maxWidth={maxWidth} onMaxWidth={setMaxWidth} immersive={isImmersiveMode} onImmersive={setIsImmersiveMode}
           readAloud={readAloud?.snapshot ?? null} readAloudActions={readAloud?.actions ?? null} language={book.language}
           hasRecordedAudio={!!hasRecordedAudio && !!onOpenRecordedAudio} onOpenRecordedAudio={trigger => onOpenRecordedAudio?.(trigger)}
@@ -216,6 +216,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                                     onSaveReflection={handleSaveReflection}
                                     onOpenHighlight={handleOpenHighlightCallback}
                                     maxWidth={maxWidth}
+                                    reflectionHidden={isAssistActive}
                                 />)}
                                 {!!currentSection.children?.length && <nav aria-label="Chapters in this section" className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6 space-y-3">
                                   {currentSection.children.map(child => <button key={child.id} onClick={() => handleSectionChange(child.id)} className="block text-left text-indigo-600 dark:text-indigo-400 hover:underline">{child.title}</button>)}

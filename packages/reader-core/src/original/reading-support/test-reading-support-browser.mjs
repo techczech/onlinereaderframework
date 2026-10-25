@@ -12,7 +12,7 @@ import {ReadingSupportControls, ReadingSupportSurface, useReadingSupport} from '
 function Fixture() {
  const [book,setBook]=React.useState('a'); const [section,setSection]=React.useState('one'); const controller=useReadingSupport(book);
  window.support={update:controller.update,reset:controller.reset,book:setBook,section:setSection,get:()=>controller.preferences};
- return <><button id="toolbar" onClick={()=>window.toolbarClicked=true}>Toolbar</button><ReadingSupportControls bookId={book} inline/><ReadingSupportSurface bookId={book} sectionId={section}><button id="inner-toolbar">Read aloud</button><article data-publication-content className="publication-content"><p id="p1">First <strong>bold</strong> passage, <a href="#note" id="link">linked</a> to <mark data-highlight-id="saved">saved annotation</mark>. <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> <code>const x = 1</code><sup><a href="#note">1</a></sup></p><p id="p2">Second paragraph with ordinary text for focus.</p><p id="note">Footnote body remains readable.</p></article></ReadingSupportSurface></>;
+ return <><button id="toolbar" onClick={()=>window.toolbarClicked=true}>Toolbar</button><ReadingSupportControls bookId={book} inline/><ReadingSupportSurface bookId={book} sectionId={section}><button id="inner-toolbar">Read aloud</button><article data-publication-content className="publication-content"><p id="p1">First <strong>bold</strong> passage, <a href="#note" id="link">linked</a> to <mark data-highlight-id="saved">saved annotation</mark>. <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> <code>const x = 1</code><sup><a href="#note">1</a></sup></p><p id="p2">Second paragraph with ordinary text for focus.</p><p id="note">Footnote body remains readable.</p><h2 id="hh">A heading</h2><table><tbody><tr><td id="cell">A cell</td></tr></tbody></table></article></ReadingSupportSurface></>;
 }
 createRoot(document.body.appendChild(document.createElement('main'))).render(<Fixture/>);`;
 const bundle = await build({stdin:{contents:fixture,loader:'tsx',resolveDir:dir}, alias:{react:resolve(root,'apps/reader-demo/node_modules/react'),'react-dom':resolve(root,'apps/reader-demo/node_modules/react-dom')},bundle:true,write:false,format:'iife',platform:'browser'});
@@ -50,7 +50,7 @@ with sync_playwright() as p:
           const r=document.createRange(); r.setStart(t,0);r.setEnd(t,5);
           getSelection().removeAllRanges();getSelection().addRange(r);
           window.originalTextNode=t;
-          support.update({fontFamily:'sans',fontSize:28,lineHeight:2.4,paragraphSpacing:40,letterSpacing:.12,focus:'paragraph',overlay:'line-window'});
+          support.update({fontFamily:'sans',fontSize:28,lineHeight:2.4,paragraphSpacing:40,letterSpacing:.12,overlay:'line-window'});
         }''')
         settle()
         assert page.evaluate('getSelection().toString()')=='First'
@@ -67,12 +67,27 @@ with sync_playwright() as p:
         assert page.evaluate('([a,b])=>[...document.querySelectorAll(".reading-support-mask")].every(m=>{const r=m.getBoundingClientRect();return r.bottom<=a+1||r.top>=b-1})',[first['top'],first['bottom']]), 'shade must not cover the active line'
         assert page.evaluate('document.querySelector(".reading-support-overlay").getBoundingClientRect().top >= document.querySelector("#inner-toolbar").getBoundingClientRect().bottom'), 'Overlay must start below content toolbar'
         assert page.locator('.reading-support-overlay').evaluate('el=>getComputedStyle(el).pointerEvents')=='none'
+        page.get_by_label('Reading assistance',exact=True).select_option('paragraph');settle()
+        assert page.locator('.reading-support-overlay').count()==0, 'paragraph focus is its own choice, not an overlay layer'
         page.locator('#p2').hover();settle()
-        assert page.locator('#p1').evaluate('el=>getComputedStyle(el).opacity')=='0.45'
+        assert page.locator('#p1').evaluate('el=>getComputedStyle(el).opacity')=='0.1', 'others fade by Dimming (Medium .9)'
         assert page.locator('#p2').evaluate('el=>getComputedStyle(el).opacity')=='1'
+        assert page.locator('#hh').evaluate('el=>getComputedStyle(el).opacity')=='0.1' and page.locator('#cell').evaluate('el=>getComputedStyle(el).opacity')=='0.1', 'other headings and table cells fade too'
+        page.locator('#hh').hover();settle()
+        assert page.locator('#hh').evaluate('el=>getComputedStyle(el).opacity')=='1' and page.locator('#p2').evaluate('el=>getComputedStyle(el).opacity')=='0.1', 'a heading can be the current block'
+        page.locator('#cell').hover();settle()
+        assert page.locator('#cell').evaluate('el=>getComputedStyle(el).opacity')=='1' and page.locator('#hh').evaluate('el=>getComputedStyle(el).opacity')=='0.1', 'a table cell can be the current block'
+        page.locator('#p2').hover();settle()
+        page.evaluate('support.update({overlay:"line-window"})');settle()
+        assert page.locator('#p1').evaluate('el=>getComputedStyle(el).opacity')=='1', 'a window does not fade paragraphs: the choices are exclusive'
+        page.evaluate('support.update({dim:1})');page.locator('#hh').hover();settle()
+        assert page.evaluate('(()=>{const h=document.querySelector("#hh").getBoundingClientRect();return [...document.querySelectorAll(".reading-support-mask")].every(m=>{const r=m.getBoundingClientRect();return r.bottom<=h.top+1||r.top>=h.bottom-1})})()'), 'at Dark the window opens over a hovered heading'
+        page.locator('#cell').hover();settle()
+        assert page.evaluate('(()=>{const h=document.querySelector("#cell").getBoundingClientRect();return [...document.querySelectorAll(".reading-support-mask")].every(m=>{const r=m.getBoundingClientRect();return r.bottom<=h.top+1||r.top>=h.bottom-1})})()'), 'at Dark the window opens over a hovered table cell'
+        page.evaluate('support.update({dim:.9})');settle()
         page.locator('#link').click();assert page.evaluate('location.hash')=='#note'
         page.locator('#toolbar').click();assert page.evaluate('window.toolbarClicked')
-        page.get_by_label('Reading overlay',exact=True).select_option('ruler');settle()
+        page.get_by_label('Reading assistance',exact=True).select_option('ruler');settle()
         assert page.locator('.reading-support-mask').count()==0
         assert page.locator('.reading-support-ruler').count()==1
         surface=page.locator('.reading-support-surface');surface.focus();page.keyboard.press('Home');page.keyboard.press('ArrowDown');settle()

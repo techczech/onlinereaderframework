@@ -7,6 +7,8 @@ import { flattenPublicationSections, publicationUrl, readStoredValue, safePublic
 import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
 import { isReadableSection, readableNeighbours } from './sidebar-model.js';
 import { useReadingSupport } from './reading-support/use-reading-support.js';
+import { initialThemeChoice, isThemeChoice, resolveDark, type ThemeChoice } from './reader-theme.js';
+import { systemDarkNow, useSystemDark } from './use-system-dark.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
@@ -35,11 +37,15 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [bookmarkIds, setBookmarkIds] = useBookState(book.id, 'bookmarkedSections', [] as string[], strings, storageFailure);
   const [highlights, setHighlights] = useBookState(book.id, 'highlights', [] as Highlight[], highlightsValid, storageFailure);
   const [reflections, setReflections] = useBookState(book.id, 'reflections', [] as Reflection[], reflectionsValid, storageFailure);
-  const systemDark = (() => { try { return typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-color-scheme: dark)').matches; } catch { return false; } })();
-  const [isDarkMode, setIsDarkMode] = useBookState(book.id, 'darkMode', systemDark, boolean, storageFailure);
+  // Theme: follow the computer unless the reader chose Light or Dark for this book. The old reader saved a 'darkMode' boolean on every visit, so it is read once
+  // (initialThemeChoice) to seed the new 'theme' field and never written again; notes, highlights and other fields are untouched.
+  const systemDark = useSystemDark();
+  const [seedTheme] = useState<ThemeChoice>(() => initialThemeChoice(readStoredValue<boolean | null>(book.id, 'darkMode', null, (value): value is boolean | null => value === null || boolean(value)), systemDarkNow()));
+  const [themeChoice, setThemeChoice] = useBookState<ThemeChoice>(book.id, 'theme', seedTheme, isThemeChoice, storageFailure);
+  const isDarkMode = resolveDark(themeChoice, systemDark);
   // Text size, spacing and the reading overlay have one owner: the reading preferences. Older saved 'fontSize' and 'lineHeight' values are left untouched in storage and no longer read.
   const support = useReadingSupport(book.id);
-  const lastOverlay = useRef<'line-window' | 'ruler'>('line-window');
+  const lastOverlay = useRef<'paragraph' | 'line-window' | 'ruler'>('line-window');
   if (support.preferences.overlay !== 'off') lastOverlay.current = support.preferences.overlay;
   // Text widths were re-measured: Normal is now the column the old Narrow gave, and Narrow is narrower. The old field is read once, so a
   // reader who had chosen Narrow keeps the column they were reading; the other three labels keep their meaning.
@@ -55,7 +61,20 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isHighlightsOpen, setIsHighlightsOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
-  const [isImmersiveMode, setIsImmersiveMode] = useState(false);
+  // Hiding navigation: the reader's own choice (F, the Assist switch) when no reading assistance is on. While one is on, navigation is hidden by default and the reader's
+  // choice for that time is kept apart (null = the default), so turning the assistance off returns to what they had before without forcing it open or closed.
+  const [manualHidden, setManualHidden] = useState(false);
+  const [assistHidden, setAssistHidden] = useState<boolean | null>(null);
+  const assistActive = support.preferences.overlay !== 'off';
+  const isImmersiveMode = assistActive ? assistHidden ?? true : manualHidden;
+  const hiddenRef = useRef({ assistActive, isImmersiveMode });
+  hiddenRef.current = { assistActive, isImmersiveMode };
+  const setIsImmersiveMode = useCallback((next: boolean | ((hidden: boolean) => boolean)) => {
+    const { assistActive: assisted, isImmersiveMode: current } = hiddenRef.current;
+    const value = typeof next === 'function' ? next(current) : next;
+    if (assisted) setAssistHidden(value); else setManualHidden(value);
+  }, []);
+  useEffect(() => { if (!assistActive) setAssistHidden(null); }, [assistActive]);
   const [isSearchTriggered, setIsSearchTriggered] = useState(false);
   const [quoteModalData, setQuoteModalData] = useState<{ text: string; title: string; sectionId: string } | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -343,10 +362,10 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     };
     window.addEventListener('keydown', keydown);
     return () => window.removeEventListener('keydown', keydown);
-  }, [selectedText, support, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection]);
+  }, [selectedText, support, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection, setIsImmersiveMode]);
 
   return { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, defaultDarkMode: systemDark, maxWidth, setMaxWidth, getContainerWidthClass,
+    isDarkMode, themeChoice, setThemeChoice, systemDark, isAssistActive: assistActive, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,

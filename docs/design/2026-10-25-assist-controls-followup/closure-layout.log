@@ -1,0 +1,1330 @@
+[
+  {
+    "serveFonts": false,
+    "desktop": {
+      "article": 520.546875,
+      "mainClient": 1176,
+      "mainScroll": 1176,
+      "doc": 1440,
+      "fonts": [
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Material Symbols Outlined",
+          "status": "error"
+        }
+      ],
+      "actions": [
+        {
+          "title": "Copy Link to Page (l)",
+          "x": 653.578125,
+          "right": 758.28125
+        },
+        {
+          "title": "Bookmark (b)",
+          "x": 766.28125,
+          "right": 1000.265625
+        }
+      ]
+    },
+    "widths": {
+      "Narrow": 440.46875,
+      "Normal": 520.546875,
+      "Wide": 640.6875,
+      "Full": 888
+    },
+    "phone": {
+      "article": 264,
+      "mainClient": 320,
+      "mainScroll": 346,
+      "doc": 320,
+      "fonts": [
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "error"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Material Symbols Outlined",
+          "status": "error"
+        }
+      ],
+      "actions": [
+        {
+          "title": "Copy Link to Page (l)",
+          "x": 40,
+          "right": 144.703125
+        },
+        {
+          "title": "Bookmark (b)",
+          "x": 152.703125,
+          "right": 386.6875
+        }
+      ]
+    },
+    "requests": [
+      {
+        "name": "inter-latin-700-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "inter-latin-400-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "material-symbols-outlined-latin-400-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "inter-latin-600-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "inter-latin-500-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "merriweather-latin-700-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "merriweather-latin-400-normal.woff2",
+        "served": false
+      },
+      {
+        "name": "inter-latin-700-normal.woff",
+        "served": false
+      },
+      {
+        "name": "inter-latin-400-normal.woff",
+        "served": false
+      },
+      {
+        "name": "material-symbols-outlined-latin-400-normal.woff",
+        "served": false
+      },
+      {
+        "name": "inter-latin-600-normal.woff",
+        "served": false
+      },
+      {
+        "name": "inter-latin-500-normal.woff",
+        "served": false
+      },
+      {
+        "name": "merriweather-latin-700-normal.woff",
+        "served": false
+      },
+      {
+        "name": "merriweather-latin-400-normal.woff",
+        "served": false
+      }
+    ]
+  },
+  {
+    "serveFonts": true,
+    "desktop": {
+      "article": 590.484375,
+      "mainClient": 1176,
+      "mainScroll": 1176,
+      "doc": 1440,
+      "fonts": [
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Material Symbols Outlined",
+          "status": "loaded"
+        }
+      ],
+      "actions": [
+        {
+          "title": "Copy Link to Page (l)",
+          "x": 849.171875,
+          "right": 940.8125
+        },
+        {
+          "title": "Bookmark (b)",
+          "x": 948.8125,
+          "right": 1035.234375
+        }
+      ]
+    },
+    "widths": {
+      "Narrow": 499.640625,
+      "Normal": 590.484375,
+      "Wide": 726.75,
+      "Full": 888
+    },
+    "phone": {
+      "article": 264,
+      "mainClient": 320,
+      "mainScroll": 320,
+      "doc": 320,
+      "fonts": [
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Material Symbols Outlined",
+          "status": "loaded"
+        }
+      ],
+      "actions": [
+        {
+          "title": "Copy Link to Page (l)",
+          "x": 105.9375,
+          "right": 197.578125
+        },
+        {
+          "title": "Bookmark (b)",
+          "x": 205.578125,
+          "right": 292
+        }
+      ]
+    },
+    "requests": [
+      {
+        "name": "inter-latin-700-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "inter-latin-400-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "material-symbols-outlined-latin-400-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "inter-latin-600-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "inter-latin-500-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "merriweather-latin-700-normal.woff2",
+        "served": true
+      },
+      {
+        "name": "merriweather-latin-400-normal.woff2",
+        "served": true
+      }
+    ]
+  },
+  {
+    "servedBook320": {
+      "article": 264,
+      "mainClient": 320,
+      "mainScroll": 320,
+      "doc": 320,
+      "fonts": [
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "unloaded"
+        },
+        {
+          "family": "Inter",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "unloaded"
+        },
+        {
+          "family": "Merriweather",
+          "status": "loaded"
+        },
+        {
+          "family": "Material Symbols Outlined",
+          "status": "loaded"
+        }
+      ],
+      "actions": [
+        {
+          "title": "Copy Link to Page (l)",
+          "x": 105.9375,
+          "right": 197.578125
+        },
+        {
+          "title": "Bookmark (b)",
+          "x": 205.578125,
+          "right": 292
+        }
+      ]
+    }
+  }
+]

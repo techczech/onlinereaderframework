@@ -42,12 +42,33 @@ with sync_playwright() as p:
   page.goto('https://repair.test/?book=a&section=one');page.evaluate(SPEECH);page.add_style_tag(content=payload['css']);page.add_script_tag(content=payload['bundle'])
   def mount(book='a',audio=None):
    page.evaluate('([id,audio])=>{history.replaceState(null,"","/?book="+id+"&section=one");window.mount(id,audio)}',[book,audio]);page.locator('[data-publication-content]').wait_for();page.wait_for_timeout(100)
-  control=lambda name:page.locator('.publication-toolbar-actions > button').filter(has_text=name)
+  control=lambda name:page.locator('.publication-toolbar-actions > button[aria-label^="%s"]'%name)
   menu=lambda name:page.get_by_role('dialog',name=name,exact=True)
   def openmenu(name):
    if menu(name).count()==0:control(name).click()
   state=lambda:page.evaluate('({tag:document.activeElement.tagName,label:document.activeElement.getAttribute("aria-label")||document.activeElement.textContent?.slice(0,40),disabled:document.activeElement.matches(":disabled"),inMenu:!!document.activeElement.closest("[data-reader-menu]")&&!document.activeElement.matches(":disabled")})')
   mount()
+  # 0. Icon tooltips are hoverable, dismissible with Escape (focus kept, no menu opened) and rearmed only by a new hover or focus.
+  tipstate=lambda:control('Formatting').evaluate('e=>getComputedStyle(e,"::after").opacity+" "+getComputedStyle(e,"::after").visibility')
+  tipbox=control('Formatting').evaluate('e=>{const s=getComputedStyle(e,"::after");return parseFloat(s.height)}')
+  b0=control('Formatting').bounding_box();cx=b0['x']+b0['width']/2;cy=b0['y']+b0['height']/2
+  page.mouse.move(5,5);page.mouse.move(cx,cy);page.wait_for_timeout(200)
+  gaps=[]
+  for dy in range(0,int(b0['height']/2+tipbox-3),2):
+   page.mouse.move(cx,cy+dy);page.wait_for_timeout(15)
+   if tipstate()!='1 visible':gaps.append(dy)
+  check('tooltip: the pointer reaches the label with no dead zone',not gaps,gaps)
+  check('tooltip: no native title duplicates the label',control('Formatting').get_attribute('title') is None)
+  page.wait_for_timeout(300);check('tooltip: it stays while the pointer rests on the label',tipstate()=='1 visible',tipstate())
+  page.keyboard.press('Escape');page.wait_for_timeout(120)
+  check('tooltip: Escape dismisses it without opening a menu',tipstate()!='1 visible' and menu('Formatting').count()==0,[tipstate(),page.evaluate('[document.querySelector(".publication-toolbar-actions").hasAttribute("data-tip-dismissed"),document.querySelector(".publication-toolbar-actions").matches(":hover"),String(document.activeElement.tagName),document.querySelectorAll("[aria-expanded=true]").length]')])
+  page.mouse.move(5,5);page.wait_for_timeout(100);page.mouse.move(cx,cy);page.wait_for_timeout(180)
+  check('tooltip: a new hover shows it again',tipstate()=='1 visible',tipstate())
+  page.mouse.move(5,5);control('Formatting').focus();page.keyboard.press('Escape');page.wait_for_timeout(120)
+  check('tooltip: Escape on a focused control hides it and keeps focus',tipstate()!='1 visible' and control('Formatting').evaluate('e=>e===document.activeElement'),tipstate())
+  page.keyboard.press('Shift+Tab');page.keyboard.press('Tab');page.wait_for_timeout(300)
+  check('tooltip: focusing again shows it',tipstate()=='1 visible',tipstate())
+  page.keyboard.press('Escape');page.mouse.move(5,5)
   # 1. Keyboard containment after an action disables the focused button.
   openmenu('Formatting');menu('Formatting').get_by_role('button',name='Increase text size').click()
   menu('Formatting').get_by_role('button',name='Reset formatting').click()

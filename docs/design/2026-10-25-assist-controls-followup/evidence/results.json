@@ -1,0 +1,328 @@
+[
+ {
+  "name": "five icon-only controls, no visible text",
+  "passed": true,
+  "detail": [
+   [
+    "Listen",
+    "headphones"
+   ],
+   [
+    "Formatting",
+    "text_fields"
+   ],
+   [
+    "Assist",
+    "eyeglasses"
+   ],
+   [
+    "Open notes and highlights",
+    "ink_highlighter"
+   ],
+   [
+    "Theme: Follow computer (now light)",
+    "brightness_auto"
+   ]
+  ]
+ },
+ {
+  "name": "tooltip visible on hover",
+  "passed": true,
+  "detail": {
+   "op": "1",
+   "vis": "visible",
+   "txt": "\"Assist\""
+  }
+ },
+ {
+  "name": "tooltip hidden when not hovered",
+  "passed": true,
+  "detail": "0"
+ },
+ {
+  "name": "tooltip visible on keyboard focus",
+  "passed": true,
+  "detail": "1"
+ },
+ {
+  "name": "theme popover has three choices",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "theme popover is small",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "explicit Dark applies .dark",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "theme saved per book",
+  "passed": true,
+  "detail": [
+   "publication-reader:deliberate-practice:textWidth",
+   "publication-reader:deliberate-practice:bookmarkedSections",
+   "publication-reader:deliberate-practice:highlights",
+   "publication-reader:deliberate-practice:lastSection",
+   "publication-reader:deliberate-practice:readSections",
+   "publication-reader:deliberate-practice:reflections",
+   "publication-reader:deliberate-practice:theme"
+  ]
+ },
+ {
+  "name": "explicit Light stays light under dark computer",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "Follow computer is dark under dark computer",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "Follow computer changes live to light",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "Formatting has no theme control",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "another book still follows computer (light)",
+  "passed": true,
+  "detail": [
+   "publication-reader:linguistics:theme",
+   "publication-reader:linguistics:highlights",
+   "publication-reader:linguistics:reflections",
+   "publication-reader:deliberate-practice:lastSection",
+   "publication-reader:deliberate-practice:readSections",
+   "publication-reader:deliberate-practice:reflections",
+   "publication-reader:deliberate-practice:theme",
+   "publication-reader:linguistics:readSections",
+   "publication-reader:linguistics:textWidth",
+   "publication-reader:deliberate-practice:bookmarkedSections",
+   "publication-reader:deliberate-practice:highlights",
+   "publication-reader:linguistics:bookmarkedSections",
+   "publication-reader:deliberate-practice:textWidth",
+   "publication-reader:linguistics:lastSection"
+  ]
+ },
+ {
+  "name": "one unified choice Off/Paragraph/Line window/Ruler",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "no separate paragraph focus switch",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "navigation initially visible",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "paragraph assist hides navigation by default",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "Hide navigation switch reflects default on",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "reflection prompt hidden during assist",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "only the active paragraph is clear",
+  "passed": true,
+  "detail": [
+   "0.1",
+   "0.1",
+   "1",
+   "0.1",
+   "0.1"
+  ]
+ },
+ {
+  "name": "paragraph Light fades others to 0.28",
+  "passed": true,
+  "detail": "0.28"
+ },
+ {
+  "name": "paragraph Medium fades others to 0.10",
+  "passed": true,
+  "detail": "0.1"
+ },
+ {
+  "name": "paragraph Dark fades others to 0.00",
+  "passed": true,
+  "detail": "0"
+ },
+ {
+  "name": "line window shade is fully opaque at Dark",
+  "passed": true,
+  "detail": "rgb(28, 28, 32)"
+ },
+ {
+  "name": "shade spans whole scrolling page height and width",
+  "passed": true,
+  "detail": {
+   "n": 2,
+   "m": [
+    [
+     -104.21875,
+     291.4375,
+     "rgb(28, 28, 32)"
+    ],
+    [
+     404.328125,
+     2306.765625,
+     "rgb(28, 28, 32)"
+    ]
+   ],
+   "scrollH": 2411,
+   "oh": 2411,
+   "ow": 1280,
+   "cw": 1280,
+   "bg": "rgb(28, 28, 32)"
+  }
+ },
+ {
+  "name": "two shaded regions around a window",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "window follows the pointer into another paragraph",
+  "passed": true,
+  "detail": [
+   [
+    [
+     -702.21875,
+     232.09375
+    ],
+    [
+     392.40625,
+     1708.765625
+    ]
+   ],
+   {
+    "x": 344.75,
+    "y": 327.96875,
+    "width": 590.484375,
+    "height": 193.78125
+   }
+  ]
+ },
+ {
+  "name": "reader can show navigation while assisted",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "assist off restores pre-assist navigation (visible)",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "manual hide survives an assist cycle",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "unsaved draft kept across assist",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "notes drawer usable during assist and shows the saved reflection",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "stored paragraph focus appears as Paragraph",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "other prefs kept (sans)",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "legacy false on a dark computer is kept as explicit Light",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "no stored value follows a dark computer",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "phone: five icon buttons at least 44px high and inside the window",
+  "passed": true,
+  "detail": [
+   [
+    "Listen",
+    66,
+    48,
+    16,
+    82
+   ],
+   [
+    "Formatting",
+    67,
+    48,
+    89,
+    155
+   ],
+   [
+    "Assist",
+    66,
+    48,
+    162,
+    228
+   ],
+   [
+    "Open notes and highlights",
+    66,
+    48,
+    235,
+    301
+   ],
+   [
+    "Theme: Follow computer (now light)",
+    66,
+    48,
+    308,
+    374
+   ]
+  ]
+ },
+ {
+  "name": "phone: no horizontal overflow",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "name": "phone: theme popover inside window",
+  "passed": true,
+  "detail": {
+   "x": 102,
+   "y": 114.390625,
+   "width": 272,
+   "height": 206.9375
+  }
+ }
+]

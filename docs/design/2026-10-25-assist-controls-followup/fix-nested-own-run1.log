@@ -1,0 +1,66 @@
+mounted
+assisted
+PASS Paragraph Light: hovering lt-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering lt-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering c0 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering c7 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering sp-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering sp-child leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering sp-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering bq-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering bq-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering bq-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering cell-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering cell-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering cell-tail leaves it clear and every other reading unit dimmed once
+FAIL Paragraph Light: hovering h1 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Light: hovering plain leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering lt-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering lt-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering c0 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering c7 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering sp-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering sp-child leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering sp-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering bq-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering bq-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering bq-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering cell-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering cell-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering cell-tail leaves it clear and every other reading unit dimmed once
+FAIL Paragraph Medium: hovering h1 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Medium: hovering plain leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering lt-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering lt-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering c0 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering c7 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering sp-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering sp-child leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering sp-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering bq-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering bq-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering bq-tail leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering cell-lead leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering cell-p leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering cell-tail leaves it clear and every other reading unit dimmed once
+FAIL Paragraph Dark: hovering h1 leaves it clear and every other reading unit dimmed once
+PASS Paragraph Dark: hovering plain leaves it clear and every other reading unit dimmed once
+PASS parent lead, a child and parent tail are three separately readable units
+FAIL keyboard visits lead text, children and tail text in reading order
+FAIL Line window Dark: lt-lead is clear when hovered
+FAIL Line window Dark: lt-tail is clear when hovered
+PASS Line window Dark: c0 is clear when hovered
+PASS Line window Dark: sp-lead is clear when hovered
+PASS Line window Dark: sp-tail is clear when hovered
+PASS Line window Dark: bq-lead is clear when hovered
+PASS Line window Dark: bq-tail is clear when hovered
+PASS Line window Dark: cell-lead is clear when hovered
+FAIL Line window Dark: cell-tail is clear when hovered
+FAIL Line window Dark: the window follows lead to tail and shades the other
+PASS Line window Dark: shade geometry differs between the lead and the tail
+PASS assist off restores the exact authored markup, text and MathML
+PASS the original text and element nodes are the same live nodes (nothing wrapped or split)
+FAIL while assist is on only data-rs attributes differ; text and MathML are identical
+PASS a text selection inside the parent text survives dimming and re-targeting
+PASS no page errors
+{"checks": 63, "failed": ["Paragraph Light: hovering h1 leaves it clear and every other reading unit dimmed once", "Paragraph Medium: hovering h1 leaves it clear and every other reading unit dimmed once", "Paragraph Dark: hovering h1 leaves it clear and every other reading unit dimmed once", "keyboard visits lead text, children and tail text in reading order", "Line window Dark: lt-lead is clear when hovered", "Line window Dark: lt-tail is clear when hovered", "Line window Dark: cell-tail is clear when hovered", "Line window Dark: the window follows lead to tail and shades the other", "while assist is on only data-rs attributes differ; text and MathML are identical"]}

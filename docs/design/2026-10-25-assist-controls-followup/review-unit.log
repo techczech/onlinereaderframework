@@ -1,0 +1,27 @@
+✔ hostile storage and invalid ranges return safe preferences (0.733916ms)
+✔ per-book round trip and reset values remain bounded (0.139208ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.064209ms)
+✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.130542ms)
+✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.082958ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.04825ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.0695ms)
+✔ theme follows the computer by default; Light and Dark are explicit (0.538667ms)
+✔ legacy dark-mode boolean: no record follows the computer; a value equal to the computer is not claimed as a choice; a differing one is kept (0.058583ms)
+✔ tooltip text states the choice and what Follow computer means now (0.072833ms)
+✔ steppers stay inside the saved-preference bounds without float drift (0.429625ms)
+✔ dimming levels map to saved values; older in-between values are reported as custom (0.290292ms)
+✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.094625ms)
+✔ assist summary states what is actually on (0.131416ms)
+✔ letter spacing reads Normal at zero (0.047459ms)
+✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.226333ms)
+✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.111833ms)
+✔ theme is its own small icon control and is not in Formatting (0.129ms)
+✔ toolbar dim levels equal the preference levels (0.129083ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.368291
