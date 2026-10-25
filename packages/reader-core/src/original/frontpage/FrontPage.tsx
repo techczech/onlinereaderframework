@@ -1,5 +1,5 @@
 import React, { useId, useMemo, useRef, useState } from 'react';
-import type { PublicationBook } from '../types.js';
+import type { PublicationAgentAccess, PublicationBook } from '../types.js';
 import { safePublicationHref } from '../publication-model.js';
 import { publicationLabels } from '../publication-navigation.js';
 import type { FrontPageLayoutKey } from './frontpage-layouts.js';
@@ -17,12 +17,13 @@ export interface FrontPageProps {
   readSections?: ReadonlySet<string>;
   /** The last page the reader opened in this book, from the reader's saved state. */
   lastSectionId?: string | null;
+  agent?: PublicationAgentAccess;
 }
 
 const noneRead: ReadonlySet<string> = new Set();
 
 /** One front page for every layout: the book data, contents, actions and saved state are shared; the layout component only arranges them. */
-export function FrontPage({ book, layout, onStart, onSelectSection, onOpenSearch, onDownloadEbook, readSections = noneRead, lastSectionId }: FrontPageProps) {
+export function FrontPage({ book, layout, onStart, onSelectSection, onOpenSearch, onDownloadEbook, readSections = noneRead, lastSectionId, agent }: FrontPageProps) {
   const id = useId();
   const labels = publicationLabels(book);
   const contents = useMemo(() => frontPageContents(book), [book]);
@@ -39,7 +40,7 @@ export function FrontPage({ book, layout, onStart, onSelectSection, onOpenSearch
     showContents: book.navigation?.showHomeContents !== false && contents.groups.length > 0,
     full, setFull, opened, query, setQuery, matches, filterRef,
     toggle: key => setOpened(previous => { const next = new Set(previous); if (!next.delete(key)) next.add(key); return next; }),
-    onStart, onSelectSection, onOpenSearch,
+    onStart, onSelectSection, onOpenSearch, agent,
     downloads, canGenerate: !downloads.length && !!onDownloadEbook, generating,
     generate: async () => { setGenerating(true); try { await onDownloadEbook?.(); } finally { setGenerating(false); } },
   };

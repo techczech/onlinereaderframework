@@ -1,0 +1,8 @@
+Built source browser fixture in memory, saved only under review scratch.
+PASS boundary fixture preserves DOM and canonical text {"before": {"html": "<h1 id=\"reader-content-chapter-one\" data-rs-paragraph=\"\" data-rs-active=\"\">Chapter one</h1><h2 id=\"reader-content-opening-section\" data-rs-paragraph=\"\">Opening section</h2><p
+FAIL neither lead nor new remainder range crosses excluded inline content [{"painted": "extraordinaryCODEsuffix.", "kind": "code", "text": "extraordinaryCODEsuffix.", "excludedText": "CODE", "lead": [], "rest": ["naryCODEsuffix."], "baseColour": "rgb(17, 24, 3
+FAIL every eligible character of each boundary token is still painted exactly once (excluded text is not, prose around it is) [["code", "extraordinaryCODEsuffix."], ["kbd", "extraordinaryKBDsuffix."], ["samp", "extraordinarySAMPsuffix."], ["math", "extraordina
+PASS inline author colour inside a split token is unchanged and its text stays in a range ["rgb(200, 0, 0)"]
+PASS both anchored highlights retain priority below paragraph dimming and speech {"lead": -1, "rest": -1}
+PASS Off removes both highlights after inline boundary fixture null
+RED-exit

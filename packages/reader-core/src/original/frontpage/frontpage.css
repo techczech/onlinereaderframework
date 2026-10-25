@@ -1,6 +1,6 @@
 /* Configurable front pages. One set of shared parts; each layout only changes geometry.
    Widths respond to the reading area (container queries), never to the window. */
-.publication-reader .publication-front { container: pf / inline-size; --pf-line: color-mix(in srgb, var(--reader-ink), transparent 85%); --pf-muted: color-mix(in srgb, var(--reader-ink), transparent 32%);
+.publication-reader .publication-front { container: pf / inline-size; --pf-line: color-mix(in srgb, var(--reader-ink), transparent 85%); --pf-hairline: color-mix(in srgb, var(--reader-ink), transparent 90%); --pf-muted: color-mix(in srgb, var(--reader-ink), transparent 32%);
   --pf-tint: color-mix(in srgb, var(--reader-accent), var(--reader-paper) 91%); --pf-raised: color-mix(in srgb, var(--reader-paper), white 40%); --pf-field: color-mix(in srgb, var(--reader-paper), white 35%); --pf-gutter: clamp(1rem, 4cqi, 3.5rem);
   --pf-title-font: Merriweather, Georgia, serif; --pf-title-weight: 700; --pf-title-style: normal; --pf-title-tracking: -.02em;
   min-height: 100%; }
@@ -12,7 +12,7 @@
 .publication-reader .publication-front .publication-front-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .publication-reader .publication-front .publication-front-icon { font-size: 1.25rem; line-height: 1; flex: none; }
 /* Dark appearance: a light lift would put the light ink on a mid-grey surface, so raised surfaces move a little toward the ink instead. */
-.publication-reader.dark .publication-front { --pf-raised: color-mix(in srgb, var(--reader-paper), var(--reader-ink) 7%); --pf-field: color-mix(in srgb, var(--reader-paper), var(--reader-ink) 5%); --pf-line: color-mix(in srgb, var(--reader-ink), transparent 72%); }
+.publication-reader.dark .publication-front { --pf-raised: color-mix(in srgb, var(--reader-paper), var(--reader-ink) 7%); --pf-field: color-mix(in srgb, var(--reader-paper), var(--reader-ink) 5%); --pf-line: color-mix(in srgb, var(--reader-ink), transparent 72%); --pf-hairline: color-mix(in srgb, var(--reader-ink), transparent 84%); }
 .publication-reader .publication-front .pf-shell { max-width: 90rem; margin-inline: auto; padding: clamp(1.25rem, 3cqi, 2.5rem) var(--pf-gutter) 0; }
 
 /* title block, copy, cover */
@@ -67,15 +67,16 @@
 .publication-reader .publication-front .publication-front-group-page:hover { text-decoration-color: currentColor; }
 .publication-reader .publication-front .publication-front-group-title { overflow-wrap: anywhere; }
 .publication-reader .publication-front .publication-front-group-count { margin-left: auto; padding-left: .5rem; font-size: .76rem; font-weight: 400; color: var(--pf-muted); white-space: nowrap; }
-.publication-reader .publication-front .publication-front-entries { margin-top: .5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: .45rem; }
+.publication-reader .publication-front .publication-front-entries { margin-top: .35rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 0 1.75rem; }
 .publication-reader .publication-front .publication-front-entries > .is-heading { grid-column: 1 / -1; }
 .publication-reader .publication-front .publication-front-entry { padding-left: calc(var(--depth, 0) * 1rem); min-width: 0; }
-.publication-reader .publication-front .publication-front-entry > button { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: start; align-items: start; gap: .25rem .6rem; width: 100%; height: 100%; min-height: 2.9rem; padding: .6rem .8rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 78%); border-radius: .6rem; background: var(--pf-raised); text-align: left; font-size: .92rem; line-height: 1.4; color: inherit; box-shadow: 0 1px 2px color-mix(in srgb, var(--reader-ink), transparent 90%); cursor: pointer; }
-.publication-reader .publication-front .publication-front-entry > button:hover { background: var(--pf-tint); border-color: var(--reader-accent); color: var(--reader-accent); }
-.publication-reader .publication-front .publication-front-entry > button:focus-visible { outline: 2px solid var(--reader-accent); outline-offset: 2px; border-color: var(--reader-accent); }
+/* A chapter is a row, not a card: a hairline under it, the full title, and an accent only on hover, focus and the last opened chapter. */
+.publication-reader .publication-front .publication-front-entry > button { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: start; align-items: start; gap: .2rem .6rem; width: 100%; height: 100%; min-height: 2.9rem; padding: .6rem .5rem; border: 0; border-bottom: 1px solid var(--pf-hairline); border-radius: 0; background: transparent; text-align: left; font-size: .92rem; line-height: 1.4; color: inherit; box-shadow: none; cursor: pointer; }
+.publication-reader .publication-front .publication-front-entry > button:hover { background: color-mix(in srgb, var(--reader-accent), transparent 93%); color: var(--reader-accent); box-shadow: inset 2px 0 0 var(--reader-accent); }
+.publication-reader .publication-front .publication-front-entry > button:focus-visible { outline: 2px solid var(--reader-accent); outline-offset: -2px; background: color-mix(in srgb, var(--reader-accent), transparent 93%); }
 .publication-reader .publication-front .publication-front-entry.is-heading > span { display: block; padding: .35rem 0; font-size: .85rem; font-weight: 700; color: var(--pf-muted); }
 .publication-reader .publication-front .publication-front-entry.is-read .publication-front-entry-title { opacity: .75; }
-.publication-reader .publication-front .publication-front-entry.is-last > button { background: var(--pf-tint); border-color: var(--reader-accent); box-shadow: inset 3px 0 0 var(--reader-accent); }
+.publication-reader .publication-front .publication-front-entry.is-last > button { background: color-mix(in srgb, var(--reader-accent), transparent 94%); box-shadow: inset 3px 0 0 var(--reader-accent); }
 .publication-reader .publication-front .publication-front-entry-title { grid-column: 1; grid-row: 2; min-width: 0; overflow-wrap: anywhere; }
 .publication-reader .publication-front .publication-front-entry-meta { grid-row: 2; }
 .publication-reader .publication-front .publication-front-entry-meta { grid-column: 2; display: inline-flex; align-items: center; gap: .3rem; font-size: .72rem; white-space: nowrap; color: var(--reader-accent); }
@@ -163,10 +164,10 @@
 .publication-reader .publication-front .pf-b-side > * { width: 100%; justify-content: center; }
 .publication-reader .publication-front .pf-b-find { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: 1.6rem 0 1.4rem; padding: 1.1rem 1.2rem; border-radius: 1rem; background: var(--pf-tint); }
 .publication-reader .publication-front .pf-b-map { margin-top: 0; }
-.publication-reader .publication-front .publication-front-groups.is-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .9rem; }
-.publication-reader .publication-front .publication-front-groups.is-tiles > .publication-front-group { padding: .9rem 1rem .75rem; border: 1px solid var(--pf-line); border-top: 4px solid var(--reader-accent); border-radius: .75rem; background: var(--pf-raised); }
+.publication-reader .publication-front .publication-front-groups.is-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .9rem 1.75rem; }
+.publication-reader .publication-front .publication-front-groups.is-tiles > .publication-front-group { padding: .8rem 0 .5rem; border: 0; border-top: 2px solid color-mix(in srgb, var(--reader-accent), transparent 45%); background: transparent; }
 .publication-reader .publication-front .publication-front-groups.is-tiles > .is-open:has(.publication-front-entry:nth-child(4)) { grid-column: 1 / -1; }
-.publication-reader .publication-front .publication-front-groups.is-tiles > .is-single { border-top-style: dashed; }
+.publication-reader .publication-front .publication-front-groups.is-tiles > .is-single { border-top-width: 1px; border-top-color: var(--pf-line); }
 .publication-reader .publication-front .publication-front-more { margin-top: .3rem; padding: .35rem 0; min-height: 2rem; border: 0; background: none; color: var(--reader-accent); font-weight: 700; font-size: .82rem; }
 @container pf (max-width: 899px) { .publication-reader .publication-front .pf-b-mast { grid-template-columns: 5rem 1fr; } .publication-reader .publication-front .pf-b-side { grid-column: 1 / -1; grid-template-columns: 1fr auto; } }
 @container pf (max-width: 639px) { .publication-reader .publication-front .pf-b-mast { grid-template-columns: 4rem 1fr; gap: .9rem; } .publication-reader .publication-front .pf-b-mast .publication-description { display: none; } .publication-reader .publication-front .pf-b-side { grid-template-columns: 1fr; } .publication-reader .publication-front .pf-b-find { padding: .9rem; } }

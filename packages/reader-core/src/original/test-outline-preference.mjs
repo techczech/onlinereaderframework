@@ -1,0 +1,21 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import ts from 'typescript';
+const source = readFileSync(new URL('./outline-preference.ts', import.meta.url), 'utf8');
+const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText;
+const m = await import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
+test('outline fold is kept per book and survives blocked storage for the visit', () => {
+  m.forgetOutlineVisit();
+  const items = new Map();
+  const storage = { getItem: k => items.get(k) ?? null, setItem: (k, v) => items.set(k, v) };
+  assert.equal(m.readOutlineCollapsed('a', storage), false);
+  assert.equal(m.writeOutlineCollapsed('a', true, storage), true);
+  m.forgetOutlineVisit();
+  assert.equal(m.readOutlineCollapsed('a', storage), true);
+  assert.equal(m.readOutlineCollapsed('b', storage), false);
+  const denied = { getItem() { throw Error('no'); }, setItem() { throw Error('no'); } };
+  assert.equal(m.writeOutlineCollapsed('c', true, denied), false);
+  assert.equal(m.readOutlineCollapsed('c', denied), true);
+  assert.equal(m.readOutlineCollapsed('d', denied), false);
+});

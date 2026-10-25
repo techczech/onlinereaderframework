@@ -20,7 +20,7 @@ export function PublicationReader(props: PublicationReaderProps) {
   return <BookReader key={props.book.id} {...props} />;
 }
 
-function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
+function BookReader({ book, coaching, epub, audio, agent }: PublicationReaderProps) {
   const reader = usePublicationReader(book, epub);
   // The recorded player exists only when a track has a usable source and belongs to a section of this book, as the controller requires.
   const hasRecordedAudio = !!audio?.some(track => safeRecordingSource(track.src) && reader.sections.some(section => section.id === track.sectionId));
@@ -40,7 +40,7 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
     listenTrigger.current = trigger;
     setListeningOpen(true);
   };
-  return <ReaderLayout reader={reader} coaching={coaching}
+  return <ReaderLayout reader={reader} coaching={coaching} agent={agent || undefined}
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
     hasRecordedAudio={hasRecordedAudio} onOpenRecordedAudio={openListening}
     onBrowserSpeechStart={() => { pauseRecording.current?.(); setPauseSignal(value => value + 1); setBoundary(null); }}
@@ -53,4 +53,4 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
     </div> : null} />;
 }
 
-export type { PublicationBook, PublicationSection, PublicationContentFormat, PublicationReaderProps, PublicationCoaching } from './types.js';
+export type { PublicationBook, PublicationSection, PublicationContentFormat, PublicationReaderProps, PublicationCoaching, PublicationAgentAccess } from './types.js';

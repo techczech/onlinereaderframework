@@ -8,7 +8,8 @@ import { QuoteImageModal } from './QuoteImageModal.js';
 import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
 import { publicationLabels, publicationColour } from './publication-navigation.js';
-import type { PublicationCoaching } from './types.js';
+import type { PublicationAgentAccess, PublicationCoaching } from './types.js';
+import { AgentAccess } from './agent/AgentAccess.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
 import { isReadableSection, sectionAncestors } from './sidebar-model.js';
 import type { usePublicationReader } from './use-publication-reader.js';
@@ -20,6 +21,8 @@ import { useReadingSupport } from './reading-support/use-reading-support.js';
 export interface ReaderLayoutProps {
   reader: ReturnType<typeof usePublicationReader>;
   coaching?: PublicationCoaching;
+  /** Generated agent files exist for this book: show the ask-an-agent box. */
+  agent?: PublicationAgentAccess;
   readingSurface?: (children: React.ReactNode) => React.ReactNode;
   listeningPanel?: React.ReactNode;
   /** True only when the host configured at least one playable recording; the recorded option is hidden otherwise. */
@@ -29,7 +32,7 @@ export interface ReaderLayoutProps {
 }
 
 /** Original reader actions and annotations, with independently measured article and navigation. */
-export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
+export function ReaderLayout({ reader, coaching, agent, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
   // The toolbar needs the read-aloud state but not the sentence and word positions, so the layout does not re-render for every spoken word.
   const [readAloud, setReadAloud] = useState<{ snapshot: ReadAloudSnapshot; actions: ReadAloudActions } | null>(null);
   const onReadAloudChange = useCallback((snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => {
@@ -141,6 +144,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                     book={book}
                     onStart={() => { const first = sections.find(isReadableSection); if (first) handleSectionChange(first.id); }} 
                     onSelectSection={handleSectionChange}
+                    agent={agent}
                     onOpenSearch={handleOpenSearch}
                     readSections={readSections}
                     lastSectionId={lastSectionId}
@@ -224,6 +228,8 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                             </div>
                         )}
 
+                        {agent && currentSection && !isImmersiveMode && <AgentAccess book={book} access={agent} section={currentSection} variant="quiet" />}
+
                         {/* Navigation Footer */}
                         <div className="flex justify-between items-center border-t border-gray-200 dark:border-gray-800 pt-8 mb-12">
                             {prevSection ? (
@@ -257,7 +263,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                     </div>
 
                     {/* Right TOC Sidebar - Hidden in Immersive Mode */}
-                    {currentSection && !isImmersiveMode && <TableOfContents ref={tocRef} fallbackRef={compactTocRef} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
+                    {currentSection && !isImmersiveMode && <TableOfContents ref={tocRef} fallbackRef={compactTocRef} bookId={book.id} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
                 </div>
             )}
         </div>

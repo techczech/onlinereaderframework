@@ -16,6 +16,7 @@ import '../../../packages/reader-core/src/original/reading-support/support.css';
 import '../../../packages/reader-core/src/original/listening/listening.css';
 import '../../../packages/reader-core/src/original/reader-integrations.css';
 import '../../../packages/reader-core/src/original/frontpage/frontpage.css';
+import '../../../packages/reader-core/src/original/agent/agent-access.css';
 import './index.css';
 
 const rootElement = document.getElementById('root');

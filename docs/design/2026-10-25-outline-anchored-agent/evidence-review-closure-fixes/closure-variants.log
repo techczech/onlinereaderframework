@@ -1,0 +1,64 @@
+PASS HTTP chapter targets from agent relative /chapters/alpha.md {"hrefs":["target.md","target.md","target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained agent false /chapters/alpha.md null
+PASS HTTP chapter targets from agent relative /full.md {"hrefs":["chapters/target.md","chapters/target.md","chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained agent false /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit agent false {"href":"target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated agent false null
+PASS manifest counts and helpers consistent agent false null
+PASS root discovery helper matches agent false null
+PASS HTTP chapter targets from agent absolute /chapters/alpha.md {"hrefs":["http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained agent true /chapters/alpha.md null
+PASS HTTP chapter targets from agent absolute /full.md {"hrefs":["http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained agent true /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit agent true {"href":"http://127.0.0.1:61196/read/sub/agent/closure-book/chapters/target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated agent true null
+PASS manifest counts and helpers consistent agent true null
+PASS root discovery helper matches agent true null
+PASS HTTP chapter targets from v2.1/assets/_agents-2 relative /chapters/alpha.md {"hrefs":["target.md","target.md","target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 false /chapters/alpha.md null
+PASS HTTP chapter targets from v2.1/assets/_agents-2 relative /full.md {"hrefs":["chapters/target.md","chapters/target.md","chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 false /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit v2.1/assets/_agents-2 false {"href":"target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated v2.1/assets/_agents-2 false null
+PASS manifest counts and helpers consistent v2.1/assets/_agents-2 false null
+PASS root discovery helper matches v2.1/assets/_agents-2 false null
+PASS HTTP chapter targets from v2.1/assets/_agents-2 absolute /chapters/alpha.md {"hrefs":["http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 true /chapters/alpha.md null
+PASS HTTP chapter targets from v2.1/assets/_agents-2 absolute /full.md {"hrefs":["http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 true /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit v2.1/assets/_agents-2 true {"href":"http://127.0.0.1:61196/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated v2.1/assets/_agents-2 true null
+PASS manifest counts and helpers consistent v2.1/assets/_agents-2 true null
+PASS root discovery helper matches v2.1/assets/_agents-2 true null
+PASS HTTP chapter targets from ./a/./b/ relative /chapters/alpha.md {"hrefs":["target.md","target.md","target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained ./a/./b/ false /chapters/alpha.md null
+PASS HTTP chapter targets from ./a/./b/ relative /full.md {"hrefs":["chapters/target.md","chapters/target.md","chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained ./a/./b/ false /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit ./a/./b/ false {"href":"target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated ./a/./b/ false null
+PASS manifest counts and helpers consistent ./a/./b/ false null
+PASS root discovery helper matches ./a/./b/ false null
+PASS HTTP chapter targets from ./a/./b/ absolute /chapters/alpha.md {"hrefs":["http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained ./a/./b/ true /chapters/alpha.md null
+PASS HTTP chapter targets from ./a/./b/ absolute /full.md {"hrefs":["http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md","http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md#reader-content-part"]}
+PASS unrelated authored hrefs and escaped code retained ./a/./b/ true /full.md null
+PASS absent heading is carried unchanged under the documented fragment limit ./a/./b/ true {"href":"http://127.0.0.1:61196/read/sub/a/b/closure-book/chapters/target.md#missing-heading","chapterExists":true,"fragmentExists":false}
+PASS unknown links truthful and deduplicated ./a/./b/ true null
+PASS manifest counts and helpers consistent ./a/./b/ true null
+PASS root discovery helper matches ./a/./b/ true null
+PASS nested reader links all resolve to the reader root {"requests":36,"traversals":0}
+PASS both generators reject invalid directory variants without writes {"rejected":52,"expected":52}
+PASS dot segments normalise consistently null
+PASS exact Markdown chapter bytes "# Existing\n\nTail\n\n" {"expected":"# Existing\n\nTail\n\n","actual":"# Existing\n\nTail\n\n"}
+PASS source and separators remain distinct in full "# Existing\n\nTail\n\n" null
+PASS exact Markdown chapter bytes "no newline" {"expected":"# raw\n\nno newline","actual":"# raw\n\nno newline"}
+PASS source and separators remain distinct in full "no newline" null
+PASS exact Markdown chapter bytes "one trailing space " {"expected":"# raw\n\none trailing space ","actual":"# raw\n\none trailing space "}
+PASS source and separators remain distinct in full "one trailing space " null
+PASS exact Markdown chapter bytes "hard break  \nnext\\\n```txt\ncode  \n```\n  " {"expected":"# raw\n\nhard break  \nnext\\\n```txt\ncode  \n```\n  ","actual":"# raw\n\nhard break  \nnext\\\n```txt\ncode  \n```\n  "}
+PASS source and separators remain distinct in full "hard break  \nnext\\\n```txt\ncode  \n```\n  " null
+PASS exact Markdown chapter bytes "" {"expected":"# raw\n\n","actual":"# raw\n\nThis section has no text of its own. It contains:\n\n"}
+PASS exact Markdown chapter bytes " \n\t  " {"expected":"# raw\n\n \n\t  ","actual":"# raw\n\n \n\t  "}
+PASS Markdown source exact before chapter note null
+PASS only chapter notes outside code and citations {"note":"\n\n> Chapter links in this section, as exported files:\n>\n> - [go](target.md) (written as `#/target`)\n> - missing: `#/absent` has no exported file\n"}
+PASS href-like title text and citation untouched {"sanitised":"<p><a title=\"example href=&#x22;#/target&#x22;\" href=\"https://citation.example/\">Citation title</a></p>","actual":"# alpha\n\n<p><a title=\"example href=&#x22;#/target&#x22;\" href=\"https://citation.example/\">Citation title</a></p>\n"}

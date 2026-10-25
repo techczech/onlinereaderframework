@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "name": "Contrast leaves every excluded kind at its exact existing colour (math, pre, kbd, samp, ignored, inline code, author-coloured code; in an author-coloured and in a plain paragraph)",
+      "passed": true,
+      "detail": {
+        "before": {
+          "kbd": "rgb(17, 24, 39)",
+          "samp": "rgb(120, 40, 40)",
+          "ignored": "rgb(120, 40, 40)",
+          "inlineCode": "rgb(17, 24, 39)",
+          "coloured": "rgb(0, 100, 200)",
+          "math": "rgb(10, 120, 30)",
+          "pre": "rgb(229, 231, 235)",
+          "plainMath": "rgb(37, 48, 60)",
+          "plainKbd": "rgb(17, 24, 39)",
+          "plainSamp": "rgb(37, 48, 60)",
+          "plainIgnored": "rgb(37, 48, 60)",
+          "plainCode": "rgb(17, 24, 39)",
+          "plainProse": "rgb(37, 48, 60)"
+        },
+        "on": {
+          "kbd": "rgb(17, 24, 39)",
+          "samp": "rgb(120, 40, 40)",
+          "ignored": "rgb(120, 40, 40)",
+          "inlineCode": "rgb(17, 24, 39)",
+          "coloured": "rgb(0, 100, 200)",
+          "math": "rgb(10, 120, 30)",
+          "pre": "rgb(229, 231, 235)",
+          "plainMath": "rgb(37, 48, 60)",
+          "plainKbd": "rgb(17, 24, 39)",
+          "plainSamp": "rgb(37, 48, 60)",
+          "plainIgnored": "rgb(37, 48, 60)",
+          "plainCode": "rgb(17, 24, 39)",
+          "plainProse": "rgb(37, 48, 60)"
+        }
+      }
+    },
+    {
+      "name": "Contrast does not recolour the parent prose block and writes nothing to the markup (DOM signature ignoring the surface own data-rs-* marks)",
+      "passed": true,
+      "detail": {
+        "prose": [
+          "rgb(120, 40, 40)",
+          "rgb(120, 40, 40)"
+        ],
+        "sameHtml": true,
+        "sameStyle": true,
+        "note": "DOM signature"
+      }
+    },
+    {
+      "name": "eligible words have a lead and a softened rest highlight; none touches excluded content",
+      "passed": true,
+      "detail": {
+        "rest": 32,
+        "lead": 32,
+        "bad": 0,
+        "restColour": "color(srgb 0.418667 0.448 0.48)"
+      }
+    },
+    {
+      "name": "Colour style leaves every excluded kind and the prose block unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Off removes both highlights and the mode, and leaves colours, markup and style attributes exactly as before",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failures": 0
+}

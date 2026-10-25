@@ -1,0 +1,95 @@
+[
+  {
+    "name": "agent-unit",
+    "command": [
+      "node",
+      "src/agent-export/test-agent-export.mjs"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core",
+    "exit": 0
+  },
+  {
+    "name": "subpath-build",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/vite",
+      "build",
+      "--base=/sub/",
+      "--outDir=/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/scratch/sub",
+      "--emptyOutDir"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo",
+    "exit": 0
+  },
+  {
+    "name": "agent-integration",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-agent-integration.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "browser-fixture",
+    "command": [
+      "node",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/build-browser-fixture.mjs"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "browser-integration",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-browser-integration.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "contrast-extra",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-contrast-extra.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "package-integration",
+    "command": [
+      "python3",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-package-integration.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "closure-variants",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-closure-variants.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "contrast-boundary",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-contrast-boundary.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  },
+  {
+    "name": "highlight-coexistence",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-closure-fixes/probe-highlight-coexistence.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exit": 0
+  }
+]

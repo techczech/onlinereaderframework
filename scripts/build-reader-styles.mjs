@@ -15,6 +15,7 @@ const readingSupportCSS = readFileSync(resolve(core, 'src/original/reading-suppo
 const listeningCSS = readFileSync(resolve(core, 'src/original/listening/listening.css'), 'utf8');
 const integrationCSS = readFileSync(resolve(core, 'src/original/reader-integrations.css'), 'utf8');
 const frontPageCSS = readFileSync(resolve(core, 'src/original/frontpage/frontpage.css'), 'utf8');
+const agentCSS = readFileSync(resolve(core, 'src/original/agent/agent-access.css'), 'utf8');
 for (const [family, faces] of fonts) {
   const source = resolve(core, `node_modules/@fontsource/${family}`);
   for (const face of faces) {
@@ -25,5 +26,5 @@ for (const [family, faces] of fonts) {
   }
   copyFileSync(resolve(source, 'LICENSE'), resolve(output, 'fonts', `LICENSE-${family}.txt`));
 }
-writeFileSync(resolve(output, 'reader.css'), fontCSS + '\n' + originalCSS + '\n' + readingSupportCSS + '\n' + listeningCSS + '\n' + integrationCSS + '\n' + frontPageCSS + '\n' + readFileSync(resolve(output, 'reader.css'), 'utf8'));
+writeFileSync(resolve(output, 'reader.css'), fontCSS + '\n' + originalCSS + '\n' + readingSupportCSS + '\n' + listeningCSS + '\n' + integrationCSS + '\n' + frontPageCSS + '\n' + agentCSS + '\n' + readFileSync(resolve(output, 'reader.css'), 'utf8'));
 console.log('Packaged original reader styling, fonts, icons and font licences.');

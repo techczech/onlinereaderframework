@@ -1,0 +1,14 @@
+{
+  "preExistingFilesChecked": 118,
+  "sourceAndConfigurationFilesChecked": 66,
+  "changedPreExistingFiles": [],
+  "productionFixes": false,
+  "gitOperations": false,
+  "otherAgents": false,
+  "reviewVerdict": "changes-requested",
+  "remainingFindings": [
+    "P2 remainder range intersects excluded inline descendants",
+    "P3 whitespace-only Markdown source discarded"
+  ],
+  "scratchRemoved": true
+}

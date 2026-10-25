@@ -56,7 +56,7 @@ export default function App() {
     setParameter(value);
   };
   return <>
-    <PublicationReader book={book} epub={epub} />
+    <PublicationReader book={book} epub={epub} agent={{ path: `${import.meta.env.BASE_URL}agent/` }} />
     <label className="demo-frontpage-chooser">Front page layout
       <select value={layout ?? 'classic'} onChange={event => choose(event.target.value)}>
         <option value="classic">Classic</option>

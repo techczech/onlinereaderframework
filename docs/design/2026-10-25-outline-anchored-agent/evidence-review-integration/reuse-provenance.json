@@ -1,0 +1,10 @@
+{
+  "leadLengthEqualsWriteFlexIgnoringSemicolonsAndWhitespace": true,
+  "readOnlySourceHashes": {
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/editor/sentences.ts": "44b974bd77838c029edfb485ecf8f7fdf1c12df4cfa6226406841ef2dd10c6f4",
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/editor/anchored-reading.ts": "c8adc6623a338684770759ac469ae56df50504ce6fb631f44d886c881e423d24",
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/editor/focus-modes.ts": "76ad2d72c6bf03be1643e118c53b4d9a7308ce2da831bb7d207f37dfe488af61",
+    "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet/src/components/Hero.astro": "dd1f8851540ff5593564b20644b8c58fe1ef7b5d5477155556eb20dd9bf7fd2e",
+    "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet/src/lib/agent/builders.ts": "efca1b8d9873fde06a3123ad54e1500625ddfd44e63586acbca2a17f620318b7"
+  }
+}

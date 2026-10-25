@@ -41,3 +41,10 @@
 .reading-support-controls :is(button,input,select) { font: inherit; color: inherit; background-color: inherit; border: 1px solid currentColor; border-radius: .25rem; padding: .35rem .5rem; }
 .reading-support-controls :is(button,input,select):focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
 .reading-support-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* Anchored reading (WriteFlex lead styles, bold left out): the lead-in of each word is a CSS highlight over the unchanged text.
+   Contrast softens the rest of each word through a second highlight (no block is recoloured, so MathML, code and ignored content keep the colour they inherit) and leaves the lead-ins at full ink; Colour paints them in the book's accent. */
+.reading-support-surface[data-rs-anchored="contrast"] ::highlight(publication-anchored-rest) { color: color-mix(in srgb, var(--reader-ink) 68%, var(--reader-paper)); }
+.reading-support-surface[data-rs-anchored="contrast"] ::highlight(publication-anchored-lead) { color: var(--reader-ink); }
+.reading-support-surface[data-rs-anchored="colour"] ::highlight(publication-anchored-lead) { color: var(--reader-accent); }
+.publication-reader .publication-menu-row-text > .publication-menu-lead-icon { font-size: 1.25rem; color: var(--reader-accent); }

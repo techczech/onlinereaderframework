@@ -21,10 +21,10 @@ export function ChoiceGroup<T extends string | number>({ label, value, choices, 
   </div>;
 }
 
-export function Switch({ label, checked, onChange, hint }: { label: string; checked: boolean; onChange(value: boolean): void; hint?: string }) {
+export function Switch({ label, checked, onChange, hint, icon, disabled }: { label: string; checked: boolean; onChange(value: boolean): void; hint?: string; icon?: string; disabled?: boolean }) {
   return <div className="publication-menu-row">
-    <span className="publication-menu-row-text"><span>{label}</span>{hint && <small>{hint}</small>}</span>
-    <button type="button" role="switch" aria-checked={checked} aria-label={label} className="publication-switch" onClick={() => onChange(!checked)}><span aria-hidden="true" /></button>
+    <span className="publication-menu-row-text">{icon && <span aria-hidden="true" className="material-symbols-outlined publication-menu-lead-icon">{icon}</span>}<span>{label}</span>{hint && <small>{hint}</small>}</span>
+    <button type="button" role="switch" aria-checked={checked} aria-label={label} disabled={disabled} className="publication-switch" onClick={() => onChange(!checked)}><span aria-hidden="true" /></button>
   </div>;
 }
 

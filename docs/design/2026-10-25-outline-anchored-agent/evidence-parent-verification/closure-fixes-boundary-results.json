@@ -1,0 +1,145 @@
+{
+  "checks": [
+    {
+      "name": "boundary fixture preserves DOM and canonical text",
+      "passed": true,
+      "detail": {
+        "before": {
+          "html": "<h1 id=\"reader-content-chapter-one\" data-rs-paragraph=\"\" data-rs-active=\"\">Chapter one</h1><h2 id=\"reader-content-opening-section\" data-rs-paragraph=\"\">Opening section</h2><p data-rs-paragraph=\"\">First sentence has <em>emphasised words</em> inside it. Second sentence na\u00efve caf\u00e9 \u6771\u4eac.</p><blockquote data-rs-paragraph=\"\" data-rs-owner=\"\">BEFOREALPHA words <p data-rs-paragraph=\"\">Nested paragraph text.</p> AFTEROMEGA words.</blockquote><h2 id=\"reader-content-final-section\" data-rs-paragraph=\"\">Final section</h2><p data-rs-paragraph=\"\">Final paragraph with <code>CODEIGNORE</code> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATHIGNORE</mi></math>.</p><h2 data-rs-paragraph=\"\">Excluded boundaries</h2><p data-boundary=\"code\" data-rs-paragraph=\"\">extraordinary<code>CODE</code>suffix.</p><p data-boundary=\"kbd\" data-rs-paragraph=\"\">extraordinary<kbd>KBD</kbd>suffix.</p><p data-boundary=\"samp\" data-rs-paragraph=\"\">extraordinary<samp>SAMP</samp>suffix.</p><p data-boundary=\"math\" data-rs-paragraph=\"\">extraordinary<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATH</mi></math>suffix.</p><p data-boundary=\"ignore\" data-rs-paragraph=\"\">extraordinary<span data-reading-support-ignore=\"\">IGNORE</span>suffix.</p><p data-boundary=\"split\" data-rs-paragraph=\"\">extra<span style=\"color:rgb(200, 0, 0)\">ordinary</span>word</p>",
+          "text": "Chapter one Opening section First sentence has emphasised words inside it. Second sentence na\u00efve caf\u00e9 \u6771\u4eac. BEFOREALPHA words Nested paragraph text. AFTEROMEGA words. Final section Final paragraph with CODEIGNORE and MATHIGNORE. Excluded boundaries extraordinaryCODEsuffix. extraordinaryKBDsuffix. extraordinarySAMPsuffix. extraordinaryMATHsuffix. extraordinaryIGNOREsuffix. extraordinaryword"
+        },
+        "after": {
+          "html": "<h1 id=\"reader-content-chapter-one\" data-rs-paragraph=\"\" data-rs-active=\"\">Chapter one</h1><h2 id=\"reader-content-opening-section\" data-rs-paragraph=\"\">Opening section</h2><p data-rs-paragraph=\"\">First sentence has <em>emphasised words</em> inside it. Second sentence na\u00efve caf\u00e9 \u6771\u4eac.</p><blockquote data-rs-paragraph=\"\" data-rs-owner=\"\">BEFOREALPHA words <p data-rs-paragraph=\"\">Nested paragraph text.</p> AFTEROMEGA words.</blockquote><h2 id=\"reader-content-final-section\" data-rs-paragraph=\"\">Final section</h2><p data-rs-paragraph=\"\">Final paragraph with <code>CODEIGNORE</code> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATHIGNORE</mi></math>.</p><h2 data-rs-paragraph=\"\">Excluded boundaries</h2><p data-boundary=\"code\" data-rs-paragraph=\"\">extraordinary<code>CODE</code>suffix.</p><p data-boundary=\"kbd\" data-rs-paragraph=\"\">extraordinary<kbd>KBD</kbd>suffix.</p><p data-boundary=\"samp\" data-rs-paragraph=\"\">extraordinary<samp>SAMP</samp>suffix.</p><p data-boundary=\"math\" data-rs-paragraph=\"\">extraordinary<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATH</mi></math>suffix.</p><p data-boundary=\"ignore\" data-rs-paragraph=\"\">extraordinary<span data-reading-support-ignore=\"\">IGNORE</span>suffix.</p><p data-boundary=\"split\" data-rs-paragraph=\"\">extra<span style=\"color:rgb(200, 0, 0)\">ordinary</span>word</p>",
+          "text": "Chapter one Opening section First sentence has emphasised words inside it. Second sentence na\u00efve caf\u00e9 \u6771\u4eac. BEFOREALPHA words Nested paragraph text. AFTEROMEGA words. Final section Final paragraph with CODEIGNORE and MATHIGNORE. Excluded boundaries extraordinaryCODEsuffix. extraordinaryKBDsuffix. extraordinarySAMPsuffix. extraordinaryMATHsuffix. extraordinaryIGNOREsuffix. extraordinaryword"
+        }
+      }
+    },
+    {
+      "name": "neither lead nor new remainder range crosses excluded inline content",
+      "passed": true,
+      "detail": [
+        {
+          "painted": "extraordinarysuffix.",
+          "kind": "code",
+          "text": "extraordinaryCODEsuffix.",
+          "excludedText": "CODE",
+          "lead": [],
+          "rest": [],
+          "baseColour": "rgb(17, 24, 39)",
+          "inlineColour": null,
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        },
+        {
+          "painted": "extraordinarysuffix.",
+          "kind": "kbd",
+          "text": "extraordinaryKBDsuffix.",
+          "excludedText": "KBD",
+          "lead": [],
+          "rest": [],
+          "baseColour": "rgb(17, 24, 39)",
+          "inlineColour": null,
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        },
+        {
+          "painted": "extraordinarysuffix.",
+          "kind": "samp",
+          "text": "extraordinarySAMPsuffix.",
+          "excludedText": "SAMP",
+          "lead": [],
+          "rest": [],
+          "baseColour": "rgb(37, 48, 60)",
+          "inlineColour": null,
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        },
+        {
+          "painted": "extraordinarysuffix.",
+          "kind": "math",
+          "text": "extraordinaryMATHsuffix.",
+          "excludedText": "MATH",
+          "lead": [],
+          "rest": [],
+          "baseColour": "rgb(37, 48, 60)",
+          "inlineColour": null,
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        },
+        {
+          "painted": "extraordinarysuffix.",
+          "kind": "ignore",
+          "text": "extraordinaryIGNOREsuffix.",
+          "excludedText": "IGNORE",
+          "lead": [],
+          "rest": [],
+          "baseColour": "rgb(37, 48, 60)",
+          "inlineColour": null,
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        },
+        {
+          "painted": "extraordinaryword",
+          "kind": "split",
+          "text": "extraordinaryword",
+          "excludedText": "ordinary",
+          "lead": [
+            "o"
+          ],
+          "rest": [
+            "rdinary"
+          ],
+          "baseColour": "rgb(200, 0, 0)",
+          "inlineColour": "rgb(200, 0, 0)",
+          "highlightColour": "color(srgb 0.418667 0.448 0.48)"
+        }
+      ]
+    },
+    {
+      "name": "every eligible character of each boundary token is still painted exactly once (excluded text is not, prose around it is)",
+      "passed": true,
+      "detail": [
+        [
+          "code",
+          "extraordinarysuffix."
+        ],
+        [
+          "kbd",
+          "extraordinarysuffix."
+        ],
+        [
+          "samp",
+          "extraordinarysuffix."
+        ],
+        [
+          "math",
+          "extraordinarysuffix."
+        ],
+        [
+          "ignore",
+          "extraordinarysuffix."
+        ],
+        [
+          "split",
+          "extraordinaryword"
+        ]
+      ]
+    },
+    {
+      "name": "inline author colour inside a split token is unchanged and its text stays in a range",
+      "passed": true,
+      "detail": [
+        "rgb(200, 0, 0)"
+      ]
+    },
+    {
+      "name": "both anchored highlights retain priority below paragraph dimming and speech",
+      "passed": true,
+      "detail": {
+        "lead": -1,
+        "rest": -1
+      }
+    },
+    {
+      "name": "Off removes both highlights after inline boundary fixture",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failures": 0
+}

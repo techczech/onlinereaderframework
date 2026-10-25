@@ -1,0 +1,181 @@
+{
+  "checks": [
+    {
+      "name": "framework agent access defaults off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "configured framework chapter prompt uses public book-specific URL and citations",
+      "passed": true,
+      "detail": "I'm reading the chapter \"One\" of \"Review book\" by Public author. Read https://fixture.example/sub/custom/fixture/chapters/one.md (the book's index is https://fixture.example/sub/custom/fixture/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "clipboard fallback copies complete prompt and restores focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "anchored reading preserves canonical text, markup and inline word offsets",
+      "passed": true,
+      "detail": {
+        "html": "<h1 id=\"reader-content-chapter-one\" data-rs-paragraph=\"\" data-rs-active=\"\">Chapter one</h1><h2 id=\"reader-content-opening-section\" data-rs-paragraph=\"\">Opening section</h2><p data-rs-paragraph=\"\">First sentence has <em>emphasised words</em> inside it. Second sentence naïve café 東京.</p><blockquote data-rs-paragraph=\"\" data-rs-owner=\"\">BEFOREALPHA words <p data-rs-paragraph=\"\">Nested paragraph text.</p> AFTEROMEGA words.</blockquote><h2 id=\"reader-content-final-section\" data-rs-paragraph=\"\">Final section</h2><p data-rs-paragraph=\"\">Final paragraph with <code>CODEIGNORE</code> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATHIGNORE</mi></math>.</p>",
+        "text": "Chapter one Opening section First sentence has emphasised words inside it. Second sentence naïve café 東京. BEFOREALPHA words Nested paragraph text. AFTEROMEGA words. Final section Final paragraph with CODEIGNORE and MATHIGNORE.",
+        "mathColour": "color(srgb 0.418667 0.448 0.48)",
+        "pri": -1,
+        "excluded": 0,
+        "split": [
+          {
+            "text": "emph",
+            "from": 47
+          }
+        ]
+      }
+    },
+    {
+      "name": "anchored ranges skip code and MathML",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contrast leaves ignored MathML colour unchanged",
+      "passed": false,
+      "detail": {
+        "before": "rgb(37, 48, 60)",
+        "after": "color(srgb 0.418667 0.448 0.48)"
+      }
+    },
+    {
+      "name": "synthetic speech word means the canonical inline word while anchored is active",
+      "passed": true,
+      "detail": {
+        "sentence": {
+          "text": "First sentence has emphasised words inside it.",
+          "priority": 0
+        },
+        "word": {
+          "text": "emphasised",
+          "priority": 0
+        },
+        "offset": 47
+      }
+    },
+    {
+      "name": "speech and anchored highlights coexist in correct priority order",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mixed paragraph dimming takes priority over anchored colour on bare text",
+      "passed": true,
+      "detail": {
+        "colour": "color(srgb 0 0 0 / 0)",
+        "anchored": "rgb(79, 70, 229)",
+        "priority": 0,
+        "dim": [
+          "BEFOREALPHA words ",
+          " AFTEROMEGA words."
+        ],
+        "overlay": "paragraph",
+        "html": "<h1 id=\"reader-content-chapter-one\" data-rs-paragraph=\"\" data-rs-active=\"\">Chapter one</h1><h2 id=\"reader-content-opening-section\" data-rs-paragraph=\"\">Opening section</h2><p data-rs-paragraph=\"\">First sentence has <em>emphasised words</em> inside it. Second sentence naïve café 東京.</p><blockquote data-rs-paragraph=\"\" data-rs-owner=\"\">BEFOREALPHA words <p data-rs-paragraph=\"\">Nested paragraph text.</p> AFTEROMEGA words.</blockquote><h2 id=\"reader-content-final-section\" data-rs-paragraph=\"\">Final section</h2><p data-rs-paragraph=\"\">Final paragraph with <code>CODEIGNORE</code> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>MATHIGNORE</mi></math>.</p>"
+      }
+    },
+    {
+      "name": "outline links, history and single current-location marker stay aligned",
+      "passed": true,
+      "detail": {
+        "first": "https://fixture.example/sub/?book=mixed&section=one#reader-content-opening-section",
+        "second": "https://fixture.example/sub/?book=mixed&section=one#reader-content-final-section",
+        "current": "https://fixture.example/sub/?book=mixed&section=one#reader-content-final-section"
+      }
+    },
+    {
+      "name": "blocked-storage outline collapses with a usable article",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "outline collapse is isolated to its book",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-storage outline choice restores on return",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "N restores outline and focuses a visible heading link",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape collapses outline and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual subpath server resolves Unicode and malicious-id escaped filenames",
+      "passed": true,
+      "detail": {
+        "path": "agent/book~20~~2f~~3f~~e9~/chapters/~2e~~2e~~2f~a~20~b~2f~~3f~~23~~e9~.md",
+        "status": 200
+      }
+    },
+    {
+      "name": "actual Vite subpath build: chapter prompt and full download resolve",
+      "passed": true,
+      "detail": {
+        "prompt": "I'm reading the chapter \"Step 2: Set the right goals\" of \"Building Your Language Muscle\" by Dominik Lukeš. Read https://books.example.test/sub/agent/language-muscle/chapters/step-2.md (the book's index is https://books.example.test/sub/agent/language-muscle/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+        "download": "https://books.example.test/sub/agent/language-muscle/full.md",
+        "status": 200
+      }
+    },
+    {
+      "name": "quiet chapter rows retain visible keyboard focus",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "outline": "solid",
+        "width": "2px",
+        "colour": "rgb(169, 50, 50)",
+        "border": "0px"
+      }
+    },
+    {
+      "name": "actual subpath build has no browser page errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "private host offers attachment prompt and download: http://100.64.0.1/sub/?book=fixture&section=one",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer.",
+        "download": "http://100.64.0.1/sub/agent/fixture/full.md"
+      }
+    },
+    {
+      "name": "private host offers attachment prompt and download: http://100.127.255.254/sub/?book=fixture&section=one",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer.",
+        "download": "http://100.127.255.254/sub/agent/fixture/full.md"
+      }
+    },
+    {
+      "name": "private host offers attachment prompt and download: http://mac.ts.net/sub/?book=fixture&section=one",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer.",
+        "download": "http://mac.ts.net/sub/agent/fixture/full.md"
+      }
+    },
+    {
+      "name": "file URL with default agent base gives attachment prompt and local download",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    }
+  ],
+  "failures": 1
+}

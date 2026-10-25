@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { DEFAULT_READING_PREFERENCES, effectiveFontSize } from '../reading-support/reading-preferences.js';
 import { useViewportWidth } from '../reading-support/use-viewport-width.js';
+import { useAnchoredReadingSupport } from '../reading-support/use-anchored-reading.js';
 import type { ReadingSupportController } from '../reading-support/index.js';
 import { ChoiceGroup, Stepper, Switch } from './controls.js';
 import type { ReadAloudSnapshot } from '../read-aloud/read-aloud-controller.js';
@@ -39,6 +40,8 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   const { support, readAloud, readAloudActions } = props;
   const speech = readAloud?.status ?? 'idle';
   const p = support.preferences;
+  const anchoredAvailable = useAnchoredReadingSupport();
+  const anchoredOn = p.anchored && anchoredAvailable;
   const [open, setOpen] = useState<ToolbarMenuId | null>(null);
   const actions = useRef<HTMLDivElement>(null);
   const buttons = useRef<Partial<Record<ToolbarMenuId, HTMLButtonElement | null>>>({});
@@ -117,7 +120,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   const formattingDefaults: FormattingState = { fontFamily: d.fontFamily, fontSize: effectiveFontSize({ fontSize: d.fontSize, fontSizeChosen: false }, viewport), lineHeight: d.lineHeight, paragraphSpacing: d.paragraphSpacing, letterSpacing: d.letterSpacing, maxWidth: 'md' };
   const counts: Record<ToolbarMenuId, number> = {
     listen: 0, theme: 0, formatting: formattingChanges(formatting, formattingDefaults),
-    assist: assistChanges({ overlay: p.overlay, immersive: props.immersive }),
+    assist: assistChanges({ overlay: p.overlay, immersive: props.immersive, anchored: anchoredOn }),
   };
   const shown = (key: 'fontSize' | 'lineHeight' | 'paragraphSpacing' | 'letterSpacing') => key === 'fontSize' ? fontSize : p[key];
   const step = (key: 'fontSize' | 'lineHeight' | 'paragraphSpacing' | 'letterSpacing') => (direction: 1 | -1) => support.update({ [key]: stepValue(key, shown(key), direction) });
@@ -152,7 +155,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
     <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
       {MENUS.map(menu => {
         // Icon only: the name is the accessible name and the tooltip (hover and keyboard focus), plus the current state where there is one.
-        const stateText = menu.id === 'listen' && speech !== 'idle' ? (speech === 'speaking' ? 'reading aloud' : 'paused') : menu.id === 'assist' ? assistName(p.overlay) : null;
+        const stateText = menu.id === 'listen' && speech !== 'idle' ? (speech === 'speaking' ? 'reading aloud' : 'paused') : menu.id === 'assist' ? assistName(p.overlay, anchoredOn) : null;
         const base = menu.id === 'listen' ? props.listenLabel : menu.label;
         return <button key={menu.id} type="button" ref={element => { buttons.current[menu.id] = element; }} className="publication-toolbar-control"
           data-tooltip={stateText ? `${base}: ${stateText}` : base}
@@ -256,11 +259,17 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
               <ChoiceGroup label="Dimming" value={level?.value ?? null} onChange={value => support.update({ dim: value })} choices={DIM_LEVELS.map(item => ({ value: item.value, label: item.label }))} />
               {!level && <small className="publication-menu-note">A saved custom dimming of {p.dim.toFixed(2)} is in use. Choose a level to replace it.</small>}</>}
             {p.overlay !== 'off' && <small className="publication-menu-note">Follows your pointer, a tap, or the Up and Down keys in the text. Escape in the text turns it off.</small>}</section>
+          <section aria-labelledby="menu-anchored"><h3 id="menu-anchored">Anchored reading</h3>
+            <Switch label="Anchored reading" icon="match_word" checked={anchoredOn} disabled={!anchoredAvailable}
+              hint={anchoredAvailable ? 'Emphasises the first letters of every word. Display only; the text is unchanged.' : 'This browser cannot mark the first letters of words without changing the text, so it is not available here.'}
+              onChange={value => support.update({ anchored: value })} />
+            {anchoredOn && <ChoiceGroup label="Emphasis style" value={p.leadStyle} onChange={value => support.update({ leadStyle: value })}
+              choices={[{ value: 'contrast', label: 'Contrast' }, { value: 'colour', label: 'Colour' }]} />}</section>
           <section aria-labelledby="menu-page"><h3 id="menu-page">Page</h3>
             <Switch label="Hide navigation" checked={props.immersive} hint={p.overlay !== 'off' ? 'Hidden while reading assistance is on; switch it on again to show it. Key F.' : 'Hides the contents and the page outline. Key F.'} onChange={props.onImmersive} /></section>
           <footer>
-            <p role="status" className="publication-menu-state">{assistSummary({ overlay: p.overlay, immersive: props.immersive, lines: p.lines, rulerLines: p.rulerLines })}</p>
-            <button type="button" className="publication-menu-action" disabled={counts.assist === 0} onClick={() => { if (p.overlay !== 'off') support.update({ overlay: 'off', lines: d.lines, rulerLines: d.rulerLines, dim: d.dim }); else props.onImmersive(false); }}>
+            <p role="status" className="publication-menu-state">{assistSummary({ overlay: p.overlay, immersive: props.immersive, anchored: anchoredOn, lines: p.lines, rulerLines: p.rulerLines })}</p>
+            <button type="button" className="publication-menu-action" disabled={counts.assist === 0} onClick={() => { if (p.overlay !== 'off' || p.anchored) support.update({ overlay: 'off', lines: d.lines, rulerLines: d.rulerLines, dim: d.dim, anchored: false, leadStyle: d.leadStyle }); else props.onImmersive(false); }}>
               <span aria-hidden="true" className="material-symbols-outlined">restart_alt</span>Turn all off</button>
             <button type="button" className="publication-menu-action" onClick={() => { close(false); props.onOpenShortcuts(); }}><span aria-hidden="true" className="material-symbols-outlined">keyboard</span>Keyboard shortcuts</button>
           </footer>

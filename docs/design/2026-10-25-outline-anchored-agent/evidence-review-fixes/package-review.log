@@ -1,0 +1,14 @@
+pack existing reader package exit 0 {"filename": "reader-core-0.1.0.tgz", "shasum": "98aba1ab788574436854b430205fbcbe11a00d37", "size": 3261722, "entryCount": 285} 
+packed native Node export and styles exit 0 PASS packed reader-core/agent native Node ESM import, generation and bundled integration styles
+ 
+demo writer rejects non-dist output before writes exit 1  (asked for ${out}).`);
+                                          ^
+
+Error: Refusing to write outside the build folder /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/dist (asked for /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-fixes/scratch/refused-output).
+    at <anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/build-agent-files.ts:17:43)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.1
+

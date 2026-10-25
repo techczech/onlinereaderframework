@@ -1,0 +1,20 @@
+PASS deliberate-practice: complete ordered bodies and hierarchy {"total":21,"withText":21,"errors":[]}
+PASS deliberate-practice: raw Markdown source bytes []
+PASS deliberate-practice: source chapter links usable from exported Markdown
+PASS language-muscle: complete ordered bodies and hierarchy {"total":12,"withText":12,"errors":[]}
+PASS language-muscle: raw Markdown source bytes []
+PASS language-muscle: source chapter links usable from exported Markdown
+PASS linguistics: complete ordered bodies and hierarchy {"total":262,"withText":253,"errors":[]}
+PASS linguistics: raw Markdown source bytes []
+PASS linguistics: source chapter links usable from exported Markdown
+PASS fixture: authored trailing Markdown whitespace retained verbatim {"sourceEnd":"age](https://public.example/image.png)\n\n","exportEnd":"age](https://public.example/image.png)\n\n"}
+PASS unknown private fields never exported
+PASS malicious and Unicode ids remain confined and round-trip in reader URLs
+PASS root index also rejects directory: ../outside {"rootError":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"../outside\"."}
+PASS unsafe directory rejected: ../outside {"error":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"../outside\".","resolves":null}
+PASS root index also rejects directory: /absolute {"rootError":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"/absolute\"."}
+PASS unsafe directory rejected: /absolute {"error":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"/absolute\".","resolves":null}
+PASS root index also rejects directory: safe/../../outside {"rootError":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"safe/../../outside\"."}
+PASS unsafe directory rejected: safe/../../outside {"error":"Error: The agent directory must be a relative path of plain folder names (letters, digits, \".\", \"_\", \"-\"), not \"safe/../../outside\".","resolves":null}
+PASS nested custom directory retains reader root {"directory":"safe/nested","resolved":"https://books.example/sub/?book=book+%2F%3F%C3%A9&section=..%2Fa+b%2F%3F%23%C3%A9"}
+PASS private-host boundaries

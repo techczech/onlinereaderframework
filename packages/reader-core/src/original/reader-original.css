@@ -120,8 +120,10 @@
 .publication-reader .publication-local-contents { display: none; flex: 0 0 12rem; width: 12rem; position: sticky; top: 1.5rem; max-height: calc(100dvh - 8rem); overflow-y: auto; padding-block: .5rem 1rem; font-size: .875rem; overflow-wrap: anywhere; }
 @container (min-width: 1000px) {
   .publication-reader .publication-reading-layout:has(> .publication-local-contents) { max-width: calc(var(--publication-measure) + 18rem); }
+  .publication-reader .publication-reading-layout:has(> .publication-local-contents[data-collapsed]) { max-width: calc(var(--publication-measure) + 8.5rem); }
   .publication-reader .publication-local-contents { display: block; }
-  .publication-reader .publication-width-full:has(> .publication-local-contents) { max-width: none; }
+  .publication-reader .publication-local-contents[data-collapsed] { flex-basis: 2.25rem; width: 2.25rem; overflow: visible; }
+  .publication-reader .publication-width-full:has(> .publication-local-contents), .publication-reader .publication-width-full:has(> .publication-local-contents[data-collapsed]) { max-width: none; }
 }
 .publication-reader .publication-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: .75rem 1.25rem; border-bottom: 1px solid color-mix(in srgb, var(--reader-ink), transparent 85%); background: var(--reader-paper); flex-shrink: 0; font-size: .8125rem; }
 .publication-reader .publication-toolbar button { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; min-height: 2.5rem; padding: .4rem .7rem; border-radius: .4rem; }
@@ -309,3 +311,16 @@
 .publication-reader .publication-outline-list li { margin: 0; padding-block: 0; }
 .publication-reader .publication-outline-list .publication-outline-link { display: flex; align-items: center; min-height: 2.5rem; padding-block: .25rem; overflow-wrap: anywhere; line-height: 1.35; }
 .publication-reader .publication-local-contents .publication-outline-link { padding-block: .15rem; }
+
+/* Side outline: a hairline rule, one heading that is also the fold/unfold control, and a quiet icon when folded. */
+.publication-reader .publication-outline-rail { border-left: 1px solid color-mix(in srgb, var(--reader-ink), transparent 82%); padding: .5rem 0 .5rem 1rem; }
+.publication-reader .publication-outline-heading { margin: 0 0 .75rem; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.publication-reader .publication-outline-rail-toggle { display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: 100%; min-height: 2rem; padding: 0; text-align: left; color: color-mix(in srgb, var(--reader-ink), transparent 35%); text-transform: inherit; letter-spacing: inherit; font: inherit; border-radius: .25rem; }
+.publication-reader .publication-outline-rail-toggle:hover { color: var(--reader-ink); }
+.publication-reader .publication-outline-rail-toggle:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.publication-reader .publication-outline-rail-toggle .material-symbols-outlined { font-size: 1.25rem; }
+.publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail { border-left: 0; padding: .5rem 0; }
+.publication-reader .publication-local-contents[data-collapsed] .publication-outline-heading { margin: 0; }
+.publication-reader .publication-local-contents[data-collapsed] .publication-outline-heading-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle { justify-content: center; width: 2.25rem; min-height: 2.25rem; opacity: .6; }
+.publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:hover, .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:focus-visible { opacity: 1; }

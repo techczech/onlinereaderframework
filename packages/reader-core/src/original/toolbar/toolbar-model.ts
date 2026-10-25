@@ -9,7 +9,11 @@ export interface FormattingState {
   paragraphSpacing: number; letterSpacing: number; maxWidth: MaxWidthChoice;
 }
 /** One exclusive assistance choice. `immersive` is whether navigation is hidden, which is on by default while an assistance is. */
-export interface AssistState { overlay: 'off' | 'paragraph' | 'line-window' | 'ruler'; immersive: boolean; }
+export interface AssistState {
+  overlay: 'off' | 'paragraph' | 'line-window' | 'ruler'; immersive: boolean;
+  /** Anchored reading is on and this browser can show it. Independent of the overlay: both can be on together. */
+  anchored?: boolean;
+}
 
 /** Overlay dimming. Kept equal to DIM_LEVELS in reading-preferences.ts; the toolbar model test checks it. */
 export const DIM_LEVELS = [{ label: 'Light', value: 0.72 }, { label: 'Medium', value: 0.9 }, { label: 'Dark', value: 1 }] as const;
@@ -38,7 +42,8 @@ export function formattingChanges(current: FormattingState, defaults: Formatting
 /** Line height and dimming only matter while an assistance is on, so they are not counted as separate changes. Hiding navigation counts only when it is the reader's own choice with nothing else on:
  * with an assistance on it is the default, and the assistance is the one change. */
 export function assistChanges(state: AssistState): number {
-  return state.overlay !== 'off' ? 1 : Number(state.immersive);
+  const on = Number(state.overlay !== 'off') + Number(!!state.anchored);
+  return on || Number(state.immersive);
 }
 
 export const letterSpacingLabel = (value: number): string => value < 0.005 ? 'Normal' : `${value.toFixed(2)} em`;
@@ -47,6 +52,7 @@ export const lineHeightLabel = (value: number): string => value.toFixed(1);
 /** Plain statement of what is currently on, for the Assist menu. */
 export function assistSummary(state: AssistState & { lines: number; rulerLines?: number }): string {
   const parts: string[] = [];
+  if (state.anchored) parts.push('word beginnings emphasised');
   if (state.overlay === 'paragraph') parts.push('other paragraphs faded');
   if (state.overlay === 'line-window') parts.push(`${state.lines === 1 ? 'one-line' : `${state.lines}-line`} window`);
   if (state.overlay === 'ruler') parts.push(`reading ruler over the next ${state.rulerLines === 2 ? 'two lines' : state.rulerLines === 3 ? 'three lines' : 'line'}`);
@@ -54,4 +60,7 @@ export function assistSummary(state: AssistState & { lines: number; rulerLines?:
   return parts.length ? `On: ${parts.join(', ')}.` : 'Nothing is on.';
 }
 /** Name of the current assistance for the Assist icon's tooltip and accessible name; null when none is on. */
-export const assistName = (overlay: AssistState['overlay']): string | null => overlay === 'off' ? null : ASSIST_CHOICES.find(choice => choice.value === overlay)!.label;
+export function assistName(overlay: AssistState['overlay'], anchored = false): string | null {
+  const names = [overlay === 'off' ? null : ASSIST_CHOICES.find(choice => choice.value === overlay)!.label, anchored ? 'Anchored reading' : null].filter((name): name is string => !!name);
+  return names.length ? names.join(', ') : null;
+}

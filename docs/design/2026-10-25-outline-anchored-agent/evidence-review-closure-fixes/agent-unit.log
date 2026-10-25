@@ -1,0 +1,25 @@
+✔ every book: all section ids in reading order, counts, and one file per section (1.026208ms)
+✔ markdown sections are preserved byte for byte in chapter files and, in order, in full.md (49.558334ms)
+✔ code, tables, footnote-like attribution, source lines and the image link survive (0.732ms)
+✔ html sections keep their structure through the reader sanitiser, with a title heading added (0.477959ms)
+✔ every relative link in every generated file resolves to a generated file; no private paths or browser state (22.655292ms)
+✔ siteUrl makes every link absolute; relative output has none of that host (25.359541ms)
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (0.520709ms)
+✔ reader links match the reader's own publicationUrl; private hosts are recognised (0.437958ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.121959ms)
+✔ anchored reading: leadLength is WriteFlex's own, and lead spans follow its word walk (28.636625ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (0.754166ms)
+✔ the directory option is validated by both generators before any path is produced (1.147041ms)
+✔ a nested directory keeps every reader link pointing at the reader root (0.302416ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (0.845125ms)
+✔ real Language Muscle step-2 links to the Fine-tuning your aims chapter file (0.129834ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (0.380458ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.286792ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 525.501459

@@ -1,0 +1,120 @@
+{
+  "encodedFixtureChapterPath": "agent/book~20~~2f~~3f~~e9~/chapters/~2e~~2e~~2f~a~20~b~2f~~3f~~23~~e9~.md",
+  "results": [
+    {
+      "name": "deliberate-practice: complete ordered bodies and hierarchy",
+      "passed": true,
+      "detail": {
+        "total": 21,
+        "withText": 21,
+        "errors": []
+      }
+    },
+    {
+      "name": "deliberate-practice: raw Markdown source bytes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "language-muscle: complete ordered bodies and hierarchy",
+      "passed": true,
+      "detail": {
+        "total": 12,
+        "withText": 12,
+        "errors": []
+      }
+    },
+    {
+      "name": "language-muscle: raw Markdown source bytes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "language-muscle: source chapter links usable from exported Markdown",
+      "passed": false,
+      "detail": {
+        "count": 1,
+        "examples": [
+          {
+            "section": "step-2",
+            "href": "#/fine-tuning-aims",
+            "resolved": "https://books.example/sub/agent/language-muscle/chapters/step-2.md#/fine-tuning-aims"
+          }
+        ]
+      }
+    },
+    {
+      "name": "linguistics: complete ordered bodies and hierarchy",
+      "passed": true,
+      "detail": {
+        "total": 262,
+        "withText": 253,
+        "errors": []
+      }
+    },
+    {
+      "name": "linguistics: raw Markdown source bytes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "fixture: authored trailing Markdown whitespace retained verbatim",
+      "passed": false,
+      "detail": {
+        "sourceEnd": "age](https://public.example/image.png)\n\n",
+        "exportEnd": "mage](https://public.example/image.png)\n"
+      }
+    },
+    {
+      "name": "unknown private fields never exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malicious and Unicode ids remain confined and round-trip in reader URLs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unsafe directory rejected: ../outside",
+      "passed": false,
+      "detail": {
+        "error": "",
+        "path": "../outside/book~20~~2f~~3f~~e9~/index.md",
+        "resolves": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-integration/scratch/outside/book~20~~2f~~3f~~e9~/index.md"
+      }
+    },
+    {
+      "name": "unsafe directory rejected: /absolute",
+      "passed": false,
+      "detail": {
+        "error": "",
+        "path": "/absolute/book~20~~2f~~3f~~e9~/index.md",
+        "resolves": "/absolute/book~20~~2f~~3f~~e9~/index.md"
+      }
+    },
+    {
+      "name": "unsafe directory rejected: safe/../../outside",
+      "passed": false,
+      "detail": {
+        "error": "",
+        "path": "safe/../../outside/book~20~~2f~~3f~~e9~/index.md",
+        "resolves": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-outline-anchored-agent/evidence-review-integration/scratch/outside/book~20~~2f~~3f~~e9~/index.md"
+      }
+    },
+    {
+      "name": "nested custom directory retains reader root",
+      "passed": false,
+      "detail": {
+        "directory": "safe/nested",
+        "resolved": "https://books.example/sub/safe/?book=book+%2F%3F%C3%A9&section=..%2Fa+b%2F%3F%23%C3%A9"
+      }
+    },
+    {
+      "name": "private-host boundaries",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failures": 6
+}

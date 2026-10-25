@@ -1,0 +1,24 @@
+/* "Ask an agent to help you read this": a quiet block, ruled off from the page rather than boxed. */
+.publication-reader .publication-agent { margin: 2rem 0 0; padding: 1rem 0 0; border-top: 1px solid color-mix(in srgb, var(--reader-ink), transparent 85%); font-size: .875rem; line-height: 1.55; }
+.publication-reader .publication-front .publication-agent { max-width: 90rem; margin: 2rem auto 0; padding-inline: 0; }
+.publication-reader .publication-agent h2 { display: flex; align-items: center; gap: .45rem; margin: 0 0 .4rem; font-size: 1rem; font-weight: 700; }
+.publication-reader .publication-agent .material-symbols-outlined { font-size: 1.15rem; color: var(--reader-accent); }
+.publication-reader .publication-agent p { margin: .4rem 0; }
+.publication-reader .publication-agent-lead { max-width: 46rem; color: color-mix(in srgb, var(--reader-ink), transparent 25%); }
+.publication-reader .publication-agent--quiet { margin-top: 1.5rem; }
+.publication-reader .publication-agent--quiet > summary { display: flex; align-items: center; gap: .45rem; cursor: pointer; min-height: 2rem; font-weight: 600; color: color-mix(in srgb, var(--reader-ink), transparent 30%); list-style: none; }
+.publication-reader .publication-agent--quiet > summary::-webkit-details-marker { display: none; }
+.publication-reader .publication-agent--quiet > summary:hover { color: var(--reader-ink); }
+.publication-reader .publication-agent--quiet > summary:focus-visible, .publication-reader .publication-agent button:focus-visible, .publication-reader .publication-agent a:focus-visible, .publication-reader .publication-agent code:focus-visible { outline: 2px solid var(--reader-accent); outline-offset: 2px; }
+.publication-reader .publication-agent-prompt { display: flex; align-items: flex-start; gap: .6rem; max-width: 52rem; }
+.publication-reader .publication-agent-prompt code { flex: 1 1 auto; min-width: 0; padding: .55rem .7rem; border-left: 2px solid var(--reader-accent); background: color-mix(in srgb, var(--reader-ink), transparent 95%); font: .8rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; user-select: all; }
+.publication-reader .publication-agent button { display: inline-flex; align-items: center; gap: .35rem; min-height: 2.25rem; padding: .3rem .7rem; border: 1px solid color-mix(in srgb, var(--reader-accent), transparent 50%); border-radius: 999px; color: var(--reader-accent); background: transparent; font: inherit; font-weight: 600; }
+.publication-reader .publication-agent button:hover { background: color-mix(in srgb, var(--reader-accent), transparent 92%); }
+.publication-reader .publication-agent-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0 .2rem; }
+.publication-reader .publication-agent-chips button { font-weight: 500; text-align: left; border-color: color-mix(in srgb, var(--reader-ink), transparent 80%); color: inherit; }
+.publication-reader .publication-agent-chips .material-symbols-outlined { font-size: 1rem; }
+.publication-reader .publication-agent-links { color: color-mix(in srgb, var(--reader-ink), transparent 25%); }
+.publication-reader .publication-agent a { color: var(--reader-accent); text-underline-offset: 3px; }
+.publication-reader .publication-agent-status { min-height: 1.4em; font-weight: 600; }
+@container (max-width: 639px) { .publication-reader .publication-agent-prompt { flex-direction: column; align-items: stretch; } }
+.publication-reader .publication-agent .publication-agent-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

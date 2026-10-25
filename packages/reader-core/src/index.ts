@@ -25,7 +25,8 @@ export * from './components/tools/SearchModal.js';
 export * from './adapters/markdownAdapter.js';
 
 export { PublicationReader } from './original/PublicationReader.js';
-export type { PublicationBook, PublicationSection, PublicationReaderProps, PublicationCoaching } from './original/types.js';
+export type { PublicationBook, PublicationSection, PublicationReaderProps, PublicationCoaching, PublicationAgentAccess } from './original/types.js';
+export * from './agent-export/agent-paths.js';
 export { renderPublicationContent, publicationContentToText, getPublicationHeadings } from './publication-content/index.js';
 
 export { generatePublicationEpub, downloadPublicationEpub } from './services/publication-epub/index.js';

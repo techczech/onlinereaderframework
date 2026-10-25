@@ -10,6 +10,10 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./agent": {
+      "types": "./dist/agent-export/index.d.ts",
+      "default": "./dist/agent-export/index.js"
+    },
     "./reader.css": "./dist/reader.css"
   },
   "files": [
@@ -17,7 +21,8 @@
   ],
   "scripts": {
     "build": "node ../../scripts/build-reader-core.mjs",
-    "test:publication-content": "node src/publication-content/test-publication-content.mjs"
+    "test:publication-content": "node src/publication-content/test-publication-content.mjs",
+    "test:agent-export": "node src/agent-export/test-agent-export.mjs"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.2.0",

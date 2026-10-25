@@ -75,3 +75,15 @@ test('toolbar dim levels equal the preference levels', () => {
   const levels = text => [...text.matchAll(/value: (0\.\d+)/g)].map(match => match[1]).slice(0, 3).join();
   assert.equal(levels(prefs), levels(source));
 });
+
+test('anchored reading counts as an assistance beside the overlay, and is named and summarised', () => {
+  const base = { overlay: 'off', immersive: false };
+  assert.equal(m.assistChanges(base), 0);
+  assert.equal(m.assistChanges({ ...base, anchored: true }), 1);
+  assert.equal(m.assistChanges({ overlay: 'ruler', immersive: true, anchored: true }), 2);
+  assert.equal(m.assistChanges({ overlay: 'off', immersive: true }), 1);
+  assert.equal(m.assistName('off', true), 'Anchored reading');
+  assert.equal(m.assistName('ruler', true), 'Ruler, Anchored reading');
+  assert.equal(m.assistName('off'), null);
+  assert.match(m.assistSummary({ ...base, anchored: true, lines: 3 }), /word beginnings emphasised/);
+});

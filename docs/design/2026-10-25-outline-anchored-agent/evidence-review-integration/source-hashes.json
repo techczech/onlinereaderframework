@@ -1,0 +1,265 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "packages/reader-core/src/agent-export/index.ts",
+      "digest": "323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "digest": "1c428e083153da96cad082a0aa9adfd7e2638ce2f9b917de7f36fe3d5315361f"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "digest": "af57f63770f759510166455d122c138bb480f63ed09d0130d2efffa6d759376d"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/test-agent-export.mjs",
+      "digest": "086e109078c67617af19a190d00c7e786521f1d9f1b9694bf4ab9851ab04c1e6"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "digest": "0db131bc7a308f92c020ebda37f84e893d1088fa9f2de3026eb6e20d2e22b38f"
+    },
+    {
+      "path": "packages/reader-core/src/original/outline-preference.ts",
+      "digest": "e1543efab369cd60ca5198c7b58b746208034d26191e807ac4e8bedac9ffa7ef"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-theme.ts",
+      "digest": "c5f6af3ace2f540189a85f4ce2613122a62d0aef14f4f4f6d8f853209eb23122"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-navigation.ts",
+      "digest": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-model.ts",
+      "digest": "ac8d7633b770e0a39df57db4b4afb1ea2947ac462450be333a2f36a1d6c0d826"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "digest": "944b35bec537915d31e1d2900fada2867b68d9349d183ec914850e6b32b66dc6"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "digest": "021a8e3d3f06bee0495f9a3911de620f345bfddf74528792e5f973a27a629112"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-system-dark.ts",
+      "digest": "0e2e963b6dd105828e32521a2b675619617f96569040f5b6a70667e1a12822b3"
+    },
+    {
+      "path": "packages/reader-core/src/original/sidebar-model.ts",
+      "digest": "61051a576f6bcf9afa4bd2e5eff194a492b52e94cf0d07826a1827348e6e9dc1"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-notes.ts",
+      "digest": "435945ee3f2ec2571d38fc134aff17ad7cdc8bc1a600a2f46096538205f45d02"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-publication-reader.ts",
+      "digest": "342137bfeebe996f3c2276bc53dd116c9182f7279fe3670592c27160ec0cfab1"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-listening-highlight.ts",
+      "digest": "e9bf28edf5b36dea7cb439e087191a537814b75f088ed82bba71fda21b972521"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-types.ts",
+      "digest": "e5d5de9a927af500d907d137184d1955641c7b5189cc2e49b2a753c489e571a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-model.ts",
+      "digest": "810a8bc9ba3cc639d2a956f681ab429d151e9cae8e8b8387ad0144d5344072a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/index.ts",
+      "digest": "f9038e1157d5e510154bc5be04fba1ad381addad3ece5301f4fa4c54f2c0c849"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-controller.ts",
+      "digest": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/toolbar-model.ts",
+      "digest": "88acf150a8027dea5d0b72a7798b14d6af6fe48d654774748e14b00ed2e94c5b"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts",
+      "digest": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/flex-speech.ts",
+      "digest": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts",
+      "digest": "ef979dc329be4a5e79ce236335b64f41fed102ab40427233a1b3a138401a79de"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts",
+      "digest": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/use-read-aloud.ts",
+      "digest": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/anchored-reading.ts",
+      "digest": "277c1ef67d9793b052a04a1668dc86585babd19ad2741f73ad6f30b9be8a9418"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-reading-support.ts",
+      "digest": "461e932b7d9b571db20b0b0cf42184e9165edb56545181de59304da91bc31a4f"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-viewport-width.ts",
+      "digest": "98cd4189bd60ae363d03ebd4ea2e177849ec874647f5b268aafd52ed4d7e64be"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/index.ts",
+      "digest": "c01258de705f87d722e34614888351cc3529d7e4c6e6b00b2f01657fd5c06701"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/reading-preferences.ts",
+      "digest": "42ab8dabe51eecb5908e8d4b1731691e14db5178f81136aeb53afa9c11377e78"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/line-geometry.ts",
+      "digest": "4cb0c8a8101350ad016c05a4e5bea1c886a6ded3b6ba94f55ed8453aab5d6fe7"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-anchored-reading.ts",
+      "digest": "a343bd84b4a07f4a703b1946facaf7e729606a6ed79d1e59371c60329d229713"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-layouts.ts",
+      "digest": "9252650e32ab66cd0fe5a38faff5ef09d9075c2395b9b6f0b8efea84675e0acf"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-model.ts",
+      "digest": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-copy.ts",
+      "digest": "44ff90930568e389f9af4e8583a86432027b7c3ca45807197a31de8acc18b643"
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "digest": "217aebc15bbb8ae32052490ae01685c5d77bd8fbfe4855cc95ab07555ea2f9a7"
+    },
+    {
+      "path": "packages/reader-core/src/original/ShortcutsModal.tsx",
+      "digest": "19463518655ce581e86b8e6994c6513df3a8dd1b2295ef4d8ec63940ce37705d"
+    },
+    {
+      "path": "packages/reader-core/src/original/QuoteImageModal.tsx",
+      "digest": "f42a2958af88db479145fb335aaccba210114377d96c826b4b4db2fc7de34889"
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "digest": "dcf073ff6ef435afea847e272322c66df88ea37992177d86f8f97402acc1be90"
+    },
+    {
+      "path": "packages/reader-core/src/original/HighlightsDrawer.tsx",
+      "digest": "d6284c8a97c05ab07c4454f32f38500a8a5b44a4fe685507b46dd2bf53e84b2e"
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "digest": "5d6c51bb37d516e13e90501a5e7c03f4a03f3cc418177d23939b8bef18d4d517"
+    },
+    {
+      "path": "packages/reader-core/src/original/Sidebar.tsx",
+      "digest": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976"
+    },
+    {
+      "path": "packages/reader-core/src/original/Toast.tsx",
+      "digest": "f3fe946cf054362c8189a49f1e8fe467694076122031457976e07e7c51f4c7ba"
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "digest": "dfc19e86a1ad04150aa0f85181c75ebea450fc9fa64e911671d32e66aa27a0eb"
+    },
+    {
+      "path": "packages/reader-core/src/original/TableOfContents.tsx",
+      "digest": "7e69e51cd463ab8f89116dab131d2ef7583c67c4fc042f86ff2189efc8dff0c5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/ListeningPanel.tsx",
+      "digest": "53c44162d5138a1e9140fd71db04a18179d3bb02de416df543b437babce22d6f"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
+      "digest": "c30fc7f3cdf8a0286996b97c097ad9947ed8bbcb78b1c6c42a806ed32b585d63"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/controls.tsx",
+      "digest": "e34631ff1a7da582c960c8a9ff63c440e0196a14b715717f43d6874e44fd91d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "digest": "81edc74864db7c7226147aff6d9bb383d3f3d5c4a361c41c0e4a025daf3bd8f4"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx",
+      "digest": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportControls.tsx",
+      "digest": "7272c60d99852a8099a5e8453e28fd47bb9b213666af1062c979676d5dd71c7d"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx",
+      "digest": "c575781c7bbade2a6fba19afd1a2b75cba955621956b9c3b0ff41ba7df3a4979"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupport.tsx",
+      "digest": "c7e9398e45b7e1375e2616f697ec0847c306ca7f9aa25e96ef721eb4782cb2bd"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "digest": "c7f3c45dc371c0878a51293b880edf4eee4902355fefcb448710af4efca71948"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/FrontPage.tsx",
+      "digest": "4a06571a8f70ff7d0109b0c3e109eba160c4de4787300fcb52775e6aafc75514"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-integrations.css",
+      "digest": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-original.css",
+      "digest": "796b81d7aef9a1ef1cabecb9b4ab385d0adc9836d43d90907d08cbf1da2221db"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening.css",
+      "digest": "796223ccc56d0a07cd90daa2537b99c2f9187effbbcbad1abd32e32a53559cef"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "digest": "7e9d15ac067ebebd3b74bef743cba3168f53c5c94ebc09c93840371657a7f4b1"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/support.css",
+      "digest": "85d6d566e4c589ca9379955ad4273dd09825417edd7f982134b4733a9a7c0efa"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage.css",
+      "digest": "6a9ad46003bd389f7658c414d0149bf3d0f4b734efb9690ab464eddfe09c8b19"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-agent-files.ts",
+      "digest": "1fa70751c2e7433694f6b94dc0c553e05386e3b9de3f0994d581c64f327a336f"
+    },
+    {
+      "path": "apps/reader-demo/src/App.tsx",
+      "digest": "8fe479cd04893de8d26c773450c12e1cad1630a6f09c30612d2a2185124612af"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "digest": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    }
+  ]
+}

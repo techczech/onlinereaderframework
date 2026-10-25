@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import type { PublicationBook } from './types.js';
+import type { PublicationAgentAccess, PublicationBook } from './types.js';
+import { AgentAccess } from './agent/AgentAccess.js';
 import { safePublicationHref } from './publication-model.js';
 import { publicationLabels, publicationNavigation, type PublicationNavigationNode } from './publication-navigation.js';
 import { FrontPage } from './frontpage/FrontPage.js';
@@ -14,6 +15,8 @@ interface HomeProps {
   /** Saved reader state, used only by the configurable front-page layouts. */
   readSections?: ReadonlySet<string>;
   lastSectionId?: string | null;
+  /** Show the ask-an-agent box above the footer. */
+  agent?: PublicationAgentAccess;
 }
 
 /** A book with a recognised `appearance.frontPageLayout` gets that layout; every other book keeps the classic home page. */
@@ -22,7 +25,7 @@ export const Home: React.FC<HomeProps> = props => {
   return layout ? <FrontPage {...props} layout={layout} /> : <ClassicHome {...props} />;
 };
 
-const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook }) => {
+const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook, agent }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const labels = publicationLabels(book);
   const contents = publicationNavigation(book.sections, book.navigation?.homeDepth ?? 2);
@@ -57,6 +60,7 @@ const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOp
       {book.home?.overviewDescription && <p>{book.home.overviewDescription}</p>}
       <HomeContents nodes={contents} onSelect={onSelectSection} />
     </nav>}
+    {agent && <AgentAccess book={book} access={agent} variant="panel" />}
     <footer className="publication-home-footer">
       <p>{book.home?.authorNote ?? `Written by ${book.author}.`}</p>
       {book.home?.license && safePublicationHref(book.home.license.href) && <div>

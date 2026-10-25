@@ -2,6 +2,9 @@
  * Per-book identity, guarded writes and the online reader's bounds are local changes.
  * Theme remains owned by the parent reader. No content is persisted here.
  */
+/** WriteFlex's lead style, minus bold (see anchored-reading.ts). Anything unknown falls back to 'contrast', as in WriteFlex's normaliseLeadStyle. */
+export type LeadStyle = 'contrast' | 'colour';
+export const normaliseLeadStyle = (value: unknown): LeadStyle => value === 'colour' ? 'colour' : 'contrast';
 export interface ReadingSupportPreferences {
   fontFamily: 'serif' | 'sans';
   fontSize: number;
@@ -19,6 +22,10 @@ export interface ReadingSupportPreferences {
   dim: number;
   /** 3 = dim uses the levels below. Absent in first-release settings, whose three named presets are migrated once; 2 values are kept as saved. */
   dimVersion: 3;
+  /** Anchored reading from WriteFlex: the first letters of each word are emphasised. Independent of the overlay (it is typography, the overlay is geometry). */
+  anchored: boolean;
+  /** How the emphasis shows (WriteFlex's lead style): contrast against softer text, or the accent colour. */
+  leadStyle: LeadStyle;
   /** True once the reader has chosen a text size, so the width-dependent default no longer applies. */
   fontSizeChosen: boolean;
 }
@@ -28,7 +35,7 @@ export const DIM_LEVELS = [{ label: 'Light', value: 0.72 }, { label: 'Medium', v
 const FIRST_RELEASE_DIM_PRESETS: readonly (readonly [number, number])[] = [[0.2, 0.72], [0.35, 0.9], [0.5, 1]];
 export const DEFAULT_READING_PREFERENCES: Readonly<ReadingSupportPreferences> = Object.freeze({
   fontFamily: 'serif', fontSize: 20, lineHeight: 1.7, paragraphSpacing: 16,
-  letterSpacing: 0, focus: 'off', overlay: 'off', lines: 3, rulerLines: 1, dim: 0.9, dimVersion: 3, fontSizeChosen: false,
+  letterSpacing: 0, focus: 'off', overlay: 'off', lines: 3, rulerLines: 1, dim: 0.9, dimVersion: 3, anchored: false, leadStyle: 'contrast', fontSizeChosen: false,
 });
 /** Copied from WriteFlex editor/line-overlay.ts; no CodeMirror imports required. */
 export function normaliseLineFocusSize(value: unknown): 1 | 3 | 5 {
@@ -69,6 +76,7 @@ export function normaliseReadingPreferences(value: unknown): ReadingSupportPrefe
     focus: overlay === 'paragraph' ? 'paragraph' : 'off', overlay,
     lines: normaliseLineFocusSize(v.lines), rulerLines: normaliseRulerLines(v.rulerLines),
     dim: normaliseDim(v.dim, v.dimVersion), dimVersion: 3,
+    anchored: v.anchored === true, leadStyle: normaliseLeadStyle(v.leadStyle),
     // Saved before this flag existed: a size other than the old default was certainly chosen.
     fontSizeChosen: typeof v.fontSizeChosen === 'boolean' ? v.fontSizeChosen : bounded(v.fontSize, 16, 28, d.fontSize) !== d.fontSize,
   };

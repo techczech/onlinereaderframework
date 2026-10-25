@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { getPublicationHeadings } from '../publication-content/index.js';
 import { publicationTextModel } from './publication-html.js';
+import { browserStorage, readOutlineCollapsed, writeOutlineCollapsed } from './outline-preference.js';
 
 interface TableOfContentsProps {
   content: string;
   format?: 'markdown' | 'html';
   sectionId?: string;
+  /** Identity of the book, so the folded state of the side outline is remembered per book. */
+  bookId?: string;
   contentRef: React.RefObject<HTMLDivElement>;
   /** 'rail' is the side outline; 'compact' is the disclosure above the chapter for windows too narrow for the rail. CSS shows one of them. */
   variant?: 'rail' | 'compact';
@@ -63,10 +66,16 @@ function extractHeadings(root: HTMLElement | null, canonical: Map<string, string
   });
 }
 
-export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContentsProps>(({ content, contentRef, format, sectionId, variant = 'rail', fallbackRef }, ref) => {
+export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContentsProps>(({ content, contentRef, format, sectionId, bookId, variant = 'rail', fallbackRef }, ref) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>('');
   const [open, setOpen] = useState(false);
+  // The side outline can be folded away to a small reopen control; the choice is remembered per book.
+  const [collapsed, setCollapsedState] = useState(() => bookId ? readOutlineCollapsed(bookId, browserStorage()) : false);
+  const bookOfCollapse = useRef(bookId);
+  if (bookOfCollapse.current !== bookId) { bookOfCollapse.current = bookId; const next = bookId ? readOutlineCollapsed(bookId, browserStorage()) : false; if (next !== collapsed) setCollapsedState(next); }
+  const setCollapsed = (next: boolean) => { setCollapsedState(next); if (bookId) writeOutlineCollapsed(bookId, next, browserStorage()); };
+  const focusAfterExpand = useRef(false);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const navRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -90,6 +99,8 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
       // A hidden outline cannot take focus: the one that is on screen does.
       if (!compact && !navRef.current?.getClientRects().length && fallbackRef?.current) { fallbackRef.current.focus(); return; }
       if (compact) { setOpen(true); setTimeout(focusLink, 0); return; }
+      // N on a folded outline unfolds it first, then moves into it.
+      if (collapsed) { focusAfterExpand.current = true; setCollapsed(false); return; }
       focusLink();
     }
   }));
@@ -114,6 +125,11 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
   useEffect(() => {
     linkRefs.current = linkRefs.current.slice(0, headings.length);
   }, [headings]);
+  useEffect(() => {
+    if (collapsed || !focusAfterExpand.current) return;
+    focusAfterExpand.current = false;
+    focusLink();
+  });
 
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
@@ -228,19 +244,29 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
       </nav>
     );
   }
+  const listId = `${outlineId.rail}-list`;
   return (
     <nav
         id={outlineId.rail}
         ref={navRef}
         aria-label="On this page"
         tabIndex={-1}
+        data-collapsed={collapsed || undefined}
         className="publication-local-contents focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        onKeyDown={e => {
+          // Escape inside the open outline folds it and returns focus to its toggle.
+          if (e.key === 'Escape' && !collapsed && e.target !== toggleRef.current) { e.stopPropagation(); setCollapsed(true); setTimeout(() => toggleRef.current?.focus(), 0); }
+        }}
     >
-      <div className="border-l border-gray-200 dark:border-gray-700 pl-4 py-2">
-        <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-          On this page
+      <div className="publication-outline-rail">
+        <h4 className="publication-outline-heading">
+          <button ref={toggleRef} type="button" className="publication-outline-rail-toggle" aria-expanded={!collapsed} aria-controls={listId}
+            title={collapsed ? 'Show the page outline' : 'Hide the page outline'} onClick={() => setCollapsed(!collapsed)}>
+            <span className="publication-outline-heading-text">On this page</span>
+            <span aria-hidden="true" className="material-symbols-outlined publication-outline-chevron">{collapsed ? 'right_panel_open' : 'right_panel_close'}</span>
+          </button>
         </h4>
-        {list}
+        <div id={listId} hidden={collapsed}>{list}</div>
       </div>
     </nav>
   );

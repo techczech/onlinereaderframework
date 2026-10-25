@@ -1,0 +1,450 @@
+{
+  "results": [
+    {
+      "name": "HTTP chapter targets from agent relative /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "target.md",
+          "target.md",
+          "target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained agent false /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from agent relative /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "chapters/target.md",
+          "chapters/target.md",
+          "chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained agent false /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit agent false",
+      "passed": true,
+      "detail": {
+        "href": "target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated agent false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent agent false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches agent false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from agent absolute /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained agent true /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from agent absolute /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained agent true /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit agent true",
+      "passed": true,
+      "detail": {
+        "href": "http://127.0.0.1:59790/read/sub/agent/closure-book/chapters/target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated agent true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent agent true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches agent true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from v2.1/assets/_agents-2 relative /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "target.md",
+          "target.md",
+          "target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 false /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from v2.1/assets/_agents-2 relative /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "chapters/target.md",
+          "chapters/target.md",
+          "chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 false /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit v2.1/assets/_agents-2 false",
+      "passed": true,
+      "detail": {
+        "href": "target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated v2.1/assets/_agents-2 false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent v2.1/assets/_agents-2 false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches v2.1/assets/_agents-2 false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from v2.1/assets/_agents-2 absolute /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 true /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from v2.1/assets/_agents-2 absolute /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained v2.1/assets/_agents-2 true /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit v2.1/assets/_agents-2 true",
+      "passed": true,
+      "detail": {
+        "href": "http://127.0.0.1:59790/read/sub/v2.1/assets/_agents-2/closure-book/chapters/target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated v2.1/assets/_agents-2 true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent v2.1/assets/_agents-2 true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches v2.1/assets/_agents-2 true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from ./a/./b/ relative /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "target.md",
+          "target.md",
+          "target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained ./a/./b/ false /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from ./a/./b/ relative /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "chapters/target.md",
+          "chapters/target.md",
+          "chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained ./a/./b/ false /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit ./a/./b/ false",
+      "passed": true,
+      "detail": {
+        "href": "target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated ./a/./b/ false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent ./a/./b/ false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches ./a/./b/ false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from ./a/./b/ absolute /chapters/alpha.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained ./a/./b/ true /chapters/alpha.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP chapter targets from ./a/./b/ absolute /full.md",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md",
+          "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md#reader-content-part"
+        ]
+      }
+    },
+    {
+      "name": "unrelated authored hrefs and escaped code retained ./a/./b/ true /full.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "absent heading is carried unchanged under the documented fragment limit ./a/./b/ true",
+      "passed": true,
+      "detail": {
+        "href": "http://127.0.0.1:59790/read/sub/a/b/closure-book/chapters/target.md#missing-heading",
+        "chapterExists": true,
+        "fragmentExists": false
+      }
+    },
+    {
+      "name": "unknown links truthful and deduplicated ./a/./b/ true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "manifest counts and helpers consistent ./a/./b/ true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "root discovery helper matches ./a/./b/ true",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "nested reader links all resolve to the reader root",
+      "passed": true,
+      "detail": {
+        "requests": 36,
+        "traversals": 0
+      }
+    },
+    {
+      "name": "both generators reject invalid directory variants without writes",
+      "passed": true,
+      "detail": {
+        "rejected": 52,
+        "expected": 52
+      }
+    },
+    {
+      "name": "dot segments normalise consistently",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact Markdown chapter bytes \"# Existing\\n\\nTail\\n\\n\"",
+      "passed": true,
+      "detail": {
+        "expected": "# Existing\n\nTail\n\n",
+        "actual": "# Existing\n\nTail\n\n"
+      }
+    },
+    {
+      "name": "source and separators remain distinct in full \"# Existing\\n\\nTail\\n\\n\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact Markdown chapter bytes \"no newline\"",
+      "passed": true,
+      "detail": {
+        "expected": "# raw\n\nno newline",
+        "actual": "# raw\n\nno newline"
+      }
+    },
+    {
+      "name": "source and separators remain distinct in full \"no newline\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact Markdown chapter bytes \"one trailing space \"",
+      "passed": true,
+      "detail": {
+        "expected": "# raw\n\none trailing space ",
+        "actual": "# raw\n\none trailing space "
+      }
+    },
+    {
+      "name": "source and separators remain distinct in full \"one trailing space \"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact Markdown chapter bytes \"hard break  \\nnext\\\\\\n```txt\\ncode  \\n```\\n  \"",
+      "passed": true,
+      "detail": {
+        "expected": "# raw\n\nhard break  \nnext\\\n```txt\ncode  \n```\n  ",
+        "actual": "# raw\n\nhard break  \nnext\\\n```txt\ncode  \n```\n  "
+      }
+    },
+    {
+      "name": "source and separators remain distinct in full \"hard break  \\nnext\\\\\\n```txt\\ncode  \\n```\\n  \"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact Markdown chapter bytes \"\"",
+      "passed": true,
+      "detail": {
+        "expected": "# raw\n\n",
+        "actual": "# raw\n\nThis section has no text of its own. It contains:\n\n"
+      }
+    },
+    {
+      "name": "exact Markdown chapter bytes \" \\n\\t  \"",
+      "passed": false,
+      "detail": {
+        "expected": "# raw\n\n \n\t  ",
+        "actual": "# raw\n\nThis section has no text of its own. It contains:\n\n"
+      }
+    },
+    {
+      "name": "Markdown source exact before chapter note",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "only chapter notes outside code and citations",
+      "passed": true,
+      "detail": {
+        "note": "\n\n> Chapter links in this section, as exported files:\n>\n> - [go](target.md) (written as `#/target`)\n> - missing: `#/absent` has no exported file\n"
+      }
+    },
+    {
+      "name": "href-like title text and citation untouched",
+      "passed": true,
+      "detail": {
+        "sanitised": "<p><a title=\"example href=&#x22;#/target&#x22;\" href=\"https://citation.example/\">Citation title</a></p>",
+        "actual": "# alpha\n\n<p><a title=\"example href=&#x22;#/target&#x22;\" href=\"https://citation.example/\">Citation title</a></p>\n"
+      }
+    }
+  ],
+  "failures": 1
+}

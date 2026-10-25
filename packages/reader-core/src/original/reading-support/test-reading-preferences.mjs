@@ -72,3 +72,17 @@ test('a text size the reader chose is honoured; the default eases down on narrow
   assert.equal(p.normaliseReadingPreferences({ fontSize: 22 }).fontSizeChosen, true, 'older saved size other than the default was a choice');
   assert.equal(p.normaliseReadingPreferences({ fontSize: 20 }).fontSizeChosen, false);
 });
+test('anchored reading is off by default, kept per book, and invalid values fall back to WriteFlex\'s contrast default', () => {
+  assert.equal(p.DEFAULT_READING_PREFERENCES.anchored, false);
+  assert.equal(p.normaliseReadingPreferences({ anchored: 'yes' }).anchored, false);
+  assert.equal(p.normaliseReadingPreferences({ anchored: true, leadStyle: 'bold' }).leadStyle, 'contrast');
+  assert.equal(p.normaliseReadingPreferences({ anchored: true, leadStyle: 'colour' }).leadStyle, 'colour');
+  const items = new Map();
+  const storage = { getItem: k => items.get(k) ?? null, setItem: (k, v) => items.set(k, v) };
+  p.writeReadingPreferences('a', p.normaliseReadingPreferences({ anchored: true, leadStyle: 'colour', fontFamily: 'sans' }), storage);
+  assert.equal(p.readReadingPreferences('a', storage).anchored, true);
+  assert.equal(p.readReadingPreferences('b', storage).anchored, false);
+  // Turning anchored reading off (what "Turn all off" patches) leaves the formatting choices alone.
+  const off = p.normaliseReadingPreferences({ ...p.readReadingPreferences('a', storage), anchored: false, overlay: 'off' });
+  assert.equal(off.fontFamily, 'sans');
+});

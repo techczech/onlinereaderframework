@@ -1,5 +1,6 @@
 import React from 'react';
-import type { PublicationBook } from '../types.js';
+import type { PublicationAgentAccess, PublicationBook } from '../types.js';
+import { AgentAccess } from '../agent/AgentAccess.js';
 import { safePublicationHref } from '../publication-model.js';
 import type { publicationLabels } from '../publication-navigation.js';
 import type { FrontPageLayoutKey } from './frontpage-layouts.js';
@@ -31,6 +32,7 @@ export interface FrontPageContext {
   canGenerate: boolean;
   generating: boolean;
   generate: () => Promise<void>;
+  agent?: PublicationAgentAccess;
 }
 
 type Ctx = { c: FrontPageContext };
@@ -118,14 +120,16 @@ function Actions({ c, search = true, ebook = true, read = true }: Ctx & { search
 
 function Footer({ c }: Ctx) {
   const { book } = c;
-  return <footer className="publication-home-footer publication-front-footer">
+  return <>
+    {c.agent && <AgentAccess book={book} access={c.agent} variant="panel" />}
+    <footer className="publication-home-footer publication-front-footer">
     <p>{book.home?.authorNote ?? `Written by ${book.author}.`}</p>
     {book.home?.license && safePublicationHref(book.home.license.href) && <div>
       {book.home.license.imageUrl && safePublicationHref(book.home.license.imageUrl) && <img alt={book.home.license.label} src={book.home.license.imageUrl} width="88" height="31" />}
       <a href={book.home.license.href} rel="license noopener noreferrer" target="_blank">{book.home.license.label}</a>
     </div>}
     {book.sourceUrl && safePublicationHref(book.sourceUrl) && <a href={book.sourceUrl}>Publication source</a>}
-  </footer>;
+  </footer></>;
 }
 
 /** Contents or Full contents: how many levels of the book's own contents are listed. Hidden when both would list the same. */

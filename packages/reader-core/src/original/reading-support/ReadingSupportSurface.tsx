@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { useReadingSupport } from './use-reading-support.js';
 import { useViewportWidth } from './use-viewport-width.js';
 import { effectiveFontSize } from './reading-preferences.js';
+import { useAnchoredReading, useAnchoredReadingSupport } from './use-anchored-reading.js';
 import { bandRect, dimRects, ownContent, rulerShape, visualLines, type LineRect } from './line-geometry.js';
 export interface ReadingSupportSurfaceProps { bookId: string; sectionId: string; children: ReactNode; }
 /** One thing to read: a whole block, or (`nodes`) the run of a block's own text before or after a readable block nested in it. */
@@ -15,6 +16,9 @@ export function ReadingSupportSurface({ bookId, sectionId, children }: ReadingSu
   const root = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState<Position>(NO_POSITION);
   const viewport = useViewportWidth();
+  const anchoredAvailable = useAnchoredReadingSupport();
+  const anchoredOn = p.anchored && anchoredAvailable;
+  useAnchoredReading(root, anchoredOn, sectionId);
   useEffect(() => {
     const surface = root.current;
     if (!surface) return;
@@ -166,7 +170,7 @@ export function ReadingSupportSurface({ bookId, sectionId, children }: ReadingSu
     '--rs-paragraph':`${p.paragraphSpacing}px`, '--rs-letter':`${p.letterSpacing}em`,
     '--rs-dim':p.dim,
   } as CSSProperties;
-  return <div ref={root} className="reading-support-surface" data-rs-overlay={p.overlay} style={style} tabIndex={0} role="region" aria-label="Reading text. Use Up and Down to move reading focus; Escape turns reading assistance off.">
+  return <div ref={root} className="reading-support-surface" data-rs-overlay={p.overlay} data-rs-anchored={anchoredOn ? p.leadStyle : undefined} style={style} tabIndex={0} role="region" aria-label="Reading text. Use Up and Down to move reading focus; Escape turns reading assistance off.">
     {children}
     {(p.overlay === 'line-window' || p.overlay === 'ruler') && <div className="reading-support-overlay" aria-hidden="true" style={{top:position.top,left:position.left,width:position.width,height:position.height}}>
       {position.shades.map((shade, index) => <div key={index} className={p.overlay === 'ruler' ? 'reading-support-ruler' : 'reading-support-mask'} style={{top:shade.top, height:shade.bottom - shade.top}} />)}

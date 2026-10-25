@@ -63,12 +63,20 @@ export interface PublicationCoaching {
   render: (context: { book: PublicationBook; section?: PublicationSection; onClose: () => void }) => ReactNode;
 }
 
+/** Where the book's generated agent files are served (see agent-export). The reader links to them; it never calls an AI service itself. */
+export interface PublicationAgentAccess {
+  /** Folder of generated files, relative to the page or an absolute address. Default `agent/`. */
+  path?: string;
+}
+
 export interface PublicationReaderProps {
   book: PublicationBook;
   coaching?: PublicationCoaching;
   audio?: readonly import('./listening/listening-types.js').PublicationAudioTrack[];
   /** Supply image bytes for self-contained export; false disables generated EPUB. */
   epub?: PublicationEpubOptions | false;
+  /** Show "Ask an agent to help you read this" and link the generated agent files. Off unless the host generated them. */
+  agent?: PublicationAgentAccess | false;
 }
 
 export interface Highlight {
