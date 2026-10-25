@@ -1,0 +1,8621 @@
+{
+ "label": "after",
+ "depth": {
+  "linguistics opus-colour-band depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice opus-colour-band depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "language-muscle opus-colour-band depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "linguistics sol-open-contents depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice sol-open-contents depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "language-muscle sol-open-contents depth 0": {
+   "groups": [],
+   "entries": 0,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "linguistics opus-colour-band depth 1": {
+   "groups": [
+    "Phonetics, phonology and orthography",
+    "Morphology, Syntax, Lexicon",
+    "Semantics and pragmatics",
+    "Typology",
+    "Sociolinguistics, historical development",
+    "Bilingualism, language acquisition and l",
+    "Theory, terminology and disciplinary que",
+    "Corpora, tools and language technology",
+    "Figurative language"
+   ],
+   "entries": 253,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice opus-colour-band depth 1": {
+   "groups": [],
+   "entries": 21,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "language-muscle opus-colour-band depth 1": {
+   "groups": [],
+   "entries": 4,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "linguistics sol-open-contents depth 1": {
+   "groups": [
+    "Phonetics, phonology and orthography",
+    "Morphology, Syntax, Lexicon",
+    "Semantics and pragmatics",
+    "Typology",
+    "Sociolinguistics, historical development",
+    "Bilingualism, language acquisition and l",
+    "Theory, terminology and disciplinary que",
+    "Corpora, tools and language technology",
+    "Figurative language"
+   ],
+   "entries": 253,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice sol-open-contents depth 1": {
+   "groups": [],
+   "entries": 21,
+   "fullAvailable": 0,
+   "frontPagePresent": 1
+  },
+  "language-muscle sol-open-contents depth 1": {
+   "groups": [],
+   "entries": 4,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "linguistics opus-colour-band depth 2": {
+   "groups": [
+    "Phonetics, phonology and orthography",
+    "Morphology, Syntax, Lexicon",
+    "Semantics and pragmatics",
+    "Typology",
+    "Sociolinguistics, historical development",
+    "Bilingualism, language acquisition and l",
+    "Theory, terminology and disciplinary que",
+    "Corpora, tools and language technology",
+    "Figurative language"
+   ],
+   "entries": 253,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice opus-colour-band depth 2": {
+   "groups": [
+    "Introduction",
+    "Principles & Theory",
+    "Practice Principles",
+    "Practice Approaches",
+    "Targeting Practice",
+    "Improving Practice",
+    "Appendices",
+    "App Guide"
+   ],
+   "entries": 21,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "language-muscle opus-colour-band depth 2": {
+   "groups": [],
+   "entries": 12,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "linguistics sol-open-contents depth 2": {
+   "groups": [
+    "Phonetics, phonology and orthography",
+    "Morphology, Syntax, Lexicon",
+    "Semantics and pragmatics",
+    "Typology",
+    "Sociolinguistics, historical development",
+    "Bilingualism, language acquisition and l",
+    "Theory, terminology and disciplinary que",
+    "Corpora, tools and language technology",
+    "Figurative language"
+   ],
+   "entries": 253,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "deliberate-practice sol-open-contents depth 2": {
+   "groups": [
+    "Introduction",
+    "Principles & Theory",
+    "Practice Principles",
+    "Practice Approaches",
+    "Targeting Practice",
+    "Improving Practice",
+    "Appendices",
+    "App Guide"
+   ],
+   "entries": 21,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  },
+  "language-muscle sol-open-contents depth 2": {
+   "groups": [],
+   "entries": 12,
+   "fullAvailable": 1,
+   "frontPagePresent": 1
+  }
+ },
+ "notes": [
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "count": 1,
+   "inViewport": true,
+   "controls": [
+    "headphonesListen",
+    "text_fieldsFormatting",
+    "eyeglassesAssist",
+    "ink_highlighterNotes"
+   ]
+  }
+ ],
+ "notesDrawer": {
+  "opened": true,
+  "found": [
+   "Seeded highlight text",
+   "Seeded reflection"
+  ],
+  "storedUnchanged": true,
+  "stillOnFrontPage": true
+ },
+ "search": [
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-jacket",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-jacket",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-reading-desk",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-reading-desk",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-open-contents",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "sol-open-contents",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-title-contents",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-title-contents",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-search-map",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-search-map",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-colour-band",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 1440,
+   "layout": "opus-colour-band",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-jacket",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-jacket",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-reading-desk",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-reading-desk",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-open-contents",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "sol-open-contents",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "opus-title-contents",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "opus-title-contents",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "opus-search-map",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "opus-search-map",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    0
+   ],
+   "width": 390,
+   "layout": "opus-colour-band",
+   "book": "linguistics",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "tag": "INPUT",
+   "label": "Search",
+   "value": "mus",
+   "scroll": [
+    0,
+    460
+   ],
+   "width": 390,
+   "layout": "opus-colour-band",
+   "book": "deliberate-practice",
+   "scrollBefore": [
+    0,
+    0
+   ],
+   "ok": true
+  }
+ ],
+ "contrast": [
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      35,
+      36,
+      48
+     ],
+     "ratio": 6.63
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      107,
+      103
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 5.2
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      249,
+      234,
+      223
+     ],
+     "ratio": 4.38
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      17,
+      24,
+      39
+     ],
+     "bg": [
+      186,
+      134,
+      120
+     ],
+     "ratio": 5.72
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      255,
+      250,
+      241
+     ],
+     "bg": [
+      158,
+      64,
+      39
+     ],
+     "ratio": 6.28
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      34,
+      35,
+      48
+     ],
+     "ratio": 5.88
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      103,
+      108,
+      103
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 5.19
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      243,
+      231,
+      227
+     ],
+     "ratio": 5.44
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      17,
+      24,
+      39
+     ],
+     "bg": [
+      229,
+      231,
+      235
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      250,
+      249,
+      245
+     ],
+     "bg": [
+      32,
+      40,
+      34
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      27,
+      38,
+      51
+     ],
+     "ratio": 6.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 11.25
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 11.25
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      102,
+      121,
+      114
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 4.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      227,
+      234,
+      221
+     ],
+     "ratio": 4.84
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    }
+   }
+  },
+  {
+   "width": 1440,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      35,
+      36,
+      48
+     ],
+     "ratio": 6.63
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 14.61
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      107,
+      103
+     ],
+     "bg": [
+      255,
+      252,
+      247
+     ],
+     "ratio": 5.2
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      249,
+      234,
+      223
+     ],
+     "ratio": 4.38
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      252,
+      246
+     ],
+     "ratio": 14.6
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      216,
+      156,
+      140
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.65
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      17,
+      24,
+      39
+     ],
+     "bg": [
+      186,
+      134,
+      120
+     ],
+     "ratio": 5.72
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "linguistics",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "What's the difference be",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Phonetics, phonology and",
+     "fg": [
+      40,
+      39,
+      35
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 14.38
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "32 entries",
+     "fg": [
+      109,
+      106,
+      101
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 5.17
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      184,
+      75,
+      45
+     ],
+     "bg": [
+      255,
+      250,
+      241
+     ],
+     "ratio": 4.95
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Introduction to Key Issu",
+     "fg": [
+      255,
+      250,
+      241
+     ],
+     "bg": [
+      158,
+      64,
+      39
+     ],
+     "ratio": 6.28
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      34,
+      35,
+      48
+     ],
+     "ratio": 5.88
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      103,
+      108,
+      103
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 5.19
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      243,
+      231,
+      227
+     ],
+     "ratio": 5.44
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      252,
+      251,
+      249
+     ],
+     "ratio": 14.63
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      208,
+      142,
+      142
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 6.71
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      17,
+      24,
+      39
+     ],
+     "bg": [
+      229,
+      231,
+      235
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "deliberate-practice",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "About This Guide",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-title": {
+     "sel": ".publication-front-group-title",
+     "text": "Introduction",
+     "fg": [
+      32,
+      40,
+      34
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 14.36
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "1 entry",
+     "fg": [
+      102,
+      107,
+      102
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 5.15
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      169,
+      50,
+      50
+     ],
+     "bg": [
+      250,
+      249,
+      245
+     ],
+     "ratio": 6.25
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Deliberate Practice:A Un",
+     "fg": [
+      250,
+      249,
+      245
+     ],
+     "bg": [
+      32,
+      40,
+      34
+     ],
+     "ratio": 14.36
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-jacket",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-reading-desk",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "sol-open-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-title-contents",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 12.2
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      165,
+      169,
+      176
+     ],
+     "bg": [
+      32,
+      38,
+      53
+     ],
+     "ratio": 6.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      27,
+      38,
+      51
+     ],
+     "ratio": 6.34
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      28,
+      34,
+      49
+     ],
+     "ratio": 12.83
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-search-map",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 11.25
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 11.25
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      102,
+      121,
+      114
+     ],
+     "bg": [
+      250,
+      250,
+      242
+     ],
+     "ratio": 4.4
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch the whole b",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      227,
+      234,
+      221
+     ],
+     "ratio": 4.84
+    },
+    ".publication-front-filter input": {
+     "sel": ".publication-front-filter input",
+     "text": "Find in contents\u2026",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      250,
+      249,
+      241
+     ],
+     "ratio": 11.17
+    },
+    ".publication-front-title": {
+     "sel": ".publication-front-title",
+     "text": "Building Your Language M",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "dark": true,
+   "isDark": true,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      229,
+      231,
+      235
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 14.33
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      160,
+      164,
+      171
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.12
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      128,
+      176,
+      168
+     ],
+     "bg": [
+      17,
+      24,
+      39
+     ],
+     "ratio": 7.34
+    }
+   }
+  },
+  {
+   "width": 390,
+   "book": "language-muscle",
+   "layout": "opus-colour-band",
+   "dark": false,
+   "isDark": false,
+   "worst": {
+    ".publication-front-entry button": {
+     "sel": ".publication-front-entry button",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-entry-title": {
+     "sel": ".publication-front-entry-title",
+     "text": "1. About this guide",
+     "fg": [
+      32,
+      61,
+      53
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 10.85
+    },
+    ".publication-front-group-count": {
+     "sel": ".publication-front-group-count",
+     "text": "4 entries",
+     "fg": [
+      101,
+      120,
+      111
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 4.33
+    },
+    ".publication-front-secondary": {
+     "sel": ".publication-front-secondary",
+     "text": "searchSearch",
+     "fg": [
+      24,
+      112,
+      96
+     ],
+     "bg": [
+      247,
+      246,
+      233
+     ],
+     "ratio": 5.48
+    }
+   }
+  }
+ ],
+ "focus": [
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "color(srgb 0.846863 0.611765 0.547059)",
+   "boxShadow": "none",
+   "ratioVsBackground": 6.51,
+   "tag": "BUTTON",
+   "text": "What's the differenc",
+   "book": "linguistics",
+   "dark": true,
+   "target": "entry"
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "color(srgb 0.846863 0.611765 0.547059)",
+   "boxShadow": "none",
+   "ratioVsBackground": 6.51,
+   "tag": "BUTTON",
+   "text": "Show all 32 entries",
+   "book": "linguistics",
+   "dark": true,
+   "target": "show-all"
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "rgb(184, 75, 45)",
+   "boxShadow": "none",
+   "ratioVsBackground": 5.03,
+   "tag": "BUTTON",
+   "text": "What's the differenc",
+   "book": "linguistics",
+   "dark": false,
+   "target": "entry"
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "rgb(184, 75, 45)",
+   "boxShadow": "none",
+   "ratioVsBackground": 5.03,
+   "tag": "BUTTON",
+   "text": "Show all 32 entries",
+   "book": "linguistics",
+   "dark": false,
+   "target": "show-all"
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "color(srgb 0.81451 0.557843 0.557843)",
+   "boxShadow": "none",
+   "ratioVsBackground": 5.71,
+   "tag": "BUTTON",
+   "text": "About This Guide",
+   "book": "deliberate-practice",
+   "dark": true,
+   "target": "entry"
+  },
+  {
+   "book": "deliberate-practice",
+   "dark": true,
+   "target": "show-all",
+   "present": false
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "rgb(169, 50, 50)",
+   "boxShadow": "none",
+   "ratioVsBackground": 6.37,
+   "tag": "BUTTON",
+   "text": "About This Guide",
+   "book": "deliberate-practice",
+   "dark": false,
+   "target": "entry"
+  },
+  {
+   "book": "deliberate-practice",
+   "dark": false,
+   "target": "show-all",
+   "present": false
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "color(srgb 0.501765 0.691569 0.657059)",
+   "boxShadow": "none",
+   "ratioVsBackground": 6.25,
+   "tag": "BUTTON",
+   "text": "1. About this guide",
+   "book": "language-muscle",
+   "dark": true,
+   "target": "entry"
+  },
+  {
+   "book": "language-muscle",
+   "dark": true,
+   "target": "show-all",
+   "present": false
+  },
+  {
+   "matches": true,
+   "outlineStyle": "solid",
+   "outlineWidth": "2px",
+   "outlineColor": "rgb(24, 112, 96)",
+   "boxShadow": "none",
+   "ratioVsBackground": 5.68,
+   "tag": "BUTTON",
+   "text": "1. About this guide",
+   "book": "language-muscle",
+   "dark": false,
+   "target": "entry"
+  },
+  {
+   "book": "language-muscle",
+   "dark": false,
+   "target": "show-all",
+   "present": false
+  }
+ ],
+ "pageErrors": []
+}

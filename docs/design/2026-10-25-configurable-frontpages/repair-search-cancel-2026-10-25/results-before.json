@@ -1,0 +1,89 @@
+{
+  "label": "before",
+  "cases": [
+    {
+      "width": 1440,
+      "kind": "close-focus-other-reopen",
+      "closed": {
+        "active": "BUTTON",
+        "cls": "publication-navigation-toggle",
+        "inInput": false,
+        "open": "false"
+      },
+      "reopened": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "stoleFocus": true
+    },
+    {
+      "width": 1440,
+      "kind": "fresh-request",
+      "repeat": 1,
+      "state": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "focusedInput": true
+    },
+    {
+      "width": 1440,
+      "kind": "fresh-request",
+      "repeat": 2,
+      "state": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "focusedInput": true
+    },
+    {
+      "width": 390,
+      "kind": "close-focus-other-reopen",
+      "closed": {
+        "active": "BUTTON",
+        "cls": "publication-navigation-toggle",
+        "inInput": false,
+        "open": "false"
+      },
+      "reopened": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "stoleFocus": true
+    },
+    {
+      "width": 390,
+      "kind": "fresh-request",
+      "repeat": 1,
+      "state": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "focusedInput": true
+    },
+    {
+      "width": 390,
+      "kind": "fresh-request",
+      "repeat": 2,
+      "state": {
+        "active": "INPUT",
+        "cls": "publication-sidebar-search w-full pl-9 pr-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none text-sm transition-all placeholder-gray-400 dark:placeholder-gray-500",
+        "inInput": true,
+        "open": "true"
+      },
+      "focusedInput": true
+    }
+  ],
+  "errors": [],
+  "pass": false
+}

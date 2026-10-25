@@ -28,3 +28,7 @@ aside::-webkit-scrollbar-thumb { background-color: #E5E7EB; border-radius: 4px; 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Demo-only chooser for the six front-page layouts; the published reader has no such control. */
+.demo-frontpage-chooser { position: fixed; right: .75rem; bottom: .75rem; z-index: 40; display: flex; align-items: center; gap: .5rem; padding: .35rem .6rem; border: 1px solid #0003; border-radius: .6rem; background: #fffffff0; color: #202020; font: 12px/1.2 Inter, system-ui, sans-serif; box-shadow: 0 2px 8px #0002; }
+.demo-frontpage-chooser select { font: inherit; padding: .2rem .3rem; }

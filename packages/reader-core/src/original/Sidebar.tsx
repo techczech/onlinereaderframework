@@ -16,6 +16,8 @@ interface SidebarProps {
   readSections: Set<string>;
   bookmarkedSections: Set<string>;
   shouldFocusSearch?: boolean;
+  /** Called once the requested focus has landed or been given up, so the next request is a new one. */
+  onSearchFocusHandled?: () => void;
 }
 
 // Layout effects warn during server rendering; the sidebar only measures in a browser.
@@ -46,6 +48,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   readSections,
   bookmarkedSections,
   shouldFocusSearch,
+  onSearchFocusHandled,
 }) => {
   const GUIDE_CONTENT = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
   const searchIndex = useMemo(() => GUIDE_CONTENT.map(section => ({ section, text: publicationPlainText(renderPublicationContent(section.content, section.format ?? 'markdown')) })), [GUIDE_CONTENT]);
@@ -111,11 +114,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
     if (isOpen && !searching) reveal('nearest');
   }, [currentSectionId]);
 
-  // Auto-focus search input when requested
+  // A search request (the Search button on the book home, or the search shortcut) lands in the field once the sidebar is rendered.
+  // The sidebar slides in over a few frames and focus is refused while it is still hidden, so retry on frames for about half a second.
+  // Focus is not taken from a field the reader has moved to meanwhile, and the sliding sidebar must not scroll anything.
   useEffect(() => {
-    if (shouldFocusSearch && isOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
+    if (!shouldFocusSearch || !isOpen) return;
+    const input = searchInputRef.current;
+    let frame = 0, tries = 0, done = false;
+    // Only the request that is still current may consume the flag; a request already cancelled below cannot clear a newer one.
+    const finish = () => { if (done) return; done = true; onSearchFocusHandled?.(); };
+    const elsewhere = () => {
+      const active = document.activeElement as HTMLElement | null;
+      return !!active && active !== input && (active.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName) || !!active.closest('[role="dialog"]'));
+    };
+    const attempt = () => {
+      if (done || !input) return;
+      if (elsewhere()) return finish();
+      input.focus({ preventScroll: true });
+      if (document.activeElement === input) { input.select(); return finish(); }
+      if (++tries >= 30) return finish();
+      frame = requestAnimationFrame(attempt);
+    };
+    frame = requestAnimationFrame(attempt);
+    // Closing navigation, a book change or unmount ends the request instead of leaving it to revive on the next opening.
+    return () => { cancelAnimationFrame(frame); finish(); };
   }, [shouldFocusSearch, isOpen]);
 
   // Search Logic

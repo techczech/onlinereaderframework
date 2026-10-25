@@ -29,7 +29,7 @@ export interface ReaderLayoutProps {
 /** Original reader actions and annotations, with independently measured article and navigation. */
 export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
   const [speech, setSpeech] = useState<SpeechState>('idle');
-  const { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
+  const { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
     isDarkMode, setIsDarkMode, defaultDarkMode, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
@@ -63,6 +63,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
         readSections={readSections}
         bookmarkedSections={bookmarkedSections}
         shouldFocusSearch={isSearchTriggered}
+        onSearchFocusHandled={() => setIsSearchTriggered(false)}
       />
 
       {/* Main Content Area */}
@@ -131,6 +132,8 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                     onStart={() => { const first = sections.find(isReadableSection); if (first) handleSectionChange(first.id); }} 
                     onSelectSection={handleSectionChange}
                     onOpenSearch={handleOpenSearch}
+                    readSections={readSections}
+                    lastSectionId={lastSectionId}
                 />
             ) : (
                 <div className={`publication-reading-layout ${getContainerWidthClass()}`}>

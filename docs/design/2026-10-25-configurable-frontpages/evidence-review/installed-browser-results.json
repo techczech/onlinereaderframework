@@ -1,0 +1,125 @@
+[
+  {
+    "installedLayout": "sol-jacket",
+    "actual": "sol-jacket",
+    "bandBackground": null
+  },
+  {
+    "installedLayout": "sol-reading-desk",
+    "actual": "sol-reading-desk",
+    "bandBackground": null
+  },
+  {
+    "installedLayout": "sol-open-contents",
+    "actual": "sol-open-contents",
+    "bandBackground": null
+  },
+  {
+    "installedLayout": "opus-title-contents",
+    "actual": "opus-title-contents",
+    "bandBackground": null
+  },
+  {
+    "installedLayout": "opus-search-map",
+    "actual": "opus-search-map",
+    "bandBackground": null
+  },
+  {
+    "installedLayout": "opus-colour-band",
+    "actual": "opus-colour-band",
+    "bandBackground": "color(srgb 0.620549 0.252941 0.151765)"
+  },
+  {
+    "installedLayout": "invalid",
+    "actual": "classic",
+    "bandBackground": null
+  },
+  {
+    "depth": 0,
+    "groupTitles": [],
+    "ids": []
+  },
+  {
+    "depth": 1,
+    "groupTitles": [
+      "meaningful1 entry"
+    ],
+    "ids": [
+      "meaningful"
+    ]
+  },
+  {
+    "depth": 2,
+    "groupTitles": [
+      "group1 entry",
+      "meaningful2 entries"
+    ],
+    "ids": [
+      "child",
+      "meaningful",
+      "other-child"
+    ]
+  },
+  {
+    "depth": 3,
+    "groupTitles": [
+      "group2 entries",
+      "meaningful2 entries"
+    ],
+    "ids": [
+      "child",
+      "grandchild",
+      "meaningful",
+      "other-child"
+    ]
+  },
+  {
+    "last": "group",
+    "primary": "arrow_forward\nStart reading\nchild"
+  },
+  {
+    "last": "deleted",
+    "primary": "arrow_forward\nStart reading\nchild"
+  },
+  {
+    "last": "grandchild",
+    "primary": "history\nContinue reading\ngrandchild"
+  },
+  {
+    "last": 42,
+    "primary": "arrow_forward\nStart reading\nchild"
+  },
+  {
+    "blockedStorageErrors": [],
+    "storageNotice": true,
+    "url": "http://127.0.0.1:50938/?book=package-verification&section=introduction"
+  },
+  {
+    "chapterToolbar": [
+      {
+        "label": "Listen",
+        "left": 1001,
+        "right": 1092.515625,
+        "hit": true
+      },
+      {
+        "label": "Formatting",
+        "left": 1100.515625,
+        "right": 1221.34375,
+        "hit": true
+      },
+      {
+        "label": "Assist",
+        "left": 1229.34375,
+        "right": 1321.078125,
+        "hit": true
+      },
+      {
+        "label": "Open notes and highlights",
+        "left": 1329.078125,
+        "right": 1420,
+        "hit": true
+      }
+    ]
+  }
+]

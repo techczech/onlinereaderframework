@@ -37,3 +37,10 @@ test('letter spacing reads Normal at zero', () => {
   assert.equal(m.letterSpacingLabel(0), 'Normal');
   assert.equal(m.letterSpacingLabel(0.04), '0.04 em');
 });
+test('Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter', () => {
+  const toolbar = readFileSync(new URL('./ReaderToolbar.tsx', import.meta.url), 'utf8');
+  const notes = toolbar.match(/(\{[^{}]*&&\s*)?<button[^>]*publication-toolbar-notes[^>]*>/);
+  assert.ok(notes, 'a Notes control exists');
+  assert.ok(!notes[1], 'Notes is not conditional on the page');
+  assert.match(toolbar, /disabled=\{props\.isHome \|\| !props\.speechAvailable\}/);
+});

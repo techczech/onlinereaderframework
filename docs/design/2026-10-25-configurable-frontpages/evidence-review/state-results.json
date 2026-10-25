@@ -1,0 +1,14 @@
+{
+  "initialResume": "Working Memory Limitations",
+  "switchedResume": "1. About this guide",
+  "restoredResume": "Working Memory Limitations",
+  "selectedLayout": "opus-colour-band",
+  "seedPreserved": true,
+  "historyBackLayout": "sol-jacket",
+  "historyBackResume": "1. About this guide",
+  "historyForwardLayout": "opus-colour-band",
+  "expected": {
+    "initial": "Working Memory Limitations",
+    "switched": "1. About this guide"
+  }
+}

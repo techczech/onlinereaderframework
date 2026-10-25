@@ -1,0 +1,20 @@
+/** Interface wording of the front page. Book text is never replaced; these are the reader's own controls. */
+export const frontPageCopy = {
+  start: 'Start reading',
+  continue: 'Continue reading',
+  startHere: 'Start here',
+  fromBeginning: 'Start from the beginning',
+  ebook: 'Download eBook',
+  generating: 'Generating…',
+  depthLabel: 'How much of the contents to list',
+  filterLabel: 'Filter the contents by title',
+  filterPlaceholder: 'Find in contents…',
+  clearFilter: 'Clear the filter',
+  noMatches: 'No contents match. Try another word.',
+  lastOpened: 'Last opened',
+  read: 'Read',
+  showFewer: 'Show fewer',
+  showAll: (n: number) => `Show all ${n} entries`,
+  toggleGroup: (title: string, open: boolean) => `${open ? 'Hide' : 'Show'} the entries under ${title}`,
+  searchBook: (search: string) => `${search} the whole book`,
+} as const;

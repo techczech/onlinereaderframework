@@ -1,0 +1,369 @@
+{
+  "status": "pass",
+  "assertions": 461,
+  "cases": [
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1684,
+      "frameHeight": 1139,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1783,
+      "frameHeight": 1217,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1486,
+      "frameHeight": 941,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1585,
+      "frameHeight": 1019,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1726,
+      "frameHeight": 1181,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 360,
+      "variant": "jacket",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1825,
+      "frameHeight": 1259,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1676,
+      "frameHeight": 1131,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1784,
+      "frameHeight": 1218,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1540,
+      "frameHeight": 995,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1648,
+      "frameHeight": 1082,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1776,
+      "frameHeight": 1231,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 360,
+      "variant": "desk",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1872,
+      "frameHeight": 1306,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1670,
+      "frameHeight": 1125,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1802,
+      "frameHeight": 1236,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1451,
+      "frameHeight": 906,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1583,
+      "frameHeight": 1017,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1692,
+      "frameHeight": 1147,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 360,
+      "variant": "contents",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1841,
+      "frameHeight": 1275,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1197,
+      "frameHeight": 1157,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1218,
+      "frameHeight": 1157,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1057,
+      "frameHeight": 940,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1078,
+      "frameHeight": 940,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1197,
+      "frameHeight": 1157,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "jacket",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1218,
+      "frameHeight": 1157,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1089,
+      "frameHeight": 990,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1110,
+      "frameHeight": 990,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1000,
+      "frameHeight": 783,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1019,
+      "frameHeight": 849,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1075,
+      "frameHeight": 968,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "desk",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1096,
+      "frameHeight": 968,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "deliberate-practice",
+      "returning": false,
+      "outerHeight": 1068,
+      "frameHeight": 958,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "deliberate-practice",
+      "returning": true,
+      "outerHeight": 1089,
+      "frameHeight": 958,
+      "entries": 21,
+      "roots": 21
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "language-muscle",
+      "returning": false,
+      "outerHeight": 1000,
+      "frameHeight": 796,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "language-muscle",
+      "returning": true,
+      "outerHeight": 1026,
+      "frameHeight": 860,
+      "entries": 12,
+      "roots": 4
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "linguistics",
+      "returning": false,
+      "outerHeight": 1032,
+      "frameHeight": 902,
+      "entries": 262,
+      "roots": 9
+    },
+    {
+      "width": 728,
+      "variant": "contents",
+      "book": "linguistics",
+      "returning": true,
+      "outerHeight": 1106,
+      "frameHeight": 984,
+      "entries": 262,
+      "roots": 9
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "executablePath": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+}

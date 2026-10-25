@@ -5,12 +5,13 @@ import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import type { TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
 import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
-import { readableNeighbours } from './sidebar-model.js';
+import { isReadableSection, readableNeighbours } from './sidebar-model.js';
 import { useReadingSupport } from './reading-support/use-reading-support.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
 const oneOf = <T extends string>(values: readonly T[]) => (value: unknown): value is T => typeof value === 'string' && values.includes(value as T);
+const stringOrNull = (value: unknown): value is string | null => value === null || typeof value === 'string';
 const record = (value: unknown): value is Record<string, unknown> => value !== null && typeof value === 'object';
 const highlightsValid = (value: unknown): value is Highlight[] => Array.isArray(value) && value.every(item => record(item) && ['id', 'text', 'sectionId', 'sectionTitle'].every(key => typeof item[key] === 'string') && typeof item.date === 'number' && Number.isFinite(item.date) && (item.note === undefined || typeof item.note === 'string') && (item.author === undefined || typeof item.author === 'string'));
 const reflectionsValid = (value: unknown): value is Reflection[] => Array.isArray(value) && value.every(item => record(item) && ['id', 'content', 'sectionId', 'sectionTitle'].every(key => typeof item[key] === 'string') && typeof item.date === 'number' && Number.isFinite(item.date));
@@ -30,6 +31,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [storageUnavailable, setStorageUnavailable] = useState(false);
   const storageFailure = useCallback(() => setStorageUnavailable(true), []);
   const [readIds, setReadIds] = useBookState(book.id, 'readSections', [] as string[], strings, storageFailure);
+  const [lastSectionId, setLastSectionId] = useBookState<string | null>(book.id, 'lastSection', null, stringOrNull, storageFailure);
   const [bookmarkIds, setBookmarkIds] = useBookState(book.id, 'bookmarkedSections', [] as string[], strings, storageFailure);
   const [highlights, setHighlights] = useBookState(book.id, 'highlights', [] as Highlight[], highlightsValid, storageFailure);
   const [reflections, setReflections] = useBookState(book.id, 'reflections', [] as Reflection[], reflectionsValid, storageFailure);
@@ -84,6 +86,11 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   useEffect(() => {
     if (currentSection && !readIds.includes(currentSection.id)) setReadIds(previous => [...previous, currentSection.id]);
   }, [currentSection, readIds, setReadIds]);
+
+  // The front page offers Continue from the last page that could be read; the app guide is not somewhere to resume.
+  useEffect(() => {
+    if (currentSection && isReadableSection(currentSection) && currentSection.category !== 'App Guide' && currentSection.id !== lastSectionId) setLastSectionId(currentSection.id);
+  }, [currentSection, lastSectionId, setLastSectionId]);
 
   const handleSectionChange = useCallback((sectionId: string, text?: string) => {
     if (sectionId !== 'home' && !sections.some(section => section.id === sectionId)) return;
@@ -314,7 +321,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     return () => window.removeEventListener('keydown', keydown);
   }, [selectedText, support, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection]);
 
-  return { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
+  return { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
     isDarkMode, setIsDarkMode, defaultDarkMode: systemDark, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,

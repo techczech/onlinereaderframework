@@ -1,0 +1,42 @@
+{
+  "current": {
+    "packages/reader-core/src/original/frontpage/test-frontpage-browser.mjs": "ec8e2f8f2c3d46238b567f1edbaee32830a5290fb4759f8d5bf05518e115093f",
+    "packages/reader-core/src/original/frontpage/layouts.tsx": "59635c1aadea03474c4cdc4f2094f0711fee1d72dac672c2c53ccfd59369eaa5",
+    "packages/reader-core/src/original/frontpage/FrontPage.tsx": "722e3f35d3a99551bc8e2bf42973264e5bbf44759bfd626710702e21e1b350fb",
+    "packages/reader-core/src/original/frontpage/frontpage.css": "01d5e4951b0fccdb97730a194c038053e24411c66df54a648aa03271182ca43a",
+    "packages/reader-core/src/original/frontpage/frontpage-layouts.ts": "9252650e32ab66cd0fe5a38faff5ef09d9075c2395b9b6f0b8efea84675e0acf",
+    "packages/reader-core/src/original/frontpage/frontpage-model.ts": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39",
+    "packages/reader-core/src/original/frontpage/frontpage-copy.ts": "d265585bc3d24f7f9e01d6fe1c585edc1a070aeaa370021dcbe31da5989ba807",
+    "packages/reader-core/src/original/frontpage/test-frontpage.mjs": "b6c035face451eaba584d9b7ff7cc3f5a05dc409bd0fcc9404f57d7ba867488b",
+    "packages/reader-core/src/original/use-publication-reader.ts": "79b81ae6d1785b48c85634c8524abb47ff808433b5f5810860f91688a6b6da4d",
+    "packages/reader-core/src/original/Home.tsx": "97d4367941c7dfa4480311fd8f058900ee67d51ff09e4afe5eb97504dfc5c41e",
+    "packages/reader-core/src/original/ReaderLayout.tsx": "83fc65ee9a814bb57f5975f98ae9e73b23cdb637483c38ba60b7131cd6a57ba1",
+    "packages/reader-core/src/original/Sidebar.tsx": "981f1ad36ee14fd41303022afb5231cb51f77a46cf4f5021e4a1835626d93783",
+    "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx": "15f08c45d3565418f3f81b5e13cd6332004a57c1318686ad2ff6b11e83acf7ee",
+    "packages/reader-core/src/original/reader-original.css": "ac2cfbb66eb4697e4c77a3af8fc71e9ae9a8405490924fc7ef77a050a0d12461",
+    "packages/reader-core/src/original/types.ts": "0940601199285bec7b084cde31b38fdc75c11b39c3e536ec40cfc8a6da3f763a",
+    "packages/reader-core/src/index.ts": "e505c4cffb005e5782a4fa67bffa52b2e4891b3b00071676e1e11cbbe3ffb04d",
+    "scripts/build-reader-styles.mjs": "68f306dc212b569d803889a375c72f7ab99fb0626b24d1b14539399ec473404d",
+    "apps/reader-demo/src/App.tsx": "70202fe10781b5ccfee27a090f8538bbfd4f5a3eb4f31bfbec5d793ac90557c1",
+    "apps/reader-demo/src/books/original-publications.json": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84",
+    "docs/design/2026-10-25-frontpage-sol/style-frontpage-comparison.css": "46e6684148c584d49b21abd3d14214ada675d78655f4c30faafe98d7cad979f7",
+    "docs/design/2026-10-25-frontpage-sol/style-frontpage-book.css": "d7c659f87580a07e1853a60480d18ea75bdf2ca1a440178abde20dde15c912a1",
+    "docs/design/2026-10-25-frontpage-sol/behaviour-frontpage-comparison.js": "d52438a2cd055dac8ef6aa5a4ecda980618084196cabf7416200bfca8435328b",
+    "docs/design/2026-10-25-frontpage-sol/behaviour-frontpage-book.js": "2116ad8e25001c614ca5baf9fa7fbe4cc9d870250c92e0488b2d90ce8fabb9d8",
+    "docs/design/2026-10-25-frontpage-sol/frontpage-designs-sol-2026-10-25.html": "58e6e8bf68e28b40be40635f39f3c76506768783c7d687f05e6f15557772681b",
+    "docs/design/2026-10-25-frontpage-opus/style-frontpage-opus.css": "7268158a7794719cfcd0b50d04e9b9cafb3a2e7b6c3465983f0e382930cdc70c",
+    "docs/design/2026-10-25-frontpage-opus/behaviour-frontpage-opus.js": "b62ae74a24b9a57ddabb2b00f5802bad841c76ed2d75a3eced6940ccf8160ab6",
+    "docs/design/2026-10-25-frontpage-opus/frontpage-designs-opus-2026-10-25.html": "90ac2f2bfadfc1325234cf8c9d119e5d03e90025d737eacec5502b626ce3b8e6",
+    "docs/configuration-publication-reader.md": "0f6a817e48cf5f2137173e63b0503868230bb01af3ef3d200cb77265db60bb38",
+    "packages/reader-core/src/original/PublicationReader.tsx": "c0d4710a223ea6e0ef1c49e194585b9ff2b5958a890b1af9707a89cf27d84aa5"
+  },
+  "changedSinceOriginalReview": [
+    "packages/reader-core/src/original/frontpage/frontpage.css",
+    "packages/reader-core/src/original/frontpage/frontpage-model.ts",
+    "packages/reader-core/src/original/frontpage/test-frontpage.mjs",
+    "packages/reader-core/src/original/ReaderLayout.tsx",
+    "packages/reader-core/src/original/Sidebar.tsx",
+    "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
+    "apps/reader-demo/src/App.tsx"
+  ]
+}

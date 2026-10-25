@@ -53,3 +53,37 @@ The example numbers illustrate the schema; production alignment must come from m
 The player saves position and speed by book and restores without autoplay. Its interface separates recordings from Browser read-aloud. Starting one pauses or stops the other. Changing reading settings or hiding the transport preserves recorded playback. Missing recordings show an explicit message. This configuration does not generate an audiobook, and the three demo books have no full recordings configured yet.
 
 All new styles are included by the core stylesheet build. Source-linked hosts must also import the reading-support, listening and integration styles, as the demo entry does. The working branch remains local; none of this constitutes a public release.
+
+## Front page layouts
+
+A book can choose one of six front-page layouts. The layouts share the book data, contents, actions and saved reading state; each changes only the arrangement. The choice is per book, set by the host. Nothing changes for a book that does not set it.
+
+```tsx
+const configuredBook: PublicationBook = {
+  ...book,
+  appearance: { ...book.appearance, frontPageLayout: 'opus-colour-band' },
+};
+```
+
+| Key | Name | Arrangement |
+| --- | --- | --- |
+| `sol-jacket` | Jacket | Cover and title page across the top, contents underneath. |
+| `sol-reading-desk` | Reading desk | Compact masthead; a tinted start or continue panel beside the contents. |
+| `sol-open-contents` | Open contents | Narrow book column beside a wide, searchable contents list. |
+| `opus-title-contents` | Title beside contents | Title page on the left, kept in view, contents on the right. |
+| `opus-search-map` | Search and topic map | Short masthead, a large search field, each group as a tile. |
+| `opus-colour-band` | Colour band | Band in the book colour with the cover overlapping it, then numbered contents rows. |
+
+`FRONT_PAGE_LAYOUTS` (keys, names, one-line descriptions) and `frontPageLayoutKey` are exported for a host that offers a choice. An omitted or unrecognised value keeps the classic home page; it never throws. Later changes are one value in the host's configuration: no book data or reader code changes.
+
+**Contents and Full contents.** Two buttons set how much of the book's own contents is listed. Contents lists the top-level groups; Full contents lists every entry beneath them. They appear only when the two differ. The reader opens on Full contents when the whole list has 40 entries or fewer, and on Contents otherwise. The tree is the book's `sections`: ids, order and nesting are never changed. `navigation.homeDepth` (default 2) caps the levels Full contents shows; `0` or `showHomeContents: false` hides the list. A book with no nested sections is grouped by runs of equal `category` for display only; those headings are not pages. With `homeDepth: 1` such a book is one plain list. A group that has its own text keeps a link to that page. Groups with nothing to read are skipped. A group heading with no page of its own is kept whenever any page lies beneath it, whatever the cap: where the cap would leave it empty it lists the nearest readable pages under it instead. The app-guide category is listed but not numbered.
+
+**Wording.** The two buttons read "Contents" and "Full contents". A host may replace them with `labels.contents` and `labels.fullContents`. The heading uses the existing Table of contents label, and the search button the existing Search label. Counts say "entries".
+
+**Start and Continue.** Start opens the first readable page, as before. After a reader has opened a page, the reader saves it per book (`lastSection`); the primary button then reads Continue reading with that page's title, and a second button starts from the beginning. A stored page that no longer exists, cannot be read, or belongs to the app guide is ignored. "N of M read" uses the same count as the sidebar and shows once something has been read.
+
+**Titles.** The full title is the existing joined display title. A short subtitle that simply follows the title (Building Your / Language Muscle) is set inline in the accent colour; a longer subtitle is its own line. A description identical to the subtitle is not printed twice.
+
+**Styles.** The layouts add `frontpage/frontpage.css`, which the core stylesheet build includes in `reader.css`. Source-linked hosts import it beside the reading-support and listening styles.
+
+**Demo.** `apps/reader-demo` sets Colour band for Linguistics as a provisional preference; the other books keep the classic home page. A corner control and `?frontpage=<key>` preview any layout on any book (`?frontpage=classic` the classic page; an unknown value uses the book's configured layout). The control exists only in the demo.

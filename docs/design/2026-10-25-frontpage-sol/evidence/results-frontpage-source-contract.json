@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "markdownEditReachedHtml": true,
+  "canonicalCopyRestored": true,
+  "deterministicRebuild": true,
+  "currentBookSnapshotSha256": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84",
+  "snapshotStillMatchesDemo": true,
+  "htmlSha256": "58e6e8bf68e28b40be40635f39f3c76506768783c7d687f05e6f15557772681b"
+}

@@ -6,6 +6,8 @@ export function publicationLabels(book: PublicationBook) {
     tableOfContents: book.labels?.tableOfContents ?? 'Table of contents',
     readingSettings: book.labels?.readingSettings ?? 'Reading settings',
     listen: book.labels?.listen ?? 'Listen',
+    contents: book.labels?.contents ?? 'Contents',
+    fullContents: book.labels?.fullContents ?? 'Full contents',
   };
 }
 

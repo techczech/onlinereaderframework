@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { PublicationEpubOptions } from '../services/publication-epub/index.js';
+import type { FrontPageLayoutKey } from './frontpage/frontpage-layouts.js';
 
 export type PublicationContentFormat = 'markdown' | 'html';
 export type FontSize = 'sm' | 'base' | 'lg' | 'xl';
@@ -28,7 +29,7 @@ export interface PublicationBook {
   downloads?: { label: string; href: string }[];
   sourceUrl?: string;
   language?: string;
-  labels?: { search?: string; tableOfContents?: string; readingSettings?: string; listen?: string };
+  labels?: { search?: string; tableOfContents?: string; readingSettings?: string; listen?: string; contents?: string; fullContents?: string };
   navigation?: {
     /** Number of visible tree levels, including roots. Default: 2. Zero hides the list. */
     homeDepth?: number;
@@ -43,6 +44,8 @@ export interface PublicationBook {
     ink?: string;
     masthead?: 'editorial' | 'practical' | 'literary';
     cover?: { src: string; alt: string };
+    /** Front-page layout for this book. Omitted or unrecognised values keep the classic home page. */
+    frontPageLayout?: FrontPageLayoutKey;
   };
   home?: {
     badge?: string;

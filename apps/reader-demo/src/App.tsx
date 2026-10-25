@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { PublicationReader, publicationDisplayTitle, type PublicationBook } from 'reader-core';
+import React, { useEffect, useMemo, useState } from 'react';
+import { FRONT_PAGE_LAYOUTS, PublicationReader, frontPageLayoutKey, publicationDisplayTitle, type FrontPageLayoutKey, type PublicationBook } from 'reader-core';
 import commandLineIcon from './books/assets/command-line_gray.svg?raw';
 import publications from './books/original-publications.json';
 
@@ -13,6 +13,18 @@ const books = (publications as PublicationBook[]).map(book => ({ ...book,
   labels: { search: 'Search', tableOfContents: 'Table of contents', readingSettings: 'Reading settings', listen: 'Listen' },
   navigation: { homeDepth: 2, sidebarDepth: 3, showHomeContents: true }
 }));
+/** Per-book front-page layout. Linguistics previews Colour band provisionally; a book not listed keeps the classic home page. */
+const frontPageLayouts: Partial<Record<string, FrontPageLayoutKey>> = { linguistics: 'opus-colour-band' };
+/** Demo only: ?frontpage=<layout key> previews any layout, ?frontpage=classic the classic home page; an unknown value uses the book's configured layout. */
+const frontPageParameter = () => new URL(window.location.href).searchParams.get('frontpage');
+/** Demo only: ?homedepth=<number> sets navigation.homeDepth for the front-page contents; anything else keeps the book's own. */
+const homeDepthParameter = () => {
+  const value = new URL(window.location.href).searchParams.get('homedepth');
+  return value !== null && value.trim() !== '' && Number.isInteger(Number(value)) ? Number(value) : undefined;
+};
+function layoutFor(book: PublicationBook, parameter: string | null) {
+  return parameter === 'classic' ? undefined : frontPageLayoutKey(parameter) ?? frontPageLayouts[book.id];
+}
 function selectedBook() {
   const id = new URL(window.location.href).searchParams.get('book');
   return books.find(book => book.id === id) ?? books[0];
@@ -20,9 +32,14 @@ function selectedBook() {
 
 /** Host routing chooses the book; the original-derived reader owns its section route. */
 export default function App() {
-  const [book, setBook] = useState(selectedBook);
+  const [selected, setBook] = useState(selectedBook);
+  const [parameter, setParameter] = useState(frontPageParameter);
+  const layout = layoutFor(selected, parameter);
+  const homeDepth = homeDepthParameter();
+  const book = useMemo(() => ({ ...selected, appearance: { ...selected.appearance, frontPageLayout: layout },
+    navigation: { ...selected.navigation, ...(homeDepth === undefined ? {} : { homeDepth }) } }), [selected, layout, homeDepth]);
   useEffect(() => {
-    const restore = () => setBook(selectedBook());
+    const restore = () => { setBook(selectedBook()); setParameter(frontPageParameter()); };
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
@@ -32,5 +49,19 @@ export default function App() {
     mediaType: 'image/svg+xml' as const,
     data: new TextEncoder().encode(commandLineIcon)
   }] } : undefined;
-  return <PublicationReader book={book} epub={epub} />;
+  const choose = (value: string) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('frontpage', value);
+    window.history.pushState(window.history.state, '', url);
+    setParameter(value);
+  };
+  return <>
+    <PublicationReader book={book} epub={epub} />
+    <label className="demo-frontpage-chooser">Front page layout
+      <select value={layout ?? 'classic'} onChange={event => choose(event.target.value)}>
+        <option value="classic">Classic</option>
+        {FRONT_PAGE_LAYOUTS.map(option => <option key={option.key} value={option.key}>{option.label}</option>)}
+      </select>
+    </label>
+  </>;
 }

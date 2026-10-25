@@ -1,0 +1,22 @@
+[
+  {
+    "width": 1440,
+    "home": true,
+    "highlight": true,
+    "reflection": false,
+    "drawerText": "menu\nTable of contents\nIntroduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013\u20132016\nheadphones\nListen\ntext_fields\nFormatting\neyeglasses\nAssist\nink_highlighter\nNotes\nIntroduction to Key Issues in Language Through Stack Exchange Answers\nAnswers from Linguistics Stack Exchange, 2013\u20132016\n\nDominik Luke\u0161\n\narrow_forward\nStart reading\nWhat's the difference between phonetics and phonology?\nsearch\nSearch\ndownload\nDownload eBook\nTable of contents\nContents\nFull contents\n01\nchevron_right\nPhonetics, phonology and orthography\n32 entries\n02\nchevron_right\nMorphology, Syntax, Lexicon\n37 entries\n03\nchevron_right\nSemantics and pragmatics\n24 entries\n04\nchevron_right\nTypology\n16 entries\n05\nchevron_right\nSociolinguistics, historical development and politics\n45 entries\n06\nchevron_right\nBilingualism, language acquisition and language learning\n27 entries\n07\nchevron_right\nTheory, terminology and disciplinary question\n39 entries\n08\nchevron_right\nCorpora, tools and language technology\n22 entries\n09\nchevron_right\nFigurative language\n11 entries\n\n253 entries\n\nWritten by Dominik Luke\u0161.\n\nPublication source\nbookmarks\nYour Notes\nclose\nAll\nNotes\nReflections\nTITLE\ncontent_copy\nlink\nimage\ndelete\n\"Closure highlight\"\n1/1/1970\nfile_download\nExport to Markdown\nFront page layout\nClassic\nJacket\nReading desk\nOpen contents\nTitle beside contents\nSearch and topic map\nColour band",
+    "storedUnchanged": true
+  },
+  {
+    "width": 390,
+    "home": true,
+    "highlight": true,
+    "reflection": false,
+    "drawerText": "menu\nIntroduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013\u20132016\nheadphones\nListen\ntext_fields\nFormatting\neyeglasses\nAssist\nink_highlighter\nNotes\nIntroduction to Key Issues in Language Through Stack Exchange Answers\nAnswers from Linguistics Stack Exchange, 2013\u20132016\n\nDominik Luke\u0161\n\narrow_forward\nStart reading\nWhat's the difference between phonetics and phonology?\nsearch\nSearch\ndownload\nDownload eBook\nTable of contents\nContents\nFull contents\n01\nchevron_right\nPhonetics, phonology and orthography\n32 entries\n02\nchevron_right\nMorphology, Syntax, Lexicon\n37 entries\n03\nchevron_right\nSemantics and pragmatics\n24 entries\n04\nchevron_right\nTypology\n16 entries\n05\nchevron_right\nSociolinguistics, historical development and politics\n45 entries\n06\nchevron_right\nBilingualism, language acquisition and language learning\n27 entries\n07\nchevron_right\nTheory, terminology and disciplinary question\n39 entries\n08\nchevron_right\nCorpora, tools and language technology\n22 entries\n09\nchevron_right\nFigurative language\n11 entries\n\n253 entries\n\nWritten by Dominik Luke\u0161.\n\nPublication source\nbookmarks\nYour Notes\nclose\nAll\nNotes\nReflections\nTITLE\ncontent_copy\nlink\nimage\ndelete\n\"Closure highlight\"\n1/1/1970\nfile_download\nExport to Markdown\nFront page layout\nClassic\nJacket\nReading desk\nOpen contents\nTitle beside contents\nSearch and topic map\nColour band",
+    "storedUnchanged": true
+  }
+]
+Traceback (most recent call last):
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-notes-closure.py", line 25, in <module>
+    assert all(r['highlight'] and r['reflection'] and r['home'] and r['storedUnchanged'] for r in results)
+AssertionError

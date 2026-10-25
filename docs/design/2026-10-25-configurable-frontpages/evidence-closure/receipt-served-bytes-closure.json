@@ -1,0 +1,21 @@
+{
+  "origin": "http://127.0.0.1:8773",
+  "sourceHashesUnchangedAtEnd": true,
+  "servedAssets": [
+    {
+      "path": "index.html",
+      "sha256": "712cee0d2ca723a36f4c87cc39ee8b36f565260c1f22ae57d05dbb17223db02c",
+      "matchesLocalDist": true
+    },
+    {
+      "path": "assets/index-BXQ-bMj2.js",
+      "sha256": "f82c4fd2f58d85221aeef26cc30a226432e58e012f41b5bc9d848e72c9e77e80",
+      "matchesLocalDist": true
+    },
+    {
+      "path": "assets/index-BuxERvLt.css",
+      "sha256": "e7b51111ae5ac9df8de7d54aca087d3d84b0213e641d266e45232ab074b61b5f",
+      "matchesLocalDist": true
+    }
+  ]
+}

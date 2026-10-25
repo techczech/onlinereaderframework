@@ -1,0 +1,104 @@
+[
+  {
+    "design": "jacket",
+    "width": 360,
+    "metadata": [
+      {
+        "width": 360,
+        "contentHeight": 1726,
+        "capturedHeight": 1726,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 360,
+          "height": 1726
+        }
+      }
+    ]
+  },
+  {
+    "design": "jacket",
+    "width": 728,
+    "metadata": [
+      {
+        "width": 728,
+        "contentHeight": 1197,
+        "capturedHeight": 1197,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 728,
+          "height": 1197
+        }
+      }
+    ]
+  },
+  {
+    "design": "desk",
+    "width": 360,
+    "metadata": [
+      {
+        "width": 360,
+        "contentHeight": 1776,
+        "capturedHeight": 1776,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 360,
+          "height": 1776
+        }
+      }
+    ]
+  },
+  {
+    "design": "desk",
+    "width": 728,
+    "metadata": [
+      {
+        "width": 728,
+        "contentHeight": 1075,
+        "capturedHeight": 1075,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 728,
+          "height": 1075
+        }
+      }
+    ]
+  },
+  {
+    "design": "contents",
+    "width": 360,
+    "metadata": [
+      {
+        "width": 360,
+        "contentHeight": 1692,
+        "capturedHeight": 1692,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 360,
+          "height": 1692
+        }
+      }
+    ]
+  },
+  {
+    "design": "contents",
+    "width": 728,
+    "metadata": [
+      {
+        "width": 728,
+        "contentHeight": 1032,
+        "capturedHeight": 1032,
+        "consoleMessages": [],
+        "screenshot": {
+          "mimeType": "image/png",
+          "width": 728,
+          "height": 1032
+        }
+      }
+    ]
+  }
+]

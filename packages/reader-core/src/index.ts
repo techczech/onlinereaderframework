@@ -32,6 +32,8 @@ export { generatePublicationEpub, downloadPublicationEpub } from './services/pub
 export type { PublicationEpubOptions, PublicationEpubAsset } from './services/publication-epub/index.js';
 
 export { publicationDisplayTitle } from './original/publication-model.js';
+export { FRONT_PAGE_LAYOUTS, frontPageLayoutKey } from './original/frontpage/frontpage-layouts.js';
+export type { FrontPageLayoutKey } from './original/frontpage/frontpage-layouts.js';
 
 export { ListeningPanel } from './original/listening/index.js';
 export type { PublicationAudioTrack, PublicationAudioAlignment, ListeningBoundary } from './original/listening/index.js';

@@ -1,0 +1,20 @@
+{
+  "finalCommands": [
+    {
+      "command": "node docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-depth-closure.mjs",
+      "exit": 0
+    },
+    {
+      "command": "../book-engine/.venv/bin/python docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-frontpages-closure.py",
+      "exit": 0
+    },
+    {
+      "command": "../book-engine/.venv/bin/python docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-notes-closure.py",
+      "exit": 0
+    }
+  ],
+  "measurementFailures": [
+    "close-reopen revives pending Search request at 1440 and 390 px"
+  ],
+  "scratchRemaining": []
+}

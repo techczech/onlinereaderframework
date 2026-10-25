@@ -1,0 +1,24 @@
+
+> reader-core@0.1.0 build
+> node ../../scripts/build-reader-core.mjs
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+Rebuilding...
+
+Done in 276ms.
+Packaged original reader styling, fonts, icons and font licences.
+Packed file exclusions passed; installed notice inventory has 4 findings (recorded separately).
+
+added 109 packages in 689ms
+Host TypeScript checks passed with React 18.3.1: PublicationReader/props and legacy ReaderShell, skipLibCheck=false.
+Native Node tarball import and browser-only EPUB rejection passed.
+Six installed layouts SSR and public config passed.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Installed package consumer built successfully; installation scratch removed.

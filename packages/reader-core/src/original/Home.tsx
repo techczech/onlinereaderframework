@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import type { PublicationBook } from './types.js';
 import { safePublicationHref } from './publication-model.js';
 import { publicationLabels, publicationNavigation, type PublicationNavigationNode } from './publication-navigation.js';
+import { FrontPage } from './frontpage/FrontPage.js';
+import { frontPageLayoutKey } from './frontpage/frontpage-layouts.js';
 
 interface HomeProps {
   book: PublicationBook;
@@ -9,9 +11,18 @@ interface HomeProps {
   onSelectSection: (id: string) => void;
   onOpenSearch: () => void;
   onDownloadEbook?: () => void | Promise<void>;
+  /** Saved reader state, used only by the configurable front-page layouts. */
+  readSections?: ReadonlySet<string>;
+  lastSectionId?: string | null;
 }
 
-export const Home: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook }) => {
+/** A book with a recognised `appearance.frontPageLayout` gets that layout; every other book keeps the classic home page. */
+export const Home: React.FC<HomeProps> = props => {
+  const layout = frontPageLayoutKey(props.book.appearance?.frontPageLayout);
+  return layout ? <FrontPage {...props} layout={layout} /> : <ClassicHome {...props} />;
+};
+
+const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const labels = publicationLabels(book);
   const contents = publicationNavigation(book.sections, book.navigation?.homeDepth ?? 2);

@@ -1,0 +1,221 @@
+[
+  {
+    "book": "linguistics",
+    "toolbar": [
+      {
+        "text": "headphones\nListen",
+        "label": "Listen",
+        "x": 1099.921875,
+        "right": 1191.4375,
+        "w": 91.515625,
+        "hit": true
+      },
+      {
+        "text": "text_fields\nFormatting",
+        "label": "Formatting",
+        "x": 1199.4375,
+        "right": 1320.265625,
+        "w": 120.828125,
+        "hit": true
+      },
+      {
+        "text": "eyeglasses\nAssist",
+        "label": "Assist",
+        "x": 1328.265625,
+        "right": 1420,
+        "w": 91.734375,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "book": "deliberate-practice",
+    "toolbar": [
+      {
+        "text": "headphones\nListen",
+        "label": "Listen",
+        "x": 1099.921875,
+        "right": 1191.4375,
+        "w": 91.515625,
+        "hit": true
+      },
+      {
+        "text": "text_fields\nFormatting",
+        "label": "Formatting",
+        "x": 1199.4375,
+        "right": 1320.265625,
+        "w": 120.828125,
+        "hit": true
+      },
+      {
+        "text": "eyeglasses\nAssist",
+        "label": "Assist",
+        "x": 1328.265625,
+        "right": 1420,
+        "w": 91.734375,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "book": "language-muscle",
+    "toolbar": [
+      {
+        "text": "headphones\nListen",
+        "label": "Listen",
+        "x": 1099.921875,
+        "right": 1191.4375,
+        "w": 91.515625,
+        "hit": true
+      },
+      {
+        "text": "text_fields\nFormatting",
+        "label": "Formatting",
+        "x": 1199.4375,
+        "right": 1320.265625,
+        "w": 120.828125,
+        "hit": true
+      },
+      {
+        "text": "eyeglasses\nAssist",
+        "label": "Assist",
+        "x": 1328.265625,
+        "right": 1420,
+        "w": 91.734375,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "searchFocus": {
+      "tag": "BUTTON",
+      "cls": "publication-front-secondary",
+      "text": "searchSearch",
+      "placeholder": null
+    }
+  },
+  {
+    "width": 390,
+    "searchFocus": {
+      "tag": "BUTTON",
+      "cls": "publication-front-secondary",
+      "text": "searchSearch",
+      "placeholder": null
+    }
+  },
+  {
+    "layout": "sol-jacket",
+    "darkStyles": {
+      ".publication-front-title": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-primary": {
+        "color": "rgb(17, 24, 39)",
+        "bg": "color(srgb 0.846863 0.611765 0.547059)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-secondary": {
+        "color": "color(srgb 0.846863 0.611765 0.547059)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-filter": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "color(srgb 0.393333 0.411176 0.449412)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-group": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      }
+    }
+  },
+  {
+    "layout": "opus-search-map",
+    "darkStyles": {
+      ".publication-front-title": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-primary": {
+        "color": "rgb(17, 24, 39)",
+        "bg": "color(srgb 0.846863 0.611765 0.547059)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-secondary": {
+        "color": "color(srgb 0.846863 0.611765 0.547059)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-filter": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "color(srgb 0.393333 0.411176 0.449412)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-group": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "color(srgb 0.44 0.456471 0.491765)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      }
+    }
+  },
+  {
+    "layout": "opus-colour-band",
+    "darkStyles": {
+      ".publication-front-title": {
+        "color": "rgb(17, 24, 39)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-primary": {
+        "color": "rgb(17, 24, 39)",
+        "bg": "color(srgb 0.846863 0.611765 0.547059)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-secondary": {
+        "color": "color(srgb 0.846863 0.611765 0.547059)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      },
+      ".publication-front-filter": null,
+      ".publication-front-group": {
+        "color": "rgb(229, 231, 235)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "paper": "#111827",
+        "ink": "#e5e7eb",
+        "accent": "color-mix(in srgb, #b84b2d, white 45%)"
+      }
+    }
+  }
+]

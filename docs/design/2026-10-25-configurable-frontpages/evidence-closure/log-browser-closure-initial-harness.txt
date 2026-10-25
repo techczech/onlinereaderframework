@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-frontpages-closure.py", line 31, in <module>
+    page.locator('.publication-navigation-toggle').click();page.wait_for_timeout(100)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 11021, in click
+    self._sync(
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 111, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_locator.py", line 174, in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 598, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 78, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 636, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".publication-navigation-toggle")
+    - locator resolved to <button aria-expanded="true" aria-label="Close navigation" class="publication-navigation-toggle">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <img alt="" src="/covers/linguistics.jpg" class="publication-sidebar-cover"/> from <aside data-open="true" aria-label="Table of contents" class="publication-sidebar bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">…</aside> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <img alt="" src="/covers/linguistics.jpg" class="publication-sidebar-cover"/> from <aside data-open="true" aria-label="Table of contents" class="publication-sidebar bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">…</aside> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <img alt="" src="/covers/linguistics.jpg" class="publication-sidebar-cover"/> from <aside data-open="true" aria-label="Table of contents" class="publication-sidebar bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">…</aside> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+

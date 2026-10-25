@@ -121,9 +121,9 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
         <span aria-hidden="true">{menu.id === 'listen' ? props.listenLabel : menu.label}</span>
         {counts[menu.id] > 0 && <span aria-hidden="true" className="publication-toolbar-badge">{counts[menu.id]}</span>}
       </button>)}
-      {!props.isHome && <button type="button" className="publication-toolbar-control publication-toolbar-notes" onClick={() => { close(false); props.onOpenNotes(); }} aria-label="Open notes and highlights">
+      <button type="button" className="publication-toolbar-control publication-toolbar-notes" onClick={() => { close(false); props.onOpenNotes(); }} aria-label="Open notes and highlights">
         <span aria-hidden="true" className="material-symbols-outlined">ink_highlighter</span><span aria-hidden="true">Notes</span>
-      </button>}
+      </button>
 
       {open && <div ref={panel} id={`publication-menu-${open}`} role="dialog" aria-label={MENUS.find(menu => menu.id === open)!.label} className="publication-menu" data-reader-menu>
         <div className="publication-menu-sheet-head">

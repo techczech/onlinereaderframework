@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-configurable-frontpages/evidence-closure/probe-frontpages-closure.py", line 45, in <module>
+    page.wait_for_timeout(100);guarded=state();page.evaluate('HTMLElement.prototype.focus=window.__originalFocus');page.wait_for_timeout(600)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 16843, in evaluate
+    self._sync(
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 111, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 476, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 346, in evaluate
+    await self._channel.send(
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 78, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 636, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Illegal invocation
+    at UtilityScript.evaluate (<anonymous>:377:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
