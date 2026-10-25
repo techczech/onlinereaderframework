@@ -1,0 +1,27 @@
+{
+  "exitCode": 0,
+  "sourceCopySha256": "3386f32602a46b3c4052ff3db3bca1fadbd19caa3a4ce3d58534cef2d1557f16",
+  "originalScriptSha256": "3386f32602a46b3c4052ff3db3bca1fadbd19caa3a4ce3d58534cef2d1557f16",
+  "fileCount": 305,
+  "root": "# Online Reader Framework demo books\n\n> Three books read in the Online Reader Framework demo. Each is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Deliberate Practice: A Universal Learning Method](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md): Dominik Luke\u0161. 21 sections (21 with text), about 36,825 words. [Full text](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md) \u00b7 [Manifest](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json) \u00b7 [Read in the browser](https://deliberatepractice.dominiklukes.net/?book=deliberate-practice) \u00b7 Licence: [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)\n- [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md): Dominik Luke\u0161. 12 sections (12 with text), about 13,081 words. [Full text](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md) \u00b7 [Manifest](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json) \u00b7 [Read in the browser](https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle)\n- [Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013\u20132016](https://linguistics.dominiklukes.net/agent/linguistics/index.md): Dominik Luke\u0161. 262 sections (253 with text), about 76,526 words. [Full text](https://linguistics.dominiklukes.net/agent/linguistics/full.md) \u00b7 [Manifest](https://linguistics.dominiklukes.net/agent/linguistics/manifest.json) \u00b7 [Read in the browser](https://linguistics.dominiklukes.net/?book=linguistics)\n",
+  "perBook": {
+    "language-muscle": {
+      "index": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md",
+      "full": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md",
+      "manifest": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json",
+      "reader": "https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle"
+    },
+    "deliberate-practice": {
+      "index": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md",
+      "full": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md",
+      "manifest": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json",
+      "reader": "https://deliberatepractice.dominiklukes.net/?book=deliberate-practice"
+    },
+    "linguistics": {
+      "index": "https://linguistics.dominiklukes.net/agent/linguistics/index.md",
+      "full": "https://linguistics.dominiklukes.net/agent/linguistics/full.md",
+      "manifest": "https://linguistics.dominiklukes.net/agent/linguistics/manifest.json",
+      "reader": "https://linguistics.dominiklukes.net/?book=linguistics"
+    }
+  }
+}

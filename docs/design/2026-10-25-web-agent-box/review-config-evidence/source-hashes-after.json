@@ -1,0 +1,57 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "digest": "0f8aafd2c1e0642811f4b82b516634245bcc1aeef452748a4bb1e52194493dbb"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "digest": "1cb03a8be99543a18ccd77c6be771c77d0293ce180aeb6ae1ee818c7ae912408"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-links.ts",
+      "digest": "575df73841f29c20dc12271d1d0871196b25a1bc670dbe89a1dad3605e06d9c0"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "digest": "0ad87d30e1bf514838f3170390d8e6af941e470713fdc4d5be0e4a3d28df681e"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "digest": "73f0ab47888924f10ed211dd4b83d0380f524cdfe5a4d62887ea5e01a6839a4e"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "digest": "e445bc6db8dc0f7f0950b85cf4269fe755fcc061d6bbfbfd56cd586549b4805a"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-agent-files.ts",
+      "digest": "3386f32602a46b3c4052ff3db3bca1fadbd19caa3a4ce3d58534cef2d1557f16"
+    },
+    {
+      "path": "apps/reader-demo/src/canonical-sites.ts",
+      "digest": "8139754cca86d8e2c8977f1b454d4e220631713f0de542e193070c67a664de17"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "digest": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/README.md",
+      "digest": "a81f608a4f48b91b62115f370801f1f5041ea1dcdb49b9ab6235361e0bf6fd8e"
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "digest": "c5bce88004c6e0c1edcd53d79b6ec33df56e6e2e7daa8ef404ec2cad04ae002a"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "digest": "c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/FrontPage.tsx",
+      "digest": "4a06571a8f70ff7d0109b0c3e109eba160c4de4787300fcb52775e6aafc75514"
+    }
+  ]
+}

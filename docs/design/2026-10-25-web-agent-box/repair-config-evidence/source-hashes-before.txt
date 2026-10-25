@@ -1,0 +1,13 @@
+0f8aafd2c1e0642811f4b82b516634245bcc1aeef452748a4bb1e52194493dbb  packages/reader-core/src/agent-export/agent-paths.ts
+1cb03a8be99543a18ccd77c6be771c77d0293ce180aeb6ae1ee818c7ae912408  packages/reader-core/src/agent-export/agent-export.ts
+323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5  packages/reader-core/src/agent-export/index.ts
+0ad87d30e1bf514838f3170390d8e6af941e470713fdc4d5be0e4a3d28df681e  packages/reader-core/src/agent-export/agent-export.test.mjs
+73f0ab47888924f10ed211dd4b83d0380f524cdfe5a4d62887ea5e01a6839a4e  packages/reader-core/src/original/agent/AgentAccess.tsx
+e445bc6db8dc0f7f0950b85cf4269fe755fcc061d6bbfbfd56cd586549b4805a  packages/reader-core/src/original/types.ts
+3386f32602a46b3c4052ff3db3bca1fadbd19caa3a4ce3d58534cef2d1557f16  apps/reader-demo/scripts/build-agent-files.ts
+8139754cca86d8e2c8977f1b454d4e220631713f0de542e193070c67a664de17  apps/reader-demo/src/canonical-sites.ts
+229f046ad372ae16c4393010f5cbd95334c538c1de40de53f4fc370fe59c2815  apps/reader-demo/src/App.tsx
+01f58573715f0ed684c23fdc6c3af2b838993a616b9eb70d741959ff9533c54d  apps/reader-demo/scripts/check-agent-access-ssr.tsx
+c5bce88004c6e0c1edcd53d79b6ec33df56e6e2e7daa8ef404ec2cad04ae002a  packages/reader-core/src/original/Home.tsx
+c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969  packages/reader-core/src/original/frontpage/layouts.tsx
+3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe  packages/reader-core/src/original/agent/agent-access.css

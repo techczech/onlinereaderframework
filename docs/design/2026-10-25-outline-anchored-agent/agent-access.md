@@ -53,7 +53,7 @@ agent/<book>/chapters/<id>.md         one file per section (front matter + text)
 
 ### Module contract
 
-- `reader-core` (main barrel): `PublicationAgentAccess`, `agentBookLinks`, `agentSegment`, `readerLink`, `isPrivateHost`, `agentPrompt`, `agentAttachedPrompt`, `agentExamples`, `AGENT_DIRECTORY` (pure, DOM-free).
+- `reader-core` (main barrel): `PublicationAgentAccess`, `agentBookLinks`, `agentSegment`, `readerLink`, `isPrivateHost`, `canonicalSiteUrl`, `agentPrompt`, `agentAttachedPrompt`, `agentExamples`, `AGENT_DIRECTORY` (pure, DOM-free).
 - `reader-core/agent` (new export, build-time): `buildAgentBook(book, { siteUrl?, directory? })`. `directory` is validated by `agentDirectory` in both generators before any file path exists: one or more relative segments of letters, digits, `.`, `_`, `-` (`agent`, `static/agent`); `.` segments and a trailing `/` are dropped; absolute paths, `..`, empty segments, backslashes, `%`, `:`/schemes, control characters, non-strings and an empty result throw. Reader links gain one `../` per directory segment. Host writers still check containment themselves → `{ bookId, files: {path, content}[], manifest }`; `buildAgentRootIndex(exports, { siteUrl?, title?, summary? })` → the `llms.txt` file.
 - `PublicationReader` takes `agent?: { path?: string }` (default off, `path` default `agent/`). The reader links to files the host generated; it contains no AI client, key or chat service.
 
@@ -71,7 +71,7 @@ and render `<PublicationReader book={book} agent={{ path: `${import.meta.env.BAS
 
 Follows the dominiklukes.net Ask box (heading, a short paste-able prompt, Copy, example prompts; inspected in `01_dlwebs/dlnet` `Hero.astro` and `lib/agent/builders.ts`). It is added for this book: the prompt names the book and its real index and full-text addresses and asks for chapter citations; on a chapter the prompt names that chapter's file. It sits above the footer on all six front pages and the classic home, and as a folded line under each chapter.
 
-Addresses are resolved in the browser from where the page is really served (`document.baseURI`), so host, port and sub-path are always right. When that address is private (localhost, home or office ranges, Tailscale `100.64/10` and `*.ts.net`, `.local`, `file:`), the box says a hosted assistant cannot open it, offers the full-text download, and gives a prompt for an attached text with no address in it. It never claims a hosted assistant can fetch a private IP, and there are no provider links or preselected paid assistants.
+Superseded in part by `docs/design/2026-10-25-web-agent-box/README.md`: the box is now a compact panel built for the public web, and a private address is no longer explained in the page. The rules that still hold: addresses are resolved in the browser from where the page is served, a private address is never put in a prompt as if a hosted assistant could fetch it, and there are no provider links or preselected paid assistants.
 
 # Verification (2026-10-25, local build served on 127.0.0.1:8773)
 

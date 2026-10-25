@@ -1,0 +1,47 @@
+[
+  {
+    "name": "fixture-generator",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-final-evidence/probe-config.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "api-ssr-variants",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-final-evidence/probe-config-variants.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "overlap-observation",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-final-evidence/probe-config-overlap.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "browser-variants",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-final-evidence/probe-config-variants-browser.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "browser-independent-bytes",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-final-evidence/probe-config-final-browser.py"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  }
+]

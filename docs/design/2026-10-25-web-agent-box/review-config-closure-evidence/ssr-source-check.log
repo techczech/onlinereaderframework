@@ -1,0 +1,17 @@
+ok   configured: renders on the server with the public address
+ok   configured: no private address
+ok   configured quiet variant names the chapter file
+ok   no usable address (undefined): nothing is rendered before the browser knows where it is
+ok   no usable address (): nothing is rendered before the browser knows where it is
+ok   no usable address (nonsense): nothing is rendered before the browser knows where it is
+ok   no usable address (http://100.85.55.122:8773/): nothing is rendered before the browser knows where it is
+ok   no usable address (https://u:p@example.org/): nothing is rendered before the browser knows where it is
+ok   no usable address (javascript:alert(1)): nothing is rendered before the browser knows where it is
+ok   no usable address (http://[::ffff:127.0.0.1]/): nothing is rendered before the browser knows where it is
+ok   no usable address (https://localhost./): nothing is rendered before the browser knows where it is
+ok   no usable address (https:example.org/): nothing is rendered before the browser knows where it is
+ok   custom folder: the prompt and links name the generated folder under the public address
+ok   unsafe folder javascript:alert(1);void(0)//x: ignored for the default folder, no active unsafe link
+ok   unsafe folder ../agent/: ignored for the default folder, no active unsafe link
+ok   unsafe folder %2e%2e/agent/: ignored for the default folder, no active unsafe link
+ok   unsafe folder https://evil.example/agent/: ignored for the default folder, no active unsafe link

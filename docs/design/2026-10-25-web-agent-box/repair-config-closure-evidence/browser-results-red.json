@@ -1,0 +1,1812 @@
+{
+  "checks": [
+    {
+      "name": "/ agent relative chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent relative chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent relative chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ agent relative chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent relative chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent relative chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-prefix chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ agent absolute-url chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-url chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-url chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ agent absolute-url chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-url chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ agent absolute-url chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent relative chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent relative chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent relative chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent relative chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent relative chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent relative chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-prefix chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/ static/agent absolute-url chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent relative chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-prefix chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ agent absolute-url chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent relative chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-prefix chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=False local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=False public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=False prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=True local download/index/manifest resolve under served prefix",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=True public prompt matches generated directory and resolves",
+      "passed": true,
+      "detail": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "/sub/reader/ static/agent absolute-url chapter=True prompt contains no private preview host",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "private preview ignores invalid/private canonical nonsense",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical javascript:alert(1)",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical https://u:p@example.org/sub/",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical https://example.org/sub/?x=1",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical https://example.org/sub/#frag",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical http://127.0.0.1:8773/",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical http://100.85.55.122:8773/",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical http://[::ffff:127.0.0.1]/",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical https://localhost./",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "private preview ignores invalid/private canonical https://box.tail123.ts.net./",
+      "passed": true,
+      "detail": {
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "unconfigured private preview uses attachment prompt without network explanation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "HTTP clipboard fallback copies attachment prompt and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "invalid canonical on public host falls back to public served prefix",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "configured resource path remains http(s) and inside public served prefix javascript:alert(1);void(0)//x",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "https://public.example.org/sub/reader/agent/review-book/manifest.json"
+        ]
+      }
+    },
+    {
+      "name": "configured resource path remains http(s) and inside public served prefix ../agent/",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "https://public.example.org/sub/reader/agent/review-book/manifest.json"
+        ]
+      }
+    },
+    {
+      "name": "configured resource path remains http(s) and inside public served prefix %2e%2e/agent/",
+      "passed": true,
+      "detail": {
+        "hrefs": [
+          "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "https://public.example.org/sub/reader/agent/review-book/manifest.json"
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "tag": "/ agent relative chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/agent/review-book/index.md. The whole book is at https://public.example.org/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ agent relative chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ agent absolute-prefix chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/agent/review-book/index.md. The whole book is at https://public.example.org/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ agent absolute-prefix chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ agent absolute-url chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/agent/review-book/index.md. The whole book is at https://public.example.org/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ agent absolute-url chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent relative chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/static/agent/review-book/index.md. The whole book is at https://public.example.org/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent relative chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent absolute-prefix chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/static/agent/review-book/index.md. The whole book is at https://public.example.org/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent absolute-prefix chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent absolute-url chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/static/agent/review-book/index.md. The whole book is at https://public.example.org/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/ static/agent absolute-url chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent relative chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent relative chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent absolute-prefix chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent absolute-prefix chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent absolute-url chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ agent absolute-url chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent relative chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/static/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent relative chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent absolute-prefix chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/static/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent absolute-prefix chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent absolute-url chapter=False",
+      "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/static/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "tag": "/sub/reader/ static/agent absolute-url chapter=True",
+      "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer.",
+      "downloads": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        }
+      ],
+      "promptFetches": [
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:18793/",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/index.md",
+    "https://public.example.org/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/index.md",
+    "https://public.example.org/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/index.md",
+    "https://public.example.org/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "https://public.example.org/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "https://public.example.org/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "https://public.example.org/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/",
+    "https://public.example.org/sub/reader/"
+  ],
+  "externalNetworkRequests": 0,
+  "browser": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+}

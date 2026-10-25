@@ -1,0 +1,34 @@
+✔ every book: all section ids in reading order, counts, and one file per section (0.99825ms)
+✔ markdown sections are preserved byte for byte in chapter files and, in order, in full.md (48.660458ms)
+✔ code, tables, footnote-like attribution, source lines and the image link survive (0.725416ms)
+✔ html sections keep their structure through the reader sanitiser, with a title heading added (0.673084ms)
+✔ every relative link in every generated file resolves to a generated file; no private paths or browser state (21.271458ms)
+✔ siteUrl makes every link absolute; relative output has none of that host (24.925791ms)
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (0.451875ms)
+✔ reader links match the reader's own publicationUrl; private hosts are recognised (0.411916ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.139292ms)
+✔ canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash (0.141834ms)
+✔ a root index links each book at its own public address, never at another book's (43.117792ms)
+✔ anchored reading: leadLength is WriteFlex's own, and lead spans follow its word walk (27.139083ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (0.583208ms)
+✔ the directory option is validated by both generators before any path is produced (1.27025ms)
+✔ a nested directory keeps every reader link pointing at the reader root (0.264208ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (0.805958ms)
+✔ real Language Muscle step-2 links to the Fine-tuning your aims chapter file (0.123ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (0.335042ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.259ms)
+✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (0.315667ms)
+✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.146125ms)
+✔ both generators refuse an unusable public address before producing any file, and never echo it (1.361209ms)
+✔ the reader box rebases its folder from the current reader root onto the public reader prefix (0.992458ms)
+✔ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (8.077875ms)
+✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (0.627375ms)
+✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (0.655334ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 547.605458

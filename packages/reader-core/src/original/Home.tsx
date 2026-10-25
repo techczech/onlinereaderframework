@@ -60,14 +60,13 @@ const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOp
       {book.home?.overviewDescription && <p>{book.home.overviewDescription}</p>}
       <HomeContents nodes={contents} onSelect={onSelectSection} />
     </nav>}
-    {agent && <AgentAccess book={book} access={agent} variant="panel" />}
+    {agent && <div className="publication-home-agent"><AgentAccess book={book} access={agent} variant="panel" /></div>}
     <footer className="publication-home-footer">
       <p>{book.home?.authorNote ?? `Written by ${book.author}.`}</p>
       {book.home?.license && safePublicationHref(book.home.license.href) && <div>
         {book.home.license.imageUrl && safePublicationHref(book.home.license.imageUrl) && <img alt={book.home.license.label} src={book.home.license.imageUrl} width="88" height="31" />}
         <a href={book.home.license.href} rel="license noopener noreferrer" target="_blank">{book.home.license.label}</a>
       </div>}
-      {book.sourceUrl && safePublicationHref(book.sourceUrl) && <a href={book.sourceUrl}>Publication source</a>}
     </footer>
   </div>;
 };

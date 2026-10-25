@@ -34,6 +34,8 @@ export function agentDirectory(directory: unknown = AGENT_DIRECTORY): string {
   return segments.join('/');
 }
 
+export { canonicalSiteUrl, isPrivateHost } from './agent-url.js';
+
 export interface AgentLinks { index: string; full: string; manifest: string; chapter(sectionId: string): string }
 
 /** Addresses of one book's agent files. `base` is the address of the agent directory: absolute (`https://host/sub/agent/`) or a path relative to wherever the link is read. */
@@ -51,19 +53,6 @@ export function readerLink(root: string, bookId: string, sectionId?: string): st
   const query = new URLSearchParams(sectionId && sectionId !== 'home' ? { book: bookId, section: sectionId } : { book: bookId }).toString();
   const [path, hash = ''] = root.split('#');
   return `${path}${path.includes('?') ? '&' : '?'}${query}${hash ? `#${hash}` : ''}`;
-}
-
-/** True for addresses a hosted assistant cannot fetch: this machine, a home or office network, a Tailscale address or name. */
-export function isPrivateHost(hostname: string): boolean {
-  const host = hostname.toLowerCase().replace(/^\[|\]$/g, '');
-  if (!host) return true;
-  if (host === 'localhost' || host.endsWith('.localhost') || host.endsWith('.local') || host.endsWith('.internal') || host.endsWith('.lan') || host.endsWith('.ts.net') || !host.includes('.') && !host.includes(':')) return true;
-  const v4 = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
-  if (v4) {
-    const [a, b] = [Number(v4[1]), Number(v4[2])];
-    return a === 10 || a === 127 || a === 0 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127);
-  }
-  return host.includes(':') && (host === '::1' || host === '::' || /^f[cd]/.test(host) || /^fe[89ab]/.test(host));
 }
 
 export interface AgentPromptInput { title: string; author: string; indexUrl: string; fullUrl: string; chapterTitle?: string; chapterUrl?: string }

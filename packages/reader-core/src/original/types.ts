@@ -65,8 +65,14 @@ export interface PublicationCoaching {
 
 /** Where the book's generated agent files are served (see agent-export). The reader links to them; it never calls an AI service itself. */
 export interface PublicationAgentAccess {
-  /** Folder of generated files, relative to the page or an absolute address. Default `agent/`. */
+  /** Folder of generated files, default `agent/`: relative to the reader's root (the page's folder), or an absolute path or http(s) address inside that root
+   * or inside `siteUrl`. Its place below the root is the generator's `directory`; downloads use it where the page is served and the prompt uses the same
+   * folder under `siteUrl`. A value with another scheme or origin, credentials, a query or fragment, `.`/`..` (raw or escaped) or an escaped slash is ignored. */
   path?: string;
+  /** The book's public address (`https://books.example.org/` or `https://example.org/sub/`), where the generated files are served under `path` once deployed.
+   * Prompts then point there, even when the reader is previewed on a private address. Absent or not usable (see `canonicalSiteUrl`): the page's own
+   * address is used when it is public. */
+  siteUrl?: string;
 }
 
 export interface PublicationReaderProps {

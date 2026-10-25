@@ -1,0 +1,47 @@
+--- a/packages/reader-core/src/agent-export/agent-location.ts
++++ b/packages/reader-core/src/agent-export/agent-location.ts
+@@ -16,16 +16,18 @@
+ export interface AgentLocations { local?: string; public?: string }
+ 
+ /** Where the reader box finds the agent folder. The reader's root is the folder of the page (`?book=&section=` never changes it). The configured folder
+- * must resolve inside that root, or inside `siteUrl`; its place there is the generator's `directory`, and the public folder is `siteUrl` (or the page's
+- * own root when that is public) plus that same directory. A folder that is not a string, has a scheme other than http(s), credentials, a query or
+- * fragment, a `.` or `..` segment raw or escaped, an escaped slash or backslash, or resolves outside both prefixes is ignored, and `agent/` is used. */
++ * must resolve inside that root, or inside `siteUrl`; its place there is the generator's `directory`. The two addresses are that one directory under two
++ * origins: `local` is always the reader's root plus the directory (a folder written as a full `siteUrl` address still downloads from the page being
++ * previewed), and `public` is `siteUrl` (or the page's own root when that is public) plus the directory. A folder that is not a string, has a scheme
++ * other than http(s), credentials, a query or fragment, a `.` or `..` segment raw or escaped, an escaped slash or backslash, or resolves outside both
++ * prefixes is ignored, and `agent/` is used. */
+ export function agentLocations({ path, siteUrl, documentUrl }: AgentLocationInput): AgentLocations {
+   const site = canonicalSiteUrl(siteUrl);
+   const root = readerRoot(documentUrl);
+   const found = (path === undefined ? undefined : locate(path, root, site)) ?? locate(`${AGENT_DIRECTORY}/`, root, site);
+   if (!found) return {};
+   const publicSite = site ?? (root ? canonicalSiteUrl(root) : undefined);
+-  return { ...(root ? { local: found.local } : {}), ...(publicSite ? { public: `${publicSite}${found.directory}/` } : {}) };
++  return { ...(root ? { local: `${root}${found}/` } : {}), ...(publicSite ? { public: `${publicSite}${found}/` } : {}) };
+ }
+ 
+ function readerRoot(documentUrl: string | undefined): string | undefined {
+@@ -36,7 +38,8 @@
+   } catch { return undefined; }
+ }
+ 
+-function locate(path: unknown, root: string | undefined, site: string | undefined): { directory: string; local: string } | undefined {
++/** The generator `directory` that `path` names below the reader's root or below `siteUrl`, or undefined when it names neither. */
++function locate(path: unknown, root: string | undefined, site: string | undefined): string | undefined {
+   if (typeof path !== 'string' || !path || UNSAFE_TEXT.test(path) || /[?#@]/.test(path)) return undefined;
+   const scheme = /^([A-Za-z][A-Za-z0-9+.-]*):/.exec(path);
+   if (scheme && !/^https?:\/\/[^/]/i.test(path)) return undefined;
+@@ -48,10 +51,7 @@
+   try { target = new URL(path, base).href; } catch { return undefined; }
+   for (const prefix of [root, site]) {
+     if (!prefix || !target.startsWith(prefix)) continue;
+-    try {
+-      const directory = agentDirectory(target.slice(prefix.length));
+-      return { directory, local: `${prefix}${directory}/` };
+-    } catch { /* not a plain folder below this prefix */ }
++    try { return agentDirectory(target.slice(prefix.length)); } catch { /* not a plain folder below this prefix */ }
+   }
+   return undefined;
+ }

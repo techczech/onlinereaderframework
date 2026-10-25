@@ -1,0 +1,6 @@
+[
+ {"name":"typecheck-reader-core","command":["node","node_modules/typescript/bin/tsc","-p","tsconfig.json","--noEmit"],"cwd":"packages/reader-core","exitCode":0,"log":"typecheck-reader-core.log"},
+ {"name":"typecheck-reader-demo","command":["node_modules/.bin/tsc","--noEmit"],"cwd":"apps/reader-demo","exitCode":0,"log":"typecheck-reader-demo.log"},
+ {"name":"build-reader-core","command":["npm","run","build","--prefix","packages/reader-core"],"cwd":".","exitCode":0,"log":"build-reader-core.log","note":"writes packages/reader-core/dist (git-ignored)"},
+ {"name":"test-agent-export-package","command":["npm","run","test:agent-export","--prefix","packages/reader-core"],"cwd":".","exitCode":0,"log":"test-agent-export-package.log","result":"26/26"}
+]

@@ -1,0 +1,763 @@
+{
+  "checks": [
+    {
+      "name": "https://public.example.org/ agent: manifest index",
+      "passed": true,
+      "detail": "https://public.example.org/agent/review-book/index.md"
+    },
+    {
+      "name": "https://public.example.org/ agent: root index (export address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/ agent: root index (direct address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/ agent path=agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ agent path=./agent: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ agent path=/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ agent path=https://public.example.org/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ static/agent: manifest index",
+      "passed": true,
+      "detail": "https://public.example.org/static/agent/review-book/index.md"
+    },
+    {
+      "name": "https://public.example.org/ static/agent: root index (export address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/ static/agent: root index (direct address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/ static/agent path=static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ static/agent path=./static/agent: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ static/agent path=/static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/ static/agent path=https://public.example.org/static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent: manifest index",
+      "passed": true,
+      "detail": "https://public.example.org/sub/reader/agent/review-book/index.md"
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent: root index (export address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent: root index (direct address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent path=agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent path=./agent: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent path=/sub/reader/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ agent path=https://public.example.org/sub/reader/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent: manifest index",
+      "passed": true,
+      "detail": "https://public.example.org/sub/reader/static/agent/review-book/index.md"
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent: root index (export address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent: root index (direct address)",
+      "passed": true
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent path=static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent path=./static/agent: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent path=/sub/reader/static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "https://public.example.org/sub/reader/ static/agent path=https://public.example.org/sub/reader/static/agent/: server-rendered prompt names the generated index and chapter",
+      "passed": true,
+      "detail": {
+        "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+        "expectedChapter": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md"
+      }
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"javascript:alert(1)\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"javascript:alert(1)\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"javascript:alert(1)\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"javascript:alert(1)\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"javascript:alert(1)\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"data:text/html,hi\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"data:text/html,hi\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"data:text/html,hi\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"data:text/html,hi\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"data:text/html,hi\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"file:///tmp/book\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"file:///tmp/book\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"file:///tmp/book\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"file:///tmp/book\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"file:///tmp/book\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://u:p@example.org/sub/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://u:p@example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://u:p@example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://u:p@example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://u:p@example.org/sub/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/?x=1\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/?x=1\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/?x=1\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/?x=1\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/?x=1\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/#frag\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/#frag\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/#frag\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/#frag\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/#frag\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://127.0.0.1:8773/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://127.0.0.1:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://127.0.0.1:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://127.0.0.1:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://127.0.0.1:8773/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://100.85.55.122:8773/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://100.85.55.122:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://100.85.55.122:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://100.85.55.122:8773/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://100.85.55.122:8773/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://[::ffff:127.0.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://[::ffff:127.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://[::ffff:127.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://[::ffff:127.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://[::ffff:127.0.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://localhost./\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://localhost./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://localhost./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://localhost./\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://localhost./\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://box.local./\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://box.local./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://box.local./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://box.local./\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://box.local./\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://box.tail123.ts.net./\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://box.tail123.ts.net./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://box.tail123.ts.net./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://box.tail123.ts.net./\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://box.tail123.ts.net./\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/../escape/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/../escape/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/../escape/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/../escape/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/../escape/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/%2e%2e/escape/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/%2e%2e/escape/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/%2e%2e/escape/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/%2e%2e/escape/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/%2e%2e/escape/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https:example.org/sub/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https:example.org/sub/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/?\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/?\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org/sub/#\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org/sub/#\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://[::ffff:10.0.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://[::ffff:10.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://[::ffff:10.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://[::ffff:10.0.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://[::ffff:10.0.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://[::ffff:192.168.1.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://[::ffff:192.168.1.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://[::ffff:192.168.1.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://[::ffff:192.168.1.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://[::ffff:192.168.1.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://[::ffff:172.16.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://[::ffff:172.16.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://[::ffff:172.16.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://[::ffff:172.16.0.1]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://[::ffff:172.16.0.1]/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"http://127.1/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"http://127.1/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org./\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org./\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org./\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://example.org\\\\sub/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://example.org\\\\sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://example.org\\\\sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://example.org\\\\sub/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://example.org\\\\sub/\"",
+      "passed": true
+    },
+    {
+      "name": "canonicalSiteUrl refuses \"https://exa\\tmple.org/\"",
+      "passed": true
+    },
+    {
+      "name": "buildAgentBook refuses \"https://exa\\tmple.org/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses siteUrl \"https://exa\\tmple.org/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "buildAgentRootIndex refuses export siteUrl \"https://exa\\tmple.org/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "server render ignores siteUrl \"https://exa\\tmple.org/\"",
+      "passed": true
+    },
+    {
+      "name": "deliberate-practice: export address, manifest, root line at https://deliberatepractice.dominiklukes.net/",
+      "passed": true,
+      "detail": "- [Deliberate Practice: A Universal Learning Method](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md): Dominik Lukeš. 21 sections (21 with text), about 36,825 words. [Full text](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md) · [Manifest](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json) · [Read in the browser](https://deliberatepractice.dominiklukes.net/?book=deliberate-practice) · Licence: [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)"
+    },
+    {
+      "name": "deliberate-practice: source and licence fields kept",
+      "passed": true
+    },
+    {
+      "name": "language-muscle: export address, manifest, root line at https://buildingyourlanguagemuscle.edutools.fyi/",
+      "passed": true,
+      "detail": "- [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md): Dominik Lukeš. 12 sections (12 with text), about 13,081 words. [Full text](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md) · [Manifest](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json) · [Read in the browser](https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle)"
+    },
+    {
+      "name": "language-muscle: source and licence fields kept",
+      "passed": true
+    },
+    {
+      "name": "linguistics: export address, manifest, root line at https://linguistics.dominiklukes.net/",
+      "passed": true,
+      "detail": "- [Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013–2016](https://linguistics.dominiklukes.net/agent/linguistics/index.md): Dominik Lukeš. 262 sections (253 with text), about 76,526 words. [Full text](https://linguistics.dominiklukes.net/agent/linguistics/full.md) · [Manifest](https://linguistics.dominiklukes.net/agent/linguistics/manifest.json) · [Read in the browser](https://linguistics.dominiklukes.net/?book=linguistics)"
+    },
+    {
+      "name": "linguistics: source and licence fields kept",
+      "passed": true
+    }
+  ]
+}

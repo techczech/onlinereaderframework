@@ -1,0 +1,73 @@
+import json,sys,hashlib,mimetypes,re
+from pathlib import Path
+from urllib.parse import urlsplit,unquote
+from playwright.sync_api import sync_playwright
+E=Path(__file__).resolve().parent; S=E/'scratch'; checks=[];requests=[];blocked=[];errors=[];console=[]
+def check(name,ok,detail=None):
+ checks.append(dict(name=name,passed=bool(ok),detail=detail))
+ print(('PASS ' if ok else 'FAIL ')+name,flush=True)
+def sha(b):return hashlib.sha256(b).hexdigest()
+with sync_playwright() as p:
+ shell=sorted((Path.home()/'Library/Caches/ms-playwright').glob('chromium_headless_shell-*/chrome-headless-shell-mac-arm64/chrome-headless-shell'))[-1]
+ browser=p.chromium.launch(executable_path=str(shell),headless=True)
+ try:
+  context=browser.new_context(service_workers='block');page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:console.append({'type':m.type,'text':m.text}));page.set_default_timeout(6000)
+  fallback=b'<!doctype html><html><body>SPA fallback: not an agent file</body></html>'
+  def route(r):
+   u=urlsplit(r.request.url);rec={'url':r.request.url};requests.append(rec)
+   if u.hostname not in ['127.0.0.1','public.example.org','books.example.net']:
+    blocked.append(r.request.url);r.abort();return
+   rel=unquote(u.path).lstrip('/') or 'index.html'
+   if rel.endswith('/'):rel+='index.html'
+   dest=(S/rel).resolve()
+   # Public destinations deliberately serve a successful HTML fallback for every request.
+   if u.hostname!='127.0.0.1' or not dest.is_relative_to(S.resolve()) or not dest.is_file():
+    rec.update(kind='spa-fallback',sha256=sha(fallback));r.fulfill(status=200,content_type='text/html',body=fallback,headers={'Access-Control-Allow-Origin':'*'});return
+   b=dest.read_bytes();rec.update(kind='fixture',file=str(dest.relative_to(S)),sha256=sha(b));r.fulfill(status=200,content_type=mimetypes.guess_type(dest.name)[0] or 'text/plain',body=b,headers={'Access-Control-Allow-Origin':'*'})
+  context.route('**/*',route)
+  def mount(access,chapter):
+   page.evaluate('x=>mount(x.a,x.c)',{'a':access,'c':chapter});page.wait_for_timeout(60)
+  def inspect(prefix,directory,site,access,chapter,label,attached=False):
+   mount(access,chapter);h=page.locator('.publication-agent-links a').evaluate_all('es=>es.map(e=>e.href)');prompt=page.locator('.publication-agent-prompt p').inner_text()
+   base='http://127.0.0.1:18793'+prefix+directory+'/review-book/'
+   expected=[base+x for x in ['full.md','index.md','manifest.json']]
+   downloads=[]
+   for href,file in zip(h,['full.md','index.md','manifest.json']):
+    before=len(requests)
+    v=page.evaluate('async u=>{let r=await fetch(u);return {status:r.status,type:r.headers.get("content-type"),bytes:Array.from(new Uint8Array(await r.arrayBuffer()))}}',href)
+    body=bytes(v.pop('bytes'));real=S/(prefix.lstrip('/')+directory+'/review-book/'+file)
+    downloads.append({'href':href,**v,'sha256':sha(body),'expectedSha256':sha(real.read_bytes()),'route':requests[before:]})
+   ok=len(h)==3 and h==expected and all(x['status']==200 and 'html' not in x['type'] and x['sha256']==x['expectedSha256'] and len(x['route'])==1 and x['route'][0]['kind']=='fixture' for x in downloads)
+   if ok:ok=json.loads((S/(prefix.lstrip('/')+directory+'/review-book/manifest.json')).read_text())['book']['id']=='review-book'
+   if attached:promptok='I have attached' in prompt and 'http' not in prompt and not re.search(r'127\.0\.0\.1|u:p|private|IP address',prompt,re.I)
+   else:
+    public=site+directory+'/review-book/';wanted=[public+'index.md',public+'full.md']
+    if chapter:wanted.append(public+'sections/chapter-one.md')
+    # The chapter id is percent-encoded by agentSlug; read the generated manifest rather than guess its basename.
+    manifest=json.loads((S/(prefix.lstrip('/')+directory+'/review-book/manifest.json')).read_text())
+    if chapter:wanted[-1]=site+directory+'/review-book/'+manifest['sections'][0]['agentUrl'].split('/review-book/',1)[1] if 'agentUrl' in manifest['sections'][0] else wanted[-1]
+    urls=[u.rstrip('.') for u in re.findall(r'https?://[^\s)]+',prompt)]
+    promptok=all(u.startswith(public) for u in urls) and public+'index.md' in urls and public+'full.md' in urls and '127.0.0.1' not in prompt
+    if chapter:promptok=promptok and len(urls)==3 and any('/sections/' in u for u in urls)
+   check(label,ok and promptok,{'access':access,'page':page.url,'downloads':downloads,'prompt':prompt})
+  for prefix,site in [('/','https://public.example.org/sub/reader/'),('/sub/reader/','https://public.example.org/'),('/preview/x/','https://books.example.net:8443/public/books/')]:
+   for chapter in [False,True]:
+    page.goto('http://127.0.0.1:18793'+prefix+'?book=review-book'+('&section=chapter%20one%2F..' if chapter else ''))
+    for directory in ['agent','static/agent']:
+     inspect(prefix,directory,site,{'siteUrl':site,'path':site+directory+('/' if chapter else '')},chapter,f'canonical URL byte check {prefix} {directory} chapter={chapter}')
+   page.goto('http://127.0.0.1:18793'+prefix+'index.html?book=review-book&section=second#top')
+   for form in ['relative','absolute-path','current-url']:
+    folder='static/agent';path={'relative':folder+'/','absolute-path':prefix+folder+'/','current-url':'http://127.0.0.1:18793'+prefix+folder+'/'}[form]
+    inspect(prefix,folder,site,{'siteUrl':site,'path':path},True,f'{form} byte check at {prefix}')
+  prefix='/preview/x/';site='https://public.example.org/sub/reader/';page.goto('http://127.0.0.1:18793'+prefix)
+  for bad in ['javascript:alert(1)','data:text/html,x','../static/agent','%2e%2e/agent/','static/%252fagent/','https://u:p@public.example.org/sub/reader/static/agent/','https://public.example.org.evil.example/sub/reader/static/agent/','https://cdn.example.net/sub/reader/static/agent/','http://public.example.org/sub/reader/static/agent/','https://public.example.org:444/sub/reader/static/agent/','/preview/x-other/static/agent/','https://public.example.org/sub/reader-other/static/agent/']:
+   inspect(prefix,'agent',site,{'siteUrl':site,'path':bad},False,'refused folder uses exact default bytes '+bad)
+  for bad in ['http://[::ffff:127.0.0.1]/','https://localhost./','https://box.tail123.ts.net./','https://u:p@example.org/','https:example.org/','https://public.example.org/sub/%2e%2e/x/','https://public.example.org/sub/?','https://public.example.org/sub/#']:
+   inspect(prefix,'agent',site,{'siteUrl':bad},False,'invalid canonical quiet fallback '+bad,attached=True)
+  # Deliberate status-200 HTML response must fail the file-byte predicate.
+  v=page.evaluate('async()=>{let r=await fetch("https://public.example.org/missing/full.md");return {status:r.status,type:r.headers.get("content-type"),text:await r.text()}}')
+  check('200 HTML negative control is not accepted as a download',v['status']==200 and 'html' in v['type'] and sha(v['text'].encode())!=sha((S/'agent/review-book/full.md').read_bytes()),v)
+  check('no external request, page error, console error or refused-value log',not blocked and not errors and not [m for m in console if m['type'] in ['error','warning'] or any(t in m['text'] for t in ['u:p','127.0.0.1','javascript:'])],{'blocked':blocked,'errors':errors,'console':console})
+ finally:browser.close()
+(E/'final-browser-results.json').write_text(json.dumps({'checks':checks,'requests':requests,'blocked':blocked,'errors':errors,'console':console,'browser':str(shell),'externalNetworkRequests':0},indent=2)+'\n')
+print(f'{len(checks)} checks; {sum(not c["passed"] for c in checks)} failures');sys.exit(int(any(not c['passed'] for c in checks)))

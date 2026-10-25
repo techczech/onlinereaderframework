@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { FRONT_PAGE_LAYOUTS, PublicationReader, frontPageLayoutKey, publicationDisplayTitle, type FrontPageLayoutKey, type PublicationBook } from 'reader-core';
 import commandLineIcon from './books/assets/command-line_gray.svg?raw';
 import publications from './books/original-publications.json';
+import { canonicalSites } from './canonical-sites';
 
 const identities: Record<string, NonNullable<PublicationBook['appearance']>> = {
   'linguistics': { accent: '#b84b2d', paper: '#fffaf1', ink: '#282723', masthead: 'editorial', cover: { src: '/covers/linguistics.jpg', alt: 'Linguistics cover with overlapping red and blue voices' } },
@@ -56,7 +57,7 @@ export default function App() {
     setParameter(value);
   };
   return <>
-    <PublicationReader book={book} epub={epub} agent={{ path: `${import.meta.env.BASE_URL}agent/` }} />
+    <PublicationReader book={book} epub={epub} agent={{ path: `${import.meta.env.BASE_URL}agent/`, siteUrl: canonicalSites[book.id] }} />
     <label className="demo-frontpage-chooser">Front page layout
       <select value={layout ?? 'classic'} onChange={event => choose(event.target.value)}>
         <option value="classic">Classic</option>

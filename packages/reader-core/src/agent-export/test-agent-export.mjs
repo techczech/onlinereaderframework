@@ -6,7 +6,7 @@ import path from 'node:path';
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const output = mkdtempSync(path.join(directory, '.test-build-'));
 try {
-  const compile = spawnSync(process.execPath, ['node_modules/typescript/bin/tsc', 'src/agent-export/index.ts', 'src/original/publication-model.ts', 'src/original/reading-support/anchored-reading.ts',
+  const compile = spawnSync(process.execPath, ['node_modules/typescript/bin/tsc', 'src/agent-export/index.ts', 'src/agent-export/agent-location.ts', 'src/original/publication-model.ts', 'src/original/reading-support/anchored-reading.ts',
     '--rootDir', 'src', '--outDir', output, '--target', 'ES2020', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--strict', '--skipLibCheck', '--esModuleInterop', '--declaration', 'false'], { stdio: 'inherit', cwd: path.resolve(directory, '../..') });
   if (compile.status !== 0) process.exitCode = compile.status ?? 1;
   else {

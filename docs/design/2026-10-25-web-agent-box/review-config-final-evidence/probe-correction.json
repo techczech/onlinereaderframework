@@ -1,0 +1,4 @@
+{
+  "reason": "Independent probe incorrectly required the home prompt full-text URL and /sections/ in chapter prompts. The existing chapter contract names chapter and index only, using manifest.sections[0].file under chapters/. All 123 download byte comparisons passed in the initial run.",
+  "productionChanged": false
+}

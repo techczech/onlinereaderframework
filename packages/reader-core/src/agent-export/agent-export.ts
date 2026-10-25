@@ -11,10 +11,12 @@ import type { PublicationBook, PublicationSection } from '../original/types.js';
 import { publicationContentToText, renderPublicationContent } from '../publication-content/index.js';
 import { publicationDisplayTitle } from '../original/publication-model.js';
 import { AGENT_DIRECTORY, agentBookLinks, agentDirectory, agentSegment, readerLink } from './agent-paths.js';
+import { requireSiteUrl } from './agent-url.js';
 import { markdownReaderLinkNote, rewriteReaderLinksInHtml, type ReaderLinkContext } from './agent-links.js';
 
 export interface AgentExportOptions {
-  /** Absolute address of the reader's root (`https://books.example.org/reader/`). Without it every link is relative to the file it is in. */
+  /** Public address of the reader's root (`https://books.example.org/reader/`). Without it (or with '') every link is relative to the file it is in.
+   * Checked by `canonicalSiteUrl` before any file exists: a value it refuses (credentials, query, fragment, `..`, private host, not http(s)) throws. */
   siteUrl?: string;
   /** Folder under the build output, a relative path of plain names (`agent`, `static/agent`); default `agent`. Absolute paths, `..`, backslashes, schemes and escapes throw. */
   directory?: string;
@@ -33,7 +35,9 @@ export interface AgentManifest {
   /** Same-book reader references (`#/chapter`) in the book that named no section of it, as written. They are left unchanged in the files. */
   unresolvedLinks: { section: string; href: string }[];
 }
-export interface AgentBookExport { bookId: string; files: AgentFile[]; manifest: AgentManifest }
+/** `siteUrl` is the normalised address the book's links were written against, when one was given: a root index then links this book there,
+ * after checking it again, so an export built by hand cannot carry an address the generator would have refused. */
+export interface AgentBookExport { bookId: string; files: AgentFile[]; manifest: AgentManifest; siteUrl?: string }
 
 interface Entry { section: PublicationSection; order: number; depth: number; parentId: string | null; path: string[] }
 
@@ -65,9 +69,10 @@ function sectionBody(entry: Entry, links: ReaderLinkContext, children: readonly 
   return `${title}${section.content}${note ? `\n\n${note}\n` : ''}`;
 }
 
-/** Generate the files for one book. Throws on an id that cannot be a file name or on duplicate section ids (names must be unique). */
+/** Generate the files for one book. Throws on an id that cannot be a file name, on duplicate section ids (names must be unique), and on an unusable directory or siteUrl. */
 export function buildAgentBook(book: PublicationBook, options: AgentExportOptions = {}): AgentBookExport {
   const directory = agentDirectory(options.directory === undefined ? AGENT_DIRECTORY : options.directory);
+  const siteUrl = requireSiteUrl(options.siteUrl);
   // Folders below the reader's root: `agent` is 1, `static/agent` is 2. A book's index.md and full.md sit one deeper, a chapter file two deeper.
   const topLevels = directory.split('/').length + 1, chapterLevels = topLevels + 1;
   const segment = agentSegment(book.id);
@@ -78,7 +83,6 @@ export function buildAgentBook(book: PublicationBook, options: AgentExportOption
     if (!section.id || section.id === 'home' || seen.has(section.id)) throw new Error(`Book ${book.id}: section ids must be unique and not "home" (${section.id}).`);
     seen.add(section.id);
   }
-  const siteUrl = options.siteUrl ? options.siteUrl.replace(/\/*$/, '/') : undefined;
   // Relative links are relative to the file that carries them. `levels` is how deep that file is below the reader's root:
   // agent/<book>/index.md and full.md are 2, agent/<book>/chapters/<id>.md is 3, llms.txt is 0.
   const absolute = agentBookLinks(`${siteUrl ?? ''}${directory}/`, book.id);
@@ -159,18 +163,21 @@ export function buildAgentBook(book: PublicationBook, options: AgentExportOption
     sections, unresolvedLinks: [...unresolved.values()],
   };
   files.push({ path: `${bookPath}/manifest.json`, content: `${JSON.stringify(manifest, null, 2)}\n` });
-  return { bookId: book.id, files, manifest };
+  return { bookId: book.id, files, manifest, ...(siteUrl ? { siteUrl } : {}) };
 }
 
 export interface AgentRootOptions extends AgentExportOptions { title?: string; summary?: string }
 /** The `llms.txt` for a site that serves one or more books: one line per book, then its full text and manifest. Written beside the reader's index.html. */
 export function buildAgentRootIndex(exports: readonly AgentBookExport[], options: AgentRootOptions = {}): AgentFile {
   const directory = agentDirectory(options.directory === undefined ? AGENT_DIRECTORY : options.directory);
-  const siteUrl = options.siteUrl ? options.siteUrl.replace(/\/*$/, '/') : undefined;
-  const base = `${siteUrl ?? ''}${directory}/`;
-  const reader = (id: string): string => readerLink(siteUrl ?? './', id);
-  const books = exports.map(({ manifest: m }) => {
-    const links = agentBookLinks(base, m.book.id);
+  const siteUrl = requireSiteUrl(options.siteUrl);
+  // Every book's own address is checked before any line is written.
+  const sites = exports.map(({ bookId, siteUrl: bookSite }) => requireSiteUrl(bookSite, `siteUrl of the export for book "${String(bookId).slice(0, 40)}"`));
+  const books = exports.map(({ manifest: m }, i) => {
+    // A book built for its own public address links there; otherwise the root's address (or none: relative) applies.
+    const site = sites[i] ?? siteUrl;
+    const links = agentBookLinks(`${site ?? ''}${directory}/`, m.book.id);
+    const reader = (id: string): string => readerLink(site ?? './', id);
     return `- [${m.book.displayTitle}](${links.index}): ${m.book.author}. ${m.counts.sections} sections (${m.counts.withText} with text), about ${m.counts.words.toLocaleString('en-GB')} words. [Full text](${links.full}) · [Manifest](${links.manifest}) · [Read in the browser](${reader(m.book.id)})${m.book.licence ? ` · Licence: [${m.book.licence.label}](${m.book.licence.href})` : ''}`;
   });
   return { path: 'llms.txt', content: `${lines(`# ${options.title ?? 'Online reader'}`, '', `> ${options.summary ?? 'Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.'}`, '',

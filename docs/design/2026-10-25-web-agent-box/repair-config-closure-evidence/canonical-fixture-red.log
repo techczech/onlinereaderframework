@@ -1,0 +1,1 @@
+{"bases":["","sub/reader/","preview/"],"directories":["agent","static/agent","a/b/agent"],"sites":["https://public.example.org/","https://public.example.org/sub/reader/"],"expected":6}

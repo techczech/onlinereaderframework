@@ -1,0 +1,98 @@
+diff --git a/packages/reader-core/src/agent-export/agent-export.test.mjs b/packages/reader-core/src/agent-export/agent-export.test.mjs
+index d19e3d1..d7a6151 100644
+--- a/packages/reader-core/src/agent-export/agent-export.test.mjs
++++ b/packages/reader-core/src/agent-export/agent-export.test.mjs
+@@ -329,7 +329,8 @@ test('the reader box rebases its folder from the current reader root onto the pu
+         assert.deepEqual(where, { local, public: `${site}${directory}/` }, path_);
+         assert.equal(mod.agentBookLinks(where.public, 'b').index, generated.manifest.links.index, path_);
+       }
+-      assert.deepEqual(agentLocations({ path: `${site}${directory}/`, siteUrl: site, documentUrl }), { local: `${site}${directory}/`, public: `${site}${directory}/` });
++      // A folder written as its full public address still downloads from the page being previewed.
++      assert.deepEqual(agentLocations({ path: `${site}${directory}/`, siteUrl: site, documentUrl }), { local, public: `${site}${directory}/` });
+     }
+   }
+   assert.deepEqual(agentLocations({ path: '/static/agent/', siteUrl: 'https://public.example.org/', documentUrl: 'http://127.0.0.1:8773/?book=b' }),
+@@ -344,6 +345,34 @@ test('the reader box rebases its folder from the current reader root onto the pu
+   assert.deepEqual(agentLocations({ path: 'agent/', documentUrl: 'file:///Users/reader/dist/index.html' }), { local: 'file:///Users/reader/dist/agent/' });
+ });
+ 
++test('a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are', async () => {
++  const { agentLocations } = await urlModule();
++  const book = fixtureBook([{ id: 'c', title: 'C', category: 'x', content: 'x' }]);
++  for (const site of ['https://public.example.org/', 'https://public.example.org/sub/reader/', 'https://books.example.net:8443/a/b/']) {
++    for (const page of ['http://127.0.0.1:18793/', 'http://127.0.0.1:18793/sub/reader/', 'http://127.0.0.1:18793/preview/x/', 'http://box.local:8773/r/', 'https://public.example.org/sub/reader/']) {
++      for (const query of ['', '?book=b', '?book=b&section=c', 'index.html?book=b#top']) {
++        for (const directory of ['agent', 'static/agent', 'a/b/agent']) {
++          const generated = mod.buildAgentBook(book, { siteUrl: site, directory });
++          for (const path_ of [`${site}${directory}/`, `${site}${directory}`]) {
++            const where = agentLocations({ path: path_, siteUrl: site, documentUrl: `${page}${query}` });
++            const label = `${path_} on ${page}${query}`;
++            assert.deepEqual(where, { local: `${page}${directory}/`, public: `${site}${directory}/` }, label);
++            assert.equal(mod.agentBookLinks(where.public, 'b').index, generated.manifest.links.index, label);
++          }
++        }
++      }
++    }
++    // Server render: only the public folder is known.
++    assert.deepEqual(agentLocations({ path: `${site}static/agent/`, siteUrl: site }), { public: `${site}static/agent/` });
++  }
++  // The same public origin outside siteUrl, another origin, or a lookalike host is still refused for the default folder under the current root.
++  const site = 'https://public.example.org/sub/reader/', documentUrl = 'http://127.0.0.1:18793/preview/?book=b';
++  for (const bad of ['https://public.example.org/sub/static/agent/', 'https://public.example.org/sub/reader-other/agent/', 'http://public.example.org/sub/reader/agent/', 'https://public.example.org:444/sub/reader/agent/',
++    'https://cdn.example.net/sub/reader/static/agent/', '//cdn.example.net/static/agent/', 'https://public.example.org.evil.example/sub/reader/static/agent/', `${site}../agent/`, `${site}static/%2fagent/`]) {
++    assert.deepEqual(agentLocations({ path: bad, siteUrl: site, documentUrl }), { local: 'http://127.0.0.1:18793/preview/agent/', public: `${site}agent/` }, bad);
++  }
++});
++
+ test('an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link', async () => {
+   const { agentLocations } = await urlModule();
+   const site = 'https://public.example.org/sub/reader/';
+diff --git a/packages/reader-core/src/agent-export/agent-location.ts b/packages/reader-core/src/agent-export/agent-location.ts
+index 2669ed2..8685e6f 100644
+--- a/packages/reader-core/src/agent-export/agent-location.ts
++++ b/packages/reader-core/src/agent-export/agent-location.ts
+@@ -16,16 +16,18 @@ export interface AgentLocationInput {
+ export interface AgentLocations { local?: string; public?: string }
+ 
+ /** Where the reader box finds the agent folder. The reader's root is the folder of the page (`?book=&section=` never changes it). The configured folder
+- * must resolve inside that root, or inside `siteUrl`; its place there is the generator's `directory`, and the public folder is `siteUrl` (or the page's
+- * own root when that is public) plus that same directory. A folder that is not a string, has a scheme other than http(s), credentials, a query or
+- * fragment, a `.` or `..` segment raw or escaped, an escaped slash or backslash, or resolves outside both prefixes is ignored, and `agent/` is used. */
++ * must resolve inside that root, or inside `siteUrl`; its place there is the generator's `directory`. The two addresses are that one directory under two
++ * origins: `local` is always the reader's root plus the directory (a folder written as a full `siteUrl` address still downloads from the page being
++ * previewed), and `public` is `siteUrl` (or the page's own root when that is public) plus the directory. A folder that is not a string, has a scheme
++ * other than http(s), credentials, a query or fragment, a `.` or `..` segment raw or escaped, an escaped slash or backslash, or resolves outside both
++ * prefixes is ignored, and `agent/` is used. */
+ export function agentLocations({ path, siteUrl, documentUrl }: AgentLocationInput): AgentLocations {
+   const site = canonicalSiteUrl(siteUrl);
+   const root = readerRoot(documentUrl);
+   const found = (path === undefined ? undefined : locate(path, root, site)) ?? locate(`${AGENT_DIRECTORY}/`, root, site);
+   if (!found) return {};
+   const publicSite = site ?? (root ? canonicalSiteUrl(root) : undefined);
+-  return { ...(root ? { local: found.local } : {}), ...(publicSite ? { public: `${publicSite}${found.directory}/` } : {}) };
++  return { ...(root ? { local: `${root}${found}/` } : {}), ...(publicSite ? { public: `${publicSite}${found}/` } : {}) };
+ }
+ 
+ function readerRoot(documentUrl: string | undefined): string | undefined {
+@@ -36,7 +38,8 @@ function readerRoot(documentUrl: string | undefined): string | undefined {
+   } catch { return undefined; }
+ }
+ 
+-function locate(path: unknown, root: string | undefined, site: string | undefined): { directory: string; local: string } | undefined {
++/** The generator `directory` that `path` names below the reader's root or below `siteUrl`, or undefined when it names neither. */
++function locate(path: unknown, root: string | undefined, site: string | undefined): string | undefined {
+   if (typeof path !== 'string' || !path || UNSAFE_TEXT.test(path) || /[?#@]/.test(path)) return undefined;
+   const scheme = /^([A-Za-z][A-Za-z0-9+.-]*):/.exec(path);
+   if (scheme && !/^https?:\/\/[^/]/i.test(path)) return undefined;
+@@ -48,10 +51,7 @@ function locate(path: unknown, root: string | undefined, site: string | undefine
+   try { target = new URL(path, base).href; } catch { return undefined; }
+   for (const prefix of [root, site]) {
+     if (!prefix || !target.startsWith(prefix)) continue;
+-    try {
+-      const directory = agentDirectory(target.slice(prefix.length));
+-      return { directory, local: `${prefix}${directory}/` };
+-    } catch { /* not a plain folder below this prefix */ }
++    try { return agentDirectory(target.slice(prefix.length)); } catch { /* not a plain folder below this prefix */ }
+   }
+   return undefined;
+ }

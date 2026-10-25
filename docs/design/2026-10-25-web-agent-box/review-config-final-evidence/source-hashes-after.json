@@ -1,0 +1,661 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure.md",
+      "digest": "4853afb17d47c920c3c1e70d6d14efb7175f166db738b26c5fea269296c7a1af"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config.md",
+      "digest": "794e349289c74bcfca2c3985c54c0717cc54e6059e6f8489f7912258a0500e85"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure.md",
+      "digest": "730375800ef9e9aba47e1a264ff9b5402d2aa1e8e74818c85c2057dee6034585"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/README.md",
+      "digest": "8ccbb99981919aaafaa0e47ec3f5cc919ecc5c6e1bec617f2e6a2c47481be15f"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/check-web-agent-box.py",
+      "digest": "cba2a8aac4dd3c800f286a4fa8b3733b1bdaa319ad992c82adece463534fb82c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config.md",
+      "digest": "1f40c8a57911d83cfe434ab6b4a90ffae590b9ef2dc3243bdf249ec19c0c70ef"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/command-exits-green.json",
+      "digest": "9625625d271673f06fc178353062cf87ef9de69bdeecaa839d88b4d130657b3f"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/browser-results-green.json",
+      "digest": "a7dc0a7fcff0d6dacfb5812b790ffdaa1d4aef3036731572562ded887bb7a163"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/variants-browser-results-red.json",
+      "digest": "8d2fbb31c7c1385a1ddc53acfee644c6a77aa809e7e6fd984a9063bb5dcf3176"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/ssr-source-check-red.log",
+      "digest": "95d386cb4e32ea62f63d27f47fdc037e27364778aa5dbc5f2d9eeecf782778cc"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/generator-results-green.json",
+      "digest": "f186c55b0abab0e6845290ea6f037c92259128e077132b545303afd35bf156d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/typecheck-reader-core.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/accept-canonical-browser-red.log",
+      "digest": "52ef60ef1a4507f6ad1153a6ad0d12b0e278abcdceeaf12411ea452dca463179"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/canonical-fixture-red.log",
+      "digest": "f9149872c1519405a8a77342e7b4be35152269781519c046e817b432448c878d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/agent-location.before-repair.ts.txt",
+      "digest": "80fe6ee185fb1497c2dab096473c585ecf7ec40f43482bc4a981ffc6dababeff"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/generator-results-red.json",
+      "digest": "f186c55b0abab0e6845290ea6f037c92259128e077132b545303afd35bf156d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/command-exits-red.json",
+      "digest": "eadd56d54b0d3a1bf4bec7dc37fd4e9dfefe1a575a7db409cbee19fe433bf0f8"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-green.log",
+      "digest": "dac09ff9f25ec4faa9936599c82a05d2482fdf01cbd8f2a008bb31a458c5b691"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/original-browser-red.log",
+      "digest": "63cdbd4b41fd3c6999cd00be16666f4c6d7ea5dc09dad1103718f02ed0904ecd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/original-generator-probe-green.log",
+      "digest": "271dd89961ee33b760db17a79e676d426a369e54b97946070627f53ede17181e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/ssr-source-check-green.log",
+      "digest": "95d386cb4e32ea62f63d27f47fdc037e27364778aa5dbc5f2d9eeecf782778cc"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/independent-api-variants-green.log",
+      "digest": "89d57da757faa4ae7a7385b090eaece3899b103db9ebae45a157f43314554592"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/independent-api-variants-red.log",
+      "digest": "fc6f37dbac49840d7f9a251c052a6859a7c8b7d1ea3df1b1cd46c00a4c92daff"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/extra-command-exits.json",
+      "digest": "4998ab89e424d2435e31e00bfc4be2f4d69aebb13d36194744d3ad9e12738fc9"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/accept-canonical-results-green.json",
+      "digest": "c794847ccfda96efb63a69cd0ca4678eb596b79af8490550c88b05bfa0859abd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/independent-browser-red.log",
+      "digest": "2773b498d1dc21ecf1341f37b35fc6101d563a09bd921792ec1478226a6720e1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/original-generator-probe-red.log",
+      "digest": "271dd89961ee33b760db17a79e676d426a369e54b97946070627f53ede17181e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/probe-config-variants.mts",
+      "digest": "f9808492d2b2a695aa8759d522f79335b0c027002ce0213aabcb5145c62643d4"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-compile-green.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/original-browser-green.log",
+      "digest": "63cdbd4b41fd3c6999cd00be16666f4c6d7ea5dc09dad1103718f02ed0904ecd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/run-repair-closure.py",
+      "digest": "46b735bd3200773b06814b2fcc459b22ed6f0389c667a61be590c7f0a7f61b30"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/probe-config.mts",
+      "digest": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-compile-red.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-pre-repair-source-green.log",
+      "digest": "7f1e082546d86584540ebd175559571fb40d493d8c620fb9ace6f12acc028548"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/accept-canonical-browser-green.log",
+      "digest": "aa0186b881c351422524eed95ba2943b832ddddb9a3ecfd4b0fb0fe28f7768c1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/source-hashes-after.json",
+      "digest": "abe04dca2b0200960680c0ed2b49e1e1a01ff6b5b4e3d7320c62b5caa772a864"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/build-reader-core.log",
+      "digest": "fa6e072d8cfea927ab437842a64432d3cf46635a9412352c559c67b4fe8b9a42"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/test-agent-export-package.log",
+      "digest": "9ce76dbf85976ab7ad8000748e0610f8b37345503253fcc0ed1ffaa22e9e0c00"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/typecheck-reader-demo.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/source-hashes-before.json",
+      "digest": "87959e51501f3cdd8d4cbdd6566819016cfa50228f29d454249a384916c4bf91"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/variants-browser-results-green.json",
+      "digest": "97e16f0159a9dc076f4e6e09387a7113587545bb6866d2a015963ce08b8735f7"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-red.log",
+      "digest": "58f77b57c27ba67d31dc9ea36988cafd587961413523124d12d0f2fd5dd7b148"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/accept-canonical-results-red.json",
+      "digest": "4983d989bb3265a2ed657d20511255c1ce0aab5607df69d00c3fc7410b4a7ce5"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/repair.diff",
+      "digest": "b9127ebfd796b2beb370c07eea59b2022f1e584eb7cad30f5fbc160e038a975b"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/variants-results-green.json",
+      "digest": "55c5a9f42d014cc9e544591e0abafbad9a93cc0316c98ed2c6190325dbc00bf7"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/focused-unit-compile-pre-repair-source-green.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/canonical-fixture-green.log",
+      "digest": "f9149872c1519405a8a77342e7b4be35152269781519c046e817b432448c878d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/browser-results-red.json",
+      "digest": "a7dc0a7fcff0d6dacfb5812b790ffdaa1d4aef3036731572562ded887bb7a163"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/independent-browser-green.log",
+      "digest": "31701bdad0d007ad2ed4077fce3fd9497a3ef20fa5c5e14e8fead85ab7ac4105"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/hash-snapshot.py",
+      "digest": "0e24ea77bbf309b7084776aa88a789ce5e467e8e7fd847ff3229846d389a3aca"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/build-canonical-fixture.mts",
+      "digest": "54d0af7adb107d6bd2c827b0386736b29804e28971067c9b1709a246a8b836d0"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/probe-config-variants-browser.py",
+      "digest": "a82221588aa3b7b642de81c71a64cad6a46a1217d41ff2a9162c0f40f46858a0"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/probe-config-browser.py",
+      "digest": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/accept-canonical-folder-browser.py",
+      "digest": "5f3f1b57fed6d0d04bb5ef567b9c458ae70df3699380d14cc87e42a25cf0ba17"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-closure-evidence/variants-results-red.json",
+      "digest": "7edd2f2bd694c125f1c6a961a8ed10a59f4324cdb776ae27c8eadf353bf162d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/native-preview-results.json",
+      "digest": "3491e0543e158d07c98efe108038ecd0c556ac5489eb3ea78de38db04c8ba096"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/browser-results-green.json",
+      "digest": "a7dc0a7fcff0d6dacfb5812b790ffdaa1d4aef3036731572562ded887bb7a163"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/preview-server.log",
+      "digest": "33a3a5eae206f2424aba9913d0b1cb83aa3d7d8430ade7129a1ef4b2bb306114"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/generator-results-green.json",
+      "digest": "f186c55b0abab0e6845290ea6f037c92259128e077132b545303afd35bf156d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/browser-green.log",
+      "digest": "63cdbd4b41fd3c6999cd00be16666f4c6d7ea5dc09dad1103718f02ed0904ecd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/verify-package.exit",
+      "digest": "e89c38f2d181836dfbd5143483ebc8c488250091b6b6af12fce1243e09192080"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/root-build.exit",
+      "digest": "eebaab80b1d5a43142ef55ac3a918ad91ffaa8b3b15f9616382c64d9d405499a"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/generator-results-red.json",
+      "digest": "5b0047865daa42268a75160252b046a2f577d5a519f2f6535656e3774133c511"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/mutation-check.mjs",
+      "digest": "e32732bee277158f250910ee10f547f5ea26461bef40d42707e124e67a727083"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/browser-red.log",
+      "digest": "a982d882c1f524622cc67800d79e5bd35cda8c1f2611cf19deb3890bf1f78f69"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config.log",
+      "digest": "a3422e19a297def1d290695e0943508d8b2a213acfcd08c933260f46f3722255"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config-browser-results.json",
+      "digest": "4f6f63ae0b16aa524ff0ec6ef54886830b06ec331a3441902a872d24d84c9dbd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/root-build.log",
+      "digest": "aea58c576613dfc0c3c53253a2df78576884e87cd5ce82034ad8357b5adc4cb1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/package-surface.log",
+      "digest": "ad55bf9f343c55ecbb76c6542d95fc2b31fa95ed3651969f175b48db746e57b8"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config-browser.py",
+      "digest": "7b482d0a3f154b72af1c40bca6d363e97d08922f5b954bbc5a90061430b61d1d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/probe-config.mts",
+      "digest": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config-results.json",
+      "digest": "47c11194330e062afcd13e890ca6016032bd4cc7b070e174e1dbb68c5c38df1a"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/source-hashes-after.txt",
+      "digest": "335913c08b66d17ee3246027b678ef252dab8cf39a7590cc73164436f03b9ca1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/generator-green.log",
+      "digest": "271dd89961ee33b760db17a79e676d426a369e54b97946070627f53ede17181e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/prior-review-evidence-hashes.txt",
+      "digest": "6e0b71e1cf472a435a96b150a0a6add1fd58739e10ecb8202c35f268c4d93789"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/canonical-cli.log",
+      "digest": "f02f6bcac7552e14c75017fabce33f74cc1208cdb38e5f61524fafa8d6fd5262"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/source-hashes-before.txt",
+      "digest": "68a4d4493e18353eeca36aa879ac0d48b65980a73fc39c32a62596d48fac038a"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config-browser.log",
+      "digest": "a7cb363c964bb3c84c8f1a7919400fef058712e8df87487cd058553f4109e952"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/verify-package.log",
+      "digest": "b54efd3083ea29b701a6d10b8404f1e3d50feffaacc78c57f247784531de1f82"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/browser-results-red.json",
+      "digest": "b9202219edf5c672b518436f4c5fe6ee8fdf10820d1633d5c2835e04ae3d64b6"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config.mts",
+      "digest": "46d75fc8d69cfd2cc725b332a7a270658facacce11b7fe855a0ffa586674ecad"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/root-test.log",
+      "digest": "e73543763383bfd81884885e679933c3d11feb906182c8ccb0f84091aec97750"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/mutation-check.json",
+      "digest": "5b0d630bfde57ca7371a06974ca3d25350c5cc5055b48e45d5001842baaac0c2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/command-exits.json",
+      "digest": "749c1b2a6fb683ae9db53d492f52b041a58559bddf97d7235d79aa9a37405208"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/root-test.exit",
+      "digest": "e7640b73d6e3275ca04b7b3fcf73b8d939449ebbd90f842bee528150b94c7c21"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/generator-red.log",
+      "digest": "c52af1910dafee3497eb815672d4fd39ca30507bceeb1e631a93e37c340ba280"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/probe-config-browser.py",
+      "digest": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/mutation-check.exit",
+      "digest": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/repair-config-evidence/unit-red-before-fix.log",
+      "digest": "912d0f7abf849cf2af660ef5e8fd2d0aeb8ac5ecd3d1467a565671295d603abb"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/linguistics-classic-390-view.png",
+      "digest": "a9c61f43d01c88d83ca2632e61eb93e057fd6adee1f36981eebd95847fbc8751"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/language-muscle-opus-colour-band-1440-box.png",
+      "digest": "335f798d27046749674e4ac9ea2130508038513d734fe1400b4d5777b7ab8b81"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/linguistics-classic-1440-box.png",
+      "digest": "0a67689fdd5eaa8e704bdeeb755e2d0e160bd261b981984b436755f420e3e0d5"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/deliberate-practice-classic-1440-box.png",
+      "digest": "a4f2300380d07113de8e52b28a3488c6503cb92330fc301f918fa087aeccb00e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/linguistics-opus-colour-band-1440-box.png",
+      "digest": "a122d30209511b735d0471f9dcf168ebd740aa57f8d942042ae4eed0a3475455"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/language-muscle-classic-1440-box.png",
+      "digest": "d1230caaab3368d8732e3dccc57efbfcaa76d0a37224a34bb8b9ce9475e9f3e6"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/deliberate-practice-opus-colour-band-1440-box.png",
+      "digest": "ff602cb7266b3d417894833b74b88d84dab1d4ea567689f559bccb3ddff12c0c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/linguistics-opus-colour-band-390-view.png",
+      "digest": "0c974421e37b8e4f1c3e1c54fac9b14789200f82ee2935fa2e03309a3366cfd4"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/screens/linguistics-classic-1440-open.png",
+      "digest": "fe2e4238d19d0839086ba0b201594f5aac9755c472eeca350835c1ff278148d1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/variants.log",
+      "digest": "fc6f37dbac49840d7f9a251c052a6859a7c8b7d1ea3df1b1cd46c00a4c92daff"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/canonical-isolated.log",
+      "digest": "0f17128f9040ee8349b8f0990ecd3acfacbd5139533bd8a76752eb4788d91670"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/original-browser.log",
+      "digest": "63cdbd4b41fd3c6999cd00be16666f4c6d7ea5dc09dad1103718f02ed0904ecd"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/run-config-closure.py",
+      "digest": "fd2add31a86c5829bf8b7c1665908b4a5c79606052c45be6f5970ec7bfe265c0"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/original-generator-probe.log",
+      "digest": "271dd89961ee33b760db17a79e676d426a369e54b97946070627f53ede17181e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/valid-env.log",
+      "digest": "027240fd363052de1cb95c514fba80064fcb3344348cf7c7398549016e93cf77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-cli.py",
+      "digest": "3b33a8262826511cbbcd0f6c7321308647f417c6a13d4089a5674fcdafa89403"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/cleanup-results.json",
+      "digest": "e073cfdf0c76bdf007b4062b3631a07bf149d1516fcd1ef7f2d5f632c4e64365"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-variants.mts",
+      "digest": "f9808492d2b2a695aa8759d522f79335b0c027002ce0213aabcb5145c62643d4"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/focused-unit.log",
+      "digest": "cb1d07d86b8b0ddbc252f2e905f6770430645d0bfdf7371c41f446216118b63c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-2.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config.mts",
+      "digest": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/variants-browser-results.json",
+      "digest": "ca56db93a7f767942b5ba5d6a35116e8295664e0b9ec92a5a38d3a99fcf5d527"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-3.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-1.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/source-hashes-after.json",
+      "digest": "4f580bfde7962b212a2c1564926f593fb468471352d19407ca59cb438aeb7968"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/cli-results.json",
+      "digest": "6a6b18d65d2e50be7427e9c7690ac5dc6108fcc875f75169ef01ae851c1a90fa"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-0.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-4.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/source-hashes-before.json",
+      "digest": "4f580bfde7962b212a2c1564926f593fb468471352d19407ca59cb438aeb7968"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-5.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/browser-results.json",
+      "digest": "a7dc0a7fcff0d6dacfb5812b790ffdaa1d4aef3036731572562ded887bb7a163"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-7.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/variants-results.json",
+      "digest": "7edd2f2bd694c125f1c6a961a8ed10a59f4324cdb776ae27c8eadf353bf162d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/bad-env-6.log",
+      "digest": "463f645dc327b4f1ed888d455096a4aae88bbb5e5b796e0889aeca76b3b76f77"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/focused-unit-compile.log",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/command-exits.json",
+      "digest": "116abca036b5353383a0b12eb2207afb91020a8a2d32e5da35c1f0dce1e2ebf4"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-variants-browser.py",
+      "digest": "a82221588aa3b7b642de81c71a64cad6a46a1217d41ff2a9162c0f40f46858a0"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-browser.py",
+      "digest": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/closure-summary.json",
+      "digest": "4189fd126467c46f876ed09dc97d8fdc91d30ba0e536d860514ccd4d7a0eeca7"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/generator-results.json",
+      "digest": "f186c55b0abab0e6845290ea6f037c92259128e077132b545303afd35bf156d2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/ssr-source-check.log",
+      "digest": "95d386cb4e32ea62f63d27f47fdc037e27364778aa5dbc5f2d9eeecf782778cc"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/independent-browser.log",
+      "digest": "2773b498d1dc21ecf1341f37b35fc6101d563a09bd921792ec1478226a6720e1"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/browser.log",
+      "digest": "a982d882c1f524622cc67800d79e5bd35cda8c1f2611cf19deb3890bf1f78f69"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/generator.log",
+      "digest": "c52af1910dafee3497eb815672d4fd39ca30507bceeb1e631a93e37c340ba280"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-supplementary.json",
+      "digest": "d87f77862f1e1fcf4c451a5063a0c225247b48f60d2ede5ab168acc8c700ec92"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/cleanup.json",
+      "digest": "a9cf23a1d670d5a3eb6188bb1e6a1524a863dd80d31d92a3097c99daf6a82fa2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config.mts",
+      "digest": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-after.json",
+      "digest": "1c7f544be082b5423d9c4ac81b7338851d1b9b06f2721218a035a8c149b5f536"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/canonical-cli.log",
+      "digest": "0f17128f9040ee8349b8f0990ecd3acfacbd5139533bd8a76752eb4788d91670"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-before.json",
+      "digest": "1c7f544be082b5423d9c4ac81b7338851d1b9b06f2721218a035a8c149b5f536"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/browser-results.json",
+      "digest": "b9202219edf5c672b518436f4c5fe6ee8fdf10820d1633d5c2835e04ae3d64b6"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/agent-tests.log",
+      "digest": "a03f18e270ad76d4d488191dd9dc113a2a7145d474803f2d6f51532338acfc1b"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/command-exits.json",
+      "digest": "a12e41e3df304fee73a32a3b3e7696be77903ef55177e5acb1703eda0ce13b1e"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/canonical-cli-results.json",
+      "digest": "53adfc595ce880755a2625f28b032876226b17953d889abafe388254ca8fd0f2"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config-browser.py",
+      "digest": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c"
+    },
+    {
+      "path": "docs/design/2026-10-25-web-agent-box/review-config-evidence/generator-results.json",
+      "digest": "5b0047865daa42268a75160252b046a2f577d5a519f2f6535656e3774133c511"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "digest": "2254fbcbe85f66d47a56e99a7fe50c88d19b14ca32d4b26d2cfda7f1f25ca0e2"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "digest": "1fcce4620721c09ec68f4e65cb9b81ea09b8411b1b7d911cbd81fae711205229"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-links.ts",
+      "digest": "575df73841f29c20dc12271d1d0871196b25a1bc670dbe89a1dad3605e06d9c0"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-location.ts",
+      "digest": "1a6206ad226ebb0e356ce289a1372916e456fc59b3772e932e0744f15bd6640b"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "digest": "105cf6c96bbe4307bfe388cce952524efdad7cfdc3d1288b48229bc515d10b45"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-url.ts",
+      "digest": "0a22cf017396b626be1d8eac6722c362643702395338f525ee9bff39bf008057"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/index.ts",
+      "digest": "323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/test-agent-export.mjs",
+      "digest": "338858fda8da9cf2bea70b77c5d6454aaac2f57fc15ba77ba45c3bd4a10b56d5"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "digest": "2a1208e8408acbf7f25b6abcad9a8df0cdd21ba18cf15ede98f1c489323cccd0"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "digest": "3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "digest": "8d3614167b6785b77494b492e113f654f273b228ac42b09f860664026f8342dd"
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "digest": "c5bce88004c6e0c1edcd53d79b6ec33df56e6e2e7daa8ef404ec2cad04ae002a"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "digest": "c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969"
+    },
+    {
+      "path": "apps/reader-demo/src/App.tsx",
+      "digest": "229f046ad372ae16c4393010f5cbd95334c538c1de40de53f4fc370fe59c2815"
+    },
+    {
+      "path": "apps/reader-demo/src/canonical-sites.ts",
+      "digest": "8139754cca86d8e2c8977f1b454d4e220631713f0de542e193070c67a664de17"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-agent-files.ts",
+      "digest": "e625a9984ef7c040710c3a27a212047a8dc9508e3cb6e6509517920737b7af58"
+    },
+    {
+      "path": "apps/reader-demo/scripts/check-agent-access-ssr.tsx",
+      "digest": "b776b8bbd2cacc8bc9b4c00da87f74d830c9c5301022b3a9aa1b295cf80e0880"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications-provenance.json",
+      "digest": "a3deb696d8028fd7841e895ff60578c629fa6642500fff701aaab9f95b8b5dd1"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "digest": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    }
+  ]
+}

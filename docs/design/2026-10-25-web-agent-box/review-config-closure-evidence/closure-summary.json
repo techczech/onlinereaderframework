@@ -1,0 +1,34 @@
+{
+  "snapshotFiles": 74,
+  "unchangedSnapshotFiles": 74,
+  "changedSnapshotFiles": [],
+  "builderSnapshotMatches": true,
+  "builderSnapshotFiles": 18,
+  "probeHashes": {
+    "probe-config.mts": {
+      "original": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d",
+      "closureCopy": "e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d"
+    },
+    "probe-config-browser.py": {
+      "original": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c",
+      "closureCopy": "36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c"
+    }
+  },
+  "nativePreview": {
+    "navigation": "http://127.0.0.1:18897/sub/reader/",
+    "navigationSucceeded": true,
+    "snapshotAttempts": 2,
+    "error": "Preview snapshot failed: Preview automation snapshot timed out after 15000ms.",
+    "tabClosed": true,
+    "taskOwnedServerSession": 28417,
+    "serverStoppedExitCode": 0
+  },
+  "reviewVerdict": "changes-requested",
+  "findings": {
+    "original1": "open: public custom-folder prompt corrected; absolute canonical folder makes downloads non-local",
+    "original2": "closed",
+    "original3": "closed",
+    "original4": "closed",
+    "original5": "closed for original raw scheme, dot-segment and query/fragment cases"
+  }
+}

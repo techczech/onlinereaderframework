@@ -1,0 +1,15 @@
+1f40c8a57911d83cfe434ab6b4a90ffae590b9ef2dc3243bdf249ec19c0c70ef  docs/design/2026-10-25-web-agent-box/review-config.md
+a03f18e270ad76d4d488191dd9dc113a2a7145d474803f2d6f51532338acfc1b  docs/design/2026-10-25-web-agent-box/review-config-evidence/agent-tests.log
+b9202219edf5c672b518436f4c5fe6ee8fdf10820d1633d5c2835e04ae3d64b6  docs/design/2026-10-25-web-agent-box/review-config-evidence/browser-results.json
+a982d882c1f524622cc67800d79e5bd35cda8c1f2611cf19deb3890bf1f78f69  docs/design/2026-10-25-web-agent-box/review-config-evidence/browser.log
+53adfc595ce880755a2625f28b032876226b17953d889abafe388254ca8fd0f2  docs/design/2026-10-25-web-agent-box/review-config-evidence/canonical-cli-results.json
+0f17128f9040ee8349b8f0990ecd3acfacbd5139533bd8a76752eb4788d91670  docs/design/2026-10-25-web-agent-box/review-config-evidence/canonical-cli.log
+a9cf23a1d670d5a3eb6188bb1e6a1524a863dd80d31d92a3097c99daf6a82fa2  docs/design/2026-10-25-web-agent-box/review-config-evidence/cleanup.json
+a12e41e3df304fee73a32a3b3e7696be77903ef55177e5acb1703eda0ce13b1e  docs/design/2026-10-25-web-agent-box/review-config-evidence/command-exits.json
+5b0047865daa42268a75160252b046a2f577d5a519f2f6535656e3774133c511  docs/design/2026-10-25-web-agent-box/review-config-evidence/generator-results.json
+c52af1910dafee3497eb815672d4fd39ca30507bceeb1e631a93e37c340ba280  docs/design/2026-10-25-web-agent-box/review-config-evidence/generator.log
+36cd99b2a753b15bf414b26258bf481e1660a1fd7764ffe6db6363794a4db14c  docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config-browser.py
+e225252e5e37457c850c402b67d8748611e1db3a426b0faa9f5a416191fe3a5d  docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config.mts
+1c7f544be082b5423d9c4ac81b7338851d1b9b06f2721218a035a8c149b5f536  docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-after.json
+1c7f544be082b5423d9c4ac81b7338851d1b9b06f2721218a035a8c149b5f536  docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-before.json
+d87f77862f1e1fcf4c451a5063a0c225247b48f60d2ede5ab168acc8c700ec92  docs/design/2026-10-25-web-agent-box/review-config-evidence/source-hashes-supplementary.json

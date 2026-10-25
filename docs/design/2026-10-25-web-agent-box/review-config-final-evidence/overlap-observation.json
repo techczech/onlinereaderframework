@@ -1,0 +1,15 @@
+{
+  "siteUrl": "https://public.example.org/",
+  "documentUrl": "https://public.example.org/sub/reader/?book=b&section=c",
+  "path": "https://public.example.org/sub/reader/static/agent/",
+  "actual": {
+    "local": "https://public.example.org/sub/reader/static/agent/",
+    "public": "https://public.example.org/static/agent/"
+  },
+  "expected": {
+    "local": "https://public.example.org/sub/reader/static/agent/",
+    "public": "https://public.example.org/static/agent/"
+  },
+  "passed": true,
+  "assessment": "Existing current-page prefix priority in a same-host overlapping configuration. Both addresses remain inside their validated prefixes. No new safety bypass; directory interpretation is the conflicting-config limitation accepted by the controlling review brief."
+}

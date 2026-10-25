@@ -1,0 +1,12 @@
+{
+  "patchExitCode": 0,
+  "reconstructedBefore": {
+    "packages/reader-core/src/agent-export/agent-location.ts": "80fe6ee185fb1497c2dab096473c585ecf7ec40f43482bc4a981ffc6dababeff",
+    "packages/reader-core/src/agent-export/agent-export.test.mjs": "889816d176da80db2975d50ff24a41e021b2b11c9d1db5a8d2f2702505496ebd"
+  },
+  "baselineMatches": {
+    "packages/reader-core/src/agent-export/agent-location.ts": true,
+    "packages/reader-core/src/agent-export/agent-export.test.mjs": true
+  },
+  "baselineLocationMatchesSavedSource": true
+}

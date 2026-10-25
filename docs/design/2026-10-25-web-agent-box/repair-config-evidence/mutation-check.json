@@ -1,0 +1,100 @@
+[
+  {
+    "name": "P2-1 public folder hardcoded to agent/",
+    "file": "agent-location.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "the reader box rebases its folder from the current reader root onto the public reader prefix"
+    ]
+  },
+  {
+    "name": "P2-2 generator accepts raw siteUrl",
+    "file": "agent-export.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "both generators refuse an unusable public address before producing any file, and never echo it"
+    ]
+  },
+  {
+    "name": "P2-2 root index trusts AgentBookExport.siteUrl",
+    "file": "agent-export.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "both generators refuse an unusable public address before producing any file, and never echo it"
+    ]
+  },
+  {
+    "name": "P2-3 final DNS dot not stripped",
+    "file": "agent-url.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6"
+    ]
+  },
+  {
+    "name": "P2-3 IPv4-mapped IPv6 not classified",
+    "file": "agent-url.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it",
+      "private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6",
+      "both generators refuse an unusable public address before producing any file, and never echo it",
+      "a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt"
+    ]
+  },
+  {
+    "name": "P2-4 raw folder rules not checked (escapes, controls, query, credentials)",
+    "file": "agent-location.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link"
+    ]
+  },
+  {
+    "name": "P2-4 raw dot segments of a folder not checked",
+    "file": "agent-location.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link"
+    ]
+  },
+  {
+    "name": "P2-4 prefix containment not checked",
+    "file": "agent-location.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "the reader box rebases its folder from the current reader root onto the public reader prefix",
+      "an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link"
+    ]
+  },
+  {
+    "name": "P3 raw escapes and controls not checked",
+    "file": "agent-url.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it",
+      "both generators refuse an unusable public address before producing any file, and never echo it",
+      "a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt"
+    ]
+  },
+  {
+    "name": "P3 raw dot segments and final dot not checked",
+    "file": "agent-url.ts",
+    "exitCode": 1,
+    "caught": true,
+    "failingTests": [
+      "canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it",
+      "both generators refuse an unusable public address before producing any file, and never echo it",
+      "a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt"
+    ]
+  }
+]

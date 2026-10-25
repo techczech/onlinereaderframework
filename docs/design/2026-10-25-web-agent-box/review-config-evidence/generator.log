@@ -1,0 +1,228 @@
+{
+  "cases": [
+    {
+      "site": "https://public.example.org/",
+      "directory": "agent",
+      "expected": "https://public.example.org/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/",
+      "directory": "static/agent",
+      "expected": "https://public.example.org/static/agent/review-book/index.md",
+      "componentMatches": false,
+      "manifestIndex": "https://public.example.org/static/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/sub/reader/",
+      "directory": "agent",
+      "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/sub/reader/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/sub/reader/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/sub/reader/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/sub/reader/",
+      "directory": "static/agent",
+      "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+      "componentMatches": false,
+      "manifestIndex": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/sub/reader/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/sub/reader/?book=review-book&section=second"
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "input": "javascript:alert(1)",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "javascript:alert(1)/agent/review-book/index.md",
+      "returnedSiteUrl": "javascript:alert(1)/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](javascript:alert(1)/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](javascript:alert(1)/agent/review-book/full.md) · [Manifest](javascript:alert(1)/agent/review-book/manifest.json) · [Read in the browser](javascript:alert(1)/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "data:text/html,hi",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "data:text/html,hi/agent/review-book/index.md",
+      "returnedSiteUrl": "data:text/html,hi/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](data:text/html,hi/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](data:text/html,hi/agent/review-book/full.md) · [Manifest](data:text/html,hi/agent/review-book/manifest.json) · [Read in the browser](data:text/html,hi/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "file:///tmp/book",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "file:///tmp/book/agent/review-book/index.md",
+      "returnedSiteUrl": "file:///tmp/book/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](file:///tmp/book/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](file:///tmp/book/agent/review-book/full.md) · [Manifest](file:///tmp/book/agent/review-book/manifest.json) · [Read in the browser](file:///tmp/book/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://u:p@example.org/sub/",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "https://u:p@example.org/sub/agent/review-book/index.md",
+      "returnedSiteUrl": "https://u:p@example.org/sub/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://u:p@example.org/sub/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://u:p@example.org/sub/agent/review-book/full.md) · [Manifest](https://u:p@example.org/sub/agent/review-book/manifest.json) · [Read in the browser](https://u:p@example.org/sub/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/?x=1",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/?x=1/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/?x=1/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/?x=1/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/?x=1/agent/review-book/full.md) · [Manifest](https://example.org/sub/?x=1/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/?x=1/&book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/#frag",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/#frag/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/#frag/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/#frag/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/#frag/agent/review-book/full.md) · [Manifest](https://example.org/sub/#frag/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/?book=review-book#frag/) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "http://127.0.0.1:8773/",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "http://127.0.0.1:8773/agent/review-book/index.md",
+      "returnedSiteUrl": "http://127.0.0.1:8773/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](http://127.0.0.1:8773/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](http://127.0.0.1:8773/agent/review-book/full.md) · [Manifest](http://127.0.0.1:8773/agent/review-book/manifest.json) · [Read in the browser](http://127.0.0.1:8773/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "http://100.85.55.122:8773/",
+      "canonical": null,
+      "generatorAccepted": true,
+      "generated": "http://100.85.55.122:8773/agent/review-book/index.md",
+      "returnedSiteUrl": "http://100.85.55.122:8773/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](http://100.85.55.122:8773/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](http://100.85.55.122:8773/agent/review-book/full.md) · [Manifest](http://100.85.55.122:8773/agent/review-book/manifest.json) · [Read in the browser](http://100.85.55.122:8773/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "http://[::ffff:127.0.0.1]/",
+      "canonical": "http://[::ffff:7f00:1]/",
+      "generatorAccepted": true,
+      "generated": "http://[::ffff:127.0.0.1]/agent/review-book/index.md",
+      "returnedSiteUrl": "http://[::ffff:127.0.0.1]/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](http://[::ffff:127.0.0.1]/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](http://[::ffff:127.0.0.1]/agent/review-book/full.md) · [Manifest](http://[::ffff:127.0.0.1]/agent/review-book/manifest.json) · [Read in the browser](http://[::ffff:127.0.0.1]/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://localhost./",
+      "canonical": "https://localhost./",
+      "generatorAccepted": true,
+      "generated": "https://localhost./agent/review-book/index.md",
+      "returnedSiteUrl": "https://localhost./",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://localhost./agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://localhost./agent/review-book/full.md) · [Manifest](https://localhost./agent/review-book/manifest.json) · [Read in the browser](https://localhost./?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://box.local./",
+      "canonical": "https://box.local./",
+      "generatorAccepted": true,
+      "generated": "https://box.local./agent/review-book/index.md",
+      "returnedSiteUrl": "https://box.local./",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://box.local./agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://box.local./agent/review-book/full.md) · [Manifest](https://box.local./agent/review-book/manifest.json) · [Read in the browser](https://box.local./?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://box.tail123.ts.net./",
+      "canonical": "https://box.tail123.ts.net./",
+      "generatorAccepted": true,
+      "generated": "https://box.tail123.ts.net./agent/review-book/index.md",
+      "returnedSiteUrl": "https://box.tail123.ts.net./",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://box.tail123.ts.net./agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://box.tail123.ts.net./agent/review-book/full.md) · [Manifest](https://box.tail123.ts.net./agent/review-book/manifest.json) · [Read in the browser](https://box.tail123.ts.net./?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/../escape/",
+      "canonical": "https://example.org/escape/",
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/../escape/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/../escape/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/../escape/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/../escape/agent/review-book/full.md) · [Manifest](https://example.org/sub/../escape/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/../escape/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/%2e%2e/escape/",
+      "canonical": "https://example.org/escape/",
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/%2e%2e/escape/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/%2e%2e/escape/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/%2e%2e/escape/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/%2e%2e/escape/agent/review-book/full.md) · [Manifest](https://example.org/sub/%2e%2e/escape/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/%2e%2e/escape/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https:example.org/sub/",
+      "canonical": "https://example.org/sub/",
+      "generatorAccepted": true,
+      "generated": "https:example.org/sub/agent/review-book/index.md",
+      "returnedSiteUrl": "https:example.org/sub/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https:example.org/sub/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https:example.org/sub/agent/review-book/full.md) · [Manifest](https:example.org/sub/agent/review-book/manifest.json) · [Read in the browser](https:example.org/sub/?book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/?",
+      "canonical": "https://example.org/sub/",
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/?/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/?/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/?/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/?/agent/review-book/full.md) · [Manifest](https://example.org/sub/?/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/?/&book=review-book) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    },
+    {
+      "input": "https://example.org/sub/#",
+      "canonical": "https://example.org/sub/",
+      "generatorAccepted": true,
+      "generated": "https://example.org/sub/#/agent/review-book/index.md",
+      "returnedSiteUrl": "https://example.org/sub/#/",
+      "directRoot": "# Online reader\n\n> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Review book](https://example.org/sub/#/agent/review-book/index.md): Public author. 2 sections (2 with text), about 9 words. [Full text](https://example.org/sub/#/agent/review-book/full.md) · [Manifest](https://example.org/sub/#/agent/review-book/manifest.json) · [Read in the browser](https://example.org/sub/?book=review-book#/) · Licence: [CC BY](https://creativecommons.org/licenses/by/4.0/)\n"
+    }
+  ],
+  "perBook": [
+    {
+      "book": "deliberate-practice",
+      "site": "https://deliberatepractice.dominiklukes.net/",
+      "links": {
+        "index": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md",
+        "full": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md",
+        "manifest": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json",
+        "reader": "https://deliberatepractice.dominiklukes.net/?book=deliberate-practice"
+      },
+      "sourceUrl": "https://deliberatepractice.dominiklukes.net/",
+      "licence": {
+        "label": "Creative Commons Attribution-ShareAlike 4.0 International License",
+        "href": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "book": "language-muscle",
+      "site": "https://buildingyourlanguagemuscle.edutools.fyi/",
+      "links": {
+        "index": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md",
+        "full": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md",
+        "manifest": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json",
+        "reader": "https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle"
+      }
+    },
+    {
+      "book": "linguistics",
+      "site": "https://linguistics.dominiklukes.net/",
+      "links": {
+        "index": "https://linguistics.dominiklukes.net/agent/linguistics/index.md",
+        "full": "https://linguistics.dominiklukes.net/agent/linguistics/full.md",
+        "manifest": "https://linguistics.dominiklukes.net/agent/linguistics/manifest.json",
+        "reader": "https://linguistics.dominiklukes.net/?book=linguistics"
+      },
+      "sourceUrl": "https://linguistics.dominiklukes.net"
+    }
+  ]
+}

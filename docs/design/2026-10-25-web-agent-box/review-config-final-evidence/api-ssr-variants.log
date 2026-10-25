@@ -1,0 +1,131 @@
+PASS bad canonical "https:example.org/sub/"
+PASS book refuses "https:example.org/sub/"
+PASS root-option refuses "https:example.org/sub/"
+PASS root-export refuses "https:example.org/sub/"
+PASS bad canonical "https://example.org/sub/../x"
+PASS book refuses "https://example.org/sub/../x"
+PASS root-option refuses "https://example.org/sub/../x"
+PASS root-export refuses "https://example.org/sub/../x"
+PASS bad canonical "https://example.org/sub/.%2e/x"
+PASS book refuses "https://example.org/sub/.%2e/x"
+PASS root-option refuses "https://example.org/sub/.%2e/x"
+PASS root-export refuses "https://example.org/sub/.%2e/x"
+PASS bad canonical "https://example.org/sub/%2E./x"
+PASS book refuses "https://example.org/sub/%2E./x"
+PASS root-option refuses "https://example.org/sub/%2E./x"
+PASS root-export refuses "https://example.org/sub/%2E./x"
+PASS bad canonical "https://example.org/sub/?"
+PASS book refuses "https://example.org/sub/?"
+PASS root-option refuses "https://example.org/sub/?"
+PASS root-export refuses "https://example.org/sub/?"
+PASS bad canonical "https://example.org/sub/#"
+PASS book refuses "https://example.org/sub/#"
+PASS root-option refuses "https://example.org/sub/#"
+PASS root-export refuses "https://example.org/sub/#"
+PASS bad canonical "https://u:p@example.org/"
+PASS book refuses "https://u:p@example.org/"
+PASS root-option refuses "https://u:p@example.org/"
+PASS root-export refuses "https://u:p@example.org/"
+PASS bad canonical "http://127.1/"
+PASS book refuses "http://127.1/"
+PASS root-option refuses "http://127.1/"
+PASS root-export refuses "http://127.1/"
+PASS bad canonical "http://0x7f000001/"
+PASS book refuses "http://0x7f000001/"
+PASS root-option refuses "http://0x7f000001/"
+PASS root-export refuses "http://0x7f000001/"
+PASS bad canonical "http://0177.0.0.1/"
+PASS book refuses "http://0177.0.0.1/"
+PASS root-option refuses "http://0177.0.0.1/"
+PASS root-export refuses "http://0177.0.0.1/"
+PASS bad canonical "http://[::ffff:172.31.255.255]/"
+PASS book refuses "http://[::ffff:172.31.255.255]/"
+PASS root-option refuses "http://[::ffff:172.31.255.255]/"
+PASS root-export refuses "http://[::ffff:172.31.255.255]/"
+PASS bad canonical "http://[::ffff:192.168.255.254]/"
+PASS book refuses "http://[::ffff:192.168.255.254]/"
+PASS root-option refuses "http://[::ffff:192.168.255.254]/"
+PASS root-export refuses "http://[::ffff:192.168.255.254]/"
+PASS bad canonical "http://[::ffff:100.127.255.255]/"
+PASS book refuses "http://[::ffff:100.127.255.255]/"
+PASS root-option refuses "http://[::ffff:100.127.255.255]/"
+PASS root-export refuses "http://[::ffff:100.127.255.255]/"
+PASS bad canonical "https://localhost。/"
+PASS book refuses "https://localhost。/"
+PASS root-option refuses "https://localhost。/"
+PASS root-export refuses "https://localhost。/"
+PASS bad canonical "https://box.tail123.ts.net．/"
+PASS book refuses "https://box.tail123.ts.net．/"
+PASS root-option refuses "https://box.tail123.ts.net．/"
+PASS root-export refuses "https://box.tail123.ts.net．/"
+PASS bad canonical "https://ｌｏｃａｌｈｏｓｔ/"
+PASS book refuses "https://ｌｏｃａｌｈｏｓｔ/"
+PASS root-option refuses "https://ｌｏｃａｌｈｏｓｔ/"
+PASS root-export refuses "https://ｌｏｃａｌｈｏｓｔ/"
+PASS bad canonical "https://box.localdomain./"
+PASS book refuses "https://box.localdomain./"
+PASS root-option refuses "https://box.localdomain./"
+PASS root-export refuses "https://box.localdomain./"
+PASS bad canonical "https://example.org/a%2Fb"
+PASS book refuses "https://example.org/a%2Fb"
+PASS root-option refuses "https://example.org/a%2Fb"
+PASS root-export refuses "https://example.org/a%2Fb"
+PASS bad canonical "https://example.org/a%5Cb"
+PASS book refuses "https://example.org/a%5Cb"
+PASS root-option refuses "https://example.org/a%5Cb"
+PASS root-export refuses "https://example.org/a%5Cb"
+PASS bad canonical null
+PASS book refuses null
+PASS root-option refuses null
+PASS root-export refuses null
+PASS bad canonical 0
+PASS book refuses 0
+PASS root-option refuses 0
+PASS root-export refuses 0
+PASS bad canonical {}
+PASS book refuses {}
+PASS root-option refuses {}
+PASS root-export refuses {}
+PASS bad canonical false
+PASS book refuses false
+PASS root-option refuses false
+PASS root-export refuses false
+PASS ordinary public form https://public.example.org/Sub/Reader/
+PASS ordinary public form https://xn--bcher-kva.example/
+PASS ordinary public form https://bücher.example/
+PASS ordinary public form https://example.org:8443/
+PASS ordinary public form http://8.8.4.4/
+PASS ordinary public form http://100.63.255.254/
+PASS ordinary public form http://[2001:4860:4860::8888]/
+PASS ordinary public form https://[2606:4700:4700::1111]:8443/sub/
+PASS ordinary public form http://[::ffff:8.8.8.8]/
+PASS unsafe folder fallback %252e%252e/agent/
+PASS unsafe folder fallback %25252e%25252e/agent/
+PASS unsafe folder fallback static/%252fagent/
+PASS unsafe folder fallback static/%255cagent/
+PASS unsafe folder fallback /sub/reader-other/static/agent/
+PASS unsafe folder fallback /Sub/reader/static/agent/
+PASS unsafe folder fallback https://public.example.org/sub/reader-other/static/agent/
+PASS unsafe folder fallback https://public.example.org.evil.example/sub/reader/static/agent/
+PASS unsafe folder fallback //evil.example/sub/reader/static/agent/
+PASS unsafe folder fallback static//agent/
+PASS unsafe folder fallback static/./agent/
+PASS unsafe folder fallback static/.../agent/
+PASS unsafe folder fallback static/agent?
+PASS unsafe folder fallback static/agent#
+PASS unsafe folder fallback java	script:alert(1)
+PASS unsafe folder fallback https://u:p@public.example.org/sub/reader/static/agent/
+PASS unsafe folder fallback static/%E2%80%A4%E2%80%A4/agent/
+PASS safe folder rebases static/agent/
+PASS safe folder rebases ././static/agent/
+PASS safe folder rebases /sub/reader/static/agent/
+PASS safe folder rebases http://127.0.0.1:18793/sub/reader/static/agent/
+PASS canonical absolute folder retains local preview http://127.0.0.1:18793/sub/reader/
+PASS canonical absolute folder retains local preview http://127.0.0.1:18793/preview/
+PASS SSR no DOM {}
+PASS SSR no DOM {}
+PASS SSR no DOM {"siteUrl":"https://public.example.org/sub/reader/"}
+PASS SSR no DOM {"siteUrl":"https://public.example.org/sub/reader/"}
+PASS SSR no DOM {"siteUrl":"https://public.example.org/sub/reader/","path":"static/agent/"}
+PASS SSR no DOM {"siteUrl":"https://u:p@example.org/"}
+130 checks; 0 failures

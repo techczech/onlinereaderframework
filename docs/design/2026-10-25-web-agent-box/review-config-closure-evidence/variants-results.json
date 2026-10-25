@@ -1,0 +1,648 @@
+{
+  "checks": [
+    {
+      "name": "bad canonical \"https:example.org/sub/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https:example.org/sub/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/sub/../x\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/sub/../x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/sub/../x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/sub/../x\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/sub/.%2e/x\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/sub/.%2e/x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/sub/.%2e/x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/sub/.%2e/x\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/sub/%2E./x\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/sub/%2E./x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/sub/%2E./x\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/sub/%2E./x\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/sub/?\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/sub/?\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/sub/#\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/sub/#\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://u:p@example.org/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://u:p@example.org/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://u:p@example.org/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://u:p@example.org/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://127.1/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://127.1/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://0x7f000001/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://0x7f000001/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://0x7f000001/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://0x7f000001/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://0177.0.0.1/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://0177.0.0.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://0177.0.0.1/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://0177.0.0.1/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://[::ffff:172.31.255.255]/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://[::ffff:172.31.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://[::ffff:172.31.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://[::ffff:172.31.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://[::ffff:192.168.255.254]/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://[::ffff:192.168.255.254]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://[::ffff:192.168.255.254]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://[::ffff:192.168.255.254]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"http://[::ffff:100.127.255.255]/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"http://[::ffff:100.127.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"http://[::ffff:100.127.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"http://[::ffff:100.127.255.255]/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://localhost。/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://localhost。/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://localhost。/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://localhost。/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://box.tail123.ts.net．/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://box.tail123.ts.net．/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://box.tail123.ts.net．/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://box.tail123.ts.net．/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://ｌｏｃａｌｈｏｓｔ/\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://ｌｏｃａｌｈｏｓｔ/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://ｌｏｃａｌｈｏｓｔ/\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://ｌｏｃａｌｈｏｓｔ/\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://box.localdomain./\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://box.localdomain./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://box.localdomain./\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://box.localdomain./\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/a%2Fb\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/a%2Fb\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/a%2Fb\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/a%2Fb\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical \"https://example.org/a%5Cb\"",
+      "passed": true
+    },
+    {
+      "name": "book refuses \"https://example.org/a%5Cb\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses \"https://example.org/a%5Cb\"",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses \"https://example.org/a%5Cb\"",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical null",
+      "passed": true
+    },
+    {
+      "name": "book refuses null",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses null",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses null",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical 0",
+      "passed": true
+    },
+    {
+      "name": "book refuses 0",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses 0",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses 0",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical {}",
+      "passed": true
+    },
+    {
+      "name": "book refuses {}",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses {}",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses {}",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "bad canonical false",
+      "passed": true
+    },
+    {
+      "name": "book refuses false",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-option refuses false",
+      "passed": true,
+      "detail": "The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "root-export refuses false",
+      "passed": true,
+      "detail": "The siteUrl of the export for book \"review-book\" must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "name": "ordinary public form https://public.example.org/Sub/Reader/",
+      "passed": true,
+      "detail": "https://public.example.org/Sub/Reader/"
+    },
+    {
+      "name": "ordinary public form https://xn--bcher-kva.example/",
+      "passed": true,
+      "detail": "https://xn--bcher-kva.example/"
+    },
+    {
+      "name": "ordinary public form https://bücher.example/",
+      "passed": true,
+      "detail": "https://xn--bcher-kva.example/"
+    },
+    {
+      "name": "ordinary public form https://example.org:8443/",
+      "passed": true,
+      "detail": "https://example.org:8443/"
+    },
+    {
+      "name": "ordinary public form http://8.8.4.4/",
+      "passed": true,
+      "detail": "http://8.8.4.4/"
+    },
+    {
+      "name": "ordinary public form http://100.63.255.254/",
+      "passed": true,
+      "detail": "http://100.63.255.254/"
+    },
+    {
+      "name": "ordinary public form http://[2001:4860:4860::8888]/",
+      "passed": true,
+      "detail": "http://[2001:4860:4860::8888]/"
+    },
+    {
+      "name": "ordinary public form https://[2606:4700:4700::1111]:8443/sub/",
+      "passed": true,
+      "detail": "https://[2606:4700:4700::1111]:8443/sub/"
+    },
+    {
+      "name": "ordinary public form http://[::ffff:8.8.8.8]/",
+      "passed": true,
+      "detail": "http://[::ffff:808:808]/"
+    },
+    {
+      "name": "unsafe folder fallback %252e%252e/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback %25252e%25252e/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/%252fagent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/%255cagent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback /sub/reader-other/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback /Sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback https://public.example.org/sub/reader-other/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback https://public.example.org.evil.example/sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback //evil.example/sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static//agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/./agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/.../agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/agent?",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/agent#",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback java\tscript:alert(1)",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback https://u:p@public.example.org/sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "unsafe folder fallback static/%E2%80%A4%E2%80%A4/agent/",
+      "passed": true
+    },
+    {
+      "name": "safe folder rebases static/agent/",
+      "passed": true
+    },
+    {
+      "name": "safe folder rebases ././static/agent/",
+      "passed": true
+    },
+    {
+      "name": "safe folder rebases /sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "safe folder rebases http://127.0.0.1:18793/sub/reader/static/agent/",
+      "passed": true
+    },
+    {
+      "name": "canonical absolute folder retains local preview http://127.0.0.1:18793/sub/reader/",
+      "passed": false,
+      "detail": {
+        "actual": {
+          "local": "https://public.example.org/sub/reader/static/agent/",
+          "public": "https://public.example.org/sub/reader/static/agent/"
+        },
+        "expected": {
+          "local": "http://127.0.0.1:18793/sub/reader/static/agent/",
+          "public": "https://public.example.org/sub/reader/static/agent/"
+        }
+      }
+    },
+    {
+      "name": "canonical absolute folder retains local preview http://127.0.0.1:18793/preview/",
+      "passed": false,
+      "detail": {
+        "actual": {
+          "local": "https://public.example.org/sub/reader/static/agent/",
+          "public": "https://public.example.org/sub/reader/static/agent/"
+        },
+        "expected": {
+          "local": "http://127.0.0.1:18793/preview/static/agent/",
+          "public": "https://public.example.org/sub/reader/static/agent/"
+        }
+      }
+    },
+    {
+      "name": "SSR no DOM {}",
+      "passed": true,
+      "detail": {
+        "length": 0
+      }
+    },
+    {
+      "name": "SSR no DOM {}",
+      "passed": true,
+      "detail": {
+        "length": 0
+      }
+    },
+    {
+      "name": "SSR no DOM {\"siteUrl\":\"https://public.example.org/sub/reader/\"}",
+      "passed": true,
+      "detail": {
+        "length": 2753
+      }
+    },
+    {
+      "name": "SSR no DOM {\"siteUrl\":\"https://public.example.org/sub/reader/\"}",
+      "passed": true,
+      "detail": {
+        "length": 2753
+      }
+    },
+    {
+      "name": "SSR no DOM {\"siteUrl\":\"https://public.example.org/sub/reader/\",\"path\":\"static/agent/\"}",
+      "passed": true,
+      "detail": {
+        "length": 2788
+      }
+    },
+    {
+      "name": "SSR no DOM {\"siteUrl\":\"https://u:p@example.org/\"}",
+      "passed": true,
+      "detail": {
+        "length": 0
+      }
+    }
+  ],
+  "observations": {
+    "trailingDotPublic": {
+      "canonical": null,
+      "private": false
+    },
+    "outerWhitespace": "https://public.example.org/sub/",
+    "doubleEncodedOrigin": "https://public.example.org/sub/%252e%252e/x/"
+  }
+}

@@ -1,0 +1,155 @@
+PASS https://public.example.org/ agent: manifest index
+PASS https://public.example.org/ agent: root index (export address)
+PASS https://public.example.org/ agent: root index (direct address)
+PASS https://public.example.org/ agent path=agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ agent path=./agent: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ agent path=/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ agent path=https://public.example.org/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ static/agent: manifest index
+PASS https://public.example.org/ static/agent: root index (export address)
+PASS https://public.example.org/ static/agent: root index (direct address)
+PASS https://public.example.org/ static/agent path=static/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ static/agent path=./static/agent: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ static/agent path=/static/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/ static/agent path=https://public.example.org/static/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ agent: manifest index
+PASS https://public.example.org/sub/reader/ agent: root index (export address)
+PASS https://public.example.org/sub/reader/ agent: root index (direct address)
+PASS https://public.example.org/sub/reader/ agent path=agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ agent path=./agent: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ agent path=/sub/reader/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ agent path=https://public.example.org/sub/reader/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ static/agent: manifest index
+PASS https://public.example.org/sub/reader/ static/agent: root index (export address)
+PASS https://public.example.org/sub/reader/ static/agent: root index (direct address)
+PASS https://public.example.org/sub/reader/ static/agent path=static/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ static/agent path=./static/agent: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ static/agent path=/sub/reader/static/agent/: server-rendered prompt names the generated index and chapter
+PASS https://public.example.org/sub/reader/ static/agent path=https://public.example.org/sub/reader/static/agent/: server-rendered prompt names the generated index and chapter
+PASS canonicalSiteUrl refuses "javascript:alert(1)"
+PASS buildAgentBook refuses "javascript:alert(1)"
+PASS buildAgentRootIndex refuses siteUrl "javascript:alert(1)"
+PASS buildAgentRootIndex refuses export siteUrl "javascript:alert(1)"
+PASS server render ignores siteUrl "javascript:alert(1)"
+PASS canonicalSiteUrl refuses "data:text/html,hi"
+PASS buildAgentBook refuses "data:text/html,hi"
+PASS buildAgentRootIndex refuses siteUrl "data:text/html,hi"
+PASS buildAgentRootIndex refuses export siteUrl "data:text/html,hi"
+PASS server render ignores siteUrl "data:text/html,hi"
+PASS canonicalSiteUrl refuses "file:///tmp/book"
+PASS buildAgentBook refuses "file:///tmp/book"
+PASS buildAgentRootIndex refuses siteUrl "file:///tmp/book"
+PASS buildAgentRootIndex refuses export siteUrl "file:///tmp/book"
+PASS server render ignores siteUrl "file:///tmp/book"
+PASS canonicalSiteUrl refuses "https://u:p@example.org/sub/"
+PASS buildAgentBook refuses "https://u:p@example.org/sub/"
+PASS buildAgentRootIndex refuses siteUrl "https://u:p@example.org/sub/"
+PASS buildAgentRootIndex refuses export siteUrl "https://u:p@example.org/sub/"
+PASS server render ignores siteUrl "https://u:p@example.org/sub/"
+PASS canonicalSiteUrl refuses "https://example.org/sub/?x=1"
+PASS buildAgentBook refuses "https://example.org/sub/?x=1"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/?x=1"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/?x=1"
+PASS server render ignores siteUrl "https://example.org/sub/?x=1"
+PASS canonicalSiteUrl refuses "https://example.org/sub/#frag"
+PASS buildAgentBook refuses "https://example.org/sub/#frag"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/#frag"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/#frag"
+PASS server render ignores siteUrl "https://example.org/sub/#frag"
+PASS canonicalSiteUrl refuses "http://127.0.0.1:8773/"
+PASS buildAgentBook refuses "http://127.0.0.1:8773/"
+PASS buildAgentRootIndex refuses siteUrl "http://127.0.0.1:8773/"
+PASS buildAgentRootIndex refuses export siteUrl "http://127.0.0.1:8773/"
+PASS server render ignores siteUrl "http://127.0.0.1:8773/"
+PASS canonicalSiteUrl refuses "http://100.85.55.122:8773/"
+PASS buildAgentBook refuses "http://100.85.55.122:8773/"
+PASS buildAgentRootIndex refuses siteUrl "http://100.85.55.122:8773/"
+PASS buildAgentRootIndex refuses export siteUrl "http://100.85.55.122:8773/"
+PASS server render ignores siteUrl "http://100.85.55.122:8773/"
+PASS canonicalSiteUrl refuses "http://[::ffff:127.0.0.1]/"
+PASS buildAgentBook refuses "http://[::ffff:127.0.0.1]/"
+PASS buildAgentRootIndex refuses siteUrl "http://[::ffff:127.0.0.1]/"
+PASS buildAgentRootIndex refuses export siteUrl "http://[::ffff:127.0.0.1]/"
+PASS server render ignores siteUrl "http://[::ffff:127.0.0.1]/"
+PASS canonicalSiteUrl refuses "https://localhost./"
+PASS buildAgentBook refuses "https://localhost./"
+PASS buildAgentRootIndex refuses siteUrl "https://localhost./"
+PASS buildAgentRootIndex refuses export siteUrl "https://localhost./"
+PASS server render ignores siteUrl "https://localhost./"
+PASS canonicalSiteUrl refuses "https://box.local./"
+PASS buildAgentBook refuses "https://box.local./"
+PASS buildAgentRootIndex refuses siteUrl "https://box.local./"
+PASS buildAgentRootIndex refuses export siteUrl "https://box.local./"
+PASS server render ignores siteUrl "https://box.local./"
+PASS canonicalSiteUrl refuses "https://box.tail123.ts.net./"
+PASS buildAgentBook refuses "https://box.tail123.ts.net./"
+PASS buildAgentRootIndex refuses siteUrl "https://box.tail123.ts.net./"
+PASS buildAgentRootIndex refuses export siteUrl "https://box.tail123.ts.net./"
+PASS server render ignores siteUrl "https://box.tail123.ts.net./"
+PASS canonicalSiteUrl refuses "https://example.org/sub/../escape/"
+PASS buildAgentBook refuses "https://example.org/sub/../escape/"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/../escape/"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/../escape/"
+PASS server render ignores siteUrl "https://example.org/sub/../escape/"
+PASS canonicalSiteUrl refuses "https://example.org/sub/%2e%2e/escape/"
+PASS buildAgentBook refuses "https://example.org/sub/%2e%2e/escape/"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/%2e%2e/escape/"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/%2e%2e/escape/"
+PASS server render ignores siteUrl "https://example.org/sub/%2e%2e/escape/"
+PASS canonicalSiteUrl refuses "https:example.org/sub/"
+PASS buildAgentBook refuses "https:example.org/sub/"
+PASS buildAgentRootIndex refuses siteUrl "https:example.org/sub/"
+PASS buildAgentRootIndex refuses export siteUrl "https:example.org/sub/"
+PASS server render ignores siteUrl "https:example.org/sub/"
+PASS canonicalSiteUrl refuses "https://example.org/sub/?"
+PASS buildAgentBook refuses "https://example.org/sub/?"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/?"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/?"
+PASS server render ignores siteUrl "https://example.org/sub/?"
+PASS canonicalSiteUrl refuses "https://example.org/sub/#"
+PASS buildAgentBook refuses "https://example.org/sub/#"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org/sub/#"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org/sub/#"
+PASS server render ignores siteUrl "https://example.org/sub/#"
+PASS canonicalSiteUrl refuses "http://[::ffff:10.0.0.1]/"
+PASS buildAgentBook refuses "http://[::ffff:10.0.0.1]/"
+PASS buildAgentRootIndex refuses siteUrl "http://[::ffff:10.0.0.1]/"
+PASS buildAgentRootIndex refuses export siteUrl "http://[::ffff:10.0.0.1]/"
+PASS server render ignores siteUrl "http://[::ffff:10.0.0.1]/"
+PASS canonicalSiteUrl refuses "http://[::ffff:192.168.1.1]/"
+PASS buildAgentBook refuses "http://[::ffff:192.168.1.1]/"
+PASS buildAgentRootIndex refuses siteUrl "http://[::ffff:192.168.1.1]/"
+PASS buildAgentRootIndex refuses export siteUrl "http://[::ffff:192.168.1.1]/"
+PASS server render ignores siteUrl "http://[::ffff:192.168.1.1]/"
+PASS canonicalSiteUrl refuses "http://[::ffff:172.16.0.1]/"
+PASS buildAgentBook refuses "http://[::ffff:172.16.0.1]/"
+PASS buildAgentRootIndex refuses siteUrl "http://[::ffff:172.16.0.1]/"
+PASS buildAgentRootIndex refuses export siteUrl "http://[::ffff:172.16.0.1]/"
+PASS server render ignores siteUrl "http://[::ffff:172.16.0.1]/"
+PASS canonicalSiteUrl refuses "http://127.1/"
+PASS buildAgentBook refuses "http://127.1/"
+PASS buildAgentRootIndex refuses siteUrl "http://127.1/"
+PASS buildAgentRootIndex refuses export siteUrl "http://127.1/"
+PASS server render ignores siteUrl "http://127.1/"
+PASS canonicalSiteUrl refuses "https://example.org./"
+PASS buildAgentBook refuses "https://example.org./"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org./"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org./"
+PASS server render ignores siteUrl "https://example.org./"
+PASS canonicalSiteUrl refuses "https://example.org\\sub/"
+PASS buildAgentBook refuses "https://example.org\\sub/"
+PASS buildAgentRootIndex refuses siteUrl "https://example.org\\sub/"
+PASS buildAgentRootIndex refuses export siteUrl "https://example.org\\sub/"
+PASS server render ignores siteUrl "https://example.org\\sub/"
+PASS canonicalSiteUrl refuses "https://exa\tmple.org/"
+PASS buildAgentBook refuses "https://exa\tmple.org/"
+PASS buildAgentRootIndex refuses siteUrl "https://exa\tmple.org/"
+PASS buildAgentRootIndex refuses export siteUrl "https://exa\tmple.org/"
+PASS server render ignores siteUrl "https://exa\tmple.org/"
+PASS deliberate-practice: export address, manifest, root line at https://deliberatepractice.dominiklukes.net/
+PASS deliberate-practice: source and licence fields kept
+PASS language-muscle: export address, manifest, root line at https://buildingyourlanguagemuscle.edutools.fyi/
+PASS language-muscle: source and licence fields kept
+PASS linguistics: export address, manifest, root line at https://linguistics.dominiklukes.net/
+PASS linguistics: source and licence fields kept
+154 checks; 0 failures

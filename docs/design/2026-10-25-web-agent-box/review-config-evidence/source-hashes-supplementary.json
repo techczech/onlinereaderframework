@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "apps/reader-demo/src/App.tsx",
+      "digest": "229f046ad372ae16c4393010f5cbd95334c538c1de40de53f4fc370fe59c2815"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "digest": "3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/index.ts",
+      "digest": "8180abf19943303f3f5761386922c431da3dcd6623d4343df4d9ed6f1f512a72"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-xhtml.ts",
+      "digest": "3d12792c6f193bba8ae79100b511e343ac4bab8ebfcc8b0a5edc8744b87fdaf6"
+    }
+  ]
+}

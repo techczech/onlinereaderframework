@@ -1,11 +1,15 @@
 import React, { useEffect, useId, useRef, useState } from 'react';
 import type { PublicationAgentAccess, PublicationBook, PublicationSection } from '../types.js';
 import { publicationDisplayTitle } from '../publication-model.js';
-import { agentAttachedPrompt, agentBookLinks, agentExamples, agentPrompt, isPrivateHost } from '../../agent-export/agent-paths.js';
+import { agentAttachedPrompt, agentBookLinks, agentExamples, agentPrompt } from '../../agent-export/agent-paths.js';
+import { agentLocations, type AgentLocations } from '../../agent-export/agent-location.js';
 
 /** The reader has no AI client, key or chat service: this box only hands the reader (or their assistant) the addresses of the book's plain-text copy
  * and a prompt that points at them. It follows the pattern of the "Ask an AI assistant" box on dominiklukes.net (heading, a short prompt to paste, Copy,
- * example prompts) and adds the part a book needs: the prompt names this book and, on a chapter, this chapter. */
+ * example prompts) and adds the part a book needs: the prompt names this book and, on a chapter, this chapter.
+ * The prompt always points at the book's public address: `access.siteUrl` when configured (even while previewing on a private address), otherwise the page's
+ * own address when that is public. With neither, the box offers the downloaded text and a prompt for attaching it; a private address is never put in a prompt.
+ * `access.path` is the same folder under both: see `agentLocations` (an unusable value is ignored for `agent/`, so no configuration makes an unsafe link). */
 export interface AgentAccessProps {
   book: PublicationBook;
   access: PublicationAgentAccess;
@@ -14,18 +18,12 @@ export interface AgentAccessProps {
   /** `panel` is the full box on a front page; `quiet` folds it into one line under a chapter. */
   variant: 'panel' | 'quiet';
 }
-interface Where { base: string; host: string; privateHost: boolean }
-
-/** Resolved in the browser, after mount: the address the files really have where this page is served (host, port and sub-path), never a guess made at build time. */
-function useWhere(path: string): Where | null {
-  const [where, setWhere] = useState<Where | null>(null);
-  useEffect(() => {
-    try {
-      const base = new URL(path.replace(/\/*$/, '/'), document.baseURI);
-      setWhere({ base: base.href, host: base.host, privateHost: base.protocol === 'file:' || isPrivateHost(base.hostname) });
-    } catch { setWhere(null); }
-  }, [path]);
-  return where;
+/** The page's own address is read in the browser, after mount, so the download links name where the files really are (host, port and sub-path), never a
+ * guess made at build time. Before that (and on a server) only the public folder is known. */
+function useWhere(access: PublicationAgentAccess): AgentLocations {
+  const [documentUrl, setDocumentUrl] = useState<string>();
+  useEffect(() => { setDocumentUrl(document.baseURI); }, []);
+  return agentLocations({ path: access.path, siteUrl: access.siteUrl, documentUrl });
 }
 
 /** Pages served over plain http (a home-network preview) have no async clipboard; a selected hidden field and the browser's own copy command still work. */
@@ -40,16 +38,20 @@ function copyWithSelection(text: string): boolean {
 
 export function AgentAccess({ book, access, section, variant }: AgentAccessProps) {
   const id = useId();
-  const where = useWhere(access.path ?? 'agent/');
+  const where = useWhere(access);
   const [status, setStatus] = useState('');
   const timer = useRef<number>();
   useEffect(() => () => window.clearTimeout(timer.current), []);
-  if (!where) return null;
+  if (!where.public && !where.local) return null;
   const title = publicationDisplayTitle(book);
-  const links = agentBookLinks(where.base, book.id);
+  const publicLinks = where.public ? agentBookLinks(where.public, book.id) : undefined;
+  // Downloads come from where this page is served, so a preview keeps working before the public files exist.
+  const downloads = agentBookLinks(where.local ?? where.public!, book.id);
   const chapter = section && section.id !== 'home' ? section : undefined;
-  const input = { title, author: book.author, indexUrl: links.index, fullUrl: links.full, chapterTitle: chapter?.title, chapterUrl: chapter ? links.chapter(chapter.id) : undefined };
-  const prompt = where.privateHost ? agentAttachedPrompt(input) : agentPrompt(input);
+  const attached = agentAttachedPrompt({ title, author: book.author });
+  const prompt = publicLinks
+    ? agentPrompt({ title, author: book.author, indexUrl: publicLinks.index, fullUrl: publicLinks.full, chapterTitle: chapter?.title, chapterUrl: chapter ? publicLinks.chapter(chapter.id) : undefined })
+    : attached;
   const examples = agentExamples(!!chapter);
   const copy = async (text: string, what: string) => {
     let done = false;
@@ -59,19 +61,24 @@ export function AgentAccess({ book, access, section, variant }: AgentAccessProps
     timer.current = window.setTimeout(() => setStatus(''), 4000);
   };
   const body = <>
-    <p className="publication-agent-lead">{where.privateHost
-      ? <>This copy is hosted at <strong>{where.host}</strong>, an address that hosted AI assistants cannot open. Download the text and attach or paste it, then use this prompt. An assistant running on your own computer or network can read <a href={links.index}>the book index</a> directly.</>
-      : <>Paste this prompt into an AI assistant that can open web addresses. It points at {chapter ? 'this chapter and ' : ''}the book's plain-text copy, so the assistant reads the book itself.</>}</p>
+    <p className="publication-agent-lead">{publicLinks
+      ? <>Paste this into an AI assistant that can open web pages. It reads {chapter ? 'this chapter and ' : ''}the book itself, so it can answer your questions and point you to chapters.</>
+      : <>Download the book's text, attach it to an AI assistant, then paste this prompt.</>}</p>
     <div className="publication-agent-prompt">
-      <code id={`${id}-prompt`} tabIndex={0}>{prompt}</code>
+      <p id={`${id}-prompt`}>{prompt}</p>
       <button type="button" onClick={() => void copy(prompt, 'Prompt')}><span aria-hidden="true" className="material-symbols-outlined">content_copy</span> Copy<span className="publication-agent-sr"> the prompt</span></button>
     </div>
-    <div className="publication-agent-chips">
-      {examples.map(example => <button key={example} type="button" title={`Copy the prompt and: ${example}`} onClick={() => void copy(`${prompt} ${example}`, 'Prompt and question')}>
-        <span aria-hidden="true" className="material-symbols-outlined">content_copy</span> {example}</button>)}
-    </div>
+    <details className="publication-agent-try">
+      <summary>Try a question</summary>
+      <ul>{examples.map(example => <li key={example}>
+        <span>{example}</span>
+        <button type="button" title="Copy the prompt with this question" onClick={() => void copy(`${prompt} ${example}`, 'Prompt and question')}>
+          <span aria-hidden="true" className="material-symbols-outlined">content_copy</span> Copy<span className="publication-agent-sr"> the prompt with: {example}</span></button>
+      </li>)}</ul>
+    </details>
     <p className="publication-agent-links">
-      <a href={links.full} download>Download the full book (Markdown)</a> · <a href={links.index}>Index of every chapter</a> · <a href={links.manifest}>Manifest (JSON)</a>
+      <a href={downloads.full} download>Download the full text (Markdown)</a> · <a href={downloads.index}>Chapter index</a> · <a href={downloads.manifest}>Manifest</a>
+      {publicLinks && <> · <button type="button" className="publication-agent-textbutton" onClick={() => void copy(attached, 'Prompt for an attached file')}>Copy a prompt for the downloaded file</button></>}
     </p>
     <p className="publication-agent-status" role="status">{status}</p>
   </>;

@@ -1,0 +1,15 @@
+{
+  "unitRedBeforeFix": {"command": "npm run test:agent-export --prefix packages/reader-core", "exitCode": 1, "tests": 25, "passed": 19, "failed": 6, "log": "unit-red-before-fix.log", "meaning": "the six new boundary tests fail on the reviewed source; the 19 existing tests pass"},
+  "reviewProbeRedBeforeFix": {"generator": {"command": "apps/reader-demo/node_modules/.bin/tsx docs/design/2026-10-25-web-agent-box/repair-config-evidence/probe-config.mts", "exitCode": 0, "meaning": "observational"}, "browser": {"command": "../book-engine/.venv/bin/python docs/design/2026-10-25-web-agent-box/repair-config-evidence/probe-config-browser.py", "exitCode": 1, "checks": 88, "passed": 70, "failed": 18}, "note": "byte-identical copies of the review probes; outputs land beside the copy"},
+  "unitGreen": {"command": "npm run test:agent-export --prefix packages/reader-core", "exitCode": 0, "tests": 25, "passed": 25},
+  "mutationCheck": {"command": "node docs/design/2026-10-25-web-agent-box/repair-config-evidence/mutation-check.mjs", "exitCode": 0, "mutations": 10, "caught": 10, "sourcesRestored": true, "results": "mutation-check.json"},
+  "ssrCheck": {"command": "cd apps/reader-demo && npx tsx scripts/check-agent-access-ssr.tsx", "exitCode": 0, "checks": 17, "passed": 17},
+  "reviewProbeGreen": {"generator": {"exitCode": 0, "customFolderCasesMatching": 4, "invalidOriginsRefused": 17}, "browser": {"exitCode": 0, "checks": 88, "passed": 88, "failed": 0}},
+  "generatorAcceptance": {"command": "apps/reader-demo/node_modules/.bin/tsx docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config.mts", "exitCode": 0, "checks": 154, "failed": 0},
+  "browserAcceptance": {"command": "../book-engine/.venv/bin/python docs/design/2026-10-25-web-agent-box/repair-config-evidence/accept-config-browser.py", "exitCode": 0, "checks": 48, "failed": 0, "externalRequests": 0},
+  "nativePreview": {"attempts": 1, "result": "succeeded; 6 cases, all download/index/manifest links 200 from a loopback server", "file": "native-preview-results.json"},
+  "canonicalCLI": {"command": "tsx <byte-identical script copy in an isolated mirror> --canonical", "exitCode": 0, "files": 305, "privateOrScriptHits": 0, "badReaderSiteUrl": {"values": 6, "allExit": 1, "distCreated": false, "valueEchoed": false}, "validReaderSiteUrl": {"exitCode": 0}},
+  "rootBuild": {"command": "npm run build", "exitCode": 0, "note": "core tsc, demo typecheck, vite build, 305 relative agent files"},
+  "rootTest": {"command": "npm test", "exitCode": 0, "suites": {"publicationContent": "23/23", "agentExport": "25/25", "reader": "96/96", "books": "5/5"}},
+  "verifyPackage": {"command": "npm run verify:package", "exitCode": 0, "publicExportsChanged": false}
+}

@@ -1,0 +1,49 @@
+PASS private preview, siteUrl 'http://[::ffff:10.0.0.1]/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://[::ffff:192.168.1.1]/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://[::ffff:172.16.0.1]/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://[::ffff:7f00:1]/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://[64:ff9b::10.0.0.1]/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://127.1/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'http://2130706433/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https://box.local./': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https://printer.home.arpa/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https:example.org/sub/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https://example.org/sub/%2e%2e/x/': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https://example.org./': attachment prompt, no address in it, local custom-folder downloads
+PASS private preview, siteUrl 'https://u:p@public.example.org/sub/reader/': attachment prompt, no address in it, local custom-folder downloads
+PASS http://127.0.0.1:18793: folder 'javascript:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'JAVASCRIPT:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'java\tscript:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'data:text/html,x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'vbscript:x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'blob:https://public.example.org/x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'https://evil.example/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '//evil.example/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '/sub/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '%2E%2E/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '.%2e/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder '..\\agent\\' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'static\\agent\\' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'agent/?x=1' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'agent/#x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS http://127.0.0.1:18793: folder 'https://u:p@public.example.org/sub/reader/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'javascript:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'JAVASCRIPT:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'java\tscript:alert(1)' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'data:text/html,x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'vbscript:x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'blob:https://public.example.org/x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'https://evil.example/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '//evil.example/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '/sub/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '%2E%2E/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '.%2e/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder '..\\agent\\' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'static\\agent\\' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'agent/?x=1' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'agent/#x' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS https://public.example.org: folder 'https://u:p@public.example.org/sub/reader/agent/' ignored for agent/; links stay under the served prefix; prompt names the public agent/ folder
+PASS private preview, folder given as an address under siteUrl: downloads and prompt use that folder and all return 200
+48 checks; 0 failures; 0 external requests refused

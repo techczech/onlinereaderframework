@@ -1,0 +1,181 @@
+{
+  "checks": [
+    {
+      "name": "canonical CLI 305 files",
+      "passed": true,
+      "files": 305
+    },
+    {
+      "name": "deliberate-practice own origin",
+      "passed": true,
+      "links": {
+        "index": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md",
+        "full": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md",
+        "manifest": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json",
+        "reader": "https://deliberatepractice.dominiklukes.net/?book=deliberate-practice"
+      }
+    },
+    {
+      "name": "language-muscle own origin",
+      "passed": true,
+      "links": {
+        "index": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md",
+        "full": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md",
+        "manifest": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json",
+        "reader": "https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle"
+      }
+    },
+    {
+      "name": "linguistics own origin",
+      "passed": true,
+      "links": {
+        "index": "https://linguistics.dominiklukes.net/agent/linguistics/index.md",
+        "full": "https://linguistics.dominiklukes.net/agent/linguistics/full.md",
+        "manifest": "https://linguistics.dominiklukes.net/agent/linguistics/manifest.json",
+        "reader": "https://linguistics.dominiklukes.net/?book=linguistics"
+      }
+    },
+    {
+      "name": "invalid env before output 0",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 1",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 2",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 3",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 4",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 5",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 6",
+      "passed": true
+    },
+    {
+      "name": "invalid env before output 7",
+      "passed": true
+    },
+    {
+      "name": "valid environment fallback",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "canonical-isolated",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts",
+        "--canonical"
+      ],
+      "READER_SITE_URL": null,
+      "exitCode": 0,
+      "outputExists": true
+    },
+    {
+      "name": "bad-env-0",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://u:p@example.org/sub/",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-1",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https:example.org/sub/",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-2",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://example.org/sub/?",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-3",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://example.org/sub/#",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-4",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://example.org/sub/%2e%2e/x/",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-5",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "http://[::ffff:192.168.1.1]/",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-6",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://localhost\u3002/",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "bad-env-7",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://example.org./",
+      "exitCode": 1,
+      "outputExists": false
+    },
+    {
+      "name": "valid-env",
+      "command": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+      ],
+      "READER_SITE_URL": "https://public.example.org/Sub/Reader/",
+      "exitCode": 0,
+      "outputExists": true
+    }
+  ],
+  "sourceSha256": "e625a9984ef7c040710c3a27a212047a8dc9508e3cb6e6509517920737b7af58",
+  "copySha256": "e625a9984ef7c040710c3a27a212047a8dc9508e3cb6e6509517920737b7af58",
+  "rootIndex": "# Online Reader Framework demo books\n\n> Three books read in the Online Reader Framework demo. Each is available as plain Markdown: an index, the whole text in one file, and one file per section.\n\n## Books\n\n- [Deliberate Practice: A Universal Learning Method](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md): Dominik Luke\u0161. 21 sections (21 with text), about 36,825 words. [Full text](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md) \u00b7 [Manifest](https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json) \u00b7 [Read in the browser](https://deliberatepractice.dominiklukes.net/?book=deliberate-practice) \u00b7 Licence: [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)\n- [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md): Dominik Luke\u0161. 12 sections (12 with text), about 13,081 words. [Full text](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md) \u00b7 [Manifest](https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json) \u00b7 [Read in the browser](https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle)\n- [Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013\u20132016](https://linguistics.dominiklukes.net/agent/linguistics/index.md): Dominik Luke\u0161. 262 sections (253 with text), about 76,526 words. [Full text](https://linguistics.dominiklukes.net/agent/linguistics/full.md) \u00b7 [Manifest](https://linguistics.dominiklukes.net/agent/linguistics/manifest.json) \u00b7 [Read in the browser](https://linguistics.dominiklukes.net/?book=linguistics)\n"
+}

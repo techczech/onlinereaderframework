@@ -1,0 +1,80 @@
+✔ every book: all section ids in reading order, counts, and one file per section (0.999041ms)
+✔ markdown sections are preserved byte for byte in chapter files and, in order, in full.md (49.351708ms)
+✔ code, tables, footnote-like attribution, source lines and the image link survive (0.696625ms)
+✔ html sections keep their structure through the reader sanitiser, with a title heading added (0.476125ms)
+✔ every relative link in every generated file resolves to a generated file; no private paths or browser state (21.723709ms)
+✔ siteUrl makes every link absolute; relative output has none of that host (24.756125ms)
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (0.422125ms)
+✔ reader links match the reader's own publicationUrl; private hosts are recognised (0.38525ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.118292ms)
+✔ canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash (0.140125ms)
+✔ a root index links each book at its own public address, never at another book's (43.414333ms)
+✔ anchored reading: leadLength is WriteFlex's own, and lead spans follow its word walk (26.890084ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (0.638917ms)
+✔ the directory option is validated by both generators before any path is produced (1.047083ms)
+✔ a nested directory keeps every reader link pointing at the reader root (0.259458ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (0.795625ms)
+✔ real Language Muscle step-2 links to the Fine-tuning your aims chapter file (0.141709ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (0.336791ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.258ms)
+✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (0.319583ms)
+✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.149792ms)
+✔ both generators refuse an unusable public address before producing any file, and never echo it (1.373333ms)
+✖ the reader box rebases its folder from the current reader root onto the public reader prefix (1.15925ms)
+✖ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (0.2385ms)
+✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (0.745834ms)
+✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (0.748917ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 24
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 509.816292
+
+✖ failing tests:
+
+test at packages/reader-core/src/agent-export/agent-export.test.mjs:320:1
+✖ the reader box rebases its folder from the current reader root onto the public reader prefix (1.15925ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   local: 'https://public.example.org/sub/reader/agent/',
+  -   local: 'http://127.0.0.1:8773/sub/reader/agent/',
+      public: 'https://public.example.org/sub/reader/agent/'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/agent-export/agent-export.test.mjs:333:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { local: 'https://public.example.org/sub/reader/agent/', public: 'https://public.example.org/sub/reader/agent/' },
+    expected: { local: 'http://127.0.0.1:8773/sub/reader/agent/', public: 'https://public.example.org/sub/reader/agent/' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at packages/reader-core/src/agent-export/agent-export.test.mjs:348:1
+✖ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (0.2385ms)
+  AssertionError [ERR_ASSERTION]: https://public.example.org/agent/ on http://127.0.0.1:18793/
+  + actual - expected
+  
+    {
+  +   local: 'https://public.example.org/agent/',
+  -   local: 'http://127.0.0.1:18793/agent/',
+      public: 'https://public.example.org/agent/'
+    }
+  
+      at TestContext.<anonymous> (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/agent-export/agent-export.test.mjs:359:20)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { local: 'https://public.example.org/agent/', public: 'https://public.example.org/agent/' },
+    expected: { local: 'http://127.0.0.1:18793/agent/', public: 'https://public.example.org/agent/' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

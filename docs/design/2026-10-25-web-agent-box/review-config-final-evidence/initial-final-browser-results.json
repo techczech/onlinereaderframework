@@ -1,0 +1,3325 @@
+{
+  "checks": [
+    {
+      "name": "canonical URL byte check / agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org/sub/reader/agent"
+        },
+        "page": "http://127.0.0.1:18793/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check / static/agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org/sub/reader/static/agent"
+        },
+        "page": "http://127.0.0.1:18793/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/static/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check / agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org/sub/reader/agent/"
+        },
+        "page": "http://127.0.0.1:18793/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check / static/agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "relative byte check at /",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "absolute-path byte check at /",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "current-url byte check at /",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "http://127.0.0.1:18793/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /sub/reader/ agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "https://public.example.org/agent"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/agent/review-book/index.md. The whole book is at https://public.example.org/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /sub/reader/ static/agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "https://public.example.org/static/agent"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/static/agent/review-book/index.md. The whole book is at https://public.example.org/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /sub/reader/ agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "https://public.example.org/agent/"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /sub/reader/ static/agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "https://public.example.org/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "relative byte check at /sub/reader/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "absolute-path byte check at /sub/reader/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "current-url byte check at /sub/reader/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/",
+          "path": "http://127.0.0.1:18793/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/sub/reader/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "sub/reader/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /preview/x/ agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "https://books.example.net:8443/public/books/agent"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://books.example.net:8443/public/books/agent/review-book/index.md. The whole book is at https://books.example.net:8443/public/books/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /preview/x/ static/agent chapter=False",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "https://books.example.net:8443/public/books/static/agent"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/?book=review-book",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://books.example.net:8443/public/books/static/agent/review-book/index.md. The whole book is at https://books.example.net:8443/public/books/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /preview/x/ agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "https://books.example.net:8443/public/books/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://books.example.net:8443/public/books/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://books.example.net:8443/public/books/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical URL byte check /preview/x/ static/agent chapter=True",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "https://books.example.net:8443/public/books/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/?book=review-book&section=chapter%20one%2F..",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://books.example.net:8443/public/books/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://books.example.net:8443/public/books/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "relative byte check at /preview/x/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://books.example.net:8443/public/books/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://books.example.net:8443/public/books/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "absolute-path byte check at /preview/x/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "/preview/x/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://books.example.net:8443/public/books/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://books.example.net:8443/public/books/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "current-url byte check at /preview/x/",
+      "passed": false,
+      "detail": {
+        "access": {
+          "siteUrl": "https://books.example.net:8443/public/books/",
+          "path": "http://127.0.0.1:18793/preview/x/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/index.html?book=review-book&section=second#top",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "expectedSha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/full.md",
+                "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "expectedSha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/index.md",
+                "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "expectedSha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/static/agent/review-book/manifest.json",
+                "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+              }
+            ]
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://books.example.net:8443/public/books/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://books.example.net:8443/public/books/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes javascript:alert(1)",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "javascript:alert(1)"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes data:text/html,x",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "data:text/html,x"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes ../static/agent",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "../static/agent"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes %2e%2e/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "%2e%2e/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes static/%252fagent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "static/%252fagent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes https://u:p@public.example.org/sub/reader/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://u:p@public.example.org/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes https://public.example.org.evil.example/sub/reader/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org.evil.example/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes https://cdn.example.net/sub/reader/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://cdn.example.net/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes http://public.example.org/sub/reader/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "http://public.example.org/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes https://public.example.org:444/sub/reader/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org:444/sub/reader/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes /preview/x-other/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "/preview/x-other/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "refused folder uses exact default bytes https://public.example.org/sub/reader-other/static/agent/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/reader/",
+          "path": "https://public.example.org/sub/reader-other/static/agent/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback http://[::ffff:127.0.0.1]/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "http://[::ffff:127.0.0.1]/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://localhost./",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://localhost./"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://box.tail123.ts.net./",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://box.tail123.ts.net./"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://u:p@example.org/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://u:p@example.org/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https:example.org/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https:example.org/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://public.example.org/sub/%2e%2e/x/",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/%2e%2e/x/"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://public.example.org/sub/?",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/?"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "invalid canonical quiet fallback https://public.example.org/sub/#",
+      "passed": true,
+      "detail": {
+        "access": {
+          "siteUrl": "https://public.example.org/sub/#"
+        },
+        "page": "http://127.0.0.1:18793/preview/x/",
+        "downloads": [
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "expectedSha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/full.md",
+                "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+            "status": 200,
+            "type": "text/plain",
+            "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "expectedSha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/index.md",
+                "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+              }
+            ]
+          },
+          {
+            "href": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+            "status": 200,
+            "type": "application/json",
+            "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "expectedSha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a",
+            "route": [
+              {
+                "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+                "kind": "fixture",
+                "file": "preview/x/agent/review-book/manifest.json",
+                "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+              }
+            ]
+          }
+        ],
+        "prompt": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "200 HTML negative control is not accepted as a download",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "type": "text/html",
+        "text": "<!doctype html><html><body>SPA fallback: not an agent file</body></html>"
+      }
+    },
+    {
+      "name": "no external request, page error, console error or refused-value log",
+      "passed": true,
+      "detail": {
+        "blocked": [],
+        "errors": [],
+        "console": [
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          },
+          {
+            "type": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+          }
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:18793/?book=review-book",
+      "kind": "fixture",
+      "file": "index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/?book=review-book&section=chapter%20one%2F..",
+      "kind": "fixture",
+      "file": "index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/index.html?book=review-book&section=second",
+      "kind": "fixture",
+      "file": "index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/?book=review-book",
+      "kind": "fixture",
+      "file": "sub/reader/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/?book=review-book&section=chapter%20one%2F..",
+      "kind": "fixture",
+      "file": "sub/reader/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/index.html?book=review-book&section=second",
+      "kind": "fixture",
+      "file": "sub/reader/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "sub/reader/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/?book=review-book",
+      "kind": "fixture",
+      "file": "preview/x/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/?book=review-book&section=chapter%20one%2F..",
+      "kind": "fixture",
+      "file": "preview/x/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/index.html?book=review-book&section=second",
+      "kind": "fixture",
+      "file": "preview/x/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/full.md",
+      "sha256": "6d7826e23a7ee92448c5d37e459a98750f5fe9d249a3c51ad6159e5b1d28420d"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/index.md",
+      "sha256": "7a9b634f496d66aa2bcccef724cb057231f9dc57ac052e122fb456660b9bea91"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/static/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/static/agent/review-book/manifest.json",
+      "sha256": "d4f59b019a40e621a48466202d73b72075b127418a2d01b62f2bbb3707c47764"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/",
+      "kind": "fixture",
+      "file": "preview/x/index.html",
+      "sha256": "90887bfb7e0f10ff7a427678c38d2316452865fd917bc7f9334178b561becd15"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/full.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/full.md",
+      "sha256": "62228035b04c76a0e899a268360e039f03a959fc1a6e57b0e99dbafef74d70ec"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/index.md",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/index.md",
+      "sha256": "3094651ee266174156a6e24921f5954055144d7dc34898fe49143baf61194256"
+    },
+    {
+      "url": "http://127.0.0.1:18793/preview/x/agent/review-book/manifest.json",
+      "kind": "fixture",
+      "file": "preview/x/agent/review-book/manifest.json",
+      "sha256": "1e1fb43208cc1ee237d1e161a1135441ac437335b0f6f63b3f01e59ec79af73a"
+    },
+    {
+      "url": "https://public.example.org/missing/full.md",
+      "kind": "spa-fallback",
+      "sha256": "3a6e19e1aa08a9a86eb43b5845217f47f51e36a0c7b1c7b06b159fb398c744e9"
+    }
+  ],
+  "blocked": [],
+  "errors": [],
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    }
+  ],
+  "browser": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+  "externalNetworkRequests": 0
+}

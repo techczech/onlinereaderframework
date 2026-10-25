@@ -1,0 +1,25 @@
+originalScriptSha256=e625a9984ef7c040710c3a27a212047a8dc9508e3cb6e6509517920737b7af58 copySha256=e625a9984ef7c040710c3a27a212047a8dc9508e3cb6e6509517920737b7af58
+deliberate-practice: 21 sections (21 with text), 24 files
+language-muscle: 12 sections (12 with text), 15 files
+linguistics: 262 sections (253 with text), 265 files
+Wrote 305 agent files under dist with links under each book's canonical address.
+canonical exit=0
+files=305
+Deliberate Practice: A Universal Learning Method | https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md | https://deliberatepractice.dominiklukes.net/?book=deliberate-practice
+Building Your Language Muscle | https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md | https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle
+Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013–2016 | https://linguistics.dominiklukes.net/agent/linguistics/index.md | https://linguistics.dominiklukes.net/?book=linguistics
+dist/agent/deliberate-practice/manifest.json https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md https://deliberatepractice.dominiklukes.net/?book=deliberate-practice https://deliberatepractice.dominiklukes.net/ Creative Commons Attribution-ShareAlike 4.0 International License
+dist/agent/language-muscle/manifest.json https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle None None
+dist/agent/linguistics/manifest.json https://linguistics.dominiklukes.net/agent/linguistics/index.md https://linguistics.dominiklukes.net/?book=linguistics https://linguistics.dominiklukes.net None
+private-or-script hits: 0
+env "https://u:p@example.org/" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+env "http://[::ffff:10.0.0.1]/" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+env "https://example.org/sub/?" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+env "https:example.org/sub/" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+env "https://localhost./" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+env "javascript:alert(1)" exit=1 dist_created=no value_echoed=0 message="READER_SITE_URL must be a public http(s) address written exactly"
+deliberate-practice: 21 sections (21 with text), 24 files
+language-muscle: 12 sections (12 with text), 15 files
+linguistics: 262 sections (253 with text), 265 files
+Wrote 305 agent files under dist with links under https://books.example.org/reader/.
+valid env exit=0 index=https://books.example.org/reader/agent/linguistics/index.md

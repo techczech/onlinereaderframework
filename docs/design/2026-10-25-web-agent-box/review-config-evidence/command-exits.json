@@ -1,0 +1,29 @@
+{
+  "agentExportTests": {
+    "command": "npm run test:agent-export --prefix packages/reader-core",
+    "exitCode": 0,
+    "tests": 19,
+    "passed": 19
+  },
+  "generatorProbe": {
+    "command": "apps/reader-demo/node_modules/.bin/tsx docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config.mts",
+    "exitCode": 0,
+    "meaning": "Observational probe completed; not an assertion that the contract passes."
+  },
+  "canonicalCLI": {
+    "command": "tsx <review-owned byte-identical script copy> --canonical",
+    "exitCode": 0,
+    "files": 305
+  },
+  "browserProbe": {
+    "command": "../book-engine/.venv/bin/python docs/design/2026-10-25-web-agent-box/review-config-evidence/probe-config-browser.py",
+    "exitCode": 1,
+    "checks": 88,
+    "passed": 70,
+    "failed": 18
+  },
+  "nativePreview": {
+    "attempts": 2,
+    "error": "Preview snapshot failed: Preview automation snapshot timed out after 15000ms."
+  }
+}

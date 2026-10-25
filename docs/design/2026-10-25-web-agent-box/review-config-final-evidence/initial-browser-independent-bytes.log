@@ -1,0 +1,44 @@
+PASS canonical URL byte check / agent chapter=False
+PASS canonical URL byte check / static/agent chapter=False
+FAIL canonical URL byte check / agent chapter=True
+FAIL canonical URL byte check / static/agent chapter=True
+FAIL relative byte check at /
+FAIL absolute-path byte check at /
+FAIL current-url byte check at /
+PASS canonical URL byte check /sub/reader/ agent chapter=False
+PASS canonical URL byte check /sub/reader/ static/agent chapter=False
+FAIL canonical URL byte check /sub/reader/ agent chapter=True
+FAIL canonical URL byte check /sub/reader/ static/agent chapter=True
+FAIL relative byte check at /sub/reader/
+FAIL absolute-path byte check at /sub/reader/
+FAIL current-url byte check at /sub/reader/
+PASS canonical URL byte check /preview/x/ agent chapter=False
+PASS canonical URL byte check /preview/x/ static/agent chapter=False
+FAIL canonical URL byte check /preview/x/ agent chapter=True
+FAIL canonical URL byte check /preview/x/ static/agent chapter=True
+FAIL relative byte check at /preview/x/
+FAIL absolute-path byte check at /preview/x/
+FAIL current-url byte check at /preview/x/
+PASS refused folder uses exact default bytes javascript:alert(1)
+PASS refused folder uses exact default bytes data:text/html,x
+PASS refused folder uses exact default bytes ../static/agent
+PASS refused folder uses exact default bytes %2e%2e/agent/
+PASS refused folder uses exact default bytes static/%252fagent/
+PASS refused folder uses exact default bytes https://u:p@public.example.org/sub/reader/static/agent/
+PASS refused folder uses exact default bytes https://public.example.org.evil.example/sub/reader/static/agent/
+PASS refused folder uses exact default bytes https://cdn.example.net/sub/reader/static/agent/
+PASS refused folder uses exact default bytes http://public.example.org/sub/reader/static/agent/
+PASS refused folder uses exact default bytes https://public.example.org:444/sub/reader/static/agent/
+PASS refused folder uses exact default bytes /preview/x-other/static/agent/
+PASS refused folder uses exact default bytes https://public.example.org/sub/reader-other/static/agent/
+PASS invalid canonical quiet fallback http://[::ffff:127.0.0.1]/
+PASS invalid canonical quiet fallback https://localhost./
+PASS invalid canonical quiet fallback https://box.tail123.ts.net./
+PASS invalid canonical quiet fallback https://u:p@example.org/
+PASS invalid canonical quiet fallback https:example.org/
+PASS invalid canonical quiet fallback https://public.example.org/sub/%2e%2e/x/
+PASS invalid canonical quiet fallback https://public.example.org/sub/?
+PASS invalid canonical quiet fallback https://public.example.org/sub/#
+PASS 200 HTML negative control is not accepted as a download
+PASS no external request, page error, console error or refused-value log
+43 checks; 15 failures

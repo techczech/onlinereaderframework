@@ -1,0 +1,2 @@
+agent barrel: AGENT_DIRECTORY,agentAttachedPrompt,agentBookLinks,agentDirectory,agentExamples,agentPrompt,agentSegment,buildAgentBook,buildAgentRootIndex,canonicalSiteUrl,isPrivateHost,readerLink
+main has canonicalSiteUrl/isPrivateHost: function function agentLocations exported? false requireSiteUrl exported? false

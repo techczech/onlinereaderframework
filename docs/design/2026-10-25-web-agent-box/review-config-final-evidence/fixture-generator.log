@@ -1,0 +1,194 @@
+{
+  "cases": [
+    {
+      "site": "https://public.example.org/",
+      "directory": "agent",
+      "expected": "https://public.example.org/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/",
+      "directory": "static/agent",
+      "expected": "https://public.example.org/static/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/static/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/sub/reader/",
+      "directory": "agent",
+      "expected": "https://public.example.org/sub/reader/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/sub/reader/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/sub/reader/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/sub/reader/?book=review-book&section=second"
+      ]
+    },
+    {
+      "site": "https://public.example.org/sub/reader/",
+      "directory": "static/agent",
+      "expected": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+      "componentMatches": true,
+      "manifestIndex": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+      "rootMatches": true,
+      "readerLinks": [
+        "https://public.example.org/sub/reader/?book=review-book&section=chapter+one%2F..",
+        "https://public.example.org/sub/reader/?book=review-book&section=second"
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "input": "javascript:alert(1)",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "data:text/html,hi",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "file:///tmp/book",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://u:p@example.org/sub/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/?x=1",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/#frag",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "http://127.0.0.1:8773/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "http://100.85.55.122:8773/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "http://[::ffff:127.0.0.1]/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://localhost./",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://box.local./",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://box.tail123.ts.net./",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/../escape/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/%2e%2e/escape/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https:example.org/sub/",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/?",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    },
+    {
+      "input": "https://example.org/sub/#",
+      "canonical": null,
+      "generatorAccepted": false,
+      "error": "Error: The siteUrl must be a public address written exactly as http(s)://host/path/: no credentials, query, fragment, \".\" or \"..\" segment, escaped slash or private host."
+    }
+  ],
+  "perBook": [
+    {
+      "book": "deliberate-practice",
+      "site": "https://deliberatepractice.dominiklukes.net/",
+      "links": {
+        "index": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md",
+        "full": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md",
+        "manifest": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json",
+        "reader": "https://deliberatepractice.dominiklukes.net/?book=deliberate-practice"
+      },
+      "sourceUrl": "https://deliberatepractice.dominiklukes.net/",
+      "licence": {
+        "label": "Creative Commons Attribution-ShareAlike 4.0 International License",
+        "href": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "book": "language-muscle",
+      "site": "https://buildingyourlanguagemuscle.edutools.fyi/",
+      "links": {
+        "index": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md",
+        "full": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md",
+        "manifest": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json",
+        "reader": "https://buildingyourlanguagemuscle.edutools.fyi/?book=language-muscle"
+      }
+    },
+    {
+      "book": "linguistics",
+      "site": "https://linguistics.dominiklukes.net/",
+      "links": {
+        "index": "https://linguistics.dominiklukes.net/agent/linguistics/index.md",
+        "full": "https://linguistics.dominiklukes.net/agent/linguistics/full.md",
+        "manifest": "https://linguistics.dominiklukes.net/agent/linguistics/manifest.json",
+        "reader": "https://linguistics.dominiklukes.net/?book=linguistics"
+      },
+      "sourceUrl": "https://linguistics.dominiklukes.net"
+    }
+  ]
+}

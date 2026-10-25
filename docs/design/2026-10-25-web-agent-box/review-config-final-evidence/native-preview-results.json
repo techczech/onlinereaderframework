@@ -1,0 +1,8 @@
+{
+  "statusAvailableInitially": false,
+  "firstInvalidAboutBlankAttempt": "Preview automation open failed: Invalid preview URL (parse: https:; input length 11).",
+  "firstLocalNavigation": "chrome-error://chromewebdata/",
+  "retryError": "Preview automation open failed: Navigation to http://127.0.0.1:18793/ failed: ERR_CONNECTION_REFUSED",
+  "ownedTabClosed": true,
+  "fallback": "bundled chrome-headless-shell; intercepted fixtures"
+}

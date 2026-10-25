@@ -1,0 +1,867 @@
+{
+  "checks": [
+    {
+      "name": "safe folder / None: local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / 'agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / '././agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / '/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / 'http://127.0.0.1:18793/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / 'static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / '././static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / '/static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder / 'http://127.0.0.1:18793/static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "canonical absolute folder / chapter=False: downloads remain usable before deployment",
+      "passed": true,
+      "detail": {
+        "actual": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "localControl": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/static/agent/review-book/index.md. The whole book is at https://public.example.org/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical absolute folder / chapter=True: downloads remain usable before deployment",
+      "passed": true,
+      "detail": {
+        "actual": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "localControl": [
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "safe folder /sub/reader/ None: local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ 'agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ '././agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ '/sub/reader/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ 'http://127.0.0.1:18793/sub/reader/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ 'static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ '././static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ '/sub/reader/static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "safe folder /sub/reader/ 'http://127.0.0.1:18793/sub/reader/static/agent/': local files and public chapter are 200",
+      "passed": true,
+      "detail": [
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+          "status": 200
+        },
+        {
+          "href": "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "canonical absolute folder /sub/reader/ chapter=False: downloads remain usable before deployment",
+      "passed": true,
+      "detail": {
+        "actual": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "localControl": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "prompt": "Read \"Review book\" by Public author at https://public.example.org/sub/reader/static/agent/review-book/index.md. The whole book is at https://public.example.org/sub/reader/static/agent/review-book/full.md and the index links to every chapter. Use it to help me read the book. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "canonical absolute folder /sub/reader/ chapter=True: downloads remain usable before deployment",
+      "passed": true,
+      "detail": {
+        "actual": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "localControl": [
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+            "status": 200
+          },
+          {
+            "href": "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+            "status": 200
+          }
+        ],
+        "prompt": "I'm reading the chapter \"Chapter one\" of \"Review book\" by Public author. Read https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md (the book's index is https://public.example.org/sub/reader/static/agent/review-book/index.md) and help me understand it. Cite chapter titles with their links when you answer."
+      }
+    },
+    {
+      "name": "hostile folder inspected without clicking '%252e%252e/agent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'static/%252fagent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'static/%255cagent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking '/sub/readerX/agent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking '/Sub/reader/agent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'https://public.example.org.evil.example/sub/reader/agent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'java\\tscript:alert(1)'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'data:text/html,x'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'static/agent?'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'static/agent#'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "hostile folder inspected without clicking 'https://u:p@public.example.org/sub/reader/agent/'",
+      "passed": true,
+      "detail": [
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+        "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json"
+      ]
+    },
+    {
+      "name": "private alias never enters hosted prompt http://0x7f000001/",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "private alias never enters hosted prompt http://[::ffff:172.31.255.255]/",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "private alias never enters hosted prompt https://localhost\u3002/",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "private alias never enters hosted prompt https://\uff4c\uff4f\uff43\uff41\uff4c\uff48\uff4f\uff53\uff54/",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "private alias never enters hosted prompt https://box.tail123.ts.net\uff0e/",
+      "passed": true,
+      "detail": "I have attached the full text of \"Review book\" by Public author. Use only that text to help me read the book. Cite chapter titles with their links when you answer."
+    },
+    {
+      "name": "no page exceptions or outside requests",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "blocked": []
+      }
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:18793/",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/agent/review-book/full.md",
+    "https://public.example.org/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/index.md",
+    "http://127.0.0.1:18793/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "https://public.example.org/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/chapters/chapter~20~one~2f~~2e~~2e~.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "https://public.example.org/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/full.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/index.md",
+    "http://127.0.0.1:18793/sub/reader/static/agent/review-book/manifest.json",
+    "http://127.0.0.1:18793/sub/reader/"
+  ],
+  "blocked": [],
+  "pageErrors": [],
+  "externalNetworkRequests": 0,
+  "browser": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+}

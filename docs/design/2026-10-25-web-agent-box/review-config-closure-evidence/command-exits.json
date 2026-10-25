@@ -1,0 +1,183 @@
+[
+  {
+    "name": "focused-unit-compile",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "src/agent-export/index.ts",
+      "src/agent-export/agent-location.ts",
+      "src/original/publication-model.ts",
+      "src/original/reading-support/anchored-reading.ts",
+      "--rootDir",
+      "src",
+      "--outDir",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/compiled",
+      "--target",
+      "ES2020",
+      "--module",
+      "NodeNext",
+      "--moduleResolution",
+      "NodeNext",
+      "--strict",
+      "--skipLibCheck",
+      "--esModuleInterop",
+      "--declaration",
+      "false"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core",
+    "exitCode": 0
+  },
+  {
+    "name": "focused-unit",
+    "command": [
+      "node",
+      "--test",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/src/agent-export/agent-export.test.mjs"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "original-generator-probe",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config.mts"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "exitCode": 0
+  },
+  {
+    "name": "ssr-source-check",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "scripts/check-agent-access-ssr.tsx"
+    ],
+    "cwd": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo",
+    "exitCode": 0
+  },
+  {
+    "name": "independent-api-variants",
+    "command": [
+      "apps/reader-demo/node_modules/.bin/tsx",
+      "docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-variants.mts"
+    ],
+    "exitCode": 1
+  },
+  {
+    "name": "original-browser",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-browser.py"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "independent-browser",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-engine/.venv/bin/python",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/probe-config-variants-browser.py"
+    ],
+    "exitCode": 1
+  },
+  {
+    "name": "canonical-isolated",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts",
+      "--canonical"
+    ],
+    "READER_SITE_URL": null,
+    "exitCode": 0,
+    "outputExists": true
+  },
+  {
+    "name": "bad-env-0",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://u:p@example.org/sub/",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-1",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https:example.org/sub/",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-2",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://example.org/sub/?",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-3",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://example.org/sub/#",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-4",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://example.org/sub/%2e%2e/x/",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-5",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "http://[::ffff:192.168.1.1]/",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-6",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://localhost\u3002/",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "bad-env-7",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://example.org./",
+    "exitCode": 1,
+    "outputExists": false
+  },
+  {
+    "name": "valid-env",
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-25-web-agent-box/review-config-closure-evidence/scratch/cli-mirror/apps/reader-demo/scripts/build-agent-files.ts"
+    ],
+    "READER_SITE_URL": "https://public.example.org/Sub/Reader/",
+    "exitCode": 0,
+    "outputExists": true
+  }
+]

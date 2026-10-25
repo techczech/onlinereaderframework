@@ -1,0 +1,40 @@
+PASS safe folder / None: local files and public chapter are 200
+PASS safe folder / 'agent/': local files and public chapter are 200
+PASS safe folder / '././agent/': local files and public chapter are 200
+PASS safe folder / '/agent/': local files and public chapter are 200
+PASS safe folder / 'http://127.0.0.1:18793/agent/': local files and public chapter are 200
+PASS safe folder / 'static/agent/': local files and public chapter are 200
+PASS safe folder / '././static/agent/': local files and public chapter are 200
+PASS safe folder / '/static/agent/': local files and public chapter are 200
+PASS safe folder / 'http://127.0.0.1:18793/static/agent/': local files and public chapter are 200
+FAIL canonical absolute folder / chapter=False: downloads remain usable before deployment
+FAIL canonical absolute folder / chapter=True: downloads remain usable before deployment
+PASS safe folder /sub/reader/ None: local files and public chapter are 200
+PASS safe folder /sub/reader/ 'agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ '././agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ '/sub/reader/agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ 'http://127.0.0.1:18793/sub/reader/agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ 'static/agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ '././static/agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ '/sub/reader/static/agent/': local files and public chapter are 200
+PASS safe folder /sub/reader/ 'http://127.0.0.1:18793/sub/reader/static/agent/': local files and public chapter are 200
+FAIL canonical absolute folder /sub/reader/ chapter=False: downloads remain usable before deployment
+FAIL canonical absolute folder /sub/reader/ chapter=True: downloads remain usable before deployment
+PASS hostile folder inspected without clicking '%252e%252e/agent/'
+PASS hostile folder inspected without clicking 'static/%252fagent/'
+PASS hostile folder inspected without clicking 'static/%255cagent/'
+PASS hostile folder inspected without clicking '/sub/readerX/agent/'
+PASS hostile folder inspected without clicking '/Sub/reader/agent/'
+PASS hostile folder inspected without clicking 'https://public.example.org.evil.example/sub/reader/agent/'
+PASS hostile folder inspected without clicking 'java\tscript:alert(1)'
+PASS hostile folder inspected without clicking 'data:text/html,x'
+PASS hostile folder inspected without clicking 'static/agent?'
+PASS hostile folder inspected without clicking 'static/agent#'
+PASS hostile folder inspected without clicking 'https://u:p@public.example.org/sub/reader/agent/'
+PASS private alias never enters hosted prompt http://0x7f000001/
+PASS private alias never enters hosted prompt http://[::ffff:172.31.255.255]/
+PASS private alias never enters hosted prompt https://localhost。/
+PASS private alias never enters hosted prompt https://ｌｏｃａｌｈｏｓｔ/
+PASS private alias never enters hosted prompt https://box.tail123.ts.net．/
+PASS no page exceptions or outside requests
+39 checks; 4 failures
