@@ -216,3 +216,13 @@
   .publication-reader .publication-front .publication-front-primary { width: 100%; }
   .publication-reader .publication-front .publication-front-actions { justify-items: stretch; }
 }
+
+/* Smaller windows (a 13-inch laptop, a tablet): lighter bands, titles and covers; the layouts and their order are unchanged. */
+@container pf (min-width: 640px) and (max-width: 1179px) {
+  .publication-reader .publication-front .pf-band { padding: 1.8rem var(--pf-gutter) 1.6rem; }
+  .publication-reader .publication-front .pf-band-inner { grid-template-columns: 1fr 10.5rem; gap: 1.75rem; }
+  .publication-reader .publication-front .pf-band .publication-front-title { font-size: clamp(1.6rem, 2.7cqi, 2.4rem); }
+  .publication-reader .publication-front .pf-band .publication-front-cover { margin-bottom: -6rem; }
+  .publication-reader .publication-front .publication-front-title { font-size: clamp(1.5rem, 2.8cqi, 2.4rem); }
+  .publication-reader .publication-front .publication-front-contents-head h2 { font-size: 1.3rem; }
+}

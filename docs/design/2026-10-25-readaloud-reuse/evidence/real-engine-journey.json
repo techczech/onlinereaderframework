@@ -1,0 +1,40 @@
+[
+ [
+  "reading",
+  {
+   "sentence": "What's the difference between phonetics and phonology?",
+   "word": "difference"
+  }
+ ],
+ [
+  "after next sentence",
+  {
+   "sentence": "I'm surprised that nobody has mentioned the form/function distinction.",
+   "word": "surprised"
+  }
+ ],
+ [
+  "paused",
+  {
+   "sentence": "I'm surprised that nobody has mentioned the form/function distinction.",
+   "engineSpeakingFlag": true,
+   "engineSaysPaused": true
+  }
+ ],
+ [
+  "resumed",
+  {
+   "sentence": "I'm surprised that nobody has mentioned the form/function distinction.",
+   "word": "has"
+  }
+ ],
+ [
+  "stopped",
+  {
+   "dock": 0,
+   "sentence": null,
+   "word": null,
+   "engineSpeaking": false
+  }
+ ]
+]

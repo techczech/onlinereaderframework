@@ -1,0 +1,13 @@
+PASS no audio prop: no recorded option, browser read-aloud offered
+PASS no audio prop: no player surface
+PASS unusable track sources do not offer a recording
+PASS configured track: recorded option and browser option both offered
+PASS menu closes and player takes focus
+PASS Escape returns focus to the Listen button
+PASS recording keeps playing after the player hides
+PASS formatting change and menu close keep recording playing
+FAIL recording is already paused when speech is submitted
+PASS starting browser speech pauses the recording
+PASS starting the recording cancels browser speech
+PASS no page errors
+{"passed": 11, "total": 12, "failed": [{"name": "recording is already paused when speech is submitted", "passed": false, "detail": null}]}

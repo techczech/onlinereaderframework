@@ -1,0 +1,48 @@
+PASS no autoplay on load
+PASS before the browser reports voices the menu says so and Start still works
+PASS real voices appear after the browser event, with language and default
+PASS voices matching the book language come first in their own group
+PASS the automatic choice names the voice it would use
+PASS voice and speed are saved for this book
+PASS another book keeps its own, unchosen voice
+PASS the saved voice and speed return for this book
+PASS Start closes the Listen menu
+PASS the docked transport is shown with voice and position
+PASS the transport sits above the text area and covers none of it
+PASS focus moves to the transport, not into the page text
+PASS the utterance uses the chosen voice and speed
+PASS the heading is read first, as its own sentence
+PASS the current sentence is highlighted through the native highlight pipeline
+PASS the article markup is untouched by reading
+PASS no word highlight without a real boundary event
+PASS the next sentence follows and is highlighted across emphasis markup
+PASS a real boundary highlights that word
+PASS Unicode sentence is highlighted whole
+PASS the word highlight follows Unicode words
+PASS a sentence crossing MathML is highlighted by range, not by inserting HTML
+PASS the article markup is still untouched
+PASS previous sentence goes back one and keeps reading
+PASS next paragraph starts the paragraph after the current one
+PASS previous paragraph starts at its first sentence
+PASS pause keeps the sentence marked and offers Resume
+PASS resume continues reading
+PASS a voice change restarts only the current sentence in the new voice
+PASS a speed change applies at once, from the same sentence
+PASS Escape closes the menu
+PASS Voice and speed reopens the Listen menu
+PASS Escape returns focus to the transport control that opened it
+PASS Stop clears the highlight and removes the transport
+PASS Stop cancels the browser queue
+PASS an engine error replaces Reading with a plain statement and Try again
+PASS the highlight is cleared after the error
+PASS Try again reads again
+PASS following the reading does not scroll while text is selected
+PASS no engine: Start is disabled and the reason is stated
+PASS no engine: no voice picker is offered
+PASS 1024px: transport fits the window, clears the text and keeps 40px touch targets
+PASS 1024px: every transport button has an accessible name
+PASS 390px: transport fits the window, clears the text and keeps 40px touch targets
+PASS 390px: every transport button has an accessible name
+PASS no browser exceptions
+READ_ALOUD_JSON=[{"name": "no autoplay on load", "passed": true, "detail": null}, {"name": "before the browser reports voices the menu says so and Start still works", "passed": true, "detail": null}, {"name": "real voices appear after the browser event, with language and default", "passed": true, "detail": ["Automatic (SYNTHETIC British)", "SYNTHETIC British (en-GB), system default", "SYNTHETIC American (en-US)", "SYNTHETIC Czech (cs-CZ)"]}, {"name": "voices matching the book language come first in their own group", "passed": true, "detail": null}, {"name": "the automatic choice names the voice it would use", "passed": true, "detail": "Automatic (SYNTHETIC British)"}, {"name": "voice and speed are saved for this book", "passed": true, "detail": {"voiceURI": "syn-us", "rate": 1.3, "follow": true}}, {"name": "another book keeps its own, unchosen voice", "passed": true, "detail": null}, {"name": "the saved voice and speed return for this book", "passed": true, "detail": null}, {"name": "Start closes the Listen menu", "passed": true, "detail": null}, {"name": "the docked transport is shown with voice and position", "passed": true, "detail": "record_voice_over\n\nReading aloud with SYNTHETIC American \u00b7 paragraph 1 of 34\n\nskip_previous\nfast_rewind\npause\nfast_forward\nskip_next\nstop\ntune"}, {"name": "the transport sits above the text area and covers none of it", "passed": true, "detail": {"dockBottom": 98.78125, "scrollTop": 98.78125, "dockTop": 49.78125, "scrollLeft": 264, "dockW": 1016, "vw": 1280}}, {"name": "focus moves to the transport, not into the page text", "passed": true, "detail": null}, {"name": "the utterance uses the chosen voice and speed", "passed": true, "detail": null}, {"name": "the heading is read first, as its own sentence", "passed": true, "detail": "Chapter one"}, {"name": "the current sentence is highlighted through the native highlight pipeline", "passed": true, "detail": "Chapter one"}, {"name": "the article markup is untouched by reading", "passed": true, "detail": null}, {"name": "no word highlight without a real boundary event", "passed": true, "detail": null}, {"name": "the next sentence follows and is highlighted across emphasis markup", "passed": true, "detail": "First sentence has emphasised words inside it."}, {"name": "a real boundary highlights that word", "passed": true, "detail": "emphasised"}, {"name": "Unicode sentence is highlighted whole", "passed": true, "detail": "Second one: na\u00efve caf\u00e9 \u6771\u4eac \u2014 fine!"}, {"name": "the word highlight follows Unicode words", "passed": true, "detail": "\u6771\u4eac"}, {"name": "a sentence crossing MathML is highlighted by range, not by inserting HTML", "passed": true, "detail": "A formula x2+y2=z2x^2 + y^2 = z^2 sits in this sentence."}, {"name": "the article markup is still untouched", "passed": true, "detail": null}, {"name": "previous sentence goes back one and keeps reading", "passed": true, "detail": "Third closes."}, {"name": "next paragraph starts the paragraph after the current one", "passed": true, "detail": "A formula x2+y2=z2 sits in this sentence."}, {"name": "previous paragraph starts at its first sentence", "passed": true, "detail": "First sentence has emphasised words inside it."}, {"name": "pause keeps the sentence marked and offers Resume", "passed": true, "detail": null}, {"name": "resume continues reading", "passed": true, "detail": null}, {"name": "a voice change restarts only the current sentence in the new voice", "passed": true, "detail": "First sentence has emphasised words inside it."}, {"name": "a speed change applies at once, from the same sentence", "passed": true, "detail": null}, {"name": "Escape closes the menu", "passed": true, "detail": null}, {"name": "Voice and speed reopens the Listen menu", "passed": true, "detail": null}, {"name": "Escape returns focus to the transport control that opened it", "passed": true, "detail": null}, {"name": "Stop clears the highlight and removes the transport", "passed": true, "detail": null}, {"name": "Stop cancels the browser queue", "passed": true, "detail": null}, {"name": "an engine error replaces Reading with a plain statement and Try again", "passed": true, "detail": "voice_over_off\n\nThe browser could not read aloud (synthesis-failed). Choose another voice or press Start to try again.\n\nreplay\ntune"}, {"name": "the highlight is cleared after the error", "passed": true, "detail": null}, {"name": "Try again reads again", "passed": true, "detail": null}, {"name": "following the reading does not scroll while text is selected", "passed": true, "detail": null}, {"name": "no engine: Start is disabled and the reason is stated", "passed": true, "detail": null}, {"name": "no engine: no voice picker is offered", "passed": true, "detail": null}, {"name": "1024px: transport fits the window, clears the text and keeps 40px touch targets", "passed": true, "detail": {"right": 1024, "vw": 1024, "bottom": 185.171875, "scrollTop": 185.171875, "h": 49, "minBtn": 40, "over": false, "menuOpen": false}}, {"name": "1024px: every transport button has an accessible name", "passed": true, "detail": ["Previous paragraph", "Previous sentence", "Pause reading aloud", "Next sentence", "Next paragraph", "Stop reading aloud", "Voice and speed"]}, {"name": "390px: transport fits the window, clears the text and keeps 40px touch targets", "passed": true, "detail": {"right": 390, "vw": 390, "bottom": 255.171875, "scrollTop": 255.171875, "h": 90.09375, "minBtn": 40, "over": false, "menuOpen": false}}, {"name": "390px: every transport button has an accessible name", "passed": true, "detail": ["Previous paragraph", "Previous sentence", "Pause reading aloud", "Next sentence", "Next paragraph", "Stop reading aloud", "Voice and speed"]}, {"name": "no browser exceptions", "passed": true, "detail": []}]
+46/46 passed

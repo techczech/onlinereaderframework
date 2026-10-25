@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { PublicationReaderProps } from './types.js';
 import { flattenPublicationSections } from './publication-model.js';
 import { usePublicationReader } from './use-publication-reader.js';
@@ -27,6 +27,8 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
   const [listeningOpen, setListeningOpen] = useState(false);
   const [pauseSignal, setPauseSignal] = useState(0);
   const [boundary, setBoundary] = useState<ListeningBoundary | null>(null);
+  const pauseRecording = useRef<(() => void) | null>(null);
+  const registerPause = useCallback((pause: (() => void) | null) => { pauseRecording.current = pause; }, []);
   const listenTrigger = useRef<HTMLElement | null>(null);
   const listeningSurface = useRef<HTMLDivElement>(null);
   // The player stays mounted while hidden, so focus belongs to each opening.
@@ -41,10 +43,10 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
   return <ReaderLayout reader={reader} coaching={coaching}
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
     hasRecordedAudio={hasRecordedAudio} onOpenRecordedAudio={openListening}
-    onBrowserSpeechStart={() => { setPauseSignal(value => value + 1); setBoundary(null); }}
+    onBrowserSpeechStart={() => { pauseRecording.current?.(); setPauseSignal(value => value + 1); setBoundary(null); }}
     listeningPanel={hasRecordedAudio ? <div ref={listeningSurface} hidden={!listeningOpen} className="publication-listening-surface">
       <ListeningPanel bookId={book.id} sections={reader.sections} currentSectionId={reader.currentSectionId}
-        onSelectSection={reader.handleSectionChange} tracks={audio} pauseSignal={pauseSignal}
+        onSelectSection={reader.handleSectionChange} tracks={audio} pauseSignal={pauseSignal} registerPause={registerPause}
         onPlaybackStart={() => reader.rendererRef.current?.stopReadAloud()}
         onBoundary={setBoundary}
         onClose={() => { setListeningOpen(false); listenTrigger.current?.focus(); }} />

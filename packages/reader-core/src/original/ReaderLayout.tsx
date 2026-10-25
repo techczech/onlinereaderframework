@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Sidebar } from './Sidebar.js';
 import { MarkdownRenderer } from './MarkdownRenderer.js';
 import { HighlightsDrawer } from './HighlightsDrawer.js';
 import { Home } from './Home.js';
-import { TableOfContents } from './TableOfContents.js';
+import { TableOfContents, type TableOfContentsHandle } from './TableOfContents.js';
 import { QuoteImageModal } from './QuoteImageModal.js';
 import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
@@ -12,7 +12,9 @@ import type { PublicationCoaching } from './types.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
 import { isReadableSection, sectionAncestors } from './sidebar-model.js';
 import type { usePublicationReader } from './use-publication-reader.js';
-import { ReaderToolbar, type SpeechState } from './toolbar/ReaderToolbar.js';
+import { ReaderToolbar } from './toolbar/ReaderToolbar.js';
+import type { ReadAloudActions } from './read-aloud/use-read-aloud.js';
+import type { ReadAloudSnapshot } from './read-aloud/read-aloud-controller.js';
 import { useReadingSupport } from './reading-support/use-reading-support.js';
 
 export interface ReaderLayoutProps {
@@ -28,7 +30,16 @@ export interface ReaderLayoutProps {
 
 /** Original reader actions and annotations, with independently measured article and navigation. */
 export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
-  const [speech, setSpeech] = useState<SpeechState>('idle');
+  // The toolbar needs the read-aloud state but not the sentence and word positions, so the layout does not re-render for every spoken word.
+  const [readAloud, setReadAloud] = useState<{ snapshot: ReadAloudSnapshot; actions: ReadAloudActions } | null>(null);
+  const onReadAloudChange = useCallback((snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => {
+    setReadAloud(previous => {
+      if (!snapshot || !actions) return null;
+      const before = previous?.snapshot;
+      const same = before && previous.actions === actions && (['available', 'status', 'problem', 'voices', 'voicesSettled', 'voiceURI', 'voiceName', 'chosenVoiceURI', 'rate', 'follow', 'paragraph', 'paragraphs'] as const).every(key => before[key] === snapshot[key]);
+      return same ? previous : { snapshot, actions };
+    });
+  }, []);
   const { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
     isDarkMode, setIsDarkMode, defaultDarkMode, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
@@ -38,8 +49,8 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
   const support = useReadingSupport(book.id);
+  const compactTocRef = useRef<TableOfContentsHandle>(null);
   const labels = publicationLabels(book);
-  const browserSpeechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
   const appearanceStyle = {
     '--publication-accent': publicationColour(book.appearance?.accent),
     '--publication-paper': publicationColour(book.appearance?.paper),
@@ -74,8 +85,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
           title={publicationDisplayTitle(book)} onHome={() => handleSectionChange('home')} isHome={isHome} listenLabel={labels.listen}
           support={support} isDark={isDarkMode} defaultDark={defaultDarkMode} onDark={setIsDarkMode}
           maxWidth={maxWidth} onMaxWidth={setMaxWidth} immersive={isImmersiveMode} onImmersive={setIsImmersiveMode}
-          speech={speech} speechAvailable={browserSpeechAvailable}
-          onToggleSpeech={() => rendererRef.current?.toggleReadAloud()} onStopSpeech={() => rendererRef.current?.stopReadAloud()}
+          readAloud={readAloud?.snapshot ?? null} readAloudActions={readAloud?.actions ?? null} language={book.language}
           hasRecordedAudio={!!hasRecordedAudio && !!onOpenRecordedAudio} onOpenRecordedAudio={trigger => onOpenRecordedAudio?.(trigger)}
           onOpenNotes={() => setIsHighlightsOpen(true)} onOpenShortcuts={() => setIsShortcutsOpen(true)} />
 
@@ -185,6 +195,9 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                             </div>
                         )}
 
+                        {/* Windows too narrow for the side outline get the same outline here, collapsed above the chapter. */}
+                        {currentSection && !isImmersiveMode && <TableOfContents ref={compactTocRef} variant="compact" content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
+
                         {/* Main Text */}
                         {currentSection && (
                             <div className="publication-article">
@@ -194,7 +207,8 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                                     format={currentSection.format}
                                     language={book.language}
                                     onBrowserSpeechStart={onBrowserSpeechStart}
-                                    onSpeechStateChange={setSpeech}
+                                    bookId={book.id}
+                                    onReadAloudChange={onReadAloudChange}
                                     ref={rendererRef}
                                     content={currentSection.content} 
                                     highlights={currentSectionHighlights}
@@ -242,7 +256,7 @@ export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel,
                     </div>
 
                     {/* Right TOC Sidebar - Hidden in Immersive Mode */}
-                    {currentSection && !isImmersiveMode && <TableOfContents ref={tocRef} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
+                    {currentSection && !isImmersiveMode && <TableOfContents ref={tocRef} fallbackRef={compactTocRef} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
                 </div>
             )}
         </div>

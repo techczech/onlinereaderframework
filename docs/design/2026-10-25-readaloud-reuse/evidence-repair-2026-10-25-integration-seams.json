@@ -1,0 +1,101 @@
+{
+  "twoAfterB": {
+    "a": "idle",
+    "b": "speaking",
+    "busy": true,
+    "events": [
+      "cancel",
+      "speak A",
+      "cancel",
+      "speak B"
+    ]
+  },
+  "afterUnmountA": {
+    "b": "speaking",
+    "busy": true,
+    "events": [
+      "cancel",
+      "speak A",
+      "cancel",
+      "speak B"
+    ]
+  },
+  "busyNoBoundaryAfterThreeWatchdogs": {
+    "available": true,
+    "status": "speaking",
+    "problem": null,
+    "voices": [],
+    "voicesSettled": false,
+    "voiceURI": null,
+    "voiceName": "System voice",
+    "chosenVoiceURI": null,
+    "rate": 1,
+    "follow": false,
+    "sentence": {
+      "from": 0,
+      "to": 47
+    },
+    "word": null,
+    "wordTiming": "sentence",
+    "paragraph": 1,
+    "paragraphs": 1
+  },
+  "navFirst": {
+    "hash": "#reader-content-mental-representations-or-embodied-mental-schemas",
+    "focus": "reader-content-mental-representations-or-embodied-mental-schemas",
+    "current": [
+      "#reader-content-mental-representations-or-embodied-mental-schemas"
+    ],
+    "compactCurrent": [
+      "#reader-content-mental-representations-or-embodied-mental-schemas"
+    ],
+    "scroll": 969
+  },
+  "navSecond": {
+    "hash": "#reader-content-more-about-chunks-and-mental-representations",
+    "focus": "reader-content-more-about-chunks-and-mental-representations",
+    "current": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "compactCurrent": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "scroll": 6229
+  },
+  "navBack": {
+    "hash": "#reader-content-mental-representations-or-embodied-mental-schemas",
+    "focus": "reader-content-mental-representations-or-embodied-mental-schemas",
+    "current": [
+      "#reader-content-mental-representations-or-embodied-mental-schemas"
+    ],
+    "compactCurrent": [
+      "#reader-content-mental-representations-or-embodied-mental-schemas"
+    ],
+    "scroll": 971
+  },
+  "navForward": {
+    "hash": "#reader-content-more-about-chunks-and-mental-representations",
+    "focus": "reader-content-more-about-chunks-and-mental-representations",
+    "current": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "compactCurrent": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "scroll": 6229
+  },
+  "afterResponsiveShortcut": {
+    "hash": "#reader-content-more-about-chunks-and-mental-representations",
+    "focus": "",
+    "current": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "compactCurrent": [
+      "#reader-content-more-about-chunks-and-mental-representations"
+    ],
+    "scroll": 6016
+  },
+  "outlineVisible": [
+    "toc-container-compact"
+  ]
+}

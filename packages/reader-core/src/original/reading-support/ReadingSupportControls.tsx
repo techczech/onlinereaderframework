@@ -26,7 +26,8 @@ export function ReadingSupportControls({ bookId, inline = false }: ReadingSuppor
         <label className="reading-support-field">Paragraph focus<select aria-label="Paragraph focus" value={p.focus} onChange={e => update({focus:e.target.value as 'off' | 'paragraph'})}><option value="off">Off</option><option value="paragraph">Fade other paragraphs</option></select></label>
         <label className="reading-support-field">Reading overlay<select aria-label="Reading overlay" value={p.overlay} onChange={e => update({overlay:e.target.value as ReadingSupportPreferences['overlay']})}><option value="off">Off</option><option value="line-window">Line window</option><option value="ruler">Reading ruler</option></select></label>
         <label className="reading-support-field">Window height<select aria-label="Window height" value={p.lines} onChange={e => update({lines:Number(e.target.value) as 1 | 3 | 5})}>{[1,3,5].map(n => <option key={n} value={n}>{n} {n === 1 ? 'line' : 'lines'}</option>)}</select></label>
-        {number('dim', 'Overlay dimming', 0.1, 0.6, 0.05, '(0.1–0.6)')}
+        <label className="reading-support-field">Ruler covers<select aria-label="Ruler covers" value={p.rulerLines} onChange={e => update({rulerLines:Number(e.target.value) as 1 | 2 | 3})}>{[1,2,3].map(n => <option key={n} value={n}>{n === 1 ? '1 line' : `${n} lines`}</option>)}</select></label>
+        {number('dim', 'Overlay dimming', 0.1, 0.95, 0.05, '(0.1–0.95)')}
         <p>Move the pointer or tap a paragraph to follow your reading. Focus the reading text and use Up or Down to move between paragraphs. Escape turns focus and overlays off.</p>
       </fieldset>
       {storageStatus === 'unavailable' && <p role="status">Settings work for this visit but could not be saved on this device.</p>}

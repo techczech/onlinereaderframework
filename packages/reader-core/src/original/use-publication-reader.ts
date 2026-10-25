@@ -2,7 +2,7 @@ import type { PublicationEpubOptions } from '../services/publication-epub/index.
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Highlight, MaxWidth, PublicationBook, Reflection } from './types.js';
 import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
-import type { TableOfContentsHandle } from './TableOfContents.js';
+import { PUBLICATION_LOCATION_EVENT, type TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
 import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
 import { isReadableSection, readableNeighbours } from './sidebar-model.js';
@@ -41,7 +41,11 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const support = useReadingSupport(book.id);
   const lastOverlay = useRef<'line-window' | 'ruler'>('line-window');
   if (support.preferences.overlay !== 'off') lastOverlay.current = support.preferences.overlay;
-  const [maxWidth, setMaxWidth] = useBookState<MaxWidth>(book.id, 'maxWidth', 'md', oneOf(['sm', 'md', 'lg', 'full'] as const), storageFailure);
+  // Text widths were re-measured: Normal is now the column the old Narrow gave, and Narrow is narrower. The old field is read once, so a
+  // reader who had chosen Narrow keeps the column they were reading; the other three labels keep their meaning.
+  const widthChoice = oneOf(['sm', 'md', 'lg', 'full'] as const);
+  const legacyWidth = readStoredValue<MaxWidth>(book.id, 'maxWidth', 'md', widthChoice);
+  const [maxWidth, setMaxWidth] = useBookState<MaxWidth>(book.id, 'textWidth', legacyWidth === 'sm' ? 'md' : legacyWidth, widthChoice, storageFailure);
   const readSections = useMemo(() => new Set(readIds), [readIds]);
   const bookmarkedSections = useMemo(() => new Set(bookmarkIds), [bookmarkIds]);
   // Desktop and drawer layouts keep separate open choices. Until the reader chooses on desktop, the sidebar follows the page: open for chapters, closed on home.
@@ -108,16 +112,35 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     if (!text) contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [book.id, sections, clearSelection]);
 
+  const currentSectionRef = useRef(currentSectionId);
+  currentSectionRef.current = currentSectionId;
   useEffect(() => {
-    const restore = () => {
+    const restore = (event?: Event) => {
       const next = getInitialSection();
+      const sameChapter = !!event && next === currentSectionRef.current;
       focusArticleRef.current = false;
       setCurrentSectionId(next);
       clearSelection();
       const params = new URL(window.location.href).searchParams;
       const legacy = new URLSearchParams(window.location.hash.split('?')[1] ?? '');
-      setHighlightToScroll(params.get('text') ?? legacy.get('text'));
-      contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      const phrase = params.get('text') ?? legacy.get('text');
+      setHighlightToScroll(phrase);
+      // Back and Forward between two places in one chapter: the chapter does not change, so the effect that
+      // follows a fragment does not run. Return to that subsection here, or to the top when there is none.
+      let fragment: HTMLElement | undefined;
+      if (sameChapter && !phrase && window.location.hash && !window.location.hash.startsWith('#/')) {
+        try {
+          const id = decodeURIComponent(window.location.hash.slice(1));
+          fragment = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] [id]') ?? []).find(element => element.id === id);
+        } catch { /* A malformed fragment goes to the top of the chapter. */ }
+      }
+      if (fragment) {
+        fragment.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
+        fragment.tabIndex = -1;
+        fragment.focus({ preventScroll: true });
+      } else contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      // The outlines learn the place the URL now names.
+      window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));
     };
     restore();
     window.addEventListener('popstate', restore);
@@ -280,6 +303,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
           target.scrollIntoView({ behavior: 'smooth', block: 'center' });
           target.tabIndex = -1;
           target.focus({ preventScroll: true });
+          window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));
         }
       } catch { /* Keep malformed links inert to this adapter. */ }
     }
@@ -308,7 +332,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
         case 's': event.preventDefault(); setIsSidebarOpen(value => !value); break;
         case 'n': event.preventDefault(); setIsImmersiveMode(false); setTimeout(() => tocRef.current?.focus(), 0); break;
         case 'j': case 'k': {
-          if (target.closest('#toc-container')) return;
+          if (target.closest('#toc-container, #toc-container-compact')) return;
           event.preventDefault();
           const headings = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] h1,[data-publication-content] h2,[data-publication-content] h3') ?? []);
           const top = contentRef.current?.getBoundingClientRect().top ?? 0;

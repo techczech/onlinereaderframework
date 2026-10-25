@@ -1,0 +1,937 @@
+{
+  "server": "http://127.0.0.1:8773",
+  "sourceSha256": {
+    "packages/reader-core/src/original/Sidebar.tsx": "c5c480340710f6d8313d587041ef9d342fdb042c668559d73f4b1a8b73ec17a7",
+    "packages/reader-core/src/original/TableOfContents.tsx": "4035a9eab8c9ace74da364b2b8c5243ec07e99d2c9a4f9c759fb8069d49ee308",
+    "packages/reader-core/src/original/ReaderLayout.tsx": "c7ffa765abd88cb02db848dc5148cf99c7827012db8b1af144acdee04994e465",
+    "packages/reader-core/src/original/reader-original.css": "c7aec1f87509eab4ceeec35cd7716396d2da6e727d5ec1ce7f85b47b73900d5c",
+    "packages/reader-core/src/original/use-publication-reader.ts": "c0d4ad61557229f083630931ed1efafde68e8f88956fddb1c371c6ce4bb21136",
+    "packages/reader-core/src/original/publication-navigation.ts": "2a069737fe07c745f6d9aab5eb484aefcba337e675d488b9468ac85f3146d964",
+    "packages/reader-core/src/original/frontpage/frontpage-model.ts": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39"
+  },
+  "measurements": [
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 1440,
+      "articleWidth": 794.875,
+      "mainWidth": 1176,
+      "sidebarOpen": "true",
+      "outlinePresent": true,
+      "outlineDisplay": "block",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 40,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 60,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 40,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+      "focus": "<body class=\"bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300\">\n    <div id=\"root\"><div class=\"publication-reader  flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300\" style=\"--publication-accent: #a93232; --"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 1366,
+      "articleWidth": 794.875,
+      "mainWidth": 1102,
+      "sidebarOpen": "true",
+      "outlinePresent": true,
+      "outlineDisplay": "block",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 40,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 60,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 40,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+      "focus": "<body class=\"bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300\">\n    <div id=\"root\"><div class=\"publication-reader  flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300\" style=\"--publication-accent: #a93232; --"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 1280,
+      "articleWidth": 728,
+      "mainWidth": 1016,
+      "sidebarOpen": "true",
+      "outlinePresent": true,
+      "outlineDisplay": "block",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 40,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 60,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 40,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+      "focus": "<body class=\"bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300\">\n    <div id=\"root\"><div class=\"publication-reader  flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300\" style=\"--publication-accent: #a93232; --"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 1200,
+      "articleWidth": 794.875,
+      "mainWidth": 936,
+      "sidebarOpen": "true",
+      "outlinePresent": true,
+      "outlineDisplay": "none",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 0,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+      "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"true\" aria-label=\"Close navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 1024,
+      "articleWidth": 696,
+      "mainWidth": 760,
+      "sidebarOpen": "true",
+      "outlinePresent": true,
+      "outlineDisplay": "none",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 0,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+      "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"true\" aria-label=\"Close navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 768,
+      "articleWidth": 704,
+      "mainWidth": 768,
+      "sidebarOpen": "false",
+      "outlinePresent": true,
+      "outlineDisplay": "none",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 0,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "",
+      "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"false\" aria-label=\"Open navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+    },
+    {
+      "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+      "viewport": 390,
+      "articleWidth": 350,
+      "mainWidth": 390,
+      "sidebarOpen": "false",
+      "outlinePresent": true,
+      "outlineDisplay": "none",
+      "outlineLinks": [
+        {
+          "text": "Why you should target fluency in practice",
+          "href": "#reader-content-why-you-should-target-fluency-in-practice",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "height": 0,
+          "current": null
+        },
+        {
+          "text": "Fluency vs unconscious competence",
+          "href": "#reader-content-fluency-vs-unconscious-competence",
+          "height": 0,
+          "current": null
+        }
+      ],
+      "headings": [
+        {
+          "id": "reader-content-fluency-as-the-target-of-practice",
+          "text": "Fluency as the Target of Practice",
+          "level": 1
+        },
+        {
+          "id": "reader-content-why-you-should-target-fluency-in-practice",
+          "text": "Why you should target fluency in practice",
+          "level": 2
+        },
+        {
+          "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+          "text": "Lessons from dyslexia about the importance of fluency",
+          "level": 2
+        },
+        {
+          "id": "reader-content-fluency-vs-unconscious-competence",
+          "text": "Fluency vs unconscious competence",
+          "level": 2
+        }
+      ],
+      "overflow": false,
+      "sidebarText": "",
+      "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"false\" aria-label=\"Open navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+    }
+  ],
+  "shortcut1280": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1280,
+    "articleWidth": 728,
+    "mainWidth": 1016,
+    "sidebarOpen": "true",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+    "focus": "<a href=\"#reader-content-why-you-should-target-fluency-in-practice\" class=\"\n                  block transition-colors duration-200 line-clamp-2 outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm\n                  text-gray-500 dark:text-gra"
+  },
+  "sidebarClosed1280": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1280,
+    "articleWidth": 794.875,
+    "mainWidth": 1280,
+    "sidebarOpen": "false",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "",
+    "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"false\" aria-label=\"Open navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+  },
+  "shortcut1200": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1200,
+    "articleWidth": 794.875,
+    "mainWidth": 936,
+    "sidebarOpen": "true",
+    "outlinePresent": true,
+    "outlineDisplay": "none",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 0,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 0,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 0,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+    "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"true\" aria-label=\"Close navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+  },
+  "sidebarClosed1200": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1200,
+    "articleWidth": 794.875,
+    "mainWidth": 1200,
+    "sidebarOpen": "false",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "",
+    "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"false\" aria-label=\"Open navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+  },
+  "shortcut1024": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1024,
+    "articleWidth": 696,
+    "mainWidth": 760,
+    "sidebarOpen": "true",
+    "outlinePresent": true,
+    "outlineDisplay": "none",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 0,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 0,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 0,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n1 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+    "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"true\" aria-label=\"Close navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+  },
+  "sidebarClosed1024": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=fluency",
+    "viewport": 1024,
+    "articleWidth": 736,
+    "mainWidth": 1024,
+    "sidebarOpen": "false",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "Why you should target fluency in practice",
+        "href": "#reader-content-why-you-should-target-fluency-in-practice",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "href": "#reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Fluency vs unconscious competence",
+        "href": "#reader-content-fluency-vs-unconscious-competence",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-fluency-as-the-target-of-practice",
+        "text": "Fluency as the Target of Practice",
+        "level": 1
+      },
+      {
+        "id": "reader-content-why-you-should-target-fluency-in-practice",
+        "text": "Why you should target fluency in practice",
+        "level": 2
+      },
+      {
+        "id": "reader-content-lessons-from-dyslexia-about-the-importance-of-fluency",
+        "text": "Lessons from dyslexia about the importance of fluency",
+        "level": 2
+      },
+      {
+        "id": "reader-content-fluency-vs-unconscious-competence",
+        "text": "Fluency vs unconscious competence",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "",
+    "focus": "<button class=\"publication-navigation-toggle\" aria-expanded=\"false\" aria-label=\"Open navigation\"><span aria-hidden=\"true\" class=\"material-symbols-outlined\">menu</span><span>Table of contents</span></button>"
+  },
+  "schemasBefore": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=schemas",
+    "viewport": 1440,
+    "articleWidth": 794.875,
+    "mainWidth": 1176,
+    "sidebarOpen": "true",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "What you actually need to “remember”",
+        "href": "#reader-content-what-you-actually-need-to-remember",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Mental representations or embodied mental schemas",
+        "href": "#reader-content-mental-representations-or-embodied-mental-schemas",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Why schemas",
+        "href": "#reader-content-why-schemas",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "Why embodied",
+        "href": "#reader-content-why-embodied",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "Why inventory",
+        "href": "#reader-content-why-inventory",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "More about chunks and mental representations",
+        "href": "#reader-content-more-about-chunks-and-mental-representations",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "What do ‘mental representations look like’?",
+        "href": "#reader-content-what-do-mental-representations-look-like",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-schemas-and-chunks-what-needs-to-go-in-your-memory",
+        "text": "Schemas and chunks: What needs to go in your memory",
+        "level": 1
+      },
+      {
+        "id": "reader-content-what-you-actually-need-to-remember",
+        "text": "What you actually need to “remember”",
+        "level": 2
+      },
+      {
+        "id": "reader-content-mental-representations-or-embodied-mental-schemas",
+        "text": "Mental representations or embodied mental schemas",
+        "level": 2
+      },
+      {
+        "id": "reader-content-why-schemas",
+        "text": "Why schemas",
+        "level": 3
+      },
+      {
+        "id": "reader-content-why-embodied",
+        "text": "Why embodied",
+        "level": 3
+      },
+      {
+        "id": "reader-content-why-inventory",
+        "text": "Why inventory",
+        "level": 3
+      },
+      {
+        "id": "reader-content-more-about-chunks-and-mental-representations",
+        "text": "More about chunks and mental representations",
+        "level": 2
+      },
+      {
+        "id": "reader-content-what-do-mental-representations-look-like",
+        "text": "What do ‘mental representations look like’?",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n2 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\ncheck\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+    "focus": "<body class=\"bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300\">\n    <div id=\"root\"><div class=\"publication-reader  flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300\" style=\"--publication-accent: #a93232; --"
+  },
+  "schemasAfterClick": {
+    "url": "http://127.0.0.1:8773/?book=deliberate-practice&section=schemas",
+    "viewport": 1440,
+    "articleWidth": 794.875,
+    "mainWidth": 1176,
+    "sidebarOpen": "true",
+    "outlinePresent": true,
+    "outlineDisplay": "block",
+    "outlineLinks": [
+      {
+        "text": "What you actually need to “remember”",
+        "href": "#reader-content-what-you-actually-need-to-remember",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "Mental representations or embodied mental schemas",
+        "href": "#reader-content-mental-representations-or-embodied-mental-schemas",
+        "height": 60,
+        "current": null
+      },
+      {
+        "text": "Why schemas",
+        "href": "#reader-content-why-schemas",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "Why embodied",
+        "href": "#reader-content-why-embodied",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "Why inventory",
+        "href": "#reader-content-why-inventory",
+        "height": 20,
+        "current": null
+      },
+      {
+        "text": "More about chunks and mental representations",
+        "href": "#reader-content-more-about-chunks-and-mental-representations",
+        "height": 40,
+        "current": null
+      },
+      {
+        "text": "What do ‘mental representations look like’?",
+        "href": "#reader-content-what-do-mental-representations-look-like",
+        "height": 40,
+        "current": null
+      }
+    ],
+    "headings": [
+      {
+        "id": "reader-content-schemas-and-chunks-what-needs-to-go-in-your-memory",
+        "text": "Schemas and chunks: What needs to go in your memory",
+        "level": 1
+      },
+      {
+        "id": "reader-content-what-you-actually-need-to-remember",
+        "text": "What you actually need to “remember”",
+        "level": 2
+      },
+      {
+        "id": "reader-content-mental-representations-or-embodied-mental-schemas",
+        "text": "Mental representations or embodied mental schemas",
+        "level": 2
+      },
+      {
+        "id": "reader-content-why-schemas",
+        "text": "Why schemas",
+        "level": 3
+      },
+      {
+        "id": "reader-content-why-embodied",
+        "text": "Why embodied",
+        "level": 3
+      },
+      {
+        "id": "reader-content-why-inventory",
+        "text": "Why inventory",
+        "level": 3
+      },
+      {
+        "id": "reader-content-more-about-chunks-and-mental-representations",
+        "text": "More about chunks and mental representations",
+        "level": 2
+      },
+      {
+        "id": "reader-content-what-do-mental-representations-look-like",
+        "text": "What do ‘mental representations look like’?",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Deliberate Practice: A Universal Learning Method\nDominik Lukeš\nsearch\n2 of 20 read\nTABLE OF CONTENTS\nAbout This Guide\nWorking Memory Limitations\nFluency as Target\ncheck\nSchemas & Chunks\ncheck\nTwo Kinds of Memory\nKey Points on Memory\nPractice for Performance\nAvoiding Task Misalignment\nFour Approaches to Practice\nPractice in Different Disciplines\nTiming of Practice\nIdentifying Need for Practice\nTechniques for Deciding What to Practice\nMethods for Improving Repetition\nTechniques for Reflection\nDealing with Emotions\nOvercoming Working Memory\nMetaphors of Writing\nReviews of Writing Programs\nLicense\nReader Guide",
+    "focus": "<a href=\"#reader-content-why-embodied\" class=\"\n                  block transition-colors duration-200 line-clamp-2 outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm\n                  text-gray-500 dark:text-gray-400 hover:text-gray-900 dar"
+  },
+  "historyAfterOutlineClick": 3,
+  "singleHeading": {
+    "url": "http://127.0.0.1:8773/?book=language-muscle&section=about-guide",
+    "viewport": 1440,
+    "articleWidth": 794.875,
+    "mainWidth": 1176,
+    "sidebarOpen": "true",
+    "outlinePresent": false,
+    "outlineDisplay": null,
+    "outlineLinks": [],
+    "headings": [
+      {
+        "id": "reader-content-what-is-this",
+        "text": "What is this",
+        "level": 2
+      }
+    ],
+    "overflow": false,
+    "sidebarText": "Building Your Language Muscle\nDominik Lukeš\nsearch\n1 of 12 read\nTABLE OF CONTENTS\nIntroduction\nexpand_more\n1. About this guide\ncheck\n2. How to read this\n3. The Good News\nBuilding Your Muscle\nexpand_more\nStep 1: Get the right attitude\nStep 2: Set the right goals\nStep 3: Use good practice strategies\nFine-tuning your aims\nAppendices\nchevron_right",
+    "focus": "<body class=\"bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300\">\n    <div id=\"root\"><div class=\"publication-reader  flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300\" style=\"--publication-accent: #187060; --"
+  },
+  "mathDomText": [
+    "Equation x2x^2",
+    "Child"
+  ]
+}

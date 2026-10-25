@@ -1,0 +1,147 @@
+
+> onlinereaderframework@0.2.0 test
+> npm run test:publication-content --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-publication-navigation.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/frontpage/test-frontpage.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs && npm run test:books
+
+
+> reader-core@0.1.0 test:publication-content
+> node src/publication-content/test-publication-content.mjs
+
+✔ renders nested formatting, complex destinations and reference links faithfully (14.745583ms)
+✔ preserves reference and inline footnotes with working unique return links (5.608292ms)
+✔ preserves image destinations, titles and meaningful alt text (0.784417ms)
+✔ keeps original Language Muscle HTML classes, quoted > and chapter routes (1.791875ms)
+✔ keeps GFM tables, strikethrough, nested lists and escaped fenced code (3.492458ms)
+✔ renders inline and display math as safe native MathML without CSS (4.6255ms)
+✔ assigns deterministic, unique prefixed heading IDs without DOM clobbering (1.703ms)
+✔ plain text indexes the complete content, image alt and footnote text (1.154917ms)
+✔ removes executable HTML and unsafe URLs, attack 1 (0.685875ms)
+✔ removes executable HTML and unsafe URLs, attack 2 (1.6335ms)
+✔ removes executable HTML and unsafe URLs, attack 3 (1.093792ms)
+✔ removes executable HTML and unsafe URLs, attack 4 (0.845791ms)
+✔ removes executable HTML and unsafe URLs, attack 5 (0.59275ms)
+✔ removes executable HTML and unsafe URLs, attack 6 (0.744875ms)
+✔ removes executable HTML and unsafe URLs, attack 7 (0.640291ms)
+✔ removes executable HTML and unsafe URLs, attack 8 (3.056292ms)
+✔ sanitisation preserves safe URL schemes and is idempotent for rich content (4.733958ms)
+✔ does not depend on window or document and produces synchronous empty output (0.26575ms)
+✔ exports heading targets and labels from the same model as rendered HTML (0.675292ms)
+✔ math trust remains disabled, malformed math stays readable, and macros do not leak between sections (2.619417ms)
+✔ preserves the original Language Muscle static SVG with paired gradient and marker IDs (3.65225ms)
+✔ static SVG cannot introduce executable or remote resources (0.413333ms)
+✔ preserves supplied namespaced IDs when another supplied ID would collide after prefixing (0.307792ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 254.165666
+✔ the six layout keys are exact and invalid values fall back to no layout (2.330208ms)
+✔ an omitted or invalid layout renders the classic home page; a valid one renders that layout (15.712292ms)
+✔ flat books group runs of one category for display only; ids and order are preserved (0.636125ms)
+✔ tree books group by top-level section; empty groups are skipped and group pages with text stay reachable (0.331625ms)
+✔ an explicit depth cap never removes a structural topic whose subtree has readable pages (0.588792ms)
+✔ Full contents opens first only for a short list; filtering finds entries in closed groups (0.345875ms)
+✔ Start is the first readable page; Continue needs a real, readable, stored page (1.593458ms)
+✔ progress counts read chapters with the sidebar rule and stays hidden until something is read (1.573333ms)
+✔ titles use the established display title and split only for layout (1.160875ms)
+✔ depth labels are Contents and Full contents, overridable, and absent when nothing differs (1.60225ms)
+✔ colour band numbers groups but not the app guide (0.396083ms)
+✔ real books list every readable page once, in tree order, in every layout (20.357167ms)
+✔ native Node import exports the React panel without browser globals (2.553542ms)
+✔ source validation rejects executable and disguised schemes while permitting recorded URLs (0.279667ms)
+✔ alignment accepts only finite, non-overlapping, ordered measured ranges (0.586583ms)
+✔ restore is ready at saved position and speed without autoplay; positions stay per book (1.480833ms)
+✔ chapter navigation follows publication order, skips missing recordings and clamps seeking (0.276041ms)
+✔ view/settings rerenders and fresh equivalent arrays preserve the same playing audio (0.2265ms)
+✔ rejected play, media errors and retry have truthful states (3.162792ms)
+✔ pending play and obsolete media events cannot change a new book or restart after pause (0.328833ms)
+✔ loading, buffering and ended transitions preserve intent without auto-advancing (0.279375ms)
+✔ storage denial, corrupt records, prototype names, changed assets and nonfinite inputs stay safe (0.849834ms)
+✔ boundaries contain only supplied measured spans, clear in gaps/errors and never interpolate (0.275083ms)
+✔ empty or unsafe tracks never create audio or substitute browser speech (0.203625ms)
+✔ passage skipping uses supplied starts, honours gaps and disables without measurements (0.173292ms)
+✔ Follow text is opt-in, clears on disable and rejects spans outside duration (0.145417ms)
+✔ pause and book changes capture the final media clock between timeupdate events (0.165583ms)
+✔ late metadata after media failure and obsolete pause events do not override current intent (0.101708ms)
+✔ a changed source reloads even when the host acknowledges the already selected chapter (3.627583ms)
+✔ the vendored ReadFlex player is byte-identical to the recorded source file (4.334916ms)
+✔ loading a chapter never starts speech; Start begins at the requested position (2.689ms)
+✔ voices: saved choice, then book language, then the system default; missing saved voice falls back (0.74225ms)
+✔ choosing a voice or speed is saved and applied to the next utterance (0.409458ms)
+✔ skip moves by sentence and paragraph from the current place, and resumes reading (0.413541ms)
+✔ a speed change restarts the current sentence, not the chapter (0.203542ms)
+✔ word highlighting appears only after the engine reports a real boundary (4.103208ms)
+✔ stop clears the highlight; pause keeps the position; sentences end into the next (0.552958ms)
+✔ reaching the end returns to idle without a problem (0.222333ms)
+✔ an engine error is reported plainly and does not leave the controller reading (0.394875ms)
+✔ another page cancelling our speech is reported, not shown as reading (0.528875ms)
+✔ a stale end or boundary from a stopped or replaced utterance cannot advance or clear newer playback (0.159ms)
+✔ ownership: an idle controller never cancels shared speech; a speaking one does on dispose (0.329792ms)
+✔ no speech engine: honest unavailable state, Start explains, nothing throws (0.154458ms)
+✔ an utterance that shows no sign of life is reported instead of reading forever (111.328167ms)
+✔ word ranges follow Unicode words, not bytes (4.810958ms)
+✔ hostile storage and invalid ranges return safe preferences (1.209291ms)
+✔ per-book round trip and reset values remain bounded (0.219333ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.1015ms)
+✔ dimming: Dark is 90 per cent; the first release presets migrate once; other values are kept (0.181208ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.091167ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.13575ms)
+✔ preorder navigation and lookup include recursive book descendants (4.025084ms)
+✔ original query and Language Muscle hash URLs restore the same leaf (0.220959ms)
+✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.248875ms)
+✔ storage keys isolate every book, including IDs containing separators (0.291541ms)
+✔ notes export includes reflections even when there are no highlights (0.251667ms)
+✔ download boundaries reject executable schemes and retain same-origin assets (0.091959ms)
+✔ full publication identity uses actual adapter words without added punctuation or duplicates (7.939791ms)
+✔ native ESM imports the original reader without a bundler or browser globals (2640.130916ms)
+✔ home shows two actual tree levels in original order without category duplicates (5.358ms)
+✔ home depth and visibility are configurable (0.833917ms)
+✔ neutral labels and custom labels are rendered by home and sidebar (13.277916ms)
+✔ sidebar uses original tree exactly once and respects depth (2.280333ms)
+✔ home uses supplied real cover and masthead variant (0.324125ms)
+✔ appearance rejects invalid and injected colours without losing valid values (0.611584ms)
+✔ explicit contents label wins over legacy home copy (0.233625ms)
+✔ sidebar depth follows the book tree unless the author sets one (0.833833ms)
+✔ empty topic groups are skipped by previous and next but meaningful parents stay (0.604834ms)
+✔ progress counts chapters with text, not empty groups (0.141541ms)
+✔ topic rows follow the current path, manual toggles win, and arriving reopens a closed topic (0.146583ms)
+✔ sidebar rows: a topic row only toggles, a chapter row navigates, and every row names its full title (0.900167ms)
+✔ steppers stay inside the saved-preference bounds without float drift (0.668292ms)
+✔ dimming levels map to saved values; older in-between values are reported as custom (0.464ms)
+✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.1335ms)
+✔ assist summary states what is actually on (0.156292ms)
+✔ letter spacing reads Normal at zero (0.076792ms)
+✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.846584ms)
+✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.258ms)
+✔ toolbar dim levels equal the preference levels (0.247125ms)
+ℹ tests 79
+ℹ suites 0
+ℹ pass 79
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7699.808
+
+> onlinereaderframework@0.2.0 test:books
+> npm run test:books --prefix apps/reader-demo
+
+
+> reader-demo@0.1.0 test:books
+> tsx --test scripts/test-original-books.ts
+
+✔ real sources retain complete chapter and answer counts (0.699ms)
+✔ every book has stable unique section identities, including descendants (0.445208ms)
+✔ Language Muscle HTML and its actual cross-reference are preserved (0.146333ms)
+✔ all linguistics answers include source and licence attribution (0.475292ms)
+✔ provenance hashes identify real source snapshots without private machine paths (0.520375ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.787375

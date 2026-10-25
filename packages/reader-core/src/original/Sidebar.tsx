@@ -1,8 +1,8 @@
-import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useId, useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import type { PublicationBook, PublicationSection } from './types.js';
 import { flattenPublicationSections } from './publication-model.js';
 import { renderPublicationContent } from '../publication-content/index.js';
-import { publicationLabels, publicationNavigation } from './publication-navigation.js';
+import { categoryRuns, publicationLabels, publicationNavigation } from './publication-navigation.js';
 import { publicationDisplayTitle } from './publication-model.js';
 import { publicationPlainText } from './publication-html.js';
 import { chapterProgress, dropClosedOnPath, sectionAncestors, sidebarDepth, sidebarExpanded } from './sidebar-model.js';
@@ -57,6 +57,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const listRef = useRef<HTMLDivElement>(null);
   const labels = publicationLabels(book);
   const navigation = useMemo(() => publicationNavigation(book.sections, sidebarDepth(book.sections, book.navigation?.sidebarDepth)), [book.sections, book.navigation?.sidebarDepth]);
+  const runs = useMemo(() => categoryRuns(navigation), [navigation]);
+  const categoryId = useId();
   const displayTitle = publicationDisplayTitle(book);
   const searching = searchQuery.length > 0;
 
@@ -333,9 +335,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
                         <h2 className="px-2 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{labels.tableOfContents}</h2>
                         <div className="space-y-1">
-                          {navigation.map(node => <SidebarItem key={node.section.id} section={node.section}
-                            visibleChildren={node.children} currentSectionId={currentSectionId} onPath={onPath} manual={manual} readSections={readSections}
-                            onToggle={(id, open) => setManual(previous => ({ ...previous, [id]: open }))} onSelectSection={select} />)}
+                          {runs.map((run, index) => {
+                            const items = run.nodes.map(node => <SidebarItem key={node.section.id} section={node.section}
+                              visibleChildren={node.children} currentSectionId={currentSectionId} onPath={onPath} manual={manual} readSections={readSections}
+                              onToggle={(id, open) => setManual(previous => ({ ...previous, [id]: open }))} onSelectSection={select} />);
+                            // A category is a display heading over its chapters, not a page: it has no row, route, read mark or count.
+                            return run.heading === null ? <React.Fragment key={`run-${index}`}>{items}</React.Fragment>
+                              : <div key={`run-${index}`} role="group" aria-labelledby={`${categoryId}-${index}`} className="publication-sidebar-group">
+                                <h3 id={`${categoryId}-${index}`} className="publication-sidebar-category">{run.heading}</h3>{items}</div>;
+                          })}
                         </div>
                 </nav>
             )}

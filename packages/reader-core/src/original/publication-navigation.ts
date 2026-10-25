@@ -23,6 +23,37 @@ export function publicationNavigation(sections: PublicationSection[], maxDepth =
   return sections.map(section => ({ section, children: publicationNavigation(section.children ?? [], depth - 1) }));
 }
 
+export interface CategoryRun {
+  /** Display-only label for a run of consecutive chapters that share a category; null when the run needs none. */
+  heading: string | null;
+  nodes: PublicationNavigationNode[];
+}
+
+/** Group a flat book's chapters into runs of equal `category`, for a heading and spacing in the book contents.
+ * Same rules as the front page: source order is authoritative, a category that returns later starts a new run, a book with any
+ * nested section keeps its real hierarchy and gets no extra headings, and a lone chapter named like its category is not labelled twice.
+ * A heading is never a section: no route, read state or count.
+ */
+export function categoryRuns(nodes: PublicationNavigationNode[]): CategoryRun[] {
+  if (nodes.some(node => node.children.length)) return [{ heading: null, nodes }];
+  const runs: CategoryRun[] = [];
+  let current: { category: string; nodes: PublicationNavigationNode[] } | null = null;
+  const flush = () => {
+    if (!current) return;
+    const [first] = current.nodes;
+    const label = current.category.trim();
+    runs.push({ heading: label && !(current.nodes.length === 1 && first.section.category === first.section.title) ? label : null, nodes: current.nodes });
+    current = null;
+  };
+  for (const node of nodes) {
+    if (current && current.category !== node.section.category) flush();
+    if (!current) current = { category: node.section.category ?? '', nodes: [] };
+    current.nodes.push(node);
+  }
+  flush();
+  return runs;
+}
+
 const namedColours = new Set(('aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgreen darkgrey darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray green greenyellow grey honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgreen lightgrey lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise violet wheat white whitesmoke yellow yellowgreen transparent currentcolor').split(' '));
 
 /** Parse the supported colour forms identically in a browser and during server rendering. */

@@ -1,0 +1,1 @@
+{"sourceSSR":true,"hasToolbar":true,"hasHome":true,"browserGlobals":{"window":"undefined","document":"undefined"}}

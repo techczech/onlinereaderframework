@@ -1,0 +1,80 @@
+{
+  "timeUTC": "2026-10-25T10:51:22.690485+00:00",
+  "baseline": "f1d956f",
+  "sourceHashes": {
+    "apps/reader-demo/src/index.css": "b4d7e0c16ea2003171aca2da1ec84410e84472fc30cead4209e690670ed09ea1",
+    "package.json": "14092924abafc490d1ec74196769e5869a085ab268a214ef1bcae8c35bf7af94",
+    "packages/reader-core/package.json": "80371d898427f2d23724260cbe0dfc760a389aa5b0bcb2386b214059ba26e1e3",
+    "packages/reader-core/src/original/MarkdownRenderer.tsx": "7517874b9d72162125b59cfe58b12b1fa6e24eb1c8b33187416a4d44203e3278",
+    "packages/reader-core/src/original/PublicationReader.tsx": "c0d4710a223ea6e0ef1c49e194585b9ff2b5958a890b1af9707a89cf27d84aa5",
+    "packages/reader-core/src/original/ReaderLayout.tsx": "9028bf5d466c2e7368e45f16251e0f29ef4cedf4ee1136aa247deac2240304ef",
+    "packages/reader-core/src/original/Sidebar.tsx": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976",
+    "packages/reader-core/src/original/TableOfContents.tsx": "b4e4c688a988e22fe876705ed9948d6d0c0f76cb0b52fbb7788350c4984eea08",
+    "packages/reader-core/src/original/frontpage/frontpage.css": "1047fe7b4642715a163c44b9cd56c7af67076520b366efe648507a265f36817c",
+    "packages/reader-core/src/original/listening/ListeningPanel.tsx": "6e8a470b316b2c5f3318ab2eba947202754b2bef67848adf2a729d51a6e830a9",
+    "packages/reader-core/src/original/listening/listening-controller.ts": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7",
+    "packages/reader-core/src/original/listening/test-reader-listening-headless.mjs": "c7941baabfca3f46f337329b1e2520216d39a9af1a7199f6c6f8828f05b8c9be",
+    "packages/reader-core/src/original/publication-html.ts": "944b35bec537915d31e1d2900fada2867b68d9349d183ec914850e6b32b66dc6",
+    "packages/reader-core/src/original/publication-navigation.ts": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02",
+    "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682",
+    "packages/reader-core/src/original/read-aloud/flex-speech.ts": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62",
+    "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts": "04e383aefda77a97a3b5a026363e8222b4b78a80fcbe3a60c51c17cc0603c49b",
+    "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c",
+    "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e",
+    "packages/reader-core/src/original/read-aloud/test-read-aloud-browser.mjs": "8e0ee06afb240b469b677e897621cb379ba87ccf9fa2892a79978e547a72f7c6",
+    "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs": "15189b09c243e4f17a90bcdd02b8e2b8ccd17dae51c2e16e8d31f795a379c8d5",
+    "packages/reader-core/src/original/read-aloud/use-read-aloud.ts": "174933e3f064311d0155cd451b25cf25872bd89dd296445ba74384685a9793df",
+    "packages/reader-core/src/original/reader-integrations.css": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce",
+    "packages/reader-core/src/original/reader-original.css": "c7428b4b3aa313f0a996190994e9174eb68864a4250f12214f0f0aa2af34788f",
+    "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx": "c3c2e0020fc7f1896eec45beae12cd03c4fd229cec43bb437408e085b5980e60",
+    "packages/reader-core/src/original/reading-support/line-geometry.ts": "4a60aa4d7b5e8882a898eb00ad215d104189c0bb983ebdeb209325bfac01ae50",
+    "packages/reader-core/src/original/reading-support/reading-preferences.ts": "25365659135f01bb0235f07df0698c6294cf475476816fc320649c4b0a3ebb93",
+    "packages/reader-core/src/original/reading-support/support.css": "2c07e8e39ef5ca8d3c95f3c3b113e59e39ac99e9abe76053bace50c71271e398",
+    "packages/reader-core/src/original/reading-support/use-reading-support.ts": "b2c55c06dbd1c625f6d31c052681f0b5f2dcac9e8694b9b320141b9d1c9779d5",
+    "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx": "eeae4f424135297e747bf56e6871d2f47bfb0a3eba75d88ab08ecf3c1c85efae",
+    "packages/reader-core/src/original/toolbar/toolbar-model.ts": "60cff73775f3cdde48b3941fd306b6f24666aa1bd8ece28c1a0a1c2fcf60bb74",
+    "packages/reader-core/src/original/use-publication-reader.ts": "829e57c507fbf5839d6f7388d26f1f4248c1a7adf9cb6b62c4cb547568d6a035",
+    "scripts/build-reader-styles.mjs": "68f306dc212b569d803889a375c72f7ab99fb0626b24d1b14539399ec473404d"
+  },
+  "upstreamReadOnly": {
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/readflex/packages/speech/src/index.ts": {
+      "sha256": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/readflex/apps/shell/src/renderer/clean-view-speech.ts": {
+      "sha256": "ccb39fa19d673f427f17dd71875db2c785c75659ea0f7ffc6f877925b7346e79",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/readflex/apps/shell/src/renderer/use-clean-speech.ts": {
+      "sha256": "7bc3406ed20bc66d4de00c37f0da3d2260a5b032bb24cd46e1215d4240621a91",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/readflex/apps/shell/src/renderer/read-aloud-transport.tsx": {
+      "sha256": "79d6d1f475276f23f1c20de5c7a0b3561ec5601128420430e9b7398710cc4ab9",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/readflex/apps/shell/src/renderer/voice-menu.tsx": {
+      "sha256": "c04aa013fd9b525ebdace66cb2d0b0db3e706d01e05f2a051b60b9855eb60954",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/editor/line-overlay.ts": {
+      "sha256": "b1e5eb067a709757657b348a82cc032a761cd35472c5236b1aed1b2105bd37b0",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/editor/sentences.ts": {
+      "sha256": "44b974bd77838c029edfb485ecf8f7fdf1c12df4cfa6226406841ef2dd10c6f4",
+      "matchesReceipt": true
+    },
+    "/Users/dominiklukes/gitrepos/06_apps-utilities/01_desktop-apps/writeflex-desktop/src/renderer/src/styles/app.css": {
+      "sha256": "0c4c3448318fe6d2e5906f54fd041355a1a9b86a139232f2b09cfc714ebb1e5e",
+      "matchesReceipt": true
+    }
+  },
+  "vendoredByteIdentical": true,
+  "builtAssets": {
+    "apps/reader-demo/dist/assets/index-2vQz-2iZ.js": "aada220a2bdff6822cef3f1c60995706611a5c5758f00760e79982b9e1a2b637",
+    "apps/reader-demo/dist/assets/index-C0aXu3Qu.css": "a189a209a57ff27ef0e8d84d8d81fbcb3bdec5f46e72ce0dca11653cc34897e5",
+    "apps/reader-demo/dist/assets/index-CMUcZ95A.js": "fe3063667191b4151ab5fb8cdd81a2b731a11d18fac512ae929847a57bfb42a1"
+  },
+  "readerPackageStyle": "aa9ecd30426d765bc7115a27956284c0cf94f3c9dfe6442a4c26797309d3b434"
+}

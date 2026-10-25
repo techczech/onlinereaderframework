@@ -1,5 +1,7 @@
 /** Pure rules for the four reader toolbar controls: steps, dimming levels and "changed from default" counts. */
 export type MaxWidthChoice = 'sm' | 'md' | 'lg' | 'full';
+/** Widths in the toolbar, with the text width each gives where the window has room (default type size): about 500, 590, 725 px and the full column. */
+export const WIDTH_CHOICES: readonly { value: MaxWidthChoice; label: string }[] = [{ value: 'sm', label: 'Narrow' }, { value: 'md', label: 'Normal' }, { value: 'lg', label: 'Wide' }, { value: 'full', label: 'Full' }];
 export type ToolbarMenuId = 'listen' | 'formatting' | 'assist';
 
 export interface FormattingState {
@@ -8,7 +10,8 @@ export interface FormattingState {
 }
 export interface AssistState { focus: 'off' | 'paragraph'; overlay: 'off' | 'line-window' | 'ruler'; immersive: boolean; }
 
-export const DIM_LEVELS = [{ label: 'Light', value: 0.2 }, { label: 'Medium', value: 0.35 }, { label: 'Dark', value: 0.5 }] as const;
+/** WriteFlex line-overlay dimming. Kept equal to DIM_LEVELS in reading-preferences.ts; the toolbar model test checks it. */
+export const DIM_LEVELS = [{ label: 'Light', value: 0.5 }, { label: 'Medium', value: 0.72 }, { label: 'Dark', value: 0.9 }] as const;
 export const SIZE_LIMITS = { fontSize: [16, 28, 1], lineHeight: [1.2, 2.4, 0.1], paragraphSpacing: [0, 40, 2], letterSpacing: [0, 0.12, 0.02] } as const;
 
 /** Move a stepper value one step inside its bounds, without floating-point drift. */
@@ -39,11 +42,11 @@ export const letterSpacingLabel = (value: number): string => value < 0.005 ? 'No
 export const lineHeightLabel = (value: number): string => value.toFixed(1);
 
 /** Plain statement of what is currently on, for the Assist menu. */
-export function assistSummary(state: AssistState & { lines: number }): string {
+export function assistSummary(state: AssistState & { lines: number; rulerLines?: number }): string {
   const parts: string[] = [];
   if (state.focus === 'paragraph') parts.push('other paragraphs faded');
   if (state.overlay === 'line-window') parts.push(`${state.lines === 1 ? 'one-line' : `${state.lines}-line`} window`);
-  if (state.overlay === 'ruler') parts.push('reading ruler');
+  if (state.overlay === 'ruler') parts.push(`reading ruler over the next ${state.rulerLines === 2 ? 'two lines' : state.rulerLines === 3 ? 'three lines' : 'line'}`);
   if (state.immersive) parts.push('navigation hidden');
   return parts.length ? `On: ${parts.join(', ')}.` : 'Nothing is on.';
 }

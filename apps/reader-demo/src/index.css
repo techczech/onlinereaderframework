@@ -32,3 +32,10 @@ aside::-webkit-scrollbar-thumb { background-color: #E5E7EB; border-radius: 4px; 
 /* Demo-only chooser for the six front-page layouts; the published reader has no such control. */
 .demo-frontpage-chooser { position: fixed; right: .75rem; bottom: .75rem; z-index: 40; display: flex; align-items: center; gap: .5rem; padding: .35rem .6rem; border: 1px solid #0003; border-radius: .6rem; background: #fffffff0; color: #202020; font: 12px/1.2 Inter, system-ui, sans-serif; box-shadow: 0 2px 8px #0002; }
 .demo-frontpage-chooser select { font: inherit; padding: .2rem .3rem; }
+/* The picker only has a job on the front page, and on a small window it must not sit over text or controls. */
+body:not(:has(.publication-front, .publication-home)) .demo-frontpage-chooser { display: none; }
+@media (max-width: 1439px) {
+  .demo-frontpage-chooser { right: .5rem; bottom: .5rem; padding: .2rem .4rem; font-size: 11px; opacity: .88; }
+  .demo-frontpage-chooser select { max-width: 8.5rem; }
+}
+@media (max-width: 639px) { .demo-frontpage-chooser { display: none; } }

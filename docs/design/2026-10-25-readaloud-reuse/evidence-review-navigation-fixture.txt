@@ -1,0 +1,51 @@
+PASS outline lists every subheading, not the chapter title
+PASS the formula heading reads once, with no TeX and MathML duplicated
+PASS every outline target is a distinct, percent-encoded rendered id
+PASS outline ids match the heading ids in the text, repeated titles are de-duplicated
+PASS ids are stable across loads
+PASS hierarchy is kept: the h3 sits deeper than its h2
+PASS one useful subheading is an outline
+PASS a chapter with no subheadings has no outline
+PASS an outline that starts at h3 is indented from its own shallowest level
+PASS 1440px: exactly one chapter outline is on screen (toc-container)
+PASS 1440px: no horizontal overflow
+PASS 1366px: exactly one chapter outline is on screen (toc-container)
+PASS 1366px: no horizontal overflow
+PASS 1280px: exactly one chapter outline is on screen (toc-container)
+PASS 1280px: no horizontal overflow
+PASS 1200px: exactly one chapter outline is on screen (toc-container-compact)
+PASS 1200px: no horizontal overflow
+PASS 1024px: exactly one chapter outline is on screen (toc-container-compact)
+PASS 1024px: no horizontal overflow
+PASS 768px: exactly one chapter outline is on screen (toc-container-compact)
+PASS 768px: no horizontal overflow
+PASS 390px: exactly one chapter outline is on screen (toc-container-compact)
+PASS 390px: no horizontal overflow
+PASS the article keeps its measure wherever the rail or the disclosure is used
+PASS 1024: the disclosure is the outline and is collapsed
+PASS the toggle states whether it is open
+PASS Enter opens the list and shows every link at a usable size
+PASS Escape closes it and returns focus to the toggle
+PASS N at 1024 opens the disclosure and focuses a link
+PASS N at 1366 focuses the rail
+PASS activating a link puts the subsection in the URL
+PASS focus moves into the passage, not the outline
+PASS the outline marks the current location
+PASS the host page itself did not scroll
+PASS a second link replaces the fragment
+PASS Back returns to the first subsection, in the URL and on screen
+PASS Forward returns to the second
+PASS Back past the first fragment returns to the top of the chapter
+PASS a modified click is left to the browser (no in-page history entry)
+PASS opening the copied URL lands on that subsection
+PASS 1024: the compact outline link updates the URL, focuses the passage and collapses
+PASS a highlight inside a heading keeps the heading, its id and its outline label
+PASS using the outline while reading aloud does not stop or restart the reading
+PASS navigating leaves notes and saved settings as they were
+PASS the outline lists the same headings after annotation and speech
+PASS flat book: category headings in source order, once each
+PASS category headings add no rows, routes or counts
+PASS a lone chapter named like its category is not labelled twice
+PASS no browser exceptions
+NAV_FIXTURE_JSON=[{"name": "outline lists every subheading, not the chapter title", "passed": true, "detail": ["Equation x^2", "\u00dcn\u00efcode \u2713 heading \u2014 caf\u00e9", "Same title", "Same title", "A linked heading"]}, {"name": "the formula heading reads once, with no TeX and MathML duplicated", "passed": true, "detail": null}, {"name": "every outline target is a distinct, percent-encoded rendered id", "passed": true, "detail": ["#reader-content-equation-x2x2", "#reader-content-%C3%BCn%C3%AFcode-heading-caf%C3%A9", "#reader-content-same-title", "#reader-content-same-title-2", "#reader-content-a-linked-heading"]}, {"name": "outline ids match the heading ids in the text, repeated titles are de-duplicated", "passed": true, "detail": ["reader-content-equation-x2x2", "reader-content-\u00fcn\u00efcode-heading-caf\u00e9", "reader-content-same-title", "reader-content-same-title-2", "reader-content-a-linked-heading"]}, {"name": "ids are stable across loads", "passed": true, "detail": null}, {"name": "hierarchy is kept: the h3 sits deeper than its h2", "passed": true, "detail": null}, {"name": "one useful subheading is an outline", "passed": true, "detail": null}, {"name": "a chapter with no subheadings has no outline", "passed": true, "detail": null}, {"name": "an outline that starts at h3 is indented from its own shallowest level", "passed": true, "detail": [{"text": "First deep", "href": "#reader-content-first-deep", "level": 3, "pad": 0}, {"text": "Deeper", "href": "#reader-content-deeper", "level": 4, "pad": 8}, {"text": "Second deep", "href": "#reader-content-second-deep", "level": 3, "pad": 0}]}, {"name": "1440px: exactly one chapter outline is on screen (toc-container)", "passed": true, "detail": ["toc-container"]}, {"name": "1440px: no horizontal overflow", "passed": true, "detail": null}, {"name": "1366px: exactly one chapter outline is on screen (toc-container)", "passed": true, "detail": ["toc-container"]}, {"name": "1366px: no horizontal overflow", "passed": true, "detail": null}, {"name": "1280px: exactly one chapter outline is on screen (toc-container)", "passed": true, "detail": ["toc-container"]}, {"name": "1280px: no horizontal overflow", "passed": true, "detail": null}, {"name": "1200px: exactly one chapter outline is on screen (toc-container-compact)", "passed": true, "detail": ["toc-container-compact"]}, {"name": "1200px: no horizontal overflow", "passed": true, "detail": null}, {"name": "1024px: exactly one chapter outline is on screen (toc-container-compact)", "passed": true, "detail": ["toc-container-compact"]}, {"name": "1024px: no horizontal overflow", "passed": true, "detail": null}, {"name": "768px: exactly one chapter outline is on screen (toc-container-compact)", "passed": true, "detail": ["toc-container-compact"]}, {"name": "768px: no horizontal overflow", "passed": true, "detail": null}, {"name": "390px: exactly one chapter outline is on screen (toc-container-compact)", "passed": true, "detail": ["toc-container-compact"]}, {"name": "390px: no horizontal overflow", "passed": true, "detail": null}, {"name": "the article keeps its measure wherever the rail or the disclosure is used", "passed": true, "detail": {"1440": 520.546875, "1366": 520.546875, "1280": 520.546875, "1200": 520.546875, "1024": 520.546875, "768": 520.546875, "390": 334}}, {"name": "1024: the disclosure is the outline and is collapsed", "passed": true, "detail": null}, {"name": "the toggle states whether it is open", "passed": true, "detail": null}, {"name": "Enter opens the list and shows every link at a usable size", "passed": true, "detail": null}, {"name": "Escape closes it and returns focus to the toggle", "passed": true, "detail": null}, {"name": "N at 1024 opens the disclosure and focuses a link", "passed": true, "detail": null}, {"name": "N at 1366 focuses the rail", "passed": true, "detail": null}, {"name": "activating a link puts the subsection in the URL", "passed": true, "detail": "https://nav.test/?book=nav&section=rich#reader-content-%C3%BCn%C3%AFcode-heading-caf%C3%A9"}, {"name": "focus moves into the passage, not the outline", "passed": true, "detail": "<h3 id=\"reader-content-\u00fcn\u00efcode-heading-caf\u00e9\" tabindex=\"-1\">\u00dcn\u00efcode \u2713 heading \u2014 c"}, {"name": "the outline marks the current location", "passed": true, "detail": null}, {"name": "the host page itself did not scroll", "passed": true, "detail": null}, {"name": "a second link replaces the fragment", "passed": true, "detail": null}, {"name": "Back returns to the first subsection, in the URL and on screen", "passed": true, "detail": null}, {"name": "Forward returns to the second", "passed": true, "detail": [2461, 2427]}, {"name": "Back past the first fragment returns to the top of the chapter", "passed": true, "detail": ["", 0]}, {"name": "a modified click is left to the browser (no in-page history entry)", "passed": true, "detail": null}, {"name": "opening the copied URL lands on that subsection", "passed": true, "detail": null}, {"name": "1024: the compact outline link updates the URL, focuses the passage and collapses", "passed": true, "detail": null}, {"name": "a highlight inside a heading keeps the heading, its id and its outline label", "passed": true, "detail": null}, {"name": "using the outline while reading aloud does not stop or restart the reading", "passed": true, "detail": null}, {"name": "navigating leaves notes and saved settings as they were", "passed": true, "detail": null}, {"name": "the outline lists the same headings after annotation and speech", "passed": true, "detail": null}, {"name": "flat book: category headings in source order, once each", "passed": true, "detail": ["Part one", "Part two"]}, {"name": "category headings add no rows, routes or counts", "passed": true, "detail": null}, {"name": "a lone chapter named like its category is not labelled twice", "passed": true, "detail": null}, {"name": "no browser exceptions", "passed": true, "detail": []}]
+49/49 passed

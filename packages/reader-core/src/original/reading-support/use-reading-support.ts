@@ -39,7 +39,8 @@ export function useReadingSupport(bookId: string): ReadingSupportController {
   }, [bookId]);
   return {
     ...current,
-    update: patch => set(normaliseReadingPreferences({ ...snapshot(bookId).preferences, ...patch })),
+    // Choosing a text size ends the width-dependent default; a patch that says otherwise (Reset) wins.
+    update: patch => set(normaliseReadingPreferences({ ...snapshot(bookId).preferences, ...('fontSize' in patch && !('fontSizeChosen' in patch) ? { fontSizeChosen: true } : {}), ...patch })),
     reset: () => set({ ...DEFAULT_READING_PREFERENCES }),
   };
 }

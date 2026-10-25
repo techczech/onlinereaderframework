@@ -24,8 +24,8 @@ with wave.open(stream,'wb') as wav:
  wav.setnchannels(1);wav.setsampwidth(2);wav.setframerate(8000);wav.writeframes(b'\x00\x00'*8000*24)
 audio_bytes=stream.getvalue()
 SPEECH='''() => { window.speechLog=[]; window.SpeechSynthesisUtterance=class{constructor(t){this.text=t}};
- Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{getVoices:()=>[],speak(){window.speechLog.push('speak')},cancel(){window.speechLog.push('cancel')},pause(){window.speechLog.push('pause')},resume(){window.speechLog.push('resume')}}});
- const N=window.Audio; window.media=[]; window.Audio=function(...a){const m=new N(...a);window.media.push(m);return m}; }'''
+ Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{getVoices:()=>[],speak(){window.speechLog.push('speak');window.recordedPlayingAt.push(window.media.some(m=>!m.paused))},cancel(){window.speechLog.push('cancel')},pause(){window.speechLog.push('pause')},resume(){window.speechLog.push('resume');window.recordedPlayingAt.push(window.media.some(m=>!m.paused))}}});
+ window.recordedPlayingAt=[]; const N=window.Audio; window.media=[]; window.Audio=function(...a){const m=new N(...a);window.media.push(m);return m}; }'''
 checks=[]
 def check(name,ok,detail=None):
  checks.append({'name':name,'passed':bool(ok),'detail':detail});print(('PASS ' if ok else 'FAIL ')+name,flush=True)
@@ -77,13 +77,40 @@ with sync_playwright() as p:
   check('formatting change and menu close keep recording playing',page.evaluate('!window.rec.paused&&window.media.length===window.recCount'))
   # Browser speech pauses the recording; recording play cancels browser speech.
   listen().click();page.get_by_role('dialog',name='Listen').get_by_role('button',name='Start').click()
+  page.wait_for_function('window.rec.paused',timeout=2000)
   check('starting browser speech pauses the recording',page.evaluate('window.rec.paused')and page.evaluate('window.speechLog.includes("speak")'))
   page.evaluate('window.speechLog.length=0')
-  page.get_by_role('dialog',name='Listen').get_by_role('button',name='Open player').click()
+  listen().click();page.get_by_role('dialog',name='Listen').get_by_role('button',name='Open player').click()
   page.get_by_role('button',name='Play recording').click()
   page.wait_for_function('!window.rec.paused')
   page.wait_for_timeout(300)
-  check('starting the recording cancels browser speech',page.evaluate('window.speechLog.includes("cancel")')and page.get_by_role('group',name='Browser read-aloud').count()==0,[page.evaluate('window.speechLog'),page.get_by_role('group',name='Browser read-aloud').count()])
+  check('starting the recording cancels browser speech',page.evaluate('window.speechLog.includes("cancel")')and page.locator('.publication-read-aloud-dock').count()==0,[page.evaluate('window.speechLog'),page.locator('.publication-read-aloud-dock').count()])
+  # Ordering, not just the end state: at the instant the engine is asked to speak or resume, no recording may still be playing.
+  # The menu button and the keyboard shortcut are tried, each while the recording is playing.
+  def play_recording():
+   listen().click();page.get_by_role('dialog',name='Listen').get_by_role('button',name='Open player').click()
+   play=page.get_by_role('button',name='Play recording')
+   if play.count():play.click()
+   page.wait_for_function('!window.rec.paused')
+   page.wait_for_timeout(200);page.keyboard.press('Escape')
+  dock=page.locator('.publication-read-aloud-dock')
+  page.evaluate('window.recordedPlayingAt.length=0;window.speechLog.length=0')
+  play_recording()
+  listen().click();page.get_by_role('dialog',name='Listen').get_by_role('button',name='Start').click()
+  page.wait_for_function('window.rec.paused',timeout=2000)
+  check('menu Start: the recording was already paused when speech was submitted',page.evaluate('window.recordedPlayingAt.length>=1 && window.recordedPlayingAt.every(x=>x===false)'),page.evaluate('window.recordedPlayingAt'))
+  # Pausing speech, then starting the recording, stops the paused speech completely (no dock, engine cancelled).
+  dock.get_by_role('button',name='Pause reading aloud').click()
+  page.evaluate('window.speechLog.length=0')
+  play_recording()
+  check('recording Play while speech is paused ends that speech',page.evaluate('window.speechLog.includes("cancel")') and dock.count()==0 and not page.evaluate('window.rec.paused'),[page.evaluate('window.speechLog'),dock.count()])
+  # The keyboard shortcut starts speech with the recording playing: still paused first.
+  page.evaluate('window.recordedPlayingAt.length=0')
+  page.locator('[data-publication-content] h1').focus() if page.locator('[data-publication-content] h1').count() else None
+  page.keyboard.press('a')
+  page.wait_for_function('window.rec.paused',timeout=2000)
+  check('keyboard shortcut: the recording was already paused when speech was submitted',page.evaluate('window.recordedPlayingAt.length>=1 && window.recordedPlayingAt.every(x=>x===false)'),page.evaluate('window.recordedPlayingAt'))
+  # Resume and skip-from-paused cannot overlap a recording from the page (its Play ends paused speech, above); their order is in the controller unit tests.
   check('no page errors',not errors,errors)
  finally:browser.close()
 failed=[c for c in checks if not c['passed']]

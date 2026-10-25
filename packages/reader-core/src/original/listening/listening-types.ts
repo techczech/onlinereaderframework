@@ -35,6 +35,8 @@ export interface ListeningPanelProps {
   onPlaybackStart?(): void;
   /** Change this value to pause recorded playback before starting browser speech. */
   pauseSignal?: number;
+  /** Hands the host a function that pauses recorded playback at once, for the moment before browser speech is submitted. Called with null on unmount. */
+  registerPause?(pause: (() => void) | null): void;
 }
 
 export type ListeningStatus = 'missing' | 'loading' | 'paused' | 'playing' | 'ended' | 'error';

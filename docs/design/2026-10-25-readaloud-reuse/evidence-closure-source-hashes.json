@@ -1,0 +1,197 @@
+{
+  "timeUTC": "2026-10-25T11:25:49.697821+00:00",
+  "scope": "Repair-source identities compared with earlier review evidence; no Git access.",
+  "sourceHashes": {
+    "apps/reader-demo/src/index.css": {
+      "sha256": "b4d7e0c16ea2003171aca2da1ec84410e84472fc30cead4209e690670ed09ea1",
+      "earlierReviewSha256": "b4d7e0c16ea2003171aca2da1ec84410e84472fc30cead4209e690670ed09ea1",
+      "changedSinceEarlierReview": false
+    },
+    "package.json": {
+      "sha256": "14092924abafc490d1ec74196769e5869a085ab268a214ef1bcae8c35bf7af94",
+      "earlierReviewSha256": "14092924abafc490d1ec74196769e5869a085ab268a214ef1bcae8c35bf7af94",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/package.json": {
+      "sha256": "80371d898427f2d23724260cbe0dfc760a389aa5b0bcb2386b214059ba26e1e3",
+      "earlierReviewSha256": "80371d898427f2d23724260cbe0dfc760a389aa5b0bcb2386b214059ba26e1e3",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/MarkdownRenderer.tsx": {
+      "sha256": "e71989136591144cc4fa848f96da52362514c6d7bb39fb7c24b9ddef44f53b83",
+      "earlierReviewSha256": "7517874b9d72162125b59cfe58b12b1fa6e24eb1c8b33187416a4d44203e3278",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/PublicationReader.tsx": {
+      "sha256": "50bd713bc73f673775205cd4e9f2306854d044a462f2a1fe860653f133837a94",
+      "earlierReviewSha256": "c0d4710a223ea6e0ef1c49e194585b9ff2b5958a890b1af9707a89cf27d84aa5",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/ReaderLayout.tsx": {
+      "sha256": "9028bf5d466c2e7368e45f16251e0f29ef4cedf4ee1136aa247deac2240304ef",
+      "earlierReviewSha256": "9028bf5d466c2e7368e45f16251e0f29ef4cedf4ee1136aa247deac2240304ef",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/Sidebar.tsx": {
+      "sha256": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976",
+      "earlierReviewSha256": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/TableOfContents.tsx": {
+      "sha256": "126c6dd4f703c0624734a3a7e3ea0a8d8204dbb4ebc886dd4cf70fa72ceb3923",
+      "earlierReviewSha256": "b4e4c688a988e22fe876705ed9948d6d0c0f76cb0b52fbb7788350c4984eea08",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/frontpage/frontpage.css": {
+      "sha256": "1047fe7b4642715a163c44b9cd56c7af67076520b366efe648507a265f36817c",
+      "earlierReviewSha256": "1047fe7b4642715a163c44b9cd56c7af67076520b366efe648507a265f36817c",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/listening/ListeningPanel.tsx": {
+      "sha256": "700fc11f172513330e718b8b3850a8dc07a7a5ee693f8cadb53b1c7f53cd2e7f",
+      "earlierReviewSha256": "6e8a470b316b2c5f3318ab2eba947202754b2bef67848adf2a729d51a6e830a9",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/listening/listening-controller.ts": {
+      "sha256": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7",
+      "earlierReviewSha256": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/listening/listening-types.ts": {
+      "sha256": "e5d5de9a927af500d907d137184d1955641c7b5189cc2e49b2a753c489e571a5",
+      "earlierReviewSha256": null,
+      "changedSinceEarlierReview": null
+    },
+    "packages/reader-core/src/original/listening/test-reader-listening-headless.mjs": {
+      "sha256": "c7941baabfca3f46f337329b1e2520216d39a9af1a7199f6c6f8828f05b8c9be",
+      "earlierReviewSha256": "c7941baabfca3f46f337329b1e2520216d39a9af1a7199f6c6f8828f05b8c9be",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/publication-html.ts": {
+      "sha256": "944b35bec537915d31e1d2900fada2867b68d9349d183ec914850e6b32b66dc6",
+      "earlierReviewSha256": "944b35bec537915d31e1d2900fada2867b68d9349d183ec914850e6b32b66dc6",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/publication-navigation.ts": {
+      "sha256": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02",
+      "earlierReviewSha256": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx": {
+      "sha256": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682",
+      "earlierReviewSha256": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/flex-speech.ts": {
+      "sha256": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62",
+      "earlierReviewSha256": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts": {
+      "sha256": "56a038b8176aa19836a5163af38abf68049e0f2f3e6c96c71399f99c2d9f3031",
+      "earlierReviewSha256": "04e383aefda77a97a3b5a026363e8222b4b78a80fcbe3a60c51c17cc0603c49b",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts": {
+      "sha256": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c",
+      "earlierReviewSha256": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts": {
+      "sha256": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e",
+      "earlierReviewSha256": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/test-read-aloud-browser.mjs": {
+      "sha256": "8e0ee06afb240b469b677e897621cb379ba87ccf9fa2892a79978e547a72f7c6",
+      "earlierReviewSha256": "8e0ee06afb240b469b677e897621cb379ba87ccf9fa2892a79978e547a72f7c6",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/read-aloud/test-read-aloud-ownership-browser.mjs": {
+      "sha256": "fe5a8c30be466074f944ce8f65a5f17eb056cd6b1ca33c8b691c4e17e8665ae3",
+      "earlierReviewSha256": null,
+      "changedSinceEarlierReview": null
+    },
+    "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs": {
+      "sha256": "4d02cee6710f17c0aff484d0b10480447e339bcf5be752110b1a68f0cf3c9385",
+      "earlierReviewSha256": "15189b09c243e4f17a90bcdd02b8e2b8ccd17dae51c2e16e8d31f795a379c8d5",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/read-aloud/use-read-aloud.ts": {
+      "sha256": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c",
+      "earlierReviewSha256": "174933e3f064311d0155cd451b25cf25872bd89dd296445ba74384685a9793df",
+      "changedSinceEarlierReview": true
+    },
+    "packages/reader-core/src/original/reader-integrations.css": {
+      "sha256": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce",
+      "earlierReviewSha256": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reader-original.css": {
+      "sha256": "c7428b4b3aa313f0a996190994e9174eb68864a4250f12214f0f0aa2af34788f",
+      "earlierReviewSha256": "c7428b4b3aa313f0a996190994e9174eb68864a4250f12214f0f0aa2af34788f",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx": {
+      "sha256": "c3c2e0020fc7f1896eec45beae12cd03c4fd229cec43bb437408e085b5980e60",
+      "earlierReviewSha256": "c3c2e0020fc7f1896eec45beae12cd03c4fd229cec43bb437408e085b5980e60",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reading-support/line-geometry.ts": {
+      "sha256": "4a60aa4d7b5e8882a898eb00ad215d104189c0bb983ebdeb209325bfac01ae50",
+      "earlierReviewSha256": "4a60aa4d7b5e8882a898eb00ad215d104189c0bb983ebdeb209325bfac01ae50",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reading-support/reading-preferences.ts": {
+      "sha256": "25365659135f01bb0235f07df0698c6294cf475476816fc320649c4b0a3ebb93",
+      "earlierReviewSha256": "25365659135f01bb0235f07df0698c6294cf475476816fc320649c4b0a3ebb93",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reading-support/support.css": {
+      "sha256": "2c07e8e39ef5ca8d3c95f3c3b113e59e39ac99e9abe76053bace50c71271e398",
+      "earlierReviewSha256": "2c07e8e39ef5ca8d3c95f3c3b113e59e39ac99e9abe76053bace50c71271e398",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/reading-support/use-reading-support.ts": {
+      "sha256": "b2c55c06dbd1c625f6d31c052681f0b5f2dcac9e8694b9b320141b9d1c9779d5",
+      "earlierReviewSha256": "b2c55c06dbd1c625f6d31c052681f0b5f2dcac9e8694b9b320141b9d1c9779d5",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/test-navigation-fixture-browser.mjs": {
+      "sha256": "3f99d94cf10ea39923191f6c24483e5dab23470c6b4f1c7be00fe4e9c795aa1b",
+      "earlierReviewSha256": null,
+      "changedSinceEarlierReview": null
+    },
+    "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx": {
+      "sha256": "eeae4f424135297e747bf56e6871d2f47bfb0a3eba75d88ab08ecf3c1c85efae",
+      "earlierReviewSha256": "eeae4f424135297e747bf56e6871d2f47bfb0a3eba75d88ab08ecf3c1c85efae",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/toolbar/test-toolbar-recorded-browser.mjs": {
+      "sha256": "9b5498ab9e1702320ab1cc0c06e4915feb64e7e8588faf10c980d5a73ffb87a7",
+      "earlierReviewSha256": null,
+      "changedSinceEarlierReview": null
+    },
+    "packages/reader-core/src/original/toolbar/toolbar-model.ts": {
+      "sha256": "60cff73775f3cdde48b3941fd306b6f24666aa1bd8ece28c1a0a1c2fcf60bb74",
+      "earlierReviewSha256": "60cff73775f3cdde48b3941fd306b6f24666aa1bd8ece28c1a0a1c2fcf60bb74",
+      "changedSinceEarlierReview": false
+    },
+    "packages/reader-core/src/original/use-publication-reader.ts": {
+      "sha256": "ed72d75e60018aecabcb285cc97c49ccb86cef849b63ae2bd9d8e19289877f27",
+      "earlierReviewSha256": "829e57c507fbf5839d6f7388d26f1f4248c1a7adf9cb6b62c4cb547568d6a035",
+      "changedSinceEarlierReview": true
+    },
+    "scripts/build-reader-styles.mjs": {
+      "sha256": "68f306dc212b569d803889a375c72f7ab99fb0626b24d1b14539399ec473404d",
+      "earlierReviewSha256": "68f306dc212b569d803889a375c72f7ab99fb0626b24d1b14539399ec473404d",
+      "changedSinceEarlierReview": false
+    }
+  },
+  "servedDistHashes": {
+    "apps/reader-demo/dist/index.html": "b7ae44df171b808a2de7fd9fd40e34ddfa4a8517ab7dbb483cbf3f9c0b91892a",
+    "apps/reader-demo/dist/assets/index-C0aXu3Qu.css": "a189a209a57ff27ef0e8d84d8d81fbcb3bdec5f46e72ce0dca11653cc34897e5",
+    "apps/reader-demo/dist/assets/index-D0jx9N2z.js": "3cc66a8fe1e364e866f64e25b3895255b964caf9ae243649c77e30c3dae2fff4",
+    "apps/reader-demo/dist/assets/index-BKF9mWwR.js": "60bdeb97ca29470cced58d539cb9b8a129cf6f70d86e4053e4b6c521c3eebc7a"
+  }
+}

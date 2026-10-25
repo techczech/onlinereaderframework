@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "node",
+      "--test",
+      "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs"
+    ],
+    "exit": 0,
+    "durationSeconds": 8.435,
+    "stdout": "\u2714 the vendored ReadFlex player is byte-identical to the recorded source file (2.50575ms)\n\u2714 loading a chapter never starts speech; Start begins at the requested position (1.598459ms)\n\u2714 voices: saved choice, then book language, then the system default; missing saved voice falls back (0.398666ms)\n\u2714 choosing a voice or speed is saved and applied to the next utterance (0.2755ms)\n\u2714 skip moves by sentence and paragraph from the current place, and resumes reading (0.305583ms)\n\u2714 a speed change restarts the current sentence, not the chapter (0.133458ms)\n\u2714 word highlighting appears only after the engine reports a real boundary (1.505791ms)\n\u2714 stop clears the highlight; pause keeps the position; sentences end into the next (0.182459ms)\n\u2714 reaching the end returns to idle without a problem (0.105291ms)\n\u2714 an engine error is reported plainly and does not leave the controller reading (0.171958ms)\n\u2714 another page cancelling our speech is reported, not shown as reading (0.088292ms)\n\u2714 a stale end or boundary from a stopped or replaced utterance cannot advance or clear newer playback (0.070083ms)\n\u2714 ownership: an idle controller never cancels shared speech; a speaking one does on dispose (0.109125ms)\n\u2714 no speech engine: honest unavailable state, Start explains, nothing throws (0.039625ms)\n\u2714 an utterance that shows no sign of life is reported instead of reading forever (111.720666ms)\n\u2714 two readers over one engine: the newer one takes it, and the older one can no longer stop or hear it (0.355875ms)\n\u2714 a reader can take the engine back, and its own late callbacks are still ignored (0.084166ms)\n\u2714 a reader that never spoke does not claim the engine and leaves a speaking reader alone (0.059625ms)\n\u2714 watchdog: an engine that reports starts and is speaking is never stopped for lacking word events (280.6185ms)\n\u2714 watchdog: a slow voice may start late; one that never starts is reported after a bounded wait (483.996ms)\n\u2714 watchdog: pausing before the voice starts does not lose or spend the wait; resuming re-arms it (672.317042ms)\n\u2714 watchdog: an engine that gives no start events is judged only by whether it says it is speaking (201.550792ms)\n\u2714 engage: the host hook runs before the engine speaks or resumes, once per engagement, on every start path (1.245375ms)\n\u2714 word ranges follow Unicode words, not bytes (11.150709ms)\n\u2139 tests 24\n\u2139 suites 0\n\u2139 pass 24\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 8378.034292\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "packages/reader-core/node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "-p",
+      "packages/reader-core"
+    ],
+    "exit": 0,
+    "durationSeconds": 1.174,
+    "stdout": "",
+    "stderr": ""
+  }
+]

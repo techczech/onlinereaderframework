@@ -101,7 +101,7 @@
 .publication-reader .publication-main { container-type: inline-size; }
 .publication-reader .publication-scroll { min-height: 0; background: var(--reader-paper); }
 .publication-reader .publication-reading-layout {
-  --publication-measure: 70ch;
+  --publication-measure: 52ch;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -112,8 +112,8 @@
   padding: 2rem;
   font-size: 1.125rem;
 }
-.publication-reader .publication-width-sm { --publication-measure: 52ch; }
-.publication-reader .publication-width-lg { --publication-measure: 86ch; }
+.publication-reader .publication-width-sm { --publication-measure: 44ch; }
+.publication-reader .publication-width-lg { --publication-measure: 64ch; }
 .publication-reader .publication-width-full { --publication-measure: 100%; max-width: none; }
 .publication-reader .publication-reading-column { flex: 1 1 var(--publication-measure); min-width: 0; max-width: var(--publication-measure); }
 .publication-reader .publication-article { margin-bottom: 2rem; }
@@ -232,3 +232,59 @@
   .publication-reader .publication-menu-switch button:last-child { flex: none; width: 2.5rem; }
   .publication-reader .publication-speech-status { order: 1; flex-basis: 100%; justify-content: center; }
 }
+
+/* Read aloud: a compact transport docked between the toolbar and the text, so it never covers the article. */
+.publication-reader .publication-read-aloud-dock { display: flex; align-items: center; gap: .6rem; flex: none; padding: .3rem .9rem; border-bottom: 1px solid color-mix(in srgb, var(--reader-ink), transparent 85%); background: color-mix(in srgb, var(--reader-accent), var(--reader-paper) 92%); color: var(--reader-ink); font-size: .85rem; }
+.publication-reader .publication-read-aloud-dock[data-state="problem"] { background: color-mix(in srgb, #b45309, var(--reader-paper) 90%); }
+.publication-reader .publication-read-aloud-mark { color: var(--reader-accent); font-size: 1.25rem; flex: none; }
+.publication-reader .publication-read-aloud-status { flex: 1; min-width: 0; margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.publication-reader .publication-read-aloud-buttons { display: flex; flex: none; align-items: center; gap: .15rem; }
+.publication-reader .publication-read-aloud-buttons button { display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; color: var(--reader-accent); }
+.publication-reader .publication-read-aloud-buttons button:hover, .publication-reader .publication-read-aloud-buttons button:focus-visible { background: color-mix(in srgb, var(--reader-accent), transparent 85%); }
+.publication-reader .publication-read-aloud-buttons .material-symbols-outlined { font-size: 1.4rem; }
+.publication-reader .publication-menu-field select { flex: 1; min-width: 0; max-width: 15rem; min-height: 2.5rem; padding: .3rem .5rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 70%); border-radius: .5rem; background: var(--reader-paper); color: var(--reader-ink); font: inherit; font-size: .85rem; }
+.publication-reader [data-publication-read-aloud-active] { background: #ffe6a1; color: #1f2937; }
+@media (max-width: 639px) {
+  .publication-reader .publication-read-aloud-dock { flex-wrap: wrap; gap: .1rem .5rem; padding: .25rem .6rem; }
+  .publication-reader .publication-read-aloud-status { flex-basis: calc(100% - 2rem); font-size: .8rem; }
+  .publication-reader .publication-read-aloud-buttons { flex-basis: 100%; justify-content: space-between; }
+}
+
+/* Interface type is its own scale: the article's size, spacing and letter-spacing preferences never reach the toolbar, menus, transport or sidebar. */
+.publication-reader :is(.publication-toolbar, .publication-menu, .publication-read-aloud-dock, .publication-sidebar) { letter-spacing: normal; line-height: 1.4; font-style: normal; }
+/* Text width, measured at the default type size with room to spare: Narrow about 500 px, Normal 590 (the old Narrow), Wide 725, Full the whole column.
+   A window that cannot hold the choice limits it (min-width: 0 on the column); nothing forces overflow on a phone. */
+
+/* Windows below a large desktop (a 13-inch laptop at its default scaling, a tablet): the same design in a smaller scale. Wide desktops are untouched. */
+@media (max-width: 1439px) {
+  .publication-reader .publication-toolbar { gap: .5rem; padding: .4rem 1rem; font-size: .78rem; }
+  .publication-reader .publication-toolbar button { min-height: 2.25rem; padding: .3rem .6rem; }
+  .publication-reader .publication-toolbar-actions { gap: .4rem; }
+  .publication-reader .publication-menu { width: min(21rem, calc(100vw - 1.5rem)); padding: .8rem .95rem; font-size: .82rem; }
+  .publication-reader .publication-menu-row { min-height: 2.5rem; }
+  .publication-reader .publication-reading-layout { padding: 1.5rem 1.75rem; gap: 1.5rem; }
+  .publication-reader .publication-content h1 { font-size: clamp(2rem, 1.2rem + 1.9vw, 2.667em); }
+  .publication-reader .publication-read-aloud-dock { padding: .25rem .8rem; font-size: .8rem; }
+}
+@media (max-width: 1439px) and (pointer: coarse) {
+  .publication-reader .publication-toolbar button { min-height: 2.75rem; }
+}
+/* A stepper row keeps its icon and label on one line, whatever the menu width. */
+.publication-reader .publication-menu-row-text:has(> .publication-menu-icon) { flex-wrap: nowrap; white-space: nowrap; }
+
+/* Book contents of a flat book: category headings over runs of chapters (display only, as in the original Deliberate Practice guide). */
+.publication-reader .publication-sidebar-group { margin-top: 1.1rem; }
+.publication-reader .publication-sidebar-group:first-child { margin-top: .25rem; }
+.publication-reader .publication-sidebar-category { margin: 0 0 .3rem; padding: 0 .5rem; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: color-mix(in srgb, var(--reader-ink), transparent 40%); }
+
+/* Chapter outline below the side-rail width: the same links, collapsed above the text. The rail and this block are never both on screen. */
+.publication-reader .publication-local-contents-compact { display: block; margin: 0 0 1.25rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 82%); border-radius: .6rem; background: color-mix(in srgb, var(--reader-ink), transparent 97%); font-size: .875rem; }
+@container (min-width: 1000px) { .publication-reader .publication-local-contents-compact { display: none; } }
+.publication-reader .publication-outline-toggle { display: flex; align-items: center; gap: .5rem; width: 100%; min-height: 2.75rem; padding: .4rem .8rem; border-radius: .6rem; font-weight: 600; text-align: left; }
+.publication-reader .publication-outline-toggle > span:nth-child(2) { flex: 1; }
+.publication-reader .publication-outline-toggle .material-symbols-outlined { font-size: 1.25rem; }
+.publication-reader .publication-outline-panel { padding: .1rem .8rem .8rem 1.1rem; max-height: 50dvh; overflow-y: auto; overscroll-behavior: contain; }
+.publication-reader .publication-outline-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid color-mix(in srgb, var(--reader-ink), transparent 82%); padding-left: 1rem; }
+.publication-reader .publication-outline-list li { margin: 0; padding-block: 0; }
+.publication-reader .publication-outline-list .publication-outline-link { display: flex; align-items: center; min-height: 2.5rem; padding-block: .25rem; overflow-wrap: anywhere; line-height: 1.35; }
+.publication-reader .publication-local-contents .publication-outline-link { padding-block: .15rem; }

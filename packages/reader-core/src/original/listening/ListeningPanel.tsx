@@ -27,6 +27,11 @@ export function ListeningPanel(props: ListeningPanelProps): React.ReactElement {
       if (panel.current?.contains(document.activeElement)) opener.current?.focus();
     };
   }, [controller]);
+  const { registerPause } = props;
+  useEffect(() => {
+    registerPause?.(() => controller.pause());
+    return () => registerPause?.(null);
+  }, [controller, registerPause]);
   useEffect(() => {
     if (props.pauseSignal !== undefined) controller.pause();
   }, [controller, props.pauseSignal]);

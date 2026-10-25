@@ -1,0 +1,16 @@
+{
+  "timeUTC": "2026-10-25T11:30:16.448463+00:00",
+  "sourceChangesDuringReview": [],
+  "servedAssets": {
+    "/assets/index-C0aXu3Qu.css": {
+      "sha256": "a189a209a57ff27ef0e8d84d8d81fbcb3bdec5f46e72ce0dca11653cc34897e5",
+      "matchesDistBytes": true
+    },
+    "/assets/index-D0jx9N2z.js": {
+      "sha256": "3cc66a8fe1e364e866f64e25b3895255b964caf9ae243649c77e30c3dae2fff4",
+      "matchesDistBytes": true
+    }
+  },
+  "reviewScratchRemaining": [],
+  "ownership": "No production changes, Git operations, rebuild, push or deploy performed. Review files remain for parent checkpoint."
+}

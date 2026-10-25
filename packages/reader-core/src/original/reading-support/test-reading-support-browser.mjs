@@ -61,7 +61,10 @@ with sync_playwright() as p:
         styles=page.locator('article').evaluate('el=>({font:getComputedStyle(el).fontSize,space:getComputedStyle(el).letterSpacing,line:getComputedStyle(el).lineHeight})')
         assert styles=={'font':'28px','space':'3.36px','line':'67.2px'}, styles
         assert page.locator('#p1').evaluate('el=>getComputedStyle(el).marginBottom')=='40px'
-        assert page.locator('.reading-support-mask').count()==2
+        # The window shades only what lies outside its band: at the top of the text nothing lies above, so one shade is correct.
+        assert page.locator('.reading-support-mask').count() in (1,2)
+        first=page.evaluate('(()=>{const r=document.createRange();r.selectNodeContents(document.querySelector("#p1"));const b=r.getClientRects()[0];return {top:b.top,bottom:b.bottom}})()')
+        assert page.evaluate('([a,b])=>[...document.querySelectorAll(".reading-support-mask")].every(m=>{const r=m.getBoundingClientRect();return r.bottom<=a+1||r.top>=b-1})',[first['top'],first['bottom']]), 'shade must not cover the active line'
         assert page.evaluate('document.querySelector(".reading-support-overlay").getBoundingClientRect().top >= document.querySelector("#inner-toolbar").getBoundingClientRect().bottom'), 'Overlay must start below content toolbar'
         assert page.locator('.reading-support-overlay').evaluate('el=>getComputedStyle(el).pointerEvents')=='none'
         page.locator('#p2').hover();settle()

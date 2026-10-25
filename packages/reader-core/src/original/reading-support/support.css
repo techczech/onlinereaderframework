@@ -21,8 +21,9 @@
 .reading-support-surface[data-rs-focus="paragraph"] [data-rs-paragraph]:not([data-rs-active]) { opacity: .45; }
 .reading-support-overlay { position: absolute; overflow: hidden; pointer-events: none; z-index: 1; }
 .reading-support-overlay * { pointer-events: none; }
-.reading-support-mask { position: absolute; left: 0; right: 0; background: #000; opacity: var(--rs-dim); }
-.reading-support-ruler { position: absolute; left: 0; right: 0; background: currentColor; opacity: var(--rs-dim); }
+/* Shade colours follow WriteFlex's line overlay: a cool dark on paper, black on a dark page. The strength is the Dimming choice. */
+.reading-support-mask, .reading-support-ruler { position: absolute; left: 0; right: 0; background: rgb(28 28 32 / var(--rs-dim)); }
+.dark .reading-support-mask, .dark .reading-support-ruler { background: rgb(0 0 0 / var(--rs-dim)); }
 .reading-support-controls { position: relative; font: 1rem/1.5 system-ui, sans-serif; }
 .reading-support-settings { padding: .75rem; max-width: 32rem; }
 .reading-support-settings fieldset { border: 1px solid currentColor; border-radius: .5rem; padding: .75rem; margin: 0 0 .75rem; min-width: 0; }

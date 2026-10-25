@@ -1,0 +1,72 @@
+[
+  {
+    "name": "units",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 10.18
+  },
+  {
+    "name": "read-aloud",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/read-aloud/test-read-aloud-browser.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 6.19
+  },
+  {
+    "name": "assist",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/reading-support/test-assist-width-browser.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 22.25
+  },
+  {
+    "name": "navigation-fixture",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/test-navigation-fixture-browser.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 17.86
+  },
+  {
+    "name": "navigation-books",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/test-navigation-books-browser.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 43.28
+  },
+  {
+    "name": "recorded-toolbar",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/toolbar/test-toolbar-recorded-browser.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 2.44
+  },
+  {
+    "name": "recorded-isolated-unmodified",
+    "command": [
+      "node",
+      "packages/reader-core/src/original/listening/test-reader-listening-headless.mjs"
+    ],
+    "exit": 0,
+    "timedOut": false,
+    "seconds": 3.16
+  }
+]

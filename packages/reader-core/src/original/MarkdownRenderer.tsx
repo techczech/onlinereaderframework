@@ -2,7 +2,9 @@
 import React, { useState, useEffect, useRef, memo, forwardRef, useImperativeHandle, useMemo } from 'react';
 import { Highlight, Reflection, PublicationContentFormat } from './types.js';
 import { renderPublicationContent } from '../publication-content/index.js';
-import { preparePublicationHTML, publicationPlainText } from './publication-html.js';
+import { preparePublicationHTML } from './publication-html.js';
+import { useReadAloud, type ReadAloudActions } from './read-aloud/use-read-aloud.js';
+import type { ReadAloudSnapshot } from './read-aloud/read-aloud-controller.js';
 
 export interface MarkdownRendererHandle {
     toggleReadAloud: () => void;
@@ -20,9 +22,11 @@ interface MarkdownRendererProps {
   reflection?: Reflection;
   onSaveReflection?: (content: string) => void;
   onOpenHighlight?: () => void;
+  /** Stable identity of the book, for the reader's saved voice and speed. */
+  bookId?: string;
   onBrowserSpeechStart?: () => void;
-  /** The toolbar owns the read-aloud controls and shows this state. */
-  onSpeechStateChange?: (state: 'idle' | 'speaking' | 'paused') => void;
+  /** The toolbar owns the read-aloud controls and shows this state; null once the chapter goes away. */
+  onReadAloudChange?: (snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => void;
   maxWidth?: MaxWidth;
 }
 
@@ -34,20 +38,16 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     reflection, 
     onSaveReflection,
     onOpenHighlight,
+    bookId = 'reader',
     onBrowserSpeechStart,
-    onSpeechStateChange,
+    onReadAloudChange,
     maxWidth = 'md'
 }, ref) => {
-  // Speech Synthesis State
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [reflectionText, setReflectionText] = useState('');
-  const synth = useRef<SpeechSynthesis | null>(null);
   const contentElement = useRef<HTMLDivElement>(null);
   const renderedHTML = useMemo(() => renderPublicationContent(content, format), [content, format]);
   const annotatedHTML = useMemo(() => preparePublicationHTML(renderedHTML, highlights), [renderedHTML, highlights]);
   const [notePositions, setNotePositions] = useState<{ highlight: Highlight; top: number }[]>([]);
-  const utterance = useRef<SpeechSynthesisUtterance | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -58,32 +58,15 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
       }
   }, [reflection]);
 
-  const speechCallback = useRef(onSpeechStateChange);
-  speechCallback.current = onSpeechStateChange;
-  useEffect(() => { speechCallback.current?.(isSpeaking ? 'speaking' : isPaused ? 'paused' : 'idle'); }, [isSpeaking, isPaused]);
-  useEffect(() => () => speechCallback.current?.('idle'), []);
-
-  // Initialize Speech Synthesis
+  // Read-aloud lives in ./read-aloud: ReadFlex's speech player over this chapter's canonical text.
+  // The host pauses the recorded player from onBrowserSpeechStart, which the controller calls before the engine speaks, whichever control started it.
+  const { snapshot, actions } = useReadAloud({ bookId, language, contentElement, renderedHTML, annotatedHTML, onEngage: onBrowserSpeechStart });
+  const readAloudCallback = useRef(onReadAloudChange);
+  readAloudCallback.current = onReadAloudChange;
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.speechSynthesis) {
-      synth.current = window.speechSynthesis;
-    }
-    
-    // Cleanup on unmount: only speech this renderer started is cancelled.
-    return () => {
-      if (synth.current && utterance.current) synth.current.cancel();
-      utterance.current = null;
-    };
-  }, []);
-
-  // Stop this renderer's own speech when content changes; an idle renderer never touches shared speech.
-  useEffect(() => {
-      if (!utterance.current) return;
-      synth.current?.cancel();
-      utterance.current = null;
-      setIsSpeaking(false);
-      setIsPaused(false);
-  }, [content]);
+    readAloudCallback.current?.(snapshot, actions);
+  }, [snapshot, actions]);
+  useEffect(() => () => readAloudCallback.current?.(null, null), []);
 
   const handleSaveReflectionClick = () => {
       if (onSaveReflection) {
@@ -91,62 +74,11 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
       }
   };
 
-  const handleSpeak = () => {
-    if (!synth.current) return;
-
-    if (!isSpeaking) onBrowserSpeechStart?.();
-    if (isPaused) {
-      synth.current.resume();
-      setIsPaused(false);
-      setIsSpeaking(true);
-    } else if (isSpeaking) {
-      synth.current.pause();
-      setIsPaused(true);
-      setIsSpeaking(false);
-    } else {
-      const text = publicationPlainText(renderedHTML);
-      const spoken = new SpeechSynthesisUtterance(text);
-      utterance.current = spoken;
-      
-      if (language) spoken.lang = language;
-      // Prefer a matching language while leaving the browser default available.
-      const voices = synth.current.getVoices();
-      const preferredVoice = voices.find(v => v.lang.toLowerCase().startsWith((language ?? 'en').toLowerCase().split('-')[0]) && v.name.includes('Google')) || voices.find(v => v.lang.toLowerCase().startsWith((language ?? 'en').toLowerCase().split('-')[0]));
-      if (preferredVoice) {
-          spoken.voice = preferredVoice;
-      }
-
-      // A superseded or stopped utterance reports late; only the current one may change state.
-      const finish = () => {
-        if (utterance.current !== spoken) return;
-        utterance.current = null;
-        setIsSpeaking(false);
-        setIsPaused(false);
-      };
-      spoken.onend = finish;
-      spoken.onerror = finish;
-
-      synth.current.speak(spoken);
-      setIsSpeaking(true);
-    }
-  };
-
-  const handleStop = () => {
-    if (synth.current && utterance.current) {
-      utterance.current = null;
-      synth.current.cancel();
-      setIsSpeaking(false);
-      setIsPaused(false);
-    }
-  };
-
   // Expose methods to parent via Ref for Keyboard Shortcuts
   useImperativeHandle(ref, () => ({
-      stopReadAloud: handleStop,
-      toggleReadAloud: () => {
-          handleSpeak();
-      }
-  }));
+      stopReadAloud: actions.stop,
+      toggleReadAloud: actions.toggle,
+  }), [actions]);
 
   // Keep the original margin-note cards aligned with the first decorated range.
   useEffect(() => {

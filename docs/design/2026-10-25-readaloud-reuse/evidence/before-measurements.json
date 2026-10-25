@@ -1,0 +1,1742 @@
+[
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "sm",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "sm",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1280,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1280,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "md",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "md",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1280,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1280,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "lg",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 952,
+   "h": 1420
+  },
+  "article": {
+   "w": 952,
+   "h": 678
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "lg",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1280,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 977,
+   "h": 1386
+  },
+  "article": {
+   "w": 977,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1280,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "full",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 952,
+   "h": 1420
+  },
+  "article": {
+   "w": 952,
+   "h": 678
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "width": "full",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1280,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 1216,
+   "h": 1352
+  },
+  "article": {
+   "w": 1216,
+   "h": 610
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1280,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "articleSizePref": 16,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1258
+  },
+  "article": {
+   "w": 795,
+   "h": 530
+  },
+  "articleFont": "16px",
+  "articleLine": "27.2px",
+  "h1": "42.6667px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1280,
+   800
+  ],
+  "articleSizePref": 28,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1016,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 2192
+  },
+  "article": {
+   "w": 795,
+   "h": 1328
+  },
+  "articleFont": "28px",
+  "articleLine": "47.6px",
+  "h1": "74.6667px",
+  "toolbarH": {
+   "w": 1016,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": "1280x800",
+  "home": {
+   "h1": "43.52px",
+   "cover": null,
+   "masthead": 0,
+   "chooser": {
+    "x": 986,
+    "y": 751,
+    "w": 282,
+    "h": 37
+   }
+  }
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "sm",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1106,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1106,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "sm",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1366,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1366,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "md",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1102,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1102,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "md",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1366,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1366,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "lg",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1102,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 977,
+   "h": 1386
+  },
+  "article": {
+   "w": 977,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1102,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "lg",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1366,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 977,
+   "h": 1386
+  },
+  "article": {
+   "w": 977,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1366,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "full",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1102,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 1038,
+   "h": 1386
+  },
+  "article": {
+   "w": 1038,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1102,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "width": "full",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1366,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 1302,
+   "h": 1352
+  },
+  "article": {
+   "w": 1302,
+   "h": 610
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1366,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "articleSizePref": 16,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1102,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1258
+  },
+  "article": {
+   "w": 795,
+   "h": 530
+  },
+  "articleFont": "16px",
+  "articleLine": "27.2px",
+  "h1": "42.6667px",
+  "toolbarH": {
+   "w": 1102,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1366,
+   768
+  ],
+  "articleSizePref": 28,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1102,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 2192
+  },
+  "article": {
+   "w": 795,
+   "h": 1328
+  },
+  "articleFont": "28px",
+  "articleLine": "47.6px",
+  "h1": "74.6667px",
+  "toolbarH": {
+   "w": 1102,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": "1366x768",
+  "home": {
+   "h1": "46.444px",
+   "cover": null,
+   "masthead": 0,
+   "chooser": {
+    "x": 1072,
+    "y": 719,
+    "w": 282,
+    "h": 37
+   }
+  }
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "sm",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 762,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 762,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "sm",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1024,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1024,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "md",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 760,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 696,
+   "h": 1610
+  },
+  "article": {
+   "w": 696,
+   "h": 833
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 760,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "md",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1024,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1024,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "lg",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 760,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 696,
+   "h": 1610
+  },
+  "article": {
+   "w": 696,
+   "h": 833
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 760,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "lg",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1024,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 960,
+   "h": 1386
+  },
+  "article": {
+   "w": 960,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1024,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "full",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 760,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 696,
+   "h": 1610
+  },
+  "article": {
+   "w": 696,
+   "h": 833
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 760,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "width": "full",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1024,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 960,
+   "h": 1386
+  },
+  "article": {
+   "w": 960,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1024,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "articleSizePref": 16,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 760,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 696,
+   "h": 1340
+  },
+  "article": {
+   "w": 696,
+   "h": 584
+  },
+  "articleFont": "16px",
+  "articleLine": "27.2px",
+  "h1": "42.6667px",
+  "toolbarH": {
+   "w": 760,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1024,
+   768
+  ],
+  "articleSizePref": 28,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 760,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 696,
+   "h": 2362
+  },
+  "article": {
+   "w": 696,
+   "h": 1498
+  },
+  "articleFont": "28px",
+  "articleLine": "47.6px",
+  "h1": "74.6667px",
+  "toolbarH": {
+   "w": 760,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": "1024x768",
+  "home": {
+   "h1": "34.816px",
+   "cover": null,
+   "masthead": 0,
+   "chooser": {
+    "x": 730,
+    "y": 719,
+    "w": 282,
+    "h": 37
+   }
+  }
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "sm",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1180,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1180,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "sm",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1440,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 590,
+   "h": 1800
+  },
+  "article": {
+   "w": 590,
+   "h": 969
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1440,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "md",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1176,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1176,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "md",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1440,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 795,
+   "h": 1522
+  },
+  "article": {
+   "w": 795,
+   "h": 746
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1440,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "lg",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1176,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 977,
+   "h": 1386
+  },
+  "article": {
+   "w": 977,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1176,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "lg",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1440,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 977,
+   "h": 1386
+  },
+  "article": {
+   "w": 977,
+   "h": 644
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1440,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "full",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1176,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 1112,
+   "h": 1352
+  },
+  "article": {
+   "w": 1112,
+   "h": 610
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1176,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "width": "full",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1440,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 1376,
+   "h": 1352
+  },
+  "article": {
+   "w": 1376,
+   "h": 610
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 1440,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "articleSizePref": 16,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1176,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 1258
+  },
+  "article": {
+   "w": 795,
+   "h": 530
+  },
+  "articleFont": "16px",
+  "articleLine": "27.2px",
+  "h1": "42.6667px",
+  "toolbarH": {
+   "w": 1176,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   1440,
+   900
+  ],
+  "articleSizePref": 28,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 1176,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 795,
+   "h": 2192
+  },
+  "article": {
+   "w": 795,
+   "h": 1328
+  },
+  "articleFont": "28px",
+  "articleLine": "47.6px",
+  "h1": "74.6667px",
+  "toolbarH": {
+   "w": 1176,
+   "h": 65
+  },
+  "toolbarFont": "13px",
+  "controlFont": "13px",
+  "controlBox": {
+   "w": 92,
+   "h": 40
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": "1440x900",
+  "home": {
+   "h1": "48.96px",
+   "cover": null,
+   "masthead": 0,
+   "chooser": {
+    "x": 1146,
+    "y": 851,
+    "w": 282,
+    "h": 37
+   }
+  }
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "sm",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "sm",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "md",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "md",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "lg",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "lg",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "full",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "width": "full",
+  "sidebar": "toggled",
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "true",
+  "column": {
+   "w": 350,
+   "h": 2414
+  },
+  "article": {
+   "w": 350,
+   "h": 1469
+  },
+  "articleFont": "20px",
+  "articleLine": "34px",
+  "h1": "53.3333px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "articleSizePref": 16,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 1854
+  },
+  "article": {
+   "w": 350,
+   "h": 1011
+  },
+  "articleFont": "16px",
+  "articleLine": "27.2px",
+  "h1": "42.6667px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": [
+   390,
+   844
+  ],
+  "articleSizePref": 28,
+  "dpr": 1,
+  "htmlFont": "16px",
+  "main": 390,
+  "sidebarOpen": "false",
+  "column": {
+   "w": 350,
+   "h": 3958
+  },
+  "article": {
+   "w": 350,
+   "h": 2823
+  },
+  "articleFont": "28px",
+  "articleLine": "47.6px",
+  "h1": "74.6667px",
+  "toolbarH": {
+   "w": 390,
+   "h": 116
+  },
+  "toolbarFont": "13px",
+  "controlFont": "11.2px",
+  "controlBox": {
+   "w": 89,
+   "h": 55
+  },
+  "scrollOverflow": false
+ },
+ {
+  "viewport": "390x844",
+  "home": {
+   "h1": "26.4px",
+   "cover": null,
+   "masthead": 0,
+   "chooser": {
+    "x": 96,
+    "y": 795,
+    "w": 282,
+    "h": 37
+   }
+  }
+ }
+]

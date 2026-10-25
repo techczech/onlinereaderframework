@@ -1,0 +1,1 @@
+Instrumented copy of existing isolated listening test. Only path binding, stage/line tracing and a 40-second child timeout differ. No production or original harness edited.
