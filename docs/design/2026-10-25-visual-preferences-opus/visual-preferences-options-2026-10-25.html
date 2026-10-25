@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading assistance and formatting: three arrangements</title><style>/* Sketch page and reader frames. System fonts only: Georgia stands in for Merriweather, system-ui for Inter. */
+* { box-sizing: border-box; }
+html { --book-accent: #b84b2d; }
+body { margin: 0; background: #f2f0ea; color: #23221f; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+[hidden] { display: none !important; }
+.ic { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.page { max-width: 1320px; margin: 0 auto; padding: 22px 24px 28px; }
+.page > h1 { font: 700 24px/1.25 Georgia, serif; margin: 0 0 6px; }
+.intro { margin: 0 0 10px; max-width: 78ch; color: #4a4741; }
+.recommendation { margin: 0 0 12px; padding: 10px 14px; border-left: 4px solid var(--book-accent); background: #fff; border-radius: 0 8px 8px 0; max-width: 92ch; }
+.compare-box { margin: 0 0 14px; }
+.compare-box summary { cursor: pointer; font-weight: 600; }
+.compare { border-collapse: collapse; margin-top: 8px; font-size: 13px; background: #fff; border-radius: 8px; overflow: hidden; }
+.compare th, .compare td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #ebe7de; vertical-align: top; }
+.compare thead th { background: #f7f4ee; }
+.compare td.rec { background: #fdf6ef; }
+.controls-row { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-bottom: 10px; }
+.bookpick { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border: 0; padding: 0; margin: 0; }
+.bookpick legend { float: left; margin-right: 6px; font-weight: 600; font-size: 13px; }
+.bookpick label { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px 4px 4px; border: 1px solid #d9d4c8; border-radius: 999px; background: #fff; font-size: 13px; cursor: pointer; }
+.bookpick img { width: 20px; height: 28px; object-fit: cover; border-radius: 3px; }
+.bookpick input { position: absolute; opacity: 0; pointer-events: none; }
+.bookpick label:has(input:checked) { border-color: var(--book-accent); box-shadow: inset 0 0 0 1px var(--book-accent); font-weight: 600; }
+.bookpick label:has(input:focus-visible) { outline: 2px solid var(--book-accent); outline-offset: 2px; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs [role=tab] { padding: 6px 14px; border-radius: 999px; border: 1px solid #d9d4c8; background: #fff; font-size: 13.5px; }
+.tabs [role=tab][aria-selected=true] { background: #23221f; color: #fff; border-color: #23221f; }
+.tabs .badge { font-weight: 700; margin-right: 4px; }
+.option-head { display: flex; gap: 10px; align-items: baseline; margin-top: 4px; }
+.option-head h2 { margin: 0; font: 700 19px/1.3 Georgia, serif; }
+.option-head .badge { font-weight: 700; color: var(--book-accent); }
+.summary { margin: 4px 0 10px; max-width: 110ch; color: #3d3a35; }
+.viewswitch { display: none; gap: 6px; margin-bottom: 8px; }
+.viewswitch button { padding: 4px 12px; border: 1px solid #d9d4c8; border-radius: 999px; background: #fff; font-size: 13px; }
+.viewswitch button[aria-pressed=true] { background: #23221f; color: #fff; }
+.frames { display: grid; grid-template-columns: minmax(0, 1fr) 376px; gap: 18px; align-items: start; }
+figure { margin: 0; min-width: 0; }
+figcaption { font-size: 12px; color: #6b665c; margin-top: 6px; }
+.dfit { position: relative; overflow: hidden; }
+.dfit > .rd { transform-origin: 0 0; position: absolute; top: 0; left: 0; }
+.facts { margin: 12px 0 0; padding-left: 18px; columns: 2; column-gap: 36px; font-size: 13.5px; color: #3d3a35; }
+.facts li { break-inside: avoid; margin-bottom: 4px; }
+@media (max-width: 900px) {
+  .page { padding: 14px 12px 20px; }
+  .frames { grid-template-columns: 1fr; }
+  .viewswitch { display: flex; }
+  .stage[data-view=phone] .dwrap, .stage[data-view=desktop] .pwrap { display: none; }
+  .facts { columns: 1; }
+  .compare { font-size: 12px; }
+  .compare th, .compare td { padding: 5px 6px; }
+}
+
+/* ---------- reader frame ---------- */
+.rd { --accent: var(--book-accent); --bg: var(--book-paper); --fg: var(--book-ink); --acc: var(--accent);
+  --line-c: color-mix(in srgb, var(--fg) 14%, transparent); --muted: color-mix(in srgb, var(--fg) 62%, var(--bg));
+  --raised: color-mix(in srgb, var(--bg) 55%, #fff);
+  position: relative; overflow: hidden; background: var(--bg); color: var(--fg); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  border: 1px solid #d5d0c4; box-shadow: 0 10px 30px rgb(0 0 0 / .08); }
+.rd.dark { --bg: #17181b; --fg: #e6e3dc; --acc: color-mix(in srgb, var(--accent) 62%, #fff); --raised: #222429; }
+.rd kbd { font: 600 10.5px/1 ui-monospace, Menlo, monospace; padding: 2px 4px; border: 1px solid var(--line-c); border-bottom-width: 2px; border-radius: 4px; color: var(--muted); }
+.rd button:focus-visible, .rd .surface:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.dev-desktop { width: 1040px; height: 620px; display: flex; border-radius: 10px; }
+.dev-phone { width: 360px; height: 600px; display: flex; flex-direction: column; border-radius: 26px; border: 7px solid #1f1f22; margin: 0 auto; }
+
+/* sidebar: the pinned header and one list, as implemented last round */
+.sb { width: 248px; flex: none; display: flex; flex-direction: column; border-right: 1px solid var(--line-c); background: color-mix(in srgb, var(--bg) 92%, var(--fg)); }
+.nav-hidden .sb:not(.drawer) { display: none; }
+.sb-head { display: flex; gap: 10px; padding: 12px 12px 8px; align-items: center; }
+.sb-head .cv { width: 32px; height: 46px; object-fit: cover; border-radius: 3px; box-shadow: 0 2px 6px rgb(0 0 0 / .2); }
+.sb-head b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; line-height: 1.3; }
+.sb-head small { color: var(--muted); font-size: 11px; }
+.sb-search { margin: 0 12px; display: flex; gap: 6px; align-items: center; padding: 5px 9px; border: 1px solid var(--line-c); border-radius: 8px; background: var(--raised); color: var(--muted); font-size: 12.5px; }
+.sb-search .ic { width: 15px; height: 15px; }
+.sb-prog { display: flex; align-items: center; gap: 8px; padding: 8px 12px 10px; border-bottom: 1px solid var(--line-c); }
+.sb-prog i { display: block; height: 3px; border-radius: 2px; background: var(--acc); flex: none; max-width: 40%; }
+.sb-prog small { margin-left: auto; color: var(--muted); font-size: 11px; }
+.sb-list { list-style: none; margin: 0; padding: 6px 8px 20px; overflow: auto; flex: 1; font-size: 12.5px; overscroll-behavior: contain; }
+.sb-list li { position: relative; padding: 6px 26px 6px 8px; border-radius: 8px; color: var(--muted); }
+.sb-list .topic > span { color: var(--fg); font-weight: 500; }
+.sb-list ul { list-style: none; padding: 2px 0 0 6px; margin: 0; }
+.sb-list li.cur { background: color-mix(in srgb, var(--acc) 12%, transparent); color: var(--acc); font-weight: 600; }
+.sb-list .chev, .sb-list .tick { position: absolute; right: 6px; top: 6px; width: 15px; height: 15px; }
+.sb-list .tick { color: var(--acc); }
+
+/* main area */
+.mn { flex: 1; min-width: 0; display: flex; flex-direction: column; position: relative; }
+.tb { height: 54px; flex: none; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid var(--line-c); }
+.tb-title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; font-size: 13px; padding: 0 6px; }
+.tb-acts { display: flex; gap: 6px; align-items: center; }
+.tbtn { position: relative; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-c); background: var(--raised); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.tbtn:hover { border-color: color-mix(in srgb, var(--acc) 60%, transparent); }
+.tbtn[aria-expanded=true] { background: color-mix(in srgb, var(--acc) 13%, var(--bg)); border-color: var(--acc); color: var(--acc); }
+.tbtn .dd { width: 14px; height: 14px; margin-left: -2px; opacity: .7; }
+.bn { min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--acc); color: var(--bg); font: 700 11px/18px system-ui, sans-serif; text-align: center; }
+.tb .tbtn:first-child { border-color: transparent; background: none; }
+
+/* C: the floating bar */
+.pill { position: absolute; top: 12px; right: 16px; z-index: 6; display: flex; align-items: center; gap: 2px; padding: 4px; border-radius: 999px;
+  background: color-mix(in srgb, var(--raised) 88%, transparent); border: 1px solid var(--line-c); box-shadow: 0 4px 16px rgb(0 0 0 / .08); backdrop-filter: blur(6px); }
+.pill .tbtn { border-color: transparent; background: none; height: 32px; padding: 0 10px; }
+.pill .tbtn[aria-expanded=true] { border-color: transparent; }
+.pill .sep { width: 1px; height: 18px; background: var(--line-c); margin: 0 2px; }
+.fab { position: absolute; top: 12px; left: 14px; z-index: 6; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--raised); border: 1px solid var(--line-c); }
+.opt-c .sc { padding-top: 46px; }
+
+/* article: real text, reading-support variables as in support.css */
+.sc { flex: 1; overflow: auto; overscroll-behavior: contain; }
+.col { font-size: var(--size); max-width: calc(var(--measure) + 64px); margin: 0 auto; padding: 22px 32px 60px; }
+.crumb { display: flex; gap: 10px; align-items: center; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.crumbs { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.crumbs i { font-style: normal; margin: 0 6px; }
+.crumbs .here { color: var(--fg); font-weight: 500; }
+.crumb-acts { display: flex; gap: 6px; flex: none; }
+.mini { display: inline-flex; gap: 4px; align-items: center; padding: 3px 9px; border: 1px solid var(--line-c); border-radius: 999px; font-size: 11.5px; }
+.mini .ic { width: 14px; height: 14px; }
+.quiet .crumb { display: none; }
+.ch { font: 700 calc(var(--size) * 1.55)/1.18 Georgia, "Iowan Old Style", serif; letter-spacing: -.015em; margin: 0 0 .7em; }
+.sans .ch { font-family: system-ui, -apple-system, sans-serif; letter-spacing: -.03em; }
+.surface { position: relative; isolation: isolate; font-family: Georgia, "Iowan Old Style", serif; font-size: var(--size); line-height: var(--line); letter-spacing: var(--letter); }
+.sans .surface { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.surface p { margin: 0 0 var(--para); }
+.surface h2 { font: 700 1.15em/1.3 Georgia, serif; margin: 1.2em 0 .5em; }
+.surface ol { margin: 0 0 var(--para); padding-left: 1.4em; }
+.surface li { margin-bottom: .4em; }
+.surface blockquote { margin: 0 0 var(--para); padding: .5em 1em .5em 1.2em; border-left: 4px solid color-mix(in srgb, var(--acc) 45%, transparent); background: color-mix(in srgb, var(--fg) 4%, transparent); border-radius: 0 8px 8px 0; font-style: italic; }
+.surface blockquote p { margin: 0 0 .4em; }
+.surface [data-p] { transition: opacity .2s, background-color .3s; }
+.surface[data-pfocus=true] [data-p]:not(.active) { opacity: .42; }
+.surface .spoken { background: color-mix(in srgb, var(--acc) 14%, transparent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--acc) 14%, transparent); border-radius: 3px; }
+.ov { position: absolute; inset: 0; pointer-events: none; z-index: 1; color: var(--fg); }
+.ov > div { position: absolute; left: -12px; right: -12px; }
+.m1 { top: 0; background: #000; opacity: var(--dim); }
+.m2 { bottom: 0; background: #000; opacity: var(--dim); }
+.rl { height: 3px; background: currentColor; opacity: var(--dim); }
+.surface[data-overlay=off] .ov, .surface[data-overlay=line-window] .rl, .surface[data-overlay=ruler] .m1, .surface[data-overlay=ruler] .m2 { display: none; }
+
+/* listening player shown while the browser voice reads */
+.player { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 4px 0 10px; border-radius: 999px; background: color-mix(in srgb, var(--acc) 14%, var(--bg)); color: var(--acc); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.player button { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--acc); color: var(--bg); }
+.player button .ic { width: 14px; height: 14px; }
+.player .eq .ic { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+
+/* menus */
+.pop, .tabbed { background: var(--raised); color: var(--fg); border: 1px solid var(--line-c); z-index: 20; overflow: auto; overscroll-behavior: contain; }
+.pop { position: absolute; top: 60px; width: 344px; max-height: 548px; border-radius: 14px; box-shadow: 0 18px 44px rgb(0 0 0 / .18); }
+.pop-a1 { right: 214px; } .pop-a2 { right: 96px; } .pop-c { top: 58px; right: 16px; }
+.panel { position: absolute; top: 54px; right: 0; bottom: 0; width: 344px; border-width: 0 0 0 1px; box-shadow: -10px 0 30px rgb(0 0 0 / .08); }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 80%; border-radius: 18px 18px 0 0; z-index: 30; box-shadow: 0 -10px 30px rgb(0 0 0 / .2); }
+.sheet::before { content: ""; display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--line-c); margin: 8px auto 0; }
+.opt-c .sheet { bottom: 58px; border-radius: 18px; }
+.menu-head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 12px 14px 10px; background: var(--raised); border-bottom: 1px solid var(--line-c); }
+.menu-head > .ic { color: var(--acc); }
+.menu-head h2 { flex: 1; margin: 0; font-size: 14.5px; font-weight: 700; }
+.x { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; }
+.x:hover { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+.menu-tabs { flex: 1; display: flex; gap: 4px; padding: 3px; border-radius: 12px; background: color-mix(in srgb, var(--fg) 6%, transparent); }
+.menu-tabs [role=tab] { flex: 1; min-width: 0; display: inline-flex; justify-content: center; align-items: center; gap: 5px; padding: 7px 6px; border-radius: 9px; font-size: 12.5px; font-weight: 500; white-space: nowrap; }
+.menu-tabs [role=tab][aria-selected=true] { background: var(--bg); color: var(--acc); font-weight: 650; box-shadow: 0 1px 3px rgb(0 0 0 / .12); }
+.menu-body { padding: 0 14px 12px; }
+.grp + .grp { border-top: 1px solid var(--line-c); }
+.grp h3 { margin: 12px 0 2px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+.row { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 7px 0; }
+.row-ic { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; background: color-mix(in srgb, var(--acc) 11%, transparent); color: var(--acc); }
+.row-text b { display: block; font-size: 13.5px; font-weight: 600; }
+.row-text small { display: block; font-size: 12px; color: var(--muted); }
+.row-stack { grid-template-columns: 1fr; gap: 6px; }
+.row-label { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+.row-label .ic { color: var(--acc); width: 16px; height: 16px; }
+.seg { display: flex; gap: 3px; padding: 3px; border-radius: 11px; background: color-mix(in srgb, var(--fg) 7%, transparent); }
+.seg-item { flex: 1; position: relative; }
+.seg-item input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg-item span { display: flex; justify-content: center; align-items: center; gap: 5px; padding: 6px 4px; border-radius: 8px; font-size: 12.5px; white-space: nowrap; }
+.seg-item span .ic { width: 16px; height: 16px; }
+.seg-item input:checked + span { background: var(--bg); color: var(--acc); font-weight: 650; box-shadow: 0 1px 3px rgb(0 0 0 / .14); }
+.seg-item input:focus-visible + span { outline: 2px solid var(--acc); outline-offset: 1px; }
+.face-serif span { font-family: Georgia, serif; font-size: 14px; }
+.face-sans span { font-family: system-ui, sans-serif; }
+.switch { width: 42px; height: 24px; border-radius: 12px; background: color-mix(in srgb, var(--fg) 24%, transparent); position: relative; transition: background .2s; }
+.switch i { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .3); transition: transform .2s; }
+.switch[aria-checked=true] { background: var(--acc); }
+.switch[aria-checked=true] i { transform: translateX(18px); }
+.stepper { display: inline-flex; align-items: center; border: 1px solid var(--line-c); border-radius: 999px; background: var(--bg); }
+.stepper button { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; }
+.stepper button:disabled { opacity: .3; cursor: default; }
+.stepper button .ic { width: 15px; height: 15px; }
+.stepper output { min-width: 62px; text-align: center; font-size: 12.5px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.hint { font-size: 12px; color: var(--muted); margin: 2px 0 10px; }
+.anno { display: flex; gap: 8px; align-items: flex-start; margin: 2px 0 10px; padding: 8px 10px; border: 1px dashed #c9a400; border-radius: 8px; background: #fff3b0; color: #4a3b00; font-size: 12px; line-height: 1.4; }
+.anno .ic { width: 16px; height: 16px; margin-top: 1px; }
+.menu-foot { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line-c); padding-top: 10px; }
+.menu-foot small { color: var(--muted); font-size: 11.5px; }
+.act { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-c); background: var(--bg); font-size: 12.5px; font-weight: 550; white-space: nowrap; }
+.act .ic { width: 15px; height: 15px; }
+.act.quiet { border-color: transparent; background: none; }
+.row .act { color: var(--acc); border-color: color-mix(in srgb, var(--acc) 45%, transparent); }
+
+/* phone */
+.ptb { height: 58px; flex: none; display: flex; align-items: center; gap: 0; padding: 0 4px; border-bottom: 1px solid var(--line-c); }
+.ptb.slim { height: 40px; justify-content: center; }
+.ptb.slim .tb-title { text-align: center; font-size: 12px; }
+.ptb .tb-title { font-size: 12px; line-height: 1.25; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; padding: 0 4px; }
+.pbtn { position: relative; flex: none; width: 54px; height: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border-radius: 10px; font-size: 10.5px; font-weight: 600; }
+.pbtn .ic { width: 21px; height: 21px; }
+.pbtn[aria-expanded=true] { color: var(--acc); background: color-mix(in srgb, var(--acc) 12%, transparent); }
+.pbtn .bn { position: absolute; top: 1px; right: 5px; min-width: 16px; height: 16px; font-size: 10px; line-height: 16px; padding: 0 4px; }
+.pbb { height: 58px; flex: none; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--line-c); background: var(--raised); }
+.dev-phone > .player { align-self: center; margin: 6px 0 0; }
+.dev-phone .col { padding: 16px 18px 40px; max-width: none; }
+.dev-phone .crumb-acts { display: none; }
+.dev-phone .ch { font-size: calc(var(--size) * 1.3); }
+.dev-phone .sheet .menu-body { padding-bottom: 18px; }
+.scrim { position: absolute; inset: 0; background: rgb(0 0 0 / .3); z-index: 25; }
+.drawer { position: absolute; top: 0; bottom: 0; left: 0; width: 84%; z-index: 28; transform: translateX(-105%); transition: transform .25s; box-shadow: 8px 0 24px rgb(0 0 0 / .15); }
+.drawer.open { transform: none; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-assist" viewBox="0 0 24 24"><circle cx="7" cy="14" r="3.6"/><circle cx="17" cy="14" r="3.6"/><path d="M10.6 13.4c.9-.7 1.9-.7 2.8 0M3.4 13.2 5 7.5h2M20.6 13.2 19 7.5h-2"/></symbol>
+  <symbol id="i-format" viewBox="0 0 24 24"><path d="M3 6.5V5h11v1.5M8.5 5v14M13 11.5V10h8v1.5M17 10v9"/></symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24"><path d="m14.5 4.5 5 5-8 8H6.5v-5zM12 7l5 5M4 21h9"/></symbol>
+  <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3.5" y="14" width="4" height="6" rx="1.5"/><rect x="16.5" y="14" width="4" height="6" rx="1.5"/></symbol>
+  <symbol id="i-voice" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><path d="M3 20c.6-3.3 3-5 6-5s5.4 1.7 6 5M16 6.5c1 .9 1 3.1 0 4M18.6 4.5c2.3 2.2 2.3 6.3 0 8.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.5 5.5v13M15.5 5.5v13" stroke-width="3"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pfocus" viewBox="0 0 24 24"><path d="M4 5h16M4 8h12" opacity=".35"/><path d="M4 12h16M4 15h14" stroke-width="2.4"/><path d="M4 19h16" opacity=".35"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="6" rx="1.5"/><path d="M4 5h16M4 19h16" opacity=".35"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M4 14h16" stroke-width="2.6"/><path d="M4 9h13M4 18h10" opacity=".35"/></symbol>
+  <symbol id="i-off" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="m6.8 17.2 10.4-10.4"/></symbol>
+  <symbol id="i-fullscreen" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></symbol>
+  <symbol id="i-size" viewBox="0 0 24 24"><path d="M3 19 8.5 5 14 19M5 14.5h7M15.5 19l3-7.5 3 7.5M16.6 16.5h3.8"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path d="M5 4v16M2.5 6.5 5 4l2.5 2.5M2.5 17.5 5 20l2.5-2.5M11 6h10M11 12h10M11 18h10"/></symbol>
+  <symbol id="i-para" viewBox="0 0 24 24"><path d="M4 4h16M4 7.5h12M4 16.5h16M4 20h12"/><path d="M12 10v4M10.5 11.2 12 10l1.5 1.2M10.5 12.8 12 14l1.5-1.2" stroke-width="1.4"/></symbol>
+  <symbol id="i-letter" viewBox="0 0 24 24"><path d="M7 15 10 6l3 9M8 12h4M15.5 6v9M4 19h16M6 17.5 4 19l2 1.5M18 17.5 20 19l-2 1.5"/></symbol>
+  <symbol id="i-width" viewBox="0 0 24 24"><path d="M3 5v14M21 5v14M7 12h10M9.5 9.5 7 12l2.5 2.5M14.5 9.5 17 12l-2.5 2.5"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 2.1-5M5 4v4h4"/></symbol>
+  <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M8 14h8" stroke-width="2"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m10 7 5 5-5 5"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 4h11v16l-5.5-4-5.5 4z"/></symbol>
+  <symbol id="i-tune" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+</svg>
+<main class="page"><h1>Reading assistance and formatting: three arrangements</h1><p class="intro">Each sketch is a small working model of the shared book reader, with real text from the three books. Choose a book, then open the two menus and change the settings: the text in the frame responds. Yellow notes are design annotations, not part of the reader. Nothing here plays sound.</p>
+<p class="recommendation">Recommended: A. Two labelled menus in the existing toolbar, Reading assistance and Formatting, each opening below its button so most of the text stays visible while you change it. It keeps the toolbar you liked, brings back the icons and rounded controls of the original guides, and removes the duplicate and conflicting settings.</p><details class="compare-box" open><summary>How they differ</summary><table class="compare"><thead><tr><th></th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th></tr></thead><tbody><tr><th scope="row">Where the controls are</th><td class="rec">two menus in the toolbar</td><td>one panel with two tabs</td><td>a floating bar, as in the original Deliberate Practice guide</td></tr><tr><th scope="row">Clicks to reach any setting</th><td class="rec">one</td><td>one or two</td><td>one</td></tr><tr><th scope="row">Stays open while you read</th><td class="rec">no: a click in the text closes it</td><td>yes</td><td>no: a click in the text closes it</td></tr><tr><th scope="row">Listen</th><td class="rec">inside Reading assistance</td><td>its own button</td><td>its own button in the bar</td></tr><tr><th scope="row">Phone</th><td class="rec">top bar, menus rise from the bottom</td><td>top bar, full-height panel</td><td>bottom bar within thumb reach</td></tr><tr><th scope="row">Size of the change</th><td class="rec">small: toolbar and settings only</td><td>small</td><td>medium: toolbar removed, floating bar added</td></tr></tbody></table></details>
+<div class="controls-row"><fieldset class="bookpick"><legend>Book</legend><label><input type="radio" name="book" value="linguistics" checked><img src="data:image/jpeg;base64,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" alt="">Linguistics</label><label><input type="radio" name="book" value="deliberate-practice"><img src="data:image/jpeg;base64,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" alt="">Deliberate Practice</label><label><input type="radio" name="book" value="language-muscle"><img src="data:image/jpeg;base64,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" alt="">Building Your Language Muscle</label></fieldset><div class="tabs" role="tablist" aria-label="Arrangement"><button role="tab" id="tab-a" aria-controls="option-a" aria-selected="true" tabindex="0"><span class="badge">A</span>Two menus in the toolbar</button><button role="tab" id="tab-b" aria-controls="option-b" aria-selected="false" tabindex="-1"><span class="badge">B</span>One panel with two tabs</button><button role="tab" id="tab-c" aria-controls="option-c" aria-selected="false" tabindex="-1"><span class="badge">C</span>A floating bar, as in the original guide</button></div></div>
+<section class="option" role="tabpanel" id="option-a" aria-labelledby="tab-a">
+<div class="option-head"><span class="badge">A</span><h2>Two menus in the toolbar</h2></div><p class="summary">The toolbar keeps its place and gains two labelled menus. Reading assistance holds listening, focus aids and hiding the navigation. Formatting holds theme, typeface, size, spacing and width. Each opens below its button; a number on the button shows how many of its settings differ from the book's defaults. On a phone the same two menus rise from the bottom of the screen, with a switch between them at the top.</p>
+<div class="viewswitch" role="group" aria-label="View"><button type="button" data-view="phone" aria-pressed="true">Phone, 360 px</button><button type="button" data-view="desktop" aria-pressed="false">Desktop, 1040 px window</button></div>
+<div class="stage" data-option="a" data-view="phone"><div class="frames"></div></div>
+<ul class="facts"><li>Closest to the current reader: only the toolbar and the settings window change.</li><li>Two separate menus answer the request directly, and each is short enough to fit without scrolling on a laptop screen.</li><li>Listen moves into Reading assistance. While the browser voice is reading, a small player with Pause and Stop appears in the toolbar.</li><li>Weakness: Listen is one click deeper than today.</li></ul></section>
+<section class="option" role="tabpanel" id="option-b" aria-labelledby="tab-b" hidden>
+<div class="option-head"><span class="badge">B</span><h2>One panel with two tabs</h2></div><p class="summary">One Reading settings button opens a panel on the right with two tabs, Reading assistance and Formatting. Listen stays a separate toolbar button. The panel stays open while you read, so you can try settings against a whole page of text.</p>
+<div class="viewswitch" role="group" aria-label="View"><button type="button" data-view="phone" aria-pressed="true">Phone, 360 px</button><button type="button" data-view="desktop" aria-pressed="false">Desktop, 1040 px window</button></div>
+<div class="stage" data-option="b" data-view="phone"><div class="frames"></div></div>
+<ul class="facts"><li>Everything in one place, with room for a short explanation under each setting.</li><li>Listen keeps its own button, so audio stays one click away.</li><li>Weakness: on a laptop the panel covers the &quot;On this page&quot; column, and the second tab is one extra click.</li><li>Weakness: it is the most like a settings window, the least like the original guides.</li></ul></section>
+<section class="option" role="tabpanel" id="option-c" aria-labelledby="tab-c" hidden>
+<div class="option-head"><span class="badge">C</span><h2>A floating bar, as in the original guide</h2></div><p class="summary">The toolbar is removed. A rounded bar floats at the top right of the text with Listen, Assist, Format and Notes, the way the original Deliberate Practice guide placed its dark mode, ruler and focus buttons. On a phone the same four controls and Contents sit in a bar at the bottom of the screen.</p>
+<div class="viewswitch" role="group" aria-label="View"><button type="button" data-view="phone" aria-pressed="true">Phone, 360 px</button><button type="button" data-view="desktop" aria-pressed="false">Desktop, 1040 px window</button></div>
+<div class="stage" data-option="c" data-view="phone"><div class="frames"></div></div>
+<ul class="facts"><li>The sleekest of the three and the nearest to the original guides.</li><li>Every control has a word under or beside its icon; there is no grid of unlabelled icons.</li><li>Weakness: the bar sits over the top of the text, and the book title is shown only in the sidebar.</li><li>Weakness: the largest change to the layout you approved last round.</li></ul></section></main>
+<script>window.SKETCH = {"data":{"source":"apps/reader-demo/src/books/original-publications.json (titles, chapter text) and apps/reader-demo/src/App.tsx identities (colours, masthead); covers from apps/reader-demo/public/covers resized to 96 px","note":"Real text, cut to the first few blocks of one chapter per book. Sidebar lists are the real titles around the current chapter.","books":[{"id":"linguistics","title":"Introduction to Key Issues in Language Through Stack Exchange Answers","subtitle":"Answers from Linguistics Stack Exchange, 2013–2016","author":"Dominik Lukeš","accent":"#b84b2d","paper":"#fffaf1","ink":"#282723","masthead":"editorial","cover":"data:image/jpeg;base64,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","chapterCount":253,"chapter":"Abbot & Costello \"Who's on First\" with a pragmatic (or other linguistic) perspective?","breadcrumb":["Semantics and pragmatics"],"blocks":[{"type":"p","text":"I would say that the primary thing going on in that routine is the break down of 'conversation repair'. The two interlocutors simply repeat the same conversation repair approach and do not learn from its failure. The constant repetition is what makes it funny."},{"type":"p","text":"It is also interesting how through constant repetition, the players make the rather implausible notion of players being nick named 'Who', 'What', 'I don't know', 'Why', etc."},{"type":"p","text":"Of course, once those elements are in place, you're dealing with structural and lexical ambiguity. This particularly well illustrated in this sequence where Costello tries to initiate conversation repair:"},{"type":"quote","lines":["Costello: When you pay off the first baseman every month, who gets the money?","Abbott: Every dollar of it. And why not, the man's entitled to it.","Costello: Who is?","Abbott: Yes."]}],"contents":[{"title":"Phonetics, phonology and orthography","open":false,"current":false},{"title":"Morphology, Syntax, Lexicon","open":false,"current":false},{"title":"Semantics and pragmatics","open":true,"current":false,"children":[{"title":"How to determine whether a given sentence is demanding an answer or is providing some information?","current":false,"read":true},{"title":"What is the scope of negation?","current":false,"read":true},{"title":"Structural ambiguity and 'because'","current":false,"read":true},{"title":"Abbot & Costello \"Who's on First\" with a pragmatic (or other linguistic) perspective?","current":true,"read":false},{"title":"Is there a term for sentence ending phrases like \"if that is the right word\"","current":false,"read":false},{"title":"What are common non-lexical indicators of sarcasm expressed orally in English","current":false,"read":false},{"title":"What is the difference between a filler word and a discourse marker?","current":false,"read":false},{"title":"Is there a theory of universal meaning?","current":false,"read":false}]},{"title":"Typology","open":false,"current":false},{"title":"Sociolinguistics, historical development and politics","open":false,"current":false},{"title":"Bilingualism, language acquisition and language learning","open":false,"current":false},{"title":"Theory, terminology and disciplinary question","open":false,"current":false},{"title":"Corpora, tools and language technology","open":false,"current":false},{"title":"Figurative language","open":false,"current":false}]},{"id":"deliberate-practice","title":"Deliberate Practice: A Universal Learning Method","subtitle":"","author":"Dominik Lukeš","accent":"#a93232","paper":"#faf9f5","ink":"#202822","masthead":"practical","cover":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAPKADAAQAAAABAAAAYAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICXElDQ19QUk9GSUxFAAEBAAACTGxjbXMEQAAAbW50clJHQiBYWVogB+oACgAWABMAJQAAYWNzcEFQUEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1sY21zAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAAA2Y3BydAAAAUAAAABMd3RwdAAAAYwAAAAUY2hhZAAAAaAAAAAsclhZWgAAAcwAAAAUYlhZWgAAAeAAAAAUZ1hZWgAAAfQAAAAUclRSQwAAAggAAAAgZ1RSQwAAAggAAAAgYlRSQwAAAggAAAAgY2hybQAAAigAAAAkbWx1YwAAAAAAAAABAAAADGVuVVMAAAAaAAAAHABzAFIARwBCACAAYgB1AGkAbAB0AC0AaQBuAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADAAAAAcAE4AbwAgAGMAbwBwAHkAcgBpAGcAaAB0ACwAIAB1AHMAZQAgAGYAcgBlAGUAbAB5WFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEIAAAXe///zJQAAB5MAAP2Q///7of///aIAAAPcAADAblhZWiAAAAAAAABvoAAAOPUAAAOQWFlaIAAAAAAAACSfAAAPhAAAtsNYWVogAAAAAAAAYpcAALeHAAAY2XBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbY2hybQAAAAAAAwAAAACj1wAAVHsAAEzNAACZmgAAJmYAAA9c/8AAEQgAYAA8AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMABAQEBAQEBgQEBgkGBgYJDAkJCQkMDwwMDAwMDxIPDw8PDw8SEhISEhISEhUVFRUVFRkZGRkZHBwcHBwcHBwcHP/bAEMBBAUFBwcHDAcHDB0UEBQdHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHf/dAAQABP/aAAwDAQACEQMRAD8A+2bq7trKLz7uRYo8quW7sxwoA6kknAA5JojuYJrf7XE26LDHcAf4SQ3HXIIIIxnNZmuaaNQjs5BMsMljdxXcZf7jNHkbW9irHkdDg84xXGXHhDVBIL681aJ0AWSaSbcPuC5A+bcBt2zqCT/cHrxsZnoA1KyNxa2ok/e3kTTQja3zIm3cc4wMb14ODzVsuiusZYB3yVXPJx1wO+M815GvgS9MqRpq8DXSQkB/mMrqBbAo3zZ8oGHacdpD369Fqfg6a+gsY7e5W3e0tbm23/M7DzzG2UYndgbNpBx8rHGOlAHe0Vk6Np0umWkkEsgkMk80wC5CxiVy4jTP8Kg4H8h0rWoAKKKKAP/Q+vvFGnXOp6fBBaRCd4720nZSVHyQzpI/3sDO1Tgd64Wbw14w/s/UNKEgNpdW115ECOmyNp2uCIHLEHaBJEFZQQNpAwOvbeLRfHTIRpwkaU3tpuERcHy/PTzdxj+YL5e7cfSuUmv/ABto1nd2yltQeyEcMD/ZXdp2aDzC7MH5USDy8gHqM881sZ2K8nh7xYuoi9s18mVWuVilWSNQqzS2zL5gHLrtjk3DBJ4HuNK30zxtIbU313MGWSU3AjljRG2xt5ZQ4ZtjybMggFRnjrlw1nxRdyW7tFJaINQSOaIWzsRbkNtfeeGV/l3YGVJwcYNZ+n674uh0lfMsJEmt47YGJoJnZo3EfnShyWJaMmQeWdzHaDznkAjTS/iCf9KZ2E6RTJGGnU4DvbPg4OC21ZlVuxIPA6el6ZHcxWEMd47STAHc0m3dySQDtJGQMDgnp1PWnadJdS2EEl6F89kBk2BlXd7BwGH0IBq5QFhaKKKB2P/R+1by2luURYrh7Yq24mPGTwRg5B45z9QKzBpOojprFz07pEecdfuV0WykwM7e/XFP2sQ5Wc//AGVqOEA1e4+X7x2RZb65Xj8MVHJo2pSAoNZuVU85VYwwOc8Hb0xxgitEaxpDXDWiXkLzqMlFcEgepx0H1rzS9+NvgGx1mbSJb5SYZPKMq/MjP0IUrxgHgknr09aPaIOVnoEOl30UiO+q3EqqwZkZY8N7EhQQD6CtuuG8W/EXwv4P0Fte1C6R4yP3MaEF5XYZVVHXnuSMAAk18vz/ALRV1czNOJPs8bHIRBkAfU9fxpqonsDg1ufbNFePfDj4t+H/ABsF05LpDqCrkxH5WYDqyg/ex3xkj0xzXs2yk6iQcrP/0vrrxTr9zpbWelaVF5+p6m5jhXsigZeRvQKK8f8AH1/4x0e40/wsmpF4taIS8u0VvMgjkYJkHJAycgYA4yABmvZ5DZ2vio3F0wWS4tQkRY4wI2+YDPruFeX634gtPEHjoeC7IxtJOIpnuWIwIoCGZF9W3Y4HI5rhOg8p+LXgi00G00bwV4JWVtVvRLNdzCQh2giTLFzngMffAANdD8HvhR4D13wFb61cWskl9diRJJnc/IyMVzGBjjgdeetUPi34wsrDxvdWvh9xqGt6jpzaZEIiG+zPK20kkfxbScDrzXvXgrQ7L4c+BbTS9RuUiisImknlkIVQzEs/J46mqvoT1Pl6HwbZ+MvHlro/ii7ljs2keC0jXcXlEAJYksSUVlXAPYn2r6StvhD4FsNOksdM0yG1lkiaMzAMzZYY3Hcxzg84JrwTwPcS+N/jRN4q0yPbp9pKPLBGMRhCm4jsWAJ/GvsnvURXKlE6K9T2tRz/AKtsvwPyg8ceHdW+GHxDn0tZmilt5EntLiIFMq3zRyKATg54IB6giv088Ga3J4k8KaTrswUS3ttHJJt6eZjD49twNfDv7Ul/Z6j400q2tWSW4hh2/uzuOxmXZu9ywfA9MHvX178G7C70z4a6JY6ihjniibKnqA0jMM/ga1lsmcy3P//T+2r7TbHUkEd9CsyjoG/X8D3HfvXE+K/hl4X8V6XFpc9uLMW7F7eW1Ajkic9WVhz9QeD3r0J2VOWOM8UwyoE3k7R78fzrhNzwa9+APhX+yHi05pE1ZG8yK+YkuGHTIyeP1/lXkOteGPjt4glj0HxAJb20SXy0kRIkjIUH53cY49yOTx1r6/v9UvoVxpunSXrnp8wjX/vo5Fcrqd58TriD/iTafp9nIwHM87SkH6BEA9DyapMCx4C8FaV4C0VdOttomlPmTSMcs7455OMgduAAPxrz34lfHnw54Tik07Qpk1PVcY8uI7lT/eYcD8846A1yvin4Y/FzxXaG21jxLC+8s8lvEmxFU8bVIVS273IHrXPeEP2YZQkc/iW8FupbLW8Kgvgdi4YqAe+Aaatuxanmfwq8E618SfHJ8aeJNzW6XazSSbcrJNncsa+iqo/AAV+isUaRRiOMBVXoBWF4f8OWHhzT4dPsQdkKFB0UYJzjauF/HGTjkk10FKTuNKx//9T7gkuYotvmsqb2CruIGWPQDPU+1D3EKZLsq4GTkgYHrVDUNMsdVhW31CITRqwcKSQNwBAPBHqayv8AhD/DRUqbBCGGDy3Oevej2cewueR0vnxn+IdcdR164+tCzI4JQhsEg4OcEdRXPT+FtBuQFntd6rjALvgbVCjA3Y6ACtPT9OstLt/slhEIYtxbaCSMnqeSaPZx7BzyNAMAMAYFG/2plFHso9g55D9/tS+YfSo6KPZx7BzyP//Z","chapterCount":21,"chapter":"Working Memory Limitations","breadcrumb":[],"blocks":[{"type":"list","items":["Working memory is what we can keep active in the mind while we perform mental operations.","There are only a limited number of chunks of information we can keep in working memory at one time (between 4 and 10). When new ones are added, old ones are pushed out.","The size of the chunks is not limited. In fact, sometimes making them bigger makes it easier, particularly, if we increase their size by making them more meaningful to us."]},{"type":"p","text":"Working memory is the small mental buffer you use to keep things on top of mind so that you can do something with them. You need working memory when you do mental calculations, compare ideas, recognise faces, drive a car, or when you write a sentence. Without it, we would be too slow at doing any of these things."},{"type":"p","text":"There are many things we don’t know for certain about working memory but we are sure, it is very limited. It can only hold about 7 discrete items at once (some people say it’s even less but definitely no more than 10)."},{"type":"p","text":"A good simple example is writing down a phone number someone is dictating to you. Unless you focus, you can usually only do it a few digits at a time and nobody can do a whole 10 digit phone number. Just remembering each digit individually and then writing them down one by one is impossible without some mental tricks. And it’s these sort of tricks that we can learn from."}],"contents":[{"title":"About This Guide","open":false,"current":false,"read":true},{"title":"Working Memory Limitations","open":false,"current":true,"read":false},{"title":"Fluency as Target","open":false,"current":false,"read":false},{"title":"Schemas & Chunks","open":false,"current":false,"read":false},{"title":"Two Kinds of Memory","open":false,"current":false,"read":false},{"title":"Key Points on Memory","open":false,"current":false,"read":false},{"title":"Practice for Performance","open":false,"current":false,"read":false},{"title":"Avoiding Task Misalignment","open":false,"current":false,"read":false},{"title":"Four Approaches to Practice","open":false,"current":false,"read":false}]},{"id":"language-muscle","title":"Building Your Language Muscle","subtitle":"","author":"Dominik Lukeš","accent":"#187060","paper":"#f7f6e9","ink":"#203d35","masthead":"literary","cover":"data:image/jpeg;base64,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","chapterCount":12,"chapter":"Step 1: Get the right attitude","breadcrumb":["Building Your Muscle"],"blocks":[{"type":"p","text":"You need to stop thinking of learning a language as learning history or biology. Going to class, taking notes, studying at home. It is much more like learning to play a musical instrument, or training for a marathon. You can only learn by doing it. A lot. Slowly building up your muscle memory and your stamina. But you have to spend time and effort on it, going to a class once a week is not enough."},{"type":"h","text":"Rethink what you want from your teacher"},{"type":"p","text":"The first thing you have to do is realise that nobody can learn for you. Just like with building muscles, you have to put in the hard work. Stop thinking about your teacher as someone who teaches you the language. Think of your teacher as someone who tells you what and how to practice. As someone who helps you set and revise your training goals and give you feedback on your practice."},{"type":"p","text":"Wanting a teacher to “teach you” is like wanting your personal trainer to do the exercises for you. Your teacher will tell you what to practice but you have to do the heavy lifting. You should start thinking of your teacher as your coach instead."}],"contents":[{"title":"Introduction","open":false,"current":false},{"title":"Building Your Muscle","open":true,"current":false,"children":[{"title":"Step 1: Get the right attitude","current":true,"read":false},{"title":"Step 2: Set the right goals","current":false,"read":false},{"title":"Step 3: Use good practice strategies","current":false,"read":false}]},{"title":"Fine-tuning your aims","open":false,"current":false},{"title":"Appendices","open":false,"current":false}]}]},"copy":{"options":{"a":{"id":"a","badge":"A","name":"Two menus in the toolbar","summary":"The toolbar keeps its place and gains two labelled menus. Reading assistance holds listening, focus aids and hiding the navigation. Formatting holds theme, typeface, size, spacing and width. Each opens below its button; a number on the button shows how many of its settings differ from the book's defaults. On a phone the same two menus rise from the bottom of the screen, with a switch between them at the top.","facts":["Closest to the current reader: only the toolbar and the settings window change.","Two separate menus answer the request directly, and each is short enough to fit without scrolling on a laptop screen.","Listen moves into Reading assistance. While the browser voice is reading, a small player with Pause and Stop appears in the toolbar.","Weakness: Listen is one click deeper than today."]},"b":{"id":"b","badge":"B","name":"One panel with two tabs","summary":"One Reading settings button opens a panel on the right with two tabs, Reading assistance and Formatting. Listen stays a separate toolbar button. The panel stays open while you read, so you can try settings against a whole page of text.","facts":["Everything in one place, with room for a short explanation under each setting.","Listen keeps its own button, so audio stays one click away.","Weakness: on a laptop the panel covers the \"On this page\" column, and the second tab is one extra click.","Weakness: it is the most like a settings window, the least like the original guides."]},"c":{"id":"c","badge":"C","name":"A floating bar, as in the original guide","summary":"The toolbar is removed. A rounded bar floats at the top right of the text with Listen, Assist, Format and Notes, the way the original Deliberate Practice guide placed its dark mode, ruler and focus buttons. On a phone the same four controls and Contents sit in a bar at the bottom of the screen.","facts":["The sleekest of the three and the nearest to the original guides.","Every control has a word under or beside its icon; there is no grid of unlabelled icons.","Weakness: the bar sits over the top of the text, and the book title is shown only in the sidebar.","Weakness: the largest change to the layout you approved last round."]}},"order":["a","b","c"],"title":"Reading assistance and formatting: three arrangements","intro":"Each sketch is a small working model of the shared book reader, with real text from the three books. Choose a book, then open the two menus and change the settings: the text in the frame responds. Yellow notes are design annotations, not part of the reader. Nothing here plays sound.","recommendation":"Recommended: A. Two labelled menus in the existing toolbar, Reading assistance and Formatting, each opening below its button so most of the text stays visible while you change it. It keeps the toolbar you liked, brings back the icons and rounded controls of the original guides, and removes the duplicate and conflicting settings.","tabs-label":"Arrangement","default-tab":"a","book-label":"Book","view-label":"View","view-desktop":"Desktop, 1040 px window","view-phone":"Phone, 360 px","comparison":{"heading":"How they differ","columns":"| A | B | C","rows":["Where the controls are | two menus in the toolbar | one panel with two tabs | a floating bar, as in the original Deliberate Practice guide","Clicks to reach any setting | one | one or two | one","Stays open while you read | no: a click in the text closes it | yes | no: a click in the text closes it","Listen | inside Reading assistance | its own button | its own button in the bar","Phone | top bar, menus rise from the bottom | top bar, full-height panel | bottom bar within thumb reach","Size of the change | small: toolbar and settings only | small | medium: toolbar removed, floating bar added"]},"labels":{"contents":"Contents","search":"Search","progress":"read","assist":"Reading assistance","assist-short":"Assist","format":"Formatting","format-short":"Format","notes":"Notes","listen":"Listen","settings":"Reading settings","settings-short":"Settings","close":"Close","home":"Home","share":"Share","save":"Save","sec-listen":"Listen","read-aloud":"Read aloud","read-aloud-hint":"Your browser's voice reads this chapter.","start":"Start","pause":"Pause","resume":"Resume","stop":"Stop","playing":"Reading aloud","recorded":"Recorded audiobook","sec-focus":"Focus","paragraph-focus":"Paragraph focus","paragraph-focus-hint":"Fades the other paragraphs.","overlay":"Reading overlay","overlay-off":"Off","overlay-window":"Line window","overlay-ruler":"Ruler","window-height":"Window height","lines-1":"1 line","lines-3":"3 lines","lines-5":"5 lines","dimming":"Dimming","dim-light":"Light","dim-medium":"Medium","dim-dark":"Dark","overlay-hint":"Follows the pointer or a tap. With the text selected, Up and Down move it. Escape turns it off.","sec-page":"Page","hide-nav":"Hide navigation","hide-nav-hint":"Leaves only the text on screen.","assist-reset":"Turn all off","shortcuts":"Keyboard shortcuts","theme":"Theme","theme-light":"Book paper","theme-dark":"Dark","typeface":"Typeface","serif":"Serif","sans":"Sans","size":"Text size","line":"Line spacing","para":"Paragraph spacing","letter":"Letter spacing","letter-normal":"Normal","width":"Text width","w-sm":"Narrow","w-md":"Normal","w-lg":"Wide","w-full":"Full","format-reset":"Reset formatting","format-reset-hint":"Back to this book's defaults.","saved":"Saved for this book on this device.","decrease":"Decrease","increase":"Increase","changed":"changed"},"notes":{"recorded":"Shown only when a book has recordings. None of the three books has any yet, so the reader would not show this row.","sound":"Sketch only: no sound plays, and the highlight moves on a timer.","shortcut-a":"Key A","shortcut-r":"Key R","shortcut-f":"Key F","desktop-menu":"Opens below its button; it covers the right edge of the text, not the line you are reading.","phone-sheet":"Rises from the bottom; the switch at the top moves between the two menus.","panel":"Stays open while you read.","pill":"Floats over the top of the text, as in the original guide."}}};</script><script>// Builds and drives the sketch frames. All visible wording comes from window.SKETCH.copy (copy-visual-preferences-2026-10-25.md);
+// all book text from window.SKETCH.data (excerpts-books-visual-preferences-2026-10-25.json). No network, no sound.
+(() => {
+  const { data, copy } = window.SKETCH;
+  const L = copy.labels, N = copy.notes;
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  const ic = (name, cls = '') => `<svg class="ic ${cls}" aria-hidden="true" focusable="false"><use href="#i-${name}"/></svg>`;
+
+  // Defaults mirror reading-preferences.ts (DEFAULT_READING_PREFERENCES) and use-publication-reader.ts (maxWidth 'md', light theme).
+  const DEFAULTS = Object.freeze({ theme: 'light', face: 'serif', size: 20, line: 1.7, para: 16, letter: 0, width: 'md',
+    pfocus: false, overlay: 'off', lines: 3, dim: 'medium', hideNav: false });
+  const FORMAT_KEYS = ['theme', 'face', 'size', 'line', 'para', 'letter', 'width'];
+  // WriteFlex line-overlay.ts names its dimming light/medium/dark; values stay inside the reader's 0.1–0.6 bound.
+  const DIM = { light: 0.2, medium: 0.35, dark: 0.5 };
+  const MEASURE = { sm: '52ch', md: '70ch', lg: '86ch', full: '100%' }; // reader-original.css:104-117
+  const STEPS = { size: [16, 28, 1], line: [1.2, 2.4, 0.1], para: [0, 40, 4], letter: [0, 0.12, 0.02] };
+  const OPTIONS = ['a', 'b', 'c'];
+  const states = Object.fromEntries(OPTIONS.map(o => [o, { ...DEFAULTS, speaking: 'stopped', spoken: 0, sidebar: true }]));
+  let book = data.books[0];
+  let uidCounter = 0;
+
+  const assistCount = st => (st.pfocus ? 1 : 0) + (st.overlay !== 'off' ? 1 : 0) + (st.hideNav ? 1 : 0);
+  const formatCount = st => FORMAT_KEYS.filter(k => st[k] !== DEFAULTS[k]).length;
+  const show = (key, st) => {
+    if (key === 'size') return `${st.size} px`;
+    if (key === 'line') return st.line.toFixed(1);
+    if (key === 'para') return `${st.para} px`;
+    if (key === 'letter') return st.letter === 0 ? L['letter-normal'] : `+${st.letter.toFixed(2)} em`;
+    return '';
+  };
+
+  // ---------- control builders ----------
+  const seg = (uid, key, label, items) => `<div class="seg" role="radiogroup" aria-label="${esc(label)}">` + items.map(([value, text, icon, extra]) =>
+    `<label class="seg-item${extra ? ' ' + extra : ''}"><input type="radio" name="${uid}-${key}" value="${esc(value)}" data-key="${key}"><span>${icon ? ic(icon) : ''}${esc(text)}</span></label>`).join('') + '</div>';
+  const sw = (uid, key, label, hint, icon, kbd) => `<div class="row"><span class="row-ic">${ic(icon)}</span>
+    <span class="row-text"><b id="${uid}-${key}-l">${esc(label)}</b><small>${esc(hint)}${kbd ? ` <kbd title="${esc(N['shortcut-' + kbd.toLowerCase()])}">${kbd}</kbd>` : ''}</small></span>
+    <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="${uid}-${key}-l" data-toggle="${key}"><i></i></button></div>`;
+  const stepper = (key, label, icon) => `<div class="row"><span class="row-ic">${ic(icon)}</span><span class="row-text"><b>${esc(label)}</b></span>
+    <span class="stepper"><button type="button" data-step="${key}" data-dir="-1" aria-label="${esc(L.decrease + ' ' + label.toLowerCase())}">${ic('minus')}</button>
+    <output data-out="${key}" aria-live="polite"></output>
+    <button type="button" data-step="${key}" data-dir="1" aria-label="${esc(L.increase + ' ' + label.toLowerCase())}">${ic('plus')}</button></span></div>`;
+
+  const assistBody = uid => `
+    <section class="grp" aria-label="${esc(L['sec-listen'])}"><h3>${esc(L['sec-listen'])}</h3>
+      <div class="row"><span class="row-ic">${ic('voice')}</span><span class="row-text"><b>${esc(L['read-aloud'])}</b><small>${esc(L['read-aloud-hint'])} <kbd title="${esc(N['shortcut-a'])}">A</kbd></small></span>
+        <button type="button" class="act" data-act="speak">${ic('play')}<span data-speak-label>${esc(L.start)}</span></button></div>
+      <div class="anno">${ic('headphones')} <span><b>${esc(L.recorded)}.</b> ${esc(N.recorded)}</span></div>
+    </section>
+    <section class="grp" aria-label="${esc(L['sec-focus'])}"><h3>${esc(L['sec-focus'])}</h3>
+      ${sw(uid, 'pfocus', L['paragraph-focus'], L['paragraph-focus-hint'], 'pfocus')}
+      <div class="row row-stack"><span class="row-label"><b>${esc(L.overlay)}</b> <kbd title="${esc(N['shortcut-r'])}">R</kbd></span>
+        ${seg(uid, 'overlay', L.overlay, [['off', L['overlay-off'], 'off'], ['line-window', L['overlay-window'], 'window'], ['ruler', L['overlay-ruler'], 'ruler']])}</div>
+      <div class="row row-stack" data-when="line-window"><span class="row-label"><b>${esc(L['window-height'])}</b></span>
+        ${seg(uid, 'lines', L['window-height'], [['1', L['lines-1']], ['3', L['lines-3']], ['5', L['lines-5']]])}</div>
+      <div class="row row-stack" data-when="overlay"><span class="row-label"><b>${esc(L.dimming)}</b></span>
+        ${seg(uid, 'dim', L.dimming, [['light', L['dim-light']], ['medium', L['dim-medium']], ['dark', L['dim-dark']]])}</div>
+      <p class="hint">${esc(L['overlay-hint'])}</p>
+    </section>
+    <section class="grp" aria-label="${esc(L['sec-page'])}"><h3>${esc(L['sec-page'])}</h3>
+      ${sw(uid, 'hideNav', L['hide-nav'], L['hide-nav-hint'], 'fullscreen', 'F')}
+    </section>
+    <footer class="menu-foot"><button type="button" class="act" data-act="reset-assist">${ic('off')}${esc(L['assist-reset'])}</button>
+      <button type="button" class="act quiet" data-act="shortcuts">${ic('keyboard')}${esc(L.shortcuts)} <kbd>?</kbd></button></footer>`;
+
+  const formatBody = uid => `
+    <section class="grp" aria-label="${esc(L.theme)}">
+      <div class="row row-stack"><span class="row-label"><b>${esc(L.theme)}</b></span>${seg(uid, 'theme', L.theme, [['light', L['theme-light'], 'sun', 'sw-paper'], ['dark', L['theme-dark'], 'moon', 'sw-dark']])}</div>
+      <div class="row row-stack"><span class="row-label"><b>${esc(L.typeface)}</b></span>${seg(uid, 'face', L.typeface, [['serif', L.serif, '', 'face-serif'], ['sans', L.sans, '', 'face-sans']])}</div>
+    </section>
+    <section class="grp">
+      ${stepper('size', L.size, 'size')}${stepper('line', L.line, 'line')}${stepper('para', L.para, 'para')}${stepper('letter', L.letter, 'letter')}
+    </section>
+    <section class="grp">
+      <div class="row row-stack"><span class="row-label">${ic('width')}<b>${esc(L.width)}</b></span>${seg(uid, 'width', L.width, [['sm', L['w-sm']], ['md', L['w-md']], ['lg', L['w-lg']], ['full', L['w-full']]])}</div>
+    </section>
+    <footer class="menu-foot"><button type="button" class="act" data-act="reset-format">${ic('reset')}${esc(L['format-reset'])}</button><small>${esc(L.saved)}</small></footer>`;
+
+  const pop = (uid, kind, cls = '') => `<div class="pop ${cls}" role="dialog" aria-label="${esc(L[kind])}" data-menu="${kind}" hidden>
+    <header class="menu-head">${ic(kind)}<h2>${esc(L[kind])}</h2><button type="button" class="x" data-act="close" aria-label="${esc(L.close + ' ' + L[kind].toLowerCase())}">${ic('close')}</button></header>
+    <div class="menu-body">${kind === 'assist' ? assistBody(uid) : formatBody(uid)}</div></div>`;
+  const tabbed = (uid, cls, title) => `<div class="tabbed ${cls}" role="dialog" aria-label="${esc(title)}" data-tabbed hidden>
+    <header class="menu-head tabs-head"><div class="menu-tabs" role="tablist">
+      <button type="button" role="tab" data-tab="assist" aria-selected="true">${ic('assist')}${esc(L.assist)}</button>
+      <button type="button" role="tab" data-tab="format" aria-selected="false">${ic('format')}${esc(L.format)}</button></div>
+      <button type="button" class="x" data-act="close" aria-label="${esc(L.close)}">${ic('close')}</button></header>
+    <div class="menu-body" data-pane="assist">${assistBody(uid + 'a')}</div><div class="menu-body" data-pane="format" hidden>${formatBody(uid + 'f')}</div></div>`;
+
+  const player = `<div class="player" hidden role="group" aria-label="${esc(L.playing)}"><span class="eq">${ic('voice')}</span><span class="player-l">${esc(L.playing)}</span>
+    <button type="button" data-act="speak" aria-label="${esc(L.pause)}">${ic('pause')}</button><button type="button" data-act="stop" aria-label="${esc(L.stop)}">${ic('stop')}</button></div>`;
+  const badge = kind => `<span class="bn" data-badge="${kind}" hidden></span>`;
+  const tbtn = (attrs, icon, label, extra = '') => `<button type="button" class="tbtn" ${attrs}>${ic(icon)}<span class="tl">${esc(label)}</span>${extra}</button>`;
+
+  // ---------- book parts ----------
+  function sidebar(cls = '') {
+    const read = book.contents.reduce((n, t) => n + (t.read ? 1 : 0) + (t.children ?? []).filter(c => c.read).length, 0);
+    const list = book.contents.map(t => {
+      const kids = t.open && t.children ? `<ul>${t.children.map(c => `<li class="${c.current ? 'cur' : ''}"><span>${esc(c.title)}</span>${c.read ? ic('check', 'tick') : ''}</li>`).join('')}</ul>` : '';
+      return `<li class="topic ${t.current ? 'cur' : ''}"><span>${esc(t.title)}</span>${t.children ? ic(t.open ? 'chevron' : 'chevron-right', 'chev') : (t.read ? ic('check', 'tick') : '')}${kids}</li>`;
+    }).join('');
+    return `<aside class="sb ${cls}" aria-label="${esc(L.contents)}"><div class="sb-head"><img class="cv" src="${book.cover}" alt=""><div><b>${esc(book.title)}</b><small>${esc(book.author)}</small></div></div>
+      <div class="sb-search">${ic('search')}${esc(L.search)}</div><div class="sb-prog"><i style="width:${Math.max(2, Math.round(100 * read / book.chapterCount))}%"></i><small>${read} of ${book.chapterCount} ${esc(L.progress)}</small></div>
+      <ul class="sb-list">${list}</ul></aside>`;
+  }
+  function article() {
+    const crumbs = [L.home, ...book.breadcrumb, book.chapter].map((c, i, a) => `<span class="${i === a.length - 1 ? 'here' : ''}">${esc(c)}</span>`).join('<i>/</i>');
+    const blocks = book.blocks.map(b => b.type === 'quote' ? `<blockquote data-p>${b.lines.map(l => `<p>${esc(l)}</p>`).join('')}</blockquote>`
+      : b.type === 'list' ? `<ol>${b.items.map(i => `<li data-p>${esc(i)}</li>`).join('')}</ol>`
+      : b.type === 'h' ? `<h2>${esc(b.text)}</h2>` : `<p data-p>${esc(b.text)}</p>`).join('');
+    return `<div class="sc"><div class="col"><div class="crumb"><span class="crumbs">${crumbs}</span>
+      <span class="crumb-acts"><span class="mini">${ic('link')}${esc(L.share)}</span><span class="mini">${ic('bookmark')}${esc(L.save)}</span></span></div>
+      <h1 class="ch">${esc(book.chapter)}</h1><div class="surface" tabindex="0" aria-label="Reading text">${blocks}<div class="ov" aria-hidden="true"><div class="m1"></div><div class="m2"></div><div class="rl"></div></div></div></div></div>`;
+  }
+
+  // ---------- frames ----------
+  function desktop(opt) {
+    const uid = 'f' + (++uidCounter);
+    let bar = '', menus = '';
+    if (opt === 'a') {
+      bar = `<header class="tb">${tbtn('data-act="sidebar" aria-label="' + esc(L.contents) + '"', 'menu', L.contents)}<span class="tb-title">${esc(book.title)}</span><div class="tb-acts">${player}
+        ${tbtn('data-open="assist" aria-haspopup="dialog" aria-expanded="false"', 'assist', L.assist, badge('assist') + ic('chevron', 'dd'))}
+        ${tbtn('data-open="format" aria-haspopup="dialog" aria-expanded="false"', 'format', L.format, badge('format') + ic('chevron', 'dd'))}
+        ${tbtn('data-act="notes"', 'notes', L.notes)}</div></header>`;
+      menus = pop(uid, 'assist', 'pop-a1') + pop(uid, 'format', 'pop-a2');
+    } else if (opt === 'b') {
+      bar = `<header class="tb">${tbtn('data-act="sidebar"', 'menu', L.contents)}<span class="tb-title">${esc(book.title)}</span><div class="tb-acts">${player}
+        ${tbtn('data-act="speak" data-listen', 'headphones', L.listen)}
+        ${tbtn('data-open="panel" aria-haspopup="dialog" aria-expanded="false"', 'tune', L.settings, badge('all'))}
+        ${tbtn('data-act="notes"', 'notes', L.notes)}</div></header>`;
+      menus = tabbed(uid, 'panel', L.settings);
+    } else {
+      bar = `<button type="button" class="fab" data-act="sidebar" aria-label="${esc(L.contents)}">${ic('menu')}</button>
+        <div class="pill">${player}${tbtn('data-act="speak" data-listen', 'headphones', L.listen)}<span class="sep"></span>
+        ${tbtn('data-open="assist" aria-haspopup="dialog" aria-expanded="false"', 'assist', L['assist-short'], badge('assist'))}
+        ${tbtn('data-open="format" aria-haspopup="dialog" aria-expanded="false"', 'format', L['format-short'], badge('format'))}<span class="sep"></span>
+        ${tbtn('data-act="notes"', 'notes', L.notes)}</div>`;
+      menus = pop(uid, 'assist', 'pop-c') + pop(uid, 'format', 'pop-c');
+    }
+    const note = opt === 'b' ? N.panel : opt === 'c' ? N.pill : N['desktop-menu'];
+    return `<figure class="dwrap"><div class="dfit"><div class="rd dev-desktop opt-${opt}" data-opt="${opt}">${sidebar()}<div class="mn">${bar}${article()}${menus}</div></div></div>
+      <figcaption>${esc(copy['view-desktop'])}. ${esc(note)}</figcaption></figure>`;
+  }
+  function phone(opt) {
+    const uid = 'p' + (++uidCounter);
+    let top = '', bottom = '';
+    const ptb = (attrs, icon, label, extra = '') => `<button type="button" class="pbtn" ${attrs}>${ic(icon)}<span>${esc(label)}</span>${extra}</button>`;
+    if (opt === 'a') top = `<header class="ptb">${ptb('data-act="sidebar"', 'menu', L.contents)}<span class="tb-title">${esc(book.title)}</span>
+      ${ptb('data-open="assist" aria-haspopup="dialog"', 'assist', L['assist-short'], badge('assist'))}${ptb('data-open="format" aria-haspopup="dialog"', 'format', L['format-short'], badge('format'))}${ptb('data-act="notes"', 'notes', L.notes)}</header>`;
+    else if (opt === 'b') top = `<header class="ptb">${ptb('data-act="sidebar"', 'menu', L.contents)}<span class="tb-title">${esc(book.title)}</span>
+      ${ptb('data-act="speak" data-listen', 'headphones', L.listen)}${ptb('data-open="panel" aria-haspopup="dialog"', 'tune', L['settings-short'], badge('all'))}</header>`;
+    else {
+      top = `<header class="ptb slim"><span class="tb-title">${esc(book.title)}</span></header>`;
+      bottom = `<nav class="pbb">${ptb('data-act="sidebar"', 'menu', L.contents)}${ptb('data-act="speak" data-listen', 'headphones', L.listen)}
+        ${ptb('data-open="assist" aria-haspopup="dialog"', 'assist', L['assist-short'], badge('assist'))}${ptb('data-open="format" aria-haspopup="dialog"', 'format', L['format-short'], badge('format'))}${ptb('data-act="notes"', 'notes', L.notes)}</nav>`;
+    }
+    const note = opt === 'b' ? N.panel : N['phone-sheet'];
+    return `<figure class="pwrap"><div class="rd dev-phone opt-${opt}" data-opt="${opt}">${top}${player}${article()}${bottom}
+      <div class="scrim" data-act="close" hidden></div>${sidebar('drawer')}${tabbed(uid, 'sheet', L.settings)}</div>
+      <figcaption>${esc(copy['view-phone'])}. ${esc(note)}</figcaption></figure>`;
+  }
+
+  // ---------- state to view ----------
+  function sync(frame) {
+    const opt = frame.dataset.opt, st = states[opt];
+    frame.classList.toggle('dark', st.theme === 'dark');
+    frame.classList.toggle('sans', st.face === 'sans');
+    frame.classList.toggle('nav-hidden', st.hideNav || !st.sidebar);
+    frame.classList.toggle('quiet', st.hideNav);
+    frame.style.setProperty('--size', st.size + 'px');
+    frame.style.setProperty('--line', st.line);
+    frame.style.setProperty('--para', st.para + 'px');
+    frame.style.setProperty('--letter', st.letter + 'em');
+    frame.style.setProperty('--measure', MEASURE[st.width]);
+    frame.style.setProperty('--dim', DIM[st.dim]);
+    frame.querySelectorAll('input[type=radio][data-key]').forEach(r => { r.checked = String(st[r.dataset.key]) === r.value; });
+    frame.querySelectorAll('[data-toggle]').forEach(b => b.setAttribute('aria-checked', String(!!st[b.dataset.toggle])));
+    frame.querySelectorAll('[data-out]').forEach(o => { o.textContent = show(o.dataset.out, st); });
+    frame.querySelectorAll('[data-step]').forEach(b => { const [min, max] = STEPS[b.dataset.step]; const v = st[b.dataset.step]; b.disabled = b.dataset.dir === '-1' ? v <= min + 1e-9 : v >= max - 1e-9; });
+    frame.querySelectorAll('[data-when]').forEach(r => { r.hidden = r.dataset.when === 'overlay' ? st.overlay === 'off' : st.overlay !== r.dataset.when; });
+    const counts = { assist: assistCount(st), format: formatCount(st) }; counts.all = counts.assist + counts.format;
+    frame.querySelectorAll('[data-badge]').forEach(b => { const n = counts[b.dataset.badge]; b.hidden = !n; b.textContent = n; b.closest('button').dataset.changed = n ? `${n} ${L.changed}` : ''; });
+    const speaking = st.speaking !== 'stopped';
+    frame.querySelectorAll('.player').forEach(p => { p.hidden = !speaking; const b = p.querySelector('[data-act="speak"]');
+      b.innerHTML = ic(st.speaking === 'playing' ? 'pause' : 'play'); b.setAttribute('aria-label', st.speaking === 'playing' ? L.pause : L.resume);
+      p.title = N.sound; });
+    frame.querySelectorAll('[data-listen]').forEach(b => { b.hidden = speaking; });
+    frame.querySelectorAll('[data-speak-label]').forEach(s => { s.textContent = st.speaking === 'playing' ? L.pause : st.speaking === 'paused' ? L.resume : L.start;
+      s.previousElementSibling.outerHTML = ic(st.speaking === 'playing' ? 'pause' : 'play'); });
+    const surface = frame.querySelector('.surface');
+    surface.dataset.pfocus = st.pfocus; surface.dataset.overlay = st.overlay;
+    const blocks = [...surface.querySelectorAll('[data-p]')];
+    blocks.forEach((b, i) => b.classList.toggle('spoken', speaking && i === st.spoken % blocks.length));
+    placeOverlay(frame);
+  }
+  const syncOption = opt => document.querySelectorAll(`.rd[data-opt="${opt}"]`).forEach(sync);
+
+  // ---------- overlay geometry (ReadingSupportSurface.tsx: quantise to the block's line grid) ----------
+  function placeOverlay(frame, clientY) {
+    const st = states[frame.dataset.opt], surface = frame.querySelector('.surface');
+    const blocks = [...surface.querySelectorAll('[data-p]')];
+    let active = surface.querySelector('[data-p].active') ?? blocks[0];
+    if (!active) return;
+    blocks.forEach(b => b.classList.toggle('active', b === active));
+    const lh = parseFloat(getComputedStyle(active).lineHeight) || st.size * st.line;
+    const top = offsetIn(active, surface);
+    let local = 0;
+    if (clientY !== undefined) {
+      const r = surface.getBoundingClientRect(), scale = r.height / surface.offsetHeight || 1;
+      local = Math.max(0, Math.min(active.offsetHeight - 1, (clientY - r.top) / scale - top));
+    }
+    const y = top + Math.floor(local / lh) * lh + lh / 2, half = lh * st.lines / 2;
+    const ov = surface.querySelector('.ov');
+    ov.querySelector('.m1').style.height = Math.max(0, y - half) + 'px';
+    ov.querySelector('.m2').style.top = Math.max(0, y + half) + 'px';
+    ov.querySelector('.rl').style.top = (y + lh / 2) + 'px';
+  }
+  function offsetIn(el, ancestor) { let y = 0; while (el && el !== ancestor) { y += el.offsetTop; el = el.offsetParent; } return y; }
+
+  // ---------- menus: ReadFlex popover rules (Escape, focus return, Tab containment, outside pointer closes) ----------
+  const FOCUSABLE = 'button:not([disabled]):not([hidden]), input:not([disabled]), [tabindex="0"]';
+  const visible = el => el.offsetParent !== null || el.getClientRects().length > 0;
+  function openMenu(frame, kind, trigger) {
+    closeMenus(frame, false);
+    let target;
+    if (kind === 'panel' || frame.classList.contains('dev-phone')) {
+      target = frame.querySelector('[data-tabbed]');
+      selectTab(target, kind === 'panel' ? (target.dataset.last ?? 'assist') : kind);
+    } else target = frame.querySelector(`.pop[data-menu="${kind}"]`);
+    target.hidden = false; target._trigger = trigger;
+    frame.querySelector('.scrim')?.toggleAttribute('hidden', !frame.classList.contains('dev-phone'));
+    trigger?.setAttribute('aria-expanded', 'true');
+    const first = target.querySelector('[role=tab][aria-selected=true]') ?? [...target.querySelectorAll(FOCUSABLE)].find(visible);
+    first?.focus();
+  }
+  function closeMenus(frame, returnFocus = true) {
+    frame.querySelectorAll('.pop:not([hidden]), [data-tabbed]:not([hidden])').forEach(m => {
+      m.hidden = true; m._trigger?.setAttribute('aria-expanded', 'false');
+      if (returnFocus) m._trigger?.focus();
+    });
+    frame.querySelector('.scrim')?.setAttribute('hidden', '');
+    frame.querySelector('.drawer')?.classList.remove('open');
+  }
+  function selectTab(box, kind) {
+    box.dataset.last = kind;
+    box.querySelectorAll('[role=tab]').forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === kind)));
+    box.querySelectorAll('[data-pane]').forEach(p => { p.hidden = p.dataset.pane !== kind; });
+  }
+
+  // ---------- simulated speech ----------
+  const timers = {};
+  function setSpeaking(opt, next) {
+    const st = states[opt]; st.speaking = next;
+    clearInterval(timers[opt]);
+    if (next === 'playing') timers[opt] = setInterval(() => { st.spoken++; syncOption(opt); }, 2600);
+    if (next === 'stopped') st.spoken = 0;
+    syncOption(opt);
+  }
+
+  // ---------- events ----------
+  function bind(frame) {
+    const opt = frame.dataset.opt, st = states[opt];
+    frame.addEventListener('click', e => {
+      const t = e.target.closest('button, [data-act]');
+      if (!t || !frame.contains(t)) return;
+      const tab = t.closest('[role=tab]');
+      if (tab) { selectTab(tab.closest('[data-tabbed]'), tab.dataset.tab); return; }
+      if (t.dataset.open) {
+        const already = t.getAttribute('aria-expanded') === 'true';
+        closeMenus(frame, false);
+        if (!already) openMenu(frame, t.dataset.open, t);
+        return;
+      }
+      if (t.dataset.toggle) { st[t.dataset.toggle] = !st[t.dataset.toggle]; syncOption(opt); return; }
+      if (t.dataset.step) {
+        const k = t.dataset.step, [min, max, step] = STEPS[k];
+        st[k] = Math.round(Math.min(max, Math.max(min, st[k] + step * Number(t.dataset.dir))) * 100) / 100; syncOption(opt); return;
+      }
+      switch (t.dataset.act) {
+        case 'close': closeMenus(frame); break;
+        case 'sidebar':
+          if (frame.classList.contains('dev-phone')) { closeMenus(frame, false); frame.querySelector('.drawer').classList.add('open'); frame.querySelector('.scrim').hidden = false; }
+          else { st.sidebar = !(st.sidebar && !st.hideNav); st.hideNav = false; syncOption(opt); }
+          break;
+        case 'speak': setSpeaking(opt, st.speaking === 'playing' ? 'paused' : 'playing'); break;
+        case 'stop': setSpeaking(opt, 'stopped'); break;
+        case 'reset-assist': Object.assign(st, { pfocus: false, overlay: 'off', lines: DEFAULTS.lines, dim: DEFAULTS.dim, hideNav: false }); setSpeaking(opt, 'stopped'); break;
+        case 'reset-format': FORMAT_KEYS.forEach(k => { st[k] = DEFAULTS[k]; }); syncOption(opt); break;
+      }
+    });
+    frame.addEventListener('change', e => {
+      const r = e.target;
+      if (r.matches('input[type=radio][data-key]')) { const k = r.dataset.key; st[k] = k === 'lines' ? Number(r.value) : r.value; syncOption(opt); }
+    });
+    frame.addEventListener('keydown', e => {
+      const menu = e.target.closest('.pop, [data-tabbed]');
+      if (e.key === 'Escape' && menu) { e.preventDefault(); e.stopPropagation(); closeMenus(frame); return; }
+      if (e.key === 'Tab' && menu) {
+        const els = [...menu.querySelectorAll(FOCUSABLE)].filter(visible);
+        const first = els[0], last = els.at(-1);
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        return;
+      }
+      if (e.target.classList.contains('surface')) {
+        const blocks = [...e.target.querySelectorAll('[data-p]')];
+        const i = blocks.findIndex(b => b.classList.contains('active'));
+        if (e.key === 'Escape' && (st.pfocus || st.overlay !== 'off')) { e.preventDefault(); st.pfocus = false; st.overlay = 'off'; syncOption(opt); }
+        else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const next = blocks[Math.max(0, Math.min(blocks.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)))];
+          blocks.forEach(b => b.classList.toggle('active', b === next)); next.scrollIntoView({ block: 'nearest' }); placeOverlay(frame);
+        }
+      }
+    });
+    frame.addEventListener('pointerdown', e => {
+      if (e.target.closest('.pop, [data-tabbed], [data-open], .drawer')) return;
+      if (frame.querySelector('.pop:not([hidden])') || (frame.classList.contains('dev-phone') && frame.querySelector('[data-tabbed]:not([hidden])'))) closeMenus(frame, false);
+    });
+    const surface = frame.querySelector('.surface');
+    let raf = 0, last = null;
+    surface.addEventListener('pointermove', e => {
+      if (e.buttons) return;
+      last = e;
+      if (!raf) raf = requestAnimationFrame(() => { raf = 0; const b = last.target.closest('[data-p]');
+        if (b) { surface.querySelectorAll('[data-p]').forEach(x => x.classList.toggle('active', x === b)); placeOverlay(frame, last.clientY); } });
+    });
+    surface.addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) { surface.querySelectorAll('[data-p]').forEach(x => x.classList.toggle('active', x === b)); placeOverlay(frame, e.clientY); } });
+  }
+
+  // ---------- page ----------
+  function renderAll() {
+    uidCounter = 0;
+    document.querySelectorAll('.stage').forEach(stage => {
+      const opt = stage.dataset.option;
+      stage.querySelector('.frames').innerHTML = desktop(opt) + phone(opt);
+      stage.querySelectorAll('.rd').forEach(f => { f.style.setProperty('--book-accent', book.accent); f.style.setProperty('--book-paper', book.paper); f.style.setProperty('--book-ink', book.ink); bind(f); sync(f); });
+    });
+    fit();
+  }
+  function fit() {
+    document.querySelectorAll('.dfit').forEach(box => {
+      const rd = box.firstElementChild, w = box.parentElement.clientWidth;
+      if (!w) return;
+      const s = Math.min(1, w / 1040);
+      rd.style.transform = `scale(${s})`; box.style.height = (620 * s) + 'px';
+    });
+  }
+  document.querySelectorAll('input[name="book"]').forEach(r => r.addEventListener('change', () => {
+    book = data.books.find(b => b.id === r.value) ?? data.books[0];
+    document.documentElement.style.setProperty('--book-accent', book.accent);
+    renderAll();
+  }));
+  const tabs = [...document.querySelectorAll('.tabs [role=tab]')];
+  const choose = tab => {
+    tabs.forEach(t => { const on = t === tab; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; document.getElementById(t.getAttribute('aria-controls')).hidden = !on; });
+    fit();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => choose(t));
+    t.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { e.preventDefault(); const n = tabs[(i + d + tabs.length) % tabs.length]; choose(n); n.focus(); }
+    });
+  });
+  document.querySelectorAll('.viewswitch button').forEach(b => b.addEventListener('click', () => {
+    const stage = b.closest('.option').querySelector('.stage');
+    stage.dataset.view = b.dataset.view;
+    b.parentElement.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    fit();
+  }));
+  const details = document.querySelector('details.compare-box');
+  if (details && window.innerWidth < 700) details.open = false;
+  new ResizeObserver(fit).observe(document.body);
+  document.documentElement.style.setProperty('--book-accent', book.accent);
+  renderAll();
+})();
+</script></body></html>

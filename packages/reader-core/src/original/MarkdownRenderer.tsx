@@ -10,8 +10,6 @@ export interface MarkdownRendererHandle {
 }
 
 // Redefine types locally for component independence
-type FontSize = 'sm' | 'base' | 'lg' | 'xl';
-type LineHeight = 'tight' | 'normal' | 'relaxed' | 'loose';
 type MaxWidth = 'sm' | 'md' | 'lg' | 'full';
 
 interface MarkdownRendererProps {
@@ -23,9 +21,8 @@ interface MarkdownRendererProps {
   onSaveReflection?: (content: string) => void;
   onOpenHighlight?: () => void;
   onBrowserSpeechStart?: () => void;
-  // Readability Props
-  fontSize?: FontSize;
-  lineHeight?: LineHeight;
+  /** The toolbar owns the read-aloud controls and shows this state. */
+  onSpeechStateChange?: (state: 'idle' | 'speaking' | 'paused') => void;
   maxWidth?: MaxWidth;
 }
 
@@ -38,8 +35,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     onSaveReflection,
     onOpenHighlight,
     onBrowserSpeechStart,
-    fontSize = 'base',
-    lineHeight = 'relaxed',
+    onSpeechStateChange,
     maxWidth = 'md'
 }, ref) => {
   // Speech Synthesis State
@@ -47,7 +43,6 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
   const [isPaused, setIsPaused] = useState(false);
   const [reflectionText, setReflectionText] = useState('');
   const synth = useRef<SpeechSynthesis | null>(null);
-  const [speechSupported, setSpeechSupported] = useState(false);
   const contentElement = useRef<HTMLDivElement>(null);
   const renderedHTML = useMemo(() => renderPublicationContent(content, format), [content, format]);
   const annotatedHTML = useMemo(() => preparePublicationHTML(renderedHTML, highlights), [renderedHTML, highlights]);
@@ -63,28 +58,31 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
       }
   }, [reflection]);
 
+  const speechCallback = useRef(onSpeechStateChange);
+  speechCallback.current = onSpeechStateChange;
+  useEffect(() => { speechCallback.current?.(isSpeaking ? 'speaking' : isPaused ? 'paused' : 'idle'); }, [isSpeaking, isPaused]);
+  useEffect(() => () => speechCallback.current?.('idle'), []);
+
   // Initialize Speech Synthesis
   useEffect(() => {
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       synth.current = window.speechSynthesis;
-      setSpeechSupported(true);
     }
     
-    // Cleanup on unmount
+    // Cleanup on unmount: only speech this renderer started is cancelled.
     return () => {
-      if (synth.current) {
-        synth.current.cancel();
-      }
+      if (synth.current && utterance.current) synth.current.cancel();
+      utterance.current = null;
     };
   }, []);
 
-  // Stop speech when content changes
+  // Stop this renderer's own speech when content changes; an idle renderer never touches shared speech.
   useEffect(() => {
-      if (synth.current) {
-          synth.current.cancel();
-          setIsSpeaking(false);
-          setIsPaused(false);
-      }
+      if (!utterance.current) return;
+      synth.current?.cancel();
+      utterance.current = null;
+      setIsSpeaking(false);
+      setIsPaused(false);
   }, [content]);
 
   const handleSaveReflectionClick = () => {
@@ -107,33 +105,35 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
       setIsSpeaking(false);
     } else {
       const text = publicationPlainText(renderedHTML);
-      utterance.current = new SpeechSynthesisUtterance(text);
+      const spoken = new SpeechSynthesisUtterance(text);
+      utterance.current = spoken;
       
-      if (language) utterance.current.lang = language;
+      if (language) spoken.lang = language;
       // Prefer a matching language while leaving the browser default available.
       const voices = synth.current.getVoices();
       const preferredVoice = voices.find(v => v.lang.toLowerCase().startsWith((language ?? 'en').toLowerCase().split('-')[0]) && v.name.includes('Google')) || voices.find(v => v.lang.toLowerCase().startsWith((language ?? 'en').toLowerCase().split('-')[0]));
       if (preferredVoice) {
-          utterance.current.voice = preferredVoice;
+          spoken.voice = preferredVoice;
       }
 
-      utterance.current.onend = () => {
+      // A superseded or stopped utterance reports late; only the current one may change state.
+      const finish = () => {
+        if (utterance.current !== spoken) return;
+        utterance.current = null;
         setIsSpeaking(false);
         setIsPaused(false);
       };
-      
-      utterance.current.onerror = () => {
-          setIsSpeaking(false);
-          setIsPaused(false);
-      };
+      spoken.onend = finish;
+      spoken.onerror = finish;
 
-      synth.current.speak(utterance.current);
+      synth.current.speak(spoken);
       setIsSpeaking(true);
     }
   };
 
   const handleStop = () => {
-    if (synth.current) {
+    if (synth.current && utterance.current) {
+      utterance.current = null;
       synth.current.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
@@ -165,76 +165,13 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     observer?.observe(element);
     window.addEventListener('resize', update);
     return () => { observer?.disconnect(); window.removeEventListener('resize', update); };
-  }, [annotatedHTML, highlights, fontSize, lineHeight]);
+  }, [annotatedHTML, highlights]);
 
-  // Map props to classes
-  const getFontSizeClass = () => {
-      // Scale up sizes: Base mapped to 'lg' (18px) for better readability
-      switch (fontSize) {
-          case 'sm': return 'prose-base'; // 16px
-          case 'base': return 'prose-lg'; // 18px (Targeted size)
-          case 'lg': return 'prose-xl';   // 20px
-          case 'xl': return 'prose-2xl';  // 24px
-          default: return 'prose-lg';
-      }
-  };
-  
-  const getLineHeightClass = () => {
-      switch (lineHeight) {
-          case 'tight': return 'leading-tight';
-          case 'normal': return 'leading-normal';
-          case 'relaxed': return 'leading-relaxed';
-          case 'loose': return 'leading-loose';
-          default: return 'leading-relaxed';
-      }
-  };
-
-  // Main prose container class
-  const proseClass = `prose prose-indigo dark:prose-invert max-w-none prose-content text-gray-700 dark:text-gray-300 ${getFontSizeClass()} ${getLineHeightClass()}`;
+  // Body size, line height and spacing come from the reading preferences (support.css); the prose scale stays fixed so headings keep their proportions.
+  const proseClass = 'prose prose-indigo dark:prose-invert prose-lg leading-relaxed max-w-none prose-content text-gray-700 dark:text-gray-300';
 
   return (
     <div className="relative" ref={containerRef}>
-        {/* Read Aloud Controls */}
-        <div className="flex justify-end mb-4 gap-2">
-            <button 
-                onClick={handleSpeak}
-                disabled={!speechSupported}
-                aria-label={speechSupported ? undefined : "Read aloud is unavailable in this browser"}
-                className={`
-                    flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all shadow-sm border
-                    ${isSpeaking 
-                        ? 'bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-700 animate-pulse' 
-                        : isPaused
-                            ? 'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-700'
-                            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
-                    }
-                `}
-                title={isSpeaking ? "Pause (Shortcut: 'a')" : isPaused ? "Resume (Shortcut: 'a')" : "Browser read-aloud (Shortcut: 'a')"}
-            >
-                {isSpeaking ? (
-                    <>
-                        <span className="material-symbols-outlined text-lg">pause</span>
-                        Pause
-                    </>
-                ) : (
-                    <>
-                        <span className="material-symbols-outlined text-lg">volume_up</span>
-                        {isPaused ? "Resume browser speech" : "Browser read-aloud"}
-                    </>
-                )}
-            </button>
-            
-            {(isSpeaking || isPaused) && (
-                <button 
-                    onClick={handleStop}
-                    className="p-2 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/40 border border-red-200 dark:border-red-800 transition-colors flex items-center justify-center"
-                    title="Stop Reading"
-                >
-                    <span className="material-symbols-outlined text-lg">stop</span>
-                </button>
-            )}
-        </div>
-
         <div className="relative">
           <div ref={contentElement} data-publication-content className={`${proseClass} publication-content`} dangerouslySetInnerHTML={{ __html: annotatedHTML }} />
           {notePositions.map(({ highlight: h, top }) => (

@@ -13,7 +13,7 @@ window.mount = (hasContents=true) => { window.root?.unmount(); document.body.inn
 `},bundle:true,write:false,format:'iife',platform:'browser',alias:{react:resolve(root,'apps/reader-demo/node_modules/react'),'react-dom':resolve(root,'apps/reader-demo/node_modules/react-dom')}});
 const css = readFileSync(resolve(root,'packages/reader-core/dist/reader.css'),'utf8')+'\n'+readFileSync(resolve(directory,'reader-original.css'),'utf8');
 const python=String.raw`
-import json,sys
+import json,sys,re
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 payload=json.load(sys.stdin)
@@ -34,27 +34,33 @@ with sync_playwright() as p:
   desktop=measure();results.append({'desktop1440':desktop});print(json.dumps(results[-1]),flush=True);assert desktop['article']>=600,desktop
   assert desktop['rail'],desktop
   assert page.locator('#toc-container a').all_text_contents()==['Local heading','Second heading']
-  page.get_by_role('button',name='Reading settings',exact=True).click()
-  dialog=page.get_by_role('dialog',name='Reading settings');expect(dialog).to_be_visible()
+  fmt=lambda:page.get_by_role('button',name=re.compile(r'^Formatting'))
+  assist=lambda:page.get_by_role('button',name=re.compile(r'^Assist'))
+  assert [b.inner_text().split('\n')[0] for b in page.locator('.publication-toolbar-actions > button').all()]==['headphones','text_fields','eyeglasses','ink_highlighter'],'four controls in order'
+  fmt().click()
+  dialog=page.get_by_role('dialog',name='Formatting');expect(dialog).to_be_visible()
   page.keyboard.press('b');page.keyboard.press('a')
   assert page.evaluate('JSON.parse(localStorage.getItem("publication-reader:layout-fixture:bookmarkedSections") || "[]")')==[]
-  dialog.get_by_label('Article width',exact=True).select_option('sm')
-  page.get_by_role('button',name='Close reading settings',exact=True).click()
+  dialog.get_by_role('radio',name='Narrow',exact=True).click()
+  page.keyboard.press('Escape');expect(dialog).not_to_be_visible();expect(fmt()).to_be_focused()
   narrow=measure();assert narrow['article']<desktop['article'],narrow
-  page.get_by_role('button',name='Reading settings',exact=True).click()
-  dialog.get_by_role('button',name='Reset reading settings',exact=True).click()
-  expect(dialog.get_by_label('Article width',exact=True)).to_have_value('md')
+  fmt().click()
+  dialog.get_by_role('button',name='Reset formatting',exact=True).click()
+  expect(dialog.get_by_role('radio',name='Normal',exact=True)).to_have_attribute('aria-checked','true')
   page.keyboard.press('Escape');expect(dialog).not_to_be_visible()
-  expect(page.get_by_role('button',name='Reading settings',exact=True)).to_be_focused()
-  page.get_by_role('button',name='Reading settings',exact=True).click()
-  dialog.get_by_label('Focus mode hides navigation',exact=True).check()
+  expect(fmt()).to_be_focused()
+  assist().click()
+  adialog=page.get_by_role('dialog',name='Assist')
+  adialog.get_by_role('switch',name='Hide navigation',exact=True).click()
   page.keyboard.press('Escape');assert page.locator('aside').get_attribute('data-open')=='false';expect(page.locator('aside')).not_to_be_visible()
-  page.get_by_role('button',name='Reading settings',exact=True).click()
-  dialog.get_by_label('Focus mode hides navigation',exact=True).uncheck()
-  dialog.get_by_label('Colour theme',exact=True).select_option('dark')
+  assist().click()
+  adialog.get_by_role('switch',name='Hide navigation',exact=True).click()
+  page.keyboard.press('Escape')
+  fmt().click()
+  dialog.get_by_role('radio',name='Dark',exact=True).click()
   assert page.locator('.publication-reader').evaluate('e => e.classList.contains("dark")')
   assert page.locator('.publication-scroll').evaluate('e=>getComputedStyle(e).backgroundColor')=='rgb(17, 24, 39)'
-  dialog.get_by_label('Colour theme',exact=True).select_option('light')
+  dialog.get_by_role('radio',name='Book paper',exact=True).click()
   page.keyboard.press('Escape')
   page.evaluate('window.mount(false)');page.locator('[data-publication-content]').wait_for();page.wait_for_timeout(100)
   assert page.locator('#toc-container').count()==0
@@ -67,7 +73,7 @@ with sync_playwright() as p:
   page.get_by_role('button',name='Open navigation',exact=True).click();page.locator('aside').get_by_role('button',name='Close navigation',exact=True).click()
   assert page.get_by_title('Copy Link to Page (l)',exact=True).is_visible()
   assert page.get_by_title('Bookmark (b)',exact=True).is_visible()
-  page.get_by_role('button',name='Reading settings',exact=True).click()
+  fmt().click()
   expect(dialog).to_be_visible();assert dialog.bounding_box()['width']<=320
   page.keyboard.press('Escape')
   print(json.dumps({'checks':'layout, heading rail, explicit settings, reset, escape, narrow setting, responsive overflow','results':results}))

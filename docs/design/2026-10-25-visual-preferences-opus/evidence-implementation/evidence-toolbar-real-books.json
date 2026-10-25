@@ -1,0 +1,1349 @@
+{
+  "checks": [
+    {
+      "name": "linguistics 1440px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "53.3333px"
+    },
+    {
+      "name": "linguistics 1440px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "linguistics 1440px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "linguistics 1440px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "linguistics 1440px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "linguistics 1440px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "linguistics 1440px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "linguistics 1440px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "linguistics 1440px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px desktop menu sits inside viewport under toolbar",
+      "passed": true,
+      "detail": {
+        "x": 1052,
+        "y": 60,
+        "width": 368,
+        "height": 544
+      }
+    },
+    {
+      "name": "linguistics 1440px Tab stays inside open menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 1440px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "53.3333px"
+    },
+    {
+      "name": "linguistics 390px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "linguistics 390px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "linguistics 390px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "linguistics 390px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "linguistics 390px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "linguistics 390px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "linguistics 390px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "linguistics 390px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px mobile menu is a bottom sheet inside the viewport",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 224,
+        "width": 390,
+        "height": 576
+      }
+    },
+    {
+      "name": "linguistics 390px sheet switch moves between menus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linguistics 390px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "53.3333px"
+    },
+    {
+      "name": "deliberate-practice 1440px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "deliberate-practice 1440px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "deliberate-practice 1440px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "deliberate-practice 1440px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "deliberate-practice 1440px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "deliberate-practice 1440px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "deliberate-practice 1440px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "deliberate-practice 1440px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px desktop menu sits inside viewport under toolbar",
+      "passed": true,
+      "detail": {
+        "x": 1052,
+        "y": 60,
+        "width": 368,
+        "height": 544
+      }
+    },
+    {
+      "name": "deliberate-practice 1440px Tab stays inside open menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 1440px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "53.3333px"
+    },
+    {
+      "name": "deliberate-practice 390px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "deliberate-practice 390px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "deliberate-practice 390px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "deliberate-practice 390px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "deliberate-practice 390px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "deliberate-practice 390px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "deliberate-practice 390px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "deliberate-practice 390px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px mobile menu is a bottom sheet inside the viewport",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 224,
+        "width": 390,
+        "height": 576
+      }
+    },
+    {
+      "name": "deliberate-practice 390px sheet switch moves between menus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "deliberate-practice 390px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "30px"
+    },
+    {
+      "name": "language-muscle 1440px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "language-muscle 1440px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "language-muscle 1440px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "language-muscle 1440px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "language-muscle 1440px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "language-muscle 1440px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "language-muscle 1440px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "language-muscle 1440px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px desktop menu sits inside viewport under toolbar",
+      "passed": true,
+      "detail": {
+        "x": 1052,
+        "y": 60,
+        "width": 368,
+        "height": 544
+      }
+    },
+    {
+      "name": "language-muscle 1440px Tab stays inside open menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 1440px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px hidden legacy size and line-height settings do not distort headings",
+      "passed": true,
+      "detail": "30px"
+    },
+    {
+      "name": "language-muscle 390px toolbar order Listen, Formatting, Assist, Notes",
+      "passed": true,
+      "detail": [
+        "headphonesListen",
+        "text_fieldsFormatting",
+        "eyeglassesAssist",
+        "ink_highlighterNotes"
+      ]
+    },
+    {
+      "name": "language-muscle 390px icons present",
+      "passed": true,
+      "detail": [
+        "headphones",
+        "text_fields",
+        "eyeglasses",
+        "ink_highlighter"
+      ]
+    },
+    {
+      "name": "language-muscle 390px no old settings dialog or in-chapter read-aloud button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px no empty recorded-audiobook panel mounted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Listen offers browser read-aloud",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Listen hides recorded audiobook when no recordings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px speech started once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Escape closes Listen and returns focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px speech status stays after menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px opening a menu keeps the text selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px focus moves into Formatting on open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px changing a setting does not steal focus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px text size stepper changes actual paragraph",
+      "passed": true,
+      "detail": [
+        20,
+        22
+      ]
+    },
+    {
+      "name": "language-muscle 390px Sans applied to paragraph",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px dark theme applied",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Formatting badge counts 7 changes",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "language-muscle 390px reset formatting restores text and theme",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px speech not cancelled by formatting changes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "language-muscle 390px notes, highlights and unrelated saved values untouched",
+      "passed": true,
+      "detail": [
+        "[{\"id\":\"h1\",\"text\":\"kept highlight\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1,\"note\":\"n\"}]",
+        "[{\"id\":\"r1\",\"content\":\"kept note\",\"sectionId\":\"x\",\"sectionTitle\":\"X\",\"date\":1}]",
+        "\"xl\"",
+        "\"loose\""
+      ]
+    },
+    {
+      "name": "language-muscle 390px Escape returns focus to Formatting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Assist has no audio start control",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px window height and dimming hidden with overlay off",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px window height and dimming shown for line window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px window height hidden for ruler, dimming kept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Dark dimming saves 0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px paragraph focus set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px summary states actual state",
+      "passed": true,
+      "detail": "On: other paragraphs faded, reading ruler, navigation hidden."
+    },
+    {
+      "name": "language-muscle 390px Assist badge counts 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px no full-screen dimming overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Turn all off resets only assist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px key R turns the in-text overlay on",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px key R turns it off again",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px mobile menu is a bottom sheet inside the viewport",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 224,
+        "width": 390,
+        "height": 576
+      }
+    },
+    {
+      "name": "language-muscle 390px sheet switch moves between menus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px press in the text closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Notes opens the existing panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px sidebar present and topic rows unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "language-muscle 390px Stop ends speech and status disappears",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "result": "passed"
+}

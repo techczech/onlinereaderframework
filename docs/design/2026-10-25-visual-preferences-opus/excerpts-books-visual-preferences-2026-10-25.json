@@ -1,0 +1,299 @@
+{
+ "source": "apps/reader-demo/src/books/original-publications.json (titles, chapter text) and apps/reader-demo/src/App.tsx identities (colours, masthead); covers from apps/reader-demo/public/covers resized to 96 px",
+ "note": "Real text, cut to the first few blocks of one chapter per book. Sidebar lists are the real titles around the current chapter.",
+ "books": [
+  {
+   "id": "linguistics",
+   "title": "Introduction to Key Issues in Language Through Stack Exchange Answers",
+   "subtitle": "Answers from Linguistics Stack Exchange, 2013–2016",
+   "author": "Dominik Lukeš",
+   "accent": "#b84b2d",
+   "paper": "#fffaf1",
+   "ink": "#282723",
+   "masthead": "editorial",
+   "cover": "data:image/jpeg;base64,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",
+   "chapterCount": 253,
+   "chapter": "Abbot & Costello \"Who's on First\" with a pragmatic (or other linguistic) perspective?",
+   "breadcrumb": [
+    "Semantics and pragmatics"
+   ],
+   "blocks": [
+    {
+     "type": "p",
+     "text": "I would say that the primary thing going on in that routine is the break down of 'conversation repair'. The two interlocutors simply repeat the same conversation repair approach and do not learn from its failure. The constant repetition is what makes it funny."
+    },
+    {
+     "type": "p",
+     "text": "It is also interesting how through constant repetition, the players make the rather implausible notion of players being nick named 'Who', 'What', 'I don't know', 'Why', etc."
+    },
+    {
+     "type": "p",
+     "text": "Of course, once those elements are in place, you're dealing with structural and lexical ambiguity. This particularly well illustrated in this sequence where Costello tries to initiate conversation repair:"
+    },
+    {
+     "type": "quote",
+     "lines": [
+      "Costello: When you pay off the first baseman every month, who gets the money?",
+      "Abbott: Every dollar of it. And why not, the man's entitled to it.",
+      "Costello: Who is?",
+      "Abbott: Yes."
+     ]
+    }
+   ],
+   "contents": [
+    {
+     "title": "Phonetics, phonology and orthography",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Morphology, Syntax, Lexicon",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Semantics and pragmatics",
+     "open": true,
+     "current": false,
+     "children": [
+      {
+       "title": "How to determine whether a given sentence is demanding an answer or is providing some information?",
+       "current": false,
+       "read": true
+      },
+      {
+       "title": "What is the scope of negation?",
+       "current": false,
+       "read": true
+      },
+      {
+       "title": "Structural ambiguity and 'because'",
+       "current": false,
+       "read": true
+      },
+      {
+       "title": "Abbot & Costello \"Who's on First\" with a pragmatic (or other linguistic) perspective?",
+       "current": true,
+       "read": false
+      },
+      {
+       "title": "Is there a term for sentence ending phrases like \"if that is the right word\"",
+       "current": false,
+       "read": false
+      },
+      {
+       "title": "What are common non-lexical indicators of sarcasm expressed orally in English",
+       "current": false,
+       "read": false
+      },
+      {
+       "title": "What is the difference between a filler word and a discourse marker?",
+       "current": false,
+       "read": false
+      },
+      {
+       "title": "Is there a theory of universal meaning?",
+       "current": false,
+       "read": false
+      }
+     ]
+    },
+    {
+     "title": "Typology",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Sociolinguistics, historical development and politics",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Bilingualism, language acquisition and language learning",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Theory, terminology and disciplinary question",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Corpora, tools and language technology",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Figurative language",
+     "open": false,
+     "current": false
+    }
+   ]
+  },
+  {
+   "id": "deliberate-practice",
+   "title": "Deliberate Practice: A Universal Learning Method",
+   "subtitle": "",
+   "author": "Dominik Lukeš",
+   "accent": "#a93232",
+   "paper": "#faf9f5",
+   "ink": "#202822",
+   "masthead": "practical",
+   "cover": "data:image/jpeg;base64,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",
+   "chapterCount": 21,
+   "chapter": "Working Memory Limitations",
+   "breadcrumb": [],
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "Working memory is what we can keep active in the mind while we perform mental operations.",
+      "There are only a limited number of chunks of information we can keep in working memory at one time (between 4 and 10). When new ones are added, old ones are pushed out.",
+      "The size of the chunks is not limited. In fact, sometimes making them bigger makes it easier, particularly, if we increase their size by making them more meaningful to us."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Working memory is the small mental buffer you use to keep things on top of mind so that you can do something with them. You need working memory when you do mental calculations, compare ideas, recognise faces, drive a car, or when you write a sentence. Without it, we would be too slow at doing any of these things."
+    },
+    {
+     "type": "p",
+     "text": "There are many things we don’t know for certain about working memory but we are sure, it is very limited. It can only hold about 7 discrete items at once (some people say it’s even less but definitely no more than 10)."
+    },
+    {
+     "type": "p",
+     "text": "A good simple example is writing down a phone number someone is dictating to you. Unless you focus, you can usually only do it a few digits at a time and nobody can do a whole 10 digit phone number. Just remembering each digit individually and then writing them down one by one is impossible without some mental tricks. And it’s these sort of tricks that we can learn from."
+    }
+   ],
+   "contents": [
+    {
+     "title": "About This Guide",
+     "open": false,
+     "current": false,
+     "read": true
+    },
+    {
+     "title": "Working Memory Limitations",
+     "open": false,
+     "current": true,
+     "read": false
+    },
+    {
+     "title": "Fluency as Target",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Schemas & Chunks",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Two Kinds of Memory",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Key Points on Memory",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Practice for Performance",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Avoiding Task Misalignment",
+     "open": false,
+     "current": false,
+     "read": false
+    },
+    {
+     "title": "Four Approaches to Practice",
+     "open": false,
+     "current": false,
+     "read": false
+    }
+   ]
+  },
+  {
+   "id": "language-muscle",
+   "title": "Building Your Language Muscle",
+   "subtitle": "",
+   "author": "Dominik Lukeš",
+   "accent": "#187060",
+   "paper": "#f7f6e9",
+   "ink": "#203d35",
+   "masthead": "literary",
+   "cover": "data:image/jpeg;base64,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",
+   "chapterCount": 12,
+   "chapter": "Step 1: Get the right attitude",
+   "breadcrumb": [
+    "Building Your Muscle"
+   ],
+   "blocks": [
+    {
+     "type": "p",
+     "text": "You need to stop thinking of learning a language as learning history or biology. Going to class, taking notes, studying at home. It is much more like learning to play a musical instrument, or training for a marathon. You can only learn by doing it. A lot. Slowly building up your muscle memory and your stamina. But you have to spend time and effort on it, going to a class once a week is not enough."
+    },
+    {
+     "type": "h",
+     "text": "Rethink what you want from your teacher"
+    },
+    {
+     "type": "p",
+     "text": "The first thing you have to do is realise that nobody can learn for you. Just like with building muscles, you have to put in the hard work. Stop thinking about your teacher as someone who teaches you the language. Think of your teacher as someone who tells you what and how to practice. As someone who helps you set and revise your training goals and give you feedback on your practice."
+    },
+    {
+     "type": "p",
+     "text": "Wanting a teacher to “teach you” is like wanting your personal trainer to do the exercises for you. Your teacher will tell you what to practice but you have to do the heavy lifting. You should start thinking of your teacher as your coach instead."
+    }
+   ],
+   "contents": [
+    {
+     "title": "Introduction",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Building Your Muscle",
+     "open": true,
+     "current": false,
+     "children": [
+      {
+       "title": "Step 1: Get the right attitude",
+       "current": true,
+       "read": false
+      },
+      {
+       "title": "Step 2: Set the right goals",
+       "current": false,
+       "read": false
+      },
+      {
+       "title": "Step 3: Use good practice strategies",
+       "current": false,
+       "read": false
+      }
+     ]
+    },
+    {
+     "title": "Fine-tuning your aims",
+     "open": false,
+     "current": false
+    },
+    {
+     "title": "Appendices",
+     "open": false,
+     "current": false
+    }
+   ]
+  }
+ ]
+}

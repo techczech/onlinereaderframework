@@ -1,0 +1,170 @@
+[
+  {
+    "name": "legacy font size and line height are ignored",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "four controls have approved order",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Escape returns focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Tab remains in Formatting after reset becomes disabled",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "text": "Serif",
+      "label": null,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "Formatting reset preserves Assist ruler",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "Assist off preserves actual text size",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "reset groups preserve note and legacy storage bytes",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "highlight remains decorated and reflection remains loaded",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "MathML survives settings updates",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "voice is not cancelled by menu and settings",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "mounting another idle renderer does not cancel toolbar voice",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "unmounting idle renderer does not cancel toolbar voice",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "Tab remains in Listen after Stop disappears",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "text": "pausePause",
+      "label": null,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "late canceled utterance cannot clear new playback state",
+    "passed": true,
+    "detail": {
+      "utterances": 3,
+      "chip": 1
+    }
+  },
+  {
+    "name": "orphan section recording does not offer unusable player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "orphan track cannot open empty player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "hidden recorded panel does not steal initial focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "visible player takes close-button focus",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "recorded close returns to Listen",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "book A formatting survives switch through B and C",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "phone menu is bottom-anchored",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "phone switch retains keyboard focus",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "text": "eyeglassesAssist",
+      "label": null,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "phone switch Escape returns to active Assist control",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "outside pointerdown preserves selected text and closes menu",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "linguistics: four chapter controls, no empty player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "deliberate-practice: four chapter controls, no empty player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "language-muscle: four chapter controls, no empty player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "toolbar menu preserves sidebar list scroll",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "sidebar chapter change focuses article and resets article scroll",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "no browser exceptions",
+    "passed": true,
+    "detail": []
+  }
+]

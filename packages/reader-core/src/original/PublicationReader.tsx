@@ -3,8 +3,8 @@ import type { PublicationReaderProps } from './types.js';
 import { flattenPublicationSections } from './publication-model.js';
 import { usePublicationReader } from './use-publication-reader.js';
 import { ReaderLayout } from './ReaderLayout.js';
-import { ReadingSupportControls, ReadingSupportSurface, useReadingSupport } from './reading-support/index.js';
-import { ListeningPanel, type ListeningBoundary } from './listening/index.js';
+import { ReadingSupportSurface } from './reading-support/index.js';
+import { ListeningPanel, safeRecordingSource, type ListeningBoundary } from './listening/index.js';
 import { useListeningHighlight } from './use-listening-highlight.js';
 
 /** Original Deliberate Practice reader, generalised without changing its visual baseline.
@@ -22,7 +22,8 @@ export function PublicationReader(props: PublicationReaderProps) {
 
 function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
   const reader = usePublicationReader(book, epub);
-  const support = useReadingSupport(book.id);
+  // The recorded player exists only when a track has a usable source and belongs to a section of this book, as the controller requires.
+  const hasRecordedAudio = !!audio?.some(track => safeRecordingSource(track.src) && reader.sections.some(section => section.id === track.sectionId));
   const [listeningOpen, setListeningOpen] = useState(false);
   const [pauseSignal, setPauseSignal] = useState(0);
   const [boundary, setBoundary] = useState<ListeningBoundary | null>(null);
@@ -33,23 +34,21 @@ function BookReader({ book, coaching, epub, audio }: PublicationReaderProps) {
     if (listeningOpen) listeningSurface.current?.querySelector<HTMLButtonElement>('[aria-label="Close recorded audiobook"]')?.focus();
   }, [listeningOpen]);
   useListeningHighlight(reader.contentRef, reader.currentSectionId, boundary, reader.highlights);
-  const openListening = () => {
-    listenTrigger.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  const openListening = (trigger: HTMLElement | null) => {
+    listenTrigger.current = trigger;
     setListeningOpen(true);
   };
   return <ReaderLayout reader={reader} coaching={coaching}
-    readingSettingsExtra={<ReadingSupportControls bookId={book.id} inline />}
-    onResetReadingSupport={support.reset}
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
-    onListen={openListening}
+    hasRecordedAudio={hasRecordedAudio} onOpenRecordedAudio={openListening}
     onBrowserSpeechStart={() => { setPauseSignal(value => value + 1); setBoundary(null); }}
-    listeningPanel={<div ref={listeningSurface} hidden={!listeningOpen} className="publication-listening-surface">
+    listeningPanel={hasRecordedAudio ? <div ref={listeningSurface} hidden={!listeningOpen} className="publication-listening-surface">
       <ListeningPanel bookId={book.id} sections={reader.sections} currentSectionId={reader.currentSectionId}
         onSelectSection={reader.handleSectionChange} tracks={audio} pauseSignal={pauseSignal}
         onPlaybackStart={() => reader.rendererRef.current?.stopReadAloud()}
         onBoundary={setBoundary}
         onClose={() => { setListeningOpen(false); listenTrigger.current?.focus(); }} />
-    </div>} />;
+    </div> : null} />;
 }
 
 export type { PublicationBook, PublicationSection, PublicationContentFormat, PublicationReaderProps, PublicationCoaching } from './types.js';

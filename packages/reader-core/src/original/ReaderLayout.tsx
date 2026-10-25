@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { Sidebar } from './Sidebar.js';
 import { MarkdownRenderer } from './MarkdownRenderer.js';
 import { HighlightsDrawer } from './HighlightsDrawer.js';
@@ -8,34 +8,36 @@ import { QuoteImageModal } from './QuoteImageModal.js';
 import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
 import { publicationLabels, publicationColour } from './publication-navigation.js';
-import type { MaxWidth, PublicationCoaching } from './types.js';
+import type { PublicationCoaching } from './types.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
 import { isReadableSection, sectionAncestors } from './sidebar-model.js';
 import type { usePublicationReader } from './use-publication-reader.js';
+import { ReaderToolbar, type SpeechState } from './toolbar/ReaderToolbar.js';
+import { useReadingSupport } from './reading-support/use-reading-support.js';
 
 export interface ReaderLayoutProps {
   reader: ReturnType<typeof usePublicationReader>;
   coaching?: PublicationCoaching;
-  readingSettingsExtra?: React.ReactNode;
   readingSurface?: (children: React.ReactNode) => React.ReactNode;
   listeningPanel?: React.ReactNode;
-  onListen?: () => void;
+  /** True only when the host configured at least one playable recording; the recorded option is hidden otherwise. */
+  hasRecordedAudio?: boolean;
+  onOpenRecordedAudio?: (trigger: HTMLElement | null) => void;
   onBrowserSpeechStart?: () => void;
-  onResetReadingSupport?: () => void;
 }
 
 /** Original reader actions and annotations, with independently measured article and navigation. */
-export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSurface, listeningPanel, onListen, onBrowserSpeechStart, onResetReadingSupport }: ReaderLayoutProps) {
-  const settingsRef = useRef<HTMLDialogElement>(null);
-  const settingsButtonRef = useRef<HTMLButtonElement>(null);
+export function ReaderLayout({ reader, coaching, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
+  const [speech, setSpeech] = useState<SpeechState>('idle');
   const { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, fontSize, lineHeight, maxWidth, setMaxWidth, resetReadingSettings, getContainerWidthClass,
+    isDarkMode, setIsDarkMode, defaultDarkMode, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
-    isRulerActive, setIsRulerActive, rulerY, rulerLines, rulerHeightPx, isSearchTriggered, setIsSearchTriggered,
+    isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
     contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
+  const support = useReadingSupport(book.id);
   const labels = publicationLabels(book);
   const browserSpeechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
   const appearanceStyle = {
@@ -48,30 +50,6 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
   const wrapReadingSurface = readingSurface ?? ((children: React.ReactNode) => children);
   return (
     <div style={appearanceStyle} className={`publication-reader ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
-      {/* Reading Ruler Overlay */}
-      {isRulerActive && (
-        <div className="fixed inset-0 z-[90] pointer-events-none">
-            <div 
-                className="absolute left-0 right-0 bg-gray-900/80 dark:bg-black/80 transition-all duration-150 ease-out"
-                style={{ top: 0, height: `${rulerY}px` }}
-            />
-            
-            <div 
-                className="absolute left-0 right-0 border-y-2 border-amber-400/30 dark:border-indigo-400/30 transition-all duration-150 ease-out"
-                style={{ top: `${rulerY}px`, height: `${rulerHeightPx}px`, boxShadow: '0 0 30px rgba(0,0,0,0.5) inset' }}
-            />
-
-            <div 
-                className="absolute left-0 right-0 bottom-0 bg-gray-900/80 dark:bg-black/80 transition-all duration-150 ease-out"
-                style={{ top: `${rulerY + rulerHeightPx}px` }}
-            />
-            
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-white/70 text-xs font-mono bg-black/60 px-3 py-1 rounded-full border border-white/10">
-                Arrows: Move | 1-4: Size | Esc: Exit
-            </div>
-        </div>
-      )}
-
       {/* Left Sidebar: hidden rather than unmounted, so its list position and open topics survive */}
       <Sidebar
         book={book}
@@ -89,50 +67,16 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
 
       {/* Main Content Area */}
       <main className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
-        <header className="publication-toolbar">
-          <button className="publication-navigation-toggle" onClick={() => { setIsSidebarOpen(value => !value); setIsImmersiveMode(false); }} aria-expanded={isSidebarOpen && !isImmersiveMode} aria-label={isSidebarOpen && !isImmersiveMode ? 'Close navigation' : 'Open navigation'}>
-            <span aria-hidden="true" className="material-symbols-outlined">menu</span>
-            <span>{labels.tableOfContents}</span>
-          </button>
-          <button className="publication-toolbar-identity" onClick={() => handleSectionChange('home')} title={publicationDisplayTitle(book)}>{publicationDisplayTitle(book)}</button>
-          <div className="publication-toolbar-actions">
-            <button ref={settingsButtonRef} aria-haspopup="dialog" onClick={() => settingsRef.current?.showModal()}>
-              <span aria-hidden="true" className="material-symbols-outlined">tune</span>{labels.readingSettings}
-            </button>
-            <button onClick={onListen ?? (() => rendererRef.current?.toggleReadAloud())} disabled={!onListen && (isHome || !browserSpeechAvailable)} title={!onListen && !browserSpeechAvailable ? 'Browser read-aloud is unavailable in this browser' : undefined}>
-              <span aria-hidden="true" className="material-symbols-outlined">headphones</span>{onListen ? labels.listen : 'Browser read-aloud'}
-            </button>
-            {!isHome && <button className="publication-toolbar-notes" onClick={() => setIsHighlightsOpen(true)} aria-label="Open notes and highlights">Notes</button>}
-          </div>
-        </header>
-        <dialog ref={settingsRef} className="publication-settings" aria-labelledby="publication-settings-title"
-          onClose={() => settingsButtonRef.current?.focus()} onClick={event => { if (event.target === event.currentTarget) {
-            const box = event.currentTarget.getBoundingClientRect();
-            if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) event.currentTarget.close();
-          } }}>
-          <div className="publication-settings-heading"><h2 id="publication-settings-title">{labels.readingSettings}</h2>
-            <button autoFocus aria-label="Close reading settings" onClick={() => settingsRef.current?.close()}>Close</button>
-          </div>
-          <fieldset><legend>Text layout</legend>
-            <label>Article width<select aria-label="Article width" value={maxWidth} onChange={event => setMaxWidth(event.target.value as MaxWidth)}>
-              <option value="sm">Narrow</option><option value="md">Normal</option><option value="lg">Wide</option><option value="full">Full width</option>
-            </select></label>
-            <p>The width controls the text column. Chapter navigation sits beside it.</p>
-          </fieldset>
-          <fieldset><legend>Page appearance and focus</legend>
-            <label>Colour theme<select aria-label="Colour theme" value={isDarkMode ? 'dark' : 'light'} onChange={event => setIsDarkMode(event.target.value === 'dark')}>
-              <option value="light">Light</option><option value="dark">Dark</option>
-            </select></label>
-            <label><input type="checkbox" checked={isImmersiveMode} onChange={event => setIsImmersiveMode(event.target.checked)} />Focus mode hides navigation</label>
-
-          </fieldset>
-          {readingSettingsExtra}
-          <div className="publication-settings-actions">
-            <button onClick={() => { resetReadingSettings(); onResetReadingSupport?.(); }}>Reset reading settings</button>
-            <button onClick={() => { settingsRef.current?.close(); setIsShortcutsOpen(true); }}>Keyboard shortcuts</button>
-            {handleDownloadEbook && <button onClick={handleDownloadEbook}>Download eBook</button>}
-          </div>
-        </dialog>
+        <ReaderToolbar
+          navigationLabel={labels.tableOfContents} navigationOpen={isSidebarOpen && !isImmersiveMode}
+          onToggleNavigation={() => { setIsSidebarOpen(value => !value); setIsImmersiveMode(false); }}
+          title={publicationDisplayTitle(book)} onHome={() => handleSectionChange('home')} isHome={isHome} listenLabel={labels.listen}
+          support={support} isDark={isDarkMode} defaultDark={defaultDarkMode} onDark={setIsDarkMode}
+          maxWidth={maxWidth} onMaxWidth={setMaxWidth} immersive={isImmersiveMode} onImmersive={setIsImmersiveMode}
+          speech={speech} speechAvailable={browserSpeechAvailable}
+          onToggleSpeech={() => rendererRef.current?.toggleReadAloud()} onStopSpeech={() => rendererRef.current?.stopReadAloud()}
+          hasRecordedAudio={!!hasRecordedAudio && !!onOpenRecordedAudio} onOpenRecordedAudio={trigger => onOpenRecordedAudio?.(trigger)}
+          onOpenNotes={() => setIsHighlightsOpen(true)} onOpenShortcuts={() => setIsShortcutsOpen(true)} />
 
         {/* Floating Highlight Tooltip */}
         {selectionRect && (
@@ -247,15 +191,13 @@ export function ReaderLayout({ reader, coaching, readingSettingsExtra, readingSu
                                     format={currentSection.format}
                                     language={book.language}
                                     onBrowserSpeechStart={onBrowserSpeechStart}
+                                    onSpeechStateChange={setSpeech}
                                     ref={rendererRef}
                                     content={currentSection.content} 
                                     highlights={currentSectionHighlights}
                                     reflection={currentSectionReflection}
                                     onSaveReflection={handleSaveReflection}
                                     onOpenHighlight={handleOpenHighlightCallback}
-                                    // Readability Props
-                                    fontSize={fontSize}
-                                    lineHeight={lineHeight}
                                     maxWidth={maxWidth}
                                 />)}
                                 {!!currentSection.children?.length && <nav aria-label="Chapters in this section" className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6 space-y-3">

@@ -1,11 +1,12 @@
 import type { PublicationEpubOptions } from '../services/publication-epub/index.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { FontSize, Highlight, LineHeight, MaxWidth, PublicationBook, Reflection } from './types.js';
+import type { Highlight, MaxWidth, PublicationBook, Reflection } from './types.js';
 import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import type { TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
 import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
 import { readableNeighbours } from './sidebar-model.js';
+import { useReadingSupport } from './reading-support/use-reading-support.js';
 
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
 const boolean = (value: unknown): value is boolean => typeof value === 'boolean';
@@ -34,8 +35,10 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [reflections, setReflections] = useBookState(book.id, 'reflections', [] as Reflection[], reflectionsValid, storageFailure);
   const systemDark = (() => { try { return typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-color-scheme: dark)').matches; } catch { return false; } })();
   const [isDarkMode, setIsDarkMode] = useBookState(book.id, 'darkMode', systemDark, boolean, storageFailure);
-  const [fontSize, setFontSize] = useBookState<FontSize>(book.id, 'fontSize', 'base', oneOf(['sm', 'base', 'lg', 'xl'] as const), storageFailure);
-  const [lineHeight, setLineHeight] = useBookState<LineHeight>(book.id, 'lineHeight', 'relaxed', oneOf(['tight', 'normal', 'relaxed', 'loose'] as const), storageFailure);
+  // Text size, spacing and the reading overlay have one owner: the reading preferences. Older saved 'fontSize' and 'lineHeight' values are left untouched in storage and no longer read.
+  const support = useReadingSupport(book.id);
+  const lastOverlay = useRef<'line-window' | 'ruler'>('line-window');
+  if (support.preferences.overlay !== 'off') lastOverlay.current = support.preferences.overlay;
   const [maxWidth, setMaxWidth] = useBookState<MaxWidth>(book.id, 'maxWidth', 'md', oneOf(['sm', 'md', 'lg', 'full'] as const), storageFailure);
   const readSections = useMemo(() => new Set(readIds), [readIds]);
   const bookmarkedSections = useMemo(() => new Set(bookmarkIds), [bookmarkIds]);
@@ -47,9 +50,6 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const [isHighlightsOpen, setIsHighlightsOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   const [isImmersiveMode, setIsImmersiveMode] = useState(false);
-  const [isRulerActive, setIsRulerActive] = useState(false);
-  const [rulerY, setRulerY] = useState(200);
-  const [rulerLines, setRulerLines] = useState(2);
   const [isSearchTriggered, setIsSearchTriggered] = useState(false);
   const [quoteModalData, setQuoteModalData] = useState<{ text: string; title: string; sectionId: string } | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -73,12 +73,8 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     if (layoutRef.current.isDesktop) setDesktopChoice(previous => typeof next === 'function' ? next(previous ?? !layoutRef.current.isHome) : next);
     else setIsDrawerOpen(previous => typeof next === 'function' ? next(previous) : next);
   }, []);
-  const cycleFontSize = () => setFontSize(value => (['sm', 'base', 'lg', 'xl'] as const)[(['sm', 'base', 'lg', 'xl'].indexOf(value) + 1) % 4]);
-  const cycleLineHeight = () => setLineHeight(value => (['tight', 'normal', 'relaxed', 'loose'] as const)[(['tight', 'normal', 'relaxed', 'loose'].indexOf(value) + 1) % 4]);
-  const cycleMaxWidth = () => setMaxWidth(value => (['sm', 'md', 'lg', 'full'] as const)[(['sm', 'md', 'lg', 'full'].indexOf(value) + 1) % 4]);
   // The measure applies only to the article; navigation has its own width budget.
   const getContainerWidthClass = () => `publication-width-${maxWidth}`;
-  const resetReadingSettings = () => { setFontSize('base'); setLineHeight('relaxed'); setMaxWidth('md'); setIsDarkMode(systemDark); setIsImmersiveMode(false); setIsRulerActive(false); };
   const showToast = useCallback((message: string) => setToastMessage(message), []);
   const clearSelection = useCallback(() => {
     setSelectionRect(null);
@@ -287,29 +283,20 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
       const target = event.target as HTMLElement;
       // Native settings dialogs own their keyboard interaction, including Escape.
       if (target.closest('dialog[open]')) return;
+      // Toolbar menus close themselves on Escape and own their keys.
+      if (target.closest('[data-reader-menu]')) return;
       if (event.key === 'Escape') {
-        setIsRulerActive(false); setIsShortcutsOpen(false); setQuoteModalData(null); setIsHighlightsOpen(false); setIsChatOpen(false); setIsImmersiveMode(false); clearSelection();
+        setIsShortcutsOpen(false); setQuoteModalData(null); setIsHighlightsOpen(false); setIsChatOpen(false); setIsImmersiveMode(false); clearSelection();
         return;
       }
       if (event.ctrlKey || event.altKey || event.metaKey || target.closest('input, textarea, select, [contenteditable="true"], [role="dialog"]')) return;
-      if (isRulerActive && (/^[1-4]$/.test(event.key) || ['ArrowDown', 'ArrowUp'].includes(event.key))) {
-        event.preventDefault();
-        if (/^[1-4]$/.test(event.key)) setRulerLines(Number(event.key));
-        else {
-          const delta = event.key === 'ArrowDown' ? 20 : -20;
-          const next = rulerY + delta;
-          if (next < 100 || next > window.innerHeight - rulerLines * 42 - 50) contentRef.current?.scrollBy({ top: delta, behavior: 'smooth' });
-          else setRulerY(next);
-        }
-        return;
-      }
       switch (event.key.toLowerCase()) {
         case '?': event.preventDefault(); setIsShortcutsOpen(true); break;
         case 'h': if (selectedText) { event.preventDefault(); saveHighlight(); } break;
         case 'l': event.preventDefault(); if (selectedText) void shareHighlightLink(); else sharePageLink(); break;
         case 'f': event.preventDefault(); setIsImmersiveMode(value => !value); break;
         case 'b': event.preventDefault(); toggleBookmark(); break;
-        case 'r': event.preventDefault(); setIsRulerActive(value => !value); break;
+        case 'r': event.preventDefault(); support.update({ overlay: support.preferences.overlay === 'off' ? lastOverlay.current : 'off' }); break;
         case 'a': event.preventDefault(); rendererRef.current?.toggleReadAloud(); break;
         case 's': event.preventDefault(); setIsSidebarOpen(value => !value); break;
         case 'n': event.preventDefault(); setIsImmersiveMode(false); setTimeout(() => tocRef.current?.focus(), 0); break;
@@ -325,12 +312,12 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     };
     window.addEventListener('keydown', keydown);
     return () => window.removeEventListener('keydown', keydown);
-  }, [selectedText, isRulerActive, rulerY, rulerLines, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection]);
+  }, [selectedText, support, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection]);
 
   return { book, sections, currentSectionId, currentSection, isHome, readSections, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
-    isDarkMode, setIsDarkMode, fontSize, setFontSize, lineHeight, setLineHeight, maxWidth, setMaxWidth, resetReadingSettings, cycleFontSize, cycleLineHeight, cycleMaxWidth, getContainerWidthClass,
+    isDarkMode, setIsDarkMode, defaultDarkMode: systemDark, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
-    isRulerActive, setIsRulerActive, rulerY, rulerLines, rulerHeightPx: rulerLines * 42, isSearchTriggered, setIsSearchTriggered,
+    isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
     contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,

@@ -1,0 +1,256 @@
+[
+  {
+    "name": "reset: focus stays inside Formatting when Reset disables itself",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Book paper",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "reset: Tab stays inside Formatting",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Serif",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "reset: Shift+Tab stays inside Formatting",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Normal",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "reset: Escape closes the menu and returns to Formatting",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "stepper at its limit: focus stays inside Formatting",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Decrease text size",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "stepper at its limit: Tab stays inside Formatting",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Decrease line spacing",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "Turn all off: focus stays inside Assist",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "keyboardKeyboard shortcuts",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "Turn all off: Tab stays inside Assist",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Paragraph focus",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "orphan track: no recorded option",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "orphan track: no player surface or empty-player message",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "mixed tracks: a matching track still offers the player",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "idle second renderer mounting does not cancel the first renderer speech",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "idle second renderer changing content does not cancel",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "idle second renderer stop does not cancel",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "idle second renderer unmounting does not cancel",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "toolbar still shows the first renderer reading aloud",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "the owning renderer Stop still cancels its speech",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "a renderer that owns speech cancels it when its content changes",
+    "passed": true,
+    "detail": [
+      "cancel"
+    ]
+  },
+  {
+    "name": "a renderer that owns speech cancels it on unmount",
+    "passed": true,
+    "detail": [
+      "cancel"
+    ]
+  },
+  {
+    "name": "late canceled callback cannot clear the new playback state",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "late end callback cannot clear the new playback state",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "the current utterance ending returns to idle",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: paused owner survives idle mount/change/stop/unmount and stale callbacks",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: current error clears paused state",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: ordinary keyboard size change keeps its enabled control focused",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: mobile keyboard Reset restores enabled menu focus",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Book paper",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: mobile reset containment through 22 Tab presses",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Increase letter spacing",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: mobile reset containment through 22 Shift+Tab presses",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Book paper",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: keyboard lower limit restores enabled focus for text size",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Increase text size",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: keyboard lower limit restores enabled focus for line spacing",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Increase text size",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: keyboard lower limit restores enabled focus for paragraph spacing",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Increase text size",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: keyboard lower limit restores enabled focus for letter spacing",
+    "passed": true,
+    "detail": {
+      "tag": "BUTTON",
+      "label": "Increase text size",
+      "disabled": false,
+      "inMenu": true
+    }
+  },
+  {
+    "name": "independent: mobile Escape returns to Formatting",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: mobile keyboard Assist off focuses same footer shortcut",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "independent: matching section with unsafe source offers no recorded surface",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "no browser exceptions",
+    "passed": true,
+    "detail": []
+  }
+]
