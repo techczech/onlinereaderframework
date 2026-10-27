@@ -1,17 +1,17 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { SectionConfig, SectionId, Highlight } from '../../types';
-import { Sidebar } from './Sidebar';
-import { ReaderContent } from './ReaderContent';
-import { TableOfContents, TocItem } from './TableOfContents';
-import { SelectionToolbar } from './SelectionToolbar';
-import { HighlightsPanel } from '../tools/HighlightsPanel';
-import { exportHighlightsToMarkdown } from '../../utils/highlightExport';
-import { downloadLlmsTxt } from '../../utils/llmsExport';
-import { generateEpub } from '../../services/epub/epubGenerator';
-import { SearchModal } from '../tools/SearchModal';
-import { ReadabilityControls, FontSize, LineHeight, ContentWidth } from '../tools/ReadabilityControls';
-import { ProgressPanel } from '../tools/ProgressPanel';
-import { BookmarkButton } from '../tools/BookmarkButton';
+import { SectionConfig, SectionId, Highlight } from '../../types.js';
+import { Sidebar } from './Sidebar.js';
+import { ReaderContent } from './ReaderContent.js';
+import { TableOfContents, TocItem } from './TableOfContents.js';
+import { SelectionToolbar } from './SelectionToolbar.js';
+import { HighlightsPanel } from '../tools/HighlightsPanel.js';
+import { exportHighlightsToMarkdown } from '../../utils/highlightExport.js';
+import { downloadLlmsTxt } from '../../utils/llmsExport.js';
+import { generateEpub } from '../../services/epub/epubGenerator.js';
+import { SearchModal } from '../tools/SearchModal.js';
+import { ReadabilityControls, FontSize, LineHeight, ContentWidth } from '../tools/ReadabilityControls.js';
+import { ProgressPanel } from '../tools/ProgressPanel.js';
+import { BookmarkButton } from '../tools/BookmarkButton.js';
 
 export interface ReaderProps {
   sections: SectionConfig[];

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Reader Framework: a React reader for books on the web</title>
+<meta name="description" content="Online Reader Framework is an open source (MIT) React library that turns a book into a searchable, adjustable web edition with notes, read-aloud, EPUB export and Markdown files for AI agents.">
+<link rel="canonical" href="https://techczech.github.io/onlinereaderframework/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="band">
+  <div class="wrap">
+    <p class="kicker">Open source · MIT licence · version 1.0.0</p>
+    <h1>Online Reader Framework</h1>
+    <p class="lead">A React library that turns a book, guide or long manual into a web edition that is comfortable to read. You supply the book as data. The framework supplies the reader.</p>
+    <p class="actions">
+      <a class="button" href="https://github.com/techczech/onlinereaderframework">Source on GitHub</a>
+      <a class="button secondary" href="#examples">See three editions</a>
+    </p>
+  </div>
+</header>
+<nav class="wrap" aria-label="On this page">
+  <ul class="toc">
+    <li><a href="#features">What it does</a></li>
+    <li><a href="#examples">Live editions</a></li>
+    <li><a href="#start">Get started</a></li>
+    <li><a href="#source">Source and release</a></li>
+    <li><a href="#foundations">Reading research behind it</a></li>
+    <li><a href="#licence">Licence</a></li>
+  </ul>
+</nav>
+<main id="main" class="wrap">
+
+<section id="features" aria-labelledby="h-features">
+  <h2 id="h-features">What it does</h2>
+  <p>Long texts are hard to read on a screen. The reader gives each book the same set of tools, so the reader of the book can adjust the page to how they read.</p>
+  <ul class="cards">
+    <li><h3>Navigate</h3><p>A nested contents tree, previous and next links, six front-page layouts, and an address for every section.</p></li>
+    <li><h3>Search</h3><p>Full-text search across every section, including nested ones.</p></li>
+    <li><h3>Adjust the page</h3><p>Light, dark or system theme. Font, size, spacing and text width. Dim the other paragraphs, show a few lines, or lay a ruler under the current line. Optional anchored reading emphasises the first letters of words.</p></li>
+    <li><h3>Keep notes</h3><p>Highlights with notes, reflections, bookmarks and progress, saved in the reader's own browser for each book. Notes export as Markdown, and a quote can become an image with a QR code.</p></li>
+    <li><h3>Listen</h3><p>Read aloud with the browser's speech voices, with the spoken passage highlighted. A host can also supply audio tracks, with optional word alignment.</p></li>
+    <li><h3>Take it away</h3><p>Build an EPUB 3 file of the book in the browser. Generate Markdown files and a prompt so that a reader can ask an AI agent about the book.</p></li>
+  </ul>
+  <p>The reader has no server and no accounts, and it calls no AI service. A host can add its own coaching panel through one render function. Read aloud depends on the voices the browser provides, and EPUB export needs a browser.</p>
+</section>
+
+<section id="examples" aria-labelledby="h-examples">
+  <h2 id="h-examples">Live editions</h2>
+  <p>Three books by Dominik Lukeš are published on the framework. Each is a separate site with its own terms for the text. The framework repository contains none of them.</p>
+  <ul class="books">
+    <li>
+      <h3><a href="https://deliberatepractice.dominiklukes.net/">Guide to Deliberate Practice as a Universal Learning Method</a></h3>
+      <p>A manual for learning any skill with deliberate practice.</p>
+    </li>
+    <li>
+      <h3><a href="https://buildingyourlanguagemuscle.edutools.fyi/">Building Your Language Muscle</a></h3>
+      <p>A guide that applies deliberate practice to learning a language.</p>
+    </li>
+    <li>
+      <h3><a href="https://linguistics.dominiklukes.net/">Introduction to Key Issues in Language Through Stack Exchange Answers</a></h3>
+      <p>All 253 answers the author wrote on Linguistics Stack Exchange between 2013 and 2016, in nine sections.</p>
+    </li>
+  </ul>
+</section>
+
+<section id="start" aria-labelledby="h-start">
+  <h2 id="h-start">Get started</h2>
+  <p>You need Node 22 or later. The package is used from source and is not on npm.</p>
+<pre><code>git clone https://github.com/techczech/onlinereaderframework.git
+cd onlinereaderframework
+npm run setup
+npm run build
+npm test</code></pre>
+  <p>Then install the built <code>packages/reader-core</code> folder in your project as a local file dependency, and pass the reader a book:</p>
+<pre><code>import { PublicationReader } from 'reader-core';
+import 'reader-core/reader.css';
+
+const book = {
+  id: 'my-guide',
+  title: 'My Guide',
+  author: 'A. Author',
+  description: 'One sentence about the book.',
+  sections: [
+    { id: 'start', title: 'Start here', category: 'Basics',
+      content: '# Start here\n\nSome **Markdown**.' },
+  ],
+};
+
+export default () =&gt; &lt;PublicationReader book={book} /&gt;;</code></pre>
+  <p>The <a href="https://github.com/techczech/onlinereaderframework#readme">README</a> covers the book format in full, agent-file generation, EPUB export and the limits of this release.</p>
+</section>
+
+<section id="source" aria-labelledby="h-source">
+  <h2 id="h-source">Source and release</h2>
+  <ul>
+    <li><a href="https://github.com/techczech/onlinereaderframework">Repository on GitHub</a></li>
+    <li><a href="https://github.com/techczech/onlinereaderframework/releases">Releases</a> (version 1.0.0 is the first public release)</li>
+    <li><a href="https://github.com/techczech/onlinereaderframework/issues">Report a problem or ask a question</a></li>
+    <li><a href="https://github.com/techczech/onlinereaderframework/blob/main/LICENSE">MIT licence text</a></li>
+  </ul>
+</section>
+
+<section id="foundations" aria-labelledby="h-foundations">
+  <h2 id="h-foundations">Reading research behind it</h2>
+  <p>The reading settings follow guidance the author has published on how people read and what makes text easy to process. Both guides are free to read.</p>
+  <ul>
+    <li><a href="https://readability.edutools.fyi/">Foundations of Readability</a>: five principles for readable documents and slides, and three reading modes (comprehensive reading, skimming and scanning).</li>
+    <li><a href="https://readabilityprinciples.notion.site">Principles of Readability</a>: clear-writing principles, with examples and checklists.</li>
+    <li><a href="https://academicreading.edutools.fyi/">Academic Reading Framework</a>: a framework for improving academic reading productivity.</li>
+  </ul>
+</section>
+
+<section id="licence" aria-labelledby="h-licence">
+  <h2 id="h-licence">Licence</h2>
+  <p>The software is released under the <a href="https://github.com/techczech/onlinereaderframework/blob/main/LICENSE">MIT licence</a>, copyright 2026 Dominik Lukeš. The fonts it bundles (Inter, Merriweather and Material Symbols Outlined) are under the SIL Open Font License 1.1, with their notices kept in the repository. The licence does not cover the text of any book published with the framework. <a href="https://github.com/techczech/onlinereaderframework/blob/main/LICENSING.md">Read the licensing summary</a>.</p>
+</section>
+
+</main>
+<footer class="band foot">
+  <div class="wrap">
+    <p>Online Reader Framework is made by <a href="https://dominiklukes.net/">Dominik Lukeš</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

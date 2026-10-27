@@ -1,0 +1,786 @@
+{
+  "status": "v1.0.0-mit-source-release",
+  "license": "MIT",
+  "copyright": "2026 Dominik Lukeš",
+  "origins": [
+    {
+      "project": "Deliberate Practice",
+      "file": "App.tsx",
+      "supplies": "ReaderLayout.tsx; use-publication-reader.ts",
+      "sha256": "917ce0013df578b9ff465627d570c90841ee5adac602a8465d0efda8be443c95"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/Sidebar.tsx",
+      "supplies": "Sidebar.tsx",
+      "sha256": "f2f64ee8c8828f2a186836f2d82d559a9163bfd56aa29fa572ed3675f677e44c"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/Home.tsx",
+      "supplies": "Home.tsx",
+      "sha256": "ad3f4bd48f4e8b3155bb5cfc8275906ba4d2df6dfc06eacfddf5913c73dce4f0"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/MarkdownRenderer.tsx",
+      "supplies": "MarkdownRenderer.tsx; publication-html.ts",
+      "sha256": "9ca83348c5afc6366a19da06ad94f612c1e57b7b7c8867a475a6786f06eba1aa"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/TableOfContents.tsx",
+      "supplies": "TableOfContents.tsx",
+      "sha256": "e7ad1921933d5693319b58b1f2449acff8eb35fb852ea7c0f45835811fd24fd1"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/HighlightsDrawer.tsx",
+      "supplies": "HighlightsDrawer.tsx",
+      "sha256": "af868eeb0f72f5b3e835ad4bf322989a33fd127f7c0b7533aa959f0d7bd16060"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/QuoteImageModal.tsx",
+      "supplies": "QuoteImageModal.tsx",
+      "sha256": "1c6a785e639e33d3b56fe50aab129525f68ede0304f505d5fb41618522e36f9f"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/ShortcutsModal.tsx",
+      "supplies": "ShortcutsModal.tsx",
+      "sha256": "8c0e92ed1c560aff5846b618fa2e7408d0ca46c137305df28c7c508d721bf1b1"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "components/Toast.tsx",
+      "supplies": "Toast.tsx",
+      "sha256": "6b672fbd062f859f655b73ea61deaa94d5f63074c7934bfa4a02384183107e4f"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "utils/highlightExporter.ts",
+      "supplies": "publication-notes.ts",
+      "sha256": "7f95dfa100145907c6eb9d76e0fa5be300d3f72924dc20cedc8b060d978a2a8d"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "types.ts",
+      "supplies": "types.ts",
+      "sha256": "de4a753f7fa7d7e3320557d31981664e0ce4ab5fbf871bdddb78aa9809ec7ef1"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "index.html",
+      "supplies": "reader-original.css; README.md",
+      "sha256": "604cfb309cd4557bd60299db69025ba3c8146b67fbb87777620f799e38d490d2"
+    },
+    {
+      "project": "Language Muscle",
+      "file": "App.tsx",
+      "supplies": "Sidebar.tsx recursive SidebarItem",
+      "sha256": "3f4dc58cf67fd1c840a2b5cbe7a6e959b24b789117a8bda4aed7061a340b4654"
+    },
+    {
+      "project": "Language Muscle",
+      "file": "services/epubService.ts",
+      "supplies": "services/publication-epub",
+      "sha256": "bd0a640040d4e3df275a0230a691b98c1d96211532ce4a2c931bc0b5f2fc362d"
+    },
+    {
+      "project": "Deliberate Practice",
+      "file": "utils/epubGenerator.ts",
+      "supplies": "services/publication-epub",
+      "sha256": "11a2bd43654c362aac646a6e174c990870301d87ac08859234da1e83a90d9b15"
+    }
+  ],
+  "reusedFromAuthorOtherApps": [
+    {
+      "project": "ReadFlex",
+      "supplies": "packages/reader-core/src/original/read-aloud (speech contract)"
+    },
+    {
+      "project": "WriteFlex",
+      "supplies": "packages/reader-core/src/original/reading-support/anchored-reading.ts (leadLength and the word walk)"
+    }
+  ],
+  "adaptations": [
+    "Original application markup/styles remain; book identity and optional coaching use supplied contracts.",
+    "Persistence and routes are book-specific; rich content and EPUB use the shared sanitised renderer.",
+    "Only generic Node regressions are exported; tests that read a real book or another repository, and the original SVG manuscript fixture test, are left out (see transformations)."
+  ],
+  "transformations": [
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "operation": "keep-generic-tests-only",
+      "keptTests": [
+        "book and section ids become safe, distinct path segments; unusable ids are refused",
+        "prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address",
+        "Markdown is exported verbatim, including trailing newlines, spaces and a code hard break",
+        "the directory option is validated by both generators before any path is produced",
+        "a nested directory keeps every reader link pointing at the reader root",
+        "reader chapter references resolve to exported chapter files in chapter and full-book contexts",
+        "Markdown reader references stay verbatim; resolved files are listed in a note after the section",
+        "whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation",
+        "canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it",
+        "private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6",
+        "both generators refuse an unusable public address before producing any file, and never echo it",
+        "the reader box rebases its folder from the current reader root onto the public reader prefix",
+        "a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are",
+        "an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link",
+        "a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt"
+      ],
+      "droppedTests": [
+        "every book: all section ids in reading order, counts, and one file per section",
+        "markdown sections are preserved byte for byte in chapter files and, in order, in full.md",
+        "code, tables, footnote-like attribution, source lines and the image link survive",
+        "html sections keep their structure through the reader sanitiser, with a title heading added",
+        "every relative link in every generated file resolves to a generated file; no private paths or browser state",
+        "siteUrl makes every link absolute; relative output has none of that host",
+        "reader links match the reader\\'s own publicationUrl; private hosts are recognised",
+        "canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash",
+        "a root index links each book at its own public address, never at another book\\'s",
+        "anchored reading: leadLength is WriteFlex\\'s own, and lead spans follow its word walk",
+        "real Language Muscle step-2 links to the Fine-tuning your aims chapter file"
+      ],
+      "sourceSha256": "2254fbcbe85f66d47a56e99a7fe50c88d19b14ca32d4b26d2cfda7f1f25ca0e2",
+      "exportedSha256": "635cc872f55cbc74b29ef18198466c0341cc064736239e8c2189993373da517a"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+      "operation": "omit-one-real-book-test",
+      "test": "preserves the original Language Muscle static SVG with paired gradient and marker IDs",
+      "sourceSha256": "b560102dda900cb5a570e9b018b36bb1cff33f3bd0b44779a668f89a0131e197",
+      "exportedSha256": "7d27d1ed13684ca9b0c1d12ab737080c109f13a669d3dca10ed219244e74ba2a"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader.mjs",
+      "operation": "omit-one-real-book-test",
+      "test": "full publication identity uses actual adapter words without added punctuation or duplicates",
+      "sourceSha256": "ed48e13b4f82ae5a3f0e9d0b4ac9f4ab991b206307b6adb9e392f05837a07ac9",
+      "exportedSha256": "98114671968d730415f8807072a0c0dbe918a3f622401c1316cea3ef67d3f723"
+    }
+  ],
+  "exportedInputs": [
+    {
+      "path": "packages/reader-core/src/adapters/markdownAdapter.ts",
+      "sha256": "83608648130f53876198bc5d1ddb84d07150119cc89772762efdeac617eefe4c",
+      "bytes": 485
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "sha256": "1fcce4620721c09ec68f4e65cb9b81ea09b8411b1b7d911cbd81fae711205229",
+      "bytes": 15254
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-links.ts",
+      "sha256": "575df73841f29c20dc12271d1d0871196b25a1bc670dbe89a1dad3605e06d9c0",
+      "bytes": 4183
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-location.ts",
+      "sha256": "1a6206ad226ebb0e356ce289a1372916e456fc59b3772e932e0744f15bd6640b",
+      "bytes": 3866
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "sha256": "105cf6c96bbe4307bfe388cce952524efdad7cfdc3d1288b48229bc515d10b45",
+      "bytes": 5653
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-url.ts",
+      "sha256": "0a22cf017396b626be1d8eac6722c362643702395338f525ee9bff39bf008057",
+      "bytes": 6699
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/index.ts",
+      "sha256": "323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5",
+      "bytes": 251
+    },
+    {
+      "path": "packages/reader-core/src/components/blocks/BlockRenderer.tsx",
+      "sha256": "213048505fe6228610bd0e8f0bf77f1d765659876fb0ca54c89383139219dfbe",
+      "bytes": 3620
+    },
+    {
+      "path": "packages/reader-core/src/components/home/Home.tsx",
+      "sha256": "3d532456bb51cff8bff6deae31cf146f09c4c7d085263c94ce805ee69237992b",
+      "bytes": 1092
+    },
+    {
+      "path": "packages/reader-core/src/components/layouts/ScrollLayout.tsx",
+      "sha256": "29532d712ef4c24ca5203410aed24f9f6a97542c3860925bbdbfb637772d20ce",
+      "bytes": 210
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderContent.tsx",
+      "sha256": "56fb4e2ca92ff79f4f5464b4c3be827c69cb5737a87b492387712577b0875ff2",
+      "bytes": 4264
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderShell.tsx",
+      "sha256": "9bc3016b385d922b3d4634b92ea194ba2e3ed1423216cd483bbfee3a5e98bf05",
+      "bytes": 10489
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/SelectionToolbar.tsx",
+      "sha256": "16899bef4194439834cf044e881579adf3574f09915bc9b9b00965e32f9fff7c",
+      "bytes": 989
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/Sidebar.tsx",
+      "sha256": "e857ec6124f68be92c9b6deb33294027fc1bd57b3fdefefcdb4a689a9ac6fd00",
+      "bytes": 3506
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/TableOfContents.tsx",
+      "sha256": "3e64efaef7e9844f4d1160b5de71538f9d4756a35e92933101bd8e5c572181c0",
+      "bytes": 2234
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/BookmarkButton.tsx",
+      "sha256": "55ad9eb232561522651d180e822d6a597ed3679be9a238cf3ce63e2a1ebdc806",
+      "bytes": 498
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/HighlightsPanel.tsx",
+      "sha256": "cbd0bb0d812f0b083b6f51dfb24d9bf8a9d0075a60cc947b8367a2ea8f800f0c",
+      "bytes": 1458
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ProgressPanel.tsx",
+      "sha256": "0f475e2e9ae3acce5777de8f778a027f26987ce82ddf4fbba90bd94dcd765198",
+      "bytes": 1124
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ReadabilityControls.tsx",
+      "sha256": "1790a3eb73a6cc80e679b7b0522455028d540fd1afd7762dbc5afa855df66cf9",
+      "bytes": 2155
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/SearchModal.tsx",
+      "sha256": "2a6b8e2767648d1b0d9737247e091e94fea39de76591a60c525d173a42a22bfb",
+      "bytes": 2665
+    },
+    {
+      "path": "packages/reader-core/src/context/useReaderNavigation.ts",
+      "sha256": "ff3556d7a9747a86ff4b2e200d30ac91c9d698409772ea9c332323bdf694de8c",
+      "bytes": 1402
+    },
+    {
+      "path": "packages/reader-core/src/index.ts",
+      "sha256": "8e002e79af285ca2a4623b2e0e44f66df90374853e7bb23a3471db523207ce72",
+      "bytes": 2386
+    },
+    {
+      "path": "packages/reader-core/src/original/HighlightsDrawer.tsx",
+      "sha256": "d6284c8a97c05ab07c4454f32f38500a8a5b44a4fe685507b46dd2bf53e84b2e",
+      "bytes": 13115
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "sha256": "c5bce88004c6e0c1edcd53d79b6ec33df56e6e2e7daa8ef404ec2cad04ae002a",
+      "bytes": 4815
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "sha256": "dcf073ff6ef435afea847e272322c66df88ea37992177d86f8f97402acc1be90",
+      "bytes": 9284
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "sha256": "5d6c51bb37d516e13e90501a5e7c03f4a03f3cc418177d23939b8bef18d4d517",
+      "bytes": 3857
+    },
+    {
+      "path": "packages/reader-core/src/original/QuoteImageModal.tsx",
+      "sha256": "f42a2958af88db479145fb335aaccba210114377d96c826b4b4db2fc7de34889",
+      "bytes": 10139
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "sha256": "dfc19e86a1ad04150aa0f85181c75ebea450fc9fa64e911671d32e66aa27a0eb",
+      "bytes": 21980
+    },
+    {
+      "path": "packages/reader-core/src/original/ShortcutsModal.tsx",
+      "sha256": "19463518655ce581e86b8e6994c6513df3a8dd1b2295ef4d8ec63940ce37705d",
+      "bytes": 3276
+    },
+    {
+      "path": "packages/reader-core/src/original/Sidebar.tsx",
+      "sha256": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976",
+      "bytes": 23356
+    },
+    {
+      "path": "packages/reader-core/src/original/TableOfContents.tsx",
+      "sha256": "7e69e51cd463ab8f89116dab131d2ef7583c67c4fc042f86ff2189efc8dff0c5",
+      "bytes": 14956
+    },
+    {
+      "path": "packages/reader-core/src/original/Toast.tsx",
+      "sha256": "f3fe946cf054362c8189a49f1e8fe467694076122031457976e07e7c51f4c7ba",
+      "bytes": 745
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "sha256": "2a1208e8408acbf7f25b6abcad9a8df0cdd21ba18cf15ede98f1c489323cccd0",
+      "bytes": 6628
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "sha256": "3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe",
+      "bytes": 5412
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/FrontPage.tsx",
+      "sha256": "4a06571a8f70ff7d0109b0c3e109eba160c4de4787300fcb52775e6aafc75514",
+      "bytes": 3028
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-copy.ts",
+      "sha256": "44ff90930568e389f9af4e8583a86432027b7c3ca45807197a31de8acc18b643",
+      "bytes": 862
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-layouts.ts",
+      "sha256": "9252650e32ab66cd0fe5a38faff5ef09d9075c2395b9b6f0b8efea84675e0acf",
+      "bytes": 1476
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-model.ts",
+      "sha256": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39",
+      "bytes": 8565
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage.css",
+      "sha256": "6a9ad46003bd389f7658c414d0149bf3d0f4b734efb9690ab464eddfe09c8b19",
+      "bytes": 30219
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "sha256": "c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969",
+      "bytes": 17339
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/ListeningPanel.tsx",
+      "sha256": "53c44162d5138a1e9140fd71db04a18179d3bb02de416df543b437babce22d6f",
+      "bytes": 7244
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/index.ts",
+      "sha256": "f9038e1157d5e510154bc5be04fba1ad381addad3ece5301f4fa4c54f2c0c849",
+      "bytes": 359
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-controller.ts",
+      "sha256": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7",
+      "bytes": 13212
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-model.ts",
+      "sha256": "810a8bc9ba3cc639d2a956f681ab429d151e9cae8e8b8387ad0144d5344072a5",
+      "bytes": 3574
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-types.ts",
+      "sha256": "e5d5de9a927af500d907d137184d1955641c7b5189cc2e49b2a753c489e571a5",
+      "bytes": 1893
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening.css",
+      "sha256": "796223ccc56d0a07cd90daa2537b99c2f9187effbbcbad1abd32e32a53559cef",
+      "bytes": 1156
+    },
+    {
+      "path": "packages/reader-core/src/original/outline-preference.ts",
+      "sha256": "e1543efab369cd60ca5198c7b58b746208034d26191e807ac4e8bedac9ffa7ef",
+      "bytes": 1500
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "sha256": "944b35bec537915d31e1d2900fada2867b68d9349d183ec914850e6b32b66dc6",
+      "bytes": 7484
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-model.ts",
+      "sha256": "ac8d7633b770e0a39df57db4b4afb1ea2947ac462450be333a2f36a1d6c0d826",
+      "bytes": 3541
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-navigation.ts",
+      "sha256": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02",
+      "bytes": 5680
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-notes.ts",
+      "sha256": "435945ee3f2ec2571d38fc134aff17ad7cdc8bc1a600a2f46096538205f45d02",
+      "bytes": 1780
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx",
+      "sha256": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682",
+      "bytes": 6536
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/flex-speech.ts",
+      "sha256": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62",
+      "bytes": 22450
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts",
+      "sha256": "ef979dc329be4a5e79ce236335b64f41fed102ab40427233a1b3a138401a79de",
+      "bytes": 19598
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts",
+      "sha256": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c",
+      "bytes": 3138
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts",
+      "sha256": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e",
+      "bytes": 3410
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/use-read-aloud.ts",
+      "sha256": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c",
+      "bytes": 6474
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-integrations.css",
+      "sha256": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce",
+      "bytes": 1109
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-original.css",
+      "sha256": "796b81d7aef9a1ef1cabecb9b4ab385d0adc9836d43d90907d08cbf1da2221db",
+      "bytes": 36948
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-theme.ts",
+      "sha256": "c5f6af3ace2f540189a85f4ce2613122a62d0aef14f4f4f6d8f853209eb23122",
+      "bytes": 1988
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupport.tsx",
+      "sha256": "c7e9398e45b7e1375e2616f697ec0847c306ca7f9aa25e96ef721eb4782cb2bd",
+      "bytes": 625
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportControls.tsx",
+      "sha256": "7272c60d99852a8099a5e8453e28fd47bb9b213666af1062c979676d5dd71c7d",
+      "bytes": 4629
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx",
+      "sha256": "c575781c7bbade2a6fba19afd1a2b75cba955621956b9c3b0ff41ba7df3a4979",
+      "bytes": 13534
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/anchored-reading.ts",
+      "sha256": "6b8b72636cd76125410d911c3af43a2bab873a1078ca8e1ef1d5bc91c58dfcf0",
+      "bytes": 6459
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/index.ts",
+      "sha256": "c01258de705f87d722e34614888351cc3529d7e4c6e6b00b2f01657fd5c06701",
+      "bytes": 697
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/line-geometry.ts",
+      "sha256": "4cb0c8a8101350ad016c05a4e5bea1c886a6ded3b6ba94f55ed8453aab5d6fe7",
+      "bytes": 5133
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/reading-preferences.ts",
+      "sha256": "42ab8dabe51eecb5908e8d4b1731691e14db5178f81136aeb53afa9c11377e78",
+      "bytes": 7125
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/support.css",
+      "sha256": "51c8ac88d7481c0dd7bc074ce75e7fb9e6ecafc2da34dc15cdf68e77d32cc258",
+      "bytes": 4691
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-anchored-reading.ts",
+      "sha256": "a343bd84b4a07f4a703b1946facaf7e729606a6ed79d1e59371c60329d229713",
+      "bytes": 1582
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-reading-support.ts",
+      "sha256": "461e932b7d9b571db20b0b0cf42184e9165edb56545181de59304da91bc31a4f",
+      "bytes": 3535
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-viewport-width.ts",
+      "sha256": "98cd4189bd60ae363d03ebd4ea2e177849ec874647f5b268aafd52ed4d7e64be",
+      "bytes": 519
+    },
+    {
+      "path": "packages/reader-core/src/original/sidebar-model.ts",
+      "sha256": "61051a576f6bcf9afa4bd2e5eff194a492b52e94cf0d07826a1827348e6e9dc1",
+      "bytes": 2828
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
+      "sha256": "c30fc7f3cdf8a0286996b97c097ad9947ed8bbcb78b1c6c42a806ed32b585d63",
+      "bytes": 23201
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/controls.tsx",
+      "sha256": "e34631ff1a7da582c960c8a9ff63c440e0196a14b715717f43d6874e44fd91d7",
+      "bytes": 3223
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/toolbar-model.ts",
+      "sha256": "88acf150a8027dea5d0b72a7798b14d6af6fe48d654774748e14b00ed2e94c5b",
+      "bytes": 4875
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "sha256": "8d3614167b6785b77494b492e113f654f273b228ac42b09f860664026f8342dd",
+      "bytes": 4195
+    },
+    {
+      "path": "packages/reader-core/src/original/use-listening-highlight.ts",
+      "sha256": "e9bf28edf5b36dea7cb439e087191a537814b75f088ed82bba71fda21b972521",
+      "bytes": 2261
+    },
+    {
+      "path": "packages/reader-core/src/original/use-publication-reader.ts",
+      "sha256": "342137bfeebe996f3c2276bc53dd116c9182f7279fe3670592c27160ec0cfab1",
+      "bytes": 26207
+    },
+    {
+      "path": "packages/reader-core/src/original/use-system-dark.ts",
+      "sha256": "0e2e963b6dd105828e32521a2b675619617f96569040f5b6a70667e1a12822b3",
+      "bytes": 876
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/index.ts",
+      "sha256": "56b011d19c03b078c34ac91601d39546fe2883dc661bd50a71d3045ab7fdba5e",
+      "bytes": 6879
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-schema.ts",
+      "sha256": "257e77e0439a6ae3afb684728c42b8f49bd2a1381729fd7c69236e336fca3e38",
+      "bytes": 3649
+    },
+    {
+      "path": "packages/reader-core/src/services/epub/epubGenerator.ts",
+      "sha256": "2195cd6dd6cbc08a4cab8c01015905741f1f33d891d427a281c368811e42a203",
+      "bytes": 4206
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-assets.ts",
+      "sha256": "fbe3bcd5f651a45859174c19dd2b5514e9f5dd5de74c218bb271883a7cb412ce",
+      "bytes": 6139
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-references.ts",
+      "sha256": "21f3e8c6668f4f612bf2beee9e971b7d0a5654b1a877064232bf278c606d34b8",
+      "bytes": 1835
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-xhtml.ts",
+      "sha256": "3d12792c6f193bba8ae79100b511e343ac4bab8ebfcc8b0a5edc8744b87fdaf6",
+      "bytes": 4570
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/index.ts",
+      "sha256": "8180abf19943303f3f5761386922c431da3dcd6623d4343df4d9ed6f1f512a72",
+      "bytes": 14540
+    },
+    {
+      "path": "packages/reader-core/src/types.ts",
+      "sha256": "3cfb507c477447b0f1d1e2ec19569b0289d7c066730106644bf407597ee8c75c",
+      "bytes": 1389
+    },
+    {
+      "path": "packages/reader-core/src/utils/highlightExport.ts",
+      "sha256": "9e641f8069751d07d01f66f3f7c03a490c5b7fabd7916677c27ba965b26e4357",
+      "bytes": 1141
+    },
+    {
+      "path": "packages/reader-core/src/utils/llmsExport.ts",
+      "sha256": "0d9a723130307749bae4f72abbbbed9e0028273d1ee980c013744c8f078d028c",
+      "bytes": 2001
+    },
+    {
+      "path": "packages/reader-core/src/utils/markdownParser.ts",
+      "sha256": "5f73e27e4e1b9127ea2bdd475735f737e27ed86e071785437d27c3404d038496",
+      "bytes": 6023
+    },
+    {
+      "path": "packages/reader-core/src/utils/readingStats.ts",
+      "sha256": "80b3327f8c7900e7c42daf044c1220617b2c212e58059d5082077a90d0fc2e21",
+      "bytes": 873
+    },
+    {
+      "path": "packages/reader-core/src/utils/search.ts",
+      "sha256": "016fadd5765cfe02d0793e55a5a60994c30597c047e58ecba868eedb2178f863",
+      "bytes": 1002
+    },
+    {
+      "path": "packages/reader-core/package.json",
+      "sha256": "ea7182ebcd12673f6aa19aaaf5e73f8ee5ff7ecbf84aa8988d6b6a454fa0601b",
+      "bytes": 2156
+    },
+    {
+      "path": "packages/reader-core/package-lock.json",
+      "sha256": "511c2f70e0d615c541d3b1a61a189804f5605db26caf47396070b9b62d117fa9",
+      "bytes": 92663
+    },
+    {
+      "path": "packages/reader-core/tsconfig.json",
+      "sha256": "717df5f2cbadd451d0f59abf525d5492ed95a2ad93e8d0615813254b6a0f9ae6",
+      "bytes": 443
+    },
+    {
+      "path": "packages/reader-core/styles/reader.css",
+      "sha256": "25c154c986ef62444b277e360238304e1146f8c0c1f97701abf13dc674751b95",
+      "bytes": 1120
+    },
+    {
+      "path": "packages/reader-core/styles/tailwind.config.cjs",
+      "sha256": "9a7f9dbee8a397d945350416544a9bafb7d02150ae5f634898f878cad38f3970",
+      "bytes": 1487
+    },
+    {
+      "path": "packages/reader-core/styles/publication-classes.txt",
+      "sha256": "fbf970067a7b252a01a16fb869282da4fb28d5e9d1311c401d65cb385fe60373",
+      "bytes": 876
+    },
+    {
+      "path": "scripts/build-reader-core.mjs",
+      "sha256": "3acd5b40a088ff0ec5afea76ff6f2de94d6810e48bbc80894ab02cdbcb05cd87",
+      "bytes": 715
+    },
+    {
+      "path": "scripts/build-reader-styles.mjs",
+      "sha256": "8c66f3a16e6d7926b47e354beacad8e0377160e72c28e34a1c7bd61c8c1b74c9",
+      "bytes": 2428
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/test-publication-content.mjs",
+      "sha256": "b518a8aa808c328a65b4e39716260dc0f7d5f33ccb07f8e26c28e36a985ffc1f",
+      "bytes": 1070
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/test-agent-export.mjs",
+      "sha256": "338858fda8da9cf2bea70b77c5d6454aaac2f57fc15ba77ba45c3bd4a10b56d5",
+      "bytes": 1298
+    },
+    {
+      "path": "packages/reader-core/src/original/test-outline-preference.mjs",
+      "sha256": "2b10ed5de15ccab7afd3c8c7ee7b39127528aa804be7d04c630c66dc2d0c61a1",
+      "bytes": 1222
+    },
+    {
+      "path": "packages/reader-core/src/original/test-reader-theme.mjs",
+      "sha256": "98bd5b49ed762b991e2d578a2621312ddd40114352321a369b9a01dee733964a",
+      "bytes": 2221
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/test-reading-preferences.mjs",
+      "sha256": "8753f7ed9555a83a30c20e7031a5e9de1408913a31b8aab5f625c5358230577c",
+      "bytes": 7022
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/test-toolbar-model.mjs",
+      "sha256": "37fc666aa14ad19d7c858398ae897a77c0cc5ebae4095c5b2ddf3a8c3cf4da68",
+      "bytes": 6183
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+      "sha256": "d792b028a88abd373671a0b6744a71eb0fc7aadca00859a68b22f0860b855fe7",
+      "bytes": 14855
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
+      "sha256": "98cea6b7561ad662cf3e1c6d4bd2b7f67ec3286b4d3576d6573e2348a04d4a87",
+      "bytes": 20724
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "sha256": "635cc872f55cbc74b29ef18198466c0341cc064736239e8c2189993373da517a",
+      "bytes": 22134
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+      "sha256": "7d27d1ed13684ca9b0c1d12ab737080c109f13a669d3dca10ed219244e74ba2a",
+      "bytes": 12203
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader.mjs",
+      "sha256": "98114671968d730415f8807072a0c0dbe918a3f622401c1316cea3ef67d3f723",
+      "bytes": 5891
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e03b2f3461d86a2d8b396eb5b049d4cc8cbe8bc8b024f4cb56ccbe48164f1c99",
+      "bytes": 1071
+    },
+    {
+      "path": "packages/reader-core/LICENSE",
+      "sha256": "e03b2f3461d86a2d8b396eb5b049d4cc8cbe8bc8b024f4cb56ccbe48164f1c99",
+      "bytes": 1071
+    },
+    {
+      "path": "package.json",
+      "sha256": "f197086b646a9b353236e809a0159c21482620be47efa5090899249973ed6030",
+      "bytes": 1398
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "5639d0704a98680e807822b0e332f105a3a36e83a2ff75f7c36f1523257c8039",
+      "bytes": 37
+    },
+    {
+      "path": "scripts/test-reader-native-import.mjs",
+      "sha256": "094d49ca68ff6e08a341ba3ad9c69876fb140a230a0a87abc3ac4b920fc0c9d3",
+      "bytes": 1855
+    },
+    {
+      "path": "README.md",
+      "sha256": "73f5b5833df6a0484493b958c5cbcb7ef55b4f129982776d91dd47368d3ac1ae",
+      "bytes": 9172
+    },
+    {
+      "path": "LICENSING.md",
+      "sha256": "77d5a0776c430254d1c4c94d0752c031d6d3fa241cf1d1f61768e0e4178effb8",
+      "bytes": 3201
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "2baff29dc0895b6fc1542528bece3466c5eeaaaed77bdb1d72bb495112d045ea",
+      "bytes": 7572
+    },
+    {
+      "path": "docs/style.css",
+      "sha256": "74da2a658390a9e793859cd0fa268d8853110bbda33224a76d76555f685f6772",
+      "bytes": 3295
+    },
+    {
+      "path": "docs/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packages/reader-core/notices/LICENSE-inter.txt",
+      "sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+      "bytes": 4477
+    },
+    {
+      "path": "packages/reader-core/notices/LICENSE-merriweather.txt",
+      "sha256": "aa677c3f7682d9c4f7aa48fae3f3b9d0f8d70ac6ab47b9bc20a9cc2879e15af0",
+      "bytes": 4611
+    },
+    {
+      "path": "packages/reader-core/notices/LICENSE-material-symbols-outlined.txt",
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+      "bytes": 4314
+    }
+  ]
+}

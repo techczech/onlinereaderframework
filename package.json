@@ -1,10 +1,25 @@
 {
   "name": "onlinereaderframework",
   "private": true,
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "description": "A React reader framework for publishing a book as a readable, searchable, accessible web edition.",
+  "license": "MIT",
+  "author": "Dominik Lukeš",
+  "homepage": "https://techczech.github.io/onlinereaderframework/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techczech/onlinereaderframework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techczech/onlinereaderframework/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "cd apps/reader-demo && npm install && npm run dev",
-    "build": "cd packages/reader-core && npm install && npm run build && cd ../../apps/reader-demo && npm install && npm run build",
-    "preview": "cd apps/reader-demo && npm run preview"
+    "setup": "npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7",
+    "build": "npm run build --prefix packages/reader-core",
+    "test": "npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
+    "test:native": "node scripts/test-reader-native-import.mjs"
   }
 }

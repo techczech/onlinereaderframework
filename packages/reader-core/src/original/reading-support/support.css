@@ -1,0 +1,50 @@
+/* Include through build-reader-styles.mjs, after reader-original.css; no JS CSS import. */
+.reading-support-surface { position: relative; isolation: isolate; }
+.reading-support-surface:focus-visible { outline: 2px solid #6366f1; outline-offset: 4px; }
+.reading-support-surface .publication-content,
+.reading-support-surface [data-publication-content],
+.reading-support-surface > :is(p,ul,ol,blockquote,article,section) {
+  font-family: var(--rs-font);
+  font-size: var(--rs-size);
+  line-height: var(--rs-line);
+  letter-spacing: var(--rs-letter);
+}
+/* Manuscript body-size classes must not override the reader's text preference.
+   Keep headings and code/MathML typography outside this body-text rule. */
+.reading-support-surface :is(p,li,blockquote,td,th,dt,dd,figcaption):not(:is(pre,code,kbd,samp,math) *) {
+  font-family: var(--rs-font);
+  font-size: var(--rs-size);
+  line-height: var(--rs-line);
+}
+.reading-support-surface p { margin-top: 0; margin-bottom: var(--rs-paragraph); }
+.reading-support-surface :is(pre,code,kbd,samp,math) { letter-spacing: normal; }
+/* Margin note cards sit in their own layer below the shade, so a window leaves them shaded like the rest of the page; they stay clickable because the shade ignores the pointer.
+   Paragraph focus is one of the overlay choices. Every other readable block (paragraph, heading, list item, table cell) fades by the Dimming choice (Dark hides them); the active one stays clear. One opacity, never layered. */
+.reading-support-surface[data-rs-overlay="paragraph"] [data-rs-paragraph]:not([data-rs-active], [data-rs-owner]) { opacity: calc(1 - var(--rs-dim)); }
+/* A block that holds its own text beside a nested block fades only that text, so the nested block's own fade is never multiplied. Inline elements take the opacity;
+   bare text takes the matching text colour (Dark is transparent). */
+.reading-support-surface[data-rs-overlay="paragraph"] [data-rs-own] { opacity: calc(1 - var(--rs-dim)); }
+::highlight(rs-dim) { color: color-mix(in srgb, currentColor calc((1 - var(--rs-dim)) * 100%), transparent); }
+.reading-support-surface .publication-margin-note { z-index: 0; }
+.reading-support-overlay { position: absolute; overflow: hidden; pointer-events: none; z-index: 1; }
+.reading-support-overlay * { pointer-events: none; }
+/* The overlay covers the whole scrolling page (placed by the surface) and only the window is clear. Shade colours follow WriteFlex's line overlay:
+   a cool dark on paper, black on a dark page. The strength is the Dimming choice, applied once as the colour's own alpha (Dark is 1, fully opaque). */
+.reading-support-mask, .reading-support-ruler { position: absolute; left: 0; right: 0; background: rgb(28 28 32 / var(--rs-dim)); }
+.dark .reading-support-mask, .dark .reading-support-ruler { background: rgb(0 0 0 / var(--rs-dim)); }
+.reading-support-controls { position: relative; font: 1rem/1.5 system-ui, sans-serif; }
+.reading-support-settings { padding: .75rem; max-width: 32rem; }
+.reading-support-settings fieldset { border: 1px solid currentColor; border-radius: .5rem; padding: .75rem; margin: 0 0 .75rem; min-width: 0; }
+.reading-support-settings legend { font-weight: 600; padding: 0 .25rem; }
+.reading-support-field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; margin-block: .5rem; }
+.reading-support-field input { width: 5rem; }
+.reading-support-controls :is(button,input,select) { font: inherit; color: inherit; background-color: inherit; border: 1px solid currentColor; border-radius: .25rem; padding: .35rem .5rem; }
+.reading-support-controls :is(button,input,select):focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.reading-support-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* Anchored reading (WriteFlex lead styles, bold left out): the lead-in of each word is a CSS highlight over the unchanged text.
+   Contrast softens the rest of each word through a second highlight (no block is recoloured, so MathML, code and ignored content keep the colour they inherit) and leaves the lead-ins at full ink; Colour paints them in the book's accent. */
+.reading-support-surface[data-rs-anchored="contrast"] ::highlight(publication-anchored-rest) { color: color-mix(in srgb, var(--reader-ink) 68%, var(--reader-paper)); }
+.reading-support-surface[data-rs-anchored="contrast"] ::highlight(publication-anchored-lead) { color: var(--reader-ink); }
+.reading-support-surface[data-rs-anchored="colour"] ::highlight(publication-anchored-lead) { color: var(--reader-accent); }
+.publication-reader .publication-menu-row-text > .publication-menu-lead-icon { font-size: 1.25rem; color: var(--reader-accent); }

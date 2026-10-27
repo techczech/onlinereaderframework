@@ -1,4 +1,4 @@
-import { Highlight, SectionConfig } from '../types';
+import { Highlight, SectionConfig } from '../types.js';
 
 export function exportHighlightsToMarkdown(highlights: Highlight[], sections: SectionConfig[]) {
   const sectionsById = new Map(sections.map((section) => [section.id, section.title]));

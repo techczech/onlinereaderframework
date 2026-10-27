@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import { SectionConfig, SectionId, TextBlock } from '../../types';
-import { BlockRenderer } from '../blocks/BlockRenderer';
-import { ScrollLayout } from '../layouts/ScrollLayout';
-import { TocItem } from './TableOfContents';
-import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats';
+import { SectionConfig, SectionId, TextBlock } from '../../types.js';
+import { BlockRenderer } from '../blocks/BlockRenderer.js';
+import { ScrollLayout } from '../layouts/ScrollLayout.js';
+import { TocItem } from './TableOfContents.js';
+import { getReadingTimeMinutes, getSectionWordCount } from '../../utils/readingStats.js';
 
 interface ReaderContentProps {
   sections: SectionConfig[];

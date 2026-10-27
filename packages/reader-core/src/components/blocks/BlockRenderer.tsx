@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Block, TextBlock, ListBlock, CalloutBlock, CodeBlock, HrBlock } from '../../types';
+import { Block, TextBlock, ListBlock, CalloutBlock, CodeBlock, HrBlock } from '../../types.js';
 
 interface BlockRendererProps {
   block: Block;

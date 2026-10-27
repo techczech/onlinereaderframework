@@ -1,0 +1,34 @@
+/* "Ask an agent to help you read this": a small quiet panel in the page's own content column; the prompt is ordinary wrapped text. */
+.publication-reader .publication-agent { box-sizing: border-box; max-width: 46rem; margin: 2rem 0 0; padding: .9rem 1.1rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 88%); border-radius: .5rem; background: color-mix(in srgb, var(--reader-ink), var(--reader-paper) 96%); font-size: .875rem; line-height: 1.55; }
+.publication-reader .publication-home-agent { max-width: 70rem; margin-inline: auto; padding: 0 clamp(1.5rem, 4vw, 4rem) 2rem; }
+.publication-reader .publication-home-agent .publication-agent { margin-top: 0; }
+.publication-reader .publication-front .publication-agent { margin: 2rem 0 0; }
+/* Colour band has no padded shell: align the box with its 80rem content column. */
+.publication-reader .publication-front .pf-c > .publication-agent { margin: 2rem var(--pf-gutter) 0 max(var(--pf-gutter), calc((100% - 80rem) / 2 + var(--pf-gutter))); }
+.publication-reader .publication-agent h2 { display: flex; align-items: center; gap: .45rem; margin: 0 0 .3rem; font-size: 1rem; font-weight: 700; }
+.publication-reader .publication-agent .material-symbols-outlined { font-size: 1.15rem; color: var(--reader-accent); }
+.publication-reader .publication-agent p { margin: .35rem 0; }
+.publication-reader .publication-agent-lead { color: color-mix(in srgb, var(--reader-ink), transparent 25%); }
+.publication-reader .publication-agent--quiet { max-width: none; padding: 1rem 0 0; margin-top: 1.5rem; border: 0; border-top: 1px solid color-mix(in srgb, var(--reader-ink), transparent 85%); border-radius: 0; background: none; }
+.publication-reader .publication-agent--quiet > summary, .publication-reader .publication-agent-try > summary { display: flex; align-items: center; gap: .45rem; cursor: pointer; min-height: 2rem; font-weight: 600; color: color-mix(in srgb, var(--reader-ink), transparent 30%); list-style: none; }
+.publication-reader .publication-agent--quiet > summary::-webkit-details-marker, .publication-reader .publication-agent-try > summary::-webkit-details-marker { display: none; }
+.publication-reader .publication-agent-try > summary::before { content: '+'; display: inline-block; width: 1em; text-align: center; color: var(--reader-accent); }
+.publication-reader .publication-agent-try[open] > summary::before { content: '\2212'; }
+.publication-reader .publication-agent--quiet > summary:hover, .publication-reader .publication-agent-try > summary:hover { color: var(--reader-ink); }
+.publication-reader .publication-agent summary:focus-visible, .publication-reader .publication-agent button:focus-visible, .publication-reader .publication-agent a:focus-visible { outline: 2px solid var(--reader-accent); outline-offset: 2px; border-radius: .25rem; }
+.publication-reader .publication-agent-prompt { display: flex; align-items: flex-start; gap: .75rem; margin: .5rem 0; }
+.publication-reader .publication-agent-prompt p { flex: 1 1 auto; min-width: 0; margin: 0; padding: .1rem 0 .1rem .75rem; border-left: 2px solid color-mix(in srgb, var(--reader-accent), transparent 40%); overflow-wrap: anywhere; user-select: all; }
+.publication-reader .publication-agent button { display: inline-flex; align-items: center; gap: .3rem; flex: none; min-height: 2rem; padding: .2rem .65rem; border: 1px solid color-mix(in srgb, var(--reader-accent), transparent 50%); border-radius: 999px; color: var(--reader-accent); background: transparent; font: inherit; font-weight: 600; cursor: pointer; }
+.publication-reader .publication-agent button:hover { background: color-mix(in srgb, var(--reader-accent), transparent 92%); }
+.publication-reader .publication-agent button .material-symbols-outlined { font-size: 1rem; }
+.publication-reader .publication-agent-try ul { list-style: none; margin: .2rem 0 .3rem; padding: 0; }
+.publication-reader .publication-agent-try li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .3rem 0; border-top: 1px solid color-mix(in srgb, var(--reader-ink), transparent 90%); }
+.publication-reader .publication-agent-try li:first-child { border-top: 0; }
+.publication-reader .publication-agent-try li button { min-height: 1.75rem; font-weight: 500; }
+.publication-reader .publication-agent-links { font-size: .8rem; color: color-mix(in srgb, var(--reader-ink), transparent 30%); }
+.publication-reader .publication-agent a { color: var(--reader-accent); text-underline-offset: 3px; }
+.publication-reader .publication-agent button.publication-agent-textbutton { display: inline; min-height: 0; padding: 0; border: 0; border-radius: .25rem; font: inherit; font-weight: 400; text-decoration: underline; text-underline-offset: 3px; background: none; }
+.publication-reader .publication-agent-status { min-height: 1.4em; margin-bottom: 0; font-weight: 600; }
+@container (max-width: 639px) { .publication-reader .publication-agent-prompt { flex-direction: column; align-items: stretch; } .publication-reader .publication-agent-prompt button { align-self: flex-start; } }
+@media (max-width: 480px) { .publication-reader .publication-agent-try li { flex-direction: column; align-items: flex-start; gap: .3rem; } }
+.publication-reader .publication-agent .publication-agent-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

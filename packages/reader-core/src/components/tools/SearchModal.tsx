@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { SectionConfig, SearchIndexEntry } from '../../types';
-import { buildSearchIndex, searchIndex } from '../../utils/search';
+import { SectionConfig, SearchIndexEntry } from '../../types.js';
+import { buildSearchIndex, searchIndex } from '../../utils/search.js';
 
 interface SearchModalProps {
   isOpen: boolean;

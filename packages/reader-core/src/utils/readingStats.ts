@@ -1,4 +1,4 @@
-import { SectionConfig } from '../types';
+import { SectionConfig } from '../types.js';
 
 const WORDS_PER_MINUTE = 200;
 
