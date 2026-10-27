@@ -1,0 +1,21 @@
+> reader-demo@0.1.0 verify:release
+> tsx scripts/release/verify-existing-edition.ts --book linguistics
+
+linguistics: FAIL, do not deploy (tree 6ccd8765483d6cffd0aa31071f4f44dee480e20e1f546c39f51f483639f4e2b3, 1178 files)
+  FAIL built from uncommitted source (sourceTreeDirty is not false)
+  note the working tree now has 35 uncommitted change(s) outside build/, docs/ and research/
+exit 1
+> reader-demo@0.1.0 verify:release
+> tsx scripts/release/verify-existing-edition.ts --book deliberate-practice
+
+deliberate-practice: FAIL, do not deploy (tree 2d17271143ab06f13670ea08d4d57e8d648475c69776de4fbe2880c0b2981758, 168 files)
+  FAIL built from uncommitted source (sourceTreeDirty is not false)
+  note the working tree now has 35 uncommitted change(s) outside build/, docs/ and research/
+exit 1
+> reader-demo@0.1.0 verify:release
+> tsx scripts/release/verify-existing-edition.ts --book language-muscle
+
+language-muscle: FAIL, do not deploy (tree 43dc0d7ec66941f56ac76792fe775300e61c2db3b2c3c950d717813232c1cc60, 149 files)
+  FAIL built from uncommitted source (sourceTreeDirty is not false)
+  note the working tree now has 35 uncommitted change(s) outside build/, docs/ and research/
+exit 1

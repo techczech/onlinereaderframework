@@ -10,6 +10,12 @@ assert.ok(api.renderPublicationContent('**Available**').includes('<strong>Availa
 const book = { id: 'native-import', title: 'Native import', author: 'Verification', sections: [] };
 await assert.rejects(api.generatePublicationEpub(book), /requires browser DOMParser and XMLSerializer/);
 await assert.rejects(api.downloadPublicationEpub(book), /requires browser DOMParser and XMLSerializer/);
-console.log('Native package-name import, existing/new APIs and browser-only EPUB boundary passed.');
+const agent = await import('reader-core/agent');
+const sample = { id: 'sample', title: 'Sample', author: 'Verification', description: 'A one-section book.', sections: [{ id: 'one', title: 'One', category: 'Test', content: '# One\\n\\nHello **agent**.\\n' }] };
+const out = agent.buildAgentBook(sample, { siteUrl: 'https://books.example.org/reader/' });
+assert.ok(out.files.some(f => f.path.endsWith('/chapters/one.md') && f.content.includes('Hello **agent**.')));
+assert.equal(out.manifest.counts.sections, 1);
+assert.throws(() => agent.buildAgentBook(sample, { siteUrl: 'http://127.0.0.1/' }));
+console.log('Native package-name import, existing/new APIs, agent-file generation and browser-only EPUB boundary passed.');
 `], { cwd, stdio: 'inherit' });
 process.exitCode = result.status ?? 1;

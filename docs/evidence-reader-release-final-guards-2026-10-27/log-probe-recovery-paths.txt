@@ -1,0 +1,40 @@
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+{"case":"reverse-fails","failures":["could not publish the edition: probe injected rename failure","recovery needs attention: probe injected rename failure"],"cli":["language-muscle: NOT BUILT; no manifest written; incomplete output left in build/release-books/language-muscle","  Previous edition retained for recovery in build/release-books/.previous-language-muscle-20261027T165157Z-77776-3f47edd6; do not delete it."]}
+✔ manifest rename fails and the new tree cannot be moved back: new tree named as incomplete, good edition named for recovery (2723.735625ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+{"case":"restore-fails","failures":["could not publish the edition: probe injected rename failure","recovery needs attention: probe injected rename failure"],"cli":["language-muscle: NOT BUILT; no manifest written; incomplete output left in build/release-books/.incomplete-language-muscle-20261027T165159Z-77776-dec1e098","  Previous edition retained for recovery in build/release-books/.previous-language-muscle-20261027T165159Z-77776-dec1e098; do not delete it."]}
+✔ new tree never moved in and the previous edition cannot be restored: staging is incomplete, previous named, edition path empty (1714.687166ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+{"case":"first-build","failures":["could not publish the edition: probe injected rename failure"],"cli":["language-muscle: NOT BUILT; no manifest written; incomplete output left in build/release-books/.incomplete-language-muscle-20261027T165200Z-77776-d5e8225b"]}
+✔ first build with no previous edition and a failed manifest rename: staging named, no recovery folder, no manifest (873.126959ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5753.169041
+exit 0

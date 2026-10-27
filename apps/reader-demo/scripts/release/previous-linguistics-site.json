@@ -1,0 +1,14 @@
+{
+  "description": "Files of the previous Linguistics web edition that the Linguistics release keeps at their old addresses. Read-only; the build copies or quotes them only when every hash matches.",
+  "folder": "../linguistics-stack-exchange-answers/dist",
+  "sourceRepository": "linguistics-stack-exchange-answers",
+  "sourceHead": "6b5925afc4cb19308f70249fa4995ebae3326787",
+  "note": "dist/ is ignored by that repository, so these hashes, not its Git history, identify the files. Built 2026-10-23; the EPUB records dcterms:modified 2026-10-23T08:07:08Z.",
+  "files": {
+    "about/index.html": { "sha256": "a1401727c0162ef51d5706a8c25de879399a719b460f9bffd74320a7b1c69e23", "bytes": 4844, "use": "main text quoted verbatim in the new about/index.html" },
+    "download/index.html": { "sha256": "66d30910fa052fd17c7d39ef1267cb6d6e507d8f509b942e8f8f43aa76c91bb3", "bytes": 3931, "use": "main text quoted verbatim in the new download/index.html" },
+    "404.html": { "sha256": "dcbab74f4c919a9c90c3938a69a1a248302f76cee7d8ca7c19e37420aef405fc", "bytes": 3187, "use": "main text quoted verbatim in the new 404.html" },
+    "download/key-issues-in-language.epub": { "sha256": "bc62337f7d8e96e9003bbfa12c3911db0a335d0edb25e400a3779473229fa588", "bytes": 410926, "use": "copied byte for byte" },
+    "download/key-issues-in-language.pdf": { "sha256": "90e831f18ffd9627f7c9a4bea3f46b51aeab45f8eda797b7df76edd77d32e585", "bytes": 2693387, "use": "copied byte for byte" }
+  }
+}

@@ -1,0 +1,144 @@
+
+> onlinereaderframework@1.0.0 test
+> npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs
+
+
+> reader-core@1.0.0 test:publication-content
+> node src/publication-content/test-publication-content.mjs
+
+✔ renders nested formatting, complex destinations and reference links faithfully (9.415458ms)
+✔ preserves reference and inline footnotes with working unique return links (3.618ms)
+✔ preserves image destinations, titles and meaningful alt text (0.477541ms)
+✔ keeps original Language Muscle HTML classes, quoted > and chapter routes (1.148917ms)
+✔ keeps GFM tables, strikethrough, nested lists and escaped fenced code (2.26875ms)
+✔ renders inline and display math as safe native MathML without CSS (2.862625ms)
+✔ assigns deterministic, unique prefixed heading IDs without DOM clobbering (1.078709ms)
+✔ plain text indexes the complete content, image alt and footnote text (0.704333ms)
+✔ removes executable HTML and unsafe URLs, attack 1 (0.433542ms)
+✔ removes executable HTML and unsafe URLs, attack 2 (0.84675ms)
+✔ removes executable HTML and unsafe URLs, attack 3 (0.48475ms)
+✔ removes executable HTML and unsafe URLs, attack 4 (0.479959ms)
+✔ removes executable HTML and unsafe URLs, attack 5 (0.377375ms)
+✔ removes executable HTML and unsafe URLs, attack 6 (0.645875ms)
+✔ removes executable HTML and unsafe URLs, attack 7 (0.434291ms)
+✔ removes executable HTML and unsafe URLs, attack 8 (1.90525ms)
+✔ sanitisation preserves safe URL schemes and is idempotent for rich content (2.833708ms)
+✔ does not depend on window or document and produces synchronous empty output (0.166292ms)
+✔ exports heading targets and labels from the same model as rendered HTML (0.423125ms)
+✔ math trust remains disabled, malformed math stays readable, and macros do not leak between sections (1.462875ms)
+✔ static SVG cannot introduce executable or remote resources (0.565167ms)
+✔ preserves supplied namespaced IDs when another supplied ID would collide after prefixing (0.296125ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.815416
+
+> reader-core@1.0.0 test:agent-export
+> node src/agent-export/test-agent-export.mjs
+
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (4.988042ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.124041ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (2.213667ms)
+✔ the directory option is validated by both generators before any path is produced (1.9295ms)
+✔ a nested directory keeps every reader link pointing at the reader root (9.127708ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (3.801459ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (3.289334ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.442209ms)
+✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (0.646458ms)
+✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.216167ms)
+✔ both generators refuse an unusable public address before producing any file, and never echo it (1.398917ms)
+✔ the reader box rebases its folder from the current reader root onto the public reader prefix (1.114416ms)
+✔ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (10.537ms)
+✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (0.754541ms)
+✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (0.862333ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 247.810833
+✔ native Node import exports the React panel without browser globals (1.553667ms)
+✔ source validation rejects executable and disguised schemes while permitting recorded URLs (0.145917ms)
+✔ alignment accepts only finite, non-overlapping, ordered measured ranges (0.351542ms)
+✔ restore is ready at saved position and speed without autoplay; positions stay per book (0.91525ms)
+✔ chapter navigation follows publication order, skips missing recordings and clamps seeking (0.169375ms)
+✔ view/settings rerenders and fresh equivalent arrays preserve the same playing audio (0.140833ms)
+✔ rejected play, media errors and retry have truthful states (2.288875ms)
+✔ pending play and obsolete media events cannot change a new book or restart after pause (0.3995ms)
+✔ loading, buffering and ended transitions preserve intent without auto-advancing (0.264375ms)
+✔ storage denial, corrupt records, prototype names, changed assets and nonfinite inputs stay safe (0.566333ms)
+✔ boundaries contain only supplied measured spans, clear in gaps/errors and never interpolate (0.244833ms)
+✔ empty or unsafe tracks never create audio or substitute browser speech (0.128667ms)
+✔ passage skipping uses supplied starts, honours gaps and disables without measurements (0.11475ms)
+✔ Follow text is opt-in, clears on disable and rejects spans outside duration (0.087875ms)
+✔ pause and book changes capture the final media clock between timeupdate events (0.097375ms)
+✔ late metadata after media failure and obsolete pause events do not override current intent (0.32175ms)
+✔ a changed source reloads even when the host acknowledges the already selected chapter (0.13775ms)
+✔ the vendored ReadFlex player is byte-identical to the recorded source file (2.425875ms)
+✔ loading a chapter never starts speech; Start begins at the requested position (1.641667ms)
+✔ voices: saved choice, then book language, then the system default; missing saved voice falls back (0.389583ms)
+✔ choosing a voice or speed is saved and applied to the next utterance (0.268583ms)
+✔ skip moves by sentence and paragraph from the current place, and resumes reading (0.265792ms)
+✔ a speed change restarts the current sentence, not the chapter (0.2935ms)
+✔ word highlighting appears only after the engine reports a real boundary (1.58425ms)
+✔ stop clears the highlight; pause keeps the position; sentences end into the next (0.214167ms)
+✔ reaching the end returns to idle without a problem (0.115125ms)
+✔ an engine error is reported plainly and does not leave the controller reading (0.174792ms)
+✔ another page cancelling our speech is reported, not shown as reading (0.078417ms)
+✔ a stale end or boundary from a stopped or replaced utterance cannot advance or clear newer playback (0.088417ms)
+✔ ownership: an idle controller never cancels shared speech; a speaking one does on dispose (0.097958ms)
+✔ no speech engine: honest unavailable state, Start explains, nothing throws (0.043375ms)
+✔ an utterance that shows no sign of life is reported instead of reading forever (112.663958ms)
+✔ two readers over one engine: the newer one takes it, and the older one can no longer stop or hear it (0.357084ms)
+✔ taking the engine from a paused reader clears the engine pause; only the new owner can pause or resume it (0.142333ms)
+✔ a reader can take the engine back, and its own late callbacks are still ignored (0.095625ms)
+✔ a reader that never spoke does not claim the engine and leaves a speaking reader alone (0.062834ms)
+✔ watchdog: an engine that reports starts and is speaking is never stopped for lacking word events (282.028125ms)
+✔ watchdog: a slow voice may start late; one that never starts is reported after a bounded wait (483.266875ms)
+✔ watchdog: pausing before the voice starts does not lose or spend the wait; resuming re-arms it (675.323416ms)
+✔ watchdog: an engine that gives no start events is judged only by whether it says it is speaking (201.668209ms)
+✔ engage: the host hook runs before the engine speaks or resumes, once per engagement, on every start path (0.627792ms)
+✔ word ranges follow Unicode words, not bytes (4.236333ms)
+✔ hostile storage and invalid ranges return safe preferences (0.8135ms)
+✔ per-book round trip and reset values remain bounded (0.152541ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.061458ms)
+✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.128791ms)
+✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.106833ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.048209ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.082583ms)
+✔ anchored reading is off by default, kept per book, and invalid values fall back to WriteFlex's contrast default (0.083291ms)
+✔ preorder navigation and lookup include recursive book descendants (0.577042ms)
+✔ original query and Language Muscle hash URLs restore the same leaf (0.120625ms)
+✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.15425ms)
+✔ storage keys isolate every book, including IDs containing separators (0.151709ms)
+✔ notes export includes reflections even when there are no highlights (0.139333ms)
+✔ download boundaries reject executable schemes and retain same-origin assets (0.05575ms)
+✔ native ESM imports the original reader without a bundler or browser globals (1215.299791ms)
+✔ outline fold is kept per book and survives blocked storage for the visit (0.57375ms)
+✔ theme follows the computer by default; Light and Dark are explicit (0.612ms)
+✔ legacy dark-mode boolean: no record follows the computer; a value equal to the computer is not claimed as a choice; a differing one is kept (0.086125ms)
+✔ tooltip text states the choice and what Follow computer means now (0.093708ms)
+✔ steppers stay inside the saved-preference bounds without float drift (0.43775ms)
+✔ dimming levels map to saved values; older in-between values are reported as custom (0.293083ms)
+✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.088292ms)
+✔ assist summary states what is actually on (0.132209ms)
+✔ letter spacing reads Normal at zero (0.049792ms)
+✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.23225ms)
+✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.127208ms)
+✔ theme is its own small icon control and is not in Formatting (0.152834ms)
+✔ toolbar dim levels equal the preference levels (0.147542ms)
+✔ anchored reading counts as an assistance beside the overlay, and is named and summarised (0.121666ms)
+ℹ tests 71
+ℹ suites 0
+ℹ pass 71
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8416.666083

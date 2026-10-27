@@ -1,0 +1,31 @@
+Source export self-tests passed: paths, one exact generic URL exception, manuscript spans, forbidden members and deterministic archive.
+exact-reviewed-literal-is-accepted {"issues":[]}
+longer-etc-file-address-is-suppressed {"issues":[]}
+longer-dist-agent-file-address-is-suppressed {"issues":[]}
+unlisted-user-file-address-is-rejected {"issues":[{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","code":"private-path-or-context"}]}
+same-longer-etc-file-in-another-file-is-rejected {"issues":[{"path":"packages/reader-core/src/check.ts","code":"private-path-or-context"}]}
+unlisted-credential-in-exempt-file-is-rejected {"issues":[{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","code":"credential-shaped-literal"}]}
+candidate-full-audit {"filesScanned":125,"manuscriptAnchors":12831,"reviewedFalsePositives":[{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"file:///tmp/x","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"file:///tmp/book","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"file:///etc/","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"file:///Users/reader/dist/index.html","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"file:///Users/reader/dist/agent/","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"https://u:p@example.org/sub/","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/agent-export/agent-export.test.mjs","rule":"file-url-and-credential-url","literal":"https://u:p@public.example.org/sub/reader/agent/","count":1,"reason":"Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."},{"path":"packages/reader-core/src/original/listening/test-reader-listening.mjs","rule":"file-url","literal":"file:///a.wav","count":1,"reason":"Unsafe audio address that the listening panel must refuse."},{"path":"packages/reader-core/src/publication-content/publication-content.test.mjs","rule":"file-url","literal":"file:///etc/passwd","count":1,"reason":"Generic adversarial HTML input; assertions reject unsafe URL schemes."}],"issues":[]}
+actual-manuscript-anchor-is-rejected {"anchorSha256":"2079ea790d5c2c701b1db616da544bfe03ff3c67af3ab04f625ecf8c7afc1d36","issues":[{"path":"packages/reader-core/src/check.ts","code":"real-manuscript-span","book":"deliberate-practice","anchorSha256":"2079ea790d5c2c701b1db616da544bfe03ff3c67af3ab04f625ecf8c7afc1d36"}]}
+escaped-actual-manuscript-anchor-is-rejected {"issues":[{"path":"packages/reader-core/src/check.ts","code":"real-manuscript-span","book":"deliberate-practice","anchorSha256":"2079ea790d5c2c701b1db616da544bfe03ff3c67af3ab04f625ecf8c7afc1d36"}]}
+node:fs:2153
+  const stats = binding.lstat(
+                        ^
+
+Error: ENOENT: no such file or directory, lstat '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/packages/reader-core/src/agent-export/agent-export.test.mjs'
+    at lstatSync (node:fs:2153:25)
+    at input (eval at load (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs:15:28), <anonymous>:37:13)
+    at Object.keepGenericTests (eval at load (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs:15:28), <anonymous>:74:18)
+    at file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs:35:68
+    at check (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs:19:48)
+    at file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs:35:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'lstat',
+  path: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/packages/reader-core/src/agent-export/agent-export.test.mjs'
+}
+
+Node.js v26.12.1

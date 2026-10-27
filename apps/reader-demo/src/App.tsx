@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { FRONT_PAGE_LAYOUTS, PublicationReader, frontPageLayoutKey, publicationDisplayTitle, type FrontPageLayoutKey, type PublicationBook } from 'reader-core';
-import commandLineIcon from './books/assets/command-line_gray.svg?raw';
+import { epubAssets } from './books/epub-assets';
 import publications from './books/original-publications.json';
 import { canonicalSites } from './canonical-sites';
+import { RELEASE_BOOK } from './release';
 
 const identities: Record<string, NonNullable<PublicationBook['appearance']>> = {
   'linguistics': { accent: '#b84b2d', paper: '#fffaf1', ink: '#282723', masthead: 'editorial', cover: { src: '/covers/linguistics.jpg', alt: 'Linguistics cover with overlapping red and blue voices' } },
@@ -17,16 +18,19 @@ const books = (publications as PublicationBook[]).map(book => ({ ...book,
 /** Per-book front-page layout. Linguistics previews Colour band provisionally; a book not listed keeps the classic home page. */
 const frontPageLayouts: Partial<Record<string, FrontPageLayoutKey>> = { linguistics: 'opus-colour-band' };
 /** Demo only: ?frontpage=<layout key> previews any layout, ?frontpage=classic the classic home page; an unknown value uses the book's configured layout. */
-const frontPageParameter = () => new URL(window.location.href).searchParams.get('frontpage');
+const frontPageParameter = () => RELEASE_BOOK ? null : new URL(window.location.href).searchParams.get('frontpage');
 /** Demo only: ?homedepth=<number> sets navigation.homeDepth for the front-page contents; anything else keeps the book's own. */
 const homeDepthParameter = () => {
+  if (RELEASE_BOOK) return undefined;
   const value = new URL(window.location.href).searchParams.get('homedepth');
   return value !== null && value.trim() !== '' && Number.isInteger(Number(value)) ? Number(value) : undefined;
 };
 function layoutFor(book: PublicationBook, parameter: string | null) {
   return parameter === 'classic' ? undefined : frontPageLayoutKey(parameter) ?? frontPageLayouts[book.id];
 }
+/** A release is pinned to its one book: `?book` is ignored. */
 function selectedBook() {
+  if (RELEASE_BOOK) return books.find(book => book.id === RELEASE_BOOK) ?? books[0];
   const id = new URL(window.location.href).searchParams.get('book');
   return books.find(book => book.id === id) ?? books[0];
 }
@@ -44,12 +48,10 @@ export default function App() {
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
-  useEffect(() => { document.title = `${publicationDisplayTitle(book)} — Online Reader Framework`; }, [book]);
-  const epub = book.id === 'deliberate-practice' ? { assets: [{
-    href: 'https://www.notion.so/icons/command-line_gray.svg',
-    mediaType: 'image/svg+xml' as const,
-    data: new TextEncoder().encode(commandLineIcon)
-  }] } : undefined;
+  useEffect(() => { document.title = RELEASE_BOOK ? publicationDisplayTitle(book) : `${publicationDisplayTitle(book)} — Online Reader Framework`; }, [book]);
+  /* A release build swaps this mapping for its own book's (scripts/release/projection.ts). */
+  const assets = epubAssets[book.id];
+  const epub = assets ? { assets } : undefined;
   const choose = (value: string) => {
     const url = new URL(window.location.href);
     url.searchParams.set('frontpage', value);
@@ -58,11 +60,11 @@ export default function App() {
   };
   return <>
     <PublicationReader book={book} epub={epub} agent={{ path: `${import.meta.env.BASE_URL}agent/`, siteUrl: canonicalSites[book.id] }} />
-    <label className="demo-frontpage-chooser">Front page layout
+    {!RELEASE_BOOK && <label className="demo-frontpage-chooser">Front page layout
       <select value={layout ?? 'classic'} onChange={event => choose(event.target.value)}>
         <option value="classic">Classic</option>
         {FRONT_PAGE_LAYOUTS.map(option => <option key={option.key} value={option.key}>{option.label}</option>)}
       </select>
-    </label>
+    </label>}
   </>;
 }

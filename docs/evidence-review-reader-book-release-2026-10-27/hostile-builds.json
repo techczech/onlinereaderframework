@@ -1,0 +1,363 @@
+{
+  "generated": "2026-10-27T15:49:35.153Z",
+  "scratch": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-book-release-scratch-2026-10-27-23448",
+  "scratchRemoved": true,
+  "results": [
+    {
+      "case": "edition folder is a symlink (emptyOutDir follows it)",
+      "lexicalGuardPasses": true,
+      "physicalGuardPasses": false,
+      "victimBefore": [
+        "case1/victim-unrelated-work/keep-me.txt"
+      ],
+      "victimAfter": [
+        "case1/victim-unrelated-work/assets/index-BMnm76Bf.js",
+        "case1/victim-unrelated-work/index.html"
+      ],
+      "keepMeSurvived": false
+    },
+    {
+      "case": "release root is a symlink",
+      "lexicalGuardPasses": true,
+      "physicalGuardPasses": false,
+      "targetAfter": [
+        "case2/elsewhere/linguistics/assets/index-BMnm76Bf.js",
+        "case2/elsewhere/linguistics/index.html"
+      ],
+      "keepMeSurvived": false
+    },
+    {
+      "case": "section id \"..\" (language-muscle)",
+      "error": "[orf-release] The \"fileName\" or \"name\" properties of emitted chunks and assets must be strings that are neither absolute nor relative paths, received \"../index.html\".",
+      "filesInOutDir": 0,
+      "filesInOutDirSample": [],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true
+    },
+    {
+      "case": "section id \".\" (language-muscle)",
+      "error": "[orf-release] The \"fileName\" or \"name\" properties of emitted chunks and assets must be strings that are neither absolute nor relative paths, received \"./index.html\".",
+      "filesInOutDir": 0,
+      "filesInOutDirSample": [],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true
+    },
+    {
+      "case": "section id \"\" (language-muscle)",
+      "error": "[orf-release] The \"fileName\" or \"name\" properties of emitted chunks and assets must be strings that are neither absolute nor relative paths, received \"/index.html\".",
+      "filesInOutDir": 0,
+      "filesInOutDirSample": [],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true
+    },
+    {
+      "case": "section id \"a/../../escape\" (language-muscle)",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "a%2F..%2F..%2Fescape/index.html",
+        "agent/language-muscle/chapters/a~2f~~2e~~2e~~2f~~2e~~2e~~2f~escape.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1
+    },
+    {
+      "case": "section id \"%2e%2e\" (language-muscle)",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "%252e%252e/index.html",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/chapters/~25~2e~25~2e.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1
+    },
+    {
+      "case": "section id \"index.html\" (language-muscle)",
+      "error": "EISDIR: illegal operation on a directory, open '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-book-release-scratch-2026-10-27-23448/plugin/section-id-index-html-language-muscle-/deep/release-books/language-muscle/index.html'",
+      "filesInOutDir": 11,
+      "filesInOutDirSample": [
+        "agent/language-muscle/chapters/index~2e~html.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html/index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true
+    },
+    {
+      "case": "section id \"llms.txt\" (language-muscle)",
+      "error": "EISDIR: illegal operation on a directory, open '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-book-release-scratch-2026-10-27-23448/plugin/section-id-llms-txt-language-muscle-/deep/release-books/language-muscle/llms.txt'",
+      "filesInOutDir": 11,
+      "filesInOutDirSample": [
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/chapters/llms~2e~txt.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt/index.html",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true
+    },
+    {
+      "case": "section id \"agent\" (language-muscle)",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "agent/index.html",
+        "agent/language-muscle/chapters/agent.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "agent folder holds another book",
+        "cover missing"
+      ],
+      "verifyFailureCount": 2
+    },
+    {
+      "case": "section id \"assets\" (language-muscle)",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "agent/language-muscle/chapters/assets.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "assets/index.html",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1
+    },
+    {
+      "case": "section ids differing only in case",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "CaseA/index.html",
+        "agent/language-muscle/chapters/casea.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "section page CaseA: canonical or article missing",
+        "agent file differs from the generator: agent/language-muscle/chapters/casea.md",
+        "agent chapters: 2 files for 3 sections",
+        "cover missing"
+      ],
+      "verifyFailureCount": 4,
+      "upperPage": false,
+      "lowerPage": true
+    },
+    {
+      "case": "linguistics alias from section id \"theme-..\"",
+      "filesInOutDir": 13,
+      "filesInOutDirSample": [
+        "agent/linguistics/chapters/intro.md",
+        "agent/linguistics/chapters/theme-~2e~~2e~.md",
+        "agent/linguistics/full.md",
+        "agent/linguistics/index.md",
+        "agent/linguistics/manifest.json",
+        "answers/intro/index.html",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sitemap.xml",
+        "theme-../index.html"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "index.html: canonical is not the book address",
+        "index.html: noindex present",
+        "cover missing"
+      ],
+      "verifyFailureCount": 3,
+      "rootIndexIsAliasPage": true,
+      "rootIndexNoindex": true,
+      "sectionsIndex": false
+    },
+    {
+      "case": "linguistics alias from section id \"theme-.\"",
+      "filesInOutDir": 14,
+      "filesInOutDirSample": [
+        "agent/linguistics/chapters/intro.md",
+        "agent/linguistics/chapters/theme-~2e~.md",
+        "agent/linguistics/full.md",
+        "agent/linguistics/index.md",
+        "agent/linguistics/manifest.json",
+        "answers/intro/index.html",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "robots.txt",
+        "sections/index.html",
+        "sitemap.xml",
+        "theme-./index.html"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1,
+      "rootIndexIsAliasPage": false,
+      "rootIndexNoindex": false,
+      "sectionsIndex": true
+    },
+    {
+      "case": "dollar replacement patterns in content and title",
+      "filesInOutDir": 12,
+      "filesInOutDirSample": [
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/chapters/money.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "money/index.html",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1,
+      "literalContentKept": false,
+      "pageHasMarker": true,
+      "pageHtmlTagCount": 8,
+      "pageHeadCount": 8,
+      "pageTitleTag": "<title>Costs \n  <script type=\"module\" crossorigin src=\"/assets/index-BMnm76Bf.js\"></script>\n</head>\n<body><div id=\"root\"><div class=\"static-book\"><header><p><a href=\"https://example.test/\">Building Yo",
+      "contentExcerpt": "Price: <title><!--ORF_HEAD--></title>amp; and \n  <script type=\"module\" crossorigin src=\"/assets/index-BMnm76Bf.js\"></script>\n</head>\n<body><div id=\"root\"><!--ORF_BODY--></div></body></html>\n and <!doc"
+    },
+    {
+      "case": "hostile markup in metadata and content",
+      "filesInOutDir": 14,
+      "filesInOutDirSample": [
+        "agent/language-muscle/chapters/html-part.md",
+        "agent/language-muscle/chapters/intro.md",
+        "agent/language-muscle/chapters/md-part.md",
+        "agent/language-muscle/full.md",
+        "agent/language-muscle/index.md",
+        "agent/language-muscle/manifest.json",
+        "assets/index-BMnm76Bf.js",
+        "html-part/index.html",
+        "index.html",
+        "intro/index.html",
+        "llms.txt",
+        "md-part/index.html",
+        "robots.txt",
+        "sitemap.xml"
+      ],
+      "filesOutsideOutDir": [],
+      "previousEditionRemains": false,
+      "staleManifestRemains": true,
+      "verifyFailures": [
+        "cover missing"
+      ],
+      "verifyFailureCount": 1,
+      "htmlFiles": 4,
+      "unsafeFindings": []
+    }
+  ],
+  "canonicalSiteUrl": {
+    "https://linguistics.dominiklukes.net/": "https://linguistics.dominiklukes.net/",
+    "https://x.test/\"><script>": null,
+    "javascript:alert(1)": null,
+    "https://x.test/a b/": null,
+    "https://127.0.0.1/": null,
+    "https://x.test/?q=1": null,
+    "https://user@x.test/": null,
+    "https://x.test/../": null,
+    "http://localhost/": null,
+    "https://x.test/%2e%2e/": null
+  }
+}

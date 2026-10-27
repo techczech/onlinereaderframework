@@ -1,0 +1,17 @@
+[
+  {
+    "name": "build-failure",
+    "pass": true,
+    "detail": {
+      "failed": {
+        "ok": false,
+        "failures": [
+          "build failed: [orf-release] The release build did not replace src/books/original-publications.json, src/canonical-sites.ts, src/books/epub-assets.ts; refusing a bundle that may carry other books."
+        ],
+        "quarantine": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-83567/build-failure/build/release-books/.incomplete-language-muscle-20261027T162520Z-83567"
+      },
+      "oldEditionRetained": true,
+      "oldManifestInvalidated": true
+    }
+  }
+]

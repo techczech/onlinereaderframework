@@ -1,0 +1,2952 @@
+{
+  "answers": [
+    {
+      "id": "2013-08-16-what-s-the-difference-between-phonetics-and-phonology",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-13-correct-syllabification-in-american-english",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-01-can-every-language-express-any-lexical-aspect",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-01-sampa-of-a-language-phones-or-phonemes",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-12-14-is-there-a-long-list-of-languages-whose-writing-systems-don-t-use-spac",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-18-do-native-speakers-of-languages-using-logographic-writing-internally-v",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-03-convert-audio-recording-of-word-to-ipa-representation",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-04-what-are-the-different-ways-used-to-ortographically-show-the-length-of",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-25-university-level-hieroglyphics-material",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-03-30-what-is-harder-speech-synthesis-or-speech-recognition",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-01-is-the-very-concept-of-the-phoneme-disputed",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-20-how-can-i-recognize-someone-s-voice-from-a-spectrogram-a-puzzler",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-29-is-the-ampersands-a-letter-in-the-latin-alphabet",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-24-what-are-the-differences-between-the-french-and-english-i-and-how-does",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-05-how-is-it-that-such-varied-sounds-in-major-european-languages-came-to",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-15-is-the-sound-unique-to-czech",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-16-why-don-t-any-languages-have-strictly-one-character-for-every-single-p",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-17-what-is-the-consonant-equivalent-of-well-s-lexical-sets-for-english-vo",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-23-why-do-european-languages-use-a-similar-alphabet-but-south-east-asian",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-27-are-the-orthographies-of-the-slavic-languages-generally-consistent",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-15-what-are-the-differences-between-phonology-phonetics-and-prosody",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-08-does-changing-the-writing-system-for-a-language-change-the-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-23-are-question-marks-universal",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-16-calculating-writing-system-efficiency-with-respect-to-reading-ambiguit",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-05-could-you-tell-which-pictures-which-depict-how-the-vowel-chart-is-posi",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-08-we-have-constructed-languages-but-are-there-constructed-accents",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-30-have-there-ever-been-serious-attempts-to-replace-alphabets-with-phonet",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-07-is-syllable-boundary-properly-annotated-at-the-phonetic-or-phonologica",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-07-to-which-extent-are-people-s-perceptions-of-their-own-pronunciation-in",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-15-what-gives-rise-to-racial-accents-timbre",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-19-am-i-using-the-right-terms-in-referring-to-soft-and-hard-vowels-and-co",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-22-why-givin-instead-of-giving",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-01-why-are-there-inflections",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-01-english-verbs-how-many-types-classifications",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-06-why-can-t-these-english-sentences-passivize",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-27-imperfective-aspect-or-future-tense",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-25-given-a-verb-get-a-noun-that-corresponds-to-subject-or-object",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-25-list-of-collocations-in-english",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-01-26-is-there-any-difference-between-imperfect-and-imperfective-aspect",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-23-free-word-order-languages-how-much-freedom",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-03-07-does-the-classification-of-languages-agglutinating-concern-itself-with",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-14-what-is-the-scope-of-negation-again",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-11-is-there-an-estimate-for-the-typical-number-of-morphemes-in-natural-la",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-28-how-does-one-gloss-a-case-that-has-both-locative-and-genitive-meaning",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-02-06-cohesion-within-a-sentence",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-28-why-is-constituency-needed-since-dependency-gets-the-job-done-more-eas",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-02-23-sentence-well-formedness",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-31-is-there-a-paradigmatic-formalism-for-dependency-grammars",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-12-which-language-has-the-biggest-vocabulary",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-20-how-do-various-frameworks-account-for-situations-when-multiple-cases-c",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-21-why-can-verbs-with-imperfective-morphology-have-a-perfective-meaning",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-07-parts-of-speech-in-a-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-26-vocatives-and-case-assignment",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-16-etymology-of-english-suffix-logy",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-19-is-the-english-perfect-really-monosemous",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-24-realization-of-person-in-conjugation",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-24-in-case-of-derivational-nouns-what-is-the-difference-between-affix-pol",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-09-can-determinatives-be-semantically-plural",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-18-ergative-verbs-and-some-discussion-about-them",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-21-why-aren-t-there-any-czech-dictionaries-that-report-the-gender-of-noun",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-19-a-list-of-parts-of-speech",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-18-is-there-any-logic-to-required-double-negatives-or-is-that-just-the-wa",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-09-does-adding-the-suffix-ly-to-a-noun-or-an-adjective-provide-morphologi",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-07-is-this-a-nonce-word-or-is-there-another-name-for-a-regularly-construc",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-22-arbitrariness-and-coinages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-27-grammatical-aspect-and-lexical-aspect",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-27-how-many-of-all-possible-english-words-are-actually-in-use-have-meanin",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-21-is-there-a-grammar-of-syntax-that-takes-into-account-inherent-syntacti",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-27-what-are-the-state-of-the-art-english-syntax-theories-there-are-that-c",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-01-28-multiple-words-with-a-single-meaning",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-04-what-does-sense-mean-in-layman-s-terms",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-20-what-s-the-opposite-of-a-pejorative-suffix",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-09-how-to-determine-whether-a-given-sentence-is-demanding-an-answer-or-is",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-04-what-is-the-scope-of-negation",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-20-structural-ambiguity-and-because",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-26-abbot-costello-who-s-on-first-with-a-pragmatic-or-other-linguistic-per",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-07-is-there-a-term-for-sentence-ending-phrases-like-if-that-is-the-right",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-13-what-are-common-non-lexical-indicators-of-sarcasm-expressed-orally-in",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-16-what-is-the-difference-between-a-filler-word-and-a-discourse-marker",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-17-is-there-a-theory-of-universal-meaning",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-18-are-there-instances-in-which-an-entire-sentence-constitutes-a-focus-ne",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-28-the-differences-between-signifier-signified-and-reference-sense",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-04-a-question-about-pragmatics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-19-why-does-before-mean-both-in-front-of-and-prior-to",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-25-how-did-as-in-english-branch-into-many-meanings-that-look-unlinked",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-08-meaning-of-surface-expressions",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-14-how-far-is-natural-semantic-metalanguage-really-natural",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-15-what-is-the-study-of-language-usage-types-a-question-an-answer-a-criti",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-28-slip-of-the-meaning-of-expressions",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-01-do-general-truths-entail-existence",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-13-how-are-affirmation-causality-similarity-time-etc-connected",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-14-are-there-laws-of-semantic-change",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-20-are-linguistic-units-organized-in-conceptual-categories",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-09-how-is-writer-reader-responsible-language-correlated-with-synthetic-an",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-07-23-do-all-languages-have-sentences",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-16-do-any-languages-have-clear-morpho-syntactic-constructions-that-mark-b",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-12-what-do-all-languages-have-in-common",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-07-why-are-spoken-languages-more-common-than-signed-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-03-what-are-some-grammatical-features-found-only-in-modern-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-24-what-are-the-exact-relations-between-slovak-and-slovene",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-02-do-other-languages-distinguish-the-verbs-to-drink-when-talking-about-a",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-04-what-languages-are-writer-responsible",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-02-why-do-many-languages-tend-to-use-plural-forms-to-impart-formality-or",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-03-is-the-concept-of-a-verb-subject-complete-sentence-a-cultural-linguist",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-04-why-do-some-languages-partition-to-know-into-2-or-more-verbs",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-23-assuming-that-passives-need-verbal-morphology-which-languages-commonly",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-13-is-there-any-language-which-doesn-t-have-hello-thank-you-or-please",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-18-is-english-of-neutral-or-accusative-alignment-in-verbal-person-marking",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-05-is-there-a-language-in-which-feminine-is-the-unmarked-gender",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-26-are-there-any-words-understood-by-speakers-of-any-language-in-the-worl",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-26-where-does-english-need-a-lot-more-effort-to-say-the-same-thing-than-a",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-08-22-is-spoken-english-more-efficient-than-other-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-04-what-quantity-level-of-mutual-intelligible-words-are-needed-for-claimi",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-17-how-does-the-reaction-against-gender-specific-pronouns-relate-to-a-lan",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-06-28-are-languages-that-can-derive-more-meaning-from-context-more-advanced",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-02-has-anyone-attempted-to-simulate-the-creation-development-of-a-languag",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-29-examples-of-borrowing-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-08-languages-with-multiple-forms-of-the-verb-to-be",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-31-have-the-spelling-systems-of-lingua-francas-historically-been-less-pho",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-16-how-does-language-produce-identities",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-27-how-far-can-we-decide-if-there-s-a-code-switching",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-04-where-did-latin-come-from",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-13-did-language-originate-and-evolve-just-as-organisms-did-as-in-evolutio",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-08-does-subject-precede-object-in-all-natural-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-01-pro-drop-typology-in-indo-european-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-07-23-do-languages-change-at-different-rates",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-07-31-does-language-improve-over-time-or-does-it-just-change",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-07-size-of-active-vocabulary-in-hunter-gather-tribes",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-09-do-unschooled-people-use-cases-correctly-e-g-in-germany-and-in-russia",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-11-why-are-native-american-names-translated",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-13-what-is-the-least-changed-language-in-use-today",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-17-how-did-the-same-perfect-tense-structure-become-so-widespread-in-europ",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-05-if-the-rosetta-stone-were-to-be-translated-today-would-the-process-be",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-05-argot-vs-jargon",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-13-globalized-mass-media-deterring-language-or-dialects-differentiation",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-12-does-learning-ancestral-languages-enrich-a-daughter-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-19-do-all-cultures-have-taboo-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-05-is-anglo-english-more-diverse-in-terms-of-accents-than-say-french-in-f",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-12-evolution-of-definite-articles-in-indo-european-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-12-is-chechen-language-close-to-chinese",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-16-how-do-concepts-folk-linguistics-and-language-ideology-relate-to-each",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-13-why-did-latin-fragment-so-much",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-26-what-s-the-etymology-of-of-after-verbs",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-30-are-american-english-and-british-english-growing-closer-together-or-dr",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-30-how-viable-is-the-star-wars-model-of-intercultural-communication",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-05-was-sanskrit-first-complex-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-05-how-does-inflection-evolve-in-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-09-21-how-can-case-systems-emerge-diachronically",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-08-is-there-a-term-for-errors-by-native-speakers",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-21-why-are-most-given-names-so-common",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-23-does-standardisation-restrain-naturally-occurring-grammar-change",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-28-how-to-assess-the-language-register-of-speech",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-05-is-there-a-phylogenetic-tree-for-all-known-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-19-are-british-and-american-english-two-different-dialects",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-11-16-is-it-possible-to-become-fluent-in-any-language-simply-by-reading-book",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-28-how-to-cope-with-many-languages-at-the-same-time",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-14-a-multilingual-home-a-pro-or-a-con",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-07-am-i-a-native-english-speaker-born-i-hungary-lived-in-us-from-age-3",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-08-is-it-true-that-one-can-be-bilingual-in-any-pair-of-languages-or-are-s",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-28-telephone-game-effect-when-translating-between-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-04-how-can-i-improve-my-writing-fluency-in-english",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-26-does-your-dominant-language-proficiency-determine-the-degree-of-possib",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-25-do-native-speakers-of-different-languages-make-different-mistakes-in-e",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-03-30-is-language-really-too-complex-for-children",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-12-what-sub-field-in-linguistics-should-i-study-to-help-me-learn-foreign",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-19-way-to-learn-foreign-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-09-do-individuals-have-an-occam-s-razor-for-word-meanings",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-12-how-does-morphology-apply-to-reading-and-teaching-english-language-lea",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-08-22-does-writing-influence-grammar",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-05-what-is-the-linguistic-term-for-an-environment-where-parents-teach-a-s",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-12-how-distinct-do-two-language-varieties-need-to-be-in-order-to-consider",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-12-what-are-the-stages-of-child-speech-and-language-development-and-why",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-01-how-many-gaps-should-a-sentence-have-to-be-solvable-but-not-too-easy",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-19-which-linguistic-theories-account-for-non-native-accent",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-25-natural-vs-forced-language-learning",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-05-how-do-chomsky-and-pinker-s-monolingualism-explain-their-flaws-about-l",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-16-how-come-i-cannot-get-my-oral-english-to-a-native-speaker-level-after",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-19-for-a-toddler-who-has-just-begun-to-speak-is-hindi-easier-to-speak-as",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-12-01-has-any-research-been-done-on-the-effect-of-introversion-on-language-l",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-18-will-my-child-learn-incorrect-grammar-from-me",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-02-14-where-is-american-english-not-chosen-as-the-dialect-of-english-taught",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-05-how-old-is-linguistics-as-a-discipline",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-16-question-re-connection-between-language-and-knowledge",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-26-can-you-give-some-examples-of-counter-intuitive-phenomena-discovered-b",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-08-06-is-language-infinite",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-20-any-difference-between-natural-and-programming-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-06-does-structural-linguistics-still-have-relevance-today",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-23-what-s-the-use-of-grammar",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-11-10-why-does-there-seem-to-be-so-much-disagreement-among-linguists",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-13-is-a-formal-grammar-of-a-formal-language-a-formal-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-12-23-universal-grammar-for-mathematics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-26-what-are-the-different-approaches-of-the-levels-of-language-analysis-a",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-07-17-is-the-semantic-component-of-a-generative-grammar-especially-difficult",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-03-30-is-there-an-accepted-objective-criterion-of-grammaticality",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-20-is-linguistics-limited-to-natural-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-20-is-a-sentence-s-deep-structure-representative-of-i-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-12-01-how-to-solve-48-2-9-3-from-a-linguistics-perspective",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-05-short-summary-of-cognitive-linguistics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-05-is-music-a-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/4.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-08-what-s-the-difference-between-structural-and-generative-linguistics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-18-origin-of-language-as-commands",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-02-which-comes-first-grammar-or-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-23-where-did-generative-semantics-go-wrong-why-was-their-conception-of-la",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-17-why-should-cognitive-semantics-and-formal-semantics-co-exist",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-31-functionalism-vs-formalism",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-16-what-are-the-blanket-or-general-terms-representing-these-linguistic-pi",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-04-18-name-of-theory-stating-worldview-affects-language-structure",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-15-does-majority-of-linguists-accept-universal-grammar",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-07-icon-index-and-symbol",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-23-do-animals-have-foreign-languages",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-20-is-sentence-a-useful-and-or-clearly-defined-term-in-linguistics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-05-how-does-the-term-naturalistic-speech-differ-from-natural-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-16-which-famous-linguists-embrace-historical-logic-to-understand-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-29-what-is-the-current-status-of-systemic-functional-grammar-linguistics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-15-sapir-whorf-vs-chomsky",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-27-a-syntactician-must-read-list",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-07-characteristics-of-theoretical-linguistics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-14-linguistics-relativity-and-linguistic-determinism",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-20-which-branch-of-linguistics-educates-on-affirmation-causality-similari",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2016-01-21-can-syntax-be-part-of-semantics",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-06-how-to-determine-difficulty-of-a-word-if-its-frequency-in-a-corpus-is",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-26-english-grammar-is-it-possible-to-automatically-verify-correctness",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-18-detecting-actions-within-text",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-01-25-why-does-google-translate-produce-awkward-sentences",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-23-what-is-the-difference-between-coreference-resolution-and-anaphora-res",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-27-are-there-any-tools-on-the-market-that-employ-prosodic-research-to-hel",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-03-04-conversational-english-corpus-for-download",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-05-27-how-do-you-search-for-nouns-that-contain-the-sequence-of-letters-sb-in",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-03-online-etymology-dictionary-for-english-more-explanatory-than-etymonli",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-15-could-a-language-be-reconstructed-from-a-dictionary-and-lots-of-natura",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-19-do-standard-corpus-analysis-tools-like-antconc-and-wordsmith-work-for",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-22-comprehensive-diacritics-normalization",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-07-24-should-common-short-words-be-left-out-of-a-concordance",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-05-measuring-semantic-complexity-of-a-text",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-13-how-to-convert-a-string-to-their-ipa-equivalent",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-08-29-what-are-some-canonical-or-seminal-corpus-linguistic-studies-using-the",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-12-how-to-find-a-given-text-s-complexity",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-24-mapping-graphemes-to-phonemes-in-cmudict",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-26-why-does-wordnet-lack-stopwords-the-of-her-etc",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-27-how-to-automatically-determine-good-charades-words",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-10-29-co-occurrence-count-data-sets",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-13-how-can-i-find-which-words-don-t-exist-in-a-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-04-19-how-do-idioms-and-metaphors-fit-into-the-principle-of-compositionality",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-12-04-metaphor-metonymy",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-02-06-a-comprehensive-list-of-conceptual-metaphors",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-05-02-is-there-a-technical-term-to-describe-a-sequence-of-letters-that-may-o",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-03-checking-grammar-of-non-english-text-nlp",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-10-25-is-there-a-good-introduction-to-subjectivity-in-language",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2014-09-11-what-are-some-alternative-communities-forums-that-are-home-to-engaged",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2013-06-16-best-method-for-building-a-learner-corpus-for-ddl",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-02-12-what-kind-of-wordplay-is-this",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-06-23-metaphor-and-metonymy-in-proverbs",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    },
+    {
+      "id": "2015-11-05-a-literal-response-to-satire",
+      "licence": [
+        "https://creativecommons.org/licenses/by-sa/3.0/"
+      ],
+      "licenceMatchesOld": true,
+      "sourceLink": true,
+      "questionCredit": true,
+      "editors": true,
+      "mdNotice": true
+    }
+  ],
+  "answerCount": 253,
+  "allAnswerNoticesRetained": true,
+  "linguisticsRoot": {
+    "homeLicence": null,
+    "licenceLink": true,
+    "aboutLink": false,
+    "trainingPermission": true,
+    "aboutHasBookLicenceAndTrainingPermission": true,
+    "aboutMarkedAsArchive": false,
+    "aboutPerAnswerClaimSupported": true,
+    "aiSummaryStatement": true,
+    "downloadBytesValidatedBySeparateAudit": true
+  },
+  "headers": {
+    "deliberate-practice": {
+      "blocks": [
+        "/*",
+        "/assets/*"
+      ],
+      "directives": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self'",
+        "img-src": "'self' data:",
+        "font-src": "'self'",
+        "connect-src": "'self' data:",
+        "media-src": "'self'",
+        "object-src": "'none'",
+        "base-uri": "'none'",
+        "form-action": "'none'",
+        "frame-ancestors": "'none'"
+      },
+      "observedInBrowser": false
+    },
+    "language-muscle": {
+      "blocks": [
+        "/*",
+        "/assets/*"
+      ],
+      "directives": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self'",
+        "img-src": "'self' data:",
+        "font-src": "'self'",
+        "connect-src": "'self' data:",
+        "media-src": "'self'",
+        "object-src": "'none'",
+        "base-uri": "'none'",
+        "form-action": "'none'",
+        "frame-ancestors": "'none'"
+      },
+      "observedInBrowser": false
+    },
+    "linguistics": {
+      "blocks": [
+        "/*",
+        "/assets/*"
+      ],
+      "directives": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self'",
+        "img-src": "'self' data:",
+        "font-src": "'self'",
+        "connect-src": "'self' data:",
+        "media-src": "'self'",
+        "object-src": "'none'",
+        "base-uri": "'none'",
+        "form-action": "'none'",
+        "frame-ancestors": "'none'"
+      },
+      "observedInBrowser": false
+    }
+  },
+  "archives": [
+    {
+      "book": "linguistics",
+      "kind": "full former static build",
+      "file": "retired-linguistics-full-static-site.tar.gz",
+      "sha256": "af887f0958ab6e86df355d7594deba7c2d2e991ee9fd3a8dbb434c6afea69d53",
+      "hashMatches": true
+    },
+    {
+      "book": "deliberate-practice",
+      "kind": "original source HEAD; original Cloud Run service retained separately",
+      "sourceHead": "336987aff54358e4d107ef84875279093818e64d",
+      "file": "retired-deliberate-practice-source.tar.gz",
+      "sha256": "2ceeae8b03fe932bfcd80833c2c4dfc180754d93fda813259ced6297d2925fd8",
+      "hashMatches": true
+    },
+    {
+      "book": "language-muscle",
+      "kind": "original source HEAD; original Cloud Run service retained separately",
+      "sourceHead": "ec845f4673a8abce2a2855e3079d6867370e6abc",
+      "file": "retired-language-muscle-source.tar.gz",
+      "sha256": "11781ea8b889a10684c6802254443c8d333e87db7787006731312f6085ee4e75",
+      "hashMatches": true
+    }
+  ],
+  "fullLinguisticsArchive": {
+    "oldFiles": 820,
+    "archiveRegularFiles": 1912,
+    "missing": [],
+    "differing": [],
+    "extracted": false
+  },
+  "cloudRunLiveState": "Not queried; local archive manifest records originals retained separately.",
+  "dirtyInputCoverage": [
+    {
+      "path": "apps/reader-demo/index.html",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/public/covers/linguistics.jpg",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/tailwind.config.cjs",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/postcss.config.cjs",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/vite.config.ts",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/package.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/package-lock.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "package.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "packages/reader-core/package.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "packages/reader-core/package-lock.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/previous-linguistics-site.json",
+      "enumeratedByGit": true,
+      "ignored": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+required 127/127 held; failed: []; scratch removed: true
+observation {"name":"delimiter-separated tail after an approved literal","text":"'file:///etc/>private.md'","issues":0}
+observation {"name":"delimiter-separated tail after an approved literal","text":"'file:///etc/<private>'","issues":0}
+observation {"name":"delimiter-separated tail after an approved literal","text":"'file:///etc/ private notes.md'","issues":0}
+observation {"name":"delimiter-separated tail after an approved literal","text":"'file:///etc/`private'","issues":0}
+observation {"name":"uncompressed tar sha256","sha256":"7a87e73883b4d065f7778c8e45fdc30d99a58176ccd66f9c53759abd9261982f"}
+observation {"name":"hard-linked output leaf (nlink 2) accepted and written through","threw":false,"outsideContentNow":"abc  reader-source-release.tar.gz","nlink":2}
+exit 0

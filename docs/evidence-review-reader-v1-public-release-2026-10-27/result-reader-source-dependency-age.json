@@ -1,0 +1,9 @@
+{
+  "registryKey": "make-fetch-happen:request-cache:https://registry.npmjs.org/postcss-selector-parser",
+  "cacheRecordFound": true,
+  "metadataIntegrity": "sha512-IqBQTaVkK+FgjC2PXtMbm9dodxjCukmUvAECZPGMyCZL6beVaWSLyH44cnZRkdfIJR1PXPcRS8azrEJpEJwAIw==",
+  "targetVersion": "6.1.5",
+  "publishedAt": "2026-10-19T15:02:08.894Z",
+  "ageDaysAtStartOfReleaseDay": 7.373508171296296,
+  "passesSevenDays": true
+}

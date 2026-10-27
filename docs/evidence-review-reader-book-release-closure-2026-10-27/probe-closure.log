@@ -1,0 +1,222 @@
+
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[
+  {
+    "name": "guards",
+    "pass": true,
+    "detail": [
+      {
+        "kind": "build",
+        "result": {
+          "ok": false,
+          "failures": [
+            "Refusing a symbolic link in the release path: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/build/build"
+          ]
+        }
+      },
+      {
+        "kind": "root",
+        "result": {
+          "ok": false,
+          "failures": [
+            "Refusing a symbolic link in the release path: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/root/build/release-books"
+          ]
+        }
+      },
+      {
+        "kind": "edition",
+        "result": {
+          "ok": false,
+          "failures": [
+            "Refusing a symbolic link in the release path: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/edition/build/release-books/language-muscle"
+          ]
+        }
+      },
+      {
+        "kind": "manifest",
+        "result": {
+          "ok": false,
+          "failures": [
+            "Refusing a symbolic link in the release path: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/manifest/build/release-books/language-muscle.manifest.json"
+          ]
+        }
+      },
+      {
+        "kind": "dangling-manifest",
+        "result": {
+          "ok": false,
+          "failures": [
+            "Refusing a symbolic link in the release path: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/dangling-manifest/build/release-books/language-muscle.manifest.json"
+          ]
+        }
+      },
+      {
+        "kind": "nested-edition",
+        "result": {
+          "ok": true,
+          "folder": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/nested-edition/build/release-books/language-muscle",
+          "manifest": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/nested-edition/build/release-books/language-muscle.manifest.json",
+          "files": 129,
+          "bytes": 4947647,
+          "treeSha256": "1555c6a2fed75e286b8dafa56969c21816805d032fdc4e5a550822fbd2ec6150"
+        }
+      }
+    ]
+  },
+  {
+    "name": "module-hooks",
+    "pass": true,
+    "detail": {
+      "missingReplacementCountsRefused": [
+        0,
+        1,
+        2
+      ],
+      "htmlBody": "<p>Another lengthy independent fixture sentence is rendered as ordinary safe content in the generated book.</p><img src=\"x\"><a>bad</a>"
+    }
+  },
+  {
+    "name": "manifest-gates",
+    "pass": true,
+    "detail": {
+      "mutationsRefused": [
+        {
+          "patch": {
+            "checks": {
+              "failures": [
+                "forced failure"
+              ]
+            }
+          },
+          "failures": [
+            "manifest records check failures"
+          ]
+        },
+        {
+          "patch": {
+            "checks": {}
+          },
+          "failures": [
+            "manifest records check failures"
+          ]
+        },
+        {
+          "patch": {
+            "schema": "old"
+          },
+          "failures": [
+            "manifest schema is old, expected online-reader-framework/release-manifest@2"
+          ]
+        },
+        {
+          "patch": {
+            "sourceTreeDirty": true
+          },
+          "failures": [
+            "built from uncommitted source (sourceTreeDirty is not false)"
+          ]
+        },
+        {
+          "patch": {
+            "sourceTreeDirty": null
+          },
+          "failures": [
+            "built from uncommitted source (sourceTreeDirty is not false)"
+          ]
+        },
+        {
+          "patch": {
+            "treeSha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "failures": [
+            "tree hash differs from manifest"
+          ]
+        },
+        {
+          "patch": {
+            "totals": {
+              "files": 0,
+              "bytes": 0
+            }
+          },
+          "failures": [
+            "manifest totals differ from disk"
+          ]
+        }
+      ],
+      "failedBuild": {
+        "ok": false,
+        "failures": [
+          "another book's text sample 1 of different-book in agent/language-muscle/chapters/sample-one.md",
+          "another book's text sample 2 of different-book in agent/language-muscle/chapters/sample-two.md",
+          "another book's description of different-book in agent/language-muscle/full.md",
+          "another book's description of different-book in agent/language-muscle/index.md",
+          "another book's description of different-book in agent/language-muscle/manifest.json",
+          "another book's description of different-book in assets/index-J5it5SSr.js",
+          "another book's description of different-book in llms.txt",
+          "another book's text sample 1 of different-book in sample-one/index.html",
+          "another book's text sample 2 of different-book in sample-two/index.html"
+        ],
+        "quarantine": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-closure-2026-10-27/scratch-56184/gates/build/release-books/.incomplete-language-muscle-20261027T162130Z-56184"
+      },
+      "oldEditionRetained": true
+    }
+  },
+  {
+    "name": "unsafe-link",
+    "pass": false,
+    "error": "Static licence metadata emits <a href=\"javascript:alert(1)\">Unsafe fixture licence</a> and both build and deploy verification accept it.\n+ actual - expected\n\n+ '<a href=\"javascript:alert(1)\">Unsafe fixture licence</a>'\n- undefined\n"
+  },
+  {
+    "name": "promotion-gap",
+    "pass": false,
+    "error": "Between the two promotion renames the canonical edition folder is absent; process termination here leaves only .previous and .incomplete folders.\n\nfalse !== true\n"
+  },
+  {
+    "name": "manifest-failure",
+    "pass": false,
+    "error": "The manifest publication failed after the previous edition was deleted; the old edition cannot be recovered from the release root.\n+ actual - expected\n\n+ '8a652b740b8e4eefc0b69fc02e8f1dd8050b331cf19de213b3bbcf52fe97b24e'\n- '1555c6a2fed75e286b8dafa56969c21816805d032fdc4e5a550822fbd2ec6150'\n"
+  }
+]

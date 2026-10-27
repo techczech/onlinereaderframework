@@ -1,7 +1,18 @@
 {
   "name": "onlinereaderframework",
   "private": true,
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "description": "A React reader framework for publishing a book as a readable, searchable, accessible web edition.",
+  "license": "MIT",
+  "author": "Dominik Lukeš",
+  "homepage": "https://techczech.github.io/onlinereaderframework/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techczech/onlinereaderframework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techczech/onlinereaderframework/issues"
+  },
   "scripts": {
     "setup": "npm ci --prefix packages/reader-core && npm ci --prefix apps/reader-demo",
     "dev": "npm run dev --prefix apps/reader-demo -- --host 127.0.0.1",
@@ -9,6 +20,7 @@
     "test:books": "npm run test:books --prefix apps/reader-demo",
     "preview": "npm run preview --prefix apps/reader-demo -- --host 127.0.0.1",
     "verify:package": "node scripts/verify-reader-package.mjs",
-    "test": "npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-publication-navigation.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/frontpage/test-frontpage.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs && npm run test:books"
+    "test": "npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-publication-navigation.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/frontpage/test-frontpage.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs && npm run test:books && npm run test:release --prefix apps/reader-demo",
+    "build:release": "npm run build:release --prefix apps/reader-demo --"
   }
 }

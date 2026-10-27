@@ -1,0 +1,105 @@
+{
+ "linguistics": {
+  "files": 1178,
+  "manifestMatchesDisk": true,
+  "treeHashMatches": true,
+  "treeSha256": "3ad8f09070e6ed9714d145f43ce6be7796e58f4310567798876db1ca85a05927",
+  "sourceTreeDirty": true,
+  "sourceHead": "24ff25434457928cacdfedc8f91645d58c2615c0",
+  "checksFailures": [],
+  "originalIconFiles": [],
+  "filesMentioningNotionSo": [],
+  "hasHeaders": true,
+  "has404": true,
+  "scriptInStandalonePages": [],
+  "htmlFiles": 528,
+  "markerLeft": [],
+  "pagesNotOneHtmlHeadTitle": []
+ },
+ "deliberate-practice": {
+  "files": 168,
+  "manifestMatchesDisk": true,
+  "treeHashMatches": true,
+  "treeSha256": "2d17271143ab06f13670ea08d4d57e8d648475c69776de4fbe2880c0b2981758",
+  "sourceTreeDirty": true,
+  "sourceHead": "24ff25434457928cacdfedc8f91645d58c2615c0",
+  "checksFailures": [],
+  "originalIconFiles": [],
+  "filesMentioningNotionSo": [
+   "agent/deliberate-practice/chapters/reviews-coaching.md",
+   "agent/deliberate-practice/full.md",
+   "assets/index-BzL_-S9W.js",
+   "reviews-coaching/index.html"
+  ],
+  "hasHeaders": true,
+  "has404": true,
+  "scriptInStandalonePages": [],
+  "htmlFiles": 23,
+  "markerLeft": [],
+  "pagesNotOneHtmlHeadTitle": []
+ },
+ "language-muscle": {
+  "files": 149,
+  "manifestMatchesDisk": true,
+  "treeHashMatches": true,
+  "treeSha256": "43dc0d7ec66941f56ac76792fe775300e61c2db3b2c3c950d717813232c1cc60",
+  "sourceTreeDirty": true,
+  "sourceHead": "24ff25434457928cacdfedc8f91645d58c2615c0",
+  "checksFailures": [],
+  "originalIconFiles": [],
+  "filesMentioningNotionSo": [],
+  "hasHeaders": true,
+  "has404": true,
+  "scriptInStandalonePages": [],
+  "htmlFiles": 14,
+  "markerLeft": [],
+  "pagesNotOneHtmlHeadTitle": []
+ }
+}
+{
+ "deliberatePracticeIcon": {
+  "mediaFileEqualsRepoIcon": true,
+  "repoIconSha256": "beef4f875e65767e78a27ee8101418b754811bf01708113f474d91c8d9d3429f",
+  "staticPageImg": [
+   "<img src=\"/media/terminal-icon.svg\" alt=\"\" width=\"40px\">"
+  ],
+  "agentChapterImg": [
+   "<img src=\"/media/terminal-icon.svg\" alt=\"\" width=\"40px\" />"
+  ],
+  "bundleHasReleaseIconHref": true,
+  "bundleHasReleaseIconSvg": true,
+  "notionPageLinkKept": [
+   "https://www.notion.so/Air-Light-Time-Space-How-Successful-Academics-Write-by-Helen-Sword-ea05f21fda034f709e8f05f6c79376ce"
+  ]
+ },
+ "linguisticsPreviousSite": {
+  "oldFilesOutsidePagefindAndAssets": 535,
+  "oldPathsMissingInNewEdition": [],
+  "oldMarkdownPaths": 262,
+  "oldMarkdownPathsEqualToNewChapterBytes": 262,
+  "llmsFullEqualsFullMd": true,
+  "downloads": {
+   "download/key-issues-in-language.epub": {
+    "new": "bc62337f7d8e96e9003bbfa12c3911db0a335d0edb25e400a3779473229fa588",
+    "old": "bc62337f7d8e96e9003bbfa12c3911db0a335d0edb25e400a3779473229fa588"
+   },
+   "download/key-issues-in-language.pdf": {
+    "new": "90e831f18ffd9627f7c9a4bea3f46b51aeab45f8eda797b7df76edd77d32e585",
+    "old": "90e831f18ffd9627f7c9a4bea3f46b51aeab45f8eda797b7df76edd77d32e585"
+   }
+  },
+  "aboutMainVerbatim": true,
+  "downloadMainVerbatim": true,
+  "notFoundMainVerbatim": true
+ },
+ "linguisticsSourceSnapshot": {
+  "compared": "apps/reader-demo/src/books/original-publications-provenance.json (linguistics) against linguistics-stack-exchange-answers/build/round-two-source-after.json",
+  "newImportSources": 511,
+  "inPreviousSnapshot": 510,
+  "identical": 510,
+  "notInPreviousSnapshot": [
+   "book.toml"
+  ],
+  "limit": "The previous build recorded this snapshot; nothing records which snapshot the dist/ EPUB and PDF were built from beyond their build time (2026-10-23)."
+ }
+}

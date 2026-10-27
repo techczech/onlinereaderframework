@@ -1,0 +1,21 @@
+{
+  "built": {
+    "ok": true,
+    "folder": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-final-2026-10-27/scratch-97074/unsafe-link/build/release-books/language-muscle",
+    "manifest": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-book-release-final-2026-10-27/scratch-97074/unsafe-link/build/release-books/language-muscle.manifest.json",
+    "files": 129,
+    "bytes": 4948269,
+    "treeSha256": "2c58ebb795433165d14d7f739987ef42ced259b7a1b1bea8e5919579ed5cbb4c"
+  },
+  "v": {
+    "book": "language-muscle",
+    "ok": true,
+    "failures": [],
+    "notes": [
+      "built at owned-fixtur, HEAD is now 24ff25434457"
+    ],
+    "treeSha256": "2c58ebb795433165d14d7f739987ef42ced259b7a1b1bea8e5919579ed5cbb4c",
+    "files": 129
+  },
+  "bodySanitised": true
+}

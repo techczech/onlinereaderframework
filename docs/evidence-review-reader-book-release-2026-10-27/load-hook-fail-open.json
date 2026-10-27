@@ -1,0 +1,19 @@
+{
+  "generated": "2026-10-27T15:50:40.124Z",
+  "scratchRemoved": true,
+  "results": [
+    {
+      "case": "real path",
+      "appRootGivenToPlugin": "app-real",
+      "otherManuscriptInBundle": false,
+      "otherAddressInBundle": false
+    },
+    {
+      "case": "symlinked path",
+      "appRootGivenToPlugin": "app-link",
+      "error": "[vite:build-html] The \"fileName\" or \"name\" properties of emitted chunks and assets must be strings that are neither absolute nor relative paths, received \"../app-real/index.html\".",
+      "otherManuscriptInBundle": false,
+      "otherAddressInBundle": false
+    }
+  ]
+}

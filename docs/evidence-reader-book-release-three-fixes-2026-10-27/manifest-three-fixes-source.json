@@ -1,0 +1,25 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "apps/reader-demo/scripts/release/build-edition.ts",
+      "digest": "699e492da9e6f6dd54280ac686ae2ba9ddca9268e14ba9a2932ebbbdae2e3193"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/static-pages.ts",
+      "digest": "deeb3e4473f4d25d40d2d1d1b1f80f6abe850a5437c5d189fae7c9ad54d744cb"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/projection.ts",
+      "digest": "b3955cdeb423984d62af91368d3cc32abdd5763bf4b14ef261cded96b525b544"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release-write.ts",
+      "digest": "cfa47ea360d3cd272bedc10e48d85a5933b29a6917d54844fd5f9ab94ef880de"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release-repair.ts",
+      "digest": "2578937a4fe196ac5469764e61be666c2a26804c55eb8afc9ed5cc4489119edd"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "file": "terminal-icon.svg",
+  "sha256": "beef4f875e65767e78a27ee8101418b754811bf01708113f474d91c8d9d3429f",
+  "source": "Drawn for this repository on 2026-10-27 from SVG primitives (a rounded rectangle, a chevron and a line); no other file was copied or traced.",
+  "usage": "Replaces the decorative terminal icon of Deliberate Practice in the release editions only (scripts/release/projection.ts). The demo and the canonical manuscript keep their original reference to command-line_gray.svg.",
+  "licence": "MIT, as the rest of this repository (LICENSE)."
+}

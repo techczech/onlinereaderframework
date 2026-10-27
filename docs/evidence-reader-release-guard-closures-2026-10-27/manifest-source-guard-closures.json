@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "scripts/prepare-reader-source-release.mjs",
+      "digest": "fa80b10f827935e86ab9d473de7d00f8757f0f3f39498e7aa1fece0f85f70021"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/build-edition.ts",
+      "digest": "e5670435924f575813308fd3c708e5b1c5a1d9f51c4ca6b4c8fc2e066d81ccdf"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-release.ts",
+      "digest": "459a066ee54370f1f0eb87c512a5afbb5ec49744c4b186dba34a4eee3e3c18f1"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release-write.ts",
+      "digest": "f678035ac1ec6e7a3c7d551aae943042d5b93f32254d12ff74c3f6525bc813dd"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "render-guards",
+    "pass": true,
+    "detail": {
+      "malformedTemplatesRefused": 6
+    }
+  }
+]

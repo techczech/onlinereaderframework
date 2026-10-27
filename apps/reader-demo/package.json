@@ -13,7 +13,10 @@
     "import:originals": "tsx scripts/import-original-books.ts",
     "test:books": "tsx --test scripts/test-original-books.ts",
     "verify:originals": "tsx scripts/verify-original-source-snapshots.ts",
-    "build:agent": "tsx scripts/build-agent-files.ts"
+    "build:agent": "tsx scripts/build-agent-files.ts",
+    "build:release": "tsx scripts/build-release.ts",
+    "test:release": "tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts",
+    "verify:release": "tsx scripts/release/verify-existing-edition.ts"
   },
   "dependencies": {
     "@fontsource/inter": "5.3.0",

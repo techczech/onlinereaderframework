@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "node",
+      "docs/evidence-review-reader-v1-public-release-2026-10-27/assert-reader-source-release-safety.mjs",
+      "privacy"
+    ],
+    "exitCode": 1,
+    "log": "log-reader-source-assert-privacy.txt"
+  },
+  {
+    "command": [
+      "node",
+      "docs/evidence-review-reader-v1-public-release-2026-10-27/assert-reader-source-release-safety.mjs",
+      "writes"
+    ],
+    "exitCode": 1,
+    "log": "log-reader-source-assert-writes.txt"
+  }
+]

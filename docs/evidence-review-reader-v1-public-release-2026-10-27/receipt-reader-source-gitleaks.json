@@ -1,0 +1,14 @@
+{
+  "command": [
+    "gitleaks",
+    "dir",
+    "build/public-reader-source",
+    "--redact",
+    "--no-banner",
+    "--report-format",
+    "json",
+    "--report-path",
+    "docs/evidence-review-reader-v1-public-release-2026-10-27/result-reader-source-gitleaks.json"
+  ],
+  "exitCode": 0
+}

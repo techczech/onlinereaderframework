@@ -1,6 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
+import publications from './books/original-publications.json';
+import { RELEASE_BOOK } from './release';
+import { releaseLocation, sectionIdsOf, type RouteSection } from './release-routes';
 import '@fontsource/inter/300.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
@@ -21,5 +24,11 @@ import './index.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');
+
+if (RELEASE_BOOK) {
+  const book = (publications as { id: string; sections: RouteSection[] }[]).find(entry => entry.id === RELEASE_BOOK);
+  const clean = book && releaseLocation(book.id, window.location.href, sectionIdsOf(book.sections));
+  if (clean) window.history.replaceState(window.history.state, '', clean);
+}
 
 createRoot(rootElement).render(<App />);

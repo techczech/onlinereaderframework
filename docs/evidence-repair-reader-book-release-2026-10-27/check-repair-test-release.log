@@ -1,0 +1,36 @@
+
+> reader-demo@0.1.0 test:release
+> tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts
+
+✔ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (3.447333ms)
+✔ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.164792ms)
+✔ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.631959ms)
+✔ output paths: duplicates ignoring case and a file that is also a folder are refused (0.1205ms)
+✔ a symlinked edition folder, release folder or manifest is refused before anything is built, deleted or written (22.677125ms)
+✔ an unsafe section id is refused before any write, and the previous manifest and folder stay as they were (0.640375ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a $ in the book builds verbatim pages; a failed verification keeps the previous edition and leaves no manifest; verify:release checks the folder (2888.861209ms)
+✔ a section path and the previous Linguistics addresses open the section; nothing else does (0.908875ms)
+✔ every Linguistics section has exactly one previous-site route (0.147ms)
+✔ release location drops demo parameters, keeps section and hash, and ignores an unknown book (0.152334ms)
+✔ hash routes of the original single-page books still open their sections (0.206042ms)
+✔ deliberate-practice: one static page per section, a root page, aliases only where routes exist (76.470542ms)
+✔ language-muscle: one static page per section, a root page, aliases only where routes exist (21.694542ms)
+✔ linguistics: one static page per section, a root page, aliases only where routes exist (133.091709ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3206.091208

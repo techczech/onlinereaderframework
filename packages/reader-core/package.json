@@ -1,6 +1,15 @@
 {
   "name": "reader-core",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Reader components, publication rendering, EPUB and agent-file generation for the Online Reader Framework.",
+  "license": "MIT",
+  "author": "Dominik Lukeš",
+  "homepage": "https://techczech.github.io/onlinereaderframework/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techczech/onlinereaderframework.git",
+    "directory": "packages/reader-core"
+  },
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
@@ -57,5 +66,10 @@
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "overrides": {
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.5"
+    }
+  }
 }

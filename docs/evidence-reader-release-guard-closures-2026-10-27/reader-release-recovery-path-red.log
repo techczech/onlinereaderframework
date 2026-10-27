@@ -1,0 +1,93 @@
+
+> reader-demo@0.1.0 test:release
+> tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts
+
+✔ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (3.461708ms)
+✔ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.168917ms)
+✔ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.55825ms)
+✔ output paths: duplicates ignoring case and a file that is also a folder are refused (0.116875ms)
+✔ static licence metadata uses the reader URL boundary (103.353958ms)
+✔ Linguistics release exposes the existing book-wide grant without changing the canonical book or its section bytes (5.499375ms)
+✔ a symlinked edition folder, release folder or manifest is refused before anything is built, deleted or written (25.913042ms)
+✔ an unsafe section id is refused before any write, and the previous manifest and folder stay as they were (0.687542ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a $ in the book builds verbatim pages; a failed verification keeps the previous edition and leaves no manifest; verify:release checks the folder (2949.510666ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✖ all late publication failures identify only incomplete output, preserving the previous edition and no manifest (1742.675792ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✖ a rollback failure names the retained good edition separately from incomplete output (1726.557375ms)
+✔ a section path and the previous Linguistics addresses open the section; nothing else does (0.949458ms)
+✔ every Linguistics section has exactly one previous-site route (0.15425ms)
+✔ release location drops demo parameters, keeps section and hash, and ignores an unknown book (0.148542ms)
+✔ hash routes of the original single-page books still open their sections (0.222666ms)
+✔ deliberate-practice: one static page per section, a root page, aliases only where routes exist (73.317167ms)
+✔ language-muscle: one static page per section, a root page, aliases only where routes exist (19.5135ms)
+✔ linguistics: one static page per section, a root page, aliases only where routes exist (132.305209ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 16
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6881.98325
+
+✖ failing tests:
+
+test at scripts/release/test-release-write.ts:125:1
+✖ all late publication failures identify only incomplete output, preserving the previous edition and no manifest (1742.675792ms)
+  AssertionError [ERR_ASSERTION]: manifest-write
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-write.ts:150:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/release/test-release-write.ts:156:1
+✖ a rollback failure names the retained good edition separately from incomplete output (1726.557375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!failed.ok && failed.recovery && fs.existsSync(failed.recovery))
+  
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-write.ts:170:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "id": "1",
+      "status": "fixed",
+      "evidence": "Physical guards and real build refusals protect build/root/edition/manifest paths, including a dangling manifest symlink; outside sentinels unchanged."
+    },
+    {
+      "id": "2",
+      "status": "fixed",
+      "evidence": "Callback insertions retain all dollar patterns in real fixture output; projected current bodies match."
+    },
+    {
+      "id": "3",
+      "status": "still_vulnerable",
+      "evidence": "Pre-promotion failures retain the previous edition, but build-edition.ts:116 deletes it before manifest publication at :129-133; injected final rename failure proves its loss."
+    },
+    {
+      "id": "4",
+      "status": "fixed",
+      "evidence": "Pre-write section-id and output collision checks refuse reserved, unsafe, duplicate and case-colliding paths."
+    },
+    {
+      "id": "5",
+      "status": "fixed",
+      "evidence": "Release icon projection and EPUB module replacement remove original icon patterns from all current book outputs; canonical manuscript unchanged."
+    },
+    {
+      "id": "6",
+      "status": "fixed",
+      "evidence": "All retained old paths, 262 Markdown aliases, full text, pinned downloads and standalone page main texts match; the new root-notice specification gap is reported separately."
+    },
+    {
+      "id": "7",
+      "status": "fixed",
+      "evidence": "Missing required modules fails generateBundle; direct missing-subset probes and a real minimal Vite build fail closed."
+    },
+    {
+      "id": "8",
+      "status": "fixed",
+      "evidence": "Whole-repository status pathspec includes listed HTML, covers, config and package inputs; real dirty editions are refused."
+    }
+  ]
+}

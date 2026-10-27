@@ -1,0 +1,13 @@
+{
+  "canonical": "https://techczech.github.io/onlinereaderframework/",
+  "assetReferences": [
+    "style.css"
+  ],
+  "assetsResolveUnderGitHubProjectPrefix": true,
+  "fragmentLinksResolve": true,
+  "noJekyll": true,
+  "scriptCount": 0,
+  "requiredFoundationAndAuthorLinks": true,
+  "oldMarkdownUploadClaims": false,
+  "mode": "static parse only; no browser or live HTTP request"
+}

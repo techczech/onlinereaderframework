@@ -1,0 +1,564 @@
+{
+  "exporterSha256": "fa80b10f827935e86ab9d473de7d00f8757f0f3f39498e7aa1fece0f85f70021",
+  "node": "v24.22.1",
+  "required": [
+    {
+      "name": "approved single literal passes: file:///etc/passwd",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/passwdprivate-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/passwdx",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/passwd../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/passwd%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///etc/passwd",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///etc/passwd",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///etc/passwd",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///etc/passwd",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///tmp/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/xprivate-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/xx",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/x../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/x%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///tmp/x",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///tmp/x",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///tmp/x",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///tmp/x",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///tmp/book",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/bookprivate-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/bookx",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/book../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///tmp/book%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///tmp/book",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///tmp/book",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///tmp/book",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///tmp/book",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///etc/",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/private-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///etc/%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///etc/",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///etc/",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///etc/",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///etc/",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///Users/reader/dist/index.html",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/index.htmlprivate-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/index.htmlx",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/index.html../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/index.html%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///Users/reader/dist/index.html",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///Users/reader/dist/index.html",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///Users/reader/dist/index.html",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///Users/reader/dist/index.html",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///Users/reader/dist/agent/",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/agent/private-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/agent/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/agent/../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///Users/reader/dist/agent/%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///Users/reader/dist/agent/",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///Users/reader/dist/agent/",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///Users/reader/dist/agent/",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///Users/reader/dist/agent/",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: https://u:p@example.org/sub/",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/sub/private-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/sub/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/sub/../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/sub/%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: https://u:p@example.org/sub/",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: https://u:p@example.org/sub/",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: https://u:p@example.org/sub/",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: https://u:p@example.org/sub/",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: https://u:p@example.org/",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/private-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@example.org/%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: https://u:p@example.org/",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: https://u:p@example.org/",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: https://u:p@example.org/",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: https://u:p@example.org/",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: https://u:p@public.example.org/sub/reader/agent/",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@public.example.org/sub/reader/agent/private-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@public.example.org/sub/reader/agent/x",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@public.example.org/sub/reader/agent/../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: https://u:p@public.example.org/sub/reader/agent/%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: https://u:p@public.example.org/sub/reader/agent/",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: https://u:p@public.example.org/sub/reader/agent/",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: https://u:p@public.example.org/sub/reader/agent/",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: https://u:p@public.example.org/sub/reader/agent/",
+      "ok": true
+    },
+    {
+      "name": "approved single literal passes: file:///a.wav",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///a.wavprivate-manuscript.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///a.wavx",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///a.wav../Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "longer address rejected: file:///a.wav%2Fprivate",
+      "ok": true
+    },
+    {
+      "name": "extra occurrence rejected: file:///a.wav",
+      "ok": true
+    },
+    {
+      "name": "unapproved literal beside approved rejected: file:///a.wav",
+      "ok": true
+    },
+    {
+      "name": "literal in another file rejected: file:///a.wav",
+      "ok": true
+    },
+    {
+      "name": "escaped longer form rejected: file:///a.wav",
+      "ok": true
+    },
+    {
+      "name": "publication-content passwd without reviewed context rejected",
+      "ok": true
+    },
+    {
+      "name": "private signal after delimiter still caught:  /Users/dominik/notes.md",
+      "ok": true
+    },
+    {
+      "name": "private signal after delimiter still caught:  /home/x/notes.md",
+      "ok": true
+    },
+    {
+      "name": "private signal after delimiter still caught: >file:///private/x",
+      "ok": true
+    },
+    {
+      "name": "private signal after delimiter still caught:  _COORDINATION/x",
+      "ok": true
+    },
+    {
+      "name": "private signal after delimiter still caught: <C:\\Users\\x>",
+      "ok": true
+    },
+    {
+      "name": "actual candidate: final audit has no issues",
+      "ok": true,
+      "anchors": 12831,
+      "reviewed": [
+        "file:///tmp/x",
+        "file:///tmp/book",
+        "file:///etc/",
+        "file:///Users/reader/dist/index.html",
+        "file:///Users/reader/dist/agent/",
+        "https://u:p@example.org/sub/",
+        "https://u:p@public.example.org/sub/reader/agent/",
+        "file:///a.wav",
+        "file:///etc/passwd"
+      ]
+    },
+    {
+      "name": "actual candidate: 125 files byte-identical to prior review snapshot",
+      "ok": true,
+      "diffs": []
+    },
+    {
+      "name": "archive: sha256 502b7a14…, matches manifest and .sha256 file",
+      "ok": true
+    },
+    {
+      "name": "archive: 125 regular members exactly equal candidate bytes",
+      "ok": true
+    },
+    {
+      "name": "manifest: every listed file hash equals candidate",
+      "ok": true
+    },
+    {
+      "name": "archive: no forbidden member names",
+      "ok": true
+    },
+    {
+      "name": "real repository: guardReleaseOutputs accepts current build outputs",
+      "ok": true
+    },
+    {
+      "name": "real repository: source walk passes path guards",
+      "ok": true,
+      "threw": false
+    },
+    {
+      "name": "build directory link refused by guardReleaseOutputs",
+      "ok": true
+    },
+    {
+      "name": "build directory link refused by finalWrite before deletion",
+      "ok": true
+    },
+    {
+      "name": "build as regular file refused",
+      "ok": true
+    },
+    {
+      "name": "candidate link refused",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.tar.gz existing link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.tar.gz dangling link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.manifest.json existing link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.manifest.json dangling link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.sha256 existing link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.sha256 dangling link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.evidence.json existing link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "reader-source-release.evidence.json dangling link refused before any write",
+      "ok": true
+    },
+    {
+      "name": "scratch link refused before cleanup",
+      "ok": true
+    },
+    {
+      "name": "path outside root refused",
+      "ok": true
+    },
+    {
+      "name": "../ escape refused",
+      "ok": true
+    },
+    {
+      "name": "linked source root refused by walk",
+      "ok": true
+    },
+    {
+      "name": "linked source root refused by input",
+      "ok": true
+    },
+    {
+      "name": "linked source leaf refused by input",
+      "ok": true
+    },
+    {
+      "name": "linked source leaf refused by walk",
+      "ok": true
+    },
+    {
+      "name": "linked higher source ancestor refused",
+      "ok": true
+    },
+    {
+      "name": "clean fake build: final write completes inside the fake repository",
+      "ok": true,
+      "threw": false
+    },
+    {
+      "name": "nested candidate link removed as a link only; outside folder kept",
+      "ok": true
+    },
+    {
+      "name": "outside canary and folder unchanged after all alias cases",
+      "ok": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "delimiter-separated tail after an approved literal",
+      "text": "'file:///etc/>private.md'",
+      "issues": 0
+    },
+    {
+      "name": "delimiter-separated tail after an approved literal",
+      "text": "'file:///etc/<private>'",
+      "issues": 0
+    },
+    {
+      "name": "delimiter-separated tail after an approved literal",
+      "text": "'file:///etc/ private notes.md'",
+      "issues": 0
+    },
+    {
+      "name": "delimiter-separated tail after an approved literal",
+      "text": "'file:///etc/`private'",
+      "issues": 0
+    },
+    {
+      "name": "uncompressed tar sha256",
+      "sha256": "7a87e73883b4d065f7778c8e45fdc30d99a58176ccd66f9c53759abd9261982f"
+    },
+    {
+      "name": "hard-linked output leaf (nlink 2) accepted and written through",
+      "threw": false,
+      "outsideContentNow": "abc  reader-source-release.tar.gz",
+      "nlink": 2
+    }
+  ],
+  "scratchRemoved": true,
+  "failed": [],
+  "passedCount": 127
+}

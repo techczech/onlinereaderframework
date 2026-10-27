@@ -1,6 +1,6 @@
 /** Local-only source export. Never publishes, changes Git, or reads environment files. */
-import { readFileSync, writeFileSync, readdirSync, lstatSync, mkdirSync, mkdtempSync, rmSync, cpSync, symlinkSync, existsSync } from 'node:fs';
-import { dirname, resolve, relative, posix } from 'node:path';
+import { readFileSync, writeFileSync, readdirSync, lstatSync, mkdirSync, mkdtempSync, rmSync, cpSync, symlinkSync, existsSync, realpathSync } from 'node:fs';
+import { dirname, resolve, relative, posix, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { gzipSync, gunzipSync } from 'node:zlib';
@@ -17,11 +17,36 @@ const json = value => JSON.stringify(value, null, 2) + '\n';
 const sourceInputs = new Map();
 const files = new Map();
 const transformations = [];
-const evidence = { status: 'preliminary-local-review-draft', publicationAuthorised: false, node: process.version, checks: [], limits: [
-  'Concurrent working-tree snapshot; parent must rerun after its final checkpoint and review the exact file list.',
-  'No software licence or public scope has been selected. Technical checks do not authorise publication.',
+// Licence and scope: MIT, version 1.0.0, authorised by the author on 2026-10-27. This script only prepares files; the parent publishes.
+const RELEASE = { version: '1.0.0', license: 'MIT', author: 'Dominik Lukeš', homepage: 'https://techczech.github.io/onlinereaderframework/', repository: 'https://github.com/techczech/onlinereaderframework' };
+const evidence = { status: 'v1-source-candidate', release: RELEASE, publicationAuthorised: 'by the author, 2026-10-27; performed by the parent, not by this script', node: process.version, checks: [], limits: [
+  'Working-tree snapshot; the parent must publish only from a clean checkout of the exact commit and compare the archive hash.',
   'Private-path and manuscript-span matching are heuristics; no browser, visual, EPUBCheck or rights acceptance is claimed here.',
+  'Browser-interaction scripts are not exported. Exported tests are Node tests only.',
 ] };
+// Refuse source/output aliases, including dangling leaf links, before reading, deleting or writing through them.
+function assertProjectPath(target, expected = 'any', boundary = root) {
+  const full = resolve(target), base = resolve(boundary), rel = relative(base, full);
+  assert.ok(rel !== '..' && !rel.startsWith('../') && !rel.startsWith('..\\') && !isAbsolute(rel), 'Path is outside its owning root');
+  const parts = rel ? rel.split(/[\\/]/) : [];
+  const chain = [base, ...parts.map((_, index) => resolve(base, ...parts.slice(0, index + 1)))];
+  for (const [index, component] of chain.entries()) {
+    let stats;
+    try { stats = lstatSync(component); } catch (error) { if (error.code === 'ENOENT') break; throw error; }
+    assert.ok(!stats.isSymbolicLink(), 'Symbolic link in source or output path');
+    const last = index === chain.length - 1;
+    assert.ok(last || stats.isDirectory(), 'Non-directory source/output ancestor');
+    if (last && expected === 'directory') assert.ok(stats.isDirectory(), 'Expected a real directory');
+    if (last && expected === 'file') assert.ok(stats.isFile(), 'Expected a regular file');
+    assert.equal(realpathSync(component), resolve(realpathSync(base), ...parts.slice(0, Math.max(0, index))), 'Source/output path resolves outside its expected place');
+  }
+}
+function guardReleaseOutputs() {
+  assertProjectPath(build, 'directory');
+  assertProjectPath(candidate, 'directory');
+  for (const name of ['reader-source-release.tar.gz', 'reader-source-release.manifest.json', 'reader-source-release.sha256', 'reader-source-release.evidence.json']) assertProjectPath(resolve(build, name), 'file');
+}
+guardReleaseOutputs();
 const previousEvidence = resolve(build, 'reader-source-release.evidence.json');
 if (existsSync(previousEvidence)) {
   const previous = JSON.parse(readFileSync(previousEvidence, 'utf8'));
@@ -37,6 +62,7 @@ if (args.has('--help')) {
 }
 function input(path) {
   const full = resolve(root, path);
+  assertProjectPath(full, 'file');
   assert.ok(lstatSync(full).isFile() && !lstatSync(full).isSymbolicLink(), `Not a regular source file: ${path}`);
   const bytes = readFileSync(full);
   sourceInputs.set(path, hash(bytes));
@@ -48,6 +74,7 @@ function add(path, bytes) {
 }
 function copy(path) { add(path, input(path)); }
 function walk(directory) {
+  assertProjectPath(resolve(root, directory), 'directory');
   const result = [];
   for (const entry of readdirSync(resolve(root, directory), { withFileTypes: true }).sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)) {
     const path = `${directory}/${entry.name}`;
@@ -68,6 +95,29 @@ function omitTest(path, title) {
   const output = source.slice(0, start) + source.slice(next + 1);
   transformations.push({ path, operation: 'omit-one-real-book-test', test: title, sourceSha256: hash(source), exportedSha256: hash(output) });
   add(path, output);
+}
+// Keeps the tests of a file that touch no real book or other repository, dropping the rest by name. Fails if any retained text still names one.
+// `books` is matched as a variable, not inside invented hosts such as books.example.org.
+const PRIVATE_TOKENS = [/original-publications/, /apps\/reader-demo/, /(?<![\/.\w-])books\b/, /\bexports_\b/, /\bEXPECTED\b/, /\/Users\/dominik/, /writeflex-desktop/, /language-muscle/, /deliberate-practice/, /linguistics/i];
+const namesPrivate = text => PRIVATE_TOKENS.some(token => token.test(text));
+function keepGenericTests(path) {
+  const source = input(path).toString('utf8');
+  const [header, ...blocks] = source.split(/\n(?=(?:async )?test\()/);
+  const dropLines = text => text.split('\n').filter(line => !/^const (?:books|EXPECTED|exports_) = /.test(line)).join('\n');
+  const titleOf = block => /^(?:async )?test\('((?:[^'\\]|\\.)*)'/.exec(block)?.[1];
+  // A test ends at its first unindented `});`; whatever follows is shared top-level code (helpers, constants) kept for later tests.
+  const parts = blocks.map(block => {
+    const end = block.indexOf('\n});');
+    assert.ok(end >= 0 && titleOf(block), `Unparseable test block in ${path}`);
+    return { title: titleOf(block), test: block.slice(0, end + 4), shared: dropLines(block.slice(end + 4)) };
+  });
+  const kept = parts.filter(part => !namesPrivate(part.test));
+  const dropped = parts.filter(part => namesPrivate(part.test)).map(part => part.title);
+  assert.ok(kept.length >= 5, `Too few generic tests survive in ${path}`);
+  const output = [dropLines(header), ...parts.map(part => (kept.includes(part) ? part.test : '') + part.shared)].join('\n');
+  assert.ok(!namesPrivate(output), `Retained text still names a real book or outside path in ${path}`);
+  transformations.push({ path, operation: 'keep-generic-tests-only', keptTests: kept.map(part => part.title), droppedTests: dropped, sourceSha256: hash(source), exportedSha256: hash(output) });
+  add(path, output.endsWith('\n') ? output : output + '\n');
 }
 function manuscriptAnchors(books) {
   const found = new Map();
@@ -93,16 +143,35 @@ function decoded(text) {
     .replace(/\\x([a-f0-9]{2})/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
     .replace(/\\n/g, '\n').replace(/\\r/g, '').replace(/\\"/g, '"').replace(/\\'/g, "'").replace(/\\\//g, '/');
 }
+// Node tests with no dependency on a real book or another repository. Tests that need either are filtered by `keepGenericTests` or left out.
+const EXPORTED_TESTS = [
+  'src/publication-content/test-publication-content.mjs', 'src/publication-content/publication-content.test.mjs',
+  'src/agent-export/test-agent-export.mjs', 'src/agent-export/agent-export.test.mjs',
+  'src/original/test-original-reader.mjs', 'src/original/test-outline-preference.mjs', 'src/original/test-reader-theme.mjs',
+  'src/original/reading-support/test-reading-preferences.mjs', 'src/original/toolbar/test-toolbar-model.mjs',
+  'src/original/listening/test-reader-listening.mjs', 'src/original/read-aloud/test-read-aloud.mjs',
+];
 const fixedPaths = new Set([
-  '.gitignore', '.node-version', 'README.md', 'LICENSING.md', 'package.json', 'provenance-reader-source.json',
+  '.gitignore', 'README.md', 'LICENSE', 'LICENSING.md', 'package.json', 'provenance-reader-source.json',
+  'docs/index.html', 'docs/style.css', 'docs/.nojekyll',
   ...['build-reader-core.mjs', 'build-reader-styles.mjs', 'test-reader-native-import.mjs'].map(name => `scripts/${name}`),
-  ...['package.json', 'package-lock.json', 'tsconfig.json', 'styles/reader.css', 'styles/tailwind.config.cjs', 'styles/publication-classes.txt',
-    'src/publication-content/test-publication-content.mjs', 'src/publication-content/publication-content.test.mjs', 'src/original/test-original-reader.mjs',
+  ...['LICENSE', 'package.json', 'package-lock.json', 'tsconfig.json', 'styles/reader.css', 'styles/tailwind.config.cjs', 'styles/publication-classes.txt',
+    ...EXPORTED_TESTS,
     'notices/LICENSE-inter.txt', 'notices/LICENSE-merriweather.txt', 'notices/LICENSE-material-symbols-outlined.txt'].map(name => `${prefix}/${name}`),
 ]);
 function allowed(path) {
   return fixedPaths.has(path) || /^packages\/reader-core\/src\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.(?:ts|tsx|css)$/.test(path);
 }
+// Exact adversarial or invented literals in generic tests (unsafe-URL and credential-in-URL rejection cases). Anything else in these files is still audited.
+const REVIEWED_LITERALS = [
+  { path: `${prefix}/src/publication-content/publication-content.test.mjs`, rule: 'file-url', literals: ['file:///etc/passwd'], count: 1,
+    context: "'<a href=\"file:///etc/passwd\">file</a><img src=\"blob:bad\">", reason: 'Generic adversarial HTML input; assertions reject unsafe URL schemes.' },
+  { path: `${prefix}/src/agent-export/agent-export.test.mjs`, rule: 'file-url-and-credential-url',
+    literals: ['file:///tmp/x', 'file:///tmp/book', 'file:///etc/', 'file:///Users/reader/dist/index.html', 'file:///Users/reader/dist/agent/',
+      'https://u:p@example.org/sub/', 'https://u:p@example.org/', 'https://u:p@public.example.org/sub/reader/agent/'],
+    reason: 'Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential.' },
+  { path: `${prefix}/src/original/listening/test-reader-listening.mjs`, rule: 'file-url', literals: ['file:///a.wav'], reason: 'Unsafe audio address that the listening panel must refuse.' },
+];
 function audit(entries, anchors) {
   const issues = [], reviewed = [];
   for (const [path, bytes] of entries) {
@@ -111,13 +180,15 @@ function audit(entries, anchors) {
       issues.push({ path, code: 'forbidden-export-path' });
     }
     let text = decoded(bytes.toString('utf8'));
-    // Only this exact generic security fixture is exempt, never its entire test file.
-    const genericFileURL = 'file:///etc/passwd';
-    if (path === `${prefix}/src/publication-content/publication-content.test.mjs`) {
-      const occurrences = text.split(genericFileURL).length - 1;
-      if (occurrences === 1 && text.includes("'<a href=\"file:///etc/passwd\">file</a><img src=\"blob:bad\">")) {
-        text = text.replace(genericFileURL, '[reviewed generic unsafe URL fixture]');
-        reviewed.push({ path, rule: 'file-url', literal: genericFileURL, count: 1, reason: 'Generic adversarial HTML input; assertions reject unsafe URL schemes.' });
+    // Only these exact generic fixtures are exempt, with exact counts, never their entire test files.
+    for (const exception of REVIEWED_LITERALS) {
+      if (path !== exception.path) continue;
+      for (const literal of exception.literals) {
+        const urls = /(?:file|https?):\/\/[^\s"'<>`]+/g;
+        const occurrences = [...text.matchAll(urls)].filter(match => match[0] === literal).length;
+        if (occurrences === 0 || occurrences !== (exception.count ?? 1) || (exception.context && !text.includes(exception.context))) continue;
+        text = text.replace(urls, value => value === literal ? '[reviewed generic fixture]' : value);
+        reviewed.push({ path, rule: exception.rule, literal, count: occurrences, reason: exception.reason });
       }
     }
     const privatePattern = /(?:(?:^|[\s"'=(:])\/(?:Users|home)\/[^\s/"']+|[A-Z]:[\\/](?:Users|home)[\\/]|file:\/\/|nexus-onedrive|_COORDINATION|_MACHINECONFIG|_CONTEXT|_DTC|_BACKLOG|_agent-work-space)/i;
@@ -179,11 +250,44 @@ function selfTest() {
   const generic = "'<a href=\"file:///etc/passwd\">file</a><img src=\"blob:bad\">'";
   assert.equal(audit(new Map([[securityPath, Buffer.from(generic)]]), []).issues.length, 0);
   assert.ok(audit(new Map([[securityPath, Buffer.from(generic + ' file:///private/book')]]), []).issues.length);
+  const agentTest = `${prefix}/src/agent-export/agent-export.test.mjs`;
+  assert.equal(audit(new Map([[agentTest, Buffer.from("a('file:///Users/reader/dist/index.html')")]]), []).issues.length, 0);
+  assert.ok(audit(new Map([[agentTest, Buffer.from("a('file:///Users/dominik/private.md')")]]), []).issues.length, 'unlisted file address still flagged');
+  assert.ok(audit(new Map([[`${prefix}/src/check.ts`, Buffer.from('file:///Users/reader/dist/index.html')]]), []).issues.length, 'exception is path-specific');
+  for (const literal of ['file:///etc/private-manuscript.md', 'file:///Users/reader/dist/agent/private-notes.md', 'file:///tmp/book-private', 'https://u:p@example.org/private']) {
+    assert.ok(audit(new Map([[agentTest, Buffer.from(`const hidden = '${literal}';`)]]), []).issues.length, 'a reviewed prefix must not suppress a longer URL');
+  }
+  assert.ok(audit(new Map([[agentTest, Buffer.from("a('file:///etc/'); b('file:///etc/')")]]), []).issues.length, 'an extra fixture occurrence is unreviewed');
+  assert.equal(audit(new Map([['docs/index.html', Buffer.from('<p>ok</p>')]]), []).issues.length, 0);
+  assert.ok(audit(new Map([['docs/extra.html', Buffer.from('<p>ok</p>')]]), []).issues.length, 'only listed docs files');
+  assert.ok(namesPrivate("books.find(b => b.id)") && namesPrivate('/Users/dominiklukes/x') && !namesPrivate("new URL('https://books.example.org/')"));
   assert.ok(audit(new Map([[`${prefix}/src/check.ts`, Buffer.from('A long private manuscript span')]]), [{ value: 'private manuscript span', book: 'test', sha256: 'test' }]).issues.length);
   assert.equal(audit(new Map([[`${prefix}/src/check.ts`, Buffer.from("export * from './components/home/Home.js';")]]), []).issues.length, 0);
   assert.ok(audit(new Map([['node_modules/leak.ts', Buffer.from('')]]), []).issues.length);
   const sample = new Map([['packages/reader-core/src/' + 'long-folder/'.repeat(6) + 'entry.ts', Buffer.from('export {};')]]);
   const bytes = archive(sample); inspectArchive(bytes, sample); assert.deepEqual(bytes, archive(sample));
+  guardReleaseOutputs();
+  mkdirSync(build, { recursive: true });
+  const guardScratch = mkdtempSync(resolve(build, 'reader-source-guards.selftest-'));
+  try {
+    const fakeRoot = resolve(guardScratch, 'repository'), outside = resolve(guardScratch, 'outside');
+    mkdirSync(fakeRoot); mkdirSync(outside);
+    const sentinel = resolve(outside, 'keep.txt'); writeFileSync(sentinel, 'unchanged');
+    const fakeBuild = resolve(fakeRoot, 'build');
+    symlinkSync(outside, fakeBuild, 'dir');
+    assert.throws(() => assertProjectPath(resolve(fakeBuild, 'public-reader-source'), 'directory', fakeRoot), /Symbolic link/);
+    rmSync(fakeBuild); mkdirSync(fakeBuild);
+    for (const name of ['reader-source-release.tar.gz', 'reader-source-release.manifest.json', 'reader-source-release.sha256', 'reader-source-release.evidence.json']) {
+      const target = resolve(fakeBuild, name); symlinkSync(sentinel, target);
+      assert.throws(() => assertProjectPath(target, 'file', fakeRoot), /Symbolic link/);
+      rmSync(target);
+    }
+    const sourceRoot = resolve(fakeRoot, 'packages/reader-core/src'); mkdirSync(dirname(sourceRoot), { recursive: true });
+    symlinkSync(outside, sourceRoot, 'dir');
+    assert.throws(() => assertProjectPath(resolve(sourceRoot, 'keep.txt'), 'file', fakeRoot), /Symbolic link/);
+    assert.equal(readFileSync(sentinel, 'utf8'), 'unchanged');
+    assert.deepEqual(readdirSync(outside), ['keep.txt']);
+  } finally { assertProjectPath(guardScratch, 'directory'); rmSync(guardScratch, { recursive: true, force: true }); }
   console.log('Source export self-tests passed: paths, one exact generic URL exception, manuscript spans, forbidden members and deterministic archive.');
 }
 selfTest();
@@ -253,8 +357,11 @@ function seedOfflineCache(destination, lock) {
   return { copiedContentObjects: copied, scope: 'lockfile-matched public npm registry entries only' };
 }
 function materialise(destination) {
+  assertProjectPath(destination, 'directory');
   for (const [path, bytes] of files) {
+    assertProjectPath(resolve(destination, path), 'file');
     mkdirSync(dirname(resolve(destination, path)), { recursive: true });
+    assertProjectPath(resolve(destination, path), 'file');
     writeFileSync(resolve(destination, path), bytes);
     assert.deepEqual(readFileSync(resolve(destination, path)), bytes);
   }
@@ -264,24 +371,41 @@ try {
   for (const path of walk(`${prefix}/src`)) copy(path);
   for (const name of ['package.json', 'package-lock.json', 'tsconfig.json', 'styles/reader.css', 'styles/tailwind.config.cjs', 'styles/publication-classes.txt']) copy(`${prefix}/${name}`);
   for (const name of ['build-reader-core.mjs', 'build-reader-styles.mjs']) copy(`scripts/${name}`);
-  copy(`${prefix}/src/publication-content/test-publication-content.mjs`);
+  for (const name of EXPORTED_TESTS) if (!name.endsWith('publication-content.test.mjs') && !name.endsWith('agent-export.test.mjs') && !name.endsWith('/test-original-reader.mjs')) copy(`${prefix}/${name}`);
+  keepGenericTests(`${prefix}/src/agent-export/agent-export.test.mjs`);
   omitTest(`${prefix}/src/publication-content/publication-content.test.mjs`, 'preserves the original Language Muscle static SVG with paired gradient and marker IDs');
   omitTest(`${prefix}/src/original/test-original-reader.mjs`, 'full publication identity uses actual adapter words without added punctuation or duplicates');
   const originalRootPackage = JSON.parse(input('package.json'));
-  const corePackage = JSON.parse(files.get(`${prefix}/package.json`));
-  assert.equal(originalRootPackage.private, true); assert.equal(corePackage.private, true);
-  assert.ok(!originalRootPackage.license && !corePackage.license, 'Software licence changed: review export policy before proceeding');
-  add('package.json', json({ name: originalRootPackage.name, private: true, version: originalRootPackage.version, scripts: {
+  const corePackage = JSON.parse(input(`${prefix}/package.json`));
+  const lock = JSON.parse(input(`${prefix}/package-lock.json`));
+  // The manifests are the source of truth for the release identity; stop on any drift rather than export a mismatch.
+  for (const [label, manifest] of [['root', originalRootPackage], ['core', corePackage]]) {
+    assert.equal(manifest.version, RELEASE.version, `${label} version`);
+    assert.equal(manifest.license, RELEASE.license, `${label} license`);
+    assert.equal(manifest.private, true, `${label} must stay private: npm publication is not authorised`);
+  }
+  assert.equal(lock.version, RELEASE.version); assert.equal(lock.packages[''].version, RELEASE.version); assert.equal(lock.packages[''].license, RELEASE.license);
+  const licenseText = input('LICENSE').toString('utf8');
+  assert.ok(licenseText.startsWith('MIT License\n\nCopyright (c) 2026 Dominik Lukeš\n'), 'LICENSE is not the expected MIT text');
+  add('LICENSE', licenseText);
+  add(`${prefix}/LICENSE`, licenseText);
+  add('package.json', json({ name: originalRootPackage.name, private: true, version: originalRootPackage.version, description: originalRootPackage.description, license: RELEASE.license,
+    author: RELEASE.author, homepage: RELEASE.homepage, repository: originalRootPackage.repository, bugs: originalRootPackage.bugs, engines: { node: '>=22' }, scripts: {
     setup: 'npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7',
     build: 'npm run build --prefix packages/reader-core',
-    test: 'npm run test:publication-content --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs',
+    test: 'npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test ' + [
+      'original/test-original-reader.mjs', 'original/test-outline-preference.mjs', 'original/reading-support/test-reading-preferences.mjs', 'original/toolbar/test-toolbar-model.mjs',
+      'original/test-reader-theme.mjs', 'original/listening/test-reader-listening.mjs', 'original/read-aloud/test-read-aloud.mjs'].map(name => `packages/reader-core/src/${name}`).join(' '),
     'test:native': 'node scripts/test-reader-native-import.mjs',
   } }));
-  add('.gitignore', 'node_modules/\ndist/\n');
-  add('.node-version', '26.12.1\n');
+  add('.gitignore', 'node_modules/\ndist/\nbuild/\n.DS_Store\n');
   add('scripts/test-reader-native-import.mjs', input('scripts/templates/reader-source-release/test-reader-native-import.mjs'));
   add('README.md', input('scripts/templates/reader-source-release/README.md'));
   add('LICENSING.md', input('scripts/templates/reader-source-release/LICENSING.md'));
+  // GitHub Pages serves docs/ from main; .nojekyll stops Jekyll processing.
+  add('docs/index.html', input('scripts/templates/reader-source-release/site/index.html'));
+  add('docs/style.css', input('scripts/templates/reader-source-release/site/style.css'));
+  add('docs/.nojekyll', '');
   const extractionPath = `${prefix}/src/original/report-original-reader-extraction.md`;
   const extraction = input(extractionPath).toString('utf8');
   const origins = [...extraction.matchAll(/^- (Deliberate Practice|Language Muscle) \x60([^\x60]+)\x60 supplies \x60([^\x60]+)\x60\. SHA-256: \x60([a-f0-9]{64})\x60\./gm)].map(m => ({ project: m[1], file: m[2], supplies: m[3], sha256: m[4] }));
@@ -309,8 +433,11 @@ try {
   const initialAudit = audit(files, anchors);
   evidence.initialAudit = initialAudit;
   assert.deepEqual(initialAudit.issues, [], 'Source audit failed before verification');
+  guardReleaseOutputs();
   mkdirSync(build, { recursive: true });
+  assertProjectPath(build, 'directory');
   scratch = mkdtempSync(resolve(build, 'reader-source-release.scratch-'));
+  assertProjectPath(scratch, 'directory');
   const isolated = resolve(scratch, 'candidate');
   materialise(isolated);
   const isolatedCore = resolve(isolated, prefix);
@@ -342,10 +469,13 @@ try {
   }
   evidence.generatedStyle = { sha256: hash(css), localFontReferences: fontURLs.length, notices };
   const inputManifest = [...files].map(([path, bytes]) => ({ path, sha256: hash(bytes), bytes: bytes.length }));
-  add('provenance-reader-source.json', json({ status: 'unreleased-review-draft-no-selected-software-licence', origins, adaptations: [
+  add('provenance-reader-source.json', json({ status: 'v1.0.0-mit-source-release', license: RELEASE.license, copyright: '2026 Dominik Lukeš', origins, reusedFromAuthorOtherApps: [
+    { project: 'ReadFlex', supplies: 'packages/reader-core/src/original/read-aloud (speech contract)' },
+    { project: 'WriteFlex', supplies: 'packages/reader-core/src/original/reading-support/anchored-reading.ts (leadLength and the word walk)' },
+  ], adaptations: [
     'Original application markup/styles remain; book identity and optional coaching use supplied contracts.',
     'Persistence and routes are book-specific; rich content and EPUB use the shared sanitised renderer.',
-    'Only generic Node regressions are exported; real-book identity and original SVG manuscript fixture tests are omitted.',
+    'Only generic Node regressions are exported; tests that read a real book or another repository, and the original SVG manuscript fixture test, are left out (see transformations).',
   ], transformations, exportedInputs: inputManifest }));
   const finalAudit = audit(files, anchors);
   evidence.audit = finalAudit;
@@ -354,16 +484,20 @@ try {
   const members = inspectArchive(bytes, files);
   assert.deepEqual(bytes, archive(files), 'Archive changed with identical inputs');
   evidence.headAtEnd = head();
-  evidence.changedInputsDuringRun = [...sourceInputs].filter(([path, sha256]) => hash(readFileSync(resolve(root, path))) !== sha256).map(([path]) => path);
+  evidence.changedInputsDuringRun = [...sourceInputs].filter(([path, sha256]) => { assertProjectPath(resolve(root, path), 'file'); return hash(readFileSync(resolve(root, path))) !== sha256; }).map(([path]) => path);
   evidence.inputHashes = [...sourceInputs].map(([path, sha256]) => ({ path, sha256 }));
   evidence.exportTransformations = transformations;
   const manifest = { format: 1, status: evidence.status, archive: 'reader-source-release.tar.gz', sha256: hash(bytes), bytes: bytes.length, fileCount: files.size, files: members.map(path => ({ path, bytes: files.get(path).length, sha256: hash(files.get(path)) })) };
   // Replace only the named generated source candidate, after every audit/check passes.
+  guardReleaseOutputs();
   if (existsSync(candidate)) assert.ok(!lstatSync(candidate).isSymbolicLink(), 'Candidate destination cannot be a link');
   rmSync(candidate, { recursive: true, force: true });
   materialise(candidate);
+  assertProjectPath(resolve(build, 'reader-source-release.tar.gz'), 'file');
   writeFileSync(resolve(build, 'reader-source-release.tar.gz'), bytes);
+  assertProjectPath(resolve(build, 'reader-source-release.manifest.json'), 'file');
   writeFileSync(resolve(build, 'reader-source-release.manifest.json'), json(manifest));
+  assertProjectPath(resolve(build, 'reader-source-release.sha256'), 'file');
   writeFileSync(resolve(build, 'reader-source-release.sha256'), `${manifest.sha256}  reader-source-release.tar.gz\n`);
   const written = new Map();
   function readBack(directory, at = '') {
@@ -394,8 +528,10 @@ try {
   console.error(error.message);
   process.exitCode = 1;
 } finally {
-  if (scratch) rmSync(scratch, { recursive: true, force: true });
+  if (scratch) { assertProjectPath(scratch, 'directory'); rmSync(scratch, { recursive: true, force: true }); }
   evidence.scratchRemoved = !scratch || !existsSync(scratch);
+  guardReleaseOutputs();
   mkdirSync(build, { recursive: true });
+  assertProjectPath(resolve(build, 'reader-source-release.evidence.json'), 'file');
   writeFileSync(resolve(build, 'reader-source-release.evidence.json'), json(evidence));
 }

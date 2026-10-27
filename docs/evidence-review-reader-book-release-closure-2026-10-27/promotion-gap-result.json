@@ -1,0 +1,7 @@
+{
+  "gap": {
+    "editionPresent": false,
+    "previousPresent": true
+  },
+  "rollbackRestoresOld": true
+}

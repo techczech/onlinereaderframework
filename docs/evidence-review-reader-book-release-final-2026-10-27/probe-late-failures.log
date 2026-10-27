@@ -1,0 +1,138 @@
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[temporary manifest write] failures=["could not publish the edition: injected write ENOSPC"] quarantine=language-muscle listing=[".incomplete-language-muscle-20261027T163931Z-93204-6b66b83a","language-muscle"]
+✖ late failure at temporary manifest write: old tree and hash restored, no manifest, staging retained, outside untouched (2689.491083ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[old folder moved aside] failures=["could not publish the edition: injected rename EACCES"] quarantine=language-muscle listing=[".incomplete-language-muscle-20261027T163933Z-93204-c0e2bdca","language-muscle"]
+✖ late failure at old folder moved aside: old tree and hash restored, no manifest, staging retained, outside untouched (1724.141167ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[staging moved into place] failures=["could not publish the edition: injected rename EACCES"] quarantine=language-muscle listing=[".incomplete-language-muscle-20261027T163935Z-93204-7d5de34a","language-muscle"]
+✖ late failure at staging moved into place: old tree and hash restored, no manifest, staging retained, outside untouched (1692.806667ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[final manifest rename] failures=["could not publish the edition: injected rename EACCES"] quarantine=.incomplete-language-muscle-20261027T163937Z-93204-824c4ea2 listing=[".incomplete-language-muscle-20261027T163937Z-93204-824c4ea2","language-muscle"]
+✔ late failure at final manifest rename: old tree and hash restored, no manifest, staging retained, outside untouched (1677.956041ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[recovery-fails] failures=["could not publish the edition: injected rename EACCES","recovery needs attention: injected rename EACCES"] listing=[".language-muscle.manifest.json.tmp-20261027T163938Z-93204-edc8c610",".previous-language-muscle-20261027T163938Z-93204-edc8c610","language-muscle"]
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[recovery-fails rerun] listing=[".language-muscle.manifest.json.tmp-20261027T163938Z-93204-edc8c610",".previous-language-muscle-20261027T163938Z-93204-edc8c610","language-muscle","language-muscle.manifest.json"]
+✔ recovery itself fails (manifest rename and reverse rename both fail): both trees kept, no manifest, previous never deleted (2533.710917ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[cleanup] listing=[".previous-language-muscle-20261027T163941Z-93204-574e51ea","language-muscle","language-muscle.manifest.json"]
+✔ cleanup failure after commit point: published edition stays, previous retained (1764.536ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[first] listing=[".incomplete-language-muscle-20261027T163942Z-93204-5ac3416a"] quarantine=.incomplete-language-muscle-20261027T163942Z-93204-5ac3416a
+✔ first build (no previous) failing at manifest rename leaves no folder and no manifest (839.686083ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 4
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13349.199709
+
+✖ failing tests:
+
+test at ../../build/review-final-probe/probe-late-failures.mts:49:37
+✖ late failure at temporary manifest write: old tree and hash restored, no manifest, staging retained, outside untouched (2689.491083ms)
+  AssertionError [ERR_ASSERTION]: quarantine reported as the restored previous edition (temporary manifest write)
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/probe-late-failures.mts:66:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/temporary-manifest-write/repo/build/release-books/language-muscle',
+    expected: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/temporary-manifest-write/repo/build/release-books/language-muscle',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at ../../build/review-final-probe/probe-late-failures.mts:49:37
+✖ late failure at old folder moved aside: old tree and hash restored, no manifest, staging retained, outside untouched (1724.141167ms)
+  AssertionError [ERR_ASSERTION]: quarantine reported as the restored previous edition (old folder moved aside)
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/probe-late-failures.mts:66:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/old-folder-moved-aside/repo/build/release-books/language-muscle',
+    expected: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/old-folder-moved-aside/repo/build/release-books/language-muscle',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at ../../build/review-final-probe/probe-late-failures.mts:49:37
+✖ late failure at staging moved into place: old tree and hash restored, no manifest, staging retained, outside untouched (1692.806667ms)
+  AssertionError [ERR_ASSERTION]: quarantine reported as the restored previous edition (staging moved into place)
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/probe-late-failures.mts:66:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/staging-moved-into-place/repo/build/release-books/language-muscle',
+    expected: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-final-probe/run-93204/staging-moved-into-place/repo/build/release-books/language-muscle',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+exit 1

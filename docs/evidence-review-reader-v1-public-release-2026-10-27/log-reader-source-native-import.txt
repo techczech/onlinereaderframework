@@ -1,0 +1,5 @@
+
+> onlinereaderframework@1.0.0 test:native
+> node scripts/test-reader-native-import.mjs
+
+Native package-name import, existing/new APIs, agent-file generation and browser-only EPUB boundary passed.

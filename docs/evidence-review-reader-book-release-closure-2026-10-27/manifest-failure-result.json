@@ -1,0 +1,7 @@
+{
+  "error": "owned injected manifest rename failure",
+  "oldHash": "1555c6a2fed75e286b8dafa56969c21816805d032fdc4e5a550822fbd2ec6150",
+  "currentHash": "8a652b740b8e4eefc0b69fc02e8f1dd8050b331cf19de213b3bbcf52fe97b24e",
+  "manifestExists": false,
+  "previousFolders": []
+}

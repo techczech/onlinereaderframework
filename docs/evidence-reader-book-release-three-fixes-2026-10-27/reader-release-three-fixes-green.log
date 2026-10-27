@@ -1,0 +1,49 @@
+
+> reader-demo@0.1.0 test:release
+> tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts
+
+✔ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (2.980667ms)
+✔ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.168875ms)
+✔ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.560458ms)
+✔ output paths: duplicates ignoring case and a file that is also a folder are refused (0.117709ms)
+✔ static licence metadata uses the reader URL boundary (137.592583ms)
+✔ Linguistics release exposes the existing book-wide grant without changing the canonical book or its section bytes (6.473125ms)
+✔ a symlinked edition folder, release folder or manifest is refused before anything is built, deleted or written (27.734958ms)
+✔ an unsafe section id is refused before any write, and the previous manifest and folder stay as they were (0.638708ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a $ in the book builds verbatim pages; a failed verification keeps the previous edition and leaves no manifest; verify:release checks the folder (3014.800917ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a late manifest rename failure restores the previous edition and leaves no deployable manifest (1777.190583ms)
+✔ a section path and the previous Linguistics addresses open the section; nothing else does (0.989917ms)
+✔ every Linguistics section has exactly one previous-site route (0.174542ms)
+✔ release location drops demo parameters, keeps section and hash, and ignores an unknown book (0.144042ms)
+✔ hash routes of the original single-page books still open their sections (0.211083ms)
+✔ deliberate-practice: one static page per section, a root page, aliases only where routes exist (72.026583ms)
+✔ language-muscle: one static page per section, a root page, aliases only where routes exist (19.843417ms)
+✔ linguistics: one static page per section, a root page, aliases only where routes exist (135.73125ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5228.206083

@@ -1,0 +1,87 @@
+✖ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (1.0975ms)
+✖ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.1255ms)
+✖ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.090334ms)
+✖ output paths: duplicates ignoring case and a file that is also a folder are refused (1.810125ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 124.354458
+
+✖ failing tests:
+
+test at scripts/release/test-release-repair.ts:31:1
+✖ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (1.0975ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-repair.ts:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /symbolic link/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at scripts/release/test-release-repair.ts:62:1
+✖ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.1255ms)
+  AssertionError [ERR_ASSERTION]: body verbatim
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-repair.ts:67:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/release/test-release-repair.ts:76:1
+✖ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.090334ms)
+  AssertionError [ERR_ASSERTION]: id ".." must be refused
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-repair.ts:78:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/release/test-release-repair.ts:87:1
+✖ output paths: duplicates ignoring case and a file that is also a folder are refused (1.810125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(outputPathProblems(['a/index.html', 'A/index.html']).length > 0)
+  
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/test-release-repair.ts:88:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

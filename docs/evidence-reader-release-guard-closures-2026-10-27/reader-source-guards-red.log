@@ -1,0 +1,19 @@
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: a reviewed prefix must not suppress a longer URL
+    at selfTest (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/scripts/prepare-reader-source-release.mjs:232:12)
+    at file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/scripts/prepare-reader-source-release.mjs:245:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

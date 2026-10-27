@@ -1,0 +1,126 @@
+[
+ {
+  "href": "\"javascript:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"java\\tscript:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"java\\nscript:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"  javascript:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"\\u0001javascript:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"JaVaScRiPt:alert(1)\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"vbscript:x\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"data:text/html,x\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"file:///etc/passwd\"",
+  "anchors": 0,
+  "jsonLd": 0,
+  "protocols": [],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"javascript&#58;alert(1)\"",
+  "anchors": 3,
+  "jsonLd": 1,
+  "protocols": [
+   "https:"
+  ],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"\\\"><script>alert(1)</script>\"",
+  "anchors": 3,
+  "jsonLd": 1,
+  "protocols": [
+   "https:"
+  ],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"https://ok.example/\\\" onmouseover=\\\"x\"",
+  "anchors": 3,
+  "jsonLd": 1,
+  "protocols": [
+   "https:"
+  ],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"//evil.example/x\"",
+  "anchors": 3,
+  "jsonLd": 1,
+  "protocols": [
+   "https:"
+  ],
+  "unsafe": false,
+  "attrBreak": false
+ },
+ {
+  "href": "\"https://creativecommons.org/licenses/by-sa/4.0/\"",
+  "anchors": 3,
+  "jsonLd": 1,
+  "protocols": [
+   "https:"
+  ],
+  "unsafe": false,
+  "attrBreak": false
+ }
+]
+unsafe outputs: 0
+exit 0

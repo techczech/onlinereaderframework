@@ -1,0 +1,155 @@
+{
+  "node": "v26.12.1",
+  "npm": "11.20.0",
+  "cacheSeedExit": 0,
+  "actualOfflineInstallExit": 0,
+  "dependencyMode": "actual npm ci from lockfile, scripts disabled, own cache, no audit, no credentials",
+  "dependencyVersionMismatches": [],
+  "nonOptionalDependenciesMissing": [],
+  "generatedCssSha256": "e19a2aa55ec9d853b9a77a15086dcce6b6433b50b8bdff57d50bbed63f0501a4",
+  "localFontReferences": 112,
+  "cssHasExternalResource": false,
+  "focusedChecksPassed": true,
+  "records": [
+    {
+      "label": "node-version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-node-version.txt"
+    },
+    {
+      "label": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-npm-version.txt"
+    },
+    {
+      "label": "cache-seed",
+      "command": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/probe-reader-source-guards.mjs",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/scratch-reader-source-install-8vs3o7sg/npm-cache"
+      ],
+      "cwdRelativeToScratch": "owning repository",
+      "exitCode": 0,
+      "log": "log-reader-source-cache-seed.txt"
+    },
+    {
+      "label": "offline-install",
+      "command": [
+        "npm",
+        "ci",
+        "--prefix",
+        "packages/reader-core",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--min-release-age=7",
+        "--cache",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/scratch-reader-source-install-8vs3o7sg/npm-cache"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-offline-install.txt"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-build.txt"
+    },
+    {
+      "label": "public-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-public-tests.txt"
+    },
+    {
+      "label": "native-import",
+      "command": [
+        "npm",
+        "run",
+        "test:native"
+      ],
+      "cwdRelativeToScratch": "public-reader-source",
+      "exitCode": 0,
+      "log": "log-reader-source-native-import.txt"
+    },
+    {
+      "label": "readme-tsx-0",
+      "command": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/scratch-reader-source-install-8vs3o7sg/public-reader-source/packages/reader-core/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--strict",
+        "--skipLibCheck",
+        "--jsx",
+        "react-jsx",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--target",
+        "ES2022",
+        "--esModuleInterop",
+        "review-readme-example-0.tsx"
+      ],
+      "cwdRelativeToScratch": "public-reader-source/packages/reader-core",
+      "exitCode": 0,
+      "log": "log-reader-source-readme-tsx-0.txt"
+    },
+    {
+      "label": "readme-tsx-1",
+      "command": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/evidence-review-reader-v1-public-release-2026-10-27/scratch-reader-source-install-8vs3o7sg/public-reader-source/packages/reader-core/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--strict",
+        "--skipLibCheck",
+        "--jsx",
+        "react-jsx",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--target",
+        "ES2022",
+        "--esModuleInterop",
+        "review-readme-example-1.tsx"
+      ],
+      "cwdRelativeToScratch": "public-reader-source/packages/reader-core",
+      "exitCode": 0,
+      "log": "log-reader-source-readme-tsx-1.txt"
+    },
+    {
+      "label": "readme-agent",
+      "command": [
+        "node",
+        "review-readme-agent.mjs"
+      ],
+      "cwdRelativeToScratch": "public-reader-source/packages/reader-core",
+      "exitCode": 0,
+      "log": "log-reader-source-readme-agent.txt"
+    }
+  ],
+  "scratchRemoved": true,
+  "finishedAt": "2026-10-27T16:26:22.290209+00:00"
+}
