@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://dominiklukes.net/resources/online-reader/",
+    "exit": 0,
+    "bytes": 33410,
+    "sha256": "55267f63826cc07ba230501ce923cebfc8b0e0aefb258ed166a336657f7c36da",
+    "exact": true
+  },
+  {
+    "url": "https://dominiklukes.net/resources/",
+    "exit": 0,
+    "bytes": 45740,
+    "sha256": "0e28ded0326d811cd12bd63652c8af637c9124a2488b2d4bb32d9f350aefc96d",
+    "exact": true
+  },
+  {
+    "url": "https://techczech.github.io/onlinereaderframework/style.css",
+    "exit": 0,
+    "bytes": 3295,
+    "sha256": "74da2a658390a9e793859cd0fa268d8853110bbda33224a76d76555f685f6772",
+    "exact": true
+  },
+  {
+    "url": "https://github.com/techczech/onlinereaderframework/releases/download/v1.0.0/reader-source-release.tar.gz",
+    "exit": 0,
+    "bytes": 223552,
+    "sha256": "502b7a14a3eb030a34a1038d249b2cd0f50a910a89883f365b2e6b9c29988e0b",
+    "exact": true
+  }
+]

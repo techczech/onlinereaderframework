@@ -1,0 +1,292 @@
+[
+  {
+    "book": "deliberate-practice",
+    "path": "index.html",
+    "url": "https://deliberatepractice.dominiklukes.net/",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "llms.txt",
+    "url": "https://deliberatepractice.dominiklukes.net/llms.txt",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "robots.txt",
+    "url": "https://deliberatepractice.dominiklukes.net/robots.txt",
+    "exit": 0,
+    "bytes": 1248,
+    "sha256": "8fa3036c68bfcbd32365f6225d24333264093b7cd38d306e106b4dbdc934fd5b",
+    "exact": false,
+    "error": null
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "sitemap.xml",
+    "url": "https://deliberatepractice.dominiklukes.net/sitemap.xml",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "agent/deliberate-practice/index.md",
+    "url": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/index.md",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "agent/deliberate-practice/full.md",
+    "url": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/full.md",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "agent/deliberate-practice/manifest.json",
+    "url": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/manifest.json",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "deliberate-practice",
+    "path": "agent/deliberate-practice/chapters/about-this-guide.md",
+    "url": "https://deliberatepractice.dominiklukes.net/agent/deliberate-practice/chapters/about-this-guide.md",
+    "exit": 0,
+    "bytes": 3835,
+    "sha256": "44ce016ff78b34baa4d79653b94ed09e715e04a95817c86417159d6c20cf4edd",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "language-muscle",
+    "path": "index.html",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "language-muscle",
+    "path": "llms.txt",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/llms.txt",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "language-muscle",
+    "path": "robots.txt",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/robots.txt",
+    "exit": 0,
+    "bytes": 1248,
+    "sha256": "8fa3036c68bfcbd32365f6225d24333264093b7cd38d306e106b4dbdc934fd5b",
+    "exact": false,
+    "error": null
+  },
+  {
+    "book": "language-muscle",
+    "path": "sitemap.xml",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/sitemap.xml",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "language-muscle",
+    "path": "agent/language-muscle/index.md",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/index.md",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "language-muscle",
+    "path": "agent/language-muscle/full.md",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/full.md",
+    "exit": 56,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exact": false,
+    "error": "curl: (56) The requested URL returned error: 522\ncurl: (56) The requested URL returned error: 522\ncurl: (56) Invalid status line\n"
+  },
+  {
+    "book": "language-muscle",
+    "path": "agent/language-muscle/manifest.json",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/manifest.json",
+    "exit": 0,
+    "bytes": 6638,
+    "sha256": "3b13d3b594a5b3866b33427d1dbcb4f6c31d5df1c70d97bd45a92330982c90f2",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "language-muscle",
+    "path": "agent/language-muscle/chapters/intro-group.md",
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/agent/language-muscle/chapters/intro-group.md",
+    "exit": 0,
+    "bytes": 845,
+    "sha256": "1e42b1d69a4f544d48dccfadeca1c37e1ef5ca4595aeac9c91088bca013d3612",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "index.html",
+    "url": "https://linguistics.dominiklukes.net/",
+    "exit": 0,
+    "bytes": 51944,
+    "sha256": "14d2ad40cc9791546f6bfb4f2ae64279e7a4254d12b9102e2efadea79bb1402d",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "llms.txt",
+    "url": "https://linguistics.dominiklukes.net/llms.txt",
+    "exit": 0,
+    "bytes": 864,
+    "sha256": "f91c3278573e2c37ec5e73eecb56fac4ca55d49a970171dbb528a4912aa72a5f",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "robots.txt",
+    "url": "https://linguistics.dominiklukes.net/robots.txt",
+    "exit": 0,
+    "bytes": 82,
+    "sha256": "379a2dedfd5c7056fd66d4cc0f5615a08d8e437e3e1bb0c9080583f87513604f",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "sitemap.xml",
+    "url": "https://linguistics.dominiklukes.net/sitemap.xml",
+    "exit": 0,
+    "bytes": 33200,
+    "sha256": "900fca837db16099ff917c52ba9349c34c368505965411e137f46f303223fdc2",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "agent/linguistics/index.md",
+    "url": "https://linguistics.dominiklukes.net/agent/linguistics/index.md",
+    "exit": 0,
+    "bytes": 89950,
+    "sha256": "1b931de011b7ae311ed16ce8e3f96d442b1b264a9d778f33016ed190872d299e",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "agent/linguistics/full.md",
+    "url": "https://linguistics.dominiklukes.net/agent/linguistics/full.md",
+    "exit": 0,
+    "bytes": 816747,
+    "sha256": "9c963f144b5be7081f0f291abcbef7cbc215a74931a043ab40d189b3e6eb6e39",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "agent/linguistics/manifest.json",
+    "url": "https://linguistics.dominiklukes.net/agent/linguistics/manifest.json",
+    "exit": 0,
+    "bytes": 199405,
+    "sha256": "f9310d2aba84c6e0ab50323976c433e480709903134f8b24bdb1df2dcfaad2ba",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "agent/linguistics/chapters/theme-phonetics-phonology-and-orthography.md",
+    "url": "https://linguistics.dominiklukes.net/agent/linguistics/chapters/theme-phonetics-phonology-and-orthography.md",
+    "exit": 0,
+    "bytes": 7709,
+    "sha256": "07f9256b9479cfe3ff7400dffaf372997f3f7c85e5311c2dc163789cffeb48ff",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "about/index.html",
+    "url": "https://linguistics.dominiklukes.net/about/index.html",
+    "exit": 0,
+    "bytes": 2935,
+    "sha256": "82f520a532169c07e1f1dcf9b34b75d415e9b08bdff73c5f8690018d33db260c",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "download/index.html",
+    "url": "https://linguistics.dominiklukes.net/download/index.html",
+    "exit": 0,
+    "bytes": 2065,
+    "sha256": "13feafc7110c92313f847a64d24377698ce0f98088b9c394507a5d250739a720",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "download/key-issues-in-language.epub",
+    "url": "https://linguistics.dominiklukes.net/download/key-issues-in-language.epub",
+    "exit": 0,
+    "bytes": 410926,
+    "sha256": "bc62337f7d8e96e9003bbfa12c3911db0a335d0edb25e400a3779473229fa588",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "download/key-issues-in-language.pdf",
+    "url": "https://linguistics.dominiklukes.net/download/key-issues-in-language.pdf",
+    "exit": 0,
+    "bytes": 2693387,
+    "sha256": "90e831f18ffd9627f7c9a4bea3f46b51aeab45f8eda797b7df76edd77d32e585",
+    "exact": true,
+    "error": null
+  },
+  {
+    "book": "linguistics",
+    "path": "llms-full.txt",
+    "url": "https://linguistics.dominiklukes.net/llms-full.txt",
+    "exit": 0,
+    "bytes": 816747,
+    "sha256": "9c963f144b5be7081f0f291abcbef7cbc215a74931a043ab40d189b3e6eb6e39",
+    "exact": true,
+    "error": null
+  }
+]

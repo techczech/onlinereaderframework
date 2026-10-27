@@ -1,0 +1,26 @@
+
+> onlinereaderframework@1.0.0 build:release
+> npm run build:release --prefix apps/reader-demo -- --book all
+
+
+> reader-demo@0.1.0 build:release
+> tsx scripts/build-release.ts --book all
+
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+deliberate-practice: 168 files, tree 2d17271143ab, artefact checks pass
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+language-muscle: 149 files, tree 43dc0d7ec669, artefact checks pass
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+linguistics: 1178 files, tree 6ccd8765483d, artefact checks pass

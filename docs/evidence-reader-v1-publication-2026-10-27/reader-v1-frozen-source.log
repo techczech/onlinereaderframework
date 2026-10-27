@@ -1,0 +1,9 @@
+Source export self-tests passed: paths, one exact generic URL exception, manuscript spans, forbidden members and deterministic archive.
+linked-core-only-build: passed
+linked-core-only-native-import: passed
+actual-isolated-npm-ci: passed
+installed-core-only-build: passed
+installed-node-unit-checks: passed
+installed-native-package-import: passed
+npm-version: passed
+Prepared 125 source files. Archive SHA-256: 502b7a14a3eb030a34a1038d249b2cd0f50a910a89883f365b2e6b9c29988e0b

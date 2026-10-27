@@ -1,0 +1,23 @@
+[
+  {
+    "agent": "Python-urllib/3.11",
+    "exit": 56,
+    "bytes": 0,
+    "startsWithFrontMatter": false,
+    "error": "curl: (56) The requested URL returned error: 403\n"
+  },
+  {
+    "agent": "ChatGPT-User/1.0; +https://openai.com/bot",
+    "exit": 0,
+    "bytes": 229566,
+    "startsWithFrontMatter": true,
+    "error": ""
+  },
+  {
+    "agent": "OAI-SearchBot/1.0; +https://openai.com/searchbot",
+    "exit": 0,
+    "bytes": 229566,
+    "startsWithFrontMatter": true,
+    "error": ""
+  }
+]
