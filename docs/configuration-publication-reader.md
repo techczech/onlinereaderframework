@@ -32,6 +32,12 @@ Home and sidebar contents use `book.sections` and recursive `children` in their 
 
 The explicit Table of contents label takes precedence over a legacy home overview title. The framework defaults are neutral; a host can override the labels for a course, reference book or other publication.
 
+## Navigation and action icons
+
+Icons are a standard part of the shared reader, rather than a per-book decoration. Primary home actions pair visible text with a consistent icon: Start Reading uses an arrow, Search a magnifier, and ebook downloads a download icon. The classic home and configurable front-page layouts follow this pattern, so books inherit it without supplying their own button markup.
+
+Keep the text labels on primary navigation actions. Compact reading tools use icon-only controls with names on hover and keyboard focus, as described below. Decorative icons stay hidden from accessibility APIs; the control retains its meaningful accessible name. Use the existing icon set and shared spacing rather than adding book-specific icon dependencies.
+
 ## Reading support
 
 The toolbar has five icon-only controls: Listen, Formatting, Assist and Notes (the reading controls) and, set apart after a divider, Theme. A control's name appears on hover and on keyboard focus (and is its accessible name, with its current state where it has one); no text sits in the toolbar. Text size, line height, paragraph spacing, letter spacing, serif/sans type and article width are in Formatting. Preferences are saved per book.
