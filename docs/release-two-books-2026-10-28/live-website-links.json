@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/resources/",
+    "http_ok": true,
+    "academic_book_link": true,
+    "readability_book_link": true,
+    "selected_book_covers": true
+  },
+  {
+    "path": "/academic-productivity/",
+    "http_ok": true,
+    "academic_book_link": true,
+    "readability_book_link": true,
+    "selected_book_covers": true
+  },
+  {
+    "path": "/resources/academic-reading/",
+    "http_ok": true,
+    "academic_book_link": true,
+    "readability_book_link": false,
+    "selected_book_covers": false
+  },
+  {
+    "path": "/resources/readability-foundations/",
+    "http_ok": true,
+    "academic_book_link": false,
+    "readability_book_link": true,
+    "selected_book_covers": false
+  },
+  {
+    "path": "/writing/",
+    "http_ok": true,
+    "academic_book_link": true,
+    "readability_book_link": true,
+    "selected_book_covers": false
+  }
+]
