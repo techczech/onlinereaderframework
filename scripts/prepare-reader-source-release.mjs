@@ -119,6 +119,13 @@ function keepGenericTests(path) {
   transformations.push({ path, operation: 'keep-generic-tests-only', keptTests: kept.map(part => part.title), droppedTests: dropped, sourceSha256: hash(source), exportedSha256: hash(output) });
   add(path, output.endsWith('\n') ? output : output + '\n');
 }
+// Every real manuscript the repository holds: the three originals and the two converted books (Academic Reading, Readability). All stay outside the
+// export allowlist; their spans are exclusion anchors so that no exported file can carry their text either.
+const MANUSCRIPT_INPUTS = ['apps/reader-demo/src/books/original-publications.json', 'apps/reader-demo/src/books/next-books/academic-reading-framework.book.json',
+  'apps/reader-demo/src/books/next-books/readability-foundations.book.json'];
+function manuscriptBooks() {
+  return MANUSCRIPT_INPUTS.flatMap(path => { const value = JSON.parse(input(path)); return Array.isArray(value) ? value : [value]; });
+}
 function manuscriptAnchors(books) {
   const found = new Map();
   function visit(section, book) {
@@ -243,6 +250,15 @@ function inspectArchive(bytes, entries) {
   return paths;
 }
 function selfTest() {
+  // Both converted manuscripts contribute exclusion anchors, and a span of each is refused in an otherwise allowed file.
+  const allBooks = manuscriptBooks();
+  const anchors = manuscriptAnchors(allBooks);
+  for (const id of ['academic-reading', 'readability-foundations', 'linguistics', 'deliberate-practice', 'language-muscle']) {
+    const own = anchors.filter(anchor => anchor.book === id);
+    assert.ok(own.length > 10, `manuscript anchors for ${id}`);
+    const issues = audit(new Map([[`${prefix}/src/check.ts`, Buffer.from(`const sample = ${JSON.stringify(own[Math.floor(own.length / 2)].value)};`)]]), anchors).issues;
+    assert.ok(issues.some(issue => issue.code === 'real-manuscript-span' && issue.book === id), `a ${id} span is refused`);
+  }
   for (const value of ['/Users/example/private', 'C:\\Users\\example\\private', String.raw`\u002fUsers\u002fexample`, 'file:///private/book']) {
     assert.ok(audit(new Map([[`${prefix}/src/check.ts`, Buffer.from(JSON.stringify(value))]]), []).issues.length, value);
   }
@@ -417,9 +433,10 @@ try {
     assert.match(source?.sha256 ?? '', /^[a-f0-9]{64}$/);
     origins.push({ project, file, supplies: 'services/publication-epub', sha256: source.sha256 });
   }
-  const books = JSON.parse(input('apps/reader-demo/src/books/original-publications.json'));
+  const books = manuscriptBooks();
   const anchors = manuscriptAnchors(books);
   evidence.manuscriptInputSha256 = sourceInputs.get('apps/reader-demo/src/books/original-publications.json');
+  evidence.manuscriptInputs = MANUSCRIPT_INPUTS.map(path => ({ path, sha256: sourceInputs.get(path) }));
   input('scripts/prepare-reader-source-release.mjs');
   const head = () => {
     const result = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' });

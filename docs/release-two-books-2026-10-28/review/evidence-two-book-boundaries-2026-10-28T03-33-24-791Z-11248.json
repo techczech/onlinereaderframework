@@ -1,0 +1,140 @@
+{
+  "register": "FOR AGENTS",
+  "id": "2026-10-28T03-33-24-791Z-11248",
+  "assets": [
+    {
+      "name": "control",
+      "refused": false,
+      "files": 4
+    },
+    {
+      "name": "cover-tamper",
+      "refused": true,
+      "error": "Error: The cover of academic-reading does not match its pinned hash."
+    },
+    {
+      "name": "embed-tamper",
+      "refused": true,
+      "error": "Error: Embed interactives/academic-reading-framework/cognition-explorer/index.html does not match its provenance hash."
+    },
+    {
+      "name": "manifest-traversal",
+      "refused": true,
+      "error": "Error: Unsafe embed entry in academic-reading."
+    },
+    {
+      "name": "manifest-drift",
+      "refused": true,
+      "error": "Error: The embed manifest of academic-reading differs from the demo registry's descriptors."
+    },
+    {
+      "name": "manifest-symlink",
+      "refused": true,
+      "error": "Error: Refusing a symbolic link in an asset path: src/books/next-books/embed-manifest.json"
+    },
+    {
+      "name": "manifest-ancestor-symlink",
+      "refused": true,
+      "error": "Error: Refusing a symbolic link in an asset path: src/books/next-books/next-books-provenance.json"
+    },
+    {
+      "name": "cover-symlink",
+      "refused": true,
+      "error": "Error: Refusing a symbolic link in an asset path: public/covers/academic-reading.jpg"
+    },
+    {
+      "name": "embed-leaf-symlink",
+      "refused": true,
+      "error": "Error: Refusing a symbolic link in an asset path: interactives/academic-reading-framework/cognition-explorer/index.html"
+    },
+    {
+      "name": "embed-ancestor-symlink",
+      "refused": true,
+      "error": "Error: Refusing a symbolic link in an asset path: interactives/academic-reading-framework/cognition-explorer/index.html"
+    },
+    {
+      "name": "app-alias",
+      "refused": true,
+      "error": "Error: The app folder is reached through a symbolic link."
+    }
+  ],
+  "urls": [
+    {
+      "base": "/books/a/",
+      "url": "https://actual.example/books/a/embeds/test/index.html",
+      "validRegistry": true
+    },
+    {
+      "base": "/",
+      "url": "https://actual.example/embeds/test/index.html",
+      "validRegistry": true
+    },
+    {
+      "base": "//foreign.test/",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "https://foreign.test/",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a/../",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/%2e%2e/",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a%2fb/",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a\\b/",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a/?q=x",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a/#h",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/books/a//",
+      "url": null,
+      "validRegistry": false
+    },
+    {
+      "base": "/a/b/c/d/e/f/g/h/i/",
+      "url": null,
+      "validRegistry": false
+    }
+  ],
+  "commands": [
+    {
+      "name": "source export five-book manuscript/privacy self-test (scratch relocated)",
+      "exit": 0,
+      "stdout": "Source export self-tests passed: paths, one exact generic URL exception, manuscript spans, forbidden members and deterministic archive.\n",
+      "stderr": ""
+    }
+  ],
+  "outsideLeafRefused": true,
+  "outsideCanaryUnchanged": true,
+  "completed": true,
+  "scratchRemoved": true
+}

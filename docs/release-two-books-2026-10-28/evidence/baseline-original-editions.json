@@ -1,0 +1,23 @@
+{
+ "note": "Committed-source (3a40d62, git archive) original editions built in build/scratch-two-books-baseline/.",
+ "editions": [
+  {
+   "book": "linguistics",
+   "ok": true,
+   "treeSha256": "47af340d81430939298dc4a61831045562a389b170e721f9cc6aebd4afe5d39d",
+   "files": 1178
+  },
+  {
+   "book": "deliberate-practice",
+   "ok": true,
+   "treeSha256": "94c565cbc8b92ff3d595624bb8a0da682362c15a1f078a184938dd8e492dad75",
+   "files": 168
+  },
+  {
+   "book": "language-muscle",
+   "ok": true,
+   "treeSha256": "3eebd7432ee221e261e57b684071fbc379c1794800c5466ba4db6e82509ec403",
+   "files": 149
+  }
+ ]
+}

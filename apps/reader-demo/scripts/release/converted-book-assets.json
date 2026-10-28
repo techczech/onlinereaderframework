@@ -1,0 +1,22 @@
+{
+  "description": "Release pin of the files a converted-book edition ships besides its text: the author-selected cover (decision \"3 and 2\", 28 October 2026; record docs/design/2026-10-28-two-book-conversion/selected-covers-2026-10-28.json) and, by reference, the nine interactive documents whose hashes are recorded in src/books/next-books/next-books-provenance.json (outputs). A release refuses any byte that differs. No licence is granted or changed by shipping these files.",
+  "embedProvenance": "src/books/next-books/next-books-provenance.json",
+  "covers": {
+    "academic-reading": {
+      "file": "public/covers/academic-reading.jpg",
+      "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+      "bytes": 954113,
+      "variant": "academic-reading-framework-03-print-connected-ideas",
+      "name": "Connected ideas",
+      "source": "book-covers/academic-reading-framework/round-2026-10-28-reader-covers/academic-reading-framework-03-print-connected-ideas.jpg"
+    },
+    "readability-foundations": {
+      "file": "public/covers/readability-foundations.jpg",
+      "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+      "bytes": 875251,
+      "variant": "readability-foundations-02-paper-clear-structure",
+      "name": "Clear structure",
+      "source": "book-covers/readability-foundations/round-2026-10-28-reader-covers/readability-foundations-02-paper-clear-structure.jpg"
+    }
+  }
+}

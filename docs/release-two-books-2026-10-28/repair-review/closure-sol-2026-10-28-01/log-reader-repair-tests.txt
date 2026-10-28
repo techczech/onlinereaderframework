@@ -1,0 +1,22 @@
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ release registry: five books, folder editions only for the two converted books at their agreed addresses (1880.624125ms)
+✔ book identity probes reject foreign registry values without matching prose or longer ids (0.333959ms)
+✔ folder routes: a chapter folder, a slash-less edition address and demo parameters become the edition address; nothing outside the folder is read (0.303458ms)
+✔ headers: the domain-root policy is unchanged byte for byte; a folder policy scopes every rule to the folder (0.228916ms)
+✔ section id probes: identifiers are found, ordinary words and longer heading anchors are not (0.186625ms)
+✔ asset plan: pinned cover and nine provenance-pinned embeds; descriptors carry the edition folder (15.5795ms)
+✔ asset plan refuses changed bytes, symbolic links, traversal and a manifest that differs from the registry (35.585791ms)
+✔ write path: a converted edition is staged, verified, swapped and recorded; verify:release passes it and the manifest records folder, cover and embeds (153.15225ms)
+✔ verifier red cases on a real converted edition: each tampering is reported (2721.97625ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5490.800708

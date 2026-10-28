@@ -35,12 +35,15 @@ export function sectionForPath(bookId: string, pathname: string, ids: readonly s
 }
 
 /** Replace what a pinned release must ignore (`?book`, demo-only `?frontpage` and `?homedepth`) and turn a section or alias path into `?section=`.
+ * `base` is the edition's folder (Vite's BASE_URL): `/` for a release at the domain root, `/books/<name>/` for one served from a folder. Routes are read
+ * below it; the edition address without its final slash becomes the folder address. Paths outside the folder are left alone.
  * Returns the address to show, or undefined when it is already clean. */
-export function releaseLocation(bookId: string, href: string, ids: readonly string[]): string | undefined {
+export function releaseLocation(bookId: string, href: string, ids: readonly string[], base = '/'): string | undefined {
   const url = new URL(href);
   let changed = false;
   for (const name of ['book', 'frontpage', 'homedepth']) if (url.searchParams.has(name)) { url.searchParams.delete(name); changed = true; }
-  const id = sectionForPath(bookId, url.pathname, ids);
-  if (id) { url.pathname = '/'; url.searchParams.set('section', id); changed = true; }
+  if (base !== '/' && url.pathname === base.slice(0, -1)) { url.pathname = base; changed = true; }
+  const id = url.pathname.startsWith(base) ? sectionForPath(bookId, `/${url.pathname.slice(base.length)}`, ids) : undefined;
+  if (id) { url.pathname = base; url.searchParams.set('section', id); changed = true; }
   return changed ? `${url.pathname}${url.search}${url.hash}` : undefined;
 }

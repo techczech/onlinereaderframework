@@ -1,24 +1,23 @@
-/** Builds one deployable, single-book production edition of each demo book into build/release-books/<book>/, plus build/release-books/<book>.manifest.json.
- * Usage (from apps/reader-demo): npm run build:release -- [--book linguistics|deliberate-practice|language-muscle|all]
- * Each edition is pinned to its book (no `?book` choice, no front-page chooser), carries only that book's manuscript, and is served from its own public address in
- * src/canonical-sites.ts. The write path is in scripts/release/build-edition.ts: staging folder, verification, then the swap and the manifest last.
+/** Builds one deployable, single-book production edition of each release book into build/release-books/<book>/, plus build/release-books/<book>.manifest.json.
+ * Usage (from apps/reader-demo): npm run build:release -- [--book <id>|originals|converted|all]   (default all; ids in scripts/release/release-books.ts)
+ * Each edition is pinned to its book (no `?book` choice, no front-page chooser), carries only that book's manuscript (and, for a converted book, only its
+ * own embeds and cover), and is served from its own public address in src/canonical-sites.ts: a domain root, or a folder such as /books/<name>/. The write path is in scripts/release/build-edition.ts: staging folder, verification, then the swap and the manifest last.
  * Nothing is deployed or uploaded. Before a deploy, check the folder with `npm run verify:release -- --book <book>`. */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { PublicationBook } from '../../../packages/reader-core/src/original/types';
-import publications from '../src/books/original-publications.json';
 import { canonicalSites } from '../src/canonical-sites';
 import { buildEdition, sourceState } from './release/build-edition';
 import { defaultPreviousSiteDir } from './release/previous-site';
+import { releaseBookChoices, releaseBooks, selectReleaseBooks } from './release/release-books';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const app = path.resolve(here, '..');
 const repo = path.resolve(app, '../..');
-const books = publications as PublicationBook[];
+const books = releaseBooks;
 const argument = process.argv.indexOf('--book');
 const wanted = argument < 0 ? 'all' : process.argv[argument + 1] ?? '';
-const selected = wanted === 'all' ? books : books.filter(book => book.id === wanted);
-if (!selected.length) throw new Error(`Unknown book "${wanted.slice(0, 40)}". Choose one of: ${books.map(book => book.id).join(', ')}, all.`);
+const selected = selectReleaseBooks(wanted);
+if (!selected.length) throw new Error(`Unknown book "${wanted.slice(0, 40)}". Choose one of: ${releaseBookChoices()}.`);
 
 const source = sourceState(repo);
 let failed = false;

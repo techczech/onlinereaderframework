@@ -4,17 +4,17 @@
  * - the files on disk are exactly the manifest's list, each with its size and SHA-256, and the tree hash matches;
  * - the artefact checks (`verify-edition.ts`) pass again on the folder against the current source.
  * The current HEAD and source state are reported as notes: a commit of docs after the build changes HEAD without changing the edition.
- * Usage (from apps/reader-demo): npm run verify:release -- --book linguistics|deliberate-practice|language-muscle|all   (exit 1 unless every book passes) */
+ * Usage (from apps/reader-demo): npm run verify:release -- --book <id>|originals|converted|all   (exit 1 unless every book passes) */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { canonicalSiteUrl } from '../../../../packages/reader-core/src/agent-export/index';
 import type { PublicationBook } from '../../../../packages/reader-core/src/original/types';
-import publications from '../../src/books/original-publications.json';
 import { canonicalSites } from '../../src/canonical-sites';
 import { hashEdition, MANIFEST_SCHEMA, otherSitesOf, sourceState, type EditionFile } from './build-edition';
 import { planEdition } from './edition-plan';
 import { defaultPreviousSiteDir } from './previous-site';
+import { releaseBookChoices, releaseBooks, selectReleaseBooks } from './release-books';
 import { verifyEdition } from './verify-edition';
 import { assertReleasePath, releaseRootOf } from './write-guard';
 
@@ -61,6 +61,7 @@ export function verifyExistingEdition(input: { repo: string; app: string; book: 
     try {
       const plan = planEdition({ book, site, appRoot: input.app, previousSiteDir: input.previousSiteDir });
       for (const failure of verifyEdition({ plan, others: input.others, otherSites: otherSitesOf(input.sites, book.id), outDir: folder })) failures.push(`artefact check: ${failure}`);
+      if (JSON.stringify((manifest as { edition?: unknown }).edition ?? null) !== JSON.stringify(plan.assets ?? null)) failures.push('manifest edition record (folder, cover, embeds) differs from the current plan');
     } catch (error) { failures.push(`artefact checks could not run: ${(error as Error).message}`); }
   }
   try {
@@ -74,11 +75,11 @@ export function verifyExistingEdition(input: { repo: string; app: string; book: 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const app = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
   const repo = path.resolve(app, '../..');
-  const books = publications as PublicationBook[];
+  const books = releaseBooks;
   const argument = process.argv.indexOf('--book');
   const wanted = argument < 0 ? '' : process.argv[argument + 1] ?? '';
-  const selected = wanted === 'all' ? books : books.filter(book => book.id === wanted);
-  if (!selected.length) { console.error(`Choose --book ${books.map(book => book.id).join('|')}|all`); process.exit(2); }
+  const selected = wanted ? selectReleaseBooks(wanted) : [];
+  if (!selected.length) { console.error(`Choose --book from ${releaseBookChoices()}`); process.exit(2); }
   let ok = true;
   for (const book of selected) {
     const result = verifyExistingEdition({ repo, app, book, others: books.filter(other => other.id !== book.id), sites: canonicalSites, previousSiteDir: defaultPreviousSiteDir(repo) });

@@ -27,7 +27,7 @@ if (!rootElement) throw new Error('Root element not found');
 
 if (RELEASE_BOOK) {
   const book = (publications as { id: string; sections: RouteSection[] }[]).find(entry => entry.id === RELEASE_BOOK);
-  const clean = book && releaseLocation(book.id, window.location.href, sectionIdsOf(book.sections));
+  const clean = book && releaseLocation(book.id, window.location.href, sectionIdsOf(book.sections), import.meta.env.BASE_URL);
   if (clean) window.history.replaceState(window.history.state, '', clean);
 }
 

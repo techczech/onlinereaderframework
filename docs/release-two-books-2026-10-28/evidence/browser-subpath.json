@@ -1,0 +1,370 @@
+{
+ "generated": "2026-10-28T03:21:17.759Z",
+ "browser": "~/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+ "emulation": "local Cloudflare-Pages-like static serving and _headers; not live delivery",
+ "passed": 72,
+ "total": 72,
+ "checks": [
+  {
+   "book": "site",
+   "name": "/: no book CSP or frame policy",
+   "ok": true
+  },
+  {
+   "book": "site",
+   "name": "/about/: no book CSP or frame policy",
+   "ok": true
+  },
+  {
+   "book": "site",
+   "name": "/books/: no book CSP or frame policy",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "unknown address: 404 with the book's own not-found page",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "reader page: its own CSP, not frameable",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "llms.txt: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "agent/academic-reading/full.md: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "agent/academic-reading/index.md: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "sitemap.xml: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "no robots.txt of its own in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "slash-less edition address opens the edition",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cover loads from the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "web fonts load from the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: static address becomes /books/academic-reading/?section=cognition",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: 2 frame(s), each in /books/academic-reading/embeds/academic-reading/, sandbox allow-scripts",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: every frame loads its document",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: frame reading-articulation-layers opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: frame reading-simplified-summary opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition: embed served with the sandbox policy and no frame ban",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition-explorer: static address becomes /books/academic-reading/?section=cognition-explorer",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition-explorer: 1 frame(s), each in /books/academic-reading/embeds/academic-reading/, sandbox allow-scripts",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition-explorer: every frame loads its document",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition-explorer: frame cognition-explorer opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "cognition-explorer: embed served with the sandbox policy and no frame ban",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "query and hash address opens the section",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "navigation to cognition keeps /books/academic-reading/",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "frames after in-reader navigation stay in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "reload keeps the section",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "back stays in the folder",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "agent links point into the folder or the public address",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "full view: opaque origin, no storage, network or popup",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "no console or page errors",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "no failed requests in the reader session",
+   "ok": true
+  },
+  {
+   "book": "academic-reading",
+   "name": "no request leaves the site",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "unknown address: 404 with the book's own not-found page",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "reader page: its own CSP, not frameable",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "llms.txt: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "agent/readability-foundations/full.md: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "agent/readability-foundations/index.md: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "sitemap.xml: served, canonical links in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "no robots.txt of its own in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slash-less edition address opens the edition",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "cover loads from the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "web fonts load from the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: static address becomes /books/readability/?section=formatting-examples",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: 2 frame(s), each in /books/readability/embeds/readability-foundations/, sandbox allow-scripts",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: every frame loads its document",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: frame cramped-text-reveal opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: frame font-spacing-adjuster opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "formatting-examples: embed served with the sandbox policy and no frame ban",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: static address becomes /books/readability/?section=slide-formatting-examples",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: 3 frame(s), each in /books/readability/embeds/readability-foundations/, sandbox allow-scripts",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: every frame loads its document",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: frame slides-one-bullet opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: frame slides-extraneous-text opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: frame slides-zooming-images opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "slide-formatting-examples: embed served with the sandbox policy and no frame ban",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "readability-tool: static address becomes /books/readability/?section=readability-tool",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "readability-tool: 1 frame(s), each in /books/readability/embeds/readability-foundations/, sandbox allow-scripts",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "readability-tool: every frame loads its document",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "readability-tool: frame readability-checker opaque, no storage, parent or network, renders",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "readability-tool: embed served with the sandbox policy and no frame ban",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "query and hash address opens the section",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "navigation to formatting-examples keeps /books/readability/",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "frames after in-reader navigation stay in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "reload keeps the section",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "back stays in the folder",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "agent links point into the folder or the public address",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "full view: opaque origin, no storage, network or popup",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "no console or page errors",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "no failed requests in the reader session",
+   "ok": true
+  },
+  {
+   "book": "readability-foundations",
+   "name": "no request leaves the site",
+   "ok": true
+  }
+ ],
+ "requests": 100
+}

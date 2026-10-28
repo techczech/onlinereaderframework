@@ -1,13 +1,12 @@
-/** Integration checks of the five-book demo registry (src/books/demo-books.ts), its embeds, its agent files and the release isolation of the three original books.
- * Run: npm run test:books (from apps/reader-demo). The release-isolation test builds each original book's release bundle with the real release plugin into a
- * temporary folder under build/ (not release-books/) and removes it afterwards. */
+/** Integration checks of the five-book demo registry (src/books/demo-books.ts), its embeds, its agent files and the release isolation of all five books.
+ * Run: npm run test:books (from apps/reader-demo). The release-isolation tests build each book's release bundle with the real release configuration
+ * (releaseViteConfig) into a temporary folder under build/ (not release-books/) and remove it afterwards. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
-import react from '@vitejs/plugin-react';
 import { build } from 'vite';
 import { checkPublicationEmbeds, validatePublicationEmbeds } from '../../../packages/reader-core/src/embed/index';
 import { buildAgentBook } from '../../../packages/reader-core/src/agent-export/index';
@@ -15,9 +14,8 @@ import type { PublicationBook, PublicationSection } from '../../../packages/read
 import { demoBooks, demoEmbeds, embedManifest, embedRootOf, nextBooks, originalBooks } from '../src/books/demo-books';
 import { canonicalSites } from '../src/canonical-sites';
 import { planEdition } from './release/edition-plan';
-import { releasePlugin } from './release/release-plugin';
 import { defaultPreviousSiteDir } from './release/previous-site';
-import { otherSitesOf } from './release/build-edition';
+import { otherSitesOf, releaseViteConfig } from './release/build-edition';
 import { verifyEdition } from './release/verify-edition';
 import { walkFiles } from './release/write-guard';
 
@@ -53,9 +51,13 @@ test('licences: Readability keeps CC BY with no version in its link; Academic ca
   for (const book of nextBooks) assert.ok(!/BY-SA|ShareAlike/i.test(JSON.stringify(book)), book.id);
 });
 
-test('canonical sites name no address for the converted books (route undecided; agent files are not live on the old domains)', () => {
-  for (const book of nextBooks) assert.equal(canonicalSites[book.id], undefined, book.id);
-  assert.deepEqual(Object.keys(canonicalSites).sort(), ['deliberate-practice', 'language-muscle', 'linguistics']);
+test('canonical sites: the three originals keep their domains; the converted books have exactly the two agreed dominiklukes.net folders', () => {
+  assert.deepEqual(Object.keys(canonicalSites).sort(), ['academic-reading', 'deliberate-practice', 'language-muscle', 'linguistics', 'readability-foundations']);
+  assert.equal(canonicalSites.linguistics, 'https://linguistics.dominiklukes.net/');
+  assert.equal(canonicalSites['deliberate-practice'], 'https://deliberatepractice.dominiklukes.net/');
+  assert.equal(canonicalSites['language-muscle'], 'https://buildingyourlanguagemuscle.edutools.fyi/');
+  assert.equal(canonicalSites['academic-reading'], 'https://dominiklukes.net/books/academic-reading/');
+  assert.equal(canonicalSites['readability-foundations'], 'https://dominiklukes.net/books/readability/');
   for (const book of nextBooks) assert.ok(book.sourceUrl?.startsWith('https://'), `${book.id} keeps its source address`);
 });
 
@@ -118,45 +120,76 @@ test('agent files: all five books export from the one registry; prose alternativ
   assert.match(academic.files.map(file => file.content).join('\n'), /Text version of the interactive/i);
 });
 
-/** The release verifier probes every other book's section ids longer than 12 characters as strings. Readability's `accessibility` is also an ordinary word in
- * Linguistics and Deliberate Practice, so the probe fires on their text. The probe is blind to that and is the verifier's own (not edited here); to still check
- * every other probe against the converted books, this test renames that one id in its copy. Recorded as a needed seam in the integration receipt. */
-const distinctFromCommonWords = (book: PublicationBook): PublicationBook => ({ ...book, sections: book.sections.map(section => section.id === 'accessibility' ? { ...section, id: 'accessibility-and-the-readable-web-section' } : section) });
-
-/** Builds an existing release's bundle exactly as scripts/release/build-edition.ts does, into a temporary folder, and runs the real artefact verifier against it
- * with all FOUR other demo books as "others". A bundle that carried a converted book (text, address, long id) or its embeds fails here. */
-async function buildReleaseAndVerify(bookId: string): Promise<{ failures: string[]; bundle: string }> {
-  const book = onDisk.find(candidate => candidate.id === bookId)!;
+/** Builds a release's bundle exactly as scripts/release/build-edition.ts does (same plan, same Vite configuration), into a temporary folder, and runs the
+ * real artefact verifier against it with all FOUR other demo books as "others", unrenamed: the verifier probes an ordinary-word section id such as
+ * Readability's `accessibility` only where it acts as an identifier. A bundle that carried another book (text, address, long id) or its embeds fails here. */
+async function buildReleaseAndVerify(bookId: string, inspect?: (outDir: string, names: string[]) => void): Promise<{ failures: string[]; bundle: string; names: string[] }> {
+  const book = demoBooks.find(candidate => candidate.id === bookId)!;
   const site = canonicalSites[bookId];
   const plan = planEdition({ book, site, appRoot: app, previousSiteDir: defaultPreviousSiteDir(repo) });
   const scratchRoot = path.join(repo, 'build');
   fs.mkdirSync(scratchRoot, { recursive: true });
   const outDir = fs.mkdtempSync(path.join(scratchRoot, '.test-demo-books-'));
   try {
-    await build({
-      configFile: false, root: app, base: '/', publicDir: false, logLevel: 'silent',
-      plugins: [react(), releasePlugin(plan, app)],
-      resolve: { alias: { 'reader-core': path.resolve(app, '../../packages/reader-core/src/index.ts') }, dedupe: ['react', 'react-dom'] },
-      define: { __READER_RELEASE_BOOK__: JSON.stringify(book.id) },
-      build: { outDir, emptyOutDir: false, sourcemap: false },
-    });
-    const others = demoBooks.filter(other => other.id !== bookId).map(distinctFromCommonWords);
+    await build(releaseViteConfig(plan, app, outDir, 'silent'));
+    const others = demoBooks.filter(other => other.id !== bookId);
     const failures = verifyEdition({ plan, others, otherSites: otherSitesOf(canonicalSites, bookId), outDir });
     const files = [...walkFiles(outDir)];
+    const names = files.map(file => path.relative(outDir, file).split(path.sep).join('/'));
     const bundle = files.filter(file => /\.(js|css|html|json|txt|md)$/.test(file)).map(file => fs.readFileSync(file, 'utf8')).join('\n');
-    for (const file of files) { const name = path.relative(outDir, file).split(path.sep).join('/'); assert.ok(!name.startsWith('embeds/') && !/demo-books/.test(name), `${bookId}: unexpected file ${name}`); }
-    return { failures, bundle };
+    for (const name of names) assert.ok(!/demo-books/.test(name) && (!name.startsWith('embeds/') || name.startsWith(`embeds/${bookId}/`)), `${bookId}: unexpected file ${name}`);
+    inspect?.(outDir, names);
+    return { failures, bundle, names };
   } finally { fs.rmSync(outDir, { recursive: true, force: true }); }
 }
 
 for (const bookId of ['linguistics', 'deliberate-practice', 'language-muscle']) {
   test(`release isolation: the ${bookId} release bundle carries neither converted book, their embeds nor the demo registry`, { timeout: 180000 }, async () => {
-    const { failures, bundle } = await buildReleaseAndVerify(bookId);
+    const { failures, bundle, names } = await buildReleaseAndVerify(bookId);
     assert.deepEqual(failures, []);
+    assert.ok(!names.some(name => name.startsWith('embeds/')), `${bookId} has no embed files`);
     for (const marker of ['Cognition Explorer', 'Foundations of Readability', 'Increasing Reading Productivity', 'readability-checker', 'cramped-text-reveal', 'demo-books', 'embed-manifest', 'academicreading.edutools', 'readability.edutools'])
       assert.ok(!bundle.includes(marker), `${bookId} bundle contains "${marker}"`);
     // The three originals other than this one stay out as well (the verifier proves it for text; this is the same for the registry's lists).
     for (const other of originalBooks.filter(candidate => candidate.id !== bookId)) assert.ok(!bundle.includes(other.title), `${bookId} bundle contains "${other.title}"`);
+  });
+}
+
+const convertedMarkers: Record<string, string[]> = {
+  'academic-reading': ['Foundations of Readability', 'readability-checker', 'cramped-text-reveal', 'readability.edutools', 'dominiklukes.net/books/readability'],
+  'readability-foundations': ['Increasing Reading Productivity', 'Cognition Explorer', 'cognition-explorer', 'academicreading.edutools', 'dominiklukes.net/books/academic-reading'],
+};
+for (const bookId of ['academic-reading', 'readability-foundations']) {
+  test(`release isolation: the ${bookId} folder edition carries only its own book, embeds and cover, scoped to its folder`, { timeout: 180000 }, async () => {
+    const site = canonicalSites[bookId];
+    const base = new URL(site).pathname;
+    const embeds = demoEmbeds[bookId];
+    let scripts = '';
+    const { failures, bundle, names } = await buildReleaseAndVerify(bookId, (outDir, files) => {
+      scripts = files.filter(name => /\.(js|html)$/.test(name)).map(name => fs.readFileSync(path.join(outDir, name), 'utf8')).join('\n');
+      for (const item of embeds.items) {
+        const shipped = fs.readFileSync(path.join(outDir, 'embeds', bookId, item.src));
+        const source = fs.readFileSync(path.join(app, embedManifest[bookId].interactivesDir, item.src));
+        assert.ok(shipped.equals(source), `${item.id} shipped byte for byte`);
+      }
+      assert.ok(fs.readFileSync(path.join(outDir, 'covers', `${bookId}.jpg`)).equals(fs.readFileSync(path.join(app, 'public', 'covers', `${bookId}.jpg`))));
+      const headers = fs.readFileSync(path.join(outDir, '_headers'), 'utf8');
+      assert.ok(headers.startsWith(`${base}*\n`) && headers.includes(`${base}embeds/${bookId}/*\n  ! Content-Security-Policy`), 'headers scoped to the folder');
+      for (const line of headers.split('\n').filter(entry => entry && !/^\s/.test(entry))) assert.ok(line.startsWith(base), line);
+      const index = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
+      assert.match(index, new RegExp(`src="${base}assets/`));
+      assert.ok(index.includes(`<link rel="canonical" href="${site}">`));
+      assert.ok(!files.includes('robots.txt'));
+      const llms = fs.readFileSync(path.join(outDir, 'llms.txt'), 'utf8');
+      assert.ok(llms.includes(`${site}agent/${bookId}/full.md`));
+    });
+    assert.deepEqual(failures, []);
+    assert.deepEqual(names.filter(name => name.startsWith('embeds/')).sort(), embeds.items.map(item => `embeds/${bookId}/${item.src}`).sort());
+    for (const marker of [...convertedMarkers[bookId], 'demo-books', 'embed-manifest'])
+      assert.ok(!bundle.includes(marker), `${bookId} bundle contains "${marker}"`);
+    // The demo choosers' class names stay in the shared stylesheet (as in every edition); no script or page may render them.
+    assert.ok(!scripts.includes('demo-frontpage-chooser') && !scripts.includes('demo-book-chooser') && !scripts.includes('Front page layout'), `${bookId}: demo chooser in a script or page`);
+    for (const other of originalBooks) assert.ok(!bundle.includes(other.title), `${bookId} bundle contains "${other.title}"`);
   });
 }
 

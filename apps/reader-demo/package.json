@@ -15,7 +15,7 @@
     "verify:originals": "tsx scripts/verify-original-source-snapshots.ts",
     "build:agent": "tsx scripts/build-agent-files.ts",
     "build:release": "tsx scripts/build-release.ts",
-    "test:release": "tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts",
+    "test:release": "tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts scripts/release/test-release-books.ts",
     "verify:release": "tsx scripts/release/verify-existing-edition.ts"
   },
   "dependencies": {

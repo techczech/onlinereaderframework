@@ -40,7 +40,8 @@ Rules:
 import { PublicationReader, type PublicationEmbeds } from 'reader-core';
 
 const embeds: PublicationEmbeds = {
-  root: 'embeds/',                       // default 'embeds/'; relative folder under the page's folder
+  root: 'embeds/',                       // default 'embeds/'; relative folder under the page's folder (or under `base`)
+  base: '/books/a-book/',                // optional (added 28 Oct, release of the two converted books): absolute edition folder on the page's origin
   items: [{
     id: 'cognition-explorer',            // ^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$ ; unique
     sectionId: 'cognition',              // a section of this book
@@ -56,7 +57,7 @@ const embeds: PublicationEmbeds = {
 <PublicationReader book={book} embeds={embeds} />
 ```
 
-`embeds` is also accepted as `false` (off). Invalid descriptors are dropped individually (reason logged once with `console.warn`); the prose alternative still renders. Strings are rendered as text only, never as HTML.
+`embeds` is also accepted as `false` (off). An invalid `base` refuses the whole registry, as an invalid `root` does. Invalid descriptors are dropped individually (reason logged once with `console.warn`); the prose alternative still renders. Strings are rendered as text only, never as HTML.
 
 Build-time check (call from the book's test or release script; returns problem strings, empty when sound):
 
@@ -70,6 +71,7 @@ const problems = checkPublicationEmbeds(book, embeds);   // descriptor validity,
 - `root`: relative, segments of `[A-Za-z0-9][A-Za-z0-9._-]*`, ending `/`. No scheme, host, leading `/`, `.`/`..`, `%`, `\`, query or fragment.
 - `src`: 1–8 segments of the same pattern, last segment ends `.html`; same refusals; ≤ 200 chars.
 - At runtime the URL is resolved against `window.location.href` (never `document.baseURI`); it must stay on the page's origin and inside the resolved root path, else refused.
+- `base` (optional): `/` or `/seg/…/` (same segment rules, at most 8, ending `/`). When set, `root` resolves below `base` on the page's own origin instead of below the page's folder, so a chapter address or a slash-less edition address still reaches the edition's embeds. `base` never names a host; origin still comes from `window.location.href`. A folder release (`/books/<name>/`) sets it to Vite's `BASE_URL`; the demo leaves it unset.
 - So: only local files shipped with the edition. No remote origins, no `data:`/`blob:`/`javascript:`.
 
 ## 4. Frame policy (fixed by the framework, not configurable)
@@ -117,10 +119,10 @@ The reader page's own CSP already allows same-origin frames (`default-src 'self'
 
 ## 7. Stable exports
 
-- `reader-core`: types `PublicationEmbed`, `PublicationEmbeds`; `PublicationReaderProps.embeds`; functions `checkPublicationEmbeds`, `validatePublicationEmbeds`, `resolvePublicationEmbedUrl`, `readPublicationEmbedHeight`; constants `PUBLICATION_EMBED_SANDBOX`, `PUBLICATION_EMBED_ALLOW`, `PUBLICATION_EMBED_MESSAGE_TYPE`.
+- `reader-core`: types `PublicationEmbed`, `PublicationEmbeds` (with optional `base`); `PublicationReaderProps.embeds`; functions `checkPublicationEmbeds`, `validatePublicationEmbeds`, `resolvePublicationEmbedUrl(path, root, pageURL, editionBase?)`, `readPublicationEmbedHeight`; constants `PUBLICATION_EMBED_SANDBOX`, `PUBLICATION_EMBED_ALLOW`, `PUBLICATION_EMBED_MESSAGE_TYPE`.
 - `reader-core/embed-child`: `startReaderEmbedHeightReporting`, `postReaderEmbedHeight`.
 
 ## Out of scope for v1
 
 - Host → embed messages (theme, preferences), embed state persistence, remote origins, multiple frames per anchor, embeds on the home page.
-- Release copying of embed files into an edition and adding new files to the public source projection allowlist: integration steps, see the receipt.
+- Adding new files to the public source projection allowlist: integration step, see the receipt. Release copying of embed files is implemented for the two converted books (docs/release-two-books-2026-10-28/), with folder-scoped `_headers` rules: `securityHeaders({ base, embedRoot })` writes `<base>embeds/<book>/*`.

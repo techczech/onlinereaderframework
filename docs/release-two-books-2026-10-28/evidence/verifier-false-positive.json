@@ -1,0 +1,18 @@
+{
+ "committedVerifier": {
+  "failures": 9,
+  "accessibility": [
+   "another book's section id accessibility of readability-foundations in 2015-07-20-is-sentence-a-useful-and-or-clearly-defined-term-in-linguistics/index.html",
+   "another book's section id accessibility of readability-foundations in 2015-08-29-what-are-some-canonical-or-seminal-corpus-linguistic-studies-using-the/index.html",
+   "another book's section id accessibility of readability-foundations in agent/linguistics/chapters/2015-07-20-is-sentence-a-useful-and-or-clearly-defined-term-in-linguistics.md",
+   "another book's section id accessibility of readability-foundations in agent/linguistics/chapters/2015-08-29-what-are-some-canonical-or-seminal-corpus-linguistic-studies-using-the.md",
+   "another book's section id accessibility of readability-foundations in agent/linguistics/full.md"
+  ]
+ },
+ "workingTreeVerifier": {
+  "failures": [],
+  "positiveControl": [
+   "another book's section id accessibility of readability-foundations in assets/index-BdXZ6HwA.js"
+  ]
+ }
+}

@@ -1,0 +1,1227 @@
+{
+  "scope": "two repaired findings and direct regressions only",
+  "started": "2026-10-28T03:49:57.949Z",
+  "editions": [
+    {
+      "book": "academic-reading",
+      "files": 147,
+      "tree": "a185201757de8c7ce48356801bfb4ad6dbd7831a85d1e5683f0223c554161f0f",
+      "baselinePassed": true,
+      "existingFixturePassed": true,
+      "sourceDirty": true,
+      "note": "Only scratch manifest set false for existing-verifier control; no deployability claim."
+    },
+    {
+      "book": "readability-foundations",
+      "files": 158,
+      "tree": "bc727d5ef93cea64ab753c8ef5c77bf24a697f60d21d4dee5e8fafa30163ec3f",
+      "baselinePassed": true,
+      "existingFixturePassed": true,
+      "sourceDirty": true,
+      "note": "Only scratch manifest set false for existing-verifier control; no deployability claim."
+    }
+  ],
+  "identity": [
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.foreignBook={id:\"deliberate-practice\",sections:[]};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"bookId\" : 'deliberate-practice'};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={book_id:`deliberate-practice`};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "<div data-book-id = \"deliberate-practice\">",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"deliberate-practice\": {sections:[]}};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.foreignBook={id:\"language-muscle\",sections:[]};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"bookId\" : 'language-muscle'};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={book_id:`language-muscle`};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "<div data-book-id = \"language-muscle\">",
+      "failures": [
+        "another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"language-muscle\": {sections:[]}};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.foreignBook={id:\"linguistics\",sections:[]};",
+      "failures": [
+        "another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"bookId\" : 'linguistics'};",
+      "failures": [
+        "another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={book_id:`linguistics`};",
+      "failures": [
+        "another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "<div data-book-id = \"linguistics\">",
+      "failures": [
+        "another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"linguistics\": {sections:[]}};",
+      "failures": [
+        "another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.foreignBook={id:\"readability-foundations\",sections:[]};",
+      "failures": [
+        "another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={\"bookId\" : 'readability-foundations'};",
+      "failures": [
+        "another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={book_id:`readability-foundations`};",
+      "failures": [
+        "another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "<div data-book-id = \"readability-foundations\">",
+      "failures": [
+        "another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={\"readability-foundations\": {sections:[]}};",
+      "failures": [
+        "another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id readability-foundations in assets/index-Dq4nbSoe.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.foreignBook={id:\"deliberate-practice\",sections:[]};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"bookId\" : 'deliberate-practice'};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={book_id:`deliberate-practice`};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "<div data-book-id = \"deliberate-practice\">",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"deliberate-practice\": {sections:[]}};",
+      "failures": [
+        "another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id deliberate-practice in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.foreignBook={id:\"language-muscle\",sections:[]};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"bookId\" : 'language-muscle'};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={book_id:`language-muscle`};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "<div data-book-id = \"language-muscle\">",
+      "failures": [
+        "another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"language-muscle\": {sections:[]}};",
+      "failures": [
+        "another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id language-muscle in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.foreignBook={id:\"linguistics\",sections:[]};",
+      "failures": [
+        "another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"bookId\" : 'linguistics'};",
+      "failures": [
+        "another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={book_id:`linguistics`};",
+      "failures": [
+        "another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "<div data-book-id = \"linguistics\">",
+      "failures": [
+        "another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"linguistics\": {sections:[]}};",
+      "failures": [
+        "another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id linguistics in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.foreignBook={id:\"academic-reading\",sections:[]};",
+      "failures": [
+        "another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={\"bookId\" : 'academic-reading'};",
+      "failures": [
+        "another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={book_id:`academic-reading`};",
+      "failures": [
+        "another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "<div data-book-id = \"academic-reading\">",
+      "failures": [
+        "another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={\"academic-reading\": {sections:[]}};",
+      "failures": [
+        "another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ],
+      "existingFailures": [
+        "artefact check: another book's book id academic-reading in assets/index-BGx7MUIM.js"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.foreignBook={id:\"deliberate-practice\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"bookId\" : 'deliberate-practice'};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={book_id:`deliberate-practice`};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "<div data-book-id = \"deliberate-practice\">",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"deliberate-practice\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "{\"id\":\"deliberate-practice\"}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "\"{\\\"bookId\\\":\\\"deliberate-practice\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "{\n id : 'deliberate-practice'\n}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "The discussion includes deliberate-practice in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "{id:\"deliberate-practice-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "{id:\"prefix-deliberate-practice\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "deliberate-practice",
+      "payload": "{myid:\"deliberate-practice\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.foreignBook={id:\"language-muscle\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"bookId\" : 'language-muscle'};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={book_id:`language-muscle`};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "<div data-book-id = \"language-muscle\">",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"language-muscle\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "{\"id\":\"language-muscle\"}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "\"{\\\"bookId\\\":\\\"language-muscle\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "{\n id : 'language-muscle'\n}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "The discussion includes language-muscle in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "{id:\"language-muscle-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "{id:\"prefix-language-muscle\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "language-muscle",
+      "payload": "{myid:\"language-muscle\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.foreignBook={id:\"linguistics\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"bookId\" : 'linguistics'};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={book_id:`linguistics`};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "<div data-book-id = \"linguistics\">",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"linguistics\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "{\"id\":\"linguistics\"}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "\"{\\\"bookId\\\":\\\"linguistics\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "{\n id : 'linguistics'\n}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "The discussion includes linguistics in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "{id:\"linguistics-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "{id:\"prefix-linguistics\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "linguistics",
+      "payload": "{myid:\"linguistics\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.foreignBook={id:\"readability-foundations\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={\"bookId\" : 'readability-foundations'};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={book_id:`readability-foundations`};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "<div data-book-id = \"readability-foundations\">",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "globalThis.r={\"readability-foundations\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "{\"id\":\"readability-foundations\"}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "\"{\\\"bookId\\\":\\\"readability-foundations\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "{\n id : 'readability-foundations'\n}",
+      "refused": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "The discussion includes readability-foundations in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "{id:\"readability-foundations-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "{id:\"prefix-readability-foundations\"}",
+      "allowed": true
+    },
+    {
+      "book": "academic-reading",
+      "other": "readability-foundations",
+      "payload": "{myid:\"readability-foundations\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.foreignBook={id:\"deliberate-practice\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"bookId\" : 'deliberate-practice'};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={book_id:`deliberate-practice`};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "<div data-book-id = \"deliberate-practice\">",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "globalThis.r={\"deliberate-practice\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "{\"id\":\"deliberate-practice\"}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "\"{\\\"bookId\\\":\\\"deliberate-practice\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "{\n id : 'deliberate-practice'\n}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "The discussion includes deliberate-practice in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "{id:\"deliberate-practice-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "{id:\"prefix-deliberate-practice\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "deliberate-practice",
+      "payload": "{myid:\"deliberate-practice\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.foreignBook={id:\"language-muscle\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"bookId\" : 'language-muscle'};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={book_id:`language-muscle`};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "<div data-book-id = \"language-muscle\">",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "globalThis.r={\"language-muscle\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "{\"id\":\"language-muscle\"}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "\"{\\\"bookId\\\":\\\"language-muscle\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "{\n id : 'language-muscle'\n}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "The discussion includes language-muscle in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "{id:\"language-muscle-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "{id:\"prefix-language-muscle\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "language-muscle",
+      "payload": "{myid:\"language-muscle\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.foreignBook={id:\"linguistics\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"bookId\" : 'linguistics'};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={book_id:`linguistics`};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "<div data-book-id = \"linguistics\">",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "globalThis.r={\"linguistics\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "{\"id\":\"linguistics\"}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "\"{\\\"bookId\\\":\\\"linguistics\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "{\n id : 'linguistics'\n}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "The discussion includes linguistics in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "{id:\"linguistics-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "{id:\"prefix-linguistics\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "linguistics",
+      "payload": "{myid:\"linguistics\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.foreignBook={id:\"academic-reading\",sections:[]};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={\"bookId\" : 'academic-reading'};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={book_id:`academic-reading`};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "<div data-book-id = \"academic-reading\">",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "globalThis.r={\"academic-reading\": {sections:[]}};",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "{\"id\":\"academic-reading\"}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "\"{\\\"bookId\\\":\\\"academic-reading\\\"}\"",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "{\n id : 'academic-reading'\n}",
+      "refused": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "The discussion includes academic-reading in ordinary prose.",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "{id:\"academic-reading-extended\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "{id:\"prefix-academic-reading\"}",
+      "allowed": true
+    },
+    {
+      "book": "readability-foundations",
+      "other": "academic-reading",
+      "payload": "{myid:\"academic-reading\"}",
+      "allowed": true
+    }
+  ],
+  "imports": [
+    {
+      "kind": "linked-existing",
+      "result": {
+        "ok": false,
+        "failures": [
+          "Refusing a symbolic link: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/scratch-closure/host-1/src/content/reader-books.json"
+        ],
+        "imported": []
+      },
+      "verifierCalls": 0,
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingAbsent": true
+    },
+    {
+      "kind": "linked-dangling",
+      "result": {
+        "ok": false,
+        "failures": [
+          "Refusing a symbolic link: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/scratch-closure/host-2/src/content/reader-books.json"
+        ],
+        "imported": []
+      },
+      "verifierCalls": 0,
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingAbsent": true
+    },
+    {
+      "kind": "record-directory",
+      "result": {
+        "ok": false,
+        "failures": [
+          "Not a regular file: /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/scratch-closure/host-3/src/content/reader-books.json"
+        ],
+        "imported": []
+      },
+      "verifierCalls": 0,
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingAbsent": true
+    },
+    {
+      "kind": "after-stage",
+      "result": {
+        "ok": false,
+        "failures": [
+          "injected fault after staging"
+        ],
+        "imported": []
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    },
+    {
+      "kind": "after-first-move",
+      "result": {
+        "ok": false,
+        "failures": [
+          "import failed, restoring the previous site files: injected fault after the first move"
+        ],
+        "imported": [],
+        "restored": true
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    },
+    {
+      "kind": "after-all-moves",
+      "result": {
+        "ok": false,
+        "failures": [
+          "import failed, restoring the previous site files: injected fault after-all-moves"
+        ],
+        "imported": [],
+        "restored": true
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    },
+    {
+      "kind": "before-headers",
+      "result": {
+        "ok": false,
+        "failures": [
+          "import failed, restoring the previous site files: injected fault before-headers"
+        ],
+        "imported": [],
+        "restored": true
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    },
+    {
+      "kind": "before-record",
+      "result": {
+        "ok": false,
+        "failures": [
+          "import failed, restoring the previous site files: injected fault before the record"
+        ],
+        "imported": [],
+        "restored": true
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    },
+    {
+      "kind": "after-record",
+      "result": {
+        "ok": false,
+        "failures": [
+          "import failed, restoring the previous site files: injected fault after the record"
+        ],
+        "imported": [],
+        "restored": true
+      },
+      "hostUnchanged": true,
+      "canaryUnchanged": true,
+      "stagingEmpty": true
+    }
+  ],
+  "before": [
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+      "digest": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d",
+      "current": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d"
+    },
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/test-release-books.ts",
+      "digest": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209",
+      "current": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209"
+    },
+    {
+      "project": "website",
+      "path": "scripts/import-reader-books.ts",
+      "digest": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e",
+      "current": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e"
+    },
+    {
+      "project": "website",
+      "path": "tests/reader-books.test.ts",
+      "digest": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e",
+      "current": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e"
+    }
+  ],
+  "sectionFalsePositiveControl": true,
+  "after": [
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+      "digest": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d",
+      "current": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d"
+    },
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/test-release-books.ts",
+      "digest": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209",
+      "current": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209"
+    },
+    {
+      "project": "website",
+      "path": "scripts/import-reader-books.ts",
+      "digest": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e",
+      "current": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e"
+    },
+    {
+      "project": "website",
+      "path": "tests/reader-books.test.ts",
+      "digest": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e",
+      "current": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e"
+    }
+  ],
+  "ok": true,
+  "scratchRemoved": true,
+  "finished": "2026-10-28T03:50:15.339Z"
+}

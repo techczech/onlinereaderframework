@@ -1,0 +1,2 @@
+  <url><loc>https://dominiklukes.net/books/academic-reading/</loc></url>
+  <url><loc>https://dominiklukes.net/books/readability/</loc></url>

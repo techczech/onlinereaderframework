@@ -1,0 +1,25 @@
+{
+  "format": "file-digests-v1",
+  "entries": [
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+      "digest": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d"
+    },
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/test-release-books.ts",
+      "digest": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209"
+    },
+    {
+      "project": "website",
+      "path": "scripts/import-reader-books.ts",
+      "digest": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e"
+    },
+    {
+      "project": "website",
+      "path": "tests/reader-books.test.ts",
+      "digest": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e"
+    }
+  ]
+}

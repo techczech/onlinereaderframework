@@ -18,7 +18,9 @@ export const releaseIconSvg = (appRoot: string): string => fs.readFileSync(path.
 
 export interface Projection { book: PublicationBook; replaced: string[] }
 
-export function releaseProjection(book: PublicationBook): Projection {
+/** `base` is the edition folder. In a folder other than `/`, the book's own cover address `/covers/<id>.jpg` becomes `<base>covers/<id>.jpg`, the file the
+ * edition ships; nothing else of the book changes for it. */
+export function releaseProjection(book: PublicationBook, base = '/'): Projection {
   const expected = ICON_SECTIONS[book.id] ?? [];
   const replaced: string[] = [];
   const project = (sections: readonly PublicationSection[]): PublicationSection[] => sections.map(section => {
@@ -35,6 +37,11 @@ export function releaseProjection(book: PublicationBook): Projection {
     license: book.home?.license ?? { label: 'CC BY-SA 4.0', href: 'https://creativecommons.org/licenses/by-sa/4.0/' },
     authorNote: book.home?.authorNote ?? '© Dominik Lukeš. The book is released under CC BY-SA 4.0. You may copy, share, adapt and use this book, including to train AI models, with attribution. Each answer page shows the licence the answer carries on Stack Exchange, and a link to the original.',
   };
+  const cover = book.appearance?.cover;
+  if (base !== '/' && cover) {
+    if (cover.src !== `/covers/${book.id}.jpg`) throw new Error(`The cover of ${book.id} is not /covers/${book.id}.jpg; a folder edition cannot place it.`);
+    projected.appearance = { ...book.appearance, cover: { ...cover, src: `${base}covers/${book.id}.jpg` } };
+  }
   if (replaced.join() !== expected.join()) throw new Error(`Expected the icon in ${expected.join(', ') || 'no section'} of ${book.id}; found ${replaced.join(', ') || 'none'}.`);
   if (JSON.stringify(projected).includes('notion.so/icons/')) throw new Error(`A Notion icon reference remains in ${book.id} after projection.`);
   return { book: projected, replaced };

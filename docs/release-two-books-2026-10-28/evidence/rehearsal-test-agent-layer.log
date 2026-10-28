@@ -1,0 +1,6 @@
+bun test v1.3.10 (30e609e0)
+
+ 1035 pass
+ 0 fail
+ 13567 expect() calls
+Ran 1035 tests across 1 file. [2.05s]

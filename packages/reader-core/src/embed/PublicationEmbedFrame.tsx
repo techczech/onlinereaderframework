@@ -20,7 +20,7 @@ export function PublicationEmbedFrame({ embed, rememberedHeight, onHeight }: Fra
   const frame = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(rememberedHeight ?? embed.height.initial);
   // Resource authority comes from the actual page, never a host-controlled <base>.
-  const url = useMemo(() => typeof window === 'undefined' ? null : resolvePublicationEmbedUrl(embed.path, embed.root, window.location.href), [embed]);
+  const url = useMemo(() => typeof window === 'undefined' ? null : resolvePublicationEmbedUrl(embed.path, embed.root, window.location.href, embed.base), [embed]);
   const heightCallback = useRef(onHeight);
   heightCallback.current = onHeight;
 

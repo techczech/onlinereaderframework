@@ -20,26 +20,36 @@ export const EMBED_CONTENT_SECURITY_POLICY = [
 ].join('; ');
 
 const EMBED_ROOT = /^(?:[A-Za-z0-9][A-Za-z0-9._-]*\/){1,4}$/;
+/** An edition folder: `/` or `/<lowercase segments>/`. */
+export const EDITION_BASE = /^\/(?:[a-z0-9][a-z0-9-]{0,62}\/){0,4}$/;
+const checkedBase = (base: string): string => {
+  if (!EDITION_BASE.test(base)) throw new Error(`Unsafe edition folder for _headers: ${base.slice(0, 100)}`);
+  return base;
+};
 
 /** Cloudflare Pages `_headers` rule for the embed folder: detaches the site-wide frame and script policy, then sets the embed policy. */
-export function embedSecurityHeaders(embedRoot: string): string {
+export function embedSecurityHeaders(embedRoot: string, base = '/'): string {
   if (!EMBED_ROOT.test(embedRoot) || embedRoot.split('/').some(segment => segment.includes('..'))) throw new Error(`Unsafe embed root for _headers: ${embedRoot.slice(0, 100)}`);
   return `
-/${embedRoot}*
+${checkedBase(base)}${embedRoot}*
   ! Content-Security-Policy
   ! X-Frame-Options
   Content-Security-Policy: ${EMBED_CONTENT_SECURITY_POLICY}
 `;
 }
 
-/** Without `embedRoot` the output is the v1 policy, byte for byte. */
-export const securityHeaders = (options: { embedRoot?: string } = {}): string => `/*
+/** Without options the output is the v1 policy, byte for byte. `base` scopes every rule to an edition folder (`/books/<name>/`), so a host can add the
+ * rules to its own `_headers` without changing any other page of the site; `embedRoot` adds the embed rule below that folder. */
+export const securityHeaders = (options: { embedRoot?: string; base?: string } = {}): string => {
+  const base = checkedBase(options.base ?? '/');
+  return `${base}*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: ${CONTENT_SECURITY_POLICY}
 
-/assets/*
+${base}assets/*
   Cache-Control: public, max-age=3600
-${options.embedRoot === undefined ? '' : embedSecurityHeaders(options.embedRoot)}`;
+${options.embedRoot === undefined ? '' : embedSecurityHeaders(options.embedRoot, base)}`;
+};

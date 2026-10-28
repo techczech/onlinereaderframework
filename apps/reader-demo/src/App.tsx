@@ -4,21 +4,19 @@ import { epubAssets } from './books/epub-assets';
 import publications from './books/original-publications.json';
 import { canonicalSites } from './canonical-sites';
 import { RELEASE_BOOK } from './release';
+import { releaseEmbeds } from './release-embeds';
+import { bookIdentities as identities } from './book-identities';
 
-const identities: Record<string, NonNullable<PublicationBook['appearance']>> = {
-  'linguistics': { accent: '#b84b2d', paper: '#fffaf1', ink: '#282723', masthead: 'editorial', cover: { src: '/covers/linguistics.jpg', alt: 'Linguistics cover with overlapping red and blue voices' } },
-  'deliberate-practice': { accent: '#a93232', paper: '#faf9f5', ink: '#202822', masthead: 'practical', cover: { src: '/covers/deliberate-practice.jpg', alt: 'Deliberate Practice cover with repeated ink strokes and a red correction' } },
-  'language-muscle': { accent: '#187060', paper: '#f7f6e9', ink: '#203d35', masthead: 'literary', cover: { src: '/covers/language-muscle.jpg', alt: 'Language Muscle cover with interwoven green and cream ribbons' } }
-};
 const withChrome = (book: PublicationBook): PublicationBook => ({ ...book,
   appearance: identities[book.id] ?? book.appearance,
   labels: { search: 'Search', tableOfContents: 'Table of contents', readingSettings: 'Reading settings', listen: 'Listen' },
   navigation: { homeDepth: 2, sidebarDepth: 3, showHomeContents: true, ...book.navigation }
 });
-/** What the app can show: the books and each book's host-owned embeds. A release holds its one book and no embeds. The demo loads the five-book registry
- * (src/books/demo-books.ts) with a dynamic import that only exists on the non-release path, so a release bundle never reaches the converted books. */
+/** What the app can show: the books and each book's host-owned embeds. A release holds its one book and only that book's embeds (src/release-embeds.ts,
+ * replaced per release). The demo loads the five-book registry (src/books/demo-books.ts) with a dynamic import that only exists on the non-release path,
+ * so a release bundle never reaches another book. */
 interface Library { books: PublicationBook[]; embeds: Readonly<Record<string, PublicationEmbeds>> }
-const releaseLibrary: Library = { books: (publications as PublicationBook[]).map(withChrome), embeds: {} };
+const releaseLibrary: Library = { books: (publications as PublicationBook[]).map(withChrome), embeds: releaseEmbeds };
 /** Per-book front-page layout. Linguistics previews Colour band provisionally; a book not listed keeps the classic home page. */
 const frontPageLayouts: Partial<Record<string, FrontPageLayoutKey>> = { linguistics: 'opus-colour-band' };
 /** Demo only: ?frontpage=<layout key> previews any layout, ?frontpage=classic the classic home page; an unknown value uses the book's configured layout. */

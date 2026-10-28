@@ -1,0 +1,4 @@
+## Books
+
+- [Increasing Reading Productivity: Framework for Improving Academic Reading](https://dominiklukes.net/books/academic-reading/llms.txt): An interactive guide to increasing reading productivity based on the Academic Reading Framework. Read at https://dominiklukes.net/books/academic-reading/; full text: https://dominiklukes.net/books/academic-reading/agent/academic-reading/full.md
+- [Foundations of Readability: Create accessible, easy-to-process documents and presentations](https://dominiklukes.net/books/readability/llms.txt): An interactive guide on document and presentation readability principles based on the work of Dominik Lukeš. Read at https://dominiklukes.net/books/readability/; full text: https://dominiklukes.net/books/readability/agent/readability-foundations/full.md

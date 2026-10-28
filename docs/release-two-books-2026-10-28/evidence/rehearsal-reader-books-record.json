@@ -1,0 +1,136 @@
+{
+  "description": "Reader-framework book editions imported into public/books/ by scripts/import-reader-books.ts. Read by robots.txt, sitemap.xml and llms.txt. Do not edit by hand.",
+  "books": [
+    {
+      "book": "academic-reading",
+      "path": "/books/academic-reading/",
+      "url": "https://dominiklukes.net/books/academic-reading/",
+      "title": "Increasing Reading Productivity: Framework for Improving Academic Reading",
+      "description": "An interactive guide to increasing reading productivity based on the Academic Reading Framework.",
+      "llms": "https://dominiklukes.net/books/academic-reading/llms.txt",
+      "sitemap": "https://dominiklukes.net/books/academic-reading/sitemap.xml",
+      "agentIndex": "https://dominiklukes.net/books/academic-reading/agent/academic-reading/index.md",
+      "agentFull": "https://dominiklukes.net/books/academic-reading/agent/academic-reading/full.md",
+      "reader": {
+        "sourceHead": "3a40d6200000000000000000000000000000000a",
+        "editionTreeSha256": "a185201757de8c7ce48356801bfb4ad6dbd7831a85d1e5683f0223c554161f0f",
+        "manifestSha256": "1bec3248191a3ec0138e2b2aaff3ed60737852ff3b162dbb7ec727ee609212ad",
+        "edition": {
+          "base": "/books/academic-reading/",
+          "embeds": [
+            {
+              "id": "cognition-explorer",
+              "path": "embeds/academic-reading/cognition-explorer/index.html",
+              "source": "interactives/academic-reading-framework/cognition-explorer/index.html",
+              "sha256": "01db7400896229e24e79d9bb2134642f6f29808514a754319c3ceb8b95e6c20b",
+              "bytes": 23359
+            },
+            {
+              "id": "reading-articulation-layers",
+              "path": "embeds/academic-reading/reading-articulation-layers/index.html",
+              "source": "interactives/academic-reading-framework/reading-articulation-layers/index.html",
+              "sha256": "dd3d58e80cd25ddc98ec2c33954aa41454d256df5a2d0159714df32553b982b9",
+              "bytes": 13858
+            },
+            {
+              "id": "reading-simplified-summary",
+              "path": "embeds/academic-reading/reading-simplified-summary/index.html",
+              "source": "interactives/academic-reading-framework/reading-simplified-summary/index.html",
+              "sha256": "54435d7f9ecde47fa526ce7a050c10cee8d92ccbbeaf49467a1cd4ad46fe447a",
+              "bytes": 9740
+            }
+          ],
+          "cover": {
+            "path": "covers/academic-reading.jpg",
+            "source": "public/covers/academic-reading.jpg",
+            "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+            "bytes": 954113,
+            "variant": "academic-reading-framework-03-print-connected-ideas",
+            "name": "Connected ideas",
+            "selectedFrom": "book-covers/academic-reading-framework/round-2026-10-28-reader-covers/academic-reading-framework-03-print-connected-ideas.jpg"
+          }
+        }
+      },
+      "importedTreeSha256": "0dff6a85b699e2346461d7ff194e82e7ea84b3127b71389eb349333824e32bc2",
+      "files": 146,
+      "bytes": 5573394,
+      "importedAt": "2026-10-28T03:21:00.707Z"
+    },
+    {
+      "book": "readability-foundations",
+      "path": "/books/readability/",
+      "url": "https://dominiklukes.net/books/readability/",
+      "title": "Foundations of Readability: Create accessible, easy-to-process documents and presentations",
+      "description": "An interactive guide on document and presentation readability principles based on the work of Dominik Lukeš.",
+      "llms": "https://dominiklukes.net/books/readability/llms.txt",
+      "sitemap": "https://dominiklukes.net/books/readability/sitemap.xml",
+      "agentIndex": "https://dominiklukes.net/books/readability/agent/readability-foundations/index.md",
+      "agentFull": "https://dominiklukes.net/books/readability/agent/readability-foundations/full.md",
+      "reader": {
+        "sourceHead": "3a40d6200000000000000000000000000000000a",
+        "editionTreeSha256": "bc727d5ef93cea64ab753c8ef5c77bf24a697f60d21d4dee5e8fafa30163ec3f",
+        "manifestSha256": "8da29bce4b4adc7458ecb6a812f7f10afc3a4660f305b1afb4d9410e363cb4c7",
+        "edition": {
+          "base": "/books/readability/",
+          "embeds": [
+            {
+              "id": "cramped-text-reveal",
+              "path": "embeds/readability-foundations/cramped-text-reveal/index.html",
+              "source": "interactives/readability-foundations/cramped-text-reveal/index.html",
+              "sha256": "4cccec58427f6cd021ab81f8504c689f2d2bf2631cd7f2e16e5bcf0e3efb0ef9",
+              "bytes": 15838
+            },
+            {
+              "id": "font-spacing-adjuster",
+              "path": "embeds/readability-foundations/font-spacing-adjuster/index.html",
+              "source": "interactives/readability-foundations/font-spacing-adjuster/index.html",
+              "sha256": "c541d7cb7761067ae4fb7b3716d3483ef72665012c5754ed43cfe38e57077857",
+              "bytes": 16923
+            },
+            {
+              "id": "slides-one-bullet",
+              "path": "embeds/readability-foundations/slides-one-bullet/index.html",
+              "source": "interactives/readability-foundations/slides-one-bullet/index.html",
+              "sha256": "78afa95e476e6dbb0166b33e858e31abc028e08be0a8499d3dc82681ac249fb4",
+              "bytes": 19603
+            },
+            {
+              "id": "slides-extraneous-text",
+              "path": "embeds/readability-foundations/slides-extraneous-text/index.html",
+              "source": "interactives/readability-foundations/slides-extraneous-text/index.html",
+              "sha256": "2e8b713107e14b64258146f462ad79b2eac50b426fd4f276e53450ba1d6f9e40",
+              "bytes": 15813
+            },
+            {
+              "id": "slides-zooming-images",
+              "path": "embeds/readability-foundations/slides-zooming-images/index.html",
+              "source": "interactives/readability-foundations/slides-zooming-images/index.html",
+              "sha256": "2edbcc400c0021b20e9ea63a04603af68e54cecbbc1b4d7a0503bd02d3fb51e2",
+              "bytes": 17260
+            },
+            {
+              "id": "readability-checker",
+              "path": "embeds/readability-foundations/readability-checker/index.html",
+              "source": "interactives/readability-foundations/readability-checker/index.html",
+              "sha256": "f5199a452faf5e3381d690ca52bae59f5f46d6b273d044bb2f4e0bb40cb0f8c5",
+              "bytes": 18824
+            }
+          ],
+          "cover": {
+            "path": "covers/readability-foundations.jpg",
+            "source": "public/covers/readability-foundations.jpg",
+            "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+            "bytes": 875251,
+            "variant": "readability-foundations-02-paper-clear-structure",
+            "name": "Clear structure",
+            "selectedFrom": "book-covers/readability-foundations/round-2026-10-28-reader-covers/readability-foundations-02-paper-clear-structure.jpg"
+          }
+        }
+      },
+      "importedTreeSha256": "54fd6df185fe8d954e86f5fc6d6d77bd2fcf079264026d08ad92b5959b17f667",
+      "files": 157,
+      "bytes": 5609610,
+      "importedAt": "2026-10-28T03:21:00.707Z"
+    }
+  ]
+}

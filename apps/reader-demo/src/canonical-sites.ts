@@ -5,4 +5,8 @@ export const canonicalSites: Readonly<Record<string, string>> = {
   linguistics: 'https://linguistics.dominiklukes.net/',
   'deliberate-practice': 'https://deliberatepractice.dominiklukes.net/',
   'language-muscle': 'https://buildingyourlanguagemuscle.edutools.fyi/',
+  // The two converted books, at the addresses agreed for them on dominiklukes.net (28 October 2026). A sub-path address makes its release an edition
+  // served from that folder (scripts/release/release-books.ts).
+  'academic-reading': 'https://dominiklukes.net/books/academic-reading/',
+  'readability-foundations': 'https://dominiklukes.net/books/readability/',
 };

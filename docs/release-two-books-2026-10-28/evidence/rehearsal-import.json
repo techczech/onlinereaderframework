@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "failures": [],
+ "imported": [
+  {
+   "book": "academic-reading",
+   "folder": "public/books/academic-reading",
+   "treeSha256": "0dff6a85b699e2346461d7ff194e82e7ea84b3127b71389eb349333824e32bc2",
+   "files": 146
+  },
+  {
+   "book": "readability-foundations",
+   "folder": "public/books/readability",
+   "treeSha256": "54fd6df185fe8d954e86f5fc6d6d77bd2fcf079264026d08ad92b5959b17f667",
+   "files": 157
+  }
+ ]
+}

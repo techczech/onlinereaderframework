@@ -12,10 +12,10 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
-import { build } from 'vite';
+import { build, type InlineConfig } from 'vite';
 import { canonicalSiteUrl } from '../../../../packages/reader-core/src/agent-export/index';
 import type { PublicationBook } from '../../../../packages/reader-core/src/original/types';
-import { planEdition, planProblems } from './edition-plan';
+import { planEdition, planProblems, type EditionPlan } from './edition-plan';
 import { RELEASE_ICON_FILE } from './projection';
 import { releasePlugin } from './release-plugin';
 import { verifyEdition } from './verify-edition';
@@ -48,6 +48,15 @@ export function hashEdition(folder: string): { files: EditionFile[]; treeSha256:
   });
   return { files, treeSha256: crypto.createHash('sha256').update(files.map(file => `${file.sha256}  ${file.path}`).join('\n')).digest('hex') };
 }
+
+/** The Vite configuration of one edition's build; the release tests build with exactly this. `base` is the edition folder. */
+export const releaseViteConfig = (plan: EditionPlan, app: string, outDir: string, logLevel: InlineConfig['logLevel'] = 'warn'): InlineConfig => ({
+  configFile: false, root: app, base: plan.base, publicDir: false, logLevel,
+  plugins: [react(), releasePlugin(plan, app)],
+  resolve: { alias: { 'reader-core': path.resolve(app, '../../packages/reader-core/src/index.ts') }, dedupe: ['react', 'react-dom'] },
+  define: { __READER_RELEASE_BOOK__: JSON.stringify(plan.book.id) },
+  build: { outDir, emptyOutDir: false, sourcemap: false },
+});
 
 export const otherSitesOf = (sites: Record<string, string | undefined>, bookId: string): string[] =>
   Object.entries(sites).filter(([id]) => id !== bookId).map(([, url]) => canonicalSiteUrl(url)).filter((url): url is string => !!url);
@@ -84,13 +93,7 @@ export async function buildEdition(options: BuildEditionOptions): Promise<BuildE
   fs.mkdirSync(staging);
   assertReleasePath(repo, staging, 'directory');
   try {
-    await build({
-      configFile: false, root: app, base: '/', publicDir: false, logLevel: 'warn',
-      plugins: [react(), releasePlugin(plan, app)],
-      resolve: { alias: { 'reader-core': path.resolve(app, '../../packages/reader-core/src/index.ts') }, dedupe: ['react', 'react-dom'] },
-      define: { __READER_RELEASE_BOOK__: JSON.stringify(book.id) },
-      build: { outDir: staging, emptyOutDir: false, sourcemap: false },
-    });
+    await build(releaseViteConfig(plan, app, staging));
   } catch (error) {
     return { ok: false, failures: [`build failed: ${(error as Error).message.split('\n')[0]}`], quarantine: staging };
   }
@@ -109,6 +112,8 @@ export async function buildEdition(options: BuildEditionOptions): Promise<BuildE
     totals: { files: staged.files.length, bytes: staged.files.reduce((sum, file) => sum + file.bytes, 0) }, treeSha256: staged.treeSha256,
     checks: { failures: [] as string[] },
     projection: { iconReplacedIn: plan.projection.replaced, ...(plan.projection.replaced.length ? { icon: RELEASE_ICON_FILE } : {}) },
+    // A converted book's edition folder, pinned cover and embed documents with their sources and hashes.
+    ...(plan.assets ? { edition: plan.assets } : {}),
     ...(plan.previous ? { previousSite: plan.previous.record } : {}),
     files: staged.files,
   };

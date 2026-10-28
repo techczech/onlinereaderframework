@@ -1,0 +1,43 @@
+bun test v1.3.10 (30e609e0)
+
+../../05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/test-importer-repair.ts:
+(pass) import: sound editions > both books land in public/books/<folder>/ byte for byte, without _headers; their rules join the site _headers between markers; the record lists them [17.42ms]
+(pass) import: sound editions > a second import replaces each book folder and block once, and records what it replaced [28.83ms]
+(pass) import: sound editions > one book can be imported alone; the other's folder, block and record entry stay [37.38ms]
+(pass) import: refusals change nothing > the reader's verify:release fails [14.78ms]
+(pass) import: refusals change nothing > built from uncommitted source [17.21ms]
+(pass) import: refusals change nothing > manifest names another address [16.82ms]
+(pass) import: refusals change nothing > manifest names another edition folder [20.45ms]
+(pass) import: refusals change nothing > manifest records failures [16.70ms]
+(pass) import: refusals change nothing > manifest path climbs out [17.02ms]
+(pass) import: refusals change nothing > manifest path is absolute [16.90ms]
+(pass) import: refusals change nothing > unexpected top-level robots.txt [16.10ms]
+(pass) import: refusals change nothing > a file on disk the manifest does not list [16.32ms]
+(pass) import: refusals change nothing > a file changed after the manifest [18.72ms]
+(pass) import: refusals change nothing > pinned tree hash differs [14.57ms]
+(pass) import: refusals change nothing > a symbolic link inside the edition [16.32ms]
+(pass) import: refusals change nothing > the edition folder is a symbolic link [14.05ms]
+(pass) import: refusals change nothing > public/books is a symbolic link [14.27ms]
+(pass) import: refusals change nothing > the destination book folder is a symbolic link [20.53ms]
+(pass) import: refusals change nothing > the import record is a dangling symbolic link [15.29ms]
+(pass) import: refusals change nothing > the import record is a symbolic link [15.49ms]
+(pass) import: refusals change nothing > public/_headers is a symbolic link [15.98ms]
+(pass) import: refusals change nothing > a site-wide header rule in the edition [30.58ms]
+(pass) import: refusals change nothing > detaching the host's noindex [43.12ms]
+(pass) import: refusals change nothing > an embed rule without the sandbox [18.53ms]
+(pass) import: refusals change nothing > an embed rule that allows same origin [15.84ms]
+(pass) import: refusals change nothing > unbalanced markers in the site _headers [21.54ms]
+(pass) import: refusals change nothing > an injected failure after staging [21.57ms]
+(pass) import: late failures restore the previous valid site > after-first-move [29.04ms]
+(pass) import: late failures restore the previous valid site > after-all-moves [30.78ms]
+(pass) import: late failures restore the previous valid site > before-record [42.33ms]
+(pass) import: late failures restore the previous valid site > after-record [36.26ms]
+(pass) import: late failures restore the previous valid site > a late failure on a first import leaves no book folder, block or record entry [27.96ms]
+(pass) header rules > the reader's folder rules pass; merging keeps every other byte of the site file
+(pass) header rules > refuses other headers, rules and comments [0.10ms]
+(pass) built site with imported books > only imported books are listed; each built book folder is complete and has no _headers of its own; the site _headers holds its block [1.81ms]
+
+ 35 pass
+ 0 fail
+ 186 expect() calls
+Ran 35 tests across 1 file. [870.00ms]

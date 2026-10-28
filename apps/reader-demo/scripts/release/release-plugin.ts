@@ -1,11 +1,12 @@
 /** Vite plugin of a pinned single-book release. It uses only Vite's own output pipeline: nothing here opens a file for writing.
- * - the demo's combined book file, address list and EPUB image table are replaced by this one book's, so no other manuscript, address or image is
- *   bundled; the build fails unless all three replacements happened;
+ * - the demo's combined book file, address list, EPUB image table, appearance table and release embed table are replaced by this one book's, so no other manuscript,
+ *   address, image or embed is bundled; the build fails unless every replacement happened (five: books, addresses, EPUB images, appearance, embeds);
  * - `index.html` gets the book's title, description, canonical address and crawler-readable text;
  * - every planned page and file (`edition-plan.ts`) is emitted, and nothing else besides Vite's own bundle. */
 import path from 'node:path';
 import type { Plugin } from 'vite';
 import { planProblems, type EditionPlan } from './edition-plan';
+import { bookIdentities } from '../../src/book-identities';
 import { epubAssetsModule } from './projection';
 import { releaseTemplate, renderShell } from './render-shell';
 import { outputPathProblems } from './route-checks';
@@ -21,6 +22,10 @@ export function releasePlugin(plan: EditionPlan, appRoot: string): Plugin {
     [path.join(appRoot, 'src', 'canonical-sites.ts'), () => `export const canonicalSites = ${JSON.stringify({ [book.id]: site })};`],
     // Only this book's EPUB images, by the src its release text uses.
     [path.join(appRoot, 'src', 'books', 'epub-assets.ts'), () => epubAssetsModule(plan.projection, appRoot)],
+    // Only this book's appearance entry (the converted books carry theirs in their own text).
+    [path.join(appRoot, 'src', 'book-identities.ts'), () => `export const bookIdentities = ${JSON.stringify(bookIdentities[book.id] ? { [book.id]: bookIdentities[book.id] } : {})};`],
+    // Only this book's embed descriptors (none for the originals), with the edition folder as their base.
+    [path.join(appRoot, 'src', 'release-embeds.ts'), () => `export const releaseEmbeds = ${JSON.stringify(plan.embeds ? { [book.id]: plan.embeds } : {})};`],
   ]);
   const replaced = new Set<string>();
   return {

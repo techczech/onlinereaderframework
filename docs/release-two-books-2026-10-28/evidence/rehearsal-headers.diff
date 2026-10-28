@@ -1,0 +1,35 @@
+8a9,42
+> 
+> # BEGIN reader book academic-reading (written by scripts/import-reader-books.ts; do not edit by hand)
+> /books/academic-reading/*
+>   X-Content-Type-Options: nosniff
+>   Referrer-Policy: strict-origin-when-cross-origin
+>   X-Frame-Options: DENY
+>   Permissions-Policy: camera=(), microphone=(), geolocation=()
+>   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+> 
+> /books/academic-reading/assets/*
+>   Cache-Control: public, max-age=3600
+> 
+> /books/academic-reading/embeds/academic-reading/*
+>   ! Content-Security-Policy
+>   ! X-Frame-Options
+>   Content-Security-Policy: sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'
+> # END reader book academic-reading
+> 
+> # BEGIN reader book readability-foundations (written by scripts/import-reader-books.ts; do not edit by hand)
+> /books/readability/*
+>   X-Content-Type-Options: nosniff
+>   Referrer-Policy: strict-origin-when-cross-origin
+>   X-Frame-Options: DENY
+>   Permissions-Policy: camera=(), microphone=(), geolocation=()
+>   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+> 
+> /books/readability/assets/*
+>   Cache-Control: public, max-age=3600
+> 
+> /books/readability/embeds/readability-foundations/*
+>   ! Content-Security-Policy
+>   ! X-Frame-Options
+>   Content-Security-Policy: sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'
+> # END reader book readability-foundations

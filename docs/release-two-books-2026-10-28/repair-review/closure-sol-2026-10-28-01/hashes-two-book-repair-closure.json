@@ -1,0 +1,69 @@
+{
+  "format": "file-digests-v1",
+  "reviewedSource": [
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+      "digest": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d",
+      "current": "1ab50b7f75958e424b8e9762c384d252229659abddeba725790841baeecd275d"
+    },
+    {
+      "project": "reader",
+      "path": "apps/reader-demo/scripts/release/test-release-books.ts",
+      "digest": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209",
+      "current": "a01501a698195d30270b777b14f7a6dbd1361deffe827815328ac22f84197209"
+    },
+    {
+      "project": "website",
+      "path": "scripts/import-reader-books.ts",
+      "digest": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e",
+      "current": "f207bc970caeb75e4ce357d76716d408dcc7b4e837f95ffff1d955c0c00ff54e"
+    },
+    {
+      "project": "website",
+      "path": "tests/reader-books.test.ts",
+      "digest": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e",
+      "current": "0dbe2c131b12e857812ae6e1e55a81a53c538e3c6dbb260e83ef9f3f03a2c86e"
+    }
+  ],
+  "files": [
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/review-two-book-repair-closure-2026-10-28.md",
+      "sha256": "b1a3aa102772d9995a6ad9423698a8b84282e8d27691bd389f63ea89c2d009cd"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/probe-two-book-repair-closure.mts",
+      "sha256": "ae3bd38db47cbd699dacdea51b271320d8d1090dc5e15536dde4c6089866dc3b"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/evidence-two-book-repair-closure.json",
+      "sha256": "6f0fcd65d151bab6ff9f7dbdc268d44ca52718538c454dce6025dbeb6b9fd029"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/log-two-book-repair-probe.txt",
+      "sha256": "d9dc2f6c37b8e66d04e00b40b1f9342eba77dea603959c73d04d0ddf67f8a3f6"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/test-reader-repair.mts",
+      "sha256": "ac103739c7e04f2121b5e8383abc8f01263151d8635a26b900b5cf2ada1e1067"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/test-importer-repair.ts",
+      "sha256": "3438d2b15100f951ad79da43a9dd85bcbf90e24d1d6a4785c3a5d8e77ebc6cd7"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/log-reader-repair-tests.txt",
+      "sha256": "fa7b84d1fe7ecbcf3dd54260d63331843d510c3bb176e87b83793ec2d90cc59a"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-two-books-2026-10-28/repair-review/closure-sol-2026-10-28-01/log-importer-repair-tests.txt",
+      "sha256": "98b5379d3e5510b80b4973bcfcfb3ac92c2bef240a2ab23d427a7c8f11aef733"
+    },
+    {
+      "path": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/release/verify-existing-edition.ts",
+      "sha256": "bdb4473f0008c84bbd9fe7c458d7009cfec9f2198c824eb4071fcb265a15ed9b"
+    }
+  ],
+  "scratchRemoved": true,
+  "reportReview": "Checked conclusions against final evidence; retained dirty-source and fixture limits; reviewed final prose for clarity and unsupported claims. Parent owns final handoff review."
+}

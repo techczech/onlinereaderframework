@@ -59,6 +59,20 @@ test('runtime URL resolution stays on the page origin inside the root', () => {
   assert.equal(resolve('https://book.example/', '//evil.test/embeds/a.html', '//evil.test/'), null);
 });
 
+test('an edition base keeps embeds inside the edition folder from any address of the edition', () => {
+  const resolve = (page, base, pathname = 'embeds/a/x/index.html', root = 'embeds/a/') => model.resolvePublicationEmbedUrl(pathname, root, page, base)?.href ?? null;
+  const want = 'https://site.example/books/a/embeds/a/x/index.html';
+  for (const page of ['https://site.example/books/a/', 'https://site.example/books/a', 'https://site.example/books/a/chapter-1/', 'https://site.example/books/a/chapter-1/deeper/?section=s#h',
+    'https://site.example/books/a/?section=x&text=y']) assert.equal(resolve(page, '/books/a/'), want, page);
+  assert.equal(resolve('https://site.example/books/a', undefined), 'https://site.example/books/embeds/a/x/index.html', 'without a base the page folder is the authority, as before');
+  assert.equal(resolve('http://127.0.0.1:9/books/a/x/', '/books/a/'), 'http://127.0.0.1:9/books/a/embeds/a/x/index.html', 'origin comes from the page');
+  for (const bad of ['books/a/', '/books/a', '//evil.test/', '/books/../a/', '/books/%2e%2e/', '/books\\a/', '/books/a/?q/', '/books/a/#/', 'https://evil.test/books/a/', '/books/./a/', '']) {
+    assert.equal(resolve('https://site.example/books/a/', bad), null, `base ${JSON.stringify(bad)}`);
+  }
+  assert.equal(model.validatePublicationEmbeds({ base: '//evil.test/', items: [] }).problems.length, 1);
+  assert.equal(model.validatePublicationEmbeds({ base: '/books/a/', items: [] }).problems.length, 0);
+});
+
 test('height messages: only an exact, bounded payload from an opaque origin', () => {
   const bounds = { min: 240, max: 1600 };
   const read = (data, origin = 'null') => model.readPublicationEmbedHeight(origin, data, bounds);
