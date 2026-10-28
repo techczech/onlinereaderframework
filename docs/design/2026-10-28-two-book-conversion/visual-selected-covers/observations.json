@@ -1,0 +1,274 @@
+[
+  {
+    "kind": "selected-cover",
+    "book": "academic-reading",
+    "chosen": "Connected ideas",
+    "variant": "academic-reading-framework-03-print-connected-ideas",
+    "width": 1280,
+    "url": "http://100.85.55.122:8773/?book=academic-reading&review=1",
+    "finalUrl": "http://100.85.55.122:8773/?book=academic-reading&review=1",
+    "file": "academic-reading-selected-cover-1280.png",
+    "coverImages": [
+      {
+        "src": "/covers/academic-reading.jpg",
+        "alt": "",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 30,
+        "renderedHeight": 42,
+        "visible": false,
+        "objectFit": "contain",
+        "inViewportX": false
+      },
+      {
+        "src": "/covers/academic-reading.jpg",
+        "alt": "Increasing Reading Productivity cover with linked landscape panels on dark blue ",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 256,
+        "renderedHeight": 400,
+        "visible": true,
+        "objectFit": "contain",
+        "inViewportX": true
+      }
+    ],
+    "servedCover": {
+      "url": "http://100.85.55.122:8773/covers/academic-reading.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 954113,
+      "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+      "recordedSha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+      "matchesRecorded": true
+    },
+    "allImageCount": 2,
+    "demoSelectorsInDom": 0,
+    "demoSelectorsVisible": 0,
+    "errors": [],
+    "outside": [],
+    "title": "Increasing Reading Productivity Framework for Improving Academic Reading — Online Reader Framework",
+    "h1": "Increasing Reading Productivity Framework for Improving Academic Reading",
+    "author": "Dominik Lukeš",
+    "tocEntriesVisible": 17,
+    "tocSample": [
+      "Start Reading",
+      "Search",
+      "Download eBook",
+      "Overview & Framework"
+    ],
+    "coverOverlaps": [
+      {
+        "src": "/covers/academic-reading.jpg",
+        "centreHitIsImage": true,
+        "centreHit": "img.publication-home-cover"
+      }
+    ],
+    "pageScrollWidthOverflow": 0
+  },
+  {
+    "kind": "selected-cover",
+    "book": "academic-reading",
+    "chosen": "Connected ideas",
+    "variant": "academic-reading-framework-03-print-connected-ideas",
+    "width": 390,
+    "url": "http://100.85.55.122:8773/?book=academic-reading&review=1",
+    "finalUrl": "http://100.85.55.122:8773/?book=academic-reading&review=1",
+    "file": "academic-reading-selected-cover-390.png",
+    "coverImages": [
+      {
+        "src": "/covers/academic-reading.jpg",
+        "alt": "",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 30,
+        "renderedHeight": 42,
+        "visible": false,
+        "objectFit": "contain",
+        "inViewportX": false
+      },
+      {
+        "src": "/covers/academic-reading.jpg",
+        "alt": "Increasing Reading Productivity cover with linked landscape panels on dark blue ",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 120,
+        "renderedHeight": 192,
+        "visible": true,
+        "objectFit": "contain",
+        "inViewportX": true
+      }
+    ],
+    "servedCover": {
+      "url": "http://100.85.55.122:8773/covers/academic-reading.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 954113,
+      "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+      "recordedSha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+      "matchesRecorded": true
+    },
+    "allImageCount": 2,
+    "demoSelectorsInDom": 0,
+    "demoSelectorsVisible": 0,
+    "errors": [],
+    "outside": [],
+    "title": "Increasing Reading Productivity Framework for Improving Academic Reading — Online Reader Framework",
+    "h1": "Increasing Reading Productivity Framework for Improving Academic Reading",
+    "author": "Dominik Lukeš",
+    "tocEntriesVisible": 17,
+    "tocSample": [
+      "Start Reading",
+      "Search",
+      "Download eBook",
+      "Overview & Framework"
+    ],
+    "coverOverlaps": [
+      {
+        "src": "/covers/academic-reading.jpg",
+        "centreHitIsImage": true,
+        "centreHit": "img.publication-home-cover"
+      }
+    ],
+    "pageScrollWidthOverflow": 0
+  },
+  {
+    "kind": "selected-cover",
+    "book": "readability-foundations",
+    "chosen": "Clear structure",
+    "variant": "readability-foundations-02-paper-clear-structure",
+    "width": 1280,
+    "url": "http://100.85.55.122:8773/?book=readability-foundations&review=1",
+    "finalUrl": "http://100.85.55.122:8773/?book=readability-foundations&review=1",
+    "file": "readability-foundations-selected-cover-1280.png",
+    "coverImages": [
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "alt": "",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 30,
+        "renderedHeight": 42,
+        "visible": false,
+        "objectFit": "contain",
+        "inViewportX": false
+      },
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "alt": "Foundations of Readability cover with a cream cut-paper page and a coral tab",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 256,
+        "renderedHeight": 400,
+        "visible": true,
+        "objectFit": "contain",
+        "inViewportX": true
+      }
+    ],
+    "servedCover": {
+      "url": "http://100.85.55.122:8773/covers/readability-foundations.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 875251,
+      "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+      "recordedSha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+      "matchesRecorded": true
+    },
+    "allImageCount": 2,
+    "demoSelectorsInDom": 0,
+    "demoSelectorsVisible": 0,
+    "errors": [],
+    "outside": [],
+    "title": "Foundations of Readability Create accessible, easy-to-process documents and presentations — Online Reader Framework",
+    "h1": "Foundations of Readability Create accessible, easy-to-process documents and pres",
+    "author": "Dominik Lukeš",
+    "tocEntriesVisible": 22,
+    "tocSample": [
+      "Start Reading",
+      "Search",
+      "Download eBook",
+      "Five principles"
+    ],
+    "coverOverlaps": [
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "centreHitIsImage": true,
+        "centreHit": "img.publication-home-cover"
+      }
+    ],
+    "pageScrollWidthOverflow": 0
+  },
+  {
+    "kind": "selected-cover",
+    "book": "readability-foundations",
+    "chosen": "Clear structure",
+    "variant": "readability-foundations-02-paper-clear-structure",
+    "width": 390,
+    "url": "http://100.85.55.122:8773/?book=readability-foundations&review=1",
+    "finalUrl": "http://100.85.55.122:8773/?book=readability-foundations&review=1",
+    "file": "readability-foundations-selected-cover-390.png",
+    "coverImages": [
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "alt": "",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 30,
+        "renderedHeight": 42,
+        "visible": false,
+        "objectFit": "contain",
+        "inViewportX": false
+      },
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "alt": "Foundations of Readability cover with a cream cut-paper page and a coral tab",
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 2560,
+        "renderedWidth": 120,
+        "renderedHeight": 192,
+        "visible": true,
+        "objectFit": "contain",
+        "inViewportX": true
+      }
+    ],
+    "servedCover": {
+      "url": "http://100.85.55.122:8773/covers/readability-foundations.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 875251,
+      "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+      "recordedSha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+      "matchesRecorded": true
+    },
+    "allImageCount": 2,
+    "demoSelectorsInDom": 0,
+    "demoSelectorsVisible": 0,
+    "errors": [],
+    "outside": [],
+    "title": "Foundations of Readability Create accessible, easy-to-process documents and presentations — Online Reader Framework",
+    "h1": "Foundations of Readability Create accessible, easy-to-process documents and pres",
+    "author": "Dominik Lukeš",
+    "tocEntriesVisible": 22,
+    "tocSample": [
+      "Start Reading",
+      "Search",
+      "Download eBook",
+      "Five principles"
+    ],
+    "coverOverlaps": [
+      {
+        "src": "/covers/readability-foundations.jpg",
+        "centreHitIsImage": true,
+        "centreHit": "img.publication-home-cover"
+      }
+    ],
+    "pageScrollWidthOverflow": 0
+  }
+]
