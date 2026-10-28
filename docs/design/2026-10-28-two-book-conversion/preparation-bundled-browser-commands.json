@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/next-books/build-source/build-academic.tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/.safe-preparation-browser-_ma_rro1"
+    ],
+    "exit": 0,
+    "stdout": "sections 10 diagrams [ 'reading-articulation-layers', 'reading-simplified-summary' ] nodes 9 edges 15\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/next-books/build-source/oracle-states.tsx",
+      "/Users/dominiklukes/worktrees/guides/readability-foundations",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/.safe-preparation-browser-_ma_rro1/oracle-states.json"
+    ],
+    "exit": 0,
+    "stdout": "states written\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/next-books/build-source/check-embeds.mjs",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/interactives",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/.safe-preparation-browser-_ma_rro1",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/preparation-bundled-browser-results.json"
+    ],
+    "exit": 0,
+    "stdout": "122/122 browser checks passed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/node_modules/.bin/tsx",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/src/books/next-books/build-source/build-provenance.ts",
+      "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/.safe-preparation-browser-_ma_rro1"
+    ],
+    "exit": 0,
+    "stdout": "provenance written; 12 outputs; 46 readability files identical to canonical checkout; 0 different\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,549 @@
+{
+  "description": "Provenance of the Academic Reading Framework and Foundations of Readability conversions. All sources are read-only; no source repository was modified.",
+  "generated": "2026-10-28T01:58:31.633Z",
+  "tools": {
+    "node": "v26.12.1",
+    "pandoc": "pandoc 3.12.1",
+    "tailwindcss": "3.4.19",
+    "esbuild": "0.28.2",
+    "chrome": "Google Chrome for Testing 153.0.8010.12"
+  },
+  "books": {
+    "academic-reading": {
+      "repository": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework",
+      "commit": "c0246459806dd898e878fcc4f995a2ecd93e9bc9",
+      "branch": "feat/independent-static-hosting",
+      "otherBranches": {
+        "guides/readable-subdomain": "29522af0dfa65357c24dd41f54aba52255fb8f37",
+        "main": "9630ee9802b0c80d51c352316b22d66140504322"
+      },
+      "contentFilesUnchangedBetweenBranches": true,
+      "files": [
+        {
+          "file": "constants.tsx",
+          "sha256": "ebd31760ebc2726ea2a84332cbcb861914ae5f1bc56a34b3b12a3e26ed27e188"
+        },
+        {
+          "file": "types.ts",
+          "sha256": "fddc766edcfec7d85e471c6a1ee5c6c2b7a3552b9055e7b2a0ca15c4ea24dd61"
+        },
+        {
+          "file": "components/CognitionExplorer.tsx",
+          "sha256": "333f3d9bebfdff954dba71c8e91a465e1f955a44e00ba524873120ed4a1d65a7"
+        },
+        {
+          "file": "components/DetailSection.tsx",
+          "sha256": "6810c64d331fc9cf641d4455a773aa1997657406afc045423c28abee551df532"
+        },
+        {
+          "file": "components/Hero.tsx",
+          "sha256": "50fa9a028a420cecdaf5952dae168fef0a0468c7e8b752a896feabbd63b30edc"
+        },
+        {
+          "file": "App.tsx",
+          "sha256": "0de68b835108cb52f2b89b90205dbb7b3698db9218e2962061794a0faf5fce2a"
+        },
+        {
+          "file": "metadata.json",
+          "sha256": "ca24614d2b5fd9f8a2ddebb9cc1af96735845a41590b8a1c27a6a37c16ee5168"
+        },
+        {
+          "file": "README.md",
+          "sha256": "84a55c6d105ef45439d9fa318b3ed1475e40c460bf434579ed8aae84942be524"
+        },
+        {
+          "file": "tailwind.config.cjs",
+          "sha256": "51aa4082390e38c1c726d200e50f9181f20f7f71cdd26918e127356bf2335d36"
+        }
+      ],
+      "licenceNoticesInOriginal": [],
+      "licenceFinding": "No licence or copyright statement exists in the original source, its README, its metadata or its git history. The draft Folio book.toml states CC BY-SA 4.0 (set from the earlier brief, not from the original). No licence is printed in the converted book.",
+      "folioDraftLicence": [
+        "licence = \"CC BY-SA 4.0\"",
+        "licence_url = \"https://creativecommons.org/licenses/by-sa/4.0/\""
+      ],
+      "authorLine": "Developed by Dominik Lukeš for the Reading and Writing Innovation Lab (App.tsx and the overview section)"
+    },
+    "readability-foundations": {
+      "repository": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations",
+      "readFrom": "/Users/dominiklukes/worktrees/guides/readability-foundations",
+      "commitReadFrom": "31a48be29361d844400c69d0fa9fa49083109b21",
+      "branchReadFrom": "guides/readable-subdomain",
+      "canonicalCheckoutCommit": "d96c01dce338ca833e710261bf38cc1c0c4ce015",
+      "contentFilesIdenticalToCanonicalCheckout": {
+        "identical": 46,
+        "different": []
+      },
+      "files": [
+        {
+          "file": "types.ts",
+          "sha256": "a9bfaf14c1bd8816b7c99e4f4842bfc9f2828bda8d5f3475fc1cc8d3f3a431d3"
+        },
+        {
+          "file": "components/Home.tsx",
+          "sha256": "f63b0c5539bb179cd5581546e105bc293913a3812ceea66c6babade46d9eee9f"
+        },
+        {
+          "file": "components/Content.tsx",
+          "sha256": "5aa048a872f05235dbb59596adda94a47de12cc14a5977f36b729fc918856a12"
+        },
+        {
+          "file": "components/Navigation.tsx",
+          "sha256": "13217c53b6f6a0abe1052c4246b471db56691614587888440624cd5f5226151f"
+        },
+        {
+          "file": "components/Section.tsx",
+          "sha256": "b4c8246b08a2d364e2cd5ee72f686163493062ccbd594ac240aa548af78b2176"
+        },
+        {
+          "file": "components/blocks/BlockRenderer.tsx",
+          "sha256": "fbcaa2a5f4a3e3d9faaf1171068d52adc0327b322733d81bd7c6b6e471ff52ac"
+        },
+        {
+          "file": "components/blocks/RichText.tsx",
+          "sha256": "4c3903a482351480aac6a98918d8a3e953209fd6fb8a23eeee00942f3bfb3106"
+        },
+        {
+          "file": "data/content/accessibilityData.tsx",
+          "sha256": "6e3da417658cb14e4999cf5a68915468bb471203f91a693e25de046c604429ad"
+        },
+        {
+          "file": "data/content/cognitiveLoadData.tsx",
+          "sha256": "ed9468f8aef83661e5d20d3166e7e97e9fcff0273c8ab5eded603a979ed648e3"
+        },
+        {
+          "file": "data/content/evidenceData.tsx",
+          "sha256": "2708dde11f832a133ff35fc66121292c825d3853ee8a70b6e6afc2a32405875a"
+        },
+        {
+          "file": "data/content/examplesSimplifiedData.tsx",
+          "sha256": "5d132e9a7deb91e4794dc6f5168c4e68d3a72aecb3056ddac1a0b60c14acaf9a"
+        },
+        {
+          "file": "data/content/fivePrinciplesData.tsx",
+          "sha256": "47042ee2b3084a2c7da47ffe22606fe9c35356338bda1273b5bc0b59886421f2"
+        },
+        {
+          "file": "data/content/formattingExamplesData.tsx",
+          "sha256": "50cc8f135db135dfe479225b254ad5e4fb36d5866ea15b8c821729a1ff4931fb"
+        },
+        {
+          "file": "data/content/howPeopleReadData.tsx",
+          "sha256": "954e343fb6b3867610bdd9a828b4ada38f9a74255c8eeb6195fee73492e493fd"
+        },
+        {
+          "file": "data/content/jargonAcronymsData.tsx",
+          "sha256": "6ae03322079752003b582acc627bda5c0e8548693b0532f889bd54eead61aac6"
+        },
+        {
+          "file": "data/content/slideFormattingExamplesData.tsx",
+          "sha256": "9243f65b8a8f17da8435da2304911101128bf20255f06cbf3c0295ea501f9216"
+        },
+        {
+          "file": "data/content/tenSimpleThingsDocsData.tsx",
+          "sha256": "7e35ac97943c5c4c1a9f60298e46c79a2c0f9673c89368bad69101bccbb08653"
+        },
+        {
+          "file": "data/content/tenSimpleThingsPptData.tsx",
+          "sha256": "68604503b4abe60baad33668dd9e675dcf3cdf89ebdcc9d9b87cf1f85303c6ea"
+        },
+        {
+          "file": "data/content/threeStepsSimpleData.tsx",
+          "sha256": "b37283aa11fd4676327ab11bcee317f57646a99b5ea13855c65416f6ff156980"
+        },
+        {
+          "file": "components/interactive/DyslexiaSimulator.tsx",
+          "sha256": "146d088f5062afe08fd48807e60dbeedaea454f33b6e0380012c4938cd966aba"
+        },
+        {
+          "file": "components/interactive/FontSpacingAdjuster.tsx",
+          "sha256": "b8154e0045a3ca7eca207baddd007cd4fbf583b3cbb775177bd5d659dfba2294"
+        },
+        {
+          "file": "components/interactive/LinkToSection.tsx",
+          "sha256": "6c70220e0b4934cfa6651afe313109a89d8cece5b069f4deceeef491d97a32b3"
+        },
+        {
+          "file": "components/interactive/SlideSimulation.tsx",
+          "sha256": "b701891abf8a7cc70622895fac55a68fbda51ade268cc2620fe9a5848ae18e89"
+        },
+        {
+          "file": "components/tools/ReadabilityChecker.tsx",
+          "sha256": "7564f6ca10021d5e06187b7fa3f0e1ee028c7d77f8ca31b9a80444a4c47c76fa"
+        },
+        {
+          "file": "components/tools/SimpleLanguageChecklist.tsx",
+          "sha256": "115097b871f875902bcff9a61012c3785d3efeff27b5e7398ef56a430e1aaa7c"
+        },
+        {
+          "file": "components/sections/Accessibility.tsx",
+          "sha256": "c562c2889fafa990e841e7641394f29356b82171701a824e72b37f5949f2f941"
+        },
+        {
+          "file": "components/sections/ChecklistSection.tsx",
+          "sha256": "257610681e87e3d3c7ba466a1dee2b09497ae70a254a9c9eaf4b68f07103c2c5"
+        },
+        {
+          "file": "components/sections/CognitiveLoad.tsx",
+          "sha256": "5a9b4e92622c741af3f49977793d9e59c70c41fa0f96a239512ff887dad8a123"
+        },
+        {
+          "file": "components/sections/Evidence.tsx",
+          "sha256": "67879da9aabd352290f5964e8d250fddffeac00c1cc4db35d5d27f2ca9f2bf66"
+        },
+        {
+          "file": "components/sections/ExamplesSimplified.tsx",
+          "sha256": "6e4768426d5f6a09e4eb31a8b4de3e13f17de2556e5089088a47ac7b12625783"
+        },
+        {
+          "file": "components/sections/FivePrinciples.tsx",
+          "sha256": "546bd991e1051d9edaefa23fc4b5d598b01b678bd69142383bd937ff3ad5bf00"
+        },
+        {
+          "file": "components/sections/FormattingExamples.tsx",
+          "sha256": "5ae34fd0c46869d495230d3b7a5ad2aa7dccdcb6a43c81e83ea4fafaf909b783"
+        },
+        {
+          "file": "components/sections/HowPeopleRead.tsx",
+          "sha256": "280cb18bf19c6ac2acecb0c627977e9a4c2b1450d9c4ebc85d9334bbc2308d30"
+        },
+        {
+          "file": "components/sections/JargonAcronyms.tsx",
+          "sha256": "89274c7f4bc20ed393063334b6d56c32cb522f1991a88265d60f4020b1748de0"
+        },
+        {
+          "file": "components/sections/ReadabilityToolSection.tsx",
+          "sha256": "8f77fe18f7d7a5dcf7fe1dadb6847fde1cec4f7f751383cc76d4973c631441c8"
+        },
+        {
+          "file": "components/sections/SlideFormattingExamples.tsx",
+          "sha256": "417463b55a1a24bbc83e265e7bedc6cb19d878b2c56bdaa834a6d3ec78e2397b"
+        },
+        {
+          "file": "components/sections/TenSimpleThingsDocs.tsx",
+          "sha256": "1e332ec66f3ebb624bf1e55d32021a95c10410787fca1399a1b61452f04d08fb"
+        },
+        {
+          "file": "components/sections/TenSimpleThingsPpt.tsx",
+          "sha256": "e85a60428372325bef4f814401f94b02fe6d82be0f646943a8e2531c0d890b9f"
+        },
+        {
+          "file": "components/sections/ThreeStepsSimple.tsx",
+          "sha256": "b8cc2b06f6037c1ae66f7d0d5f7514987ef8412e13a96001d7b8ab2ca73374f9"
+        },
+        {
+          "file": "components/sections/ToolsAndChecklists.tsx",
+          "sha256": "13d768209b6b662d89214685e3576340dedc239116de6f854a03dc2ced5427d4"
+        },
+        {
+          "file": "components/layouts/CarouselLayout.tsx",
+          "sha256": "65d95ccaeebba577954257f91c419667291d2d2ee2558a18052f2161d9aaa4e2"
+        },
+        {
+          "file": "components/layouts/ScrollLayout.tsx",
+          "sha256": "6beae208266f977480212491942279c244893a82f3555fd79caaf0d6571b5a43"
+        },
+        {
+          "file": "components/layouts/SectionRenderer.tsx",
+          "sha256": "9113e3e183dc38aff3ba4992674227fff35953f4058b43c9793a2031da37ebff"
+        },
+        {
+          "file": "context/NavigationContext.tsx",
+          "sha256": "1e6c1244d3da812041f7ac5084c480206ed771a87c5890d21537f79507a9f205"
+        },
+        {
+          "file": "README.md",
+          "sha256": "35e91b63b8fc2c9a57808a17b6a586ebdd1bc240f017b9be4696b9218bf74222"
+        },
+        {
+          "file": "metadata.json",
+          "sha256": "693980b1218510d945a1b98fdd2354eef3b6f820dbe1e4797b3330aef989cc92"
+        }
+      ],
+      "licenceNoticesInOriginal": [
+        {
+          "file": "README.md",
+          "line": 14,
+          "text": "**Author:** Dominik Lukeš, CC BY"
+        },
+        {
+          "file": "README.md",
+          "line": 69,
+          "text": "## License"
+        },
+        {
+          "file": "README.md",
+          "line": 71,
+          "text": "CC BY - Dominik Lukeš"
+        },
+        {
+          "file": "components/Home.tsx",
+          "line": 77,
+          "text": "Dominik Lukeš, CC BY • Version from May 2023"
+        },
+        {
+          "file": "components/Home.tsx",
+          "line": 123,
+          "text": "<p className=\"text-sm\">Based on the work of Dominik Lukeš (CC BY)</p>"
+        },
+        {
+          "file": "components/Navigation.tsx",
+          "line": 270,
+          "text": "<span className=\"text-slate-300\">© Dominik Lukeš, CC BY</span>"
+        },
+        {
+          "file": "readable/config.ts",
+          "line": 13,
+          "text": "'An interactive guide to making documents and presentations readable and accessible, based on cognitive load theory and reading strategy research. By Dominik Lukeš, CC BY.',"
+        },
+        {
+          "file": "readable/config.ts",
+          "line": 47,
+          "text": "intro: 'Dominik Lukeš, CC BY.',"
+        }
+      ],
+      "licenceFinding": "Every notice in the original (README twice, Home page twice, footer, readable-page config), in its git history, and in the main-site catalogue says \"CC BY\". \"BY-SA\" and \"ShareAlike\" occur nowhere in the original source or its history. CC BY-SA 4.0 appears only in the draft Folio book.toml. The converted book preserves \"CC BY\" and links the version-neutral CC BY landing address; no licence version is inferred.",
+      "folioDraftLicence": [
+        "licence = \"CC BY-SA 4.0\"",
+        "licence_url = \"https://creativecommons.org/licenses/by-sa/4.0/\""
+      ],
+      "imagesNotBundled": [
+        "https://images.unsplash.com/photo-1578916171728-46686eac8d58 (used at 400 and 800 px in the slide demonstration; replaced by an inline placeholder picture)"
+      ]
+    }
+  },
+  "folioFiles": [
+    {
+      "file": "academic-reading-framework/01-overview-framework.md",
+      "sha256": "05c9afc2b6235aa4ec33e7e65ecbc6b1a6b41832f8ab5be20a2d28dc15e8b122"
+    },
+    {
+      "file": "academic-reading-framework/02-purposeful.md",
+      "sha256": "96d3d0d142934fb27cd18430aaa8d223710a3d5b9a51c2e5b824668c9aef53bf"
+    },
+    {
+      "file": "academic-reading-framework/03-strategic.md",
+      "sha256": "80c4d78bf046a1a273abad09c24c6e4cefc9687ee1a9da9b5781317a8646294f"
+    },
+    {
+      "file": "academic-reading-framework/04-non-linear.md",
+      "sha256": "8e563920fba64451c924712a045c2a710faffbdb0a062ea18565e210022f92ed"
+    },
+    {
+      "file": "academic-reading-framework/05-active.md",
+      "sha256": "93b5c01f0caa23dda8d177c55e311e3b4513995d87c786101ad3c5a722f98ab6"
+    },
+    {
+      "file": "academic-reading-framework/06-productive-and-interactive.md",
+      "sha256": "eb63fdfb986302b3a5393d5f3f6b61c750bd443809d270aa5a57a15526ee9dee"
+    },
+    {
+      "file": "academic-reading-framework/07-comparative-and-cumulative.md",
+      "sha256": "3f7b1814a3710f2d026454cb200e2be0ebd928f11217637945d5df8205cb1ecc"
+    },
+    {
+      "file": "academic-reading-framework/08-beyond-decoding-cognition-of-academic-reading.md",
+      "sha256": "17b16ea174aea0d3a72ac4ca92a1b102841b5bb06bf93ebc841f8f0a379589da"
+    },
+    {
+      "file": "academic-reading-framework/09-cognition-explorer.md",
+      "sha256": "bee82fca26d707ea4a885720f68fd95aaa0d8c620d1a88d7e1da23c429da05c2"
+    },
+    {
+      "file": "academic-reading-framework/09-narrative-vs-ruminative-reading.md",
+      "sha256": "f60b7d7fc9abbe46ad3052d94caacf982abd1aa8596553e0e2136a700791ed06"
+    },
+    {
+      "file": "academic-reading-framework/_report-structure.json",
+      "sha256": "038af83a2dfab460b05d4a3f0de683e6e078b324b3c367fc121e3621c9679368"
+    },
+    {
+      "file": "academic-reading-framework/book.toml",
+      "sha256": "de2de8cc1734c01aafaaa29ef7fb30013ce36f3e5e27e9b7336025663052538b"
+    },
+    {
+      "file": "readability-foundations/01-five-principles-of-readability.md",
+      "sha256": "dd3e10770ecd503f2ff918f7c3abd5ab387be3eaad99f1899dfb9c1d86ab9b3a"
+    },
+    {
+      "file": "readability-foundations/02-how-people-read-strategies-and-approaches.md",
+      "sha256": "1083ce988b92792f2f3281bcf127ffa56aa587213adf052933dea12af37f5aa0"
+    },
+    {
+      "file": "readability-foundations/03-readability-through-the-lens-of-cognitive-load.md",
+      "sha256": "0a82e9ebdf3d93bf93e8e29277bbd243975b2aa37a2055a614981e3b8c0b1886"
+    },
+    {
+      "file": "readability-foundations/04-10-tips-for-readable-documents.md",
+      "sha256": "24a122089ac0da1c6312b51d55b7848c3df828efe4000086f9fec1401d2baed4"
+    },
+    {
+      "file": "readability-foundations/05-10-tips-for-readable-slides.md",
+      "sha256": "b1c9f1c45c52c354fdb4a311251d7f7e25ebd984d430e91d81cb9e3a63444462"
+    },
+    {
+      "file": "readability-foundations/06-visual-examples-of-text-formatting.md",
+      "sha256": "ca4798f472efd65be5a519faf809ae26f943530e7fc340760181b4356ab98aa7"
+    },
+    {
+      "file": "readability-foundations/07-visual-examples-of-slide-formatting.md",
+      "sha256": "8cebee2a320a33dc2ac014bc82227ee5984db267ef7ae136ed4be97833b5383e"
+    },
+    {
+      "file": "readability-foundations/08-3-steps-to-simpler-language.md",
+      "sha256": "243f0a43aea351dd4cc19318ce657d8c5faf52018c84edddbbc175b2e0059765"
+    },
+    {
+      "file": "readability-foundations/09-examples-of-simplified-language.md",
+      "sha256": "dc35a0a489331a79f9c5870a872c0a07673625d9df70d25f3033766e309760e2"
+    },
+    {
+      "file": "readability-foundations/10-jargon-and-acronyms.md",
+      "sha256": "f56560eef7621ae43cf699f617b4010acf33aa91e90e415b80a6273914958214"
+    },
+    {
+      "file": "readability-foundations/11-readability-checker.md",
+      "sha256": "bc5e61e4cfe34d003fd654f82edf2d5777b670b96b240ba1453d0195387c95bc"
+    },
+    {
+      "file": "readability-foundations/11-simple-language-checklist.md",
+      "sha256": "1773c8b4b3e373be688506c3d89bdacbabcdae3e80e66484eb75924b04f4f671"
+    },
+    {
+      "file": "readability-foundations/12-accessibility-for-users-of-screen-readers-or-magnifiers.md",
+      "sha256": "0fda1c1f59c51ada07bdd219e7607c759da3e121e013131edc1df9d74f29a2bd"
+    },
+    {
+      "file": "readability-foundations/13-how-do-we-know-the-evidence.md",
+      "sha256": "889781aaffab19f0c4d0452e758c04979d6317a00e2493289b5829daeec24567"
+    },
+    {
+      "file": "readability-foundations/_report-structure.json",
+      "sha256": "ad128a99bc59c55ebc8b6593d7057742c65dbf74052e5c81f34565df2ac651ce"
+    },
+    {
+      "file": "readability-foundations/book.toml",
+      "sha256": "4a7bc3cda41a0d3f270be22d00760bdd0da8b496bedea4acdcd819d218b62d29"
+    }
+  ],
+  "coordinationRecordsRead": [
+    "/Users/dominiklukes/gitrepos/_COORDINATION/webapps-websites/research/2026-10-24-confirmed-edutools-books-and-semantic-machines-destinations.md",
+    "/Users/dominiklukes/gitrepos/_COORDINATION/webapps-websites/research/2026-10-24-execution-order-for-the-agreed-app-migrations.md",
+    "/Users/dominiklukes/gitrepos/_COORDINATION/webapps-websites/_TASK-LOG/2026-10-22-guides-under-one-address.md",
+    "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet/src/content/guides.json",
+    "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet/src/content/showcase.json"
+  ],
+  "academicRoute": {
+    "decision": "Confirmed by Dominik on 24 October 2026: Academic Reading becomes one of his books within dominiklukes.net, through the existing book system; supersedes academicreading.dominiklukes.net; redirect academicreading.edutools.fyi after publication; \"do not invent the canonical book path before inspecting the book system\".",
+    "foundInDlnet": "No book route exists yet. guides.json lists \"academic-reading\" at https://academicreading.edutools.fyi (placement writing); showcase.json links it to /resources/academic-reading and Readability to /resources/readability-foundations (internal resource pages). The converted book id is \"academic-reading\" and sourceUrl keeps the current catalogue address until the route is chosen.",
+    "competingPublication": "None created. No website file was edited."
+  },
+  "derivations": {
+    "cognition-explorer": {
+      "from": [
+        "components/CognitionExplorer.tsx"
+      ],
+      "method": "NODES and EDGES arrays evaluated from the original source text; getEdgePath, label positions, colours and selection logic ported line for line; verified against the original server-rendered SVG (15 paths, 15 labels, 9 nodes)."
+    },
+    "reading-articulation-layers": {
+      "from": [
+        "constants.tsx (COGNITION_POINT)"
+      ],
+      "method": "The original JSX element is rendered as it stands and styled with the original Tailwind classes."
+    },
+    "reading-simplified-summary": {
+      "from": [
+        "constants.tsx (COGNITION_POINT)"
+      ],
+      "method": "As above."
+    },
+    "cramped-text-reveal": {
+      "from": [
+        "components/interactive/DyslexiaSimulator.tsx"
+      ],
+      "method": "Original component rendered in both states; the two class sets are read from those renders."
+    },
+    "font-spacing-adjuster": {
+      "from": [
+        "components/interactive/FontSpacingAdjuster.tsx"
+      ],
+      "method": "Original component rendered; stepping rules (14 to 40 px in steps of 2, reset to 20) as in the source."
+    },
+    "readability-checker": {
+      "from": [
+        "components/tools/ReadabilityChecker.tsx"
+      ],
+      "method": "The analysis function is the original useMemo body, type-stripped by esbuild and inlined, not retyped; markup from the original render."
+    },
+    "slides-one-bullet / slides-extraneous-text / slides-zooming-images": {
+      "from": [
+        "components/interactive/SlideSimulation.tsx",
+        "components/blocks/BlockRenderer.tsx",
+        "data/content/slideFormattingExamplesData.tsx"
+      ],
+      "method": "The original BlockRenderer renders the original comparison blocks; only the remote photograph is replaced."
+    }
+  },
+  "outputs": [
+    {
+      "file": "interactives/academic-reading-framework/cognition-explorer/index.html",
+      "sha256": "01db7400896229e24e79d9bb2134642f6f29808514a754319c3ceb8b95e6c20b",
+      "bytes": 23359
+    },
+    {
+      "file": "interactives/academic-reading-framework/reading-articulation-layers/index.html",
+      "sha256": "dd3d58e80cd25ddc98ec2c33954aa41454d256df5a2d0159714df32553b982b9",
+      "bytes": 13858
+    },
+    {
+      "file": "interactives/academic-reading-framework/reading-simplified-summary/index.html",
+      "sha256": "54435d7f9ecde47fa526ce7a050c10cee8d92ccbbeaf49467a1cd4ad46fe447a",
+      "bytes": 9740
+    },
+    {
+      "file": "interactives/readability-foundations/cramped-text-reveal/index.html",
+      "sha256": "4cccec58427f6cd021ab81f8504c689f2d2bf2631cd7f2e16e5bcf0e3efb0ef9",
+      "bytes": 15838
+    },
+    {
+      "file": "interactives/readability-foundations/font-spacing-adjuster/index.html",
+      "sha256": "c541d7cb7761067ae4fb7b3716d3483ef72665012c5754ed43cfe38e57077857",
+      "bytes": 16923
+    },
+    {
+      "file": "interactives/readability-foundations/readability-checker/index.html",
+      "sha256": "f5199a452faf5e3381d690ca52bae59f5f46d6b273d044bb2f4e0bb40cb0f8c5",
+      "bytes": 18824
+    },
+    {
+      "file": "interactives/readability-foundations/slides-extraneous-text/index.html",
+      "sha256": "2e8b713107e14b64258146f462ad79b2eac50b426fd4f276e53450ba1d6f9e40",
+      "bytes": 15813
+    },
+    {
+      "file": "interactives/readability-foundations/slides-one-bullet/index.html",
+      "sha256": "78afa95e476e6dbb0166b33e858e31abc028e08be0a8499d3dc82681ac249fb4",
+      "bytes": 19603
+    },
+    {
+      "file": "interactives/readability-foundations/slides-zooming-images/index.html",
+      "sha256": "2edbcc400c0021b20e9ea63a04603af68e54cecbbc1b4d7a0503bd02d3fb51e2",
+      "bytes": 17260
+    },
+    {
+      "file": "src/books/next-books/academic-reading-framework.book.json",
+      "sha256": "b1fff1d0257e51d7b7f8b897eb49dd2756fb2a56efd6beb92a67a65e4ad960ab",
+      "bytes": 36268
+    },
+    {
+      "file": "src/books/next-books/readability-foundations.book.json",
+      "sha256": "d9129896481b375477602788f157391c308bc3c552ce122b262aa3d0a2d10c53",
+      "bytes": 42703
+    },
+    {
+      "file": "src/books/next-books/embed-manifest.json",
+      "sha256": "c2afc85fffbdaaa8511a62934c3876ace72c6240da1d43dc5ab8ad41d6d49b54",
+      "bytes": 6141
+    }
+  ]
+}

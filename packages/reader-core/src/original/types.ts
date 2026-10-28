@@ -83,6 +83,9 @@ export interface PublicationReaderProps {
   epub?: PublicationEpubOptions | false;
   /** Show "Ask an agent to help you read this" and link the generated agent files. Off unless the host generated them. */
   agent?: PublicationAgentAccess | false;
+  /** Host-registered interactive HTML resources, each placed before its prose alternative in a section. Off unless given.
+   * Contract: src/embed/README.md. Manuscript content can never create a frame. */
+  embeds?: import('../embed/embed-model.js').PublicationEmbeds | false;
 }
 
 export interface Highlight {

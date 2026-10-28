@@ -1,0 +1,44 @@
+[
+  {
+    "name": "academic",
+    "exit": 0,
+    "stdout": "sections 10 diagrams [ 'reading-articulation-layers', 'reading-simplified-summary' ] nodes 9 edges 15\n",
+    "stderr": ""
+  },
+  {
+    "name": "readability",
+    "exit": 0,
+    "stdout": "sections 14 embeds cramped-text-reveal,font-spacing-adjuster,slides-one-bullet,slides-extraneous-text,slides-zooming-images,readability-checker dropped 6\n",
+    "stderr": ""
+  },
+  {
+    "name": "originals",
+    "exit": 0,
+    "stdout": "original renders 10 14\n",
+    "stderr": ""
+  },
+  {
+    "name": "source-accounting-before",
+    "exit": 1,
+    "stdout": "FAIL academic: original homepage summary 1 preserved Explore the cognitive models behind academic reading. Understand how cognitive load and pre-coding shape comprehension.\nFAIL academic: original homepage summary 2 preserved Linear reading often fails in academic contexts. Discover how to switch modes for better comprehension.\nFAIL academic: original homepage summary 3 preserved Interact with our dynamic map of the reading process. Visualize how manipulating, decoding, and encoding interact in real-time.\nFAIL readability: original homepage summary 1 preserved Learn the core principles: Space, Chunks, Guides, Information Structure, and Simple Language.\nFAIL readability: original homepage summary 2 preserved Understand reading strategies like skimming and scanning to better inform document creation.\nFAIL readability: original homepage summary 3 preserved Explore how working memory limits affect reading and how to reduce mental effort for your readers.\nFAIL readability: original homepage summary 4 preserved Actionable steps to immediately improve your documents, from headings to font choices.\nFAIL readability: original homepage summary 5 preserved Increase impact with text size, smart cropping, animations, and better slide structure.\nFAIL readability: original homepage summary 6 preserved See the difference effective formatting makes with side-by-side comparisons of space, bolding, and structure.\nFAIL readability: original homepage summary 7 preserved Before and after examples of slide layouts, zooming, and structure.\nFAIL readability: original homepage summary 8 preserved Master the art of simplification: shorter sentences, addressing the reader, and using verbs.\nFAIL readability: original homepage summary 9 preserved Concrete examples of simplified language and how rephrasing improves clarity.\nFAIL readability: original homepage summary 10 preserved How to handle jargon and acronyms for different audiences.\nFAIL readability: original homepage summary 12 preserved A quick checklist to audit your content for simple language principles.\nFAIL readability: original homepage summary 13 preserved Essential guidelines for screen readers, magnifiers, Word, PDF, and meaningful links.\nFAIL readability: original homepage summary 14 preserved Scientific evidence and research supporting these readability principles.\nFAIL readability: licence URL remains version-neutral \n53/70 book checks passed\n",
+    "stderr": ""
+  },
+  {
+    "name": "assemble-corrections",
+    "exit": 0,
+    "stdout": "wrote books: 10 academic sections, 14 readability sections; embeds 9\n",
+    "stderr": ""
+  },
+  {
+    "name": "source-accounting-after",
+    "exit": 0,
+    "stdout": "70/70 book checks passed\n",
+    "stderr": ""
+  },
+  {
+    "name": "provenance",
+    "exit": 0,
+    "stdout": "provenance written; 12 outputs; 46 readability files identical to canonical checkout; 0 different\n",
+    "stderr": ""
+  }
+]

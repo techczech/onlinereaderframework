@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/?book=academic-reading&review=1",
+    "status": 200,
+    "bytes": 601,
+    "contentType": "text/html",
+    "csp": null
+  },
+  {
+    "path": "/?book=readability-foundations&review=1",
+    "status": 200,
+    "bytes": 601,
+    "contentType": "text/html",
+    "csp": null
+  },
+  {
+    "path": "/embeds/academic-reading/cognition-explorer/index.html",
+    "status": 200,
+    "bytes": 23359,
+    "contentType": "text/html; charset=utf-8",
+    "csp": "sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'"
+  },
+  {
+    "path": "/embeds/readability-foundations/readability-checker/index.html",
+    "status": 200,
+    "bytes": 18824,
+    "contentType": "text/html; charset=utf-8",
+    "csp": "sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'"
+  },
+  {
+    "path": "/agent/academic-reading/full.md",
+    "status": 200,
+    "bytes": 36784,
+    "contentType": "text/markdown",
+    "csp": null
+  },
+  {
+    "path": "/agent/readability-foundations/full.md",
+    "status": 200,
+    "bytes": 43607,
+    "contentType": "text/markdown",
+    "csp": null
+  }
+]

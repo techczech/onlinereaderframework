@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "speech-projector bundle exits zero",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "name": "1280 academic-reading/cognition: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 7287
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-reading-articulation-layers-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-reading-simplified-summary-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 academic-reading/cognition-explorer: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 2864
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-cognition-explorer-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 tall skip target aligns at scroll-area start and receives focus",
+      "pass_": true,
+      "detail": {
+        "top": 49.578125,
+        "scrollTop": 49.78125,
+        "height": 2465.21875,
+        "area": 850,
+        "focused": true
+      }
+    },
+    {
+      "name": "driver completes",
+      "pass_": false,
+      "detail": "Page.wait_for_selector: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"button\") to be visible\n    64 \u00d7 locator resolved to 35 elements. Proceeding with the first one: <button aria-label=\"Close navigation\" class=\"publication-sidebar-close\">\u2026</button>\n"
+    }
+  ],
+  "passed": 7,
+  "failed": 1,
+  "scratchRemoved": true
+}

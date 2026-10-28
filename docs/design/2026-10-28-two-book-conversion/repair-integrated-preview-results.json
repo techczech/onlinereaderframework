@@ -1,0 +1,2192 @@
+[
+ {
+  "name": "[1280px] book chooser lists exactly the five books",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] switching to deliberate-practice: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] switching to language-muscle: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] switching to linguistics: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] switching to academic-reading: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] switching to readability-foundations: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] browser back restores the previous book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/overview: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/overview: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/overview: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/purposeful: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/purposeful: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/purposeful: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/strategic: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/strategic: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/strategic: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/non-linear: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/non-linear: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/non-linear: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/active: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/active: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/active: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/productive: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/productive: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/productive: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cumulative: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cumulative: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cumulative: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition: 1 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition-explorer: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition-explorer: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition-explorer: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/narrative-ruminative: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/narrative-ruminative: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/narrative-ruminative: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading: clicking an internal route opens that chapter",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition-explorer: 1 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cognition-explorer: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] academic-reading/cognition: 2 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-articulation-layers: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] reading-simplified-summary: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/five-principles: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/five-principles: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/five-principles: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/how-people-read: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/how-people-read: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/how-people-read: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/cognitive-load: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/cognitive-load: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/cognitive-load: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-docs: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-docs: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-docs: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-ppt: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-ppt: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/10-simple-things-ppt: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/formatting-examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/formatting-examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/formatting-examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/slide-formatting-examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/slide-formatting-examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/slide-formatting-examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/3-steps-simple: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/3-steps-simple: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/3-steps-simple: 2 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/acronyms: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/acronyms: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/acronyms: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/readability-tool: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/readability-tool: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/readability-tool: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/checklist: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/checklist: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/checklist: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/accessibility: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/accessibility: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/accessibility: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/evidence: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/evidence: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/evidence: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations: clicking an internal route opens that chapter",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/formatting-examples: 2 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] cramped-text-reveal: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] font-spacing-adjuster: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/slide-formatting-examples: 3 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-one-bullet: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-extraneous-text: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] slides-zooming-images: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-foundations/readability-tool: 1 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] readability-checker: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] skip link is keyboard reachable and visibly focused",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] Enter on the skip link focuses the text version and it intersects the viewport",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] Enter on the skip link lands at the START of the text version (first line visible) [core: scrollIntoView block:center on a tall target]",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] full-view link is a new-tab noopener link to the embed",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] full view opens as an opaque origin that cannot read reader storage",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] text in the prose alternative can be selected",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] highlight button appears for prose next to the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] highlight saved and listed in notes with the selected prose",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] frame survives the highlight (chapter re-rendered) and works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] embed still works after the highlight re-render",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] frame chrome is not part of the highlighted/selected text",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] highlight persisted in the reader storage across reload",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] highlight shown in prose again and frame present after reload",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] theme menu offers Follow computer, Light and Dark",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] Dark theme applied to the reader; frame still present and functional",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] assist panel opens",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] assist leaves the frame chrome untouched and keeps the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] the frame can take keyboard focus",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] no request leaves the local server",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[1280px] no console error, warning or page error",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] book chooser lists exactly the five books",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] switching to deliberate-practice: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] switching to language-muscle: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] switching to linguistics: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] switching to academic-reading: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] switching to readability-foundations: address is ?book=, title follows, reader shows the book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] browser back restores the previous book",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/overview: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/overview: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/overview: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/purposeful: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/purposeful: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/purposeful: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/strategic: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/strategic: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/strategic: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/non-linear: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/non-linear: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/non-linear: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/active: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/active: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/active: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/productive: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/productive: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/productive: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cumulative: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cumulative: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cumulative: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition: 1 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition-explorer: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition-explorer: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition-explorer: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/narrative-ruminative: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/narrative-ruminative: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/narrative-ruminative: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading: clicking an internal route opens that chapter",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition-explorer: 1 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cognition-explorer: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] academic-reading/cognition: 2 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-articulation-layers: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/academic-reading/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] reading-simplified-summary: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/five-principles: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/five-principles: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/five-principles: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/how-people-read: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/how-people-read: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/how-people-read: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/cognitive-load: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/cognitive-load: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/cognitive-load: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-docs: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-docs: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-docs: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-ppt: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-ppt: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/10-simple-things-ppt: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/formatting-examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/formatting-examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/formatting-examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/slide-formatting-examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/slide-formatting-examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/slide-formatting-examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/3-steps-simple: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/3-steps-simple: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/3-steps-simple: 2 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/examples: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/examples: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/examples: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/acronyms: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/acronyms: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/acronyms: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/readability-tool: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/readability-tool: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/readability-tool: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/checklist: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/checklist: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/checklist: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/accessibility: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/accessibility: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/accessibility: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/evidence: one h1 first, no skipped heading level",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/evidence: h1 is the chapter's own heading from the manuscript",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/evidence: 0 internal route(s) resolve",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations: clicking an internal route opens that chapter",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/formatting-examples: 2 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] cramped-text-reveal: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] font-spacing-adjuster: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/slide-formatting-examples: 3 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-one-bullet: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-extraneous-text: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] slides-zooming-images: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-foundations/readability-tool: 1 frame(s) in the live reader",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: layout is stable (no shifting or resize loop)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: sandbox is exactly allow-scripts, titled, no-referrer, src under embeds/readability-foundations/",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: frame loaded",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: frame is an opaque origin (sandbox applied)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: automatic height follows the content within bounds",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: no horizontal page overflow inside the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: embed works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: prose alternative is in the reader text after the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: frame sits immediately before its prose alternative",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] readability-checker: frame stays inside the viewport width",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] skip link is keyboard reachable and visibly focused",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] Enter on the skip link focuses the text version and it intersects the viewport",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] Enter on the skip link lands at the START of the text version (first line visible) [core: scrollIntoView block:center on a tall target]",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] full-view link is a new-tab noopener link to the embed",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] full view opens as an opaque origin that cannot read reader storage",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] text in the prose alternative can be selected",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] highlight button appears for prose next to the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] highlight saved and listed in notes with the selected prose",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] frame survives the highlight (chapter re-rendered) and works",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] embed still works after the highlight re-render",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] frame chrome is not part of the highlighted/selected text",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] highlight persisted in the reader storage across reload",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] highlight shown in prose again and frame present after reload",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] theme menu offers Follow computer, Light and Dark",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] Dark theme applied to the reader; frame still present and functional",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] assist panel opens",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] assist leaves the frame chrome untouched and keeps the frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] the frame can take keyboard focus",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] no request leaves the local server",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "[375px] no console error, warning or page error",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent deliberate-practice/index.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent deliberate-practice/full.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent deliberate-practice/manifest.json: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent deliberate-practice: manifest counts sections",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent language-muscle/index.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent language-muscle/full.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent language-muscle/manifest.json: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent language-muscle: manifest counts sections",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent linguistics/index.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent linguistics/full.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent linguistics/manifest.json: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent linguistics: manifest counts sections",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/index.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/full.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/manifest.json: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading: manifest counts sections",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/index.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/full.md: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/manifest.json: 200 with bytes",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations: manifest counts sections",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "llms.txt (root) lists all five books and has no frame",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/full.md: carries every embed's prose alternative and no frame or frame chrome",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/full.md: author wording kept (title and author)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent academic-reading/manifest.json: no claim of an old-domain location",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "academic-reading: \"ask an agent\" links use the page's own address (unconfigured fallback), not an old domain",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "academic-reading: front page shows the title treatment without a cover image",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB academic-reading: valid zip with chapters",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB academic-reading: every prose alternative text present, no iframe or frame chrome",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB academic-reading/cognition-explorer: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB academic-reading/reading-articulation-layers: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB academic-reading/reading-simplified-summary: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/full.md: carries every embed's prose alternative and no frame or frame chrome",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/full.md: author wording kept (title and author)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "agent readability-foundations/manifest.json: no claim of an old-domain location",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "readability-foundations: \"ask an agent\" links use the page's own address (unconfigured fallback), not an old domain",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "readability-foundations: front page shows the title treatment without a cover image",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations: valid zip with chapters",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations: every prose alternative text present, no iframe or frame chrome",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/cramped-text-reveal: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/font-spacing-adjuster: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/slides-one-bullet: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/slides-extraneous-text: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/slides-zooming-images: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "EPUB readability-foundations/readability-checker: prose alternative wording is in the EPUB",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "desktop: no request left the local server (agent/EPUB part)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "name": "desktop: no console/page error (agent/EPUB part)",
+  "pass": true,
+  "detail": ""
+ }
+]

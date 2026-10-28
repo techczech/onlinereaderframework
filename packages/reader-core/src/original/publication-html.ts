@@ -31,7 +31,7 @@ export function publicationTextModel(root: Node): PublicationTextModel {
     }
     if (node.nodeType === 1) {
       const element = node as Element;
-      if (element.matches('script, style, template, noscript, [hidden], [aria-hidden="true"], .publication-margin-note')) return;
+      if (element.matches('script, style, template, noscript, [hidden], [aria-hidden="true"], .publication-margin-note, [data-publication-embed]')) return;
       // MathML alternatives and phantoms retain markup but contribute no visible text.
       if (element.namespaceURI === 'http://www.w3.org/1998/Math/MathML' && nonRenderedMathMLTags.has(element.localName)) return;
       if (blockTags.has(element.tagName)) space();

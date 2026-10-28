@@ -1,0 +1,881 @@
+{
+  "format": "file-digests-v1",
+  "entries": [
+    {
+      "path": "apps/reader-demo/src/App.tsx",
+      "digest": "8df06e1b313486b9e7de1ad8f56db41308e64cb8a403ea9e2d73d9908685de08"
+    },
+    {
+      "path": "apps/reader-demo/src/main.tsx",
+      "digest": "a4e1465d2d5f0a3bbac7ce1ddaa0a5c972e6e3b64e027e4d55f83e78801bbfb4"
+    },
+    {
+      "path": "apps/reader-demo/src/canonical-sites.ts",
+      "digest": "8139754cca86d8e2c8977f1b454d4e220631713f0de542e193070c67a664de17"
+    },
+    {
+      "path": "apps/reader-demo/src/release-routes.ts",
+      "digest": "36fd87bb539eb8494c06101d64d292d662019e5f79e27055103516bcc916326e"
+    },
+    {
+      "path": "apps/reader-demo/src/index.css",
+      "digest": "723a1e5cfaa144a2774dc99752b6f76c0a165025245ee29c403003f8bd40bf74"
+    },
+    {
+      "path": "apps/reader-demo/src/defaultMarkdown.md",
+      "digest": "a1303b2d8f4cb1fca811aaf795b2a44c97a834d1220131d0cf521884c64a608b"
+    },
+    {
+      "path": "apps/reader-demo/src/vite-env.d.ts",
+      "digest": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/reader-demo/src/release.ts",
+      "digest": "7bb5970711236e57546ed8272481ea4f53883a356a3393dcaedf6aa009542449"
+    },
+    {
+      "path": "apps/reader-demo/src/searchIndex.ts",
+      "digest": "26820c2223657c3878ea284f4f017230f9fdfd113f3a055c0920b09c5ecbd23b"
+    },
+    {
+      "path": "apps/reader-demo/src/books/epub-assets.ts",
+      "digest": "9926e50a5f6f238faf65b95d868814469b0fd873f3da4494653ce854711d2551"
+    },
+    {
+      "path": "apps/reader-demo/src/books/demo-books.ts",
+      "digest": "6e9c1fafed23f8768c3c1d1c3e316ffc79dfdc0c7506002fca6bd21e81863ccd"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications-provenance.json",
+      "digest": "a3deb696d8028fd7841e895ff60578c629fa6642500fff701aaab9f95b8b5dd1"
+    },
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "digest": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    },
+    {
+      "path": "apps/reader-demo/src/books/demo-styles.ts",
+      "digest": "bd4cba657b35cffce69309193d33706e46595a4400935cfd4778619d311e41b9"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/readability-foundations.book.json",
+      "digest": "c6efa2a83c45b3be9a1c0d4ebd85300085226e5cedd42d4a7fd25af8c4ed1041"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/next-books-provenance.json",
+      "digest": "f0e77b1e21651ab5f52e8a70a94cee9bfb6df23d2c457cad27152516a222fe68"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/academic-reading-framework.book.json",
+      "digest": "5d857da9be75545a378aad0cc7d36b551391135e3ffa667de32e32efcc322266"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/embed-manifest.json",
+      "digest": "c2afc85fffbdaaa8511a62934c3876ace72c6240da1d43dc5ab8ad41d6d49b54"
+    },
+    {
+      "path": "apps/reader-demo/src/books/assets/provenance-terminal-icon.json",
+      "digest": "b8b2efcc2098da2ecfa1abc67269840278a1dbb778740dc4db64556cb5c0b6f7"
+    },
+    {
+      "path": "apps/reader-demo/src/books/assets/provenance-command-line-icon.json",
+      "digest": "ca4729b156931179ded391475d82cdfabac94e2cc584f664dabf81c67d6a0f10"
+    },
+    {
+      "path": "apps/reader-demo/src/books/assets/terminal-icon.svg",
+      "digest": "beef4f875e65767e78a27ee8101418b754811bf01708113f474d91c8d9d3429f"
+    },
+    {
+      "path": "apps/reader-demo/src/books/assets/command-line_gray.svg",
+      "digest": "414543d9be9c6ca7e2e0c7cab0fbc1067cdf9f1291feef97ca18e4f4d4e9f862"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/check-embeds.mjs",
+      "digest": "ee5b1f0727befaee6cec79006ba8da1fd71785dd86271b6e80c5e46dec002a0d"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/check-books.ts",
+      "digest": "6acaecdea8f25be84b335e7fa13876231a6d5d985927359256e6325c19d94f95"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/build-readability.tsx",
+      "digest": "cda810f71bea02c7ffa4d449078e8737176287a19674eb5b00f51eb5d770411d"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/build-academic.tsx",
+      "digest": "c5c6e1db15284dcc196362b4ab24ed6dcef9b3c4cf236ebf4ae3d2785f5ba909"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/compare-folio.ts",
+      "digest": "90798977b4b63fdeba707de2115292236d9d2b51d12d1a9cf80f380f2579db1b"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/build-embeds.tsx",
+      "digest": "0e64b4f2e739dfcf4247c80ba50c02693af0e6fcbf6ff3bb2d195015725758a2"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/assemble.ts",
+      "digest": "78e2a3eaff5d470ff17de2f0a53b0fea9250d2e84cdd8f02b11b08f85aaffd47"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/oracle.tsx",
+      "digest": "4196f638cbf89fd937cae45eaacb45c8b085996b24d944cb2cbcc08ad816f590"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/run.sh",
+      "digest": "4b47678e357b066f306892b7e4a2e5b5e0f9ee389830527b2f58d7621d445db2"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/render-originals.tsx",
+      "digest": "a4e1a914170071151b69cb722faabc8189003ce633fcbee03cd52165096e4eaa"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/oracle-states.tsx",
+      "digest": "b0857308c74f16d751bf1b0b8c6b778253f2a53ecfa0151577a16f70e9b009a3"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/lib.ts",
+      "digest": "a35526f0cd1a675333c366738db5a5b61847fcac39b60d06650031c0f353064c"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/build-provenance.ts",
+      "digest": "44995418f97f31def8d4d1f3af79c50bad6f1cb02de90dd81e1b60ca6efd528c"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/checker.script.js",
+      "digest": "dee865affa5055a8dae5e87e6c5e4383ecae77c6af0f4de009dd767db166862a"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/height.js",
+      "digest": "3018a30f86a2e70725301eaa5d17fc8203956e86036abfb5335c10eae14b8546"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/font.script.js",
+      "digest": "ce0c90f2f30d2a0da1249c2bc4a2c08ee43533ea5b5239b63b2aebd8a505c784"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/explorer.body.html",
+      "digest": "36fc60afedf0159a85378d78140623f8afcac4e76a446e5b6427f03350c4d7ba"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/base.css",
+      "digest": "eaa35c89f4307e7760049748f2cfd217c00b7db9fdba2ece103c1e89b4b81352"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/build-source/embeds/dyslexia.script.js",
+      "digest": "3aa6bf2506290181706d9f012a305b6040a55322b654b7e82f9af0883ce7e3b5"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-llms.ts",
+      "digest": "f714b93e3f4620db45d017419b9128906cc4c8ccc7a7d05bfbc4532ff1179f86"
+    },
+    {
+      "path": "apps/reader-demo/scripts/import-linguistics-book.py",
+      "digest": "de0f4a6454adda3ac58ba2fde5c64107f3831214f3a6376e7f93302e07095064"
+    },
+    {
+      "path": "apps/reader-demo/scripts/test-original-books.ts",
+      "digest": "e7aa6bd885cef2b1a449c55d517515b69cb26dc36de85adc616fb9842331336f"
+    },
+    {
+      "path": "apps/reader-demo/scripts/verify-original-source-snapshots.ts",
+      "digest": "1b7ba0ffd39248739459308e6614247156f1daed1bb8cf127f501a6400402ae5"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-search-index.ts",
+      "digest": "b14b45b1d6d6c0bc0aa45217b5a2e5f89da6865055bd50bcab5109a25ff05ad3"
+    },
+    {
+      "path": "apps/reader-demo/scripts/demo-embed-assets.ts",
+      "digest": "a359960e3d1952e5da2062d7e7f3f3d9f7bd533fa7be9a4c5fb1058e95917b10"
+    },
+    {
+      "path": "apps/reader-demo/scripts/import-original-books.ts",
+      "digest": "03c2c3bd2a180fbf8a7aa67b8e3408ef20f61a4e5e20a2df58380de88a725e95"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-release.ts",
+      "digest": "459a066ee54370f1f0eb87c512a5afbb5ec49744c4b186dba34a4eee3e3c18f1"
+    },
+    {
+      "path": "apps/reader-demo/scripts/check-agent-access-ssr.tsx",
+      "digest": "b776b8bbd2cacc8bc9b4c00da87f74d830c9c5301022b3a9aa1b295cf80e0880"
+    },
+    {
+      "path": "apps/reader-demo/scripts/build-agent-files.ts",
+      "digest": "7d028cbb96d747611b0b2e1ca37a7707dfa3dc6df7e5a33003a9e49c9a40780f"
+    },
+    {
+      "path": "apps/reader-demo/scripts/test-demo-books.ts",
+      "digest": "0fd6bbee4e58fdb526f5defd8c5ab9cc256037d994d96ccc034edb50f44f4d74"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/render-shell.ts",
+      "digest": "7cf619c8e51f5c6ae01df3e5c6164382bc882880f5f954eea2b8333126dcf4b1"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/release-plugin.ts",
+      "digest": "0103c3bff9fa1ca18cfd531d318566d7f83f0fe5f170d971e11be304e88a171a"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/projection.ts",
+      "digest": "b3955cdeb423984d62af91368d3cc32abdd5763bf4b14ef261cded96b525b544"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/headers.ts",
+      "digest": "ef1873f79e5867e3dc96dcbcaef8264d6780008c780bca2d5a631c026990ab37"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/build-edition.ts",
+      "digest": "e5670435924f575813308fd3c708e5b1c5a1d9f51c4ca6b4c8fc2e066d81ccdf"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/previous-linguistics-site.json",
+      "digest": "c564ce1405a5e7a0fed508b3ed6c6286314fd617d186edab4d6b9b26a4886b7d"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/edition-plan.ts",
+      "digest": "8148f68e5312146ca9003e8fdf1567c2075934521782b545c487e0255a2ba98c"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release-write.ts",
+      "digest": "f678035ac1ec6e7a3c7d551aae943042d5b93f32254d12ff74c3f6525bc813dd"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+      "digest": "3128e5840b5de9a9b6ea420707c1d8060ab866760be826c08ec8dc89fe5ddddc"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/write-guard.ts",
+      "digest": "ffe95bf46cdf62432e7cb6b83e04945a082862819230a6f5ef443a6e1d0e425b"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/static-pages.ts",
+      "digest": "deeb3e4473f4d25d40d2d1d1b1f80f6abe850a5437c5d189fae7c9ad54d744cb"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release-repair.ts",
+      "digest": "2578937a4fe196ac5469764e61be666c2a26804c55eb8afc9ed5cc4489119edd"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/previous-site.ts",
+      "digest": "857c574e6380932e398a297ecbc5d0a5047d587e74ce9f987e6e88d30b938a91"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/verify-existing-edition.ts",
+      "digest": "8678d34820eb47f68e21b0b5b6daaaa482def05cf37970cd451441173ad9feae"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/test-release.ts",
+      "digest": "ead5dea8b7154afb6c63c86dc469a39bdf34122594a6d84a2a3ce5c5c706c491"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/route-checks.ts",
+      "digest": "8019b07a087e5f0f24b8737da19087f6fc1d49ba0812ad76c61532c887e95e9e"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/readability-checker/index.html",
+      "digest": "f5199a452faf5e3381d690ca52bae59f5f46d6b273d044bb2f4e0bb40cb0f8c5"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/slides-one-bullet/index.html",
+      "digest": "78afa95e476e6dbb0166b33e858e31abc028e08be0a8499d3dc82681ac249fb4"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/slides-extraneous-text/index.html",
+      "digest": "2e8b713107e14b64258146f462ad79b2eac50b426fd4f276e53450ba1d6f9e40"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/slides-zooming-images/index.html",
+      "digest": "2edbcc400c0021b20e9ea63a04603af68e54cecbbc1b4d7a0503bd02d3fb51e2"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/font-spacing-adjuster/index.html",
+      "digest": "c541d7cb7761067ae4fb7b3716d3483ef72665012c5754ed43cfe38e57077857"
+    },
+    {
+      "path": "apps/reader-demo/interactives/readability-foundations/cramped-text-reveal/index.html",
+      "digest": "4cccec58427f6cd021ab81f8504c689f2d2bf2631cd7f2e16e5bcf0e3efb0ef9"
+    },
+    {
+      "path": "apps/reader-demo/interactives/academic-reading-framework/cognition-explorer/index.html",
+      "digest": "01db7400896229e24e79d9bb2134642f6f29808514a754319c3ceb8b95e6c20b"
+    },
+    {
+      "path": "apps/reader-demo/interactives/academic-reading-framework/reading-articulation-layers/index.html",
+      "digest": "dd3d58e80cd25ddc98ec2c33954aa41454d256df5a2d0159714df32553b982b9"
+    },
+    {
+      "path": "apps/reader-demo/interactives/academic-reading-framework/reading-simplified-summary/index.html",
+      "digest": "54435d7f9ecde47fa526ce7a050c10cee8d92ccbbeaf49467a1cd4ad46fe447a"
+    },
+    {
+      "path": "packages/reader-core/src/types.ts",
+      "digest": "3cfb507c477447b0f1d1e2ec19569b0289d7c066730106644bf407597ee8c75c"
+    },
+    {
+      "path": "packages/reader-core/src/index.ts",
+      "digest": "921734c5de36d702e8278a81b539271f2731044f7f34f4b60991ea7267bfb640"
+    },
+    {
+      "path": "packages/reader-core/src/context/useReaderNavigation.ts",
+      "digest": "ff3556d7a9747a86ff4b2e200d30ac91c9d698409772ea9c332323bdf694de8c"
+    },
+    {
+      "path": "packages/reader-core/src/embed/test-embed-fixture-browser.mjs",
+      "digest": "cebcd6395a58f37f975628136ab468d7b4a34ace7894a7f1aac0f86a842e6437"
+    },
+    {
+      "path": "packages/reader-core/src/embed/test-embed-headless.mjs",
+      "digest": "1eb4c1beba28f754b38e4827ac4398a0f85118be675040f065358daa00dd9aea"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-model.ts",
+      "digest": "716a538c01830179fd3de26d8320317f269e3bcc10fcc2c13321cbb463b157ad"
+    },
+    {
+      "path": "packages/reader-core/src/embed/PublicationEmbedFrame.tsx",
+      "digest": "d6a6458862c19b07d4e44982542d8712e1654743220138ddd9b909aabc857f13"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed.test.mjs",
+      "digest": "1374f929c81a41d07927941cb0e8ee3bf0d6136d1d8ffca72090ae34072b102c"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-child.ts",
+      "digest": "8bc45041e2b798d6649a04949dc4bcd35352f9b58474d5c9ee40b51f2195b501"
+    },
+    {
+      "path": "packages/reader-core/src/embed/README.md",
+      "digest": "924514b3ecf04e217dd0a867935610ac69ce9545ffd86646ee095753a505e144"
+    },
+    {
+      "path": "packages/reader-core/src/embed/test-embed.mjs",
+      "digest": "f448838afdc6b72fd7543503725e9b57e98c3af7f59056548d0a357960ec732a"
+    },
+    {
+      "path": "packages/reader-core/src/embed/index.ts",
+      "digest": "6f2fe044bb066b87078838268ae4ff2ee6400c5152f17882b1d4b5683781ae22"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed.css",
+      "digest": "104115e9313b7f41d5739fb6ea25bc1ce35e7aad4141b30d69fd019b99bcd8d9"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-check.ts",
+      "digest": "083ea12ac68d3cec2b9516e831855ab54dcc01e4c0fbf986c23af1d395a7c054"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader.mjs",
+      "digest": "ed48e13b4f82ae5a3f0e9d0b4ac9f4ab991b206307b6adb9e392f05837a07ac9"
+    },
+    {
+      "path": "packages/reader-core/src/original/outline-preference.ts",
+      "digest": "e1543efab369cd60ca5198c7b58b746208034d26191e807ac4e8bedac9ffa7ef"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-reader-theme.mjs",
+      "digest": "98bd5b49ed762b991e2d578a2621312ddd40114352321a369b9a01dee733964a"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader-identity-browser.mjs",
+      "digest": "e2132d6277b84323e4e6d8f36e0c52373bc716afbf509aaa2fe7753483552282"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-theme.ts",
+      "digest": "c5f6af3ace2f540189a85f4ce2613122a62d0aef14f4f4f6d8f853209eb23122"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-navigation.ts",
+      "digest": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02"
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "digest": "c5bce88004c6e0c1edcd53d79b6ec33df56e6e2e7daa8ef404ec2cad04ae002a"
+    },
+    {
+      "path": "packages/reader-core/src/original/ShortcutsModal.tsx",
+      "digest": "19463518655ce581e86b8e6994c6513df3a8dd1b2295ef4d8ec63940ce37705d"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-reader-layout-navigation-headless.mjs",
+      "digest": "fd4f6cd4918bac7ac58da144545cf7a44d10e5d0edc401731a9152c11d90707c"
+    },
+    {
+      "path": "packages/reader-core/src/original/QuoteImageModal.tsx",
+      "digest": "f42a2958af88db479145fb335aaccba210114377d96c826b4b4db2fc7de34889"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-model.ts",
+      "digest": "ac8d7633b770e0a39df57db4b4afb1ea2947ac462450be333a2f36a1d6c0d826"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "digest": "69989cfb0c1ac532fab416eee778837ac78fe0e9d95ccacdbb33d680be277c18"
+    },
+    {
+      "path": "packages/reader-core/src/original/README.md",
+      "digest": "d6672af76731921a9012f427a240c50b8798a0617581ac523282001aaf2f4e91"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "digest": "85b51ab84448cbe1dc69e8634cbd38a3bd9010529defe0c39cf10043c7f62234"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-system-dark.ts",
+      "digest": "0e2e963b6dd105828e32521a2b675619617f96569040f5b6a70667e1a12822b3"
+    },
+    {
+      "path": "packages/reader-core/src/original/report-original-reader-extraction.md",
+      "digest": "794b72c971ce1774515b3c6ed5e978e9c710cc287914f3cdc959d7c13d3473c4"
+    },
+    {
+      "path": "packages/reader-core/src/original/sidebar-model.ts",
+      "digest": "61051a576f6bcf9afa4bd2e5eff194a492b52e94cf0d07826a1827348e6e9dc1"
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "digest": "0a46654020117af4db0534e89578e00dbec4c0140dea6b7d9ff055185372787b"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-notes.ts",
+      "digest": "435945ee3f2ec2571d38fc134aff17ad7cdc8bc1a600a2f46096538205f45d02"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader-browser.mjs",
+      "digest": "e916d62e6c9668b13dd7f21babe8f3d27f1a00ba87aa8ee6d55e1bce522e3398"
+    },
+    {
+      "path": "packages/reader-core/src/original/HighlightsDrawer.tsx",
+      "digest": "d6284c8a97c05ab07c4454f32f38500a8a5b44a4fe685507b46dd2bf53e84b2e"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-publication-reader.ts",
+      "digest": "e3c63f4bdc50b61258e3510278533890f4ed79107ff6164dc171fd075862d717"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-navigation-books-browser.mjs",
+      "digest": "8228cb812a338f5dfe99c8d971fd0ca3188c76e6f008032fb2d7dd49b1b1f413"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-listening-highlight.ts",
+      "digest": "e9bf28edf5b36dea7cb439e087191a537814b75f088ed82bba71fda21b972521"
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "digest": "c9a06154b9c10249d1cd1a7a279b741a4e12556f56dd74ed4796c21d176293b7"
+    },
+    {
+      "path": "packages/reader-core/src/original/Sidebar.tsx",
+      "digest": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-integrations.css",
+      "digest": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader-headless.mjs",
+      "digest": "9f3378bb0822c71aaaceabfe6191c1fbb7b37a2054e6d81a24315d1c464f3c51"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-publication-navigation.mjs",
+      "digest": "df8fb5509974a1ee7b11c586b9dfe0abe8a10cfa55d0eff885b8ddbc23fe6bd2"
+    },
+    {
+      "path": "packages/reader-core/src/original/Toast.tsx",
+      "digest": "f3fe946cf054362c8189a49f1e8fe467694076122031457976e07e7c51f4c7ba"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-original.css",
+      "digest": "796b81d7aef9a1ef1cabecb9b4ab385d0adc9836d43d90907d08cbf1da2221db"
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "digest": "56dd0ca519ae345c93d28384bf54049cba3f2bd9f926483d245b5cb56e76a5fa"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-navigation-fixture-browser.mjs",
+      "digest": "3f99d94cf10ea39923191f6c24483e5dab23470c6b4f1c7be00fe4e9c795aa1b"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-outline-preference.mjs",
+      "digest": "2b10ed5de15ccab7afd3c8c7ee7b39127528aa804be7d04c630c66dc2d0c61a1"
+    },
+    {
+      "path": "packages/reader-core/src/original/TableOfContents.tsx",
+      "digest": "7e69e51cd463ab8f89116dab131d2ef7583c67c4fc042f86ff2189efc8dff0c5"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-links.ts",
+      "digest": "575df73841f29c20dc12271d1d0871196b25a1bc670dbe89a1dad3605e06d9c0"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-location.ts",
+      "digest": "1a6206ad226ebb0e356ce289a1372916e456fc59b3772e932e0744f15bd6640b"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/index.ts",
+      "digest": "323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "digest": "2254fbcbe85f66d47a56e99a7fe50c88d19b14ca32d4b26d2cfda7f1f25ca0e2"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-url.ts",
+      "digest": "0a22cf017396b626be1d8eac6722c362643702395338f525ee9bff39bf008057"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "digest": "1fcce4620721c09ec68f4e65cb9b81ea09b8411b1b7d911cbd81fae711205229"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/test-agent-export.mjs",
+      "digest": "338858fda8da9cf2bea70b77c5d6454aaac2f57fc15ba77ba45c3bd4a10b56d5"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "digest": "105cf6c96bbe4307bfe388cce952524efdad7cfdc3d1288b48229bc515d10b45"
+    },
+    {
+      "path": "packages/reader-core/src/utils/markdownParser.ts",
+      "digest": "5f73e27e4e1b9127ea2bdd475735f737e27ed86e071785437d27c3404d038496"
+    },
+    {
+      "path": "packages/reader-core/src/utils/search.ts",
+      "digest": "016fadd5765cfe02d0793e55a5a60994c30597c047e58ecba868eedb2178f863"
+    },
+    {
+      "path": "packages/reader-core/src/utils/llmsExport.ts",
+      "digest": "0d9a723130307749bae4f72abbbbed9e0028273d1ee980c013744c8f078d028c"
+    },
+    {
+      "path": "packages/reader-core/src/utils/highlightExport.ts",
+      "digest": "9e641f8069751d07d01f66f3f7c03a490c5b7fabd7916677c27ba965b26e4357"
+    },
+    {
+      "path": "packages/reader-core/src/utils/readingStats.ts",
+      "digest": "80b3327f8c7900e7c42daf044c1220617b2c212e58059d5082077a90d0fc2e21"
+    },
+    {
+      "path": "packages/reader-core/src/adapters/markdownAdapter.ts",
+      "digest": "83608648130f53876198bc5d1ddb84d07150119cc89772762efdeac617eefe4c"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-schema.ts",
+      "digest": "257e77e0439a6ae3afb684728c42b8f49bd2a1381729fd7c69236e336fca3e38"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+      "digest": "b560102dda900cb5a570e9b018b36bb1cff33f3bd0b44779a668f89a0131e197"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/README.md",
+      "digest": "624a91f161f3d729d0980d2ca5853e819ed8ad48e9425e485b6c95bb9c5cea9f"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/check-original-publication-content.mjs",
+      "digest": "cf88d9cd1ae9e91b22f1817e9fc577d4613c9b7859bebd5776e104f2c049bc47"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/index.ts",
+      "digest": "56b011d19c03b078c34ac91601d39546fe2883dc661bd50a71d3045ab7fdba5e"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/test-publication-content.mjs",
+      "digest": "b518a8aa808c328a65b4e39716260dc0f7d5f33ccb07f8e26c28e36a985ffc1f"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/report-publication-content-2026-10-23.md",
+      "digest": "dcb7d196af7acdc56a3f7b0646f8ff608737d1e3f9a92f17cc4412d8e3312eb6"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-assets.ts",
+      "digest": "fbe3bcd5f651a45859174c19dd2b5514e9f5dd5de74c218bb271883a7cb412ce"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/publication-epub.browser-test.mjs",
+      "digest": "648555d63648d16ec72aa97dff73ee597bb4d547e36c89dd9ffa00cd7f0433a6"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/publication-epub-regressions.browser-test.mjs",
+      "digest": "3d980ab5686f0eaeac4ad431057d6be656be67c81a05b8d90b321555ccb936ee"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/check-publication-epub.py",
+      "digest": "4014947e87dea7ebe42c9f7282ff945d9c36633fd57b0bfefbb9962ab1e939d0"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-references.ts",
+      "digest": "21f3e8c6668f4f612bf2beee9e971b7d0a5654b1a877064232bf278c606d34b8"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-xhtml.ts",
+      "digest": "3d12792c6f193bba8ae79100b511e343ac4bab8ebfcc8b0a5edc8744b87fdaf6"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/README.md",
+      "digest": "55bb40a1c50504f8b406afc59ae48161e9322427963571bc42fa4f1c7608a402"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/verify-publication-epub-regressions.mjs",
+      "digest": "938faf2c9bb2ea962ef2bc712566b04cc2a6991f5b115cb453562d5b9e1d04d8"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/index.ts",
+      "digest": "8180abf19943303f3f5761386922c431da3dcd6623d4343df4d9ed6f1f512a72"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/report-publication-epub-verification.json",
+      "digest": "1bd7e099887c88f26e5af7aaa453bf7b038af69a2b6f2e66d5e2ad906e12423a"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/verify-publication-epub.mjs",
+      "digest": "885083e874e07ed5a49dc8f220501bed885d7da7f0020f679effc111bb37a6b9"
+    },
+    {
+      "path": "packages/reader-core/src/services/epub/epubGenerator.ts",
+      "digest": "2195cd6dd6cbc08a4cab8c01015905741f1f33d891d427a281c368811e42a203"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderShell.tsx",
+      "digest": "9bc3016b385d922b3d4634b92ea194ba2e3ed1423216cd483bbfee3a5e98bf05"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/SelectionToolbar.tsx",
+      "digest": "16899bef4194439834cf044e881579adf3574f09915bc9b9b00965e32f9fff7c"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/Sidebar.tsx",
+      "digest": "e857ec6124f68be92c9b6deb33294027fc1bd57b3fdefefcdb4a689a9ac6fd00"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderContent.tsx",
+      "digest": "56fb4e2ca92ff79f4f5464b4c3be827c69cb5737a87b492387712577b0875ff2"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/TableOfContents.tsx",
+      "digest": "3e64efaef7e9844f4d1160b5de71538f9d4756a35e92933101bd8e5c572181c0"
+    },
+    {
+      "path": "packages/reader-core/src/components/blocks/BlockRenderer.tsx",
+      "digest": "213048505fe6228610bd0e8f0bf77f1d765659876fb0ca54c89383139219dfbe"
+    },
+    {
+      "path": "packages/reader-core/src/components/home/Home.tsx",
+      "digest": "3d532456bb51cff8bff6deae31cf146f09c4c7d085263c94ce805ee69237992b"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/HighlightsPanel.tsx",
+      "digest": "cbd0bb0d812f0b083b6f51dfb24d9bf8a9d0075a60cc947b8367a2ea8f800f0c"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/BookmarkButton.tsx",
+      "digest": "55ad9eb232561522651d180e822d6a597ed3679be9a238cf3ce63e2a1ebdc806"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ProgressPanel.tsx",
+      "digest": "0f475e2e9ae3acce5777de8f778a027f26987ce82ddf4fbba90bd94dcd765198"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/SearchModal.tsx",
+      "digest": "2a6b8e2767648d1b0d9737247e091e94fea39de76591a60c525d173a42a22bfb"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ReadabilityControls.tsx",
+      "digest": "1790a3eb73a6cc80e679b7b0522455028d540fd1afd7762dbc5afa855df66cf9"
+    },
+    {
+      "path": "packages/reader-core/src/components/layouts/ScrollLayout.tsx",
+      "digest": "29532d712ef4c24ca5203410aed24f9f6a97542c3860925bbdbfb637772d20ce"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening.css",
+      "digest": "796223ccc56d0a07cd90daa2537b99c2f9187effbbcbad1abd32e32a53559cef"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-types.ts",
+      "digest": "e5d5de9a927af500d907d137184d1955641c7b5189cc2e49b2a753c489e571a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+      "digest": "d792b028a88abd373671a0b6744a71eb0fc7aadca00859a68b22f0860b855fe7"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/ListeningPanel.tsx",
+      "digest": "53c44162d5138a1e9140fd71db04a18179d3bb02de416df543b437babce22d6f"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-model.ts",
+      "digest": "810a8bc9ba3cc639d2a956f681ab429d151e9cae8e8b8387ad0144d5344072a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/index.ts",
+      "digest": "f9038e1157d5e510154bc5be04fba1ad381addad3ece5301f4fa4c54f2c0c849"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/test-reader-listening-headless.mjs",
+      "digest": "c7941baabfca3f46f337329b1e2520216d39a9af1a7199f6c6f8828f05b8c9be"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-controller.ts",
+      "digest": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/toolbar-model.ts",
+      "digest": "88acf150a8027dea5d0b72a7798b14d6af6fe48d654774748e14b00ed2e94c5b"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/test-toolbar-model.mjs",
+      "digest": "37fc666aa14ad19d7c858398ae897a77c0cc5ebae4095c5b2ddf3a8c3cf4da68"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/test-toolbar-repair-browser.mjs",
+      "digest": "fa178bd884d89737da161b70303439eb294d143212f204a6ad8df40a07cd2433"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/test-toolbar-recorded-browser.mjs",
+      "digest": "9b5498ab9e1702320ab1cc0c06e4915feb64e7e8588faf10c980d5a73ffb87a7"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
+      "digest": "c30fc7f3cdf8a0286996b97c097ad9947ed8bbcb78b1c6c42a806ed32b585d63"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/controls.tsx",
+      "digest": "e34631ff1a7da582c960c8a9ff63c440e0196a14b715717f43d6874e44fd91d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "digest": "3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "digest": "2a1208e8408acbf7f25b6abcad9a8df0cdd21ba18cf15ede98f1c489323cccd0"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx",
+      "digest": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts",
+      "digest": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/test-read-aloud-ownership-browser.mjs",
+      "digest": "fe5a8c30be466074f944ce8f65a5f17eb056cd6b1ca33c8b691c4e17e8665ae3"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
+      "digest": "98cea6b7561ad662cf3e1c6d4bd2b7f67ec3286b4d3576d6573e2348a04d4a87"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/flex-speech.ts",
+      "digest": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts",
+      "digest": "ef979dc329be4a5e79ce236335b64f41fed102ab40427233a1b3a138401a79de"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts",
+      "digest": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/test-read-aloud-browser.mjs",
+      "digest": "8e0ee06afb240b469b677e897621cb379ba87ccf9fa2892a79978e547a72f7c6"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/use-read-aloud.ts",
+      "digest": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/test-reading-support-browser.mjs",
+      "digest": "8bb5490ff313d4c057f7f0c2acdbf7a30a85b71d6338e621e0547800ea87a580"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportControls.tsx",
+      "digest": "7272c60d99852a8099a5e8453e28fd47bb9b213666af1062c979676d5dd71c7d"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/anchored-reading.ts",
+      "digest": "6b8b72636cd76125410d911c3af43a2bab873a1078ca8e1ef1d5bc91c58dfcf0"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/support.css",
+      "digest": "51c8ac88d7481c0dd7bc074ce75e7fb9e6ecafc2da34dc15cdf68e77d32cc258"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx",
+      "digest": "c575781c7bbade2a6fba19afd1a2b75cba955621956b9c3b0ff41ba7df3a4979"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/test-reading-preferences.mjs",
+      "digest": "8753f7ed9555a83a30c20e7031a5e9de1408913a31b8aab5f625c5358230577c"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-reading-support.ts",
+      "digest": "461e932b7d9b571db20b0b0cf42184e9165edb56545181de59304da91bc31a4f"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-viewport-width.ts",
+      "digest": "98cd4189bd60ae363d03ebd4ea2e177849ec874647f5b268aafd52ed4d7e64be"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupport.tsx",
+      "digest": "c7e9398e45b7e1375e2616f697ec0847c306ca7f9aa25e96ef721eb4782cb2bd"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/index.ts",
+      "digest": "c01258de705f87d722e34614888351cc3529d7e4c6e6b00b2f01657fd5c06701"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/reading-preferences.ts",
+      "digest": "42ab8dabe51eecb5908e8d4b1731691e14db5178f81136aeb53afa9c11377e78"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/line-geometry.ts",
+      "digest": "4cb0c8a8101350ad016c05a4e5bea1c886a6ded3b6ba94f55ed8453aab5d6fe7"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/test-assist-width-browser.mjs",
+      "digest": "ea41cc4d873499e39adc3f92ee40273fdeb596342069b973615f3990f36a5986"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-anchored-reading.ts",
+      "digest": "a343bd84b4a07f4a703b1946facaf7e729606a6ed79d1e59371c60329d229713"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/test-frontpage-browser.mjs",
+      "digest": "ec85bb9bb3262e66785240b2aca2d816ff75fa8871fe8eb67401453d3050894b"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "digest": "c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/FrontPage.tsx",
+      "digest": "4a06571a8f70ff7d0109b0c3e109eba160c4de4787300fcb52775e6aafc75514"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage.css",
+      "digest": "6a9ad46003bd389f7658c414d0149bf3d0f4b734efb9690ab464eddfe09c8b19"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-layouts.ts",
+      "digest": "9252650e32ab66cd0fe5a38faff5ef09d9075c2395b9b6f0b8efea84675e0acf"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-model.ts",
+      "digest": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-copy.ts",
+      "digest": "44ff90930568e389f9af4e8583a86432027b7c3ca45807197a31de8acc18b643"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/test-frontpage.mjs",
+      "digest": "b6c035face451eaba584d9b7ff7cc3f5a05dc409bd0fcc9404f57d7ba867488b"
+    }
+  ]
+}

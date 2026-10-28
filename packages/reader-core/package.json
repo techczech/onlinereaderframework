@@ -23,6 +23,10 @@
       "types": "./dist/agent-export/index.d.ts",
       "default": "./dist/agent-export/index.js"
     },
+    "./embed-child": {
+      "types": "./dist/embed/embed-child.d.ts",
+      "default": "./dist/embed/embed-child.js"
+    },
     "./reader.css": "./dist/reader.css"
   },
   "files": [

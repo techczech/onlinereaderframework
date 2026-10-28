@@ -1,0 +1,383 @@
+{
+  "task": "Prepare Academic Reading Framework and Foundations of Readability for the reader, retaining interactive HTML",
+  "date": "2026-10-28",
+  "owner": "content-preparation sub-agent",
+  "status": "prepared, not integrated, not deployed",
+  "userActionNeeded": false,
+  "result": {
+    "books": {
+      "academic-reading": {
+        "sections": 10,
+        "embeds": 3
+      },
+      "readability-foundations": {
+        "sections": 14,
+        "embeds": 6
+      }
+    },
+    "embedFiles": 9,
+    "bookChecks": {
+      "passed": 50,
+      "failed": 0
+    },
+    "chromeChecks": {
+      "passed": 122,
+      "failed": 0,
+      "chrome": {
+        "historicalExecutable": {
+          "directory": "/Applications",
+          "application": "Google Chrome.app",
+          "withinApplication": "Contents/MacOS/Google Chrome"
+        }
+      }
+    },
+    "lostAuthorWords": 0,
+    "typecheck": "tsc --noEmit exit 0"
+  },
+  "commands": [
+    {
+      "step": "render-academic-and-diagrams",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/build-academic.tsx /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework .scratch-two-book"
+    },
+    {
+      "step": "convert-readability-sections",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/build-readability.tsx /Users/dominiklukes/worktrees/guides/readability-foundations .scratch-two-book"
+    },
+    {
+      "step": "assemble-books-and-manifest",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/assemble.ts .scratch-two-book"
+    },
+    {
+      "step": "build-embeds",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/build-embeds.tsx /Users/dominiklukes/worktrees/guides/readability-foundations .scratch-two-book apps/reader-demo/interactives"
+    },
+    {
+      "step": "render-original-sections",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/render-originals.tsx /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework /Users/dominiklukes/worktrees/guides/readability-foundations .scratch-two-book/originals-text.json"
+    },
+    {
+      "step": "render-original-states",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/oracle-states.tsx /Users/dominiklukes/worktrees/guides/readability-foundations .scratch-two-book/oracle-states.json"
+    },
+    {
+      "step": "check-books",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/check-books.ts .scratch-two-book docs/design/2026-10-28-two-book-conversion/evidence/books-check-report.json"
+    },
+    {
+      "step": "check-embeds-in-chrome",
+      "exit": 0,
+      "command": "node apps/reader-demo/src/books/next-books/build-source/check-embeds.mjs apps/reader-demo/interactives .scratch-two-book docs/design/2026-10-28-two-book-conversion/evidence/browser-check-report.json"
+    },
+    {
+      "step": "compare-folio",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/compare-folio.ts /Users/dominiklukes/gitrepos/02_writing-creation/writing/books/web-published docs/design/2026-10-28-two-book-conversion/evidence/folio-differences.json"
+    },
+    {
+      "step": "provenance",
+      "exit": 0,
+      "command": "apps/reader-demo/node_modules/.bin/tsx apps/reader-demo/src/books/next-books/build-source/build-provenance.ts .scratch-two-book"
+    },
+    {
+      "step": "typecheck",
+      "exit": 0,
+      "command": "cd apps/reader-demo && node_modules/.bin/tsc --noEmit"
+    }
+  ],
+  "files": [
+    {
+      "file": "apps/reader-demo/src/books/next-books/academic-reading-framework.book.json",
+      "sha256": "5d857da9be75545a378aad0cc7d36b551391135e3ffa667de32e32efcc322266",
+      "bytes": 35907
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/embed-manifest.json",
+      "sha256": "c2afc85fffbdaaa8511a62934c3876ace72c6240da1d43dc5ab8ad41d6d49b54",
+      "bytes": 6141
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/next-books-provenance.json",
+      "sha256": "7ca372cdfaf76ea894535254e5786f17b0b27c685349951ff9062db09cdba90b",
+      "bytes": 23636
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/readability-foundations.book.json",
+      "sha256": "c6efa2a83c45b3be9a1c0d4ebd85300085226e5cedd42d4a7fd25af8c4ed1041",
+      "bytes": 41567
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/assemble.ts",
+      "sha256": "78e2a3eaff5d470ff17de2f0a53b0fea9250d2e84cdd8f02b11b08f85aaffd47",
+      "bytes": 11058
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/build-academic.tsx",
+      "sha256": "c5c6e1db15284dcc196362b4ab24ed6dcef9b3c4cf236ebf4ae3d2785f5ba909",
+      "bytes": 3891
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/build-embeds.tsx",
+      "sha256": "0d37be35905ed6c167c9a489d30eb279048eedc1580b597112d0a232ad3545ff",
+      "bytes": 8184
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/build-provenance.ts",
+      "sha256": "44995418f97f31def8d4d1f3af79c50bad6f1cb02de90dd81e1b60ca6efd528c",
+      "bytes": 10389
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/build-readability.tsx",
+      "sha256": "cda810f71bea02c7ffa4d449078e8737176287a19674eb5b00f51eb5d770411d",
+      "bytes": 19607
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/check-books.ts",
+      "sha256": "6acaecdea8f25be84b335e7fa13876231a6d5d985927359256e6325c19d94f95",
+      "bytes": 11496
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/check-embeds.mjs",
+      "sha256": "ee5b1f0727befaee6cec79006ba8da1fd71785dd86271b6e80c5e46dec002a0d",
+      "bytes": 21396
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/compare-folio.ts",
+      "sha256": "90798977b4b63fdeba707de2115292236d9d2b51d12d1a9cf80f380f2579db1b",
+      "bytes": 3946
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/lib.ts",
+      "sha256": "a35526f0cd1a675333c366738db5a5b61847fcac39b60d06650031c0f353064c",
+      "bytes": 2310
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/oracle-states.tsx",
+      "sha256": "b0857308c74f16d751bf1b0b8c6b778253f2a53ecfa0151577a16f70e9b009a3",
+      "bytes": 1475
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/oracle.tsx",
+      "sha256": "4196f638cbf89fd937cae45eaacb45c8b085996b24d944cb2cbcc08ad816f590",
+      "bytes": 1938
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/render-originals.tsx",
+      "sha256": "a4e1a914170071151b69cb722faabc8189003ce633fcbee03cd52165096e4eaa",
+      "bytes": 1996
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/run.sh",
+      "sha256": "4b47678e357b066f306892b7e4a2e5b5e0f9ee389830527b2f58d7621d445db2",
+      "bytes": 1986
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/base.css",
+      "sha256": "41dee5fc66f70d13424d4cfb8af3d7e568dad11b3037e9a57c61b94eaebf1465",
+      "bytes": 890
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/checker.script.js",
+      "sha256": "dee865affa5055a8dae5e87e6c5e4383ecae77c6af0f4de009dd767db166862a",
+      "bytes": 1529
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/dyslexia.script.js",
+      "sha256": "3aa6bf2506290181706d9f012a305b6040a55322b654b7e82f9af0883ce7e3b5",
+      "bytes": 704
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/explorer.body.html",
+      "sha256": "36fc60afedf0159a85378d78140623f8afcac4e76a446e5b6427f03350c4d7ba",
+      "bytes": 8276
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/font.script.js",
+      "sha256": "ce0c90f2f30d2a0da1249c2bc4a2c08ee43533ea5b5239b63b2aebd8a505c784",
+      "bytes": 772
+    },
+    {
+      "file": "apps/reader-demo/src/books/next-books/build-source/embeds/height.js",
+      "sha256": "3018a30f86a2e70725301eaa5d17fc8203956e86036abfb5335c10eae14b8546",
+      "bytes": 974
+    },
+    {
+      "file": "apps/reader-demo/interactives/academic-reading-framework/cognition-explorer/index.html",
+      "sha256": "10f838dd15605d2761c3a4eea4d7f2d75cadc299bea53686765fe2ca630f0427",
+      "bytes": 22487
+    },
+    {
+      "file": "apps/reader-demo/interactives/academic-reading-framework/reading-articulation-layers/index.html",
+      "sha256": "9671a0c95ed79a011119e38229ee627ae22976e0101d4556f47d5c71ade8fbed",
+      "bytes": 12977
+    },
+    {
+      "file": "apps/reader-demo/interactives/academic-reading-framework/reading-simplified-summary/index.html",
+      "sha256": "b5059c50c34fd0b7a3343a08301c8e878093ecd35c18ee3a4b361a59094050ab",
+      "bytes": 8860
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/readability-checker/index.html",
+      "sha256": "1e3e0f7b4def79b1a458c4a58d4599b4d64ca4033db678e218c04905f088f9ae",
+      "bytes": 17951
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/slides-one-bullet/index.html",
+      "sha256": "69cd130837d6ac7f44a5dbc8a285e0708282ca352caab38a32ba11de529799f5",
+      "bytes": 18732
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/slides-extraneous-text/index.html",
+      "sha256": "ce1417f7f66bf009edcbd3bc86d103e3dc05e3806dacda1cc47924bf79bfac3e",
+      "bytes": 14937
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/slides-zooming-images/index.html",
+      "sha256": "08040c9fd0070b37a1b1e58acd8a76ebf6de067579a7c18fe73b028ede02fa75",
+      "bytes": 16385
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/font-spacing-adjuster/index.html",
+      "sha256": "19f7937597a4d823c9bf28b2ba0f988655ec16322abaff25742342aad0f6f78d",
+      "bytes": 16048
+    },
+    {
+      "file": "apps/reader-demo/interactives/readability-foundations/cramped-text-reveal/index.html",
+      "sha256": "9c815a21ca4874a37e33f2cd16938c1fb89ed3d0559d2e5886113b66f33a9b96",
+      "bytes": 14965
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/conversion-report.md",
+      "sha256": "2204d802f373e97cfafc4fe6e3edbfb3e8101d475a00548989bf56468723ee99",
+      "bytes": 14664
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/embed-contract.md",
+      "sha256": "19df5097f7909a88910d97b8816fc488a84a416ba4d2a89be97e604bafd44f61",
+      "bytes": 9729
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-repair-embed-base-after-2026-10-28.json",
+      "sha256": "b28a45edc06ff2a024299b82c1304404a1eb1ab056f1160f08bed3d567189980",
+      "bytes": 17292
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-repair-embed-base-before-2026-10-28.json",
+      "sha256": "688444d89ef716bfa224b644cc377ed14638c44dc21843b55b4d5aa9aee7525d",
+      "bytes": 17344
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-review-embed-security-closure-2026-10-28.json",
+      "sha256": "c84c87153589e9e504a8e45412ec529927832c272e1320a3e261c59c14657fa5",
+      "bytes": 23149
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-review-embed-sol-2026-10-28.json",
+      "sha256": "02caa33ee32d52d47f9b76bd0e54135ffb2dce71c762f217cdac7d53f23145a0",
+      "bytes": 17619
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-review-embed-sol-attempt-2-2026-10-28.json",
+      "sha256": "8d55a8b8159f6544ee906019e3ef401cec4addac01ac93dc0970a28f79417d08",
+      "bytes": 17344
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence-review-embed-sol-prose-2026-10-28.json",
+      "sha256": "f1398c3865ce332872c009c48d4d445c2c4ad6e323aa9da4941ece825b7b4fbb",
+      "bytes": 6851
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/repair-embed-base-2026-10-28.md",
+      "sha256": "3f7d3e6aaf3e70da0a9b2b2fe82ac5e09c1397c46b2ebb6ce91f620e718a5bcc",
+      "bytes": 1787
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/repair-embed-base-probe-2026-10-28.mjs",
+      "sha256": "34015b634efa672766d941ac86d8392e45222f5883dcee72186944eec7b6ebfa",
+      "bytes": 13602
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/review-embed-probes-sol-2026-10-28.mjs",
+      "sha256": "960d4c73179d9f2da69bd1f9eabb069770e51d31d633e762c53b9f7315124b8d",
+      "bytes": 13565
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/review-embed-prose-probes-sol-2026-10-28.mjs",
+      "sha256": "4e09a9aba1614e9dc58e4eafefc816bc9bf3770d51fe8ca3ab141cab566cb8e1",
+      "bytes": 15123
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/review-embed-security-2026-10-28.md",
+      "sha256": "3b941502412cdf09266e03c0be8516f95e45369147572e5a1597836eca8e6e5b",
+      "bytes": 10279
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/review-embed-security-closure-2026-10-28.md",
+      "sha256": "2cfcf285a8e9ee87ffc4ecbeb088587d5002c2b15d7b940d232923b76cbcfdbc",
+      "bytes": 6004
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/review-embed-security-closure-probe-2026-10-28.mjs",
+      "sha256": "928de487079e1b736a2fa6ee640934813f4a96f124e73645aa71929517930ac5",
+      "bytes": 16619
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence/books-check-report.json",
+      "sha256": "b511889e9988ebe772058084f8da976a777cf3038cc28be9e756b873da01712c",
+      "bytes": 17491
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence/browser-check-report.json",
+      "sha256": "f06943e07a2846b0d23561470ca1372412587227d50ac5433ee444ce563dba54",
+      "bytes": 22906
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence/command-log.txt",
+      "sha256": "8b8885de1bd12c617a34348a574dcfe378fa908244b39bd98e911f7a98d39eb9",
+      "bytes": 2316
+    },
+    {
+      "file": "docs/design/2026-10-28-two-book-conversion/evidence/folio-differences.json",
+      "sha256": "4ad4c875132284c8cffce353771db01ee09d30f0ce2006f02510c5bca6ec2f46",
+      "bytes": 17828
+    }
+  ],
+  "notTouched": [
+    "apps/reader-demo/src/App.tsx",
+    "shared manifests",
+    "package.json",
+    "packages/reader-core",
+    "apps/reader-demo/scripts/release",
+    "scripts/prepare-reader-source-release.mjs",
+    "source repositories (read-only)",
+    "dlnet and other websites",
+    "Instructional Videos and Dyslexia content"
+  ],
+  "git": "No Git, push or deploy. Files are untracked additions.",
+  "unresolved": [
+    "Slide photograph (Unsplash) not bundled; placeholder inline",
+    "Academic licence: original silent; draft Folio says CC BY-SA 4.0 from brief; no licence printed",
+    "Readability licence: original says CC BY everywhere, version unstated; book links CC BY 4.0 deed; Folio draft CC BY-SA 4.0 is not supported by the original",
+    "Academic overview paragraph break (source has two paragraphs, app renders one)",
+    "References to non-existent appendices in Academic strategic and Readability 10-simple-things-ppt",
+    "Academic final book URL and sourceUrl; no cover chosen",
+    "Checklist kept as plain list",
+    "Embeds untested inside the real reader, in Safari/Firefox, by screen reader, or in EPUB"
+  ],
+  "integrationNeeded": [
+    "Register books in App.tsx/manifests; theme/cover",
+    "Pass embeds from embed-manifest.json (drop placement), run checkPublicationEmbeds in release test",
+    "Copy interactives into edition embeds root; securityHeaders({embedRoot})",
+    "Add both books to manuscriptAnchors in prepare-reader-source-release.mjs (public export audit)",
+    "Regenerate search index and agent files from the new JSON",
+    "Resolve licences, photo, URL, cover before any public edition"
+  ],
+  "report": "docs/design/2026-10-28-two-book-conversion/conversion-report.md",
+  "provenance": "apps/reader-demo/src/books/next-books/next-books-provenance.json"
+}

@@ -11,7 +11,7 @@
     "build:llms": "tsx scripts/build-llms.ts",
     "check": "tsc --noEmit",
     "import:originals": "tsx scripts/import-original-books.ts",
-    "test:books": "tsx --test scripts/test-original-books.ts",
+    "test:books": "tsx --test scripts/test-original-books.ts scripts/test-demo-books.ts",
     "verify:originals": "tsx scripts/verify-original-source-snapshots.ts",
     "build:agent": "tsx scripts/build-agent-files.ts",
     "build:release": "tsx scripts/build-release.ts",

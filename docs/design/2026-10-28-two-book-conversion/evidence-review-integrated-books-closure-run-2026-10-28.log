@@ -1,0 +1,29 @@
+academic 0
+readability 0
+originals 0
+accounting 0
+oracle 0
+rebuild-embeds 0
+rebuild-books-output-redirect-only 0
+FAIL verbatim single summary readability/five-principles {"book":"readability","id":"five-principles","summary":"Learn the core principles: Space, Chunks, Guides, Information Structure, and Simple Language.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/how-people-read {"book":"readability","id":"how-people-read","summary":"Understand reading strategies like skimming and scanning to better inform document creation.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/cognitive-load {"book":"readability","id":"cognitive-load","summary":"Explore how working memory limits affect reading and how to reduce mental effort for your readers.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/10-simple-things-docs {"book":"readability","id":"10-simple-things-docs","summary":"Actionable steps to immediately improve your documents, from headings to font choices.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/10-simple-things-ppt {"book":"readability","id":"10-simple-things-ppt","summary":"Increase impact with text size, smart cropping, animations, and better slide structure.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/formatting-examples {"book":"readability","id":"formatting-examples","summary":"See the difference effective formatting makes with side-by-side comparisons of space, bolding, and structure.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/slide-formatting-examples {"book":"readability","id":"slide-formatting-examples","summary":"Before and after examples of slide layouts, zooming, and structure.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/3-steps-simple {"book":"readability","id":"3-steps-simple","summary":"Master the art of simplification: shorter sentences, addressing the reader, and using verbs.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/examples {"book":"readability","id":"examples","summary":"Concrete examples of simplified language and how rephrasing improves clarity.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/acronyms {"book":"readability","id":"acronyms","summary":"How to handle jargon and acronyms for different audiences.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/checklist {"book":"readability","id":"checklist","summary":"A quick checklist to audit your content for simple language principles.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/accessibility {"book":"readability","id":"accessibility","summary":"Essential guidelines for screen readers, magnifiers, Word, PDF, and meaningful links.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL verbatim single summary readability/evidence {"book":"readability","id":"evidence","summary":"Scientific evidence and research supporting these readability principles.","count":1,"opening":false,"rendered":true,"agentChapter":true,"agentFull":true}
+FAIL remove only declared insertions/licence restores earlier exact book readability {"actual":"95e936d388e7df6e3c677b290a2658adca4764b1b99420b0c096c7222ec3d081","expected":"c6efa2a83c45b3be9a1c0d4ebd85300085226e5cedd42d4a7fd25af8c4ed1041"}
+FAIL hostile config bookId null {"name":"bookId null","refused":false,"canaryReads":0,"emissions":1}
+FAIL hostile config bookId 3 {"name":"bookId 3","refused":false,"canaryReads":0,"emissions":1}
+nine-interactions-original-oracle 0
+epub-browser-bundle 1
+FAIL epub-browser-bundle {}
+Error: epub-browser-bundle failed
+FAIL production and earlier evidence unchanged {"count":734,"changed":[["docs/design/2026-10-28-two-book-conversion/evidence-review-integrated-books-closure-run-2026-10-28.log","e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"]]}
+134/152 closure checks

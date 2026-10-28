@@ -1,0 +1,68 @@
+[
+ {
+  "mutation": "R1 frame gains allow-same-origin",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "1280px: sandbox is scripts only",
+   "375px: sandbox is scripts only"
+  ]
+ },
+ {
+  "mutation": "R2 message source identity not checked",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "1280px: height follows the embed document, not spoofed (333) or malformed (777) values",
+   "1280px: blocked frame keeps its initial height",
+   "375px: height follows the embed document, not spoofed (333) or malformed (777) values",
+   "375px: blocked frame keeps its initial height"
+  ]
+ },
+ {
+  "mutation": "R3 embed chrome counted in text model",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "1280px: text model excludes frame chrome",
+   "375px: text model excludes frame chrome"
+  ]
+ },
+ {
+  "mutation": "R4 release headers without embed rule",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "(harness error) embed browser checks: 0/0 pass\nTraceback (most recent call last):\n  File \"<string>\", line 104, in <module>\n  File \"<string>\", line 85, in wait_until\nAssertionError: timed out waiting for embedFixture.snapshot().seen.some(m => m.data && m.data.type === \"fixture:results\")\n"
+  ]
+ },
+ {
+  "mutation": "R5 message listener never removed",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "1280px: every message listener added by the reader is removed on unmount",
+   "375px: every message listener added by the reader is removed on unmount"
+  ]
+ },
+ {
+  "mutation": "R6 height accepted from any origin",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "\u2716 height messages: only an exact, bounded payload from an opaque origin (0.421334ms)",
+   "\u2716 failing tests:",
+   "\u2716 height messages: only an exact, bounded payload from an opaque origin (0.421334ms)"
+  ]
+ },
+ {
+  "mutation": "R7 dot-dot path segments accepted",
+  "exit": 1,
+  "red": true,
+  "failed_checks": [
+   "\u2716 resource paths outside the local embed folder are refused (0.484042ms)",
+   "\u2716 failing tests:",
+   "\u2716 resource paths outside the local embed folder are refused (0.484042ms)"
+  ]
+ }
+]

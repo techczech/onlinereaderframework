@@ -1,6 +1,9 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Sidebar } from './Sidebar.js';
 import { MarkdownRenderer } from './MarkdownRenderer.js';
+import { embedsForSection, type ValidPublicationEmbed } from '../embed/embed-model.js';
+
+const noEmbeds: readonly ValidPublicationEmbed[] = [];
 import { HighlightsDrawer } from './HighlightsDrawer.js';
 import { Home } from './Home.js';
 import { TableOfContents, type TableOfContentsHandle } from './TableOfContents.js';
@@ -29,10 +32,12 @@ export interface ReaderLayoutProps {
   hasRecordedAudio?: boolean;
   onOpenRecordedAudio?: (trigger: HTMLElement | null) => void;
   onBrowserSpeechStart?: () => void;
+  /** Validated host embeds for the whole book; each chapter receives its own. */
+  embeds?: readonly ValidPublicationEmbed[];
 }
 
 /** Original reader actions and annotations, with independently measured article and navigation. */
-export function ReaderLayout({ reader, coaching, agent, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart }: ReaderLayoutProps) {
+export function ReaderLayout({ reader, coaching, agent, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart, embeds = noEmbeds }: ReaderLayoutProps) {
   // The toolbar needs the read-aloud state but not the sentence and word positions, so the layout does not re-render for every spoken word.
   const [readAloud, setReadAloud] = useState<{ snapshot: ReadAloudSnapshot; actions: ReadAloudActions } | null>(null);
   const onReadAloudChange = useCallback((snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => {
@@ -51,6 +56,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
     contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
+  const sectionEmbeds = useMemo(() => embedsForSection(embeds, currentSection?.id), [embeds, currentSection?.id]);
   const support = useReadingSupport(book.id);
   const compactTocRef = useRef<TableOfContentsHandle>(null);
   const labels = publicationLabels(book);
@@ -221,6 +227,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                                     onOpenHighlight={handleOpenHighlightCallback}
                                     maxWidth={maxWidth}
                                     reflectionHidden={isAssistActive}
+                                    embeds={sectionEmbeds}
                                 />)}
                                 {!!currentSection.children?.length && <nav aria-label="Chapters in this section" className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6 space-y-3">
                                   {currentSection.children.map(child => <button key={child.id} onClick={() => handleSectionChange(child.id)} className="block text-left text-indigo-600 dark:text-indigo-400 hover:underline">{child.title}</button>)}

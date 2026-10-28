@@ -1,0 +1,618 @@
+{
+ "date": "2026-10-28T01:58:31.477Z",
+ "chrome": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+ "passed": 122,
+ "failed": 0,
+ "results": [
+  {
+   "name": "academic-reading-framework/cognition-explorer @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":628}}]"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":532}}]"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":308}}]"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":348}}]"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":644}}]"
+  },
+  {
+   "name": "readability-foundations/readability-checker @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/readability-checker @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/readability-checker @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/readability-checker @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/readability-checker self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/readability-checker avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/readability-checker posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":987}}]"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":1224}}]"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":1036}}]"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images @320px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images @320px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images @900px loads offline, no errors",
+   "ok": true,
+   "detail": "{\"external\":[],\"errors\":[]}"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images @900px no page-level horizontal overflow",
+   "ok": true,
+   "detail": "overflow=0"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images self-contained (no src/href/url() to other resources)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images avoids storage/popups/forms",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images posts {type,version:1,height} from a sandboxed frame",
+   "ok": true,
+   "detail": "[{\"origin\":\"null\",\"source\":true,\"data\":{\"type\":\"reader-embed:height\",\"version\":1,\"height\":1036}}]"
+  },
+  {
+   "name": "explorer edge geometry equals the original SSR output (15 paths)",
+   "ok": true,
+   "detail": "{\"ssrPaths\":[\"M 400 50 L 400 160\",\"M 400 50 Q 235 105 120 260\",\"M 400 50 Q 565 205 680 260\",\"M 400 160 L 400 260\",\"M 400 160 L 120 260\",\"M 400 160 L 680 260\",\"M 120 260 L 400 260\",\"M 400 260 L 680 260\",\"M 680 260 Q 550 280 400 260\",\"M 400 260 L 250 380\",\"M 400 260 L 550 380\",\"M 250 500 L 550 380\",\"M"
+  },
+  {
+   "name": "explorer edge labels and positions equal the original (15 labels)",
+   "ok": true,
+   "detail": "{\"ssrLabels\":[\"400,105,Facilitates\",\"247.5,130,Facilitates\",\"552.5,180,Necessary for\",\"400,210,Feeds into\",\"260,210,Feeds into\",\"540,210,Active during\",\"260,260,Feeds into\",\"540,260,Feeds into\",\"545,270,Feeds into\",\"325,320,type of\",\"475,320,type of\",\"400,440,Develops map\",\"550,440,Navigates\",\"400,5"
+  },
+  {
+   "name": "explorer dashed/solid edges equal the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "explorer nodes (position, label) equal the original",
+   "ok": true,
+   "detail": "{\"ssrNodes\":[\"50,8.333333333333332,Manipulating\",\"50,26.666666666666668,Decoding\",\"15,43.333333333333336,Pre-coding\",\"50,43.333333333333336,Encoding\",\"85,43.333333333333336,Re-coding\",\"31.25,63.33333333333333,Linear Encoding\",\"68.75,63.33333333333333,Non-linear encoding\",\"31.25,83.33333333333334,Ski"
+  },
+  {
+   "name": "explorer: selecting Manipulating shows its definition and highlights its 3 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Manipulating\",\"text\":\"The physical and digital handling of texts, such as annotating, organizing files, and managing reading environments.\",\"type\":\"Cognitive Mode\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"manipulating>decoding\",\"manipulating>precoding\",\"manipulating>recoding\"],\"dimmed\":12,\"pressed\":[\"manipulating\"],\"faded\":[\"encoding\",\"linear\",\"nonlinear\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Decoding shows its definition and highlights its 4 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Decoding\",\"text\":\"Translating written symbols (letters) into words and sentences. The basic mechanical layer of reading.\",\"type\":\"Cognitive Mode\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"decoding>encoding\",\"decoding>precoding\",\"decoding>recoding\",\"manipulating>decoding\"],\"dimmed\":11,\"pressed\":[\"decoding\"],\"faded\":[\"linear\",\"nonlinear\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Pre-coding shows its definition and highlights its 4 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Pre-coding\",\"text\":\"Activating prior knowledge, schemas, and expectations before deep reading begins.\",\"type\":\"Cognitive Mode\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"decoding>precoding\",\"manipulating>precoding\",\"precoding>encoding\",\"recoding>precoding\"],\"dimmed\":11,\"pressed\":[\"precoding\"],\"faded\":[\"linear\",\"nonlinear\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Encoding shows its definition and highlights its 6 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Encoding\",\"text\":\"Building a mental model or semantic map of the text while reading.\",\"type\":\"Cognitive Mode\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"decoding>encoding\",\"encoding>linear\",\"encoding>nonlinear\",\"encoding>recoding\",\"precoding>encoding\",\"recoding>encoding\"],\"dimmed\":9,\"pressed\":[\"encoding\"],\"faded\":[\"manipulating\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Re-coding shows its definition and highlights its 5 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Re-coding\",\"text\":\"Transforming understood meaning into new forms like notes, summaries, or synthesis.\",\"type\":\"Cognitive Mode\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"decoding>recoding\",\"encoding>recoding\",\"manipulating>recoding\",\"recoding>encoding\",\"recoding>precoding\"],\"dimmed\":10,\"pressed\":[\"recoding\"],\"faded\":[\"linear\",\"nonlinear\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Linear Encoding shows its definition and highlights its 1 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Linear Encoding\",\"text\":\"Reading sequentially from start to finish. Useful for narrative, often inefficient for academic study.\",\"type\":\"Activity\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"encoding>linear\"],\"dimmed\":14,\"pressed\":[\"linear\"],\"faded\":[\"decoding\",\"manipulating\",\"nonlinear\",\"precoding\",\"recoding\",\"scanning\",\"skimming\"]}"
+  },
+  {
+   "name": "explorer: selecting Non-linear encoding shows its definition and highlights its 3 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Non-linear encoding\",\"text\":\"Building meaning by jumping through text strategically rather than sequentially.\",\"type\":\"Activity\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"encoding>nonlinear\",\"scanning>nonlinear\",\"skimming>nonlinear\"],\"dimmed\":12,\"pressed\":[\"nonlinear\"],\"faded\":[\"decoding\",\"linear\",\"manipulating\",\"precoding\",\"recoding\"]}"
+  },
+  {
+   "name": "explorer: selecting Skimming shows its definition and highlights its 2 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Skimming\",\"text\":\"Rapid reading to identifying the main ideas and structure of a text.\",\"type\":\"Activity\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"skimming>nonlinear\",\"skimming>scanning\"],\"dimmed\":13,\"pressed\":[\"skimming\"],\"faded\":[\"decoding\",\"encoding\",\"linear\",\"manipulating\",\"precoding\",\"recoding\"]}"
+  },
+  {
+   "name": "explorer: selecting Scanning shows its definition and highlights its 2 arrows",
+   "ok": true,
+   "detail": "{\"title\":\"Scanning\",\"text\":\"Searching a text for specific information or keywords.\",\"type\":\"Activity\",\"shown\":true,\"resetEnabled\":true,\"related\":[\"scanning>nonlinear\",\"skimming>scanning\"],\"dimmed\":13,\"pressed\":[\"scanning\"],\"faded\":[\"decoding\",\"encoding\",\"linear\",\"manipulating\",\"precoding\",\"recoding\"]}"
+  },
+  {
+   "name": "explorer: Reset View clears selection",
+   "ok": true,
+   "detail": "{\"shown\":false,\"resetDisabled\":true,\"dim\":0,\"fade\":0}"
+  },
+  {
+   "name": "explorer: Enter on a focused node selects it (keyboard)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "explorer: Escape clears selection",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "explorer: every control is a focusable button",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "explorer @320px: stage scales to 70% and offers sideways scrolling, page itself does not overflow",
+   "ok": true,
+   "detail": "{\"scale\":\"scale(0.7)\",\"hint\":true,\"w\":320,\"iw\":320}"
+  },
+  {
+   "name": "explorer @720px (typical reading column): scales to fit without scrolling",
+   "ok": true,
+   "detail": "scale(0.8275)"
+  },
+  {
+   "name": "cramped text: initial state equals the original (cramped)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "cramped text: click reveals the clear state equal to the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "cramped text: second click returns to cramped",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "cramped text: Enter and Space operate the box (keyboard)",
+   "ok": true,
+   "detail": "true true"
+  },
+  {
+   "name": "font adjuster: initial state equals the original at 20px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: after 3 increases equals the original at 26px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: after 6 decreases equals the original at 14px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: decrease at minimum does nothing equals the original at 14px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: increase to maximum equals the original at 40px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: increase at maximum does nothing equals the original at 40px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: reset equals the original at 20px",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "font adjuster: buttons are native buttons with titles",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: initial state equals the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #1 (\"\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #2 (\"   \") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #3 (\"One short sentence.\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #4 (\"This sentence keeps going an\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #5 (\"word0 word1 word2 word3 word\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #6 (\"No terminal punctuation here\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #7 (\"Really?! Yes... Fine. <b>Tag\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: text #8 (\"This sentence keeps going an\") analysed exactly as the original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: Clear equals the original empty state",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker: textarea has an accessible name; controls focusable",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "slides-one-bullet: shows the original slide texts, titles and captions",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "slides-one-bullet: images are inline and load",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "slides-extraneous-text: shows the original slide texts, titles and captions",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "slides-extraneous-text: images are inline and load",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "slides-zooming-images: shows the original slide texts, titles and captions",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "slides-zooming-images: images are inline and load",
+   "ok": true,
+   "detail": "[true,true]"
+  },
+  {
+   "name": "academic-reading-framework/cognition-explorer under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic-reading-framework/reading-articulation-layers under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic-reading-framework/reading-simplified-summary under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/cramped-text-reveal under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/font-spacing-adjuster under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/readability-checker under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/slides-one-bullet under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/slides-extraneous-text under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations/slides-zooming-images under the release CSP: no violations, content renders",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "explorer under the release CSP: selecting a node works",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "checker under the release CSP: typing updates the figures",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

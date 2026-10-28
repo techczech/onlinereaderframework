@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 150,
+      "text": "Learn the core principles: Space, Chunks, Guides, Information Structure, and Simple Language.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 156,
+      "text": "Understand reading strategies like skimming and scanning to better inform document creation.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 162,
+      "text": "Explore how working memory limits affect reading and how to reduce mental effort for your readers.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 173,
+      "text": "Actionable steps to immediately improve your documents, from headings to font choices.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 179,
+      "text": "Increase impact with text size, smart cropping, animations, and better slide structure.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 185,
+      "text": "See the difference effective formatting makes with side-by-side comparisons of space, bolding, and structure.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 191,
+      "text": "Before and after examples of slide layouts, zooming, and structure.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 202,
+      "text": "Master the art of simplification: shorter sentences, addressing the reader, and using verbs.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 208,
+      "text": "Concrete examples of simplified language and how rephrasing improves clarity.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 214,
+      "text": "How to handle jargon and acronyms for different audiences.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 220,
+      "text": "Interactive tool to check sentence length and identify complex text.",
+      "presentInBook": true
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 226,
+      "text": "A quick checklist to audit your content for simple language principles.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 237,
+      "text": "Essential guidelines for screen readers, magnifiers, Word, PDF, and meaningful links.",
+      "presentInBook": false
+    },
+    {
+      "book": "readability",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/readability-foundations/types.ts",
+      "line": 243,
+      "text": "Scientific evidence and research supporting these readability principles.",
+      "presentInBook": false
+    },
+    {
+      "book": "academic",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework/App.tsx",
+      "line": 115,
+      "text": "Explore the cognitive models behind academic reading. Understand how cognitive load and pre-coding shape comprehension.",
+      "presentInBook": false
+    },
+    {
+      "book": "academic",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework/App.tsx",
+      "line": 135,
+      "text": "Linear reading often fails in academic contexts. Discover how to switch modes for better comprehension.",
+      "presentInBook": false
+    },
+    {
+      "book": "academic",
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/academic-reading-framework/App.tsx",
+      "line": 154,
+      "text": "Interact with our dynamic map of the reading process. Visualize how manipulating, decoding, and encoding interact in real-time.",
+      "presentInBook": false
+    }
+  ],
+  "missing": 16
+}

@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "dir": "..",
+      "src": "outside.html",
+      "oldResolved": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "lexical": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "targetExists": true,
+      "refused": true,
+      "emitted": 0,
+      "served": 0,
+      "canaryReads": 0,
+      "pass": true
+    },
+    {
+      "dir": "interactives/book",
+      "src": "../../../outside.html",
+      "oldResolved": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "lexical": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "targetExists": true,
+      "refused": true,
+      "emitted": 0,
+      "served": 0,
+      "canaryReads": 0,
+      "pass": true
+    },
+    {
+      "dir": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai",
+      "src": "outside.html",
+      "oldResolved": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/app/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "lexical": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-traversal-216lai/outside.html",
+      "targetExists": true,
+      "refused": true,
+      "emitted": 0,
+      "served": 0,
+      "canaryReads": 0,
+      "pass": true
+    }
+  ],
+  "scratchRemoved": true
+}

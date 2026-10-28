@@ -1,0 +1,112 @@
+<!-- Cognition Explorer. Data (NODES, EDGES) and the edge geometry are those of components/CognitionExplorer.tsx in the original. -->
+<div class="flex flex-col gap-6 rounded-2xl bg-slate-50 border border-slate-200 p-6 shadow-inner" id="explorer">
+  <div class="flex items-center justify-between">
+    <div>
+      <h3 class="text-xl font-bold text-slate-900">Interactive Cognition Map</h3>
+      <p class="text-sm text-slate-500">Click on nodes to explore the cognitive process.</p>
+    </div>
+    <button type="button" id="reset" class="text-sm text-brand-700 hover:underline disabled:opacity-60 disabled:no-underline" disabled>Reset View</button>
+  </div>
+  <div id="scroller" class="w-full overflow-x-auto pb-4">
+    <div id="fit" class="mx-auto">
+      <div id="stage" class="relative bg-white shadow-sm border border-slate-100 rounded-xl" style="width:800px;height:600px;transform-origin:top left">
+        <svg id="edges" class="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <div id="nodes" class="absolute inset-0 h-full w-full pointer-events-none" role="group" aria-label="Cognition map nodes"></div>
+      </div>
+    </div>
+  </div>
+  <div id="hint" class="text-center text-xs text-slate-500" hidden>Scroll horizontally to view full diagram</div>
+  <div id="panel" class="bg-white/95 rounded-xl border border-brand-200 shadow-xl p-6" role="region" aria-live="polite" aria-label="Selected node" hidden>
+    <div class="flex justify-between items-start">
+      <div class="flex gap-4">
+        <div id="panel-icon" class="p-3 rounded-lg h-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+        <div>
+          <h4 id="panel-title" class="text-lg font-bold text-slate-900"></h4>
+          <p id="panel-text" class="text-slate-600 mt-1"></p>
+          <div class="mt-2 flex gap-2 text-xs"><span id="panel-type" class="px-2 py-1 rounded bg-slate-100 text-slate-600 font-medium uppercase tracking-wider"></span></div>
+        </div>
+      </div>
+      <button type="button" id="close" class="text-slate-500 hover:text-slate-700" aria-label="Close definition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var NODES = __NODES__, EDGES = __EDGES__, NODE_HEIGHT = 50;
+  var byId = {}; NODES.forEach(function (n) { byId[n.id] = n; });
+  var active = null;
+  var $ = function (id) { return document.getElementById(id); };
+  // getEdgePath, label positions and styling follow the original component line for line.
+  function getEdgePath(edge) {
+    var s = byId[edge.source], t = byId[edge.target], sx = s.x, sy = s.y, tx = t.x, ty = t.y;
+    if (edge.curve) {
+      var mx = (sx + tx) / 2, my = (sy + ty) / 2;
+      if (Math.abs(edge.curve) > 100) return 'M ' + sx + ' ' + (sy + NODE_HEIGHT / 2) + ' Q ' + mx + ' ' + (Math.max(sy, ty) + edge.curve) + ' ' + tx + ' ' + (ty + NODE_HEIGHT / 2);
+      return 'M ' + sx + ' ' + sy + ' Q ' + (mx + (edge.curve / 2)) + ' ' + (my + edge.curve) + ' ' + tx + ' ' + ty;
+    }
+    return 'M ' + sx + ' ' + sy + ' L ' + tx + ' ' + ty;
+  }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function renderEdges() {
+    var out = '<defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="28" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"></polygon></marker>' +
+      '<marker id="arrowhead-active" markerWidth="10" markerHeight="7" refX="28" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0ea5e9"></polygon></marker></defs>';
+    EDGES.forEach(function (edge) {
+      var isRelated = active && (edge.source === active || edge.target === active);
+      var isDimmed = active && !isRelated;
+      var s = byId[edge.source], t = byId[edge.target];
+      var midX = (s.x + t.x) / 2, midY = (s.y + t.y) / 2;
+      var labelY = edge.curve ? midY + (edge.curve / 2) : midY;
+      var labelX = edge.curve ? midX + (edge.curve / 4) : midX;
+      out += '<g class="edge" data-source="' + edge.source + '" data-target="' + edge.target + '" data-related="' + (isRelated ? '1' : '0') + '" style="opacity:' + (isDimmed ? 0.2 : 1) + '">' +
+        '<path d="' + getEdgePath(edge) + '" fill="none" stroke="' + (isRelated ? '#0ea5e9' : '#94a3b8') + '" stroke-width="' + (isRelated ? 2.5 : 1.5) + '" stroke-dasharray="' + (edge.dashed ? '5,5' : 'none') + '" marker-end="url(#' + (isRelated ? 'arrowhead-active' : 'arrowhead') + ')"></path>' +
+        (edge.label ? '<text x="' + labelX + '" y="' + labelY + '" fill="' + (isRelated ? '#0ea5e9' : '#64748b') + '" font-size="11" font-weight="' + (isRelated ? 'bold' : 'normal') + '" text-anchor="middle" dy="-5">' + esc(edge.label) + '</text>' : '') + '</g>';
+    });
+    $('edges').innerHTML = out;
+  }
+  function nodeClass(type, isActive) {
+    var base = 'absolute transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 flex items-center justify-center rounded-lg border shadow-sm ';
+    if (isActive) return base + 'bg-brand-600 text-white ring-4 ring-brand-200';
+    if (type === 'mode') return base + 'bg-sky-400 text-slate-900 border-sky-600';
+    return base + 'bg-slate-200 text-slate-800 border-slate-300';
+  }
+  function renderNodes() {
+    NODES.forEach(function (node) {
+      var el = document.getElementById('node-' + node.id);
+      if (!el) {
+        el = document.createElement('button'); el.type = 'button'; el.id = 'node-' + node.id; el.setAttribute('data-node', node.id);
+        el.style.left = (node.x / 800) * 100 + '%'; el.style.top = (node.y / 600) * 100 + '%'; el.style.width = '140px'; el.style.height = '50px';
+        el.innerHTML = '<span class="font-bold text-sm">' + esc(node.label) + '</span>';
+        el.addEventListener('click', function () { select(node.id); });
+        $('nodes').appendChild(el);
+      }
+      var isActive = active === node.id;
+      var isDimmed = active && !isActive && !EDGES.some(function (e) { return (e.source === active && e.target === node.id) || (e.target === active && e.source === node.id); });
+      el.className = nodeClass(node.type, isActive);
+      el.style.opacity = isDimmed ? 0.5 : 1;
+      el.style.scale = isActive ? '1.1' : '1';
+      el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+  function renderPanel() {
+    var node = active ? byId[active] : null;
+    $('panel').hidden = !node; $('reset').disabled = !node;
+    if (!node) return;
+    $('panel-title').textContent = node.label; $('panel-text').textContent = node.description;
+    $('panel-type').textContent = node.type === 'mode' ? 'Cognitive Mode' : 'Activity';
+    $('panel-icon').className = 'p-3 rounded-lg h-fit ' + (node.type === 'mode' ? 'bg-sky-100 text-sky-700' : 'bg-slate-100 text-slate-700');
+  }
+  function render() { renderEdges(); renderNodes(); renderPanel(); }
+  function select(id) { active = id; render(); }
+  function clear() { active = null; render(); }
+  $('reset').addEventListener('click', clear); $('close').addEventListener('click', clear);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && active) clear(); });
+  // The original needs 800px and scrolls sideways below that; here the fixed 800x600 stage scales down to 70% first.
+  function fit() {
+    var avail = $('scroller').clientWidth, s = Math.max(0.7, Math.min(1, avail / 800));
+    $('stage').style.transform = 'scale(' + s + ')'; $('fit').style.width = 800 * s + 'px'; $('fit').style.height = 600 * s + 'px';
+    $('hint').hidden = !($('scroller').scrollWidth > $('scroller').clientWidth + 1);
+  }
+  render(); fit(); window.addEventListener('resize', fit);
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(fit).observe($('scroller'));
+})();
+</script>

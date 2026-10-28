@@ -1,0 +1,91 @@
+{
+  "results": [
+    {
+      "label": "core TypeScript no-emit",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "existing unit tests (scratch relocated only)",
+      "exit": 0,
+      "stdout": "(node:34797) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.review-embed-scratch-QFnMg5/unit-uRRD7a/embed/embed-model.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n✔ a sound descriptor is normalised (0.8945ms)\n✔ resource paths outside the local embed folder are refused (0.2135ms)\n✔ identity, text and height fields are constrained (0.157833ms)\n✔ runtime URL resolution stays on the page origin inside the root (0.130083ms)\n✔ height messages: only an exact, bounded payload from an opaque origin (0.170834ms)\n✔ build check requires a real prose alternative at the anchor (7.799375ms)\n✔ manuscript HTML still cannot create frames, scripts or embed chrome (0.948375ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 137.091292\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing headless browser tests (scratch relocated only)",
+      "exit": 0,
+      "stdout": "[\n {\n  \"name\": \"1280px: exactly the two valid descriptors produce frames; manuscript iframe and refused descriptors produce none\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: manuscript script never ran\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: refused descriptors are reported\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: sandbox is scripts only\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: powerful features denied\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: no referrer\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: accessible title\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: frame is placed before its prose alternative\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: src resolved on the page origin inside the embed folder\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: height follows the embed document, not spoofed (333) or malformed (777) values\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: observed frame height (record only)\",\n  \"pass\": true,\n  \"observed\": 661\n },\n {\n  \"name\": \"1280px: blocked frame keeps its initial height\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: site-wide frame policy blocks an embed served without the embed rule\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: spoof frame messages reached the page but changed nothing\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed origin is opaque\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed messages arrive with origin \\\"null\\\"\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed cannot reach the reader DOM\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed cannot use storage\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed cannot set cookies\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed cannot open popups\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: embed network blocked by embed CSP\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: no popup page opened\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: reader page was not navigated by the embed\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: no request left the fixture origin\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: no request for refused paths\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: text model keeps the prose alternative\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: text model excludes frame chrome\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: forged manuscript chrome stays in the text model\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: full view link opens a new tab without opener or referrer\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: frame fills the text column\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: frame causes no horizontal page overflow\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: keyboard skip link moves focus to the text version\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"1280px: every message listener added by the reader is removed on unmount\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: exactly the two valid descriptors produce frames; manuscript iframe and refused descriptors produce none\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: manuscript script never ran\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: refused descriptors are reported\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: sandbox is scripts only\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: powerful features denied\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: no referrer\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: accessible title\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: frame is placed before its prose alternative\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: src resolved on the page origin inside the embed folder\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: height follows the embed document, not spoofed (333) or malformed (777) values\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: observed frame height (record only)\",\n  \"pass\": true,\n  \"observed\": 661\n },\n {\n  \"name\": \"375px: blocked frame keeps its initial height\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: site-wide frame policy blocks an embed served without the embed rule\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: spoof frame messages reached the page but changed nothing\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed origin is opaque\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed messages arrive with origin \\\"null\\\"\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed cannot reach the reader DOM\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed cannot use storage\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed cannot set cookies\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed cannot open popups\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: embed network blocked by embed CSP\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: no popup page opened\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: reader page was not navigated by the embed\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: no request left the fixture origin\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: no request for refused paths\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: text model keeps the prose alternative\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: text model excludes frame chrome\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: forged manuscript chrome stays in the text model\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: full view link opens a new tab without opener or referrer\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: frame fills the text column\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: frame causes no horizontal page overflow\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: keyboard skip link moves focus to the text version\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"375px: every message listener added by the reader is removed on unmount\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"full view: response carries the embed policy and no frame denial\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"full view: page stayed on the embed\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"full view: the embed CSP sandbox keeps a direct top-level open opaque\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n },\n {\n  \"name\": \"full view: storage of the reader origin is unreachable\",\n  \"pass\": true,\n  \"actual\": null,\n  \"expected\": null\n }\n]\nembed browser checks: 70/70 pass\n",
+      "stderr": ""
+    },
+    {
+      "label": "independent edge probes",
+      "exit": 0,
+      "stdout": "[\n  {\n    \"name\": \"manuscript attribute spelling variants keep canonical prose\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"320px no horizontal overflow\",\n    \"actual\": false,\n    \"expected\": false,\n    \"passed\": true\n  },\n  {\n    \"name\": \"reported height accepted\",\n    \"actual\": \"650px\",\n    \"expected\": \"650px\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"canonical live text omits chrome\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"highlight survives frame insertion/reload\",\n    \"actual\": 1,\n    \"expected\": 1,\n    \"passed\": true\n  },\n  {\n    \"name\": \"annotation retains canonical prose\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"annotation reload observed as documented\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"last height retained across annotation\",\n    \"actual\": \"650px\",\n    \"expected\": \"650px\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"state resets as documented\",\n    \"actual\": \"Initial\",\n    \"expected\": \"Initial\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"keyboard skip for div anchor\",\n    \"actual\": \"reader-content-alternative\",\n    \"expected\": \"reader-content-alternative\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"missing.html fallback text remains readable\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"missing.html skip remains keyboard accessible\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"blocked.html fallback text remains readable\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"blocked.html skip remains keyboard accessible\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"SPEC: foreign document base cannot move frame off page origin\",\n    \"actual\": \"http://127.0.0.1:59172/embeds/good.html\",\n    \"expected\": \"http://127.0.0.1:59172/embeds/good.html\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"SPEC: foreign document base cannot move full-view link off page origin\",\n    \"actual\": \"http://127.0.0.1:59172/embeds/good.html\",\n    \"expected\": \"http://127.0.0.1:59172/embeds/good.html\",\n    \"passed\": true\n  }\n]\n",
+      "stderr": "BROWSER 153.0.8010.12\nURL_VARIANTS [{\"base\": \"https://reader.invalid/sub/index.html\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}, {\"base\": \"https://other.invalid/sub/\", \"url\": \"https://other.invalid/sub/embeds/good.html\"}, {\"base\": \"https://reader.invalid/a/%2e%2e/sub/\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}, {\"base\": \"https://reader.invalid/sub/?q#f\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}]\nPAYLOAD_VARIANTS [{\"input\": \"NaN\", \"output\": null}, {\"input\": \"Infinity\", \"output\": null}, {\"input\": \"-1\", \"output\": null}, {\"input\": \"100001\", \"output\": null}, {\"input\": \"400\", \"output\": null}, {\"input\": \"null\", \"output\": null}, {\"input\": \"[object Object]\", \"output\": null}, {\"input\": \"\", \"output\": null}, {\"input\": \"400\", \"output\": 400}]\nFOREIGN_BASE_REQUESTS []\n"
+    }
+  ],
+  "hashes": [
+    {
+      "path": "packages/reader-core/src/embed/embed-model.ts",
+      "sha256": "716a538c01830179fd3de26d8320317f269e3bcc10fcc2c13321cbb463b157ad"
+    },
+    {
+      "path": "packages/reader-core/src/embed/PublicationEmbedFrame.tsx",
+      "sha256": "d6a6458862c19b07d4e44982542d8712e1654743220138ddd9b909aabc857f13"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-child.ts",
+      "sha256": "8bc45041e2b798d6649a04949dc4bcd35352f9b58474d5c9ee40b51f2195b501"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-check.ts",
+      "sha256": "083ea12ac68d3cec2b9516e831855ab54dcc01e4c0fbf986c23af1d395a7c054"
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "sha256": "0a46654020117af4db0534e89578e00dbec4c0140dea6b7d9ff055185372787b"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "sha256": "69989cfb0c1ac532fab416eee778837ac78fe0e9d95ccacdbb33d680be277c18"
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "sha256": "c9a06154b9c10249d1cd1a7a279b741a4e12556f56dd74ed4796c21d176293b7"
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "sha256": "56dd0ca519ae345c93d28384bf54049cba3f2bd9f926483d245b5cb56e76a5fa"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "sha256": "85b51ab84448cbe1dc69e8634cbd38a3bd9010529defe0c39cf10043c7f62234"
+    },
+    {
+      "path": "packages/reader-core/src/index.ts",
+      "sha256": "921734c5de36d702e8278a81b539271f2731044f7f34f4b60991ea7267bfb640"
+    },
+    {
+      "path": "packages/reader-core/package.json",
+      "sha256": "5a1b80aec7b2554a963158b133bf153b6a546a748aec753cb2421a9e9b956dc6"
+    },
+    {
+      "path": "scripts/build-reader-styles.mjs",
+      "sha256": "4a9134950f5d2509e1835e306f4864268c3f24e2a6a21bb451bbb0c3da37f618"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/headers.ts",
+      "sha256": "ef1873f79e5867e3dc96dcbcaef8264d6780008c780bca2d5a631c026990ab37"
+    },
+    {
+      "path": "scripts/prepare-reader-source-release.mjs",
+      "sha256": "fa80b10f827935e86ab9d473de7d00f8757f0f3f39498e7aa1fece0f85f70021"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-schema.ts",
+      "sha256": "257e77e0439a6ae3afb684728c42b8f49bd2a1381729fd7c69236e336fca3e38"
+    }
+  ],
+  "scratchRemoved": true
+}

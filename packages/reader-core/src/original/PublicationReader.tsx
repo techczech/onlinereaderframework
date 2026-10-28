@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { validatePublicationEmbeds } from '../embed/embed-model.js';
 import type { PublicationReaderProps } from './types.js';
 import { flattenPublicationSections } from './publication-model.js';
 import { usePublicationReader } from './use-publication-reader.js';
@@ -20,8 +21,14 @@ export function PublicationReader(props: PublicationReaderProps) {
   return <BookReader key={props.book.id} {...props} />;
 }
 
-function BookReader({ book, coaching, epub, audio, agent }: PublicationReaderProps) {
+function BookReader({ book, coaching, epub, audio, agent, embeds }: PublicationReaderProps) {
   const reader = usePublicationReader(book, epub);
+  // Host-registered embeds; a refused descriptor is dropped and its prose alternative still renders.
+  const validEmbeds = useMemo(() => {
+    const { embeds: valid, problems } = validatePublicationEmbeds(embeds);
+    if (problems.length) console.warn(`Publication ${book.id}: embeds refused:\n  ${problems.join('\n  ')}`);
+    return valid;
+  }, [embeds, book.id]);
   // The recorded player exists only when a track has a usable source and belongs to a section of this book, as the controller requires.
   const hasRecordedAudio = !!audio?.some(track => safeRecordingSource(track.src) && reader.sections.some(section => section.id === track.sectionId));
   const [listeningOpen, setListeningOpen] = useState(false);
@@ -40,7 +47,7 @@ function BookReader({ book, coaching, epub, audio, agent }: PublicationReaderPro
     listenTrigger.current = trigger;
     setListeningOpen(true);
   };
-  return <ReaderLayout reader={reader} coaching={coaching} agent={agent || undefined}
+  return <ReaderLayout reader={reader} coaching={coaching} agent={agent || undefined} embeds={validEmbeds}
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
     hasRecordedAudio={hasRecordedAudio} onOpenRecordedAudio={openListening}
     onBrowserSpeechStart={() => { pauseRecording.current?.(); setPauseSignal(value => value + 1); setBoundary(null); }}

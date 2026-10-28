@@ -1,4 +1,4 @@
-/** Writes the agent-readable copy of every demo book into the build output, from the same book data the reader displays.
+/** Writes the agent-readable copy of every demo book (the five of src/books/demo-books.ts) into the build output, from the same book data the reader displays.
  * Run after `vite build` (the demo's `npm run build` does). Usage: tsx scripts/build-agent-files.ts [--out dist]
  * READER_SITE_URL (optional) makes every link absolute, e.g. https://books.example.org/reader/ ; without it all links are relative and work under any host or sub-path.
  * --canonical writes each book's links against its own public address from src/canonical-sites.ts (for a deployment to those addresses); READER_SITE_URL, if also set, applies to books without one.
@@ -9,7 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { AGENT_DIRECTORY, buildAgentBook, canonicalSiteUrl, buildAgentRootIndex, type AgentFile } from '../../../packages/reader-core/src/agent-export/index';
 import type { PublicationBook } from '../../../packages/reader-core/src/original/types';
-import publications from '../src/books/original-publications.json';
+import { demoBooks } from '../src/books/demo-books';
 import { canonicalSites } from '../src/canonical-sites';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -25,13 +25,13 @@ const publicSite = (value: string, what: string): string => {
   return valid;
 };
 const siteUrl = process.env.READER_SITE_URL ? publicSite(process.env.READER_SITE_URL, 'READER_SITE_URL') : undefined;
-const books = publications as PublicationBook[];
+const books: PublicationBook[] = demoBooks;
 const canonical = process.argv.includes('--canonical');
 const siteFor = (book: PublicationBook): string | undefined =>
   canonical && canonicalSites[book.id] ? publicSite(canonicalSites[book.id], `The canonical address of "${book.id}"`) : siteUrl;
 const exports = books.map(book => buildAgentBook(book, { siteUrl: siteFor(book) }));
 const root = buildAgentRootIndex(exports, { siteUrl, title: 'Online Reader Framework demo books',
-  summary: 'Three books read in the Online Reader Framework demo. Each is available as plain Markdown: an index, the whole text in one file, and one file per section.' });
+  summary: `Five books read in the Online Reader Framework demo. Each is available as plain Markdown: an index, the whole text in one file, and one file per section.` });
 const files: AgentFile[] = [root, ...exports.flatMap(book => book.files)];
 
 const inside = (target: string): string => {

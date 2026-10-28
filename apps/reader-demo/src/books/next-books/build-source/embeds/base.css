@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root { color-scheme: light dark; }
+  html, body { margin: 0; background: transparent; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; padding: 4px; }
+  /* Original used slate-400 for small captions (2.6:1 on white); darkened for legibility. */
+  .text-slate-400 { color: #64748b; }
+  [data-cramped-box]:focus-within [data-hint] { opacity: 1; }
+  :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e2e8f0; }
+    .text-slate-400 { color: #94a3b8; }
+    :focus-visible { outline-color: #93c5fd; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+}
+
+/* Keep the original diagrams readable within a narrow reader column. */
+body[data-reader-interactive="reading-simplified-summary"] .flex-1 { min-width: 0; overflow-wrap: anywhere; }
+body[data-reader-interactive="slides-extraneous-text"] .grid > * { min-width: 0; }
+@media (max-width: 767px) {
+  body[data-reader-interactive="slides-extraneous-text"] .grid { grid-template-columns: minmax(0, 1fr); }
+  body[data-reader-interactive="slides-extraneous-text"] .space-x-8 { column-gap: .5rem; }
+  body[data-reader-interactive="slides-extraneous-text"] .space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; }
+  body[data-reader-interactive="slides-extraneous-text"] .space-x-8 > .w-32 { width: clamp(3rem, 18vw, 4rem); height: auto; aspect-ratio: 1; flex-shrink: 0; }
+  body[data-reader-interactive="slides-extraneous-text"] .space-x-8 > .w-32 .text-lg { font-size: .75rem; }
+  body[data-reader-interactive="slides-extraneous-text"] .space-x-8 > .flex .w-16 { width: 2rem; }
+}

@@ -1,0 +1,15 @@
+✔ a sound descriptor is normalised (0.978333ms)
+✔ resource paths outside the local embed folder are refused (0.202375ms)
+✔ identity, text and height fields are constrained (0.161208ms)
+✔ runtime URL resolution stays on the page origin inside the root (0.142333ms)
+✔ height messages: only an exact, bounded payload from an opaque origin (0.188625ms)
+✔ build check requires a real prose alternative at the anchor (7.762333ms)
+✔ manuscript HTML still cannot create frames, scripts or embed chrome (1.050416ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 109.698958

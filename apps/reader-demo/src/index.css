@@ -39,3 +39,14 @@ body:not(:has(.publication-front, .publication-home)) .demo-frontpage-chooser { 
   .demo-frontpage-chooser select { max-width: 8.5rem; }
 }
 @media (max-width: 639px) { .demo-frontpage-chooser { display: none; } }
+
+/* Demo-only book chooser (five books). Same look as the front-page chooser; bottom left, on every page, compact on small windows. */
+.demo-book-chooser { position: fixed; left: .75rem; bottom: .75rem; z-index: 40; display: flex; align-items: center; gap: .5rem; padding: .35rem .6rem; border: 1px solid #0003; border-radius: .6rem; background: #fffffff0; color: #202020; font: 12px/1.2 Inter, system-ui, sans-serif; box-shadow: 0 2px 8px #0002; }
+.demo-book-chooser select { font: inherit; padding: .2rem .3rem; max-width: 14rem; }
+@media (max-width: 1439px) {
+  .demo-book-chooser { left: .5rem; bottom: .5rem; padding: .2rem .4rem; font-size: 11px; opacity: .88; }
+  .demo-book-chooser select { max-width: 7.5rem; }
+}
+/* On a phone the chooser would sit over the text: it shows on the front page only, like the front-page chooser. */
+@media (max-width: 639px) { body:not(:has(.publication-front, .publication-home)) .demo-book-chooser { display: none; } }
+.demo-loading { padding: 2rem; font: 14px/1.4 Inter, system-ui, sans-serif; }

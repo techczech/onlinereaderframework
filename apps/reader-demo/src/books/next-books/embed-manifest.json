@@ -1,0 +1,152 @@
+{
+  "description": "Host-side embed descriptors per embed-contract.md v1 (docs/design/2026-10-28-two-book-conversion/embed-contract.md). `src` is relative to the embeds root; files are under apps/reader-demo/interactives/<book>/<id>/index.html. `placement` is explanatory, not part of the descriptor.",
+  "books": {
+    "academic-reading": {
+      "bookFile": "academic-reading-framework.book.json",
+      "interactivesDir": "interactives/academic-reading-framework",
+      "items": [
+        {
+          "id": "cognition-explorer",
+          "sectionId": "cognition-explorer",
+          "anchor": "cognition-explorer-text",
+          "src": "cognition-explorer/index.html",
+          "title": "Cognition Explorer: interactive map of the cognitive processes in academic reading",
+          "caption": "Select a node to see its definition and the arrows that connect it.",
+          "height": {
+            "initial": 700,
+            "min": 420,
+            "max": 1100
+          },
+          "resize": true,
+          "placement": "immediately before the text version, after the introductory paragraph and before \"How to read this map:\""
+        },
+        {
+          "id": "reading-articulation-layers",
+          "sectionId": "cognition",
+          "anchor": "reading-articulation-layers-text",
+          "src": "reading-articulation-layers/index.html",
+          "title": "Articulation of Reading: five levels of reading",
+          "caption": "Diagram: Articulation of Reading Process",
+          "height": {
+            "initial": 460,
+            "min": 300,
+            "max": 800
+          },
+          "resize": true,
+          "placement": "under the heading \"Articulation of Reading\""
+        },
+        {
+          "id": "reading-simplified-summary",
+          "sectionId": "cognition",
+          "anchor": "reading-simplified-summary-text",
+          "src": "reading-simplified-summary/index.html",
+          "title": "Simplified graphical summary of decoding, pre-coding, encoding, re-coding and manipulation",
+          "caption": "Diagram: Simplified Graphical Summary",
+          "height": {
+            "initial": 300,
+            "min": 220,
+            "max": 600
+          },
+          "resize": true,
+          "placement": "under the heading \"Graphical summary\""
+        }
+      ]
+    },
+    "readability-foundations": {
+      "bookFile": "readability-foundations.book.json",
+      "interactivesDir": "interactives/readability-foundations",
+      "items": [
+        {
+          "id": "cramped-text-reveal",
+          "sectionId": "formatting-examples",
+          "anchor": "cramped-text-reveal-text",
+          "src": "cramped-text-reveal/index.html",
+          "title": "Cramped text and the same text made clear",
+          "caption": "Select the box to switch between cramped and clear text.",
+          "height": {
+            "initial": 520,
+            "min": 320,
+            "max": 900
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"formatting-examples\""
+        },
+        {
+          "id": "font-spacing-adjuster",
+          "sectionId": "formatting-examples",
+          "anchor": "font-spacing-adjuster-text",
+          "src": "font-spacing-adjuster/index.html",
+          "title": "The same paragraph at 12pt, 14pt and an adjustable size",
+          "caption": "Make the last paragraph larger or smaller with the buttons.",
+          "height": {
+            "initial": 700,
+            "min": 400,
+            "max": 1400
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"formatting-examples\""
+        },
+        {
+          "id": "slides-one-bullet",
+          "sectionId": "slide-formatting-examples",
+          "anchor": "one-bullet-text",
+          "src": "slides-one-bullet/index.html",
+          "title": "One crowded slide against an introduction, summary and detail sequence",
+          "caption": "Compare a crowded slide with the same content split across slides.",
+          "height": {
+            "initial": 640,
+            "min": 320,
+            "max": 1400
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"slide-formatting-examples\""
+        },
+        {
+          "id": "slides-extraneous-text",
+          "sectionId": "slide-formatting-examples",
+          "anchor": "remove-text-text",
+          "src": "slides-extraneous-text/index.html",
+          "title": "A small graphic with a paragraph against the same graphic enlarged",
+          "caption": "Compare a small graphic and small text with the graphic filling the slide.",
+          "height": {
+            "initial": 640,
+            "min": 320,
+            "max": 1400
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"slide-formatting-examples\""
+        },
+        {
+          "id": "slides-zooming-images",
+          "sectionId": "slide-formatting-examples",
+          "anchor": "zooming-text",
+          "src": "slides-zooming-images/index.html",
+          "title": "A photograph beside text against a full-slide photograph",
+          "caption": "Compare split attention with an image that sets the context.",
+          "height": {
+            "initial": 640,
+            "min": 320,
+            "max": 1400
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"slide-formatting-examples\""
+        },
+        {
+          "id": "readability-checker",
+          "sectionId": "readability-tool",
+          "anchor": "readability-checker-text",
+          "src": "readability-checker/index.html",
+          "title": "Readability Checker: sentence length in your own text",
+          "caption": "Type or paste text to see its sentences measured.",
+          "height": {
+            "initial": 820,
+            "min": 520,
+            "max": 2000
+          },
+          "resize": true,
+          "placement": "immediately before the text version in section \"readability-tool\""
+        }
+      ]
+    }
+  }
+}

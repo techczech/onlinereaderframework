@@ -1,0 +1,26 @@
+[
+  {
+    "path": "docs/design/2026-10-28-two-book-conversion/evidence-review-integrated-books-before-2026-10-28.json",
+    "beforeDigest": "1c1d9f6d16ac7d781eee02543678198d21c9ac3cc9de2427f2d8a1e96e8fbaeb",
+    "afterDigest": "fc55828d97d3ed0272b427dafe88f79c38cae9d584bf4d9ea76075b8e1043915",
+    "roundTripEqual": true
+  },
+  {
+    "path": "docs/design/2026-10-28-two-book-conversion/evidence-review-integrated-books-closure-2026-10-28-v2.json",
+    "beforeDigest": "4fb99b6d233b2e21902e12a67aef5a6c3f7e057401f4f4575e22f2a12b092553",
+    "afterDigest": "566f1329342f708d3a60417be82ec5eb081662a8da004c674ee9eec6897821da",
+    "roundTripEqual": true
+  },
+  {
+    "path": "docs/design/2026-10-28-two-book-conversion/evidence-review-integrated-books-closure-2026-10-28.json",
+    "beforeDigest": "0461c5e1c456ec18ff4e86c2349040d93cd89a3fd7069d60c2faeb0681fb87ef",
+    "afterDigest": "8ffa50197504ea1e266ed2271446f194334050d621f034a8073331f8a9276bee",
+    "roundTripEqual": true
+  },
+  {
+    "path": "docs/design/2026-10-28-two-book-conversion/evidence-review-integrated-books-preservation-2026-10-28.json",
+    "beforeDigest": "6cfea6041362042aa8bdd95924860e98e9d33f00d7ab993784aad0acbcb00de6",
+    "afterDigest": "f7fdc75f23532aa55db5b4f08c506e79bfc150395ff9c957092067ac121a2216",
+    "roundTripEqual": true
+  }
+]

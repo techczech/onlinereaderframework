@@ -1,0 +1,29 @@
+
+> reader-demo@0.1.0 check
+> tsc --noEmit
+
+src/books/next-books/build-source/assemble.ts(3,45): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+src/books/next-books/build-source/assemble.ts(4,34): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+src/books/next-books/build-source/assemble.ts(5,31): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.
+src/books/next-books/build-source/assemble.ts(6,30): error TS2307: Cannot find module 'node:child_process' or its corresponding type declarations.
+src/books/next-books/build-source/assemble.ts(7,52): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/books/next-books/build-source/assemble.ts(11,25): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/books/next-books/build-source/build-academic.tsx(4,31): error TS2307: Cannot find module 'node:module' or its corresponding type declarations.
+src/books/next-books/build-source/build-academic.tsx(5,56): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+src/books/next-books/build-source/build-academic.tsx(6,25): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+src/books/next-books/build-source/build-academic.tsx(7,31): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.
+src/books/next-books/build-source/build-academic.tsx(8,58): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/books/next-books/build-source/build-academic.tsx(10,23): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/books/next-books/build-source/build-academic.tsx(10,49): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/books/next-books/build-source/build-readability.tsx(4,56): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+src/books/next-books/build-source/build-readability.tsx(5,25): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+src/books/next-books/build-source/build-readability.tsx(6,31): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.
+src/books/next-books/build-source/build-readability.tsx(7,42): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/books/next-books/build-source/build-readability.tsx(9,23): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+src/books/next-books/build-source/build-readability.tsx(9,49): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/books/next-books/build-source/lib.ts(2,28): error TS2307: Cannot find module 'node:crypto' or its corresponding type declarations.
+src/books/next-books/build-source/lib.ts(3,30): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+src/books/next-books/build-source/lib.ts(4,30): error TS2307: Cannot find module 'node:child_process' or its corresponding type declarations.
+src/books/next-books/build-source/oracle.tsx(3,31): error TS2307: Cannot find module 'node:module' or its corresponding type declarations.
+src/books/next-books/build-source/oracle.tsx(4,25): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+src/books/next-books/build-source/oracle.tsx(5,31): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.

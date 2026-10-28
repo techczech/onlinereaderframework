@@ -1,0 +1,693 @@
+{
+ "date": "2026-10-28T01:23:30.906Z",
+ "passed": 53,
+ "failed": 17,
+ "results": [
+  {
+   "name": "academic overview: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic purposeful: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic strategic: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic non-linear: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic active: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic productive: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic cumulative: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic cognition: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic cognition-explorer: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic narrative-ruminative: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability five-principles: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability how-people-read: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability cognitive-load: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability 10-simple-things-docs: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability 10-simple-things-ppt: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability formatting-examples: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability slide-formatting-examples: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability 3-steps-simple: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability examples: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability acronyms: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability readability-tool: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability checklist: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability accessibility: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability evidence: every word of the original appears in the book, or is a declared interface string",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic: section ids unique and in the original navigation order",
+   "ok": true,
+   "detail": "overview,purposeful,strategic,non-linear,active,productive,cumulative,cognition,cognition-explorer,narrative-ruminative"
+  },
+  {
+   "name": "academic: every section has a category, a title and non-empty Markdown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: every section opens with one level-1 heading and has level-2 subheadings where the original has steps/headings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: heading levels never skip a level",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: internal links point to sections that exist (1 links)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: rendered content has no script, iframe, leftover markers or event attributes",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: each section yields searchable text and headings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: section ids unique and in the original navigation order",
+   "ok": true,
+   "detail": "five-principles,how-people-read,cognitive-load,10-simple-things-docs,10-simple-things-ppt,formatting-examples,slide-formatting-examples,3-steps-simple,examples,acronyms,readability-tool,checklist,accessibility,evidence"
+  },
+  {
+   "name": "readability: every section has a category, a title and non-empty Markdown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: every section opens with one level-1 heading and has level-2 subheadings where the original has steps/headings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: heading levels never skip a level",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: internal links point to sections that exist (2 links)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: rendered content has no script, iframe, leftover markers or event attributes",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: each section yields searchable text and headings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: ten sections, as in the original NAV_STRUCTURE",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: fourteen sections, as in the original NAV_GROUPS",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic-reading: 3 embed descriptors valid under the v1 contract",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic-reading: every embed has a prose alternative anchor of at least 80 characters (checkPublicationEmbeds)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations: 6 embed descriptors valid under the v1 contract",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "readability-foundations: every embed has a prose alternative anchor of at least 80 characters (checkPublicationEmbeds)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "name": "academic-reading: manifest and content agree on embed anchors",
+   "ok": true,
+   "detail": "{\"anchors\":[\"cognition#reading-articulation-layers-text\",\"cognition#reading-simplified-summary-text\",\"cognition-explorer#cognition-explorer-text\"],\"described\":[\"cognition-explorer#cognition-explorer-text\",\"cognition#reading-articulation-layers-text\",\"cognition#reading-simplified-summary-text\"]}"
+  },
+  {
+   "name": "academic-reading: every embed file exists",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability-foundations: manifest and content agree on embed anchors",
+   "ok": true,
+   "detail": "{\"anchors\":[\"formatting-examples#cramped-text-reveal-text\",\"formatting-examples#font-spacing-adjuster-text\",\"slide-formatting-examples#one-bullet-text\",\"slide-formatting-examples#remove-text-text\",\"slide-formatting-examples#zooming-text\",\"readability-tool#readability-checker-text\"],\"described\":[\"formatting-examples#cramped-text-reveal-text\",\"formatting-examples#font-spacing-adjuster-text\",\"slide-formatting-examples#one-bullet-text\",\"slide-formatting-examples#remove-text-text\",\"slide-formatting-examples#zooming-text\",\"readability-tool#readability-checker-text\"]}"
+  },
+  {
+   "name": "readability-foundations: every embed file exists",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: homepage summaries included in source accounting",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "academic: original homepage summary 1 preserved",
+   "ok": false,
+   "detail": "Explore the cognitive models behind academic reading. Understand how cognitive load and pre-coding shape comprehension."
+  },
+  {
+   "name": "academic: original homepage summary 2 preserved",
+   "ok": false,
+   "detail": "Linear reading often fails in academic contexts. Discover how to switch modes for better comprehension."
+  },
+  {
+   "name": "academic: original homepage summary 3 preserved",
+   "ok": false,
+   "detail": "Interact with our dynamic map of the reading process. Visualize how manipulating, decoding, and encoding interact in real-time."
+  },
+  {
+   "name": "readability: homepage summaries included in source accounting",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readability: original homepage summary 1 preserved",
+   "ok": false,
+   "detail": "Learn the core principles: Space, Chunks, Guides, Information Structure, and Simple Language."
+  },
+  {
+   "name": "readability: original homepage summary 2 preserved",
+   "ok": false,
+   "detail": "Understand reading strategies like skimming and scanning to better inform document creation."
+  },
+  {
+   "name": "readability: original homepage summary 3 preserved",
+   "ok": false,
+   "detail": "Explore how working memory limits affect reading and how to reduce mental effort for your readers."
+  },
+  {
+   "name": "readability: original homepage summary 4 preserved",
+   "ok": false,
+   "detail": "Actionable steps to immediately improve your documents, from headings to font choices."
+  },
+  {
+   "name": "readability: original homepage summary 5 preserved",
+   "ok": false,
+   "detail": "Increase impact with text size, smart cropping, animations, and better slide structure."
+  },
+  {
+   "name": "readability: original homepage summary 6 preserved",
+   "ok": false,
+   "detail": "See the difference effective formatting makes with side-by-side comparisons of space, bolding, and structure."
+  },
+  {
+   "name": "readability: original homepage summary 7 preserved",
+   "ok": false,
+   "detail": "Before and after examples of slide layouts, zooming, and structure."
+  },
+  {
+   "name": "readability: original homepage summary 8 preserved",
+   "ok": false,
+   "detail": "Master the art of simplification: shorter sentences, addressing the reader, and using verbs."
+  },
+  {
+   "name": "readability: original homepage summary 9 preserved",
+   "ok": false,
+   "detail": "Concrete examples of simplified language and how rephrasing improves clarity."
+  },
+  {
+   "name": "readability: original homepage summary 10 preserved",
+   "ok": false,
+   "detail": "How to handle jargon and acronyms for different audiences."
+  },
+  {
+   "name": "readability: original homepage summary 11 preserved",
+   "ok": true,
+   "detail": "Interactive tool to check sentence length and identify complex text."
+  },
+  {
+   "name": "readability: original homepage summary 12 preserved",
+   "ok": false,
+   "detail": "A quick checklist to audit your content for simple language principles."
+  },
+  {
+   "name": "readability: original homepage summary 13 preserved",
+   "ok": false,
+   "detail": "Essential guidelines for screen readers, magnifiers, Word, PDF, and meaningful links."
+  },
+  {
+   "name": "readability: original homepage summary 14 preserved",
+   "ok": false,
+   "detail": "Scientific evidence and research supporting these readability principles."
+  },
+  {
+   "name": "readability: licence URL remains version-neutral",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "name": "readability: licence stays CC BY as printed in the original (not CC BY-SA)",
+   "ok": true,
+   "detail": "{\"authorNote\":\"Dominik Lukeš, CC BY • Version from May 2023\",\"license\":{\"label\":\"CC BY (Creative Commons Attribution), as stated in the original guide\",\"href\":\"https://creativecommons.org/licenses/by/4.0/\"}}"
+  },
+  {
+   "name": "academic: no licence is invented (the original carries none)",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "accounting": [
+  {
+   "section": "academic:overview",
+   "originalWords": 245,
+   "bookWords": 245,
+   "declaredRemovals": {
+    "guide section": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:purposeful",
+   "originalWords": 223,
+   "bookWords": 223,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:strategic",
+   "originalWords": 491,
+   "bookWords": 491,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:non-linear",
+   "originalWords": 388,
+   "bookWords": 388,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:active",
+   "originalWords": 346,
+   "bookWords": 346,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:productive",
+   "originalWords": 576,
+   "bookWords": 577,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1,
+    "summary": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": [
+    "summary"
+   ]
+  },
+  {
+   "section": "academic:cumulative",
+   "originalWords": 667,
+   "bookWords": 667,
+   "declaredRemovals": {
+    "characteristic": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "academic:cognition",
+   "originalWords": 1088,
+   "bookWords": 1141,
+   "declaredRemovals": {
+    "explore related sections": 1,
+    "guide section": 1,
+    "cite section": 1,
+    "summary": 2
+   },
+   "movedOrRepeated": 2,
+   "lost": [],
+   "added": [
+    "text version of the diagram diagram articulation of reading process five levels of reading are stacked from top to bottom each with its parts",
+    "summary",
+    "text version of the diagram diagram simplified graphical summary five blocks are stacked in three layers at the top is",
+    "in the middle side by side are",
+    "and",
+    "at the bottom spanning the full width is"
+   ]
+  },
+  {
+   "section": "academic:cognition-explorer",
+   "originalWords": 94,
+   "bookWords": 377,
+   "declaredRemovals": {
+    "click on nodes to explore the cognitive process": 1,
+    "scroll horizontally to view full diagram": 1,
+    "interactive cognition map": 1,
+    "guide section": 1,
+    "cite section": 1,
+    "reset view": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": [
+    "text version of the interactive diagram the map shows 9 nodes 5 cognitive modes",
+    "shown in blue and 4 activities",
+    "shown in grey they are arranged in rows from top to bottom manipulating decoding precoding encoding recoding linear encoding nonlinear encoding skimming scannin…"
+   ]
+  },
+  {
+   "section": "academic:narrative-ruminative",
+   "originalWords": 619,
+   "bookWords": 619,
+   "declaredRemovals": {
+    "guide section": 1,
+    "cite section": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:five-principles",
+   "originalWords": 252,
+   "bookWords": 245,
+   "declaredRemovals": {
+    "summary": 1
+   },
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": [
+    "summary"
+   ]
+  },
+  {
+   "section": "readability:how-people-read",
+   "originalWords": 119,
+   "bookWords": 112,
+   "declaredRemovals": {},
+   "movedOrRepeated": 6,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:cognitive-load",
+   "originalWords": 93,
+   "bookWords": 91,
+   "declaredRemovals": {},
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:10-simple-things-docs",
+   "originalWords": 516,
+   "bookWords": 503,
+   "declaredRemovals": {},
+   "movedOrRepeated": 7,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:10-simple-things-ppt",
+   "originalWords": 635,
+   "bookWords": 618,
+   "declaredRemovals": {
+    "summary": 2
+   },
+   "movedOrRepeated": 6,
+   "lost": [],
+   "added": [
+    "summary",
+    "summary"
+   ]
+  },
+  {
+   "section": "readability:formatting-examples",
+   "originalWords": 693,
+   "bookWords": 685,
+   "declaredRemovals": {
+    "click the box to see the text clearly": 1,
+    "interactive example": 1,
+    "click to reveal": 1
+   },
+   "movedOrRepeated": 8,
+   "lost": [],
+   "added": [
+    "text version of the interactive demonstration",
+    "the box first shows this paragraph cramped small justified serif type lines packed tightly letters and words squeezed together and slightly blurred selecting th…",
+    "version of the interactive demonstration the same paragraph is shown three times with different type settings",
+    "12pt 1x spacing standard ordinary size with tight line spacing text at",
+    "larger type with",
+    "same tight line spacing",
+    "starts at",
+    "with 15 line spacing",
+    "reader can enlarge it up",
+    "40px and reduce it",
+    "14px in steps",
+    "2px and reset",
+    "to 20px"
+   ]
+  },
+  {
+   "section": "readability:slide-formatting-examples",
+   "originalWords": 294,
+   "bookWords": 466,
+   "declaredRemovals": {
+    "slide 1 of 1": 1,
+    "summary": 3,
+    "intro": 2
+   },
+   "movedOrRepeated": 3,
+   "lost": [],
+   "added": [
+    "summary",
+    "text version of the interactive demonstration the weaker and the better version of the slide are shown side by side",
+    "the weaker version a single slide titled",
+    "with 6 bullet points",
+    "the better version three slides an introduction slide with the title",
+    "a summary slide with six icons and short placeholder bars and a detail slide",
+    "followed by",
+    "intro summary",
+    "text version of the interactive demonstration the weaker and the better version of the slide are shown side by side",
+    "the weaker version a slide titled",
+    "with a small twobox graphic",
+    "and the small paragraph",
+    "the better version a slide filled by an enlarged graphic of two circles labelled",
+    "and",
+    "each with a",
+    "and no other text",
+    "text version of the interactive demonstration the weaker and the better version of the slide are shown side by side",
+    "the weaker version a slide titled",
+    "with 4 bullet points on the left and a photograph on the right",
+    "the better version a slide whose photograph fills the whole slide with a title panel reading",
+    "and the reference"
+   ]
+  },
+  {
+   "section": "readability:3-steps-simple",
+   "originalWords": 329,
+   "bookWords": 318,
+   "declaredRemovals": {},
+   "movedOrRepeated": 3,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:examples",
+   "originalWords": 346,
+   "bookWords": 343,
+   "declaredRemovals": {},
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:acronyms",
+   "originalWords": 821,
+   "bookWords": 819,
+   "declaredRemovals": {},
+   "movedOrRepeated": 1,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:readability-tool",
+   "originalWords": 92,
+   "bookWords": 157,
+   "declaredRemovals": {
+    "total sentences 3 total words 40 avg words sentence 133 input text clear": 1,
+    "analysis results 20 words 35 words": 1
+   },
+   "movedOrRepeated": 6,
+   "lost": [],
+   "added": [
+    "version of the interactive demonstration the checker splits a",
+    "into sentences counts the words in each",
+    "reports three figures the number of",
+    "the total number of words and the average number of words per sentence shown in amber when above 20 otherwise green sentences of more than 20 words",
+    "highlighted orange sentences of more than 35 words are highlighted red each sentence shows its word count on hover the checker opens with this sample text",
+    "for the sample the checker reports 3 sentences 40 words and an average of 133 words per sentence sentence 3 21 words is highlighted orange"
+   ]
+  },
+  {
+   "section": "readability:checklist",
+   "originalWords": 69,
+   "bookWords": 66,
+   "declaredRemovals": {
+    "go through your document item by item add notes to give feedback or track changes": 1,
+    "reset checklist": 1
+   },
+   "movedOrRepeated": 1,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:accessibility",
+   "originalWords": 269,
+   "bookWords": 265,
+   "declaredRemovals": {},
+   "movedOrRepeated": 0,
+   "lost": [],
+   "added": []
+  },
+  {
+   "section": "readability:evidence",
+   "originalWords": 620,
+   "bookWords": 615,
+   "declaredRemovals": {
+    "903017": 1
+   },
+   "movedOrRepeated": 3,
+   "lost": [],
+   "added": []
+  }
+ ]
+}

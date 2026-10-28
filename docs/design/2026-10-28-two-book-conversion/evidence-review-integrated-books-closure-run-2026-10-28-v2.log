@@ -1,0 +1,14 @@
+academic 0
+readability 0
+originals 0
+accounting 0
+oracle 0
+rebuild-embeds 0
+rebuild-books-output-redirect-only 0
+FAIL remove only declared insertions/licence restores earlier exact book readability {"actual":"8d390772b92954c4bba7396bf4315643129cb540382a46c1df4b2363fe58c65c","expected":"c6efa2a83c45b3be9a1c0d4ebd85300085226e5cedd42d4a7fd25af8c4ed1041"}
+nine-interactions-original-oracle 0
+epub-browser-bundle 0
+actual-epub-generation 1
+FAIL actual-epub-generation {}
+Error: actual-epub-generation failed
+149/151 closure checks

@@ -1,0 +1,483 @@
+{
+  "date": "2026-10-28T01:30:52.462Z",
+  "checks": [
+    {
+      "name": "correct existing-duplicate exception restores exact earlier Readability bytes",
+      "ok": true,
+      "detail": {
+        "actual": "c6efa2a83c45b3be9a1c0d4ebd85300085226e5cedd42d4a7fd25af8c4ed1041",
+        "retainedExistingSummarySection": "readability-tool",
+        "insertionsRemoved": 13
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/index.md",
+      "ok": true,
+      "detail": {
+        "sha256": "17abaceedf0bad1c1556aab8f404a33d5529371dc2bf33fc375f87facdc96026"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/overview.md",
+      "ok": true,
+      "detail": {
+        "sha256": "084b1b37739e14cf57dd6b860beb6b289e4723c8bb391bbcbddefa12a181380d"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/purposeful.md",
+      "ok": true,
+      "detail": {
+        "sha256": "f04618d8446800c118a9350602c37eab282ddb6a1e5f77901c9ac9a091b65fcb"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/strategic.md",
+      "ok": true,
+      "detail": {
+        "sha256": "909313b80999ee4cec17aa9d24e97dc37a4f2d7f7c76508ae7cbfefdb52b1794"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/non-linear.md",
+      "ok": true,
+      "detail": {
+        "sha256": "058ac0c41d4876573096e5772585794a906bfc96b7ef5d885a36e66118ab9eb0"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/active.md",
+      "ok": true,
+      "detail": {
+        "sha256": "140b7fc3ed100035f0502792ec229bc12ca6b6a2e58e144d85ba648ae96ce3fa"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/productive.md",
+      "ok": true,
+      "detail": {
+        "sha256": "14c23e38a0a78c37fbb26becfeb215dec4154e81841b752d12221c93e436c870"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/cumulative.md",
+      "ok": true,
+      "detail": {
+        "sha256": "2266303d2dfe4d29ae2a91c5ce0a9687f52bdc14b67c1b5b7b73ec083787208a"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/cognition.md",
+      "ok": true,
+      "detail": {
+        "sha256": "361d7d761303fb132202c8d685b3296126fc444f960661b43ba7ee5a841e2d88"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/cognition-explorer.md",
+      "ok": true,
+      "detail": {
+        "sha256": "a66f6e28663477ab20a1f732b46f74f0f1487e4ac967ff291ecb23e0d8fec533"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/chapters/narrative-ruminative.md",
+      "ok": true,
+      "detail": {
+        "sha256": "338a150dfe87c36fc48a5182f3af092d1d54fc546ae1891268f4f80f05d721b4"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/full.md",
+      "ok": true,
+      "detail": {
+        "sha256": "b957b6334b3d0abf8b4975f44239aa6936682ac7687256cd3c9a29606a230b01"
+      }
+    },
+    {
+      "name": "current built agent exact agent/academic-reading/manifest.json",
+      "ok": true,
+      "detail": {
+        "sha256": "64f25cc815650fbf63d4ed540ecdc99c9f0bef1b59f1ca4048b97a2d9c5d4c41"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/index.md",
+      "ok": true,
+      "detail": {
+        "sha256": "758fedf2f0aefe0d86ca8c5d48dfe966c2779150aef906438bcd5b987786f5ac"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/five-principles.md",
+      "ok": true,
+      "detail": {
+        "sha256": "8f9a20eae15088735d0bed629e780281a0e5af094a4ede1d8bee1748aec2d0a9"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/how-people-read.md",
+      "ok": true,
+      "detail": {
+        "sha256": "61ae438d6cd1b4dd0bfbd99024a6778a06574a18f7f8743aabbb762548fb7deb"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/cognitive-load.md",
+      "ok": true,
+      "detail": {
+        "sha256": "d1e622376491a49977276269ad2d605b92d433301f5a9c0a861b46791f1666ea"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/10-simple-things-docs.md",
+      "ok": true,
+      "detail": {
+        "sha256": "b252d2e0415fc4fae364fafd0c142a91d9f9a4e9621a4b694cd1263cdae07638"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/10-simple-things-ppt.md",
+      "ok": true,
+      "detail": {
+        "sha256": "b3715d4d80f1e7aedaa097489e7c4188f9ef08a3b16ffb2f5d532f36ae23b2b4"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/formatting-examples.md",
+      "ok": true,
+      "detail": {
+        "sha256": "f5b0415248cd60d91482a21443571b6c22e8124bd6de617786d7e3515bd4e359"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/slide-formatting-examples.md",
+      "ok": true,
+      "detail": {
+        "sha256": "aa6f143236a58fd957479f09f6cfc06800ce32bca0f8b7228ccb86c96caa45d3"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/3-steps-simple.md",
+      "ok": true,
+      "detail": {
+        "sha256": "32199402345d65eb776439fec88c2affd85f1e99fc566d323937f4308df43b77"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/examples.md",
+      "ok": true,
+      "detail": {
+        "sha256": "4d0701a32d7d414c3fa2191c150bbb503e4060b314eb59458b1b1a379100e501"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/acronyms.md",
+      "ok": true,
+      "detail": {
+        "sha256": "1c2b5d49ee4b6b2f6fe53a6ddc0c19b318fe505cf274ef6214ecba54fed06b44"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/readability-tool.md",
+      "ok": true,
+      "detail": {
+        "sha256": "dcc51a7d6e4d86667ec871218db81e5ba8082ac6bd4d09a5fc62d604557349ed"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/checklist.md",
+      "ok": true,
+      "detail": {
+        "sha256": "91660e27650b146eacb835c7bce9bab31b0c93b9e129af1f8010761fee94145e"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/accessibility.md",
+      "ok": true,
+      "detail": {
+        "sha256": "01d73aaba3388b292f570f2335725e12a2943e425c1c7e508a87d79110cdb992"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/chapters/evidence.md",
+      "ok": true,
+      "detail": {
+        "sha256": "fa163998c05dcb34edd7568e8244f85248d0ed5043d0d4097a6415b70dbb6df6"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/full.md",
+      "ok": true,
+      "detail": {
+        "sha256": "a7bc0d3c1b66c3606d9cc9281754c55e32afd402bc9f546aa08c5ebed3efd3cc"
+      }
+    },
+    {
+      "name": "current built agent exact agent/readability-foundations/manifest.json",
+      "ok": true,
+      "detail": {
+        "sha256": "ab7073c704da38d11f5f09e81eb8c91dd3d108b52513495a96aafc7d125a42c4"
+      }
+    },
+    {
+      "name": "actual EPUB exact summary academic-reading/cognition",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary academic-reading/narrative-ruminative",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary academic-reading/cognition-explorer",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB all alternatives academic-reading",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB no frame chrome academic-reading",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/five-principles",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/how-people-read",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/cognitive-load",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/10-simple-things-docs",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/10-simple-things-ppt",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/formatting-examples",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/slide-formatting-examples",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/3-steps-simple",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/examples",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/acronyms",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/readability-tool",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/checklist",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/accessibility",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB exact summary readability-foundations/evidence",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB all alternatives readability-foundations",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB no frame chrome readability-foundations",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "actual EPUB version-neutral licence",
+      "ok": true,
+      "detail": {}
+    },
+    {
+      "name": "all earlier closure evidence preserved",
+      "ok": true,
+      "detail": {}
+    }
+  ],
+  "commands": [
+    {
+      "name": "bundle actual EPUB",
+      "args": [
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-supplement-92C7wh/exports.ts",
+        "--bundle",
+        "--format=iife",
+        "--platform=browser",
+        "--alias:jszip=/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/packages/reader-core/node_modules/jszip/dist/jszip.min.js",
+        "--outfile=/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/design/2026-10-28-two-book-conversion/.scratch-closure-supplement-92C7wh/exports.js"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "\n  ...wo-book-conversion/.scratch-closure-supplement-92C7wh/exports.js  1.3mb ⚠️\n\n⚡ Done in 27ms\n"
+    }
+  ],
+  "exports": [
+    {
+      "book": "academic-reading",
+      "files": [
+        {
+          "file": "OEBPS/intro.xhtml",
+          "sha256": "f9e06e445c260464f2735c756965ed4069d0efcfe80138316edac4bc6118f725"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0001.xhtml",
+          "sha256": "87f88bbaafb0e8226ffce40844f482a0eb26f7f3bbc9df9d1c3e830940de6777"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0002.xhtml",
+          "sha256": "aaa1a8d35b5503aaa8c9ac90ce8010171e11cad60a7cb1723eaa9b32130023c8"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0003.xhtml",
+          "sha256": "f97b67e6abc7f95c687587344ed2da641e7302c1881a0816f62f278f92d2d432"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0004.xhtml",
+          "sha256": "d03768e83b87ecbbf5840740517dead3dd934c52520631198f6b0f4ac57c22f8"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0005.xhtml",
+          "sha256": "3e7205cd17fb1551a3131ddb092cbfaad92fe83e8c03f385863427ef46614a42"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0006.xhtml",
+          "sha256": "7bf5b90039def17e8e12e17e4ab02cdf888b5cbf36797b0c32e149483065630d"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0007.xhtml",
+          "sha256": "d87095e3f511414f8602c5641b1addf3633c8f16c1670fc1c1ec6aed25dcf367"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0008.xhtml",
+          "sha256": "431c833805603a372f6cc2424d8635fd21621647ac13f34f00256bae23da87a3"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0009.xhtml",
+          "sha256": "0c41a3fdae778700e9aafcf61610e4934d53a31b1847ad4a2fca467fbe523664"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0010.xhtml",
+          "sha256": "7b15d369cb8f836b1bd7b0b73a245d867436d592ac6aa42bbe75ac13355e5ca1"
+        },
+        {
+          "file": "OEBPS/nav.xhtml",
+          "sha256": "c500429658777c46af9c5a697737c98c26d33ac32e84abeaa730a884d52813b1"
+        }
+      ]
+    },
+    {
+      "book": "readability-foundations",
+      "files": [
+        {
+          "file": "OEBPS/intro.xhtml",
+          "sha256": "80d81b49351537af89d569f8e34b0a3158310b1755cb8841f2103528f2a9c4b4"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0001.xhtml",
+          "sha256": "545bcaf8351c6320fdf821a740086918b51defccfdfed9a44de0ad6c0dfcefd9"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0002.xhtml",
+          "sha256": "e34a65a8ba002b4c7e35b03672c275aed6d9c91315461ae783a29f113bd07418"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0003.xhtml",
+          "sha256": "d802a89718531c9ae29e7557357dca82a9cfce34dcc7ee57e6a568766c84cbb5"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0004.xhtml",
+          "sha256": "3c27520daaddc9ef9685398162de5b3efa4bf30f113365e726c37954d4a54d9a"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0005.xhtml",
+          "sha256": "71d143332385482bb816c83491fe17c2ad3d8b09b0dfa2310d72bcde892a3a84"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0006.xhtml",
+          "sha256": "15fb48e0464ab0e2850627b92af96755225ac00ec9474cb859e89367cc84ac43"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0007.xhtml",
+          "sha256": "a642f606b94af98abe60aaa151f8e6c95d18de5a95480f95f4112c5d3ac73b52"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0008.xhtml",
+          "sha256": "e7c7da8b097f9a688064e7208b51e5c638771909a9aa49c1b5adbe93177f0d55"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0009.xhtml",
+          "sha256": "f8f59d75ab1ce361dbb88ea2616d4819381292063c340f94f58f359571384f85"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0010.xhtml",
+          "sha256": "e2f2169237581a9f50a744e78442c67aee185c4df0378e3a0990998fed1b3023"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0011.xhtml",
+          "sha256": "e26c1f1f8e2efed5f6b79bcc6e39981cec7dba6f2445d9f163e18596b7928652"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0012.xhtml",
+          "sha256": "2f0ec52d875a1e9fcae4339c44d0d01721fe7d1f921cd83ad289f8583f077f13"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0013.xhtml",
+          "sha256": "2e37bf659014c4ab3073070f7eff0aa2d7c2d52f929e95c6000d27b920e77b39"
+        },
+        {
+          "file": "OEBPS/Text/chapter-0014.xhtml",
+          "sha256": "91f5dd56c988ecb5b9a8dab158d36a5e660b747618142cd60159551691a7c4c0"
+        },
+        {
+          "file": "OEBPS/nav.xhtml",
+          "sha256": "957312eee53964a4389b16e9ea44a9550691f2d2af4167c9d55c68e04984cb71"
+        }
+      ]
+    }
+  ],
+  "chrome": "/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+  "scratchRemoved": true,
+  "passed": 54,
+  "failed": 0
+}

@@ -1,0 +1,330 @@
+{
+  "checks": [
+    {
+      "name": "speech-projector bundle exits zero",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "name": "1280 academic-reading/cognition: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 7287
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-reading-articulation-layers-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-reading-simplified-summary-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 academic-reading/cognition-explorer: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 2864
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-cognition-explorer-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 tall skip target aligns at scroll-area start and receives focus",
+      "pass_": true,
+      "detail": {
+        "top": 49.578125,
+        "scrollTop": 49.78125,
+        "height": 2465.21875,
+        "area": 850,
+        "focused": true
+      }
+    },
+    {
+      "name": "EPUB academic-reading: frame and chrome absent",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "EPUB academic-reading/cognition-explorer: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 2240
+      }
+    },
+    {
+      "name": "EPUB academic-reading/reading-articulation-layers: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 356
+      }
+    },
+    {
+      "name": "EPUB academic-reading/reading-simplified-summary: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 262
+      }
+    },
+    {
+      "name": "1280 readability-foundations/formatting-examples: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 4138
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-cramped-text-reveal-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-font-spacing-adjuster-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 readability-foundations/readability-tool: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 963
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-readability-checker-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 readability-foundations/slide-formatting-examples: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 3070
+      }
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-one-bullet-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-remove-text-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "1280 speech includes alternative reader-content-zooming-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "EPUB readability-foundations: frame and chrome absent",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "EPUB readability-foundations/cramped-text-reveal: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 732
+      }
+    },
+    {
+      "name": "EPUB readability-foundations/font-spacing-adjuster: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 708
+      }
+    },
+    {
+      "name": "EPUB readability-foundations/slides-one-bullet: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 1056
+      }
+    },
+    {
+      "name": "EPUB readability-foundations/slides-extraneous-text: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 746
+      }
+    },
+    {
+      "name": "EPUB readability-foundations/slides-zooming-images: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 625
+      }
+    },
+    {
+      "name": "EPUB readability-foundations/readability-checker: complete prose alternative preserved",
+      "pass_": true,
+      "detail": {
+        "characters": 868
+      }
+    },
+    {
+      "name": "375 academic-reading/cognition: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 7287
+      }
+    },
+    {
+      "name": "375 speech includes alternative reader-content-reading-articulation-layers-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 speech includes alternative reader-content-reading-simplified-summary-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 academic-reading/cognition-explorer: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 2864
+      }
+    },
+    {
+      "name": "375 speech includes alternative reader-content-cognition-explorer-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 tall skip target aligns at scroll-area start and receives focus",
+      "pass_": true,
+      "detail": {
+        "top": 105.625,
+        "scrollTop": 105.78125,
+        "height": 3406.625,
+        "area": 694,
+        "focused": true
+      }
+    },
+    {
+      "name": "375 readability-foundations/formatting-examples: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 4138
+      }
+    },
+    {
+      "name": "375 speech includes alternative reader-content-cramped-text-reveal-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 speech includes alternative reader-content-font-spacing-adjuster-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 readability-foundations/readability-tool: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 963
+      }
+    },
+    {
+      "name": "375 speech includes alternative reader-content-readability-checker-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 readability-foundations/slide-formatting-examples: actual speech excludes frame chrome",
+      "pass_": true,
+      "detail": {
+        "length": 3070
+      }
+    },
+    {
+      "name": "375 speech includes alternative reader-content-one-bullet-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 speech includes alternative reader-content-remove-text-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 speech includes alternative reader-content-zooming-text",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "320 corrected reading-simplified-summary has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "375 corrected reading-simplified-summary has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 375,
+        "scroll": 375
+      }
+    },
+    {
+      "name": "768 corrected reading-simplified-summary has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 768,
+        "scroll": 768
+      }
+    },
+    {
+      "name": "320 corrected slides-extraneous-text has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "320 corrected graphic keeps both labelled nodes and subpoints",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "375 corrected slides-extraneous-text has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 375,
+        "scroll": 375
+      }
+    },
+    {
+      "name": "375 corrected graphic keeps both labelled nodes and subpoints",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "768 corrected slides-extraneous-text has no page overflow",
+      "pass_": true,
+      "detail": {
+        "width": 768,
+        "scroll": 768
+      }
+    },
+    {
+      "name": "768 corrected graphic keeps both labelled nodes and subpoints",
+      "pass_": true,
+      "detail": null
+    }
+  ],
+  "passed": 51,
+  "failed": 0,
+  "scratchRemoved": true
+}

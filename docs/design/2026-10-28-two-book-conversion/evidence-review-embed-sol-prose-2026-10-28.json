@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "label": "independent edge probes",
+      "exit": 1,
+      "stdout": "[\n  {\n    \"name\": \"manuscript attribute spelling variants keep canonical prose\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"320px no horizontal overflow\",\n    \"actual\": false,\n    \"expected\": false,\n    \"passed\": true\n  },\n  {\n    \"name\": \"reported height accepted\",\n    \"actual\": \"650px\",\n    \"expected\": \"650px\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"canonical live text omits chrome\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"speech preserves canonical prose and excludes chrome\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"assist excludes chrome words\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"agent chapter and full exports preserve prose without frame\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"EPUB XHTML preserves prose without frame\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"search range targets prose beside frame\",\n    \"actual\": \"complete local interactive diagram\",\n    \"expected\": \"complete local interactive diagram\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"highlight survives frame insertion/reload\",\n    \"actual\": 1,\n    \"expected\": 1,\n    \"passed\": true\n  },\n  {\n    \"name\": \"annotation retains canonical prose\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"annotation reload observed as documented\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"last height retained across annotation\",\n    \"actual\": \"650px\",\n    \"expected\": \"650px\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"state resets as documented\",\n    \"actual\": \"Initial\",\n    \"expected\": \"Initial\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"keyboard skip for div anchor\",\n    \"actual\": \"reader-content-alternative\",\n    \"expected\": \"reader-content-alternative\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"missing.html fallback text remains readable\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"missing.html skip remains keyboard accessible\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"blocked.html fallback text remains readable\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"blocked.html skip remains keyboard accessible\",\n    \"actual\": true,\n    \"expected\": true,\n    \"passed\": true\n  },\n  {\n    \"name\": \"SPEC: foreign document base cannot move frame off page origin\",\n    \"actual\": \"http://127.0.0.1:57405/embeds/good.html\",\n    \"expected\": \"http://127.0.0.1:57404/embeds/good.html\",\n    \"passed\": false\n  },\n  {\n    \"name\": \"SPEC: foreign document base cannot move full-view link off page origin\",\n    \"actual\": \"http://127.0.0.1:57405/embeds/good.html\",\n    \"expected\": \"http://127.0.0.1:57404/embeds/good.html\",\n    \"passed\": false\n  }\n]\n",
+      "stderr": "BROWSER 153.0.8010.12\nURL_VARIANTS [{\"base\": \"https://reader.invalid/sub/index.html\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}, {\"base\": \"https://other.invalid/sub/\", \"url\": \"https://other.invalid/sub/embeds/good.html\"}, {\"base\": \"https://reader.invalid/a/%2e%2e/sub/\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}, {\"base\": \"https://reader.invalid/sub/?q#f\", \"url\": \"https://reader.invalid/sub/embeds/good.html\"}]\nPAYLOAD_VARIANTS [{\"input\": \"NaN\", \"output\": null}, {\"input\": \"Infinity\", \"output\": null}, {\"input\": \"-1\", \"output\": null}, {\"input\": \"100001\", \"output\": null}, {\"input\": \"400\", \"output\": null}, {\"input\": \"null\", \"output\": null}, {\"input\": \"[object Object]\", \"output\": null}, {\"input\": \"\", \"output\": null}, {\"input\": \"400\", \"output\": 400}]\nFOREIGN_BASE_REQUESTS [{\"port\": 57405, \"path\": \"/embeds/good.html\"}]\n"
+    }
+  ],
+  "hashes": [
+    {
+      "path": "packages/reader-core/src/embed/embed-model.ts",
+      "sha256": "e23da6d72ef732c3c0571859c85dd65cb17c61779f26373943fd0a1e9ff51b80"
+    },
+    {
+      "path": "packages/reader-core/src/embed/PublicationEmbedFrame.tsx",
+      "sha256": "73b7f4c3834e7b2b8c1c702fc96e041205fceb63522350f132b5797f7ff1d839"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-child.ts",
+      "sha256": "8bc45041e2b798d6649a04949dc4bcd35352f9b58474d5c9ee40b51f2195b501"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-check.ts",
+      "sha256": "083ea12ac68d3cec2b9516e831855ab54dcc01e4c0fbf986c23af1d395a7c054"
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "sha256": "0a46654020117af4db0534e89578e00dbec4c0140dea6b7d9ff055185372787b"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "sha256": "69989cfb0c1ac532fab416eee778837ac78fe0e9d95ccacdbb33d680be277c18"
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "sha256": "c9a06154b9c10249d1cd1a7a279b741a4e12556f56dd74ed4796c21d176293b7"
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "sha256": "56dd0ca519ae345c93d28384bf54049cba3f2bd9f926483d245b5cb56e76a5fa"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "sha256": "85b51ab84448cbe1dc69e8634cbd38a3bd9010529defe0c39cf10043c7f62234"
+    },
+    {
+      "path": "packages/reader-core/src/index.ts",
+      "sha256": "921734c5de36d702e8278a81b539271f2731044f7f34f4b60991ea7267bfb640"
+    },
+    {
+      "path": "packages/reader-core/package.json",
+      "sha256": "5a1b80aec7b2554a963158b133bf153b6a546a748aec753cb2421a9e9b956dc6"
+    },
+    {
+      "path": "scripts/build-reader-styles.mjs",
+      "sha256": "4a9134950f5d2509e1835e306f4864268c3f24e2a6a21bb451bbb0c3da37f618"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/headers.ts",
+      "sha256": "ef1873f79e5867e3dc96dcbcaef8264d6780008c780bca2d5a631c026990ab37"
+    },
+    {
+      "path": "scripts/prepare-reader-source-release.mjs",
+      "sha256": "fa80b10f827935e86ab9d473de7d00f8757f0f3f39498e7aa1fece0f85f70021"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-schema.ts",
+      "sha256": "257e77e0439a6ae3afb684728c42b8f49bd2a1381729fd7c69236e336fca3e38"
+    }
+  ],
+  "scratchRemoved": true
+}

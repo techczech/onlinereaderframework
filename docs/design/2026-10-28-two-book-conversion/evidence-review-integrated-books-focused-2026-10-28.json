@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "name": "speech-projector bundle exits zero",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "name": "driver completes",
+      "pass_": false,
+      "detail": "Page.evaluate: ReferenceError: ReviewSpeech is not defined\n    at eval (eval at evaluate (:370:30), <anonymous>:1:80)\n    at UtilityScript.evaluate (<anonymous>:377:18)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    }
+  ],
+  "passed": 1,
+  "failed": 1,
+  "scratchRemoved": true
+}

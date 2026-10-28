@@ -40,3 +40,9 @@ export { ListeningPanel } from './original/listening/index.js';
 export type { PublicationAudioTrack, PublicationAudioAlignment, ListeningBoundary } from './original/listening/index.js';
 export { ReadingSupportControls, ReadingSupportSurface, useReadingSupport } from './original/reading-support/index.js';
 export type { ReadingSupportPreferences } from './original/reading-support/index.js';
+
+export {
+  PublicationEmbedFrame, PublicationEmbedSlots, checkPublicationEmbeds, validatePublicationEmbeds, resolvePublicationEmbedUrl, readPublicationEmbedHeight,
+  PUBLICATION_EMBED_SANDBOX, PUBLICATION_EMBED_ALLOW, PUBLICATION_EMBED_MESSAGE_TYPE,
+} from './embed/index.js';
+export type { PublicationEmbed, PublicationEmbeds, ValidPublicationEmbed } from './embed/index.js';

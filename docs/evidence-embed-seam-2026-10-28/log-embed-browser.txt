@@ -1,0 +1,421 @@
+[
+ {
+  "name": "1280px: exactly the two valid descriptors produce frames; manuscript iframe and refused descriptors produce none",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: manuscript script never ran",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: refused descriptors are reported",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: sandbox is scripts only",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: powerful features denied",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: no referrer",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: accessible title",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: frame is placed before its prose alternative",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: src resolved on the page origin inside the embed folder",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: height follows the embed document, not spoofed (333) or malformed (777) values",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: observed frame height (record only)",
+  "pass": true,
+  "observed": 661
+ },
+ {
+  "name": "1280px: blocked frame keeps its initial height",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: site-wide frame policy blocks an embed served without the embed rule",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: spoof frame messages reached the page but changed nothing",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed origin is opaque",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed messages arrive with origin \"null\"",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed cannot reach the reader DOM",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed cannot use storage",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed cannot set cookies",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed cannot open popups",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: embed network blocked by embed CSP",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: no popup page opened",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: reader page was not navigated by the embed",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: no request left the fixture origin",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: no request for refused paths",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: text model keeps the prose alternative",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: text model excludes frame chrome",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: forged manuscript chrome stays in the text model",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: full view link opens a new tab without opener or referrer",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: frame fills the text column",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: frame causes no horizontal page overflow",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: keyboard skip link moves focus to the text version",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "1280px: every message listener added by the reader is removed on unmount",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: exactly the two valid descriptors produce frames; manuscript iframe and refused descriptors produce none",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: manuscript script never ran",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: refused descriptors are reported",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: sandbox is scripts only",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: powerful features denied",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: no referrer",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: accessible title",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: frame is placed before its prose alternative",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: src resolved on the page origin inside the embed folder",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: height follows the embed document, not spoofed (333) or malformed (777) values",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: observed frame height (record only)",
+  "pass": true,
+  "observed": 661
+ },
+ {
+  "name": "375px: blocked frame keeps its initial height",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: site-wide frame policy blocks an embed served without the embed rule",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: spoof frame messages reached the page but changed nothing",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed origin is opaque",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed messages arrive with origin \"null\"",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed cannot reach the reader DOM",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed cannot use storage",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed cannot set cookies",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed cannot open popups",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: embed network blocked by embed CSP",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: no popup page opened",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: reader page was not navigated by the embed",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: no request left the fixture origin",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: no request for refused paths",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: text model keeps the prose alternative",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: text model excludes frame chrome",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: forged manuscript chrome stays in the text model",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: full view link opens a new tab without opener or referrer",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: frame fills the text column",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: frame causes no horizontal page overflow",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: keyboard skip link moves focus to the text version",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "375px: every message listener added by the reader is removed on unmount",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "full view: response carries the embed policy and no frame denial",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "full view: page stayed on the embed",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "full view: the embed CSP sandbox keeps a direct top-level open opaque",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ },
+ {
+  "name": "full view: storage of the reader origin is unreachable",
+  "pass": true,
+  "actual": null,
+  "expected": null
+ }
+]
+embed browser checks: 70/70 pass
