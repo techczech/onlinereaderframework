@@ -107,7 +107,7 @@ const academicBook = {
   // Existing public catalogue address (dlnet guides.json). The final dominiklukes.net book path is not decided; do not invent one.
   sourceUrl: 'https://academicreading.edutools.fyi',
   navigation: { homeDepth: 2, showHomeContents: true },
-  appearance: { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial' },
+  appearance: { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial', cover: { src: '/covers/academic-reading.jpg', alt: 'Increasing Reading Productivity cover with linked landscape panels on dark blue paper' } },
   home: { authorNote: 'Developed by Dominik Lukeš for the Reading and Writing Innovation Lab' },
   sections: academicSections
 };
@@ -119,7 +119,7 @@ const readabilityBook = {
   description: 'An interactive guide on document and presentation readability principles based on the work of Dominik Lukeš.',
   sourceUrl: 'https://readability.edutools.fyi/',
   navigation: { homeDepth: 2, showHomeContents: true },
-  appearance: { accent: '#4338ca', paper: '#f8f7fd', ink: '#23223a', masthead: 'practical' },
+  appearance: { accent: '#4338ca', paper: '#f8f7fd', ink: '#23223a', masthead: 'practical', cover: { src: '/covers/readability-foundations.jpg', alt: 'Foundations of Readability cover with a cream cut-paper page and a coral tab' } },
   home: { authorNote: 'Dominik Lukeš, CC BY • Version from May 2023', license: { label: 'CC BY (Creative Commons Attribution), as stated in the original guide', href: 'https://creativecommons.org/licenses/by/' } },
   sections: rd.sections.map((s: any) => ({ id: s.id, title: s.title, category: s.category, format: 'markdown', content: withSummary(orderHeadings(s.content), s.description) }))
 };

@@ -1,6 +1,6 @@
 {
   "description": "Provenance of the Academic Reading Framework and Foundations of Readability conversions. All sources are read-only; no source repository was modified.",
-  "generated": "2026-10-28T01:58:31.633Z",
+  "generated": "2026-10-28T02:26:10.504Z",
   "tools": {
     "node": "v26.12.1",
     "pandoc": "pandoc 3.12.1",
@@ -532,13 +532,13 @@
     },
     {
       "file": "src/books/next-books/academic-reading-framework.book.json",
-      "sha256": "b1fff1d0257e51d7b7f8b897eb49dd2756fb2a56efd6beb92a67a65e4ad960ab",
-      "bytes": 36268
+      "sha256": "026788a99edff6bf10718d16a21bd53a1f23853cf39848ceb08f4718408a39db",
+      "bytes": 36436
     },
     {
       "file": "src/books/next-books/readability-foundations.book.json",
-      "sha256": "d9129896481b375477602788f157391c308bc3c552ce122b262aa3d0a2d10c53",
-      "bytes": 42703
+      "sha256": "2fd185d1c58d9f79deb9975420ba18b76c9aa396dae074d6fcb1f6558ee66915",
+      "bytes": 42869
     },
     {
       "file": "src/books/next-books/embed-manifest.json",

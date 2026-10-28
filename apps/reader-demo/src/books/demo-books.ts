@@ -22,7 +22,7 @@ export const embedManifest = manifest.books as unknown as Record<string, Manifes
  * version; this registry links the address without a version instead, so the reader does not state more than the original does. */
 const unversionedReadability = (book: PublicationBook): PublicationBook => ({ ...book, home: { ...book.home, license: book.home?.license && { ...book.home.license, href: 'https://creativecommons.org/licenses/by/' } } });
 
-/** Converted books keep the `appearance` proposed in their files (existing approved masthead values; no cover chosen). */
+/** Converted books keep their canonical per-book identity and author-selected covers. */
 export const nextBooks: PublicationBook[] = [academic as unknown as PublicationBook, unversionedReadability(readability as unknown as PublicationBook)];
 export const originalBooks = originals as unknown as PublicationBook[];
 export const demoBooks: PublicationBook[] = [...originalBooks, ...nextBooks];

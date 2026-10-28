@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28",
+  "authorDecision": "3 and 2",
+  "scope": "web-reader preview cover selection; no live publication or paperback wrap",
+  "books": [
+    {
+      "book": "academic-reading",
+      "variant": "academic-reading-framework-03-print-connected-ideas",
+      "name": "Connected ideas",
+      "file": "academic-reading-framework/round-2026-10-28-reader-covers/academic-reading-framework-03-print-connected-ideas.jpg",
+      "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539"
+    },
+    {
+      "book": "readability-foundations",
+      "variant": "readability-foundations-02-paper-clear-structure",
+      "name": "Clear structure",
+      "file": "readability-foundations/round-2026-10-28-reader-covers/readability-foundations-02-paper-clear-structure.jpg",
+      "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef"
+    }
+  ]
+}

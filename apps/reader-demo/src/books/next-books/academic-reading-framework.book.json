@@ -13,7 +13,11 @@
     "accent": "#0369a1",
     "paper": "#f6f9fb",
     "ink": "#1f2933",
-    "masthead": "editorial"
+    "masthead": "editorial",
+    "cover": {
+      "src": "/covers/academic-reading.jpg",
+      "alt": "Increasing Reading Productivity cover with linked landscape panels on dark blue paper"
+    }
   },
   "home": {
     "authorNote": "Developed by Dominik Lukeš for the Reading and Writing Innovation Lab"

@@ -13,7 +13,11 @@
     "accent": "#4338ca",
     "paper": "#f8f7fd",
     "ink": "#23223a",
-    "masthead": "practical"
+    "masthead": "practical",
+    "cover": {
+      "src": "/covers/readability-foundations.jpg",
+      "alt": "Foundations of Readability cover with a cream cut-paper page and a coral tab"
+    }
   },
   "home": {
     "authorNote": "Dominik Lukeš, CC BY • Version from May 2023",

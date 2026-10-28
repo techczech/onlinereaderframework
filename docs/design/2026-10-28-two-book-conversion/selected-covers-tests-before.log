@@ -1,0 +1,62 @@
+
+> reader-demo@0.1.0 test:books
+> tsx --test scripts/test-original-books.ts scripts/test-demo-books.ts
+
+✔ the registry holds five books once: three originals unchanged, two converted books registered, none copied into original-publications.json (0.939083ms)
+✖ each converted book keeps its distinct identity and the author-selected cover (0.668458ms)
+✔ licences: Readability keeps CC BY with no version in its link; Academic carries no licence grant (0.29325ms)
+✔ canonical sites name no address for the converted books (route undecided; agent files are not live on the old domains) (0.052583ms)
+✔ nine embeds in two books: descriptors are valid, host-owned, rooted at embeds/<book>/ and every anchor is a long prose alternative (28.495875ms)
+✔ every embed file exists, is one self-contained document and is the only file copied for that embed (3.330291ms)
+✔ the demo plugin serves and builds exactly the manifest's nine files at embeds/<book>/<id>/index.html (2.557959ms)
+✔ agent files: all five books export from the one registry; prose alternatives reach the text, frames and frame chrome never do (160.08275ms)
+✔ release isolation: the linguistics release bundle carries neither converted book, their embeds nor the demo registry (2604.717375ms)
+✔ release isolation: the deliberate-practice release bundle carries neither converted book, their embeds nor the demo registry (1100.123875ms)
+✔ release isolation: the language-muscle release bundle carries neither converted book, their embeds nor the demo registry (1017.758875ms)
+✔ scratch: no temporary release folder is left behind (0.442334ms)
+✔ real sources retain complete chapter and answer counts (0.394542ms)
+✔ every book has stable unique section identities, including descendants (0.239459ms)
+✔ Language Muscle HTML and its actual cross-reference are preserved (0.079833ms)
+✔ all linguistics answers include source and licence attribution (0.275292ms)
+✔ provenance hashes identify real source snapshots without private machine paths (0.266583ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 16
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5346.48725
+
+✖ failing tests:
+
+test at scripts/test-demo-books.ts:38:1
+✖ each converted book keeps its distinct identity and the author-selected cover (0.668458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      accent: '#0369a1',
+  +   cover: {
+  +     alt: 'Increasing Reading Productivity cover with linked landscape panels on dark blue paper',
+  +     src: '/covers/academic-reading.jpg'
+  +   },
+      ink: '#1f2933',
+      masthead: 'editorial',
+      paper: '#f6f9fb'
+    }
+  
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:40:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial', cover: { src: '/covers/academic-reading.jpg', alt: 'Increasing Reading Productivity cover with linked landscape panels on dark blue paper' } },
+    expected: { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

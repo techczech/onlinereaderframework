@@ -1,0 +1,38 @@
+[
+  {
+    "step": "build-academic.tsx",
+    "exit": 0,
+    "stdout": "sections 10 diagrams [ 'reading-articulation-layers', 'reading-simplified-summary' ] nodes 9 edges 15\n",
+    "stderr": ""
+  },
+  {
+    "step": "build-readability.tsx",
+    "exit": 0,
+    "stdout": "sections 14 embeds cramped-text-reveal,font-spacing-adjuster,slides-one-bullet,slides-extraneous-text,slides-zooming-images,readability-checker dropped 6\n",
+    "stderr": ""
+  },
+  {
+    "step": "assemble.ts",
+    "exit": 0,
+    "stdout": "wrote books: 10 academic sections, 14 readability sections; embeds 9\n",
+    "stderr": ""
+  },
+  {
+    "step": "render-originals.tsx",
+    "exit": 0,
+    "stdout": "original renders 10 14\n",
+    "stderr": ""
+  },
+  {
+    "step": "check-books.ts",
+    "exit": 0,
+    "stdout": "70/70 book checks passed\n",
+    "stderr": ""
+  },
+  {
+    "step": "build-provenance.ts",
+    "exit": 0,
+    "stdout": "provenance written; 12 outputs; 46 readability files identical to canonical checkout; 0 different\n",
+    "stderr": ""
+  }
+]

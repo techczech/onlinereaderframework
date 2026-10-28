@@ -35,11 +35,14 @@ test('the registry holds five books once: three originals unchanged, two convert
   assert.deepEqual(nextBooks.map(book => flatten(book.sections).length), [10, 14]);
 });
 
-test('each converted book has a distinct proposed identity from existing mastheads and no chosen cover', () => {
+test('each converted book keeps its distinct identity and the author-selected cover', () => {
   const [academic, readability] = nextBooks;
-  assert.deepEqual(academic.appearance, { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial' });
-  assert.deepEqual(readability.appearance, { accent: '#4338ca', paper: '#f8f7fd', ink: '#23223a', masthead: 'practical' });
-  for (const book of nextBooks) assert.equal(book.appearance?.cover, undefined, book.id);
+  assert.deepEqual(academic.appearance, { accent: '#0369a1', paper: '#f6f9fb', ink: '#1f2933', masthead: 'editorial', cover: academic.appearance?.cover });
+  assert.deepEqual(readability.appearance, { accent: '#4338ca', paper: '#f8f7fd', ink: '#23223a', masthead: 'practical', cover: readability.appearance?.cover });
+  for (const book of nextBooks) {
+    assert.equal(book.appearance?.cover?.src, `/covers/${book.id}.jpg`, book.id);
+    assert.ok(book.appearance?.cover?.alt, book.id);
+  }
 });
 
 test('licences: Readability keeps CC BY with no version in its link; Academic carries no licence grant', () => {
