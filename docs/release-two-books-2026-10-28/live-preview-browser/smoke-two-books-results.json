@@ -1,0 +1,444 @@
+{
+  "startedAt": "2026-10-28T05:33:00.688Z",
+  "base": "https://03509e32.dominiklukes-net.pages.dev",
+  "steps": {
+    "step1": {
+      "desktop-academic-reading": {
+        "title": "Increasing Reading Productivity Framework for Improving Academic Reading",
+        "h1": "Increasing Reading Productivity\nFramework for Improving Academic Reading",
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overlaps": 0,
+        "offRight": [],
+        "demoControls": [],
+        "iconLabels": [
+          {
+            "tag": "BUTTON",
+            "text": "arrow_forward\nStart Reading",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "search\nSearch",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "download\nDownload eBook",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "A",
+            "text": "Download the full text (Markdown)",
+            "aria": null,
+            "href": "https://03509e32.dominiklukes-net.pages.dev/books/academic-reading/agent/academic-reading/full.md"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Copy a prompt for the downloaded file",
+            "aria": null,
+            "href": null
+          }
+        ],
+        "cover": [
+          {
+            "alt": "",
+            "w": 30,
+            "h": 42,
+            "visible": false
+          },
+          {
+            "alt": "Increasing Reading Productivity cover with linked landscape panels on dark blue paper",
+            "w": 256,
+            "h": 400,
+            "visible": true
+          }
+        ],
+        "coverHashes": [
+          {
+            "src": "/books/academic-reading/covers/academic-reading.jpg",
+            "status": 200,
+            "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+            "matchesExpected": true
+          },
+          {
+            "src": "/books/academic-reading/covers/academic-reading.jpg",
+            "status": 200,
+            "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+            "matchesExpected": true
+          }
+        ],
+        "screenshot": "step1-desktop-academic-reading.png"
+      },
+      "desktop-readability": {
+        "title": "Foundations of Readability Create accessible, easy-to-process documents and presentations",
+        "h1": "Foundations of Readability\nCreate accessible, easy-to-process documents and presentations",
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overlaps": 0,
+        "offRight": [],
+        "demoControls": [],
+        "iconLabels": [
+          {
+            "tag": "BUTTON",
+            "text": "arrow_forward\nStart Reading",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "search\nSearch",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "download\nDownload eBook",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "A",
+            "text": "Download the full text (Markdown)",
+            "aria": null,
+            "href": "https://03509e32.dominiklukes-net.pages.dev/books/readability/agent/readability-foundations/full.md"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Copy a prompt for the downloaded file",
+            "aria": null,
+            "href": null
+          }
+        ],
+        "cover": [
+          {
+            "alt": "",
+            "w": 30,
+            "h": 42,
+            "visible": false
+          },
+          {
+            "alt": "Foundations of Readability cover with a cream cut-paper page and a coral tab",
+            "w": 256,
+            "h": 400,
+            "visible": true
+          }
+        ],
+        "coverHashes": [
+          {
+            "src": "/books/readability/covers/readability-foundations.jpg",
+            "status": 200,
+            "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+            "matchesExpected": true
+          },
+          {
+            "src": "/books/readability/covers/readability-foundations.jpg",
+            "status": 200,
+            "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+            "matchesExpected": true
+          }
+        ],
+        "screenshot": "step1-desktop-readability.png"
+      },
+      "mobile-academic-reading": {
+        "title": "Increasing Reading Productivity Framework for Improving Academic Reading",
+        "h1": "Increasing Reading Productivity\nFramework for Improving Academic Reading",
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overlaps": 0,
+        "offRight": [],
+        "demoControls": [],
+        "iconLabels": [
+          {
+            "tag": "BUTTON",
+            "text": "arrow_forward\nStart Reading",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "search\nSearch",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "download\nDownload eBook",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "A",
+            "text": "Download the full text (Markdown)",
+            "aria": null,
+            "href": "https://03509e32.dominiklukes-net.pages.dev/books/academic-reading/agent/academic-reading/full.md"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Copy a prompt for the downloaded file",
+            "aria": null,
+            "href": null
+          }
+        ],
+        "cover": [
+          {
+            "alt": "",
+            "w": 30,
+            "h": 42,
+            "visible": false
+          },
+          {
+            "alt": "Increasing Reading Productivity cover with linked landscape panels on dark blue paper",
+            "w": 120,
+            "h": 192,
+            "visible": true
+          }
+        ],
+        "coverHashes": [
+          {
+            "src": "/books/academic-reading/covers/academic-reading.jpg",
+            "status": 200,
+            "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+            "matchesExpected": true
+          },
+          {
+            "src": "/books/academic-reading/covers/academic-reading.jpg",
+            "status": 200,
+            "sha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+            "matchesExpected": true
+          }
+        ],
+        "screenshot": "step1-mobile-academic-reading.png"
+      },
+      "mobile-readability": {
+        "title": "Foundations of Readability Create accessible, easy-to-process documents and presentations",
+        "h1": "Foundations of Readability\nCreate accessible, easy-to-process documents and presentations",
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overlaps": 0,
+        "offRight": [],
+        "demoControls": [],
+        "iconLabels": [
+          {
+            "tag": "BUTTON",
+            "text": "arrow_forward\nStart Reading",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "search\nSearch",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "download\nDownload eBook",
+            "aria": null,
+            "href": null
+          },
+          {
+            "tag": "A",
+            "text": "Download the full text (Markdown)",
+            "aria": null,
+            "href": "https://03509e32.dominiklukes-net.pages.dev/books/readability/agent/readability-foundations/full.md"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Copy a prompt for the downloaded file",
+            "aria": null,
+            "href": null
+          }
+        ],
+        "cover": [
+          {
+            "alt": "",
+            "w": 30,
+            "h": 42,
+            "visible": false
+          },
+          {
+            "alt": "Foundations of Readability cover with a cream cut-paper page and a coral tab",
+            "w": 120,
+            "h": 192,
+            "visible": true
+          }
+        ],
+        "coverHashes": [
+          {
+            "src": "/books/readability/covers/readability-foundations.jpg",
+            "status": 200,
+            "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+            "matchesExpected": true
+          },
+          {
+            "src": "/books/readability/covers/readability-foundations.jpg",
+            "status": 200,
+            "sha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+            "matchesExpected": true
+          }
+        ],
+        "screenshot": "step1-mobile-readability.png"
+      }
+    },
+    "step2": {
+      "frameInfo": {
+        "src": "https://03509e32.dominiklukes-net.pages.dev/books/academic-reading/embeds/academic-reading/cognition-explorer/index.html",
+        "loading": "lazy",
+        "title": "Cognition Explorer: interactive map of the cognitive processes in academic reading"
+      },
+      "frameUrl": "/books/academic-reading/embeds/academic-reading/cognition-explorer/",
+      "pageUrl": "/books/academic-reading/?section=cognition-explorer",
+      "clicked": true,
+      "clickErr": null,
+      "textLenBefore": 399,
+      "after": {
+        "len": 474,
+        "snippet": "Interactive Cognition Map\n\nClick on nodes to explore the cognitive process.\n\nReset View\nFacilitates\nFacilitates\nNecessary for\nFeeds into\nFeeds into\nActive during\nFeeds into\nFeeds into\nFeeds into\ntype of\ntype of\nDevelops map\nNavigates\nsupport\nFeeds into\nManipulating\nDecoding\nPre-coding\nEncoding\nRe-coding\nLinear Encoding\nNon-linear encoding\nSkimming\nScanning\nScroll horizontally to view full diagram\n",
+        "dialogs": []
+      },
+      "consoleNew": []
+    },
+    "step3": {
+      "cramBefore": {
+        "tag": "DIV",
+        "text": "An employer can choose to offer more leave than the legal minimum. They do not h",
+        "pressed": "false",
+        "cls": "p-8 rounded-xl border mb-8 max-w-2xl mx-auto cursor-pointer transition-all duration-300 relative group\n          bg-slate-200 border-slate-3"
+      },
+      "cramAfter": {
+        "tag": "DIV",
+        "text": "An employer can choose to offer more leave than the legal minimum. They do not h",
+        "pressed": "true",
+        "cls": "p-8 rounded-xl border mb-8 max-w-2xl mx-auto cursor-pointer transition-all duration-300 relative group\n          bg-white border-indigo-200 "
+      },
+      "cramClicked": true,
+      "cramErr": null,
+      "bodyTextChanged": false,
+      "shots": [
+        "step3-desktop-formatting-before.png",
+        "step3-desktop-formatting-after.png"
+      ]
+    },
+    "step4": {
+      "/books/academic-reading/cognition-explorer/": {
+        "iframeBox": {
+          "x": 28,
+          "width": 300,
+          "right": 328
+        },
+        "pageOverflow": {
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        "frameOverflow": {
+          "scrollWidth": 300,
+          "clientWidth": 300
+        },
+        "pageLinks": [
+          "text_fields",
+          "Skip to text version",
+          "Open full view (opens in a new tab)"
+        ],
+        "frameLinks": [
+          "Reset View"
+        ],
+        "textAlt": [
+          "smart_toy\nAsk an agent to help you read this",
+          ""
+        ]
+      },
+      "/books/readability/formatting-examples/": {
+        "iframeBox": {
+          "x": 28,
+          "width": 300,
+          "right": 328
+        },
+        "pageOverflow": {
+          "scrollWidth": 390,
+          "clientWidth": 390
+        },
+        "frameOverflow": {
+          "scrollWidth": 300,
+          "clientWidth": 300
+        },
+        "pageLinks": [
+          "text_fields",
+          "Text as experienced by dyslexic readers",
+          "Skip to text version",
+          "Open full view (opens in a new tab)",
+          "Skip to text version",
+          "Open full view (opens in a new tab)",
+          "Text as experienced by dyslexic readers"
+        ],
+        "frameLinks": [],
+        "textAlt": [
+          "smart_toy\nAsk an agent to help you read this",
+          ""
+        ]
+      }
+    },
+    "step5": {
+      "/resources/": [
+        {
+          "title": "Increasing Reading Productivity",
+          "found": true,
+          "img": "/assets/books/academic-reading-cover.jpg",
+          "imgAlt": "Cover of Increasing Reading Productivity",
+          "links": [
+            "/resources/academic-reading",
+            "https://dominiklukes.net/books/academic-reading/"
+          ],
+          "imgSha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+          "imgStatus": 200,
+          "matchesExpected": true
+        },
+        {
+          "title": "Foundations of Readability",
+          "found": true,
+          "img": "/assets/books/readability-foundations-cover.jpg",
+          "imgAlt": "Cover of Foundations of Readability",
+          "links": [
+            "/resources/readability-foundations",
+            "https://dominiklukes.net/books/readability/"
+          ],
+          "imgSha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+          "imgStatus": 200,
+          "matchesExpected": true
+        }
+      ],
+      "/academic-productivity/": [
+        {
+          "title": "Increasing Reading Productivity",
+          "found": true,
+          "img": "/assets/books/academic-reading-cover.jpg",
+          "imgAlt": "Cover of Increasing Reading Productivity",
+          "links": [
+            "https://dominiklukes.net/books/academic-reading/"
+          ],
+          "imgSha256": "d56c130ac7f8c84f707e8d48aee205981f80efbc7c45866637f5b0b22b524539",
+          "imgStatus": 200,
+          "matchesExpected": true
+        },
+        {
+          "title": "Foundations of Readability",
+          "found": true,
+          "img": "/assets/books/readability-foundations-cover.jpg",
+          "imgAlt": "Cover of Foundations of Readability",
+          "links": [
+            "https://dominiklukes.net/books/readability/"
+          ],
+          "imgSha256": "adbedd7db78beaf5a54e9d165b72d302158cc42ada2261745e2bd126c8e074ef",
+          "imgStatus": 200,
+          "matchesExpected": true
+        }
+      ]
+    }
+  },
+  "console": [],
+  "failedRequests": [],
+  "finishedAt": "2026-10-28T05:33:33.778Z"
+}
