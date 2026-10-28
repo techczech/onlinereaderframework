@@ -24,3 +24,7 @@ One slide photograph is a neutral placeholder. Covers selected in chat: Academic
 New-book production planning must copy planned embeds, provide and verify actual hosting headers and settle canonical URLs. The existing edition verifier's ordinary-word accessibility false positive remains unresolved; no final production release check was claimed through the test workaround. No live book or public MIT archive was changed. Before any new public source release, extend manuscript privacy anchors for both books and run the source-export review gates; manuscript files remain excluded from the public allowlist.
 
 Author feedback request: _DTC/onlinereaderframework/2026-10-28-review-academic-reading-and-readability.md. No publication decision collected yet.
+
+## Home navigation icons (28 October)
+
+Following the author’s screenshot, classic home actions now pair their visible labels with the existing Material Symbols: arrow_forward for Start Reading, search for Search, and download for generated or supplied ebook downloads. Icons are decorative to accessibility APIs; label names and behaviour remain. Shared spacing keeps the pair aligned and wrapping mobile actions usable. This changes the local preview only; configurable front-page layouts already have icons.

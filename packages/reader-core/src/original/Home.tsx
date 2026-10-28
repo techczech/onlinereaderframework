@@ -45,10 +45,10 @@ const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOp
         <p className="publication-author">{book.author}</p>
         <p className="publication-description">{book.description}</p>
         <div className="publication-home-actions">
-          <button className="publication-primary-action" onClick={onStart} disabled={!book.sections.length}>Start Reading</button>
-          <button onClick={onOpenSearch}>{labels.search}</button>
-          {!downloads.length && onDownloadEbook && <button onClick={() => void handleDownload()} disabled={isGenerating}>{isGenerating ? 'Generating…' : 'Download eBook'}</button>}
-          {downloads.map(download => <a key={download.href} href={download.href}>{download.label}</a>)}
+          <button className="publication-primary-action" onClick={onStart} disabled={!book.sections.length}><span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span><span>Start Reading</span></button>
+          <button onClick={onOpenSearch}><span className="material-symbols-outlined" aria-hidden="true">search</span><span>{labels.search}</span></button>
+          {!downloads.length && onDownloadEbook && <button onClick={() => void handleDownload()} disabled={isGenerating}><span className="material-symbols-outlined" aria-hidden="true">download</span><span>{isGenerating ? 'Generating…' : 'Download eBook'}</span></button>}
+          {downloads.map(download => <a key={download.href} href={download.href}><span className="material-symbols-outlined" aria-hidden="true">download</span><span>{download.label}</span></a>)}
         </div>
       </div>
     </header>
