@@ -6,7 +6,7 @@ try {
  await page.goto(process.env.NAVIGATOR_URL || 'http://127.0.0.1:5189/'); await page.waitForTimeout(1000);
  for(const width of [1440,390]) {
  await page.setViewportSize({width,height:1000});
- const cover=page.locator('.publication-home-cover'); await cover.waitFor();
+ const cover=page.locator('.publication-home-cover'); await cover.waitFor(); await cover.evaluate(e=>e.decode());
  const proof=await cover.evaluate(e=>{const r=e.getBoundingClientRect();return {src:e.getAttribute('src'),naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight,width:r.width,height:r.height,left:r.left,right:r.right,viewport:innerWidth,objectFit:getComputedStyle(e).objectFit}});
  if(proof.naturalWidth!==1600 || proof.naturalHeight!==2560 || proof.left<0 || proof.right>width || proof.objectFit!=='contain') throw Error(JSON.stringify(proof));
  const body=await page.locator('body').innerText(); if(!body.includes('Version 1. Check back for updates with more interactive features.') || /reference candidate|source freshness|archive extraction/i.test(body)) throw Error('public copy');
