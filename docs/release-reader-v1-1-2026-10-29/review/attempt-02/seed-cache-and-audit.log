@@ -1,0 +1,13 @@
+file://[reader-repository]/build/review-reader-v1-1-b1w9nrl0/exporter-functions.mjs:61
+for (const arg of args) if (!['--self-test', '--online', '--help'].includes(arg)) throw Error(`Unknown option: ${arg}`);
+                                                                                        ^
+
+Error: Unknown option: [reader-repository]/build/review-reader-v1-1-b1w9nrl0/public-reader-source
+    at file://[reader-repository]/build/review-reader-v1-1-b1w9nrl0/exporter-functions.mjs:61:89
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)
+
+Node.js v26.12.1
+
+EXIT 1

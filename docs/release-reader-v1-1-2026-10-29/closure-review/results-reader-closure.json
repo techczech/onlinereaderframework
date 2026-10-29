@@ -1,0 +1,168 @@
+{
+  "commands": [
+    {
+      "name": "seed-real-offline-cache",
+      "args": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/seed.mjs",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/public-reader-source",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/npm-cache"
+      ],
+      "exit": 0,
+      "seconds": 0.731
+    },
+    {
+      "name": "exported-setup",
+      "args": [
+        "npm",
+        "run",
+        "setup"
+      ],
+      "exit": 0,
+      "seconds": 1.163
+    },
+    {
+      "name": "exported-core-build",
+      "args": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit": 0,
+      "seconds": 2.283
+    },
+    {
+      "name": "example-embedded",
+      "args": [
+        "npm",
+        "run",
+        "example"
+      ],
+      "exit": 0,
+      "seconds": 2.635
+    },
+    {
+      "name": "example-embedded-tests",
+      "args": [
+        "npm",
+        "run",
+        "test:example"
+      ],
+      "exit": 0,
+      "seconds": 0.806
+    },
+    {
+      "name": "refuse-embed-leaf",
+      "args": [
+        "npm",
+        "run",
+        "example"
+      ],
+      "exit": 1,
+      "seconds": 0.408
+    },
+    {
+      "name": "refuse-embed-directory",
+      "args": [
+        "npm",
+        "run",
+        "example"
+      ],
+      "exit": 1,
+      "seconds": 0.409
+    },
+    {
+      "name": "preview-boundaries",
+      "args": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/probe.mjs",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/reader-closure-review-htjmhhzv/preview-fixtures"
+      ],
+      "exit": 0,
+      "seconds": 0.093
+    },
+    {
+      "name": "example-no-embeds",
+      "args": [
+        "npm",
+        "run",
+        "example:no-embeds"
+      ],
+      "exit": 0,
+      "seconds": 1.444
+    },
+    {
+      "name": "example-no-embeds-tests",
+      "args": [
+        "npm",
+        "run",
+        "test:example"
+      ],
+      "exit": 0,
+      "seconds": 0.895
+    }
+  ],
+  "integrity": {
+    "archiveSha256": "479728473301002b3fc6ad5da09166bc0f30653a805bb2abc0eb1ac51e05c390",
+    "tarSha256": "a24e3d2054bee50b879fc0570c951f07e35a00dbafd183e9d4c9c18c5ff5790f",
+    "members": 146,
+    "changedMembers": [
+      "examples/reader-example/build.mjs",
+      "examples/reader-example/serve.mjs",
+      "examples/reader-example/test-example.mjs",
+      "provenance-reader-source.json"
+    ],
+    "provenanceScalarChanges": [
+      {
+        "path": "/exportedInputs/111/sha256",
+        "old": "f29056f916b8d113c9df7ee53aebe28733596774d1bb8295bf2c1dcf1eb56f87",
+        "new": "20c815684a2bd3b80087bda04c1a55bacba94d1b72cf63f1254bc880e1527aa2"
+      },
+      {
+        "path": "/exportedInputs/111/bytes",
+        "old": 4156,
+        "new": 4966
+      },
+      {
+        "path": "/exportedInputs/112/sha256",
+        "old": "c63b3a7aa15a8bc10fa602863e0476bc097cc7da993c07ced738da1d8b39a73f",
+        "new": "8ac0faff63be3b1819d9d3b920c1b018b867611e2adb144d105e5c3ad7ab4f4a"
+      },
+      {
+        "path": "/exportedInputs/112/bytes",
+        "old": 3231,
+        "new": 3629
+      },
+      {
+        "path": "/exportedInputs/114/sha256",
+        "old": "53c0492f35a8f5424bec7e957079e12afb5a74041cb7f27978a6938045fa4bd5",
+        "new": "6e146992f24fcb3cc9f3e690fc8dbe6efe59006215dcf9b0cb29d163a1da6597"
+      },
+      {
+        "path": "/exportedInputs/114/bytes",
+        "old": 6150,
+        "new": 10400
+      }
+    ]
+  },
+  "sourceLinks": [
+    {
+      "case": "leaf",
+      "exit": 1,
+      "allPreviousDistFilesUnchanged": true,
+      "distFilesCompared": 129,
+      "outsideCanaryUnchanged": true
+    },
+    {
+      "case": "directory",
+      "exit": 1,
+      "allPreviousDistFilesUnchanged": true,
+      "distFilesCompared": 129,
+      "outsideCanaryUnchanged": true
+    }
+  ],
+  "status": "passed",
+  "scratchRemoved": true,
+  "integrityChanges": []
+}

@@ -1,0 +1,19 @@
+file://[reader-repository]/build/review-reader-v1-1-e6vn4ylo/exporter-functions.mjs:409
+export { audit,manuscriptBooks,manuscriptAnchors,seedOfflineCache,assertProjectPath,retirePreviousCandidate };
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Export 'retirePreviousCandidate' is not defined in module
+    at compileSourceTextModule (node:internal/modules/esm/utils:355:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:94:18)
+    at #translate (node:internal/modules/esm/loader:441:20)
+    at afterLoad (node:internal/modules/esm/loader:509:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:514:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:567:36)
+    at afterResolve (node:internal/modules/esm/loader:614:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:277:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:389:17)
+
+Node.js v26.12.1
+
+EXIT 1

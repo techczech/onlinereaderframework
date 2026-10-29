@@ -1,0 +1,332 @@
+{
+  "date": "2026-10-29T03:20:45.541Z",
+  "node": "v26.12.1",
+  "passed": 56,
+  "failed": 0,
+  "results": [
+    {
+      "name": "with embeds: browser is bundled chrome-headless-shell",
+      "pass": true,
+      "detail": "chromium_headless_shell-1228"
+    },
+    {
+      "name": "with embeds: 1280: home shows the book title",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: EPUB download is a valid-looking EPUB with the text version and no frame",
+      "pass": true,
+      "detail": {
+        "file": "A-Short-Tour-of-the-Reader-Example-book-for-the-Online-Reader-Framework.epub",
+        "bytes": 7898,
+        "entries": 16
+      }
+    },
+    {
+      "name": "with embeds: agent files are linked from the reader and served",
+      "pass": true,
+      "detail": {
+        "href": "http://127.0.0.1:54526/agent/reader-example/full.md",
+        "status": 200
+      }
+    },
+    {
+      "name": "with embeds: 1280: text version is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 1280: toolbar control Listen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 1280: toolbar control Formatting",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 1280: toolbar control Assist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 1280: toolbar control Notes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 1280: one frame, sandbox allow-scripts only, same-origin embeds/ address",
+      "pass": true,
+      "detail": {
+        "sandbox": "allow-scripts",
+        "src": "http://127.0.0.1:54526/embeds/line-spacing.html",
+        "title": "Line spacing explorer",
+        "referrer": "no-referrer",
+        "allow": "camera 'none'; microphone 'none'; geolocation 'none'; display-capture 'none'; payment 'none'; usb 'none'; fullscreen 'none'; autoplay 'none'; clipboard-read 'none'; clipboard-write 'none'"
+      }
+    },
+    {
+      "name": "with embeds: 1280: frame grew from 240 px to the height the embed reported",
+      "pass": true,
+      "detail": 348
+    },
+    {
+      "name": "with embeds: 1280: frame has an opaque origin and no storage, cookies or parent DOM",
+      "pass": true,
+      "detail": {
+        "origin": "null",
+        "lineHeight": "2.2",
+        "storage": "blocked",
+        "cookie": "blocked",
+        "parent": "blocked"
+      }
+    },
+    {
+      "name": "with embeds: 1280: no horizontal page overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "with embeds: 1280: full view opened directly stays sandboxed by the response header",
+      "pass": true,
+      "detail": {
+        "origin": "null",
+        "storage": "blocked"
+      }
+    },
+    {
+      "name": "with embeds: 1280: no requests outside the preview origin",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "with embeds: 1280: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "with embeds: 1280: no popups",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "with embeds: 375: home shows the book title",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: text version is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: toolbar control Listen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: toolbar control Formatting",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: toolbar control Assist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: toolbar control Notes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "with embeds: 375: one frame, sandbox allow-scripts only, same-origin embeds/ address",
+      "pass": true,
+      "detail": {
+        "sandbox": "allow-scripts",
+        "src": "http://127.0.0.1:54526/embeds/line-spacing.html",
+        "title": "Line spacing explorer",
+        "referrer": "no-referrer",
+        "allow": "camera 'none'; microphone 'none'; geolocation 'none'; display-capture 'none'; payment 'none'; usb 'none'; fullscreen 'none'; autoplay 'none'; clipboard-read 'none'; clipboard-write 'none'"
+      }
+    },
+    {
+      "name": "with embeds: 375: frame grew from 240 px to the height the embed reported",
+      "pass": true,
+      "detail": 444
+    },
+    {
+      "name": "with embeds: 375: frame has an opaque origin and no storage, cookies or parent DOM",
+      "pass": true,
+      "detail": {
+        "origin": "null",
+        "lineHeight": "2.2",
+        "storage": "blocked",
+        "cookie": "blocked",
+        "parent": "blocked"
+      }
+    },
+    {
+      "name": "with embeds: 375: no horizontal page overflow",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "with embeds: 375: full view opened directly stays sandboxed by the response header",
+      "pass": true,
+      "detail": {
+        "origin": "null",
+        "storage": "blocked"
+      }
+    },
+    {
+      "name": "with embeds: 375: no requests outside the preview origin",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "with embeds: 375: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "with embeds: 375: no popups",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: browser is bundled chrome-headless-shell",
+      "pass": true,
+      "detail": "chromium_headless_shell-1228"
+    },
+    {
+      "name": "without embeds: 1280: home shows the book title",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: EPUB download is a valid-looking EPUB with the text version and no frame",
+      "pass": true,
+      "detail": {
+        "file": "A-Short-Tour-of-the-Reader-Example-book-for-the-Online-Reader-Framework.epub",
+        "bytes": 7898,
+        "entries": 16
+      }
+    },
+    {
+      "name": "without embeds: agent files are linked from the reader and served",
+      "pass": true,
+      "detail": {
+        "href": "http://127.0.0.1:54551/agent/reader-example/full.md",
+        "status": 200
+      }
+    },
+    {
+      "name": "without embeds: 1280: text version is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: toolbar control Listen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: toolbar control Formatting",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: toolbar control Assist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: toolbar control Notes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: build without embeds shows no frame",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: build without embeds serves no embed document",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 1280: no requests outside the preview origin",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: 1280: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: 1280: no popups",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: 375: home shows the book title",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: text version is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: toolbar control Listen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: toolbar control Formatting",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: toolbar control Assist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: toolbar control Notes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: build without embeds shows no frame",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: build without embeds serves no embed document",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "without embeds: 375: no requests outside the preview origin",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: 375: no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "without embeds: 375: no popups",
+      "pass": true,
+      "detail": []
+    }
+  ]
+}

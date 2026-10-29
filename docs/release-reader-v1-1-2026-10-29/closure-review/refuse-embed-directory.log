@@ -1,0 +1,26 @@
+
+> onlinereaderframework@1.1.0 example
+> npm run build --prefix examples/reader-example
+
+
+> reader-example@1.1.0 build
+> node build.mjs
+
+file://[reader-repository]/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example/build.mjs:21
+  try { if (lstatSync(path).isSymbolicLink()) throw new Error(`Refusing a linked path: ${relative(here, path)}`); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+                                                    ^
+
+Error: Refusing a linked path: embeds
+    at notLinked (file://[reader-repository]/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example/build.mjs:21:53)
+    at readEmbedSource (file://[reader-repository]/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example/build.mjs:35:56)
+    at file://[reader-repository]/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example/build.mjs:55:84
+    at Array.map (<anonymous>)
+    at file://[reader-repository]/build/reader-closure-review-htjmhhzv/public-reader-source/examples/reader-example/build.mjs:55:55
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)
+
+Node.js v26.12.1
+
+EXIT 1

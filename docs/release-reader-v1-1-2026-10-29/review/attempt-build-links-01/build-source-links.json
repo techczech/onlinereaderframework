@@ -1,0 +1,13 @@
+{
+  "commands": [
+    {
+      "name": "build-links-cache",
+      "exit": 0
+    },
+    {
+      "name": "build-links-setup",
+      "exit": 1
+    }
+  ],
+  "scratchRemoved": true
+}

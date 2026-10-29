@@ -1,0 +1,9 @@
+
+> onlinereaderframework@1.1.0 setup
+> npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7 && npm ci --prefix examples/reader-example --ignore-scripts --min-release-age=7
+
+npm error code ENOTCACHED
+npm error request to https://registry.npmjs.org/zwitch/-/zwitch-2.0.4.tgz failed: cache mode is 'only-if-cached' but no cached response is available.
+npm error A complete log of this run can be found in: [reader-repository]/build/review-build-links-umf4czhq/npm-cache/_logs/2026-10-29T03_12_38_946Z-debug-0.log
+
+EXIT 1

@@ -1,0 +1,33 @@
+--- previous/examples/reader-example/serve.mjs
++++ repaired/examples/reader-example/serve.mjs
+@@ -1,7 +1,7 @@
+ /** Local preview of dist/ with the same response headers that `_headers` gives a Cloudflare Pages host, including the embed sandbox.
+  * Usage: node serve.mjs [--port 4173]. Listens on 127.0.0.1 only. Read-only: serves regular files inside dist/, never through a link. */
+ import { createServer } from 'node:http';
+-import { lstatSync, readFileSync } from 'node:fs';
++import { lstatSync, readFileSync, realpathSync } from 'node:fs';
+ import { dirname, extname, resolve, sep } from 'node:path';
+ import { fileURLToPath, pathToFileURL } from 'node:url';
+ import { headerRules, headersFor } from './hosting-headers.mjs';
+@@ -14,6 +14,9 @@
+ 
+ /** The regular file a request path names inside `root`, or null. Refuses encoded separators, dot segments, hidden names and links. */
+ export function fileFor(root, pathname) {
++  root = resolve(root);
++  // Include the root and every ancestor; checking only its descendants follows a linked dist/.
++  try { if (!lstatSync(root).isDirectory() || realpathSync(root) !== root) return null; } catch { return null; }
+   let decoded;
+   try { decoded = decodeURIComponent(pathname); } catch { return null; }
+   if (!decoded.startsWith('/') || /[\\\0]/.test(decoded)) return null;
+@@ -29,7 +32,10 @@
+ }
+ 
+ export function createPreviewServer(root = resolve(here, 'dist')) {
+-  const built = JSON.parse(readFileSync(resolve(root, 'example-build.json'), 'utf8'));
++  root = resolve(root);
++  const metadata = fileFor(root, '/example-build.json');
++  if (!metadata) throw new Error('Refusing a missing or linked preview root or build metadata');
++  const built = JSON.parse(readFileSync(metadata, 'utf8'));
+   const rules = headerRules({ embeds: built.embeds === true });
+   return createServer((request, response) => {
+     const url = new URL(request.url ?? '/', 'http://127.0.0.1');

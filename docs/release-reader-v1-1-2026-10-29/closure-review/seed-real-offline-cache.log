@@ -1,0 +1,10 @@
+{
+  copiedContentObjects: 214,
+  scope: 'lockfile-matched public npm registry entries only'
+}
+{
+  copiedContentObjects: 63,
+  scope: 'lockfile-matched public npm registry entries only'
+}
+
+EXIT 0

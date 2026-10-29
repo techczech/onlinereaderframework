@@ -1,0 +1,1078 @@
+{
+  "status": "v1.1-source-candidate",
+  "release": {
+    "version": "1.1.0",
+    "license": "MIT",
+    "author": "Dominik Lukeš",
+    "homepage": "https://techczech.github.io/onlinereaderframework/",
+    "repository": "https://github.com/techczech/onlinereaderframework"
+  },
+  "publicationAuthorised": "by the author, 2026-10-27 (v1.0.0) and 2026-10-29 (v1.1.0); performed by the parent, not by this script",
+  "node": "v26.12.1",
+  "checks": [
+    {
+      "label": "linked-core-only-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 build\n> npm run build --prefix packages/reader-core\n\n\n> reader-core@1.1.0 build\n> node ../../scripts/build-reader-core.mjs\n\nPackaged original reader styling, fonts, icons and font licences.\n",
+      "stderr": "Browserslist: caniuse-lite is outdated. Please run:\n  npx update-browserslist-db@latest\n  Why you should do it regularly: https://github.com/browserslist/update-db#readme\n\nRebuilding...\n\nDone in 325ms.\n"
+    },
+    {
+      "label": "linked-core-only-native-import",
+      "command": [
+        "npm",
+        "run",
+        "test:native"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 test:native\n> node scripts/test-reader-native-import.mjs\n\nNative package-name import, existing/new APIs (incl. embeds and embed-child), agent-file generation and browser-only EPUB boundary passed.\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual-isolated-npm-ci",
+      "command": [
+        "npm",
+        "ci",
+        "--prefix",
+        "packages/reader-core",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--min-release-age=7",
+        "--cache",
+        "<reader-repo>/build/reader-source-release.scratch-UAlAWA/npm-cache"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\nadded 200 packages in 744ms\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual-isolated-example-npm-ci",
+      "command": [
+        "npm",
+        "ci",
+        "--prefix",
+        "examples/reader-example",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--min-release-age=7",
+        "--cache",
+        "<reader-repo>/build/reader-source-release.scratch-UAlAWA/npm-cache"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\nadded 20 packages in 202ms\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-core-only-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 build\n> npm run build --prefix packages/reader-core\n\n\n> reader-core@1.1.0 build\n> node ../../scripts/build-reader-core.mjs\n\nPackaged original reader styling, fonts, icons and font licences.\n",
+      "stderr": "Browserslist: caniuse-lite is outdated. Please run:\n  npx update-browserslist-db@latest\n  Why you should do it regularly: https://github.com/browserslist/update-db#readme\n\nRebuilding...\n\nDone in 308ms.\n"
+    },
+    {
+      "label": "installed-node-unit-checks",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 test\n> npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node packages/reader-core/src/embed/test-embed.mjs && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs\n\n\n> reader-core@1.1.0 test:publication-content\n> node src/publication-content/test-publication-content.mjs\n\n✔ renders nested formatting, complex destinations and reference links faithfully (8.819709ms)\n✔ preserves reference and inline footnotes with working unique return links (3.529ms)\n✔ preserves image destinations, titles and meaningful alt text (0.494ms)\n✔ keeps original Language Muscle HTML classes, quoted > and chapter routes (1.187334ms)\n✔ keeps GFM tables, strikethrough, nested lists and escaped fenced code (2.133041ms)\n✔ renders inline and display math as safe native MathML without CSS (2.757875ms)\n✔ assigns deterministic, unique prefixed heading IDs without DOM clobbering (1.043583ms)\n✔ plain text indexes the complete content, image alt and footnote text (0.657125ms)\n✔ removes executable HTML and unsafe URLs, attack 1 (0.402958ms)\n✔ removes executable HTML and unsafe URLs, attack 2 (0.826083ms)\n✔ removes executable HTML and unsafe URLs, attack 3 (1.076584ms)\n✔ removes executable HTML and unsafe URLs, attack 4 (0.445833ms)\n✔ removes executable HTML and unsafe URLs, attack 5 (0.36275ms)\n✔ removes executable HTML and unsafe URLs, attack 6 (0.442625ms)\n✔ removes executable HTML and unsafe URLs, attack 7 (0.517125ms)\n✔ removes executable HTML and unsafe URLs, attack 8 (2.885916ms)\n✔ sanitisation preserves safe URL schemes and is idempotent for rich content (2.792625ms)\n✔ does not depend on window or document and produces synchronous empty output (0.132333ms)\n✔ exports heading targets and labels from the same model as rendered HTML (0.396666ms)\n✔ math trust remains disabled, malformed math stays readable, and macros do not leak between sections (1.343375ms)\n✔ static SVG cannot introduce executable or remote resources (0.532209ms)\n✔ preserves supplied namespaced IDs when another supplied ID would collide after prefixing (0.273959ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 127.815541\n\n> reader-core@1.1.0 test:agent-export\n> node src/agent-export/test-agent-export.mjs\n\n✔ book and section ids become safe, distinct path segments; unusable ids are refused (5.197625ms)\n✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.137084ms)\n✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (2.521084ms)\n✔ the directory option is validated by both generators before any path is produced (2.015584ms)\n✔ a nested directory keeps every reader link pointing at the reader root (9.268458ms)\n✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (4.442334ms)\n✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (3.53075ms)\n✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.750542ms)\n✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (0.719625ms)\n✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.232167ms)\n✔ both generators refuse an unusable public address before producing any file, and never echo it (1.537583ms)\n✔ the reader box rebases its folder from the current reader root onto the public reader prefix (1.260667ms)\n✔ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (11.098458ms)\n✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (0.725709ms)\n✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (0.939ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 255.672\n✔ a sound descriptor is normalised (0.888541ms)\n✔ resource paths outside the local embed folder are refused (0.206042ms)\n✔ identity, text and height fields are constrained (0.182375ms)\n✔ runtime URL resolution stays on the page origin inside the root (0.141208ms)\n✔ an edition base keeps embeds inside the edition folder from any address of the edition (0.194667ms)\n✔ height messages: only an exact, bounded payload from an opaque origin (0.174917ms)\n✔ build check requires a real prose alternative at the anchor (7.9725ms)\n✔ manuscript HTML still cannot create frames, scripts or embed chrome (1.020459ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 110.735458\n✔ native Node import exports the React panel without browser globals (1.832084ms)\n✔ source validation rejects executable and disguised schemes while permitting recorded URLs (0.143666ms)\n✔ alignment accepts only finite, non-overlapping, ordered measured ranges (0.350833ms)\n✔ restore is ready at saved position and speed without autoplay; positions stay per book (1.032708ms)\n✔ chapter navigation follows publication order, skips missing recordings and clamps seeking (0.186542ms)\n✔ view/settings rerenders and fresh equivalent arrays preserve the same playing audio (0.1435ms)\n✔ rejected play, media errors and retry have truthful states (1.977625ms)\n✔ pending play and obsolete media events cannot change a new book or restart after pause (0.227458ms)\n✔ loading, buffering and ended transitions preserve intent without auto-advancing (0.164875ms)\n✔ storage denial, corrupt records, prototype names, changed assets and nonfinite inputs stay safe (0.490791ms)\n✔ boundaries contain only supplied measured spans, clear in gaps/errors and never interpolate (0.152166ms)\n✔ empty or unsafe tracks never create audio or substitute browser speech (0.114959ms)\n✔ passage skipping uses supplied starts, honours gaps and disables without measurements (0.09825ms)\n✔ Follow text is opt-in, clears on disable and rejects spans outside duration (0.074833ms)\n✔ pause and book changes capture the final media clock between timeupdate events (0.088292ms)\n✔ late metadata after media failure and obsolete pause events do not override current intent (0.055041ms)\n✔ a changed source reloads even when the host acknowledges the already selected chapter (0.382916ms)\n✔ the vendored ReadFlex player is byte-identical to the recorded source file (2.236334ms)\n✔ loading a chapter never starts speech; Start begins at the requested position (1.598834ms)\n✔ voices: saved choice, then book language, then the system default; missing saved voice falls back (0.384291ms)\n✔ choosing a voice or speed is saved and applied to the next utterance (0.281167ms)\n✔ skip moves by sentence and paragraph from the current place, and resumes reading (0.281ms)\n✔ a speed change restarts the current sentence, not the chapter (0.136917ms)\n✔ word highlighting appears only after the engine reports a real boundary (1.472959ms)\n✔ stop clears the highlight; pause keeps the position; sentences end into the next (0.188125ms)\n✔ reaching the end returns to idle without a problem (0.106666ms)\n✔ an engine error is reported plainly and does not leave the controller reading (0.164833ms)\n✔ another page cancelling our speech is reported, not shown as reading (0.086416ms)\n✔ a stale end or boundary from a stopped or replaced utterance cannot advance or clear newer playback (0.082584ms)\n✔ ownership: an idle controller never cancels shared speech; a speaking one does on dispose (0.1125ms)\n✔ no speech engine: honest unavailable state, Start explains, nothing throws (0.042458ms)\n✔ an utterance that shows no sign of life is reported instead of reading forever (112.119042ms)\n✔ two readers over one engine: the newer one takes it, and the older one can no longer stop or hear it (0.356584ms)\n✔ taking the engine from a paused reader clears the engine pause; only the new owner can pause or resume it (0.13025ms)\n✔ a reader can take the engine back, and its own late callbacks are still ignored (0.093708ms)\n✔ a reader that never spoke does not claim the engine and leaves a speaking reader alone (0.061083ms)\n✔ watchdog: an engine that reports starts and is speaking is never stopped for lacking word events (283.203958ms)\n✔ watchdog: a slow voice may start late; one that never starts is reported after a bounded wait (483.696667ms)\n✔ watchdog: pausing before the voice starts does not lose or spend the wait; resuming re-arms it (676.10625ms)\n✔ watchdog: an engine that gives no start events is judged only by whether it says it is speaking (200.63575ms)\n✔ engage: the host hook runs before the engine speaks or resumes, once per engagement, on every start path (0.321333ms)\n✔ word ranges follow Unicode words, not bytes (2.067458ms)\n✔ hostile storage and invalid ranges return safe preferences (0.793459ms)\n✔ per-book round trip and reset values remain bounded (0.144917ms)\n✔ WriteFlex line-size normalisation and exclusive overlay choice (0.061875ms)\n✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.427625ms)\n✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.341792ms)\n✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.087041ms)\n✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.184334ms)\n✔ anchored reading is off by default, kept per book, and invalid values fall back to WriteFlex's contrast default (0.141667ms)\n✔ preorder navigation and lookup include recursive book descendants (1.277084ms)\n✔ original query and Language Muscle hash URLs restore the same leaf (0.160333ms)\n✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.164083ms)\n✔ storage keys isolate every book, including IDs containing separators (0.338959ms)\n✔ notes export includes reflections even when there are no highlights (0.178208ms)\n✔ download boundaries reject executable schemes and retain same-origin assets (0.076375ms)\n✔ native ESM imports the original reader without a bundler or browser globals (1304.685208ms)\n✔ outline fold is kept per book and survives blocked storage for the visit (0.484375ms)\n✔ theme follows the computer by default; Light and Dark are explicit (0.587125ms)\n✔ legacy dark-mode boolean: no record follows the computer; a value equal to the computer is not claimed as a choice; a differing one is kept (0.070791ms)\n✔ tooltip text states the choice and what Follow computer means now (0.077625ms)\n✔ steppers stay inside the saved-preference bounds without float drift (0.429ms)\n✔ dimming levels map to saved values; older in-between values are reported as custom (0.292708ms)\n✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.099167ms)\n✔ assist summary states what is actually on (0.141208ms)\n✔ letter spacing reads Normal at zero (0.050959ms)\n✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.223417ms)\n✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.136041ms)\n✔ theme is its own small icon control and is not in Formatting (0.143792ms)\n✔ toolbar dim levels equal the preference levels (0.1415ms)\n✔ anchored reading counts as an assistance beside the overlay, and is named and summarised (0.110917ms)\nℹ tests 71\nℹ suites 0\nℹ pass 71\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 8447.301834\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-native-package-import",
+      "command": [
+        "npm",
+        "run",
+        "test:native"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 test:native\n> node scripts/test-reader-native-import.mjs\n\nNative package-name import, existing/new APIs (incl. embeds and embed-child), agent-file generation and browser-only EPUB boundary passed.\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-example-build-with-embeds",
+      "command": [
+        "npm",
+        "run",
+        "example"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 example\n> npm run build --prefix examples/reader-example\n\n\n> reader-example@1.1.0 build\n> node build.mjs\n\nBuilt the example in dist/ with embeds; 10 agent files.\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-example-node-checks-with-embeds",
+      "command": [
+        "npm",
+        "run",
+        "test:example"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 test:example\n> npm test --prefix examples/reader-example\n\n\n> reader-example@1.1.0 test\n> node --test test-example.mjs\n\n✔ the reader page loads only its own built files (1.040834ms)\n✔ the embed registry matches the book, and the text version is ordinary content (7.460959ms)\n✔ agent files carry the text version and no frame (0.16175ms)\n✔ embeds are present only in a build with embeds, inline and self-contained (0.198333ms)\n✔ headers: reader pages are strict, embeds are sandboxed with no network (0.234584ms)\n✔ the preview server refuses paths outside dist and hidden or encoded names (1.206042ms)\n✔ the preview server sends the hosting headers (15.011417ms)\n✔ the build refuses linked embed source files and directories before replacing dist (367.864ms)\n✔ the preview refuses linked default roots, ancestors and build metadata (2.948667ms)\n✔ a preview root replaced by a link after startup cannot serve outside files (5.51625ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 555.916166\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-example-build-without-embeds",
+      "command": [
+        "npm",
+        "run",
+        "example:no-embeds"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 example:no-embeds\n> npm run build:no-embeds --prefix examples/reader-example\n\n\n> reader-example@1.1.0 build:no-embeds\n> node build.mjs --without-embeds\n\nBuilt the example in dist/ without embeds; 10 agent files.\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-example-node-checks-without-embeds",
+      "command": [
+        "npm",
+        "run",
+        "test:example"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "\n> onlinereaderframework@1.1.0 test:example\n> npm test --prefix examples/reader-example\n\n\n> reader-example@1.1.0 test\n> node --test test-example.mjs\n\n✔ the reader page loads only its own built files (0.968459ms)\n✔ the embed registry matches the book, and the text version is ordinary content (7.493ms)\n✔ agent files carry the text version and no frame (0.184583ms)\n✔ embeds are present only in a build with embeds, inline and self-contained (0.087917ms)\n✔ headers: reader pages are strict, embeds are sandboxed with no network (0.184667ms)\n✔ the preview server refuses paths outside dist and hidden or encoded names (1.155875ms)\n✔ the preview server sends the hosting headers (14.778209ms)\n✔ the build refuses linked embed source files and directories before replacing dist (355.069875ms)\n✔ the preview refuses linked default roots, ancestors and build metadata (2.6795ms)\n✔ a preview root replaced by a link after startup cannot serve outside files (5.3205ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 534.4095\n",
+      "stderr": ""
+    },
+    {
+      "label": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "cwd": "reader-source-release.scratch-UAlAWA/candidate",
+      "exitCode": 0,
+      "stdout": "11.20.0\n",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "Working-tree snapshot; the parent must publish only from a clean checkout of the exact commit and compare the archive hash.",
+    "Private-path and manuscript-span matching are heuristics; no browser, visual, EPUBCheck or rights acceptance is claimed here.",
+    "Browser-interaction scripts are not exported. Exported tests are Node tests only; the example is built and checked in Node here, and in a browser only by the private scripts/check-reader-example-browser.mjs.",
+    "Isolation: every declared dependency must resolve inside the scratch copy; an undeclared import could still resolve from a node_modules folder above the repository."
+  ],
+  "priorInstallationAttempts": [
+    {
+      "mode": "offline",
+      "exitCode": 1,
+      "stderr": "npm error code ENOTCACHED\nnpm error request to https://registry.npmjs.org/@types/qrcode/-/qrcode-1.5.6.tgz failed: cache mode is 'only-if-cached' but no cached response is available.\nnpm error A complete log of this run can be found in: [owning-repository]/build/reader-source-release.scratch-boVvD7/npm-cache/_logs/2026-10-23T13_11_48_497Z-debug-0.log\n",
+      "scratchRemoved": true
+    },
+    {
+      "mode": "offline",
+      "exitCode": 1,
+      "stderr": "npm error code ENOTCACHED\nnpm error request to https://registry.npmjs.org/@types/qrcode/-/qrcode-1.5.6.tgz failed: cache mode is 'only-if-cached' but no cached response is available.\nnpm error A complete log of this run can be found in: [owning-repository]/build/reader-source-release.scratch-rwSiHs/npm-cache/_logs/2026-10-27T15_46_21_753Z-debug-0.log\n",
+      "scratchRemoved": true
+    }
+  ],
+  "retiredCandidate": null,
+  "examplePolicies": {
+    "matchesReleaseHeaders": true,
+    "embed": "sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'"
+  },
+  "manuscriptInputSha256": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84",
+  "manuscriptInputs": [
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "sha256": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/academic-reading-framework.book.json",
+      "sha256": "026788a99edff6bf10718d16a21bd53a1f23853cf39848ceb08f4718408a39db"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/readability-foundations.book.json",
+      "sha256": "2fd185d1c58d9f79deb9975420ba18b76c9aa396dae074d6fcb1f6558ee66915"
+    }
+  ],
+  "headAtStart": "bf10299c7d67d51c84c270934523e8ac2a25e03a",
+  "trackedInputChangesAtStart": [
+    "package.json",
+    "packages/reader-core/package-lock.json",
+    "packages/reader-core/package.json",
+    "scripts/prepare-reader-source-release.mjs",
+    "scripts/templates/reader-source-release/LICENSING.md",
+    "scripts/templates/reader-source-release/README.md",
+    "scripts/templates/reader-source-release/site/index.html",
+    "scripts/templates/reader-source-release/test-reader-native-import.mjs"
+  ],
+  "untrackedInputsAtStart": [
+    "examples/reader-example/README.md",
+    "examples/reader-example/build.mjs",
+    "examples/reader-example/embeds/line-spacing.html",
+    "examples/reader-example/hosting-headers.mjs",
+    "examples/reader-example/index.html",
+    "examples/reader-example/package-lock.json",
+    "examples/reader-example/package.json",
+    "examples/reader-example/serve.mjs",
+    "examples/reader-example/src/example-book.mjs",
+    "examples/reader-example/src/main.jsx",
+    "examples/reader-example/test-example.mjs",
+    "scripts/templates/reader-source-release/CHANGELOG.md"
+  ],
+  "sourceState": "dirty-working-tree-candidate",
+  "initialAudit": {
+    "filesScanned": 142,
+    "manuscriptAnchors": 13866,
+    "reviewedFalsePositives": [
+      {
+        "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+        "rule": "file-url",
+        "literal": "file:///a.wav",
+        "count": 1,
+        "reason": "Unsafe audio address that the listening panel must refuse."
+      },
+      {
+        "path": "packages/reader-core/src/embed/embed.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///tmp/book/index.html",
+        "count": 1,
+        "reason": "Invented page address; the embed resolver must refuse file pages."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/x",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/book",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///etc/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/index.html",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@example.org/sub/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@public.example.org/sub/reader/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///etc/passwd",
+        "count": 1,
+        "reason": "Generic adversarial HTML input; assertions reject unsafe URL schemes."
+      }
+    ],
+    "issues": []
+  },
+  "installMode": "offline",
+  "cacheSeed": {
+    "copiedContentObjects": 214,
+    "scope": "lockfile-matched public npm registry entries only"
+  },
+  "exampleCacheSeed": {
+    "copiedContentObjects": 63,
+    "scope": "lockfile-matched public npm registry entries only"
+  },
+  "isolatedDependencyResolution": "every declared core and example dependency resolves inside the scratch copy",
+  "generatedStyle": {
+    "sha256": "758acb94ffe370e0836079a7eb83083ff6b52c00da169b30cf77587416b988a9",
+    "localFontReferences": 112,
+    "notices": [
+      {
+        "path": "packages/reader-core/notices/LICENSE-inter.txt",
+        "sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+        "from": "@fontsource/inter/LICENSE"
+      },
+      {
+        "path": "packages/reader-core/notices/LICENSE-merriweather.txt",
+        "sha256": "aa677c3f7682d9c4f7aa48fae3f3b9d0f8d70ac6ab47b9bc20a9cc2879e15af0",
+        "from": "@fontsource/merriweather/LICENSE"
+      },
+      {
+        "path": "packages/reader-core/notices/LICENSE-material-symbols-outlined.txt",
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+        "from": "@fontsource/material-symbols-outlined/LICENSE"
+      }
+    ]
+  },
+  "audit": {
+    "filesScanned": 146,
+    "manuscriptAnchors": 13866,
+    "reviewedFalsePositives": [
+      {
+        "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+        "rule": "file-url",
+        "literal": "file:///a.wav",
+        "count": 1,
+        "reason": "Unsafe audio address that the listening panel must refuse."
+      },
+      {
+        "path": "packages/reader-core/src/embed/embed.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///tmp/book/index.html",
+        "count": 1,
+        "reason": "Invented page address; the embed resolver must refuse file pages."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/x",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/book",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///etc/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/index.html",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@example.org/sub/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@public.example.org/sub/reader/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///etc/passwd",
+        "count": 1,
+        "reason": "Generic adversarial HTML input; assertions reject unsafe URL schemes."
+      }
+    ],
+    "issues": []
+  },
+  "headAtEnd": "bf10299c7d67d51c84c270934523e8ac2a25e03a",
+  "changedInputsDuringRun": [],
+  "inputHashes": [
+    {
+      "path": "apps/reader-demo/src/books/original-publications.json",
+      "sha256": "4c436964111d88112d799a9e05adb359772b1f3824effad649399f0df6e82b84"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/academic-reading-framework.book.json",
+      "sha256": "026788a99edff6bf10718d16a21bd53a1f23853cf39848ceb08f4718408a39db"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/readability-foundations.book.json",
+      "sha256": "2fd185d1c58d9f79deb9975420ba18b76c9aa396dae074d6fcb1f6558ee66915"
+    },
+    {
+      "path": "packages/reader-core/src/adapters/markdownAdapter.ts",
+      "sha256": "83608648130f53876198bc5d1ddb84d07150119cc89772762efdeac617eefe4c"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.ts",
+      "sha256": "1fcce4620721c09ec68f4e65cb9b81ea09b8411b1b7d911cbd81fae711205229"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-links.ts",
+      "sha256": "575df73841f29c20dc12271d1d0871196b25a1bc670dbe89a1dad3605e06d9c0"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-location.ts",
+      "sha256": "1a6206ad226ebb0e356ce289a1372916e456fc59b3772e932e0744f15bd6640b"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-paths.ts",
+      "sha256": "105cf6c96bbe4307bfe388cce952524efdad7cfdc3d1288b48229bc515d10b45"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-url.ts",
+      "sha256": "0a22cf017396b626be1d8eac6722c362643702395338f525ee9bff39bf008057"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/index.ts",
+      "sha256": "323ca06a72d43038958a99829b0a7e0d8e44936e4ead690fdbab8e920e5b04a5"
+    },
+    {
+      "path": "packages/reader-core/src/components/blocks/BlockRenderer.tsx",
+      "sha256": "213048505fe6228610bd0e8f0bf77f1d765659876fb0ca54c89383139219dfbe"
+    },
+    {
+      "path": "packages/reader-core/src/components/home/Home.tsx",
+      "sha256": "3d532456bb51cff8bff6deae31cf146f09c4c7d085263c94ce805ee69237992b"
+    },
+    {
+      "path": "packages/reader-core/src/components/layouts/ScrollLayout.tsx",
+      "sha256": "29532d712ef4c24ca5203410aed24f9f6a97542c3860925bbdbfb637772d20ce"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderContent.tsx",
+      "sha256": "56fb4e2ca92ff79f4f5464b4c3be827c69cb5737a87b492387712577b0875ff2"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/ReaderShell.tsx",
+      "sha256": "9bc3016b385d922b3d4634b92ea194ba2e3ed1423216cd483bbfee3a5e98bf05"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/SelectionToolbar.tsx",
+      "sha256": "16899bef4194439834cf044e881579adf3574f09915bc9b9b00965e32f9fff7c"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/Sidebar.tsx",
+      "sha256": "e857ec6124f68be92c9b6deb33294027fc1bd57b3fdefefcdb4a689a9ac6fd00"
+    },
+    {
+      "path": "packages/reader-core/src/components/reader/TableOfContents.tsx",
+      "sha256": "3e64efaef7e9844f4d1160b5de71538f9d4756a35e92933101bd8e5c572181c0"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/BookmarkButton.tsx",
+      "sha256": "55ad9eb232561522651d180e822d6a597ed3679be9a238cf3ce63e2a1ebdc806"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/HighlightsPanel.tsx",
+      "sha256": "cbd0bb0d812f0b083b6f51dfb24d9bf8a9d0075a60cc947b8367a2ea8f800f0c"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ProgressPanel.tsx",
+      "sha256": "0f475e2e9ae3acce5777de8f778a027f26987ce82ddf4fbba90bd94dcd765198"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/ReadabilityControls.tsx",
+      "sha256": "1790a3eb73a6cc80e679b7b0522455028d540fd1afd7762dbc5afa855df66cf9"
+    },
+    {
+      "path": "packages/reader-core/src/components/tools/SearchModal.tsx",
+      "sha256": "2a6b8e2767648d1b0d9737247e091e94fea39de76591a60c525d173a42a22bfb"
+    },
+    {
+      "path": "packages/reader-core/src/context/useReaderNavigation.ts",
+      "sha256": "ff3556d7a9747a86ff4b2e200d30ac91c9d698409772ea9c332323bdf694de8c"
+    },
+    {
+      "path": "packages/reader-core/src/embed/PublicationEmbedFrame.tsx",
+      "sha256": "5c142852ea1bf6b0a0106977a7e6914271f2f0b8c580821a7e6155fd7e00b16b"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-check.ts",
+      "sha256": "083ea12ac68d3cec2b9516e831855ab54dcc01e4c0fbf986c23af1d395a7c054"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-child.ts",
+      "sha256": "8bc45041e2b798d6649a04949dc4bcd35352f9b58474d5c9ee40b51f2195b501"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-model.ts",
+      "sha256": "35f622a7706f1a050c4a88b0a48806be1b1d4ea5526e0be9ecaeac6b0a6c30ed"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed.css",
+      "sha256": "104115e9313b7f41d5739fb6ea25bc1ce35e7aad4141b30d69fd019b99bcd8d9"
+    },
+    {
+      "path": "packages/reader-core/src/embed/index.ts",
+      "sha256": "6f2fe044bb066b87078838268ae4ff2ee6400c5152f17882b1d4b5683781ae22"
+    },
+    {
+      "path": "packages/reader-core/src/index.ts",
+      "sha256": "921734c5de36d702e8278a81b539271f2731044f7f34f4b60991ea7267bfb640"
+    },
+    {
+      "path": "packages/reader-core/src/original/HighlightsDrawer.tsx",
+      "sha256": "d6284c8a97c05ab07c4454f32f38500a8a5b44a4fe685507b46dd2bf53e84b2e"
+    },
+    {
+      "path": "packages/reader-core/src/original/Home.tsx",
+      "sha256": "326764778f1bf2f021db24a9b40c622b466c861c80e2d5e3d6232ddff881c9db"
+    },
+    {
+      "path": "packages/reader-core/src/original/MarkdownRenderer.tsx",
+      "sha256": "0a46654020117af4db0534e89578e00dbec4c0140dea6b7d9ff055185372787b"
+    },
+    {
+      "path": "packages/reader-core/src/original/PublicationReader.tsx",
+      "sha256": "c9a06154b9c10249d1cd1a7a279b741a4e12556f56dd74ed4796c21d176293b7"
+    },
+    {
+      "path": "packages/reader-core/src/original/QuoteImageModal.tsx",
+      "sha256": "f42a2958af88db479145fb335aaccba210114377d96c826b4b4db2fc7de34889"
+    },
+    {
+      "path": "packages/reader-core/src/original/ReaderLayout.tsx",
+      "sha256": "56dd0ca519ae345c93d28384bf54049cba3f2bd9f926483d245b5cb56e76a5fa"
+    },
+    {
+      "path": "packages/reader-core/src/original/ShortcutsModal.tsx",
+      "sha256": "19463518655ce581e86b8e6994c6513df3a8dd1b2295ef4d8ec63940ce37705d"
+    },
+    {
+      "path": "packages/reader-core/src/original/Sidebar.tsx",
+      "sha256": "547eda8705bb890d37b34aa037f2b5944389e200ab8c051b7c74aada90f4b976"
+    },
+    {
+      "path": "packages/reader-core/src/original/TableOfContents.tsx",
+      "sha256": "7e69e51cd463ab8f89116dab131d2ef7583c67c4fc042f86ff2189efc8dff0c5"
+    },
+    {
+      "path": "packages/reader-core/src/original/Toast.tsx",
+      "sha256": "f3fe946cf054362c8189a49f1e8fe467694076122031457976e07e7c51f4c7ba"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
+      "sha256": "2a1208e8408acbf7f25b6abcad9a8df0cdd21ba18cf15ede98f1c489323cccd0"
+    },
+    {
+      "path": "packages/reader-core/src/original/agent/agent-access.css",
+      "sha256": "3dbb761966e5f2bcc1c4f32382b4b25d635dc7d716e2f3da5a3e835fa87dbdbe"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/FrontPage.tsx",
+      "sha256": "4a06571a8f70ff7d0109b0c3e109eba160c4de4787300fcb52775e6aafc75514"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-copy.ts",
+      "sha256": "44ff90930568e389f9af4e8583a86432027b7c3ca45807197a31de8acc18b643"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-layouts.ts",
+      "sha256": "9252650e32ab66cd0fe5a38faff5ef09d9075c2395b9b6f0b8efea84675e0acf"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage-model.ts",
+      "sha256": "a002bb2a50245313071fc5d1d145d91989a0bd4905ff00758331e690fdd5de39"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/frontpage.css",
+      "sha256": "6a9ad46003bd389f7658c414d0149bf3d0f4b734efb9690ab464eddfe09c8b19"
+    },
+    {
+      "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
+      "sha256": "c74307a72a21be613e716c6e6ace0b73ab9869574bc2c484f7ed011c940b6969"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/ListeningPanel.tsx",
+      "sha256": "53c44162d5138a1e9140fd71db04a18179d3bb02de416df543b437babce22d6f"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/index.ts",
+      "sha256": "f9038e1157d5e510154bc5be04fba1ad381addad3ece5301f4fa4c54f2c0c849"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-controller.ts",
+      "sha256": "7c908ee5e140c1d1aab1e4655e42b55c59040d8bcf6c3020a85a12a88a5688d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-model.ts",
+      "sha256": "810a8bc9ba3cc639d2a956f681ab429d151e9cae8e8b8387ad0144d5344072a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening-types.ts",
+      "sha256": "e5d5de9a927af500d907d137184d1955641c7b5189cc2e49b2a753c489e571a5"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/listening.css",
+      "sha256": "796223ccc56d0a07cd90daa2537b99c2f9187effbbcbad1abd32e32a53559cef"
+    },
+    {
+      "path": "packages/reader-core/src/original/outline-preference.ts",
+      "sha256": "e1543efab369cd60ca5198c7b58b746208034d26191e807ac4e8bedac9ffa7ef"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-html.ts",
+      "sha256": "69989cfb0c1ac532fab416eee778837ac78fe0e9d95ccacdbb33d680be277c18"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-model.ts",
+      "sha256": "ac8d7633b770e0a39df57db4b4afb1ea2947ac462450be333a2f36a1d6c0d826"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-navigation.ts",
+      "sha256": "7e321caa0fdf0995f14ff4463112a652e8e2c982445f2190169e8d8b3e214f02"
+    },
+    {
+      "path": "packages/reader-core/src/original/publication-notes.ts",
+      "sha256": "435945ee3f2ec2571d38fc134aff17ad7cdc8bc1a600a2f46096538205f45d02"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/ReadAloudControls.tsx",
+      "sha256": "f1343ec7157851a013c4eab4fddc241208578bf3240b1313f501300ff1347682"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/flex-speech.ts",
+      "sha256": "6de33926ef26f3b6aa2a31262c1b79dff975fa354f3c7059e8a6781b7a57de62"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-controller.ts",
+      "sha256": "ef979dc329be4a5e79ce236335b64f41fed102ab40427233a1b3a138401a79de"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-highlight.ts",
+      "sha256": "4064b7e76da8eac15f0d03f295e530196aee9a63e12a0be61316c0d0d590773c"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/read-aloud-speakable.ts",
+      "sha256": "a95816c5962828acda8682da202cd3db15b35a893352192a2b848ae59af6a40e"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/use-read-aloud.ts",
+      "sha256": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-integrations.css",
+      "sha256": "1f48a92fd160a6557c13c8924a3dc15a9c04e67131da935f005ee5a6adf660ce"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-original.css",
+      "sha256": "adcca06ab55526ee1f88664609dcd470f337524b96e6a471742c937e97207df6"
+    },
+    {
+      "path": "packages/reader-core/src/original/reader-theme.ts",
+      "sha256": "c5f6af3ace2f540189a85f4ce2613122a62d0aef14f4f4f6d8f853209eb23122"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupport.tsx",
+      "sha256": "c7e9398e45b7e1375e2616f697ec0847c306ca7f9aa25e96ef721eb4782cb2bd"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportControls.tsx",
+      "sha256": "7272c60d99852a8099a5e8453e28fd47bb9b213666af1062c979676d5dd71c7d"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/ReadingSupportSurface.tsx",
+      "sha256": "c575781c7bbade2a6fba19afd1a2b75cba955621956b9c3b0ff41ba7df3a4979"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/anchored-reading.ts",
+      "sha256": "6b8b72636cd76125410d911c3af43a2bab873a1078ca8e1ef1d5bc91c58dfcf0"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/index.ts",
+      "sha256": "c01258de705f87d722e34614888351cc3529d7e4c6e6b00b2f01657fd5c06701"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/line-geometry.ts",
+      "sha256": "4cb0c8a8101350ad016c05a4e5bea1c886a6ded3b6ba94f55ed8453aab5d6fe7"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/reading-preferences.ts",
+      "sha256": "42ab8dabe51eecb5908e8d4b1731691e14db5178f81136aeb53afa9c11377e78"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/support.css",
+      "sha256": "51c8ac88d7481c0dd7bc074ce75e7fb9e6ecafc2da34dc15cdf68e77d32cc258"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-anchored-reading.ts",
+      "sha256": "a343bd84b4a07f4a703b1946facaf7e729606a6ed79d1e59371c60329d229713"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-reading-support.ts",
+      "sha256": "461e932b7d9b571db20b0b0cf42184e9165edb56545181de59304da91bc31a4f"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/use-viewport-width.ts",
+      "sha256": "98cd4189bd60ae363d03ebd4ea2e177849ec874647f5b268aafd52ed4d7e64be"
+    },
+    {
+      "path": "packages/reader-core/src/original/sidebar-model.ts",
+      "sha256": "61051a576f6bcf9afa4bd2e5eff194a492b52e94cf0d07826a1827348e6e9dc1"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
+      "sha256": "c30fc7f3cdf8a0286996b97c097ad9947ed8bbcb78b1c6c42a806ed32b585d63"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/controls.tsx",
+      "sha256": "e34631ff1a7da582c960c8a9ff63c440e0196a14b715717f43d6874e44fd91d7"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/toolbar-model.ts",
+      "sha256": "88acf150a8027dea5d0b72a7798b14d6af6fe48d654774748e14b00ed2e94c5b"
+    },
+    {
+      "path": "packages/reader-core/src/original/types.ts",
+      "sha256": "85b51ab84448cbe1dc69e8634cbd38a3bd9010529defe0c39cf10043c7f62234"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-listening-highlight.ts",
+      "sha256": "e9bf28edf5b36dea7cb439e087191a537814b75f088ed82bba71fda21b972521"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-publication-reader.ts",
+      "sha256": "e3c63f4bdc50b61258e3510278533890f4ed79107ff6164dc171fd075862d717"
+    },
+    {
+      "path": "packages/reader-core/src/original/use-system-dark.ts",
+      "sha256": "0e2e963b6dd105828e32521a2b675619617f96569040f5b6a70667e1a12822b3"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/index.ts",
+      "sha256": "56b011d19c03b078c34ac91601d39546fe2883dc661bd50a71d3045ab7fdba5e"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-schema.ts",
+      "sha256": "257e77e0439a6ae3afb684728c42b8f49bd2a1381729fd7c69236e336fca3e38"
+    },
+    {
+      "path": "packages/reader-core/src/services/epub/epubGenerator.ts",
+      "sha256": "2195cd6dd6cbc08a4cab8c01015905741f1f33d891d427a281c368811e42a203"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-assets.ts",
+      "sha256": "fbe3bcd5f651a45859174c19dd2b5514e9f5dd5de74c218bb271883a7cb412ce"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-references.ts",
+      "sha256": "21f3e8c6668f4f612bf2beee9e971b7d0a5654b1a877064232bf278c606d34b8"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/epub-xhtml.ts",
+      "sha256": "3d12792c6f193bba8ae79100b511e343ac4bab8ebfcc8b0a5edc8744b87fdaf6"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/index.ts",
+      "sha256": "8180abf19943303f3f5761386922c431da3dcd6623d4343df4d9ed6f1f512a72"
+    },
+    {
+      "path": "packages/reader-core/src/types.ts",
+      "sha256": "3cfb507c477447b0f1d1e2ec19569b0289d7c066730106644bf407597ee8c75c"
+    },
+    {
+      "path": "packages/reader-core/src/utils/highlightExport.ts",
+      "sha256": "9e641f8069751d07d01f66f3f7c03a490c5b7fabd7916677c27ba965b26e4357"
+    },
+    {
+      "path": "packages/reader-core/src/utils/llmsExport.ts",
+      "sha256": "0d9a723130307749bae4f72abbbbed9e0028273d1ee980c013744c8f078d028c"
+    },
+    {
+      "path": "packages/reader-core/src/utils/markdownParser.ts",
+      "sha256": "5f73e27e4e1b9127ea2bdd475735f737e27ed86e071785437d27c3404d038496"
+    },
+    {
+      "path": "packages/reader-core/src/utils/readingStats.ts",
+      "sha256": "80b3327f8c7900e7c42daf044c1220617b2c212e58059d5082077a90d0fc2e21"
+    },
+    {
+      "path": "packages/reader-core/src/utils/search.ts",
+      "sha256": "016fadd5765cfe02d0793e55a5a60994c30597c047e58ecba868eedb2178f863"
+    },
+    {
+      "path": "packages/reader-core/package.json",
+      "sha256": "28a9ffb441950a46447ca8db5b6b170398caa67433edcbd4b189244db315785a"
+    },
+    {
+      "path": "packages/reader-core/package-lock.json",
+      "sha256": "c8d716bf151ec4f015f60571dbb3e1b0d469074ca79e53cefc02359419eca6c4"
+    },
+    {
+      "path": "packages/reader-core/tsconfig.json",
+      "sha256": "717df5f2cbadd451d0f59abf525d5492ed95a2ad93e8d0615813254b6a0f9ae6"
+    },
+    {
+      "path": "packages/reader-core/styles/reader.css",
+      "sha256": "25c154c986ef62444b277e360238304e1146f8c0c1f97701abf13dc674751b95"
+    },
+    {
+      "path": "packages/reader-core/styles/tailwind.config.cjs",
+      "sha256": "9a7f9dbee8a397d945350416544a9bafb7d02150ae5f634898f878cad38f3970"
+    },
+    {
+      "path": "packages/reader-core/styles/publication-classes.txt",
+      "sha256": "fbf970067a7b252a01a16fb869282da4fb28d5e9d1311c401d65cb385fe60373"
+    },
+    {
+      "path": "scripts/build-reader-core.mjs",
+      "sha256": "3acd5b40a088ff0ec5afea76ff6f2de94d6810e48bbc80894ab02cdbcb05cd87"
+    },
+    {
+      "path": "scripts/build-reader-styles.mjs",
+      "sha256": "4a9134950f5d2509e1835e306f4864268c3f24e2a6a21bb451bbb0c3da37f618"
+    },
+    {
+      "path": "packages/reader-core/src/embed/README.md",
+      "sha256": "924514b3ecf04e217dd0a867935610ac69ce9545ffd86646ee095753a505e144"
+    },
+    {
+      "path": "examples/reader-example/README.md",
+      "sha256": "25f9d072c449a7790debed4346f5dc75d03e9a244fc2ab2c5ea95e53f090e043"
+    },
+    {
+      "path": "examples/reader-example/package.json",
+      "sha256": "6c135be4ede0658e171ecec87ca383733c3339804967492baff730cabeef5dce"
+    },
+    {
+      "path": "examples/reader-example/package-lock.json",
+      "sha256": "a10dc743e22e65d07c1b59267cf06b19a0bfe65c276c549732247db9884d3ff3"
+    },
+    {
+      "path": "examples/reader-example/index.html",
+      "sha256": "64012e3a66af7f99407816f023801422514ce50da7c008a594353c2a72bcd32f"
+    },
+    {
+      "path": "examples/reader-example/build.mjs",
+      "sha256": "20c815684a2bd3b80087bda04c1a55bacba94d1b72cf63f1254bc880e1527aa2"
+    },
+    {
+      "path": "examples/reader-example/serve.mjs",
+      "sha256": "8ac0faff63be3b1819d9d3b920c1b018b867611e2adb144d105e5c3ad7ab4f4a"
+    },
+    {
+      "path": "examples/reader-example/hosting-headers.mjs",
+      "sha256": "24b5bae783e36f7721e3a7647aff3a89937191eba14b53f673014168d7e0841f"
+    },
+    {
+      "path": "examples/reader-example/test-example.mjs",
+      "sha256": "6e146992f24fcb3cc9f3e690fc8dbe6efe59006215dcf9b0cb29d163a1da6597"
+    },
+    {
+      "path": "examples/reader-example/src/main.jsx",
+      "sha256": "02225d2be76a9c4f2214638ca4bbe91e7691310db7c961f11c563a03ed6435f6"
+    },
+    {
+      "path": "examples/reader-example/src/example-book.mjs",
+      "sha256": "440e736cfcad3eebe2d2faeb98eb1565dce00269c8312ed9de602aa04348741f"
+    },
+    {
+      "path": "examples/reader-example/embeds/line-spacing.html",
+      "sha256": "470755a2df3e51e59316c24da4040782ddfa1735a446cf2e5931e0aa79a45280"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/test-publication-content.mjs",
+      "sha256": "b518a8aa808c328a65b4e39716260dc0f7d5f33ccb07f8e26c28e36a985ffc1f"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/test-agent-export.mjs",
+      "sha256": "338858fda8da9cf2bea70b77c5d6454aaac2f57fc15ba77ba45c3bd4a10b56d5"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-outline-preference.mjs",
+      "sha256": "2b10ed5de15ccab7afd3c8c7ee7b39127528aa804be7d04c630c66dc2d0c61a1"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-reader-theme.mjs",
+      "sha256": "98bd5b49ed762b991e2d578a2621312ddd40114352321a369b9a01dee733964a"
+    },
+    {
+      "path": "packages/reader-core/src/original/reading-support/test-reading-preferences.mjs",
+      "sha256": "8753f7ed9555a83a30c20e7031a5e9de1408913a31b8aab5f625c5358230577c"
+    },
+    {
+      "path": "packages/reader-core/src/original/toolbar/test-toolbar-model.mjs",
+      "sha256": "37fc666aa14ad19d7c858398ae897a77c0cc5ebae4095c5b2ddf3a8c3cf4da68"
+    },
+    {
+      "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+      "sha256": "d792b028a88abd373671a0b6744a71eb0fc7aadca00859a68b22f0860b855fe7"
+    },
+    {
+      "path": "packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
+      "sha256": "98cea6b7561ad662cf3e1c6d4bd2b7f67ec3286b4d3576d6573e2348a04d4a87"
+    },
+    {
+      "path": "packages/reader-core/src/embed/test-embed.mjs",
+      "sha256": "f448838afdc6b72fd7543503725e9b57e98c3af7f59056548d0a357960ec732a"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed.test.mjs",
+      "sha256": "ccea7c173126bdc9e3c3327c4dcc2fabc983bb1049a276900862d4683674dd28"
+    },
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "sha256": "2254fbcbe85f66d47a56e99a7fe50c88d19b14ca32d4b26d2cfda7f1f25ca0e2"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+      "sha256": "b560102dda900cb5a570e9b018b36bb1cff33f3bd0b44779a668f89a0131e197"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader.mjs",
+      "sha256": "ed48e13b4f82ae5a3f0e9d0b4ac9f4ab991b206307b6adb9e392f05837a07ac9"
+    },
+    {
+      "path": "package.json",
+      "sha256": "53128c2ab8ad36c85be9a345ab52c1ad75cd3b02b9956756ab588f169fff801a"
+    },
+    {
+      "path": "apps/reader-demo/scripts/release/headers.ts",
+      "sha256": "5619346b0ccd4179fac55dbf8c1b9e54f755309aad0ff2ecddf78befb0c63b33"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "e03b2f3461d86a2d8b396eb5b049d4cc8cbe8bc8b024f4cb56ccbe48164f1c99"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/test-reader-native-import.mjs",
+      "sha256": "7ef6bec882f110fdcb965a8bb26fe24fcc6953ad086d3d76162e963a32dd7cc1"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/README.md",
+      "sha256": "c17e760b2c3dd4225ddaaaedf2a657160a5a22a7db2fd3deaa2c54598a46a885"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/LICENSING.md",
+      "sha256": "a1002c205d1f5d847ea3a69f915dbe4b972c4db47831dd7f9b0e48762cccdcce"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/CHANGELOG.md",
+      "sha256": "b90d14d9e65b4fc78da81fd8786cb71202da21f1e6671588463120fa485eba93"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/site/index.html",
+      "sha256": "64de4cf703801f2e886f43ee748d1ed63edc105bcebc3e532411105a89cf1a89"
+    },
+    {
+      "path": "scripts/templates/reader-source-release/site/style.css",
+      "sha256": "74da2a658390a9e793859cd0fa268d8853110bbda33224a76d76555f685f6772"
+    },
+    {
+      "path": "packages/reader-core/src/original/report-original-reader-extraction.md",
+      "sha256": "794b72c971ce1774515b3c6ed5e978e9c710cc287914f3cdc959d7c13d3473c4"
+    },
+    {
+      "path": "packages/reader-core/src/services/publication-epub/report-publication-epub-verification.json",
+      "sha256": "1bd7e099887c88f26e5af7aaa453bf7b038af69a2b6f2e66d5e2ad906e12423a"
+    },
+    {
+      "path": "scripts/prepare-reader-source-release.mjs",
+      "sha256": "adc31916caeb5c0c99e56aba0b784ab78db74b501c27872bd9ec7777c64375dd"
+    }
+  ],
+  "exportTransformations": [
+    {
+      "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+      "operation": "keep-generic-tests-only",
+      "keptTests": [
+        "book and section ids become safe, distinct path segments; unusable ids are refused",
+        "prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address",
+        "Markdown is exported verbatim, including trailing newlines, spaces and a code hard break",
+        "the directory option is validated by both generators before any path is produced",
+        "a nested directory keeps every reader link pointing at the reader root",
+        "reader chapter references resolve to exported chapter files in chapter and full-book contexts",
+        "Markdown reader references stay verbatim; resolved files are listed in a note after the section",
+        "whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation",
+        "canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it",
+        "private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6",
+        "both generators refuse an unusable public address before producing any file, and never echo it",
+        "the reader box rebases its folder from the current reader root onto the public reader prefix",
+        "a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are",
+        "an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link",
+        "a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt"
+      ],
+      "droppedTests": [
+        "every book: all section ids in reading order, counts, and one file per section",
+        "markdown sections are preserved byte for byte in chapter files and, in order, in full.md",
+        "code, tables, footnote-like attribution, source lines and the image link survive",
+        "html sections keep their structure through the reader sanitiser, with a title heading added",
+        "every relative link in every generated file resolves to a generated file; no private paths or browser state",
+        "siteUrl makes every link absolute; relative output has none of that host",
+        "reader links match the reader\\'s own publicationUrl; private hosts are recognised",
+        "canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash",
+        "a root index links each book at its own public address, never at another book\\'s",
+        "anchored reading: leadLength is WriteFlex\\'s own, and lead spans follow its word walk",
+        "real Language Muscle step-2 links to the Fine-tuning your aims chapter file"
+      ],
+      "sourceSha256": "2254fbcbe85f66d47a56e99a7fe50c88d19b14ca32d4b26d2cfda7f1f25ca0e2",
+      "exportedSha256": "635cc872f55cbc74b29ef18198466c0341cc064736239e8c2189993373da517a"
+    },
+    {
+      "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+      "operation": "omit-one-real-book-test",
+      "test": "preserves the original Language Muscle static SVG with paired gradient and marker IDs",
+      "sourceSha256": "b560102dda900cb5a570e9b018b36bb1cff33f3bd0b44779a668f89a0131e197",
+      "exportedSha256": "7d27d1ed13684ca9b0c1d12ab737080c109f13a669d3dca10ed219244e74ba2a"
+    },
+    {
+      "path": "packages/reader-core/src/original/test-original-reader.mjs",
+      "operation": "omit-one-real-book-test",
+      "test": "full publication identity uses actual adapter words without added punctuation or duplicates",
+      "sourceSha256": "ed48e13b4f82ae5a3f0e9d0b4ac9f4ab991b206307b6adb9e392f05837a07ac9",
+      "exportedSha256": "98114671968d730415f8807072a0c0dbe918a3f622401c1316cea3ef67d3f723"
+    }
+  ],
+  "postWriteVerification": {
+    "exactFileCount": 146,
+    "allFileHashesMatch": true,
+    "savedArchiveMatches": true
+  },
+  "archive": {
+    "path": "build/reader-source-release.tar.gz",
+    "sha256": "479728473301002b3fc6ad5da09166bc0f30653a805bb2abc0eb1ac51e05c390",
+    "uncompressedTarSha256": "a24e3d2054bee50b879fc0570c951f07e35a00dbafd183e9d4c9c18c5ff5790f",
+    "fileCount": 146,
+    "bytes": 263514
+  },
+  "npm": "11.20.0",
+  "result": "passed-local-source-preparation",
+  "scratchRemoved": true
+}

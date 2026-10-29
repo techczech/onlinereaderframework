@@ -1,0 +1,49 @@
+{
+  "commands": [
+    {
+      "name": "exporter-diff",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "diff",
+        "HEAD",
+        "--",
+        "scripts/prepare-reader-source-release.mjs"
+      ],
+      "exit": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "exporter-self-test",
+      "command": [
+        "node",
+        "scripts/prepare-reader-source-release.mjs",
+        "--self-test"
+      ],
+      "exit": 0,
+      "seconds": 0.1
+    },
+    {
+      "name": "seed-cache-and-audit",
+      "command": [
+        "node",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-v1-1-b1w9nrl0/seed-and-audit.mjs",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-v1-1-b1w9nrl0/public-reader-source",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/build/review-reader-v1-1-b1w9nrl0/npm-cache",
+        "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/docs/release-reader-v1-1-2026-10-29/review/audit.json"
+      ],
+      "exit": 1,
+      "seconds": 0.06
+    }
+  ],
+  "candidate": {
+    "archiveSha256": "bef6d91ef82e9cb93753cec1ef4affdd4e3088885ca25c6b3062388910274502",
+    "tarSha256": "9ab5d23aafde1ec269ee0d8a97bbc47af41a7d449d9759ac3efc864dcbfaf4a4",
+    "members": 146,
+    "inputHashesVerified": 146,
+    "sourceDrift": []
+  },
+  "error": "AssertionError('seed-cache-and-audit')",
+  "scratchRemoved": true,
+  "integrityChanged": []
+}

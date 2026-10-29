@@ -1,0 +1,83 @@
+--- previous/examples/reader-example/test-example.mjs
++++ repaired/examples/reader-example/test-example.mjs
+@@ -1,9 +1,10 @@
+ /** Checks the built example in dist/ (run `npm run build` or `npm run build:no-embeds` first). Node only; no browser. */
+ import test from 'node:test';
++import { spawnSync } from 'node:child_process';
+ import assert from 'node:assert/strict';
+-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
++import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+ import { dirname, resolve } from 'node:path';
+-import { fileURLToPath } from 'node:url';
++import { fileURLToPath, pathToFileURL } from 'node:url';
+ import { checkPublicationEmbeds, publicationContentToText } from 'reader-core';
+ import { exampleBook, exampleEmbeds } from './src/example-book.mjs';
+ import { CONTENT_SECURITY_POLICY, EMBED_CONTENT_SECURITY_POLICY, headerRules, headersFor, renderHeaders } from './hosting-headers.mjs';
+@@ -100,3 +101,67 @@
+     assert.equal((await fetch(base + '/%2e%2e/package.json')).status, 404);
+   } finally { await new Promise(done => server.close(done)); }
+ });
++
++
++test('the build refuses linked embed source files and directories before replacing dist', () => {
++  const scratch = mkdtempSync(resolve(here, '.test-build-source-'));
++  try {
++    const outside = resolve(scratch, 'outside');
++    mkdirSync(outside);
++    writeFileSync(resolve(outside, 'line-spacing.html'), '<p>OUTSIDE_SOURCE_CANARY</p><!-- reader-embed-child -->');
++    for (const kind of ['leaf', 'directory']) {
++      const root = resolve(scratch, kind); mkdirSync(root);
++      for (const name of ['build.mjs', 'hosting-headers.mjs', 'index.html']) cpSync(resolve(here, name), resolve(root, name));
++      cpSync(resolve(here, 'src'), resolve(root, 'src'), { recursive: true });
++      if (kind === 'leaf') { mkdirSync(resolve(root, 'embeds')); symlinkSync(resolve(outside, 'line-spacing.html'), resolve(root, 'embeds/line-spacing.html')); }
++      else symlinkSync(outside, resolve(root, 'embeds'));
++      mkdirSync(resolve(root, 'dist')); writeFileSync(resolve(root, 'dist/previous.txt'), 'PREVIOUS_BUILD');
++      const result = spawnSync(process.execPath, ['build.mjs'], { cwd: root, encoding: 'utf8' });
++      assert.notEqual(result.status, 0, `${kind}: linked source must be refused`);
++      assert.match(result.stderr, /linked|symbolic/i, `${kind}: explicit source-boundary refusal`);
++      assert.equal(readFileSync(resolve(root, 'dist/previous.txt'), 'utf8'), 'PREVIOUS_BUILD', 'refuse before replacing output');
++      assert.equal(existsSync(resolve(root, 'dist/embeds')), false, 'outside source not copied');
++    }
++  } finally { rmSync(scratch, { recursive: true, force: true }); }
++});
++
++test('the preview refuses linked default roots, ancestors and build metadata', async () => {
++  const scratch = mkdtempSync(resolve(here, '.test-preview-root-'));
++  try {
++    const outside = resolve(scratch, 'outside'); mkdirSync(outside);
++    writeFileSync(resolve(outside, 'example-build.json'), '{"embeds":false}');
++    writeFileSync(resolve(outside, 'index.html'), 'OUTSIDE_PREVIEW_CANARY');
++    const copied = resolve(scratch, 'copied'); mkdirSync(copied);
++    for (const name of ['serve.mjs', 'hosting-headers.mjs']) cpSync(resolve(here, name), resolve(copied, name));
++    symlinkSync(outside, resolve(copied, 'dist'));
++    const serverModule = await import(pathToFileURL(resolve(copied, 'serve.mjs')).href);
++    assert.equal(serverModule.fileFor(resolve(copied, 'dist'), '/'), null);
++    assert.throws(() => serverModule.createPreviewServer(), /linked|real|metadata|root/i, 'default dist root is validated before metadata read');
++    const alias = resolve(scratch, 'alias'); symlinkSync(scratch, alias);
++    assert.equal(fileFor(resolve(alias, 'outside'), '/'), null, 'linked ancestor is refused');
++    assert.throws(() => createPreviewServer(resolve(alias, 'outside')), /linked|real|metadata|root/i);
++    const metadata = resolve(scratch, 'metadata'); mkdirSync(metadata);
++    symlinkSync(resolve(outside, 'example-build.json'), resolve(metadata, 'example-build.json'));
++    assert.throws(() => createPreviewServer(metadata), /linked|real|metadata|root/i, 'metadata leaf is refused');
++  } finally { rmSync(scratch, { recursive: true, force: true }); }
++});
++
++test('a preview root replaced by a link after startup cannot serve outside files', async () => {
++  const scratch = mkdtempSync(resolve(here, '.test-preview-swap-'));
++  let server;
++  try {
++    const root = resolve(scratch, 'dist'), outside = resolve(scratch, 'outside');
++    mkdirSync(root); mkdirSync(outside);
++    writeFileSync(resolve(root, 'example-build.json'), '{"embeds":false}');
++    writeFileSync(resolve(outside, 'canary.txt'), 'OUTSIDE_AFTER_START');
++    server = createPreviewServer(root);
++    await new Promise(done => server.listen(0, '127.0.0.1', done));
++    renameSync(root, resolve(scratch, 'original-dist')); symlinkSync(outside, root);
++    const response = await fetch(`http://127.0.0.1:${server.address().port}/canary.txt`);
++    assert.equal(response.status, 404);
++    assert.doesNotMatch(await response.text(), /OUTSIDE_AFTER_START/);
++  } finally {
++    if (server?.listening) await new Promise(done => server.close(done));
++    rmSync(scratch, { recursive: true, force: true });
++  }
++});

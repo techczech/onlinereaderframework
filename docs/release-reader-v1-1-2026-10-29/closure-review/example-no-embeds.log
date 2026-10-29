@@ -1,0 +1,11 @@
+
+> onlinereaderframework@1.1.0 example:no-embeds
+> npm run build:no-embeds --prefix examples/reader-example
+
+
+> reader-example@1.1.0 build:no-embeds
+> node build.mjs --without-embeds
+
+Built the example in dist/ without embeds; 10 agent files.
+
+EXIT 0

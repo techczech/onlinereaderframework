@@ -1,0 +1,44 @@
+{
+  "observations": [
+    {
+      "case": "explicit linked root",
+      "startupRefused": true,
+      "metadataReads": 0
+    },
+    {
+      "case": "default linked root",
+      "startupRefused": true,
+      "metadataReads": 0
+    },
+    {
+      "case": "linked ancestor",
+      "startupRefused": true,
+      "metadataReads": 0
+    },
+    {
+      "case": "linked metadata leaf",
+      "startupRefused": true,
+      "metadataReads": 0
+    },
+    {
+      "case": "/linked.txt",
+      "status": 404
+    },
+    {
+      "case": "/linked-dir/canary.txt",
+      "status": 404
+    },
+    {
+      "case": "root replaced with link after startup",
+      "status": 404
+    },
+    {
+      "case": "ordinary real root and metadata instrumentation positive control",
+      "GET": 200,
+      "HEAD": 200,
+      "metadataReads": 1
+    }
+  ]
+}
+
+EXIT 0

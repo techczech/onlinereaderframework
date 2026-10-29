@@ -1,0 +1,25 @@
+
+> onlinereaderframework@1.1.0 test:example
+> npm test --prefix examples/reader-example
+
+
+> reader-example@1.1.0 test
+> node --test test-example.mjs
+
+✔ the reader page loads only its own built files (0.925708ms)
+✔ the embed registry matches the book, and the text version is ordinary content (8.107792ms)
+✔ agent files carry the text version and no frame (0.190083ms)
+✔ embeds are present only in a build with embeds, inline and self-contained (0.192875ms)
+✔ headers: reader pages are strict, embeds are sandboxed with no network (0.233584ms)
+✔ the preview server refuses paths outside dist and hidden or encoded names (0.889709ms)
+✔ the preview server sends the hosting headers (16.140375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.594042
+
+EXIT 0

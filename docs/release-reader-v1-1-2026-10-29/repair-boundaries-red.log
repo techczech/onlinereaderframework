@@ -1,0 +1,77 @@
+✔ the reader page loads only its own built files (3.276042ms)
+✔ the embed registry matches the book, and the text version is ordinary content (5.601125ms)
+✔ agent files carry the text version and no frame (0.344542ms)
+✔ embeds are present only in a build with embeds, inline and self-contained (0.3995ms)
+✔ headers: reader pages are strict, embeds are sandboxed with no network (0.392791ms)
+✔ the preview server refuses paths outside dist and hidden or encoded names (0.772333ms)
+✔ the preview server sends the hosting headers (17.147417ms)
+✖ the build refuses linked embed source files and directories before replacing dist (1273.439166ms)
+✖ the preview refuses linked default roots, ancestors and build metadata (2.050167ms)
+✖ a preview root replaced by a link after startup cannot serve outside files (4.068958ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 7
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1522.988583
+
+✖ failing tests:
+
+test at examples/reader-example/test-example.mjs:106:1
+✖ the build refuses linked embed source files and directories before replacing dist (1273.439166ms)
+  AssertionError [ERR_ASSERTION]: leaf: linked source must be refused
+      at TestContext.<anonymous> (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/examples/reader-example/test-example.mjs:120:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 0,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at examples/reader-example/test-example.mjs:128:1
+✖ the preview refuses linked default roots, ancestors and build metadata (2.050167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/examples/reader-example/.test-preview-root-FNdvOH/copied/dist/index.html'
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/examples/reader-example/test-example.mjs:138:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/examples/reader-example/.test-preview-root-FNdvOH/copied/dist/index.html',
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at examples/reader-example/test-example.mjs:149:1
+✖ a preview root replaced by a link after startup cannot serve outside files (4.068958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 404
+  
+      at TestContext.<anonymous> (file:///Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/examples/reader-example/test-example.mjs:161:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 404,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

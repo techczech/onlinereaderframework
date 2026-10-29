@@ -1,0 +1,89 @@
+{
+  "cache": [
+    {
+      "copiedContentObjects": 214,
+      "scope": "lockfile-matched public npm registry entries only"
+    },
+    {
+      "copiedContentObjects": 63,
+      "scope": "lockfile-matched public npm registry entries only"
+    }
+  ],
+  "audit": {
+    "filesScanned": 146,
+    "manuscriptAnchors": 13866,
+    "reviewedFalsePositives": [
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/x",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///tmp/book",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///etc/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/index.html",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "file:///Users/reader/dist/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@example.org/sub/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/agent-export/agent-export.test.mjs",
+        "rule": "file-url-and-credential-url",
+        "literal": "https://u:p@public.example.org/sub/reader/agent/",
+        "count": 1,
+        "reason": "Invented addresses used as inputs the address validators must refuse or resolve; they name no real person, machine or credential."
+      },
+      {
+        "path": "packages/reader-core/src/embed/embed.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///tmp/book/index.html",
+        "count": 1,
+        "reason": "Invented page address; the embed resolver must refuse file pages."
+      },
+      {
+        "path": "packages/reader-core/src/original/listening/test-reader-listening.mjs",
+        "rule": "file-url",
+        "literal": "file:///a.wav",
+        "count": 1,
+        "reason": "Unsafe audio address that the listening panel must refuse."
+      },
+      {
+        "path": "packages/reader-core/src/publication-content/publication-content.test.mjs",
+        "rule": "file-url",
+        "literal": "file:///etc/passwd",
+        "count": 1,
+        "reason": "Generic adversarial HTML input; assertions reject unsafe URL schemes."
+      }
+    ],
+    "issues": []
+  }
+}

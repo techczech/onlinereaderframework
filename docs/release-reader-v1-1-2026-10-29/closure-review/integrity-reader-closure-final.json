@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "changedFilesOutsideClosureReview": [],
+  "filesCompared": 5264,
+  "archiveSha256": "479728473301002b3fc6ad5da09166bc0f30653a805bb2abc0eb1ac51e05c390",
+  "uncompressedTarSha256": "a24e3d2054bee50b879fc0570c951f07e35a00dbafd183e9d4c9c18c5ff5790f",
+  "preservedPriorArchiveSha256": "bef6d91ef82e9cb93753cec1ef4affdd4e3088885ca25c6b3062388910274502",
+  "scratchRemaining": false
+}

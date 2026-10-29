@@ -1,0 +1,17 @@
+{
+  "format": "file-digests-v1",
+  "entries": [
+    {
+      "path": "examples/reader-example/build.mjs",
+      "digest": "20c815684a2bd3b80087bda04c1a55bacba94d1b72cf63f1254bc880e1527aa2"
+    },
+    {
+      "path": "examples/reader-example/serve.mjs",
+      "digest": "8ac0faff63be3b1819d9d3b920c1b018b867611e2adb144d105e5c3ad7ab4f4a"
+    },
+    {
+      "path": "examples/reader-example/test-example.mjs",
+      "digest": "6e146992f24fcb3cc9f3e690fc8dbe6efe59006215dcf9b0cb29d163a1da6597"
+    }
+  ]
+}

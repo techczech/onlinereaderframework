@@ -1,0 +1,65 @@
+[
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/closure-review/integrity-after.json",
+    "entries": 5264,
+    "original_sha256": "4a303a6139df434d2e55bf0bbabce3c6408739defc800e7018f86284bac55f0a",
+    "current_sha256": "eb7b67ff82d17d9044e5f827497b6d1528a96f0a189225411e887a209c0daf98",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/closure-review/integrity-before.json",
+    "entries": 5264,
+    "original_sha256": "4a303a6139df434d2e55bf0bbabce3c6408739defc800e7018f86284bac55f0a",
+    "current_sha256": "eb7b67ff82d17d9044e5f827497b6d1528a96f0a189225411e887a209c0daf98",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/attempt-01/integrity-after.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/attempt-01/integrity-before.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/attempt-02/integrity-after.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/attempt-02/integrity-before.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/integrity-after-final.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/integrity-after.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  },
+  {
+    "path": "docs/release-reader-v1-1-2026-10-29/review/integrity-before.json",
+    "entries": 1805,
+    "original_sha256": "4465a6812dfe386017bf90d4b7c9baa9875ede55eac129575f9f3d055c3d256b",
+    "current_sha256": "ff3e7247d2426ae52b7828f4746e8370cbee5a3d67430b6de846b4af3e328d84",
+    "exact_original_bytes_reconstruct": true
+  }
+]

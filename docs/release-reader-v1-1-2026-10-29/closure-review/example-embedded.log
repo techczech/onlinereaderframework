@@ -1,0 +1,11 @@
+
+> onlinereaderframework@1.1.0 example
+> npm run build --prefix examples/reader-example
+
+
+> reader-example@1.1.0 build
+> node build.mjs
+
+Built the example in dist/ with embeds; 10 agent files.
+
+EXIT 0

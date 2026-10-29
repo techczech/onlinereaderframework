@@ -1,0 +1,10 @@
+
+> onlinereaderframework@1.1.0 setup
+> npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7 && npm ci --prefix examples/reader-example --ignore-scripts --min-release-age=7
+
+
+added 200 packages in 573ms
+
+added 20 packages in 181ms
+
+EXIT 0

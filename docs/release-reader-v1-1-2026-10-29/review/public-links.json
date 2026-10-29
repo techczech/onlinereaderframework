@@ -1,0 +1,70 @@
+[
+  {
+    "url": "https://deliberatepractice.dominiklukes.net/",
+    "status": 200,
+    "finalUrl": "https://deliberatepractice.dominiklukes.net/",
+    "bytes": 5892,
+    "title": "Deliberate Practice: A Universal Learning Method"
+  },
+  {
+    "url": "https://buildingyourlanguagemuscle.edutools.fyi/",
+    "status": 200,
+    "finalUrl": "https://buildingyourlanguagemuscle.edutools.fyi/",
+    "bytes": 4540,
+    "title": "Building Your Language Muscle"
+  },
+  {
+    "url": "https://linguistics.dominiklukes.net/",
+    "status": 200,
+    "finalUrl": "https://linguistics.dominiklukes.net/",
+    "bytes": 52311,
+    "title": "Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013\u20132016"
+  },
+  {
+    "url": "https://dominiklukes.net/books/academic-reading/",
+    "status": 200,
+    "finalUrl": "https://dominiklukes.net/books/academic-reading/",
+    "bytes": 4068,
+    "title": "Increasing Reading Productivity Framework for Improving Academic Reading"
+  },
+  {
+    "url": "https://dominiklukes.net/books/readability/",
+    "status": 200,
+    "finalUrl": "https://dominiklukes.net/books/readability/",
+    "bytes": 4687,
+    "title": "Foundations of Readability Create accessible, easy-to-process documents and presentations"
+  },
+  {
+    "url": "https://techczech.github.io/onlinereaderframework/",
+    "status": 200,
+    "finalUrl": "https://techczech.github.io/onlinereaderframework/",
+    "bytes": 7572,
+    "title": "Online Reader Framework: a React reader for books on the web"
+  },
+  {
+    "url": "https://github.com/techczech/onlinereaderframework/blob/main/LICENSE",
+    "status": 200,
+    "finalUrl": "https://github.com/techczech/onlinereaderframework/blob/main/LICENSE",
+    "bytes": 183685,
+    "title": "onlinereaderframework/LICENSE at main \u00b7 techczech/onlinereaderframework \u00b7 GitHub"
+  },
+  {
+    "url": "https://github.com/techczech/onlinereaderframework/blob/main/CHANGELOG.md",
+    "status": 404,
+    "finalUrl": "https://github.com/techczech/onlinereaderframework/blob/main/CHANGELOG.md"
+  },
+  {
+    "url": "https://readabilityprinciples.notion.site",
+    "status": 200,
+    "finalUrl": "https://readabilityprinciples.notion.site",
+    "bytes": 19984,
+    "title": "Notion"
+  },
+  {
+    "url": "https://developers.cloudflare.com/pages/configuration/headers/",
+    "status": 200,
+    "finalUrl": "https://developers.cloudflare.com/pages/configuration/headers/",
+    "bytes": 140394,
+    "title": "Headers \u00b7 Cloudflare Pages docs"
+  }
+]

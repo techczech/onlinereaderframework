@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Online Reader Framework: a React reader for books on the web</title>
-<meta name="description" content="Online Reader Framework is an open source (MIT) React library that turns a book into a searchable, adjustable web edition with notes, read-aloud, EPUB export and Markdown files for AI agents.">
+<meta name="description" content="Online Reader Framework is an open source (MIT) React library that turns a book into a searchable, adjustable web edition with notes, read-aloud, sandboxed interactive examples, EPUB export and Markdown files for AI agents.">
 <link rel="canonical" href="https://techczech.github.io/onlinereaderframework/">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,12 +12,12 @@
 <a class="skip" href="#main">Skip to the content</a>
 <header class="band">
   <div class="wrap">
-    <p class="kicker">Open source · MIT licence · version 1.0.0</p>
+    <p class="kicker">Open source · MIT licence · version 1.1.0</p>
     <h1>Online Reader Framework</h1>
     <p class="lead">A React library that turns a book, guide or long manual into a web edition that is comfortable to read. You supply the book as data. The framework supplies the reader.</p>
     <p class="actions">
       <a class="button" href="https://github.com/techczech/onlinereaderframework">Source on GitHub</a>
-      <a class="button secondary" href="#examples">See three editions</a>
+      <a class="button secondary" href="#examples">See five editions</a>
     </p>
   </div>
 </header>
@@ -26,6 +26,7 @@
     <li><a href="#features">What it does</a></li>
     <li><a href="#examples">Live editions</a></li>
     <li><a href="#start">Get started</a></li>
+    <li><a href="#embeds">Interactive examples and hosting</a></li>
     <li><a href="#source">Source and release</a></li>
     <li><a href="#foundations">Reading research behind it</a></li>
     <li><a href="#licence">Licence</a></li>
@@ -44,12 +45,13 @@
     <li><h3>Listen</h3><p>Read aloud with the browser's speech voices, with the spoken passage highlighted. A host can also supply audio tracks, with optional word alignment.</p></li>
     <li><h3>Take it away</h3><p>Build an EPUB 3 file of the book in the browser. Generate Markdown files and a prompt so that a reader can ask an AI agent about the book.</p></li>
   </ul>
+  <p>A host can also place an interactive HTML example, such as a diagram or a simulator, inside a chapter. It runs in a sandboxed frame, and the chapter keeps a written text version that search, read-aloud, the EPUB and the agent files use.</p>
   <p>The reader has no server and no accounts, and it calls no AI service. A host can add its own coaching panel through one render function. Read aloud depends on the voices the browser provides, and EPUB export needs a browser.</p>
 </section>
 
 <section id="examples" aria-labelledby="h-examples">
   <h2 id="h-examples">Live editions</h2>
-  <p>Three books by Dominik Lukeš are published on the framework. Each is a separate site with its own terms for the text. The framework repository contains none of them.</p>
+  <p>Five books by Dominik Lukeš are published on the framework. Each has its own terms for the text. The framework repository contains none of them.</p>
   <ul class="books">
     <li>
       <h3><a href="https://deliberatepractice.dominiklukes.net/">Guide to Deliberate Practice as a Universal Learning Method</a></h3>
@@ -63,17 +65,28 @@
       <h3><a href="https://linguistics.dominiklukes.net/">Introduction to Key Issues in Language Through Stack Exchange Answers</a></h3>
       <p>All 253 answers the author wrote on Linguistics Stack Exchange between 2013 and 2016, in nine sections.</p>
     </li>
+    <li>
+      <h3><a href="https://dominiklukes.net/books/academic-reading/">Increasing Reading Productivity</a></h3>
+      <p>The Academic Reading Framework in ten chapters, with three interactive diagrams.</p>
+    </li>
+    <li>
+      <h3><a href="https://dominiklukes.net/books/readability/">Foundations of Readability</a></h3>
+      <p>Principles for readable documents and slides in fourteen chapters, with six interactive examples.</p>
+    </li>
   </ul>
 </section>
 
 <section id="start" aria-labelledby="h-start">
   <h2 id="h-start">Get started</h2>
-  <p>You need Node 22 or later. The package is used from source and is not on npm.</p>
+  <p>You need Node 22.12 or later. The package is used from source and is not on npm.</p>
 <pre><code>git clone https://github.com/techczech/onlinereaderframework.git
 cd onlinereaderframework
 npm run setup
 npm run build
-npm test</code></pre>
+npm test
+npm run example
+npm run example:preview</code></pre>
+  <p><code>npm run example</code> builds a small example book, written for the repository and released under the MIT licence, and <code>npm run example:preview</code> shows it at <code>http://127.0.0.1:4173/</code>. The example has chapters inside chapters, ordinary formatting, an interactive example with its text version, an EPUB download and agent files. Its source in <code>examples/reader-example</code> is a starting point for your own book.</p>
   <p>Then install the built <code>packages/reader-core</code> folder in your project as a local file dependency, and pass the reader a book:</p>
 <pre><code>import { PublicationReader } from 'reader-core';
 import 'reader-core/reader.css';
@@ -93,11 +106,23 @@ export default () =&gt; &lt;PublicationReader book={book} /&gt;;</code></pre>
   <p>The <a href="https://github.com/techczech/onlinereaderframework#readme">README</a> covers the book format in full, agent-file generation, EPUB export and the limits of this release.</p>
 </section>
 
+<section id="embeds" aria-labelledby="h-embeds">
+  <h2 id="h-embeds">Interactive examples and hosting</h2>
+  <p>An interactive example is one self-contained HTML file. The host registers it with the reader; the text of a chapter cannot create one. The reader shows it in a frame that may run scripts but has no access to the page, the reader's notes, storage, cookies, pop-ups or the network, and it accepts only one kind of message from the frame: the height of its content.</p>
+  <p>The frame setting alone is not enough, because the same file can also be opened on its own as a full view. The folder of interactive examples must therefore be served with a <code>Content-Security-Policy</code> header that includes <code>sandbox allow-scripts</code> and blocks network access. The example build writes these headers in a <code>_headers</code> file in the format Cloudflare Pages reads, and the local preview sends the same headers.</p>
+  <ul>
+    <li><strong>Cloudflare Pages, or a server where you set the headers yourself:</strong> deploy the full build. The two guides above are served this way.</li>
+    <li><strong>GitHub Pages:</strong> it cannot send custom headers and ignores <code>_headers</code>. Build with <code>npm run example:no-embeds</code>. That build registers no interactive example and contains no example files; each chapter shows its text version instead.</li>
+  </ul>
+  <p>The policy is in <code>examples/reader-example/hosting-headers.mjs</code>, and the full contract is in <code>packages/reader-core/src/embed/README.md</code>.</p>
+</section>
+
 <section id="source" aria-labelledby="h-source">
   <h2 id="h-source">Source and release</h2>
   <ul>
     <li><a href="https://github.com/techczech/onlinereaderframework">Repository on GitHub</a></li>
-    <li><a href="https://github.com/techczech/onlinereaderframework/releases">Releases</a> (version 1.0.0 is the first public release)</li>
+    <li><a href="https://github.com/techczech/onlinereaderframework/releases">Releases</a> (version 1.1.0 is the current release; version 1.0.0 was the first)</li>
+    <li><a href="https://github.com/techczech/onlinereaderframework/blob/main/CHANGELOG.md">Changelog</a></li>
     <li><a href="https://github.com/techczech/onlinereaderframework/issues">Report a problem or ask a question</a></li>
     <li><a href="https://github.com/techczech/onlinereaderframework/blob/main/LICENSE">MIT licence text</a></li>
   </ul>
@@ -105,11 +130,11 @@ export default () =&gt; &lt;PublicationReader book={book} /&gt;;</code></pre>
 
 <section id="foundations" aria-labelledby="h-foundations">
   <h2 id="h-foundations">Reading research behind it</h2>
-  <p>The reading settings follow guidance the author has published on how people read and what makes text easy to process. Both guides are free to read.</p>
+  <p>The reading settings follow guidance the author has published on how people read and what makes text easy to process. All three are free to read, and the first two are now themselves editions on the framework.</p>
   <ul>
-    <li><a href="https://readability.edutools.fyi/">Foundations of Readability</a>: five principles for readable documents and slides, and three reading modes (comprehensive reading, skimming and scanning).</li>
+    <li><a href="https://dominiklukes.net/books/readability/">Foundations of Readability</a>: five principles for readable documents and slides, and three reading modes (comprehensive reading, skimming and scanning).</li>
+    <li><a href="https://dominiklukes.net/books/academic-reading/">Increasing Reading Productivity</a>: the Academic Reading Framework, for improving academic reading productivity.</li>
     <li><a href="https://readabilityprinciples.notion.site">Principles of Readability</a>: clear-writing principles, with examples and checklists.</li>
-    <li><a href="https://academicreading.edutools.fyi/">Academic Reading Framework</a>: a framework for improving academic reading productivity.</li>
   </ul>
 </section>
 

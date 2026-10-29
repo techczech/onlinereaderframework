@@ -1,0 +1,49 @@
+--- previous/examples/reader-example/build.mjs
++++ repaired/examples/reader-example/build.mjs
+@@ -2,7 +2,7 @@
+  * Usage: node build.mjs [--without-embeds]
+  * --without-embeds registers no embed and writes no embeds/ folder: use it for hosts that cannot send the embed headers, such as GitHub Pages.
+  * Writes only inside this folder's dist/, and refuses a linked dist/ or embeds/ folder. Reads the built reader-core package, so build the core first. */
+-import { lstatSync, mkdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
++import { closeSync, constants, fstatSync, lstatSync, mkdirSync, openSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
+ import { dirname, relative, resolve, sep } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ import { build } from 'vite';
+@@ -27,6 +27,18 @@
+   for (let at = target; at !== here; at = dirname(at)) notLinked(at);
+   return target;
+ }
++/** Read an authored embed only below its real source directory; output guards do not protect source reads. */
++function readEmbedSource(name) {
++  const sourceRoot = resolve(here, 'embeds');
++  const target = resolve(sourceRoot, name);
++  if (!target.startsWith(sourceRoot + sep)) throw new Error('Refusing an embed source outside embeds/');
++  for (let at = target; at !== here; at = dirname(at)) notLinked(at);
++  const fd = openSync(target, constants.O_RDONLY | constants.O_NOFOLLOW);
++  try {
++    if (!fstatSync(fd).isFile()) throw new Error('Embed source must be a regular file');
++    return readFileSync(fd, 'utf8');
++  } finally { closeSync(fd); }
++}
+ function write(path, content) {
+   const target = inside(path);
+   mkdirSync(dirname(target), { recursive: true });
+@@ -39,6 +51,8 @@
+ 
+ const problems = withEmbeds ? checkPublicationEmbeds(exampleBook, exampleEmbeds) : [];
+ if (problems.length) throw new Error(`Embed check failed:\n${problems.join('\n')}`);
++// Refuse linked sources before the previous output can be replaced.
++const embedSources = withEmbeds ? exampleEmbeds.items.map(item => ({ item, source: readEmbedSource(item.src) })) : [];
+ 
+ rmSync(dist, { recursive: true, force: true });
+ await build({
+@@ -55,8 +69,7 @@
+   if (/^\s*import\b|\bimport\s*\(/m.test(helper)) throw new Error('reader-core/embed-child must not import anything');
+   const plain = helper.replace(/^export (function|const) /gm, '$1 ').replace(/^export \{\};?$/gm, '').replace(/^\/\/# sourceMappingURL=.*$/gm, '');
+   if (/^\s*export\b/m.test(plain)) throw new Error('Unexpected export form in reader-core/embed-child');
+-  for (const item of exampleEmbeds.items) {
+-    const source = readFileSync(resolve(here, 'embeds', item.src), 'utf8');
++  for (const { item, source } of embedSources) {
+     const marker = '<!-- reader-embed-child -->';
+     if (source.split(marker).length !== 2) throw new Error(`${item.src} needs exactly one ${marker} line`);
+     write(EMBED_ROOT + item.src, source.replace(marker, `<script>\n${plain.trim()}\nstartReaderEmbedHeightReporting();\n</script>`));

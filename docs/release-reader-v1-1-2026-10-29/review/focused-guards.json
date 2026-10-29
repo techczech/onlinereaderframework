@@ -1,0 +1,19 @@
+{
+  "literalAndAllowlist": "approved literal accepted; count, suffix, encoded suffix, context, extra URL, wrong file and unlisted files refused",
+  "manuscripts": {
+    "anchors": 13866,
+    "books": [
+      "deliberate-practice",
+      "language-muscle",
+      "linguistics",
+      "academic-reading",
+      "readability-foundations"
+    ]
+  },
+  "outputContainment": "linked build, all four output leaves and directory escape refused; canary unchanged",
+  "defaultPreviewRoot": {
+    "status": 200,
+    "body": "OUTSIDE_DEFAULT_ROOT"
+  },
+  "scratchRemoved": true
+}

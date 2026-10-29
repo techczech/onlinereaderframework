@@ -1,0 +1,31 @@
+--- previous/provenance-reader-source.json
++++ repaired/provenance-reader-source.json
+@@ -720,13 +720,13 @@
+     },
+     {
+       "path": "examples/reader-example/build.mjs",
+-      "sha256": "f29056f916b8d113c9df7ee53aebe28733596774d1bb8295bf2c1dcf1eb56f87",
+-      "bytes": 4156
++      "sha256": "20c815684a2bd3b80087bda04c1a55bacba94d1b72cf63f1254bc880e1527aa2",
++      "bytes": 4966
+     },
+     {
+       "path": "examples/reader-example/serve.mjs",
+-      "sha256": "c63b3a7aa15a8bc10fa602863e0476bc097cc7da993c07ced738da1d8b39a73f",
+-      "bytes": 3231
++      "sha256": "8ac0faff63be3b1819d9d3b920c1b018b867611e2adb144d105e5c3ad7ab4f4a",
++      "bytes": 3629
+     },
+     {
+       "path": "examples/reader-example/hosting-headers.mjs",
+@@ -735,8 +735,8 @@
+     },
+     {
+       "path": "examples/reader-example/test-example.mjs",
+-      "sha256": "53c0492f35a8f5424bec7e957079e12afb5a74041cb7f27978a6938045fa4bd5",
+-      "bytes": 6150
++      "sha256": "6e146992f24fcb3cc9f3e690fc8dbe6efe59006215dcf9b0cb29d163a1da6597",
++      "bytes": 10400
+     },
+     {
+       "path": "examples/reader-example/src/main.jsx",

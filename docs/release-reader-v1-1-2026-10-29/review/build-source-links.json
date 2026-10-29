@@ -1,0 +1,27 @@
+{
+  "commands": [
+    {
+      "name": "build-links-cache",
+      "exit": 0
+    },
+    {
+      "name": "build-links-setup",
+      "exit": 0
+    },
+    {
+      "name": "build-links-core",
+      "exit": 0
+    },
+    {
+      "name": "build-linked-embed-leaf",
+      "exit": 0
+    },
+    {
+      "name": "build-linked-embed-directory",
+      "exit": 0
+    }
+  ],
+  "linkedLeafCopied": true,
+  "linkedDirectoryCopied": true,
+  "scratchRemoved": true
+}

@@ -1,0 +1,129 @@
+{
+  "allCaughtAndRestored": true,
+  "results": [
+    {
+      "mutation": "M1 embed-test literal exception loses its exact count and line context",
+      "file": "scripts/prepare-reader-source-release.mjs",
+      "command": "node scripts/prepare-reader-source-release.mjs --self-test",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v24.22.1"
+      ]
+    },
+    {
+      "mutation": "M2 allowlist admits the whole example folder by pattern",
+      "file": "scripts/prepare-reader-source-release.mjs",
+      "command": "node scripts/prepare-reader-source-release.mjs --self-test",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v24.22.1"
+      ]
+    },
+    {
+      "mutation": "M3 retirement skips the previous archive hash check",
+      "file": "scripts/prepare-reader-source-release.mjs",
+      "command": "node scripts/prepare-reader-source-release.mjs --self-test",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v24.22.1"
+      ]
+    },
+    {
+      "mutation": "M4 retirement skips member hash checks of the previous candidate",
+      "file": "scripts/prepare-reader-source-release.mjs",
+      "command": "node scripts/prepare-reader-source-release.mjs --self-test",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "  diff: 'simple'",
+        "}",
+        "",
+        "Node.js v24.22.1"
+      ]
+    },
+    {
+      "mutation": "M5 example embed policy drops connect-src none (drift from release policy)",
+      "file": "examples/reader-example/hosting-headers.mjs",
+      "command": "node scripts/prepare-reader-source-release.mjs",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "+ actual - expected",
+        "",
+        "+ \"sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'\"",
+        "- \"sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'\""
+      ]
+    },
+    {
+      "mutation": "M6 example build tool no longer pinned exactly",
+      "file": "examples/reader-example/package.json",
+      "command": "node scripts/prepare-reader-source-release.mjs",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "Source export self-tests passed: paths, exact generic URL exceptions, example allowlist, manuscript spans, forbidden members, candidate retirement and deterministic archive.",
+        "example dependency vite must be pinned exactly"
+      ]
+    },
+    {
+      "mutation": "M7 example headers keep the reader framing ban on embeds",
+      "file": "examples/reader-example/hosting-headers.mjs",
+      "command": "node --test test-example.mjs",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "    expected: null,",
+        "    operator: 'strictEqual',",
+        "    diff: 'simple'",
+        "  }"
+      ]
+    },
+    {
+      "mutation": "M8 preview server accepts hidden and dot names",
+      "file": "examples/reader-example/serve.mjs",
+      "command": "node --test test-example.mjs",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "    expected: null,",
+        "    operator: 'strictEqual',",
+        "    diff: 'simple'",
+        "  }"
+      ]
+    },
+    {
+      "mutation": "M9 build without embeds still writes the embed folder",
+      "file": "examples/reader-example/build.mjs",
+      "command": "sh -c node build.mjs --without-embeds && node --test test-example.mjs",
+      "exitCode": 1,
+      "caught": true,
+      "restored": true,
+      "tail": [
+        "    expected: 404,",
+        "    operator: 'strictEqual',",
+        "    diff: 'simple'",
+        "  }"
+      ]
+    }
+  ]
+}
