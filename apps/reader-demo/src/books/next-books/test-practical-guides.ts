@@ -9,8 +9,8 @@ import {buildAgentBook} from '../../../../../packages/reader-core/src/agent-expo
 const here=dirname(fileURLToPath(import.meta.url));
 const source=resolve(here,'../../../../../..');
 const normal=(s:string)=>s.replace(/[*_#>`|\[\]()]/g,'').replace(/\s+/g,' ').trim();
-test('seven isolated demo identities, originals and previous conversions unchanged',()=>{
- assert.equal(demoBooks.length,7);assert.equal(new Set(demoBooks.map(b=>b.id)).size,7);
+test('eight isolated demo identities, originals and previous conversions unchanged',()=>{
+ assert.equal(demoBooks.length,8);assert.equal(new Set(demoBooks.map(b=>b.id)).size,8);
  assert.deepEqual(demoBooks.slice(0,5),[...originalBooks,...nextBooks]);
 });
 test('practical strategies preserve all authored descriptions and actions in source order',()=>{
@@ -28,7 +28,7 @@ test('seven theory sections preserve every paragraph, example and table cell',()
  for(let i=0;i<7;i++)for(const block of theory[i].blocks){const values=block.table?[...block.table.headers,...block.table.rows.flat()]:block.items??[block.content];for(const value of values)assert.ok(normal(b.sections[i].content).includes(normal(value)),value);}
 });
 test('current agent route retains all chapter destinations, licences and external-tool links',()=>{
- for(const b of demoBooks.slice(5)){
+ for(const b of demoBooks.slice(5,7)){
   const exported=buildAgentBook(b,{});assert.equal(exported.manifest.counts.sections,b.sections.length);
   const text=exported.files.map(f=>f.content).join('\n');
   for(const s of b.sections)assert.ok(text.includes(s.title),s.title);

@@ -1,0 +1,61 @@
+{
+  "root": "interactives/course-design-frameworks/",
+  "items": [
+    {
+      "id": "qa-checklist",
+      "sectionId": "qa-checklist",
+      "anchor": "qa-checklist-text",
+      "src": "qa-checklist/index.html",
+      "title": "Quality Assurance Checklist",
+      "caption": "Entries are not saved. Reloading or leaving this section can clear them.",
+      "height": {
+        "initial": 600,
+        "min": 300,
+        "max": 1600
+      },
+      "resize": true
+    },
+    {
+      "id": "activity-planner",
+      "sectionId": "activity-planner",
+      "anchor": "activity-planner-text",
+      "src": "activity-planner/index.html",
+      "title": "Course Activity Planner",
+      "caption": "Entries are not saved. Reloading or leaving this section can clear them.",
+      "height": {
+        "initial": 600,
+        "min": 300,
+        "max": 1600
+      },
+      "resize": true
+    },
+    {
+      "id": "modular-planner",
+      "sectionId": "modular-planner",
+      "anchor": "modular-planner-text",
+      "src": "modular-planner/index.html",
+      "title": "Modular Course Building",
+      "caption": "Entries are not saved. Reloading or leaving this section can clear them.",
+      "height": {
+        "initial": 600,
+        "min": 300,
+        "max": 1600
+      },
+      "resize": true
+    },
+    {
+      "id": "building-checklist",
+      "sectionId": "building-checklist",
+      "anchor": "building-checklist-text",
+      "src": "building-checklist/index.html",
+      "title": "Course Building Checklist",
+      "caption": "Entries are not saved. Reloading or leaving this section can clear them.",
+      "height": {
+        "initial": 600,
+        "min": 300,
+        "max": 1600
+      },
+      "resize": true
+    }
+  ]
+}

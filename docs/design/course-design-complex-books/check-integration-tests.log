@@ -1,0 +1,31 @@
+✔ the registry holds eight books once: three originals unchanged, five converted books registered, none copied into original-publications.json (2.048458ms)
+✔ each converted book keeps its distinct identity and the author-selected cover (0.098833ms)
+✔ licences: Readability keeps CC BY with no version in its link; Academic carries no licence grant (0.284ms)
+✔ canonical sites: the three originals keep their domains; the converted books have exactly the two agreed dominiklukes.net folders (0.053083ms)
+✔ thirteen embeds in three books: descriptors are valid, host-owned, rooted at embeds/<book>/ and every anchor is a long prose alternative (33.225333ms)
+✔ every embed file exists, is one self-contained document and is the only file copied for that embed (1.26125ms)
+✔ the demo plugin serves and builds exactly the manifest's thirteen files at embeds/<book>/<id>/index.html (4.134833ms)
+✔ agent files: all five books export from the one registry; prose alternatives reach the text, frames and frame chrome never do (191.406875ms)
+
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+✔ release isolation: the linguistics release bundle carries neither converted book, their embeds nor the demo registry (2281.905708ms)
+✔ release isolation: the deliberate-practice release bundle carries neither converted book, their embeds nor the demo registry (1216.653125ms)
+✔ release isolation: the language-muscle release bundle carries neither converted book, their embeds nor the demo registry (1130.028917ms)
+✔ release isolation: the academic-reading folder edition carries only its own book, embeds and cover, scoped to its folder (1157.773875ms)
+✔ release isolation: the readability-foundations folder edition carries only its own book, embeds and cover, scoped to its folder (1116.759167ms)
+✔ scratch: no temporary release folder is left behind (0.312958ms)
+✔ eight isolated demo identities, originals and previous conversions unchanged (0.617708ms)
+✔ practical strategies preserve all authored descriptions and actions in source order (1.253208ms)
+✔ seven theory sections preserve every paragraph, example and table cell (1.624042ms)
+✔ current agent route retains all chapter destinations, licences and external-tool links (30.094916ms)
+✔ competence retains both canonical competency chapters and all 24 level descriptions (5.20825ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7581.03925

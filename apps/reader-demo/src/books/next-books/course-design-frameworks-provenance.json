@@ -1,0 +1,3597 @@
+{
+  "sourceRepository": "course-design-frameworks",
+  "sourceFiles": [
+    {
+      "path": "data.ts",
+      "sha256": "3e85cbf9be3915310bd6af4863cb5f7a8db9f32ee767e30487d5b914d9c8ca3f"
+    },
+    {
+      "path": "types.ts",
+      "sha256": "81339eb64bdd38f9589c9ae4e3257e26f02ca0771b9bd3849d19db997d2f0d38"
+    },
+    {
+      "path": "App.tsx",
+      "sha256": "314146065d9ae9d09202704a07906a41e153f89ccdc9c78bb930cae6cf9b97ca"
+    },
+    {
+      "path": "components/SectionView.tsx",
+      "sha256": "ed8559a859cfe8312d526afaea1e3af81a1bad8b88b52a7d1ff1a1ec8cea8c70"
+    },
+    {
+      "path": "components/Dashboard.tsx",
+      "sha256": "69285e720ba75daae02c4c1a730463a008cbff5831131a0066c3ed79f35286d6"
+    },
+    {
+      "path": "components/Navigation.tsx",
+      "sha256": "26aa8065432ef64b780501b6b8e91b0265270aa746b650f24425a2f1264e439c"
+    }
+  ],
+  "sourceMetadata": {
+    "title": "Frameworks for thinking about online course development",
+    "author": "Dominik Lukeš",
+    "website": "https://dominiklukes.net",
+    "lastUpdated": "Nov 2025"
+  },
+  "conversion": "docs/design/course-design-complex-books/convert-course-design.ts",
+  "conversionInputs": [
+    {
+      "path": "docs/design/course-design-complex-books/convert-course-design.ts",
+      "sha256": "8f0bc53df9139046d89d60ea01df8c6fd79116da3bf667cd8f317e5596c6ee5d"
+    },
+    {
+      "path": "docs/design/course-design-complex-books/copy-course-design-interactions.md",
+      "sha256": "3e2f8271636fe8c294477de4653cc2e80325f77be3fc9a9dc8305569fb9d04c9"
+    },
+    {
+      "path": "packages/reader-core/src/embed/embed-child.ts",
+      "sha256": "8bc45041e2b798d6649a04949dc4bcd35352f9b58474d5c9ee40b51f2195b501"
+    }
+  ],
+  "values": [
+    {
+      "sectionId": "about",
+      "path": "sections[0].title",
+      "value": "About",
+      "rendered": true
+    },
+    {
+      "sectionId": "about",
+      "path": "sections[0].shortDescription",
+      "value": "Introduction to the frameworks and their purpose.",
+      "rendered": true
+    },
+    {
+      "sectionId": "about",
+      "path": "sections[0].data[0].content",
+      "value": "These checklists bring together most relevant and practical suggestions from a number or frameworks for online education. The aim is to make it easier for faculty to quickly evaluate their existing course design and identify the most practicable ways of modifying to make it as effective as possible in the fully-online context.",
+      "rendered": true
+    },
+    {
+      "sectionId": "about",
+      "path": "sections[0].data[1].content",
+      "value": "This document contains an introductory checklist and a course activity planner as well as engagement planner. The three appendices aim to provide more context.",
+      "rendered": true
+    },
+    {
+      "sectionId": "about",
+      "path": "sections[0].data[2].alt",
+      "value": "Creative Commons Licence",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].title",
+      "value": "Quality Assurance Checklist",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].shortDescription",
+      "value": "Evaluate your course design against established standards.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[0].title",
+      "value": "Overall goal",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[0].items[0].text",
+      "value": "The overall objective of the course is described in a few sentences",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[1].title",
+      "value": "Learning objectives",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[1].items[0].text",
+      "value": "The course describes a limited number of learning objectives",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[1].items[1].text",
+      "value": "A clear statement of learning outcomes for both knowledge and skills is provided",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[1].items[2].text",
+      "value": "There is reasoned coherence between learning outcomes, course content, teaching and learning strategy (including use of media), and assessment methods",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[1].items[3].text",
+      "value": "The prior knowledge of each learning objective is described and related to characteristics of target groups",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[2].title",
+      "value": "Course content delivery",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[2].items[0].text",
+      "value": "Course content is delivered through a variety of appropriate methods – live video lectures, pre-recorded videos, readings, peer instruction.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[2].items[1].text",
+      "value": "Students can attend live lectures via an online platform at an appropriate time.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[2].items[2].text",
+      "value": "Course content (text, video) is in a format that allows access and navigation in a variety of conditions (online, offline, course)",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[3].title",
+      "value": "Learning activities",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[3].items[0].text",
+      "value": "Activities aid participants to construct their own learning and to communicate it to others",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[3].items[1].text",
+      "value": "Various activities are proposed with different formats. For example: quizzes, peer-to peer evaluation, video conferences, activities in the forums and platform social networks or external social networks.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[3].items[2].text",
+      "value": "The course contains sufficient interactivity (learner-to-content, learner-to-learner or learner-to-teacher) to encourage active engagement.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].title",
+      "value": "Feedback mechanism",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].items[0].text",
+      "value": "The course provides learners with regular feedback through self-assessment activities, tests or peer feedback.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].items[1].text",
+      "value": "The frequency of monitoring has been planned (forum, group, post)",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].items[2].text",
+      "value": "A weekly announcements or mailing with orientations for the following week is planned.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].items[3].text",
+      "value": "In each weekly session, the pedagogical team makes a synthesis of the previous week’s activity.",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[4].items[4].text",
+      "value": "Some live-events are scheduled to provide feedback",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[5].title",
+      "value": "Study-time",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[5].items[0].text",
+      "value": "The total study time of all learning activities (including contact time, reading, watching, self-study, group work) is specified (the ECTS can be used to specify total workload)",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[6].title",
+      "value": "Workload",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[6].items[0].text",
+      "value": "The schedule of the course is such that the workload per week is feasible for typical learners from the specified target group",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[6].items[1].text",
+      "value": "The online course is realistic in its pacing for the participant, accommodating to the overall expected workload of the student",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[6].items[2].text",
+      "value": "Expected average (typical) workload is clearly communicated to students",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[7].title",
+      "value": "Assessment",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[7].items[0].text",
+      "value": "Formative assessment activities are available in various formats to enable the student to prepare for summative assessment",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].title",
+      "value": "Support for students",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[0].text",
+      "value": "Students are provided with clear and up-to-date information about courses including aims/objectives, learning and assessment methods, workload and prerequisite knowledge",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[1].text",
+      "value": "Students have tools to help them keep track of their progression, tasks, completion",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[2].text",
+      "value": "Students have clear routes to academic, technical and administrative support",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[3].text",
+      "value": "In addition, a FAQ is in place to support student navigation of the course",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[4].text",
+      "value": "Students are assisted by pedagogical guidelines for academic study",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[8].items[5].text",
+      "value": "A list of criteria for the learning activities, specifically for peer to peer evaluations, is available",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[9].title",
+      "value": "Course navigation",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[9].items[0].text",
+      "value": "Course is organised in clearly delineated units (most commonly weeks)",
+      "rendered": true
+    },
+    {
+      "sectionId": "qa-checklist",
+      "path": "sections[1].data[9].items[1].text",
+      "value": "The course platform is structured to allow progression as well as random access (any conditionality of access is clearly marked)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].title",
+      "value": "Online Engagement Matrix",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].shortDescription",
+      "value": "Map engagement types across different communication channels.",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.columns[0].header",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.columns[1].header",
+      "value": "Zoom",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.columns[2].header",
+      "value": "Canvas",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.columns[3].header",
+      "value": "Other",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].type",
+      "value": "Emotional (Need to address individual feelings about the isolation and remoteness in online study.)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].zoom[0]",
+      "value": "Check in at start of session",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].zoom[1]",
+      "value": "Student support groups on Zoom",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].zoom[2]",
+      "value": "Regular Zoom office hour",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].canvas[0]",
+      "value": "Regular schedule for forum response",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].canvas[1]",
+      "value": "Use of Calendar for events and milestones",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].canvas[2]",
+      "value": "Forum for sharing of personal achievements",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].other[0]",
+      "value": "Student peer support network",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].other[1]",
+      "value": "Informal student WhatsApp (or similar group)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].other[2]",
+      "value": "Teacher supported WhatsApp group",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[0].other[3]",
+      "value": "YellowDig",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].type",
+      "value": "Social (Need to build a sense of community and joint purpose in the group.)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].zoom[0]",
+      "value": "Schedule Zoom socials (time zone appropriate)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].canvas[0]",
+      "value": "Require everyone complete profile with picture",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].canvas[1]",
+      "value": "Forum for personal introductions",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].other[0]",
+      "value": "Separate student WhatsApp group for social distinct from study",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[1].other[1]",
+      "value": "YellowDig",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].type",
+      "value": "Collaborative (Need to establish environment where students can learn with and from others in the process of achieving course learning goals.)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].zoom[0]",
+      "value": "Use Breakout rooms 1x during all sessions",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].zoom[1]",
+      "value": "Assignments where students meet on Zoom to work together",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].canvas[0]",
+      "value": "Set up groups and assign tasks to work together on",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].canvas[1]",
+      "value": "Collaborative documents",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].canvas[2]",
+      "value": "Peer assessed assignments",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].other[0]",
+      "value": "Encourage use of shared documents (Office 365 or Google Docs)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].other[1]",
+      "value": "Hypothes.is",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[2].other[2]",
+      "value": "Tweetchats",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].type",
+      "value": "Cognitive (Need to develop knowledge and skills necessary in to meet learning outcomes in an environment with less implicit structure.)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].zoom[0]",
+      "value": "Zoom lectures / sessions",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].zoom[1]",
+      "value": "Study skills sessions / drop in for students",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].canvas[0]",
+      "value": "Quizzes for formative assessment",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].canvas[1]",
+      "value": "Pre-recorded videos using Panopto",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].canvas[2]",
+      "value": "PDF course manual",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].other[0]",
+      "value": "Links to digital texts in the library",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[3].other[1]",
+      "value": "Study skills group",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].type",
+      "value": "Behavioural (Need to monitor and provide space for behaviours that become both more visible and less automatic in an online environment.)",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].zoom[0]",
+      "value": "Session assistants monitor chat",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].zoom[1]",
+      "value": "Clear rules on communication",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].canvas[0]",
+      "value": "Forum moderators",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].canvas[1]",
+      "value": "Forums with required participation",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].canvas[2]",
+      "value": "Student access monitoring",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].canvas[3]",
+      "value": "Structured forums",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].other[0]",
+      "value": "Use Hypothes.is to annotate web",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].other[1]",
+      "value": "Badges for non-curricular achievement",
+      "rendered": true
+    },
+    {
+      "sectionId": "engagement-matrix",
+      "path": "sections[2].data.rows[4].other[2]",
+      "value": "YellowDig participation scores",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].title",
+      "value": "ICAP Framework",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].shortDescription",
+      "value": "Interactive, Constructive, Active, Passive modes of cognitive engagement.",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.columns[0].header",
+      "value": "Cognitive mode",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.columns[1].header",
+      "value": "Learner activities",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.columns[2].header",
+      "value": "Tools to facilitate online / digital learning",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].mode",
+      "value": "Passive (Receiving) - Students are 'consuming' content without any other activity.",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[0]",
+      "value": "Reading assigned articles or books",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[1]",
+      "value": "Attending live lectures",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[2]",
+      "value": "Reviewing lecture slides",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[3]",
+      "value": "Watching recorded lectures",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[4]",
+      "value": "Watching other instructional videos",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].activities[5]",
+      "value": "Listening to podcasts",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[0]",
+      "value": "eBooks delivered via Kortext",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[1]",
+      "value": "Articles and case studies made available as PDFs",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[2]",
+      "value": "Videos presented via Panopto",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[3]",
+      "value": "Making video transcripts available in Panopto",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[4]",
+      "value": "Videos on YouTube or LinkedIn Learning",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[0].tools[5]",
+      "value": "Podcasts listened to via podcast app",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].mode",
+      "value": "Active (Manipulating) - Students are engaged in direct manipulation of the content.",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[0]",
+      "value": "Taking verbatim notes",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[1]",
+      "value": "Highlighting and underlining in readings",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[2]",
+      "value": "Copying excerpts from readings",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[3]",
+      "value": "Bookmarking parts of videos",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[4]",
+      "value": "Taking screenshots of images on screen",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].activities[5]",
+      "value": "Pausing, rewinding parts of videos",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[0]",
+      "value": "Using PDF apps to highlight",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[1]",
+      "value": "Using Zotfile + Zotero to extract highlights",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[2]",
+      "value": "Saving highlights in online libraries",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[3]",
+      "value": "Using Onenote or Notion to take notes",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[4]",
+      "value": "Using notetaking in Panopto",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[1].tools[5]",
+      "value": "Taking a quiz in Canvas or H5P",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].mode",
+      "value": "Constructive (Generating) - Students engage with content in a way that generates new content.",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[0]",
+      "value": "Writing summaries of readings",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[1]",
+      "value": "Taking notes in own words",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[2]",
+      "value": "Drawing mind maps or concept maps",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[3]",
+      "value": "Tagging or categorising excerpts",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[4]",
+      "value": "Verbally rephrasing information",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].activities[5]",
+      "value": "Formulating questions",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[0]",
+      "value": "Mind mapping software (XMind, Mindomo)",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[1]",
+      "value": "Outlining features in Word or Google Docs",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[2]",
+      "value": "Tagging readings in Zotero",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[3]",
+      "value": "Creating database of concepts in Notion",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[4]",
+      "value": "Creating infographics",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[2].tools[5]",
+      "value": "Annotating websites using Hypothes.is",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].mode",
+      "value": "Interactive (Dialoguing) - Students are engaged in a constructive dialog.",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].activities[0]",
+      "value": "Defending position in pairs or small groups",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].activities[1]",
+      "value": "Answering questions while working with a partner",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].activities[2]",
+      "value": "Discussing similarities or differences",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].activities[3]",
+      "value": "Explaining or teaching mini lessons to others",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].activities[4]",
+      "value": "Recording instructional videos for others",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[0]",
+      "value": "Working in small groups in Zoom",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[1]",
+      "value": "Working in groups in Canvas",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[2]",
+      "value": "Collaborating on a live Word document",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[3]",
+      "value": "Recording videos in Panopto",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[4]",
+      "value": "Giving peer feedback in Canvas",
+      "rendered": true
+    },
+    {
+      "sectionId": "icap-framework",
+      "path": "sections[3].data.rows[3].tools[5]",
+      "value": "Running Zoom tutorials for each other",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].title",
+      "value": "Course Activity Planner",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].shortDescription",
+      "value": "Plan weekly activities balanced between Acquisition, Collaboration, and Practice.",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.columns[0].header",
+      "value": "Week / topic / aim",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.columns[1].header",
+      "value": "Acquisition / Investigation",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.columns[2].header",
+      "value": "Collaboration / Discussion",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.columns[3].header",
+      "value": "Practice / Production",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[0].week",
+      "value": "1",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[0].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[0].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[0].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[1].week",
+      "value": "2",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[1].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[1].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[1].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[2].week",
+      "value": "3",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[2].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[2].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[2].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[3].week",
+      "value": "4",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[3].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[3].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[3].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[4].week",
+      "value": "5",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[4].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[4].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[4].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[5].week",
+      "value": "6",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[5].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[5].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[5].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[6].week",
+      "value": "7",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[6].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[6].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[6].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[7].week",
+      "value": "8",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[7].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[7].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[7].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[8].week",
+      "value": "9",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[8].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[8].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[8].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[9].week",
+      "value": "10",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[9].acquisition",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[9].collaboration",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "activity-planner",
+      "path": "sections[4].data.rows[9].practice",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].title",
+      "value": "Learning Activity Matrix",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].shortDescription",
+      "value": "Compare offline vs online methods for various learning types.",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.columns[0].header",
+      "value": "Learning type",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.columns[1].header",
+      "value": "Offline methods",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.columns[2].header",
+      "value": "Online methods",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].type",
+      "value": "Acquisition",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].offline[0]",
+      "value": "reading books, papers",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].offline[1]",
+      "value": "listening to teacher presentations",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].offline[2]",
+      "value": "watching demonstrations",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].offline[3]",
+      "value": "master classes",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].online[0]",
+      "value": "attending Zoom lectures",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].online[1]",
+      "value": "watching videos",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].online[2]",
+      "value": "reading digital documents",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[0].online[3]",
+      "value": "listening to podcasts, webcasts",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].type",
+      "value": "Collaboration",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].offline[0]",
+      "value": "small group projects",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].offline[1]",
+      "value": "discussing others’ outputs",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].offline[2]",
+      "value": "building joint output",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].online[0]",
+      "value": "small group projects using Canvas groups",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[1].online[1]",
+      "value": "collaborating on a live Office 365 document",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].type",
+      "value": "Investigation",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].offline[0]",
+      "value": "analysing ideas in materials",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].offline[1]",
+      "value": "collecting and analysing data",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].offline[2]",
+      "value": "comparing texts",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].online[0]",
+      "value": "analysing digital resources",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].online[1]",
+      "value": "joint annotation using hypothes.is",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].online[2]",
+      "value": "using collaborative online tools",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[2].online[3]",
+      "value": "Wikipedia editathons",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].type",
+      "value": "Discussion",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].offline[0]",
+      "value": "tutorials",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].offline[1]",
+      "value": "seminars",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].offline[2]",
+      "value": "discussion groups",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].offline[3]",
+      "value": "class discussions",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].online[0]",
+      "value": "Zoom break out rooms",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].online[1]",
+      "value": "student group study sessions",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].online[2]",
+      "value": "peer assessment in Canvas",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[3].online[3]",
+      "value": "group live editing of documents",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].type",
+      "value": "Practice",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].offline[0]",
+      "value": "practising exercises",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].offline[1]",
+      "value": "doing practice-based projects",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].offline[2]",
+      "value": "labs",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].offline[3]",
+      "value": "field trips",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].offline[4]",
+      "value": "role-play",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].online[0]",
+      "value": "using models",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].online[1]",
+      "value": "quizzes",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].online[2]",
+      "value": "simulations",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].online[3]",
+      "value": "virtual labs",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[4].online[4]",
+      "value": "online role-play activities",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].type",
+      "value": "Production",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[0]",
+      "value": "student-produced videos",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[1]",
+      "value": "models",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[2]",
+      "value": "artefacts",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[3]",
+      "value": "performances",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[4]",
+      "value": "reports",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[5]",
+      "value": "essays",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].offline[6]",
+      "value": "physical portfolios",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[0]",
+      "value": "producing digital documents",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[1]",
+      "value": "representations of designs",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[2]",
+      "value": "digital artefacts",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[3]",
+      "value": "slideshows",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[4]",
+      "value": "blogs",
+      "rendered": true
+    },
+    {
+      "sectionId": "learning-matrix",
+      "path": "sections[5].data.rows[5].online[5]",
+      "value": "e-portfolios",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].title",
+      "value": "Modular Course Building",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].shortDescription",
+      "value": "Plan content and interactions for VLE modules.",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.columns[0].header",
+      "value": "Module / Week",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.columns[1].header",
+      "value": "Content",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.columns[2].header",
+      "value": "Interactions",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[0].module",
+      "value": "Introductory matter",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[0].content",
+      "value": "Course expectations page\nCourse manual PDF\nAbout lecturers page\nWelcome to the course video",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[0].interactions",
+      "value": "Agree to rules and conditions quiz\nIntroduce yourself discussion\nUpload a photo assignment\nSubmit a statement assignment",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[1].module",
+      "value": "Week 1 / Module 1",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[1].content",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[1].interactions",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[2].module",
+      "value": "Week 2 / Module 2",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[2].content",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[2].interactions",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[3].module",
+      "value": "Week ... / Module ...",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[3].content",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[3].interactions",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[4].module",
+      "value": "Concluding matter",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[4].content",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "modular-planner",
+      "path": "sections[6].data.rows[4].interactions",
+      "value": "",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].title",
+      "value": "Course Building Checklist",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].shortDescription",
+      "value": "Final checks before launching.",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].title",
+      "value": "Readiness",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].items[0].text",
+      "value": "All content is organised into modules",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].items[1].text",
+      "value": "Learning outcomes and course expectations are written",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].items[2].text",
+      "value": "Office hours and/or contact details have been posted",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].items[3].text",
+      "value": "Each module has at least 2 interactive activities",
+      "rendered": true
+    },
+    {
+      "sectionId": "building-checklist",
+      "path": "sections[7].data[0].items[4].text",
+      "value": "Space for students to learn about the platform is built into timetable",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].title",
+      "value": "Appendices & Theory",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].shortDescription",
+      "value": "In-depth background on Instructional Design, Online Teaching, and Support.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[0].content",
+      "value": "Appendix 1: What is instructional design or learning design",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[1].content",
+      "value": "Instructional design originated in the military and corporate settings where the need for training large numbers of people in an efficient and replicable ways gave rise to various frameworks. Due of these roots, instructional design frameworks often resemble project management approaches than pedagogical theory.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[2].content",
+      "value": "Four Pillars of Instructional Design",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[3].content[0]",
+      "value": "Social constructivist theory of learning: Learning is a process involving interactions with others.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[3].content[1]",
+      "value": "Focus on the principles of adult learning: Adults learn best when learning is relevant.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[3].content[2]",
+      "value": "Competency-based approach to learning objectives: The object of learning is to acquire real competence.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[3].content[3]",
+      "value": "Project management approach to development: Consistent and high-quality learning experiences require collaborative project approach.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[4].content",
+      "value": "Appendix 2: Specifics of fully online teaching",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[5].content",
+      "value": "Characteristics that set learning online apart from learning in a traditional space can be summarised by two NOs: No back row (all activity is visible) and No corridor (no natural informal spaces).",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[6].content",
+      "value": "Mitigation Strategies",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[7].content[0]",
+      "value": "Design online activities that require student participation.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[7].content[1]",
+      "value": "Build a complex support relationship combining pastoral, learning and technical support.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[7].content[2]",
+      "value": "Use peer assessment and project-based assessment.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[7].content[3]",
+      "value": "Set up regular individual touchpoints for each student.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[8].content",
+      "value": "Appendix 3: Developing a support relationship",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[9].content",
+      "value": "Students learning digitally often report feelings of isolation and confusion. A successful digital program will provide sufficient support to give them a feeling of connectedness. This can only be done by building relationships.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[10].content",
+      "value": "Support Roles",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[11].content[0]",
+      "value": "Course convener / instructor: Sets learning outcomes, delivers lectures.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[11].content[1]",
+      "value": "Tutor / teaching assistant: Leads online discussions, provides feedback.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[11].content[2]",
+      "value": "Programme administrator: Keeps track of timings, posts announcements.",
+      "rendered": true
+    },
+    {
+      "sectionId": "appendices",
+      "path": "sections[8].data[11].content[3]",
+      "value": "IT support: Monitors the platform, answers technical questions.",
+      "rendered": true
+    }
+  ],
+  "sourceStrings": [
+    {
+      "path": "title",
+      "value": "Frameworks for thinking about online course development"
+    },
+    {
+      "path": "author",
+      "value": "Dominik Lukeš"
+    },
+    {
+      "path": "website",
+      "value": "https://dominiklukes.net"
+    },
+    {
+      "path": "lastUpdated",
+      "value": "Nov 2025"
+    },
+    {
+      "path": "sections[0].id",
+      "value": "about"
+    },
+    {
+      "path": "sections[0].title",
+      "value": "About"
+    },
+    {
+      "path": "sections[0].shortDescription",
+      "value": "Introduction to the frameworks and their purpose."
+    },
+    {
+      "path": "sections[0].icon",
+      "value": "Info"
+    },
+    {
+      "path": "sections[0].type",
+      "value": "text"
+    },
+    {
+      "path": "sections[0].data[0].type",
+      "value": "p"
+    },
+    {
+      "path": "sections[0].data[0].content",
+      "value": "These checklists bring together most relevant and practical suggestions from a number or frameworks for online education. The aim is to make it easier for faculty to quickly evaluate their existing course design and identify the most practicable ways of modifying to make it as effective as possible in the fully-online context."
+    },
+    {
+      "path": "sections[0].data[1].type",
+      "value": "p"
+    },
+    {
+      "path": "sections[0].data[1].content",
+      "value": "This document contains an introductory checklist and a course activity planner as well as engagement planner. The three appendices aim to provide more context."
+    },
+    {
+      "path": "sections[0].data[2].type",
+      "value": "image"
+    },
+    {
+      "path": "sections[0].data[2].content",
+      "value": "https://picsum.photos/800/200"
+    },
+    {
+      "path": "sections[0].data[2].alt",
+      "value": "Creative Commons Licence"
+    },
+    {
+      "path": "sections[0].data[2].url",
+      "value": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "path": "sections[1].id",
+      "value": "qa-checklist"
+    },
+    {
+      "path": "sections[1].title",
+      "value": "Quality Assurance Checklist"
+    },
+    {
+      "path": "sections[1].shortDescription",
+      "value": "Evaluate your course design against established standards."
+    },
+    {
+      "path": "sections[1].icon",
+      "value": "CheckSquare"
+    },
+    {
+      "path": "sections[1].type",
+      "value": "checklist"
+    },
+    {
+      "path": "sections[1].data[0].title",
+      "value": "Overall goal"
+    },
+    {
+      "path": "sections[1].data[0].items[0].id",
+      "value": "og-1"
+    },
+    {
+      "path": "sections[1].data[0].items[0].text",
+      "value": "The overall objective of the course is described in a few sentences"
+    },
+    {
+      "path": "sections[1].data[1].title",
+      "value": "Learning objectives"
+    },
+    {
+      "path": "sections[1].data[1].items[0].id",
+      "value": "lo-1"
+    },
+    {
+      "path": "sections[1].data[1].items[0].text",
+      "value": "The course describes a limited number of learning objectives"
+    },
+    {
+      "path": "sections[1].data[1].items[1].id",
+      "value": "lo-2"
+    },
+    {
+      "path": "sections[1].data[1].items[1].text",
+      "value": "A clear statement of learning outcomes for both knowledge and skills is provided"
+    },
+    {
+      "path": "sections[1].data[1].items[2].id",
+      "value": "lo-3"
+    },
+    {
+      "path": "sections[1].data[1].items[2].text",
+      "value": "There is reasoned coherence between learning outcomes, course content, teaching and learning strategy (including use of media), and assessment methods"
+    },
+    {
+      "path": "sections[1].data[1].items[3].id",
+      "value": "lo-4"
+    },
+    {
+      "path": "sections[1].data[1].items[3].text",
+      "value": "The prior knowledge of each learning objective is described and related to characteristics of target groups"
+    },
+    {
+      "path": "sections[1].data[2].title",
+      "value": "Course content delivery"
+    },
+    {
+      "path": "sections[1].data[2].items[0].id",
+      "value": "ccd-1"
+    },
+    {
+      "path": "sections[1].data[2].items[0].text",
+      "value": "Course content is delivered through a variety of appropriate methods – live video lectures, pre-recorded videos, readings, peer instruction."
+    },
+    {
+      "path": "sections[1].data[2].items[1].id",
+      "value": "ccd-2"
+    },
+    {
+      "path": "sections[1].data[2].items[1].text",
+      "value": "Students can attend live lectures via an online platform at an appropriate time."
+    },
+    {
+      "path": "sections[1].data[2].items[2].id",
+      "value": "ccd-3"
+    },
+    {
+      "path": "sections[1].data[2].items[2].text",
+      "value": "Course content (text, video) is in a format that allows access and navigation in a variety of conditions (online, offline, course)"
+    },
+    {
+      "path": "sections[1].data[3].title",
+      "value": "Learning activities"
+    },
+    {
+      "path": "sections[1].data[3].items[0].id",
+      "value": "la-1"
+    },
+    {
+      "path": "sections[1].data[3].items[0].text",
+      "value": "Activities aid participants to construct their own learning and to communicate it to others"
+    },
+    {
+      "path": "sections[1].data[3].items[1].id",
+      "value": "la-2"
+    },
+    {
+      "path": "sections[1].data[3].items[1].text",
+      "value": "Various activities are proposed with different formats. For example: quizzes, peer-to peer evaluation, video conferences, activities in the forums and platform social networks or external social networks."
+    },
+    {
+      "path": "sections[1].data[3].items[2].id",
+      "value": "la-3"
+    },
+    {
+      "path": "sections[1].data[3].items[2].text",
+      "value": "The course contains sufficient interactivity (learner-to-content, learner-to-learner or learner-to-teacher) to encourage active engagement."
+    },
+    {
+      "path": "sections[1].data[4].title",
+      "value": "Feedback mechanism"
+    },
+    {
+      "path": "sections[1].data[4].items[0].id",
+      "value": "fm-1"
+    },
+    {
+      "path": "sections[1].data[4].items[0].text",
+      "value": "The course provides learners with regular feedback through self-assessment activities, tests or peer feedback."
+    },
+    {
+      "path": "sections[1].data[4].items[1].id",
+      "value": "fm-2"
+    },
+    {
+      "path": "sections[1].data[4].items[1].text",
+      "value": "The frequency of monitoring has been planned (forum, group, post)"
+    },
+    {
+      "path": "sections[1].data[4].items[2].id",
+      "value": "fm-3"
+    },
+    {
+      "path": "sections[1].data[4].items[2].text",
+      "value": "A weekly announcements or mailing with orientations for the following week is planned."
+    },
+    {
+      "path": "sections[1].data[4].items[3].id",
+      "value": "fm-4"
+    },
+    {
+      "path": "sections[1].data[4].items[3].text",
+      "value": "In each weekly session, the pedagogical team makes a synthesis of the previous week’s activity."
+    },
+    {
+      "path": "sections[1].data[4].items[4].id",
+      "value": "fm-5"
+    },
+    {
+      "path": "sections[1].data[4].items[4].text",
+      "value": "Some live-events are scheduled to provide feedback"
+    },
+    {
+      "path": "sections[1].data[5].title",
+      "value": "Study-time"
+    },
+    {
+      "path": "sections[1].data[5].items[0].id",
+      "value": "st-1"
+    },
+    {
+      "path": "sections[1].data[5].items[0].text",
+      "value": "The total study time of all learning activities (including contact time, reading, watching, self-study, group work) is specified (the ECTS can be used to specify total workload)"
+    },
+    {
+      "path": "sections[1].data[6].title",
+      "value": "Workload"
+    },
+    {
+      "path": "sections[1].data[6].items[0].id",
+      "value": "wl-1"
+    },
+    {
+      "path": "sections[1].data[6].items[0].text",
+      "value": "The schedule of the course is such that the workload per week is feasible for typical learners from the specified target group"
+    },
+    {
+      "path": "sections[1].data[6].items[1].id",
+      "value": "wl-2"
+    },
+    {
+      "path": "sections[1].data[6].items[1].text",
+      "value": "The online course is realistic in its pacing for the participant, accommodating to the overall expected workload of the student"
+    },
+    {
+      "path": "sections[1].data[6].items[2].id",
+      "value": "wl-3"
+    },
+    {
+      "path": "sections[1].data[6].items[2].text",
+      "value": "Expected average (typical) workload is clearly communicated to students"
+    },
+    {
+      "path": "sections[1].data[7].title",
+      "value": "Assessment"
+    },
+    {
+      "path": "sections[1].data[7].items[0].id",
+      "value": "as-1"
+    },
+    {
+      "path": "sections[1].data[7].items[0].text",
+      "value": "Formative assessment activities are available in various formats to enable the student to prepare for summative assessment"
+    },
+    {
+      "path": "sections[1].data[8].title",
+      "value": "Support for students"
+    },
+    {
+      "path": "sections[1].data[8].items[0].id",
+      "value": "ss-1"
+    },
+    {
+      "path": "sections[1].data[8].items[0].text",
+      "value": "Students are provided with clear and up-to-date information about courses including aims/objectives, learning and assessment methods, workload and prerequisite knowledge"
+    },
+    {
+      "path": "sections[1].data[8].items[1].id",
+      "value": "ss-2"
+    },
+    {
+      "path": "sections[1].data[8].items[1].text",
+      "value": "Students have tools to help them keep track of their progression, tasks, completion"
+    },
+    {
+      "path": "sections[1].data[8].items[2].id",
+      "value": "ss-3"
+    },
+    {
+      "path": "sections[1].data[8].items[2].text",
+      "value": "Students have clear routes to academic, technical and administrative support"
+    },
+    {
+      "path": "sections[1].data[8].items[3].id",
+      "value": "ss-4"
+    },
+    {
+      "path": "sections[1].data[8].items[3].text",
+      "value": "In addition, a FAQ is in place to support student navigation of the course"
+    },
+    {
+      "path": "sections[1].data[8].items[4].id",
+      "value": "ss-5"
+    },
+    {
+      "path": "sections[1].data[8].items[4].text",
+      "value": "Students are assisted by pedagogical guidelines for academic study"
+    },
+    {
+      "path": "sections[1].data[8].items[5].id",
+      "value": "ss-6"
+    },
+    {
+      "path": "sections[1].data[8].items[5].text",
+      "value": "A list of criteria for the learning activities, specifically for peer to peer evaluations, is available"
+    },
+    {
+      "path": "sections[1].data[9].title",
+      "value": "Course navigation"
+    },
+    {
+      "path": "sections[1].data[9].items[0].id",
+      "value": "cn-1"
+    },
+    {
+      "path": "sections[1].data[9].items[0].text",
+      "value": "Course is organised in clearly delineated units (most commonly weeks)"
+    },
+    {
+      "path": "sections[1].data[9].items[1].id",
+      "value": "cn-2"
+    },
+    {
+      "path": "sections[1].data[9].items[1].text",
+      "value": "The course platform is structured to allow progression as well as random access (any conditionality of access is clearly marked)"
+    },
+    {
+      "path": "sections[2].id",
+      "value": "engagement-matrix"
+    },
+    {
+      "path": "sections[2].title",
+      "value": "Online Engagement Matrix"
+    },
+    {
+      "path": "sections[2].shortDescription",
+      "value": "Map engagement types across different communication channels."
+    },
+    {
+      "path": "sections[2].icon",
+      "value": "Grid"
+    },
+    {
+      "path": "sections[2].type",
+      "value": "matrix"
+    },
+    {
+      "path": "sections[2].data.columns[0].header",
+      "value": ""
+    },
+    {
+      "path": "sections[2].data.columns[0].key",
+      "value": "type"
+    },
+    {
+      "path": "sections[2].data.columns[0].width",
+      "value": "20%"
+    },
+    {
+      "path": "sections[2].data.columns[1].header",
+      "value": "Zoom"
+    },
+    {
+      "path": "sections[2].data.columns[1].key",
+      "value": "zoom"
+    },
+    {
+      "path": "sections[2].data.columns[2].header",
+      "value": "Canvas"
+    },
+    {
+      "path": "sections[2].data.columns[2].key",
+      "value": "canvas"
+    },
+    {
+      "path": "sections[2].data.columns[3].header",
+      "value": "Other"
+    },
+    {
+      "path": "sections[2].data.columns[3].key",
+      "value": "other"
+    },
+    {
+      "path": "sections[2].data.rows[0].type",
+      "value": "Emotional (Need to address individual feelings about the isolation and remoteness in online study.)"
+    },
+    {
+      "path": "sections[2].data.rows[0].zoom[0]",
+      "value": "Check in at start of session"
+    },
+    {
+      "path": "sections[2].data.rows[0].zoom[1]",
+      "value": "Student support groups on Zoom"
+    },
+    {
+      "path": "sections[2].data.rows[0].zoom[2]",
+      "value": "Regular Zoom office hour"
+    },
+    {
+      "path": "sections[2].data.rows[0].canvas[0]",
+      "value": "Regular schedule for forum response"
+    },
+    {
+      "path": "sections[2].data.rows[0].canvas[1]",
+      "value": "Use of Calendar for events and milestones"
+    },
+    {
+      "path": "sections[2].data.rows[0].canvas[2]",
+      "value": "Forum for sharing of personal achievements"
+    },
+    {
+      "path": "sections[2].data.rows[0].other[0]",
+      "value": "Student peer support network"
+    },
+    {
+      "path": "sections[2].data.rows[0].other[1]",
+      "value": "Informal student WhatsApp (or similar group)"
+    },
+    {
+      "path": "sections[2].data.rows[0].other[2]",
+      "value": "Teacher supported WhatsApp group"
+    },
+    {
+      "path": "sections[2].data.rows[0].other[3]",
+      "value": "YellowDig"
+    },
+    {
+      "path": "sections[2].data.rows[1].type",
+      "value": "Social (Need to build a sense of community and joint purpose in the group.)"
+    },
+    {
+      "path": "sections[2].data.rows[1].zoom[0]",
+      "value": "Schedule Zoom socials (time zone appropriate)"
+    },
+    {
+      "path": "sections[2].data.rows[1].canvas[0]",
+      "value": "Require everyone complete profile with picture"
+    },
+    {
+      "path": "sections[2].data.rows[1].canvas[1]",
+      "value": "Forum for personal introductions"
+    },
+    {
+      "path": "sections[2].data.rows[1].other[0]",
+      "value": "Separate student WhatsApp group for social distinct from study"
+    },
+    {
+      "path": "sections[2].data.rows[1].other[1]",
+      "value": "YellowDig"
+    },
+    {
+      "path": "sections[2].data.rows[2].type",
+      "value": "Collaborative (Need to establish environment where students can learn with and from others in the process of achieving course learning goals.)"
+    },
+    {
+      "path": "sections[2].data.rows[2].zoom[0]",
+      "value": "Use Breakout rooms 1x during all sessions"
+    },
+    {
+      "path": "sections[2].data.rows[2].zoom[1]",
+      "value": "Assignments where students meet on Zoom to work together"
+    },
+    {
+      "path": "sections[2].data.rows[2].canvas[0]",
+      "value": "Set up groups and assign tasks to work together on"
+    },
+    {
+      "path": "sections[2].data.rows[2].canvas[1]",
+      "value": "Collaborative documents"
+    },
+    {
+      "path": "sections[2].data.rows[2].canvas[2]",
+      "value": "Peer assessed assignments"
+    },
+    {
+      "path": "sections[2].data.rows[2].other[0]",
+      "value": "Encourage use of shared documents (Office 365 or Google Docs)"
+    },
+    {
+      "path": "sections[2].data.rows[2].other[1]",
+      "value": "Hypothes.is"
+    },
+    {
+      "path": "sections[2].data.rows[2].other[2]",
+      "value": "Tweetchats"
+    },
+    {
+      "path": "sections[2].data.rows[3].type",
+      "value": "Cognitive (Need to develop knowledge and skills necessary in to meet learning outcomes in an environment with less implicit structure.)"
+    },
+    {
+      "path": "sections[2].data.rows[3].zoom[0]",
+      "value": "Zoom lectures / sessions"
+    },
+    {
+      "path": "sections[2].data.rows[3].zoom[1]",
+      "value": "Study skills sessions / drop in for students"
+    },
+    {
+      "path": "sections[2].data.rows[3].canvas[0]",
+      "value": "Quizzes for formative assessment"
+    },
+    {
+      "path": "sections[2].data.rows[3].canvas[1]",
+      "value": "Pre-recorded videos using Panopto"
+    },
+    {
+      "path": "sections[2].data.rows[3].canvas[2]",
+      "value": "PDF course manual"
+    },
+    {
+      "path": "sections[2].data.rows[3].other[0]",
+      "value": "Links to digital texts in the library"
+    },
+    {
+      "path": "sections[2].data.rows[3].other[1]",
+      "value": "Study skills group"
+    },
+    {
+      "path": "sections[2].data.rows[4].type",
+      "value": "Behavioural (Need to monitor and provide space for behaviours that become both more visible and less automatic in an online environment.)"
+    },
+    {
+      "path": "sections[2].data.rows[4].zoom[0]",
+      "value": "Session assistants monitor chat"
+    },
+    {
+      "path": "sections[2].data.rows[4].zoom[1]",
+      "value": "Clear rules on communication"
+    },
+    {
+      "path": "sections[2].data.rows[4].canvas[0]",
+      "value": "Forum moderators"
+    },
+    {
+      "path": "sections[2].data.rows[4].canvas[1]",
+      "value": "Forums with required participation"
+    },
+    {
+      "path": "sections[2].data.rows[4].canvas[2]",
+      "value": "Student access monitoring"
+    },
+    {
+      "path": "sections[2].data.rows[4].canvas[3]",
+      "value": "Structured forums"
+    },
+    {
+      "path": "sections[2].data.rows[4].other[0]",
+      "value": "Use Hypothes.is to annotate web"
+    },
+    {
+      "path": "sections[2].data.rows[4].other[1]",
+      "value": "Badges for non-curricular achievement"
+    },
+    {
+      "path": "sections[2].data.rows[4].other[2]",
+      "value": "YellowDig participation scores"
+    },
+    {
+      "path": "sections[3].id",
+      "value": "icap-framework"
+    },
+    {
+      "path": "sections[3].title",
+      "value": "ICAP Framework"
+    },
+    {
+      "path": "sections[3].shortDescription",
+      "value": "Interactive, Constructive, Active, Passive modes of cognitive engagement."
+    },
+    {
+      "path": "sections[3].icon",
+      "value": "Brain"
+    },
+    {
+      "path": "sections[3].type",
+      "value": "matrix"
+    },
+    {
+      "path": "sections[3].data.columns[0].header",
+      "value": "Cognitive mode"
+    },
+    {
+      "path": "sections[3].data.columns[0].key",
+      "value": "mode"
+    },
+    {
+      "path": "sections[3].data.columns[0].width",
+      "value": "25%"
+    },
+    {
+      "path": "sections[3].data.columns[1].header",
+      "value": "Learner activities"
+    },
+    {
+      "path": "sections[3].data.columns[1].key",
+      "value": "activities"
+    },
+    {
+      "path": "sections[3].data.columns[2].header",
+      "value": "Tools to facilitate online / digital learning"
+    },
+    {
+      "path": "sections[3].data.columns[2].key",
+      "value": "tools"
+    },
+    {
+      "path": "sections[3].data.rows[0].mode",
+      "value": "Passive (Receiving) - Students are 'consuming' content without any other activity."
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[0]",
+      "value": "Reading assigned articles or books"
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[1]",
+      "value": "Attending live lectures"
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[2]",
+      "value": "Reviewing lecture slides"
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[3]",
+      "value": "Watching recorded lectures"
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[4]",
+      "value": "Watching other instructional videos"
+    },
+    {
+      "path": "sections[3].data.rows[0].activities[5]",
+      "value": "Listening to podcasts"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[0]",
+      "value": "eBooks delivered via Kortext"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[1]",
+      "value": "Articles and case studies made available as PDFs"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[2]",
+      "value": "Videos presented via Panopto"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[3]",
+      "value": "Making video transcripts available in Panopto"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[4]",
+      "value": "Videos on YouTube or LinkedIn Learning"
+    },
+    {
+      "path": "sections[3].data.rows[0].tools[5]",
+      "value": "Podcasts listened to via podcast app"
+    },
+    {
+      "path": "sections[3].data.rows[1].mode",
+      "value": "Active (Manipulating) - Students are engaged in direct manipulation of the content."
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[0]",
+      "value": "Taking verbatim notes"
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[1]",
+      "value": "Highlighting and underlining in readings"
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[2]",
+      "value": "Copying excerpts from readings"
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[3]",
+      "value": "Bookmarking parts of videos"
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[4]",
+      "value": "Taking screenshots of images on screen"
+    },
+    {
+      "path": "sections[3].data.rows[1].activities[5]",
+      "value": "Pausing, rewinding parts of videos"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[0]",
+      "value": "Using PDF apps to highlight"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[1]",
+      "value": "Using Zotfile + Zotero to extract highlights"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[2]",
+      "value": "Saving highlights in online libraries"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[3]",
+      "value": "Using Onenote or Notion to take notes"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[4]",
+      "value": "Using notetaking in Panopto"
+    },
+    {
+      "path": "sections[3].data.rows[1].tools[5]",
+      "value": "Taking a quiz in Canvas or H5P"
+    },
+    {
+      "path": "sections[3].data.rows[2].mode",
+      "value": "Constructive (Generating) - Students engage with content in a way that generates new content."
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[0]",
+      "value": "Writing summaries of readings"
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[1]",
+      "value": "Taking notes in own words"
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[2]",
+      "value": "Drawing mind maps or concept maps"
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[3]",
+      "value": "Tagging or categorising excerpts"
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[4]",
+      "value": "Verbally rephrasing information"
+    },
+    {
+      "path": "sections[3].data.rows[2].activities[5]",
+      "value": "Formulating questions"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[0]",
+      "value": "Mind mapping software (XMind, Mindomo)"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[1]",
+      "value": "Outlining features in Word or Google Docs"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[2]",
+      "value": "Tagging readings in Zotero"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[3]",
+      "value": "Creating database of concepts in Notion"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[4]",
+      "value": "Creating infographics"
+    },
+    {
+      "path": "sections[3].data.rows[2].tools[5]",
+      "value": "Annotating websites using Hypothes.is"
+    },
+    {
+      "path": "sections[3].data.rows[3].mode",
+      "value": "Interactive (Dialoguing) - Students are engaged in a constructive dialog."
+    },
+    {
+      "path": "sections[3].data.rows[3].activities[0]",
+      "value": "Defending position in pairs or small groups"
+    },
+    {
+      "path": "sections[3].data.rows[3].activities[1]",
+      "value": "Answering questions while working with a partner"
+    },
+    {
+      "path": "sections[3].data.rows[3].activities[2]",
+      "value": "Discussing similarities or differences"
+    },
+    {
+      "path": "sections[3].data.rows[3].activities[3]",
+      "value": "Explaining or teaching mini lessons to others"
+    },
+    {
+      "path": "sections[3].data.rows[3].activities[4]",
+      "value": "Recording instructional videos for others"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[0]",
+      "value": "Working in small groups in Zoom"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[1]",
+      "value": "Working in groups in Canvas"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[2]",
+      "value": "Collaborating on a live Word document"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[3]",
+      "value": "Recording videos in Panopto"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[4]",
+      "value": "Giving peer feedback in Canvas"
+    },
+    {
+      "path": "sections[3].data.rows[3].tools[5]",
+      "value": "Running Zoom tutorials for each other"
+    },
+    {
+      "path": "sections[4].id",
+      "value": "activity-planner"
+    },
+    {
+      "path": "sections[4].title",
+      "value": "Course Activity Planner"
+    },
+    {
+      "path": "sections[4].shortDescription",
+      "value": "Plan weekly activities balanced between Acquisition, Collaboration, and Practice."
+    },
+    {
+      "path": "sections[4].icon",
+      "value": "Calendar"
+    },
+    {
+      "path": "sections[4].type",
+      "value": "planner"
+    },
+    {
+      "path": "sections[4].data.columns[0].header",
+      "value": "Week / topic / aim"
+    },
+    {
+      "path": "sections[4].data.columns[0].key",
+      "value": "week"
+    },
+    {
+      "path": "sections[4].data.columns[0].width",
+      "value": "20%"
+    },
+    {
+      "path": "sections[4].data.columns[1].header",
+      "value": "Acquisition / Investigation"
+    },
+    {
+      "path": "sections[4].data.columns[1].key",
+      "value": "acquisition"
+    },
+    {
+      "path": "sections[4].data.columns[2].header",
+      "value": "Collaboration / Discussion"
+    },
+    {
+      "path": "sections[4].data.columns[2].key",
+      "value": "collaboration"
+    },
+    {
+      "path": "sections[4].data.columns[3].header",
+      "value": "Practice / Production"
+    },
+    {
+      "path": "sections[4].data.columns[3].key",
+      "value": "practice"
+    },
+    {
+      "path": "sections[4].data.rows[0].week",
+      "value": "1"
+    },
+    {
+      "path": "sections[4].data.rows[0].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[0].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[0].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[1].week",
+      "value": "2"
+    },
+    {
+      "path": "sections[4].data.rows[1].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[1].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[1].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[2].week",
+      "value": "3"
+    },
+    {
+      "path": "sections[4].data.rows[2].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[2].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[2].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[3].week",
+      "value": "4"
+    },
+    {
+      "path": "sections[4].data.rows[3].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[3].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[3].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[4].week",
+      "value": "5"
+    },
+    {
+      "path": "sections[4].data.rows[4].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[4].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[4].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[5].week",
+      "value": "6"
+    },
+    {
+      "path": "sections[4].data.rows[5].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[5].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[5].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[6].week",
+      "value": "7"
+    },
+    {
+      "path": "sections[4].data.rows[6].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[6].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[6].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[7].week",
+      "value": "8"
+    },
+    {
+      "path": "sections[4].data.rows[7].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[7].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[7].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[8].week",
+      "value": "9"
+    },
+    {
+      "path": "sections[4].data.rows[8].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[8].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[8].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[9].week",
+      "value": "10"
+    },
+    {
+      "path": "sections[4].data.rows[9].acquisition",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[9].collaboration",
+      "value": ""
+    },
+    {
+      "path": "sections[4].data.rows[9].practice",
+      "value": ""
+    },
+    {
+      "path": "sections[5].id",
+      "value": "learning-matrix"
+    },
+    {
+      "path": "sections[5].title",
+      "value": "Learning Activity Matrix"
+    },
+    {
+      "path": "sections[5].shortDescription",
+      "value": "Compare offline vs online methods for various learning types."
+    },
+    {
+      "path": "sections[5].icon",
+      "value": "Shuffle"
+    },
+    {
+      "path": "sections[5].type",
+      "value": "matrix"
+    },
+    {
+      "path": "sections[5].data.columns[0].header",
+      "value": "Learning type"
+    },
+    {
+      "path": "sections[5].data.columns[0].key",
+      "value": "type"
+    },
+    {
+      "path": "sections[5].data.columns[0].width",
+      "value": "20%"
+    },
+    {
+      "path": "sections[5].data.columns[1].header",
+      "value": "Offline methods"
+    },
+    {
+      "path": "sections[5].data.columns[1].key",
+      "value": "offline"
+    },
+    {
+      "path": "sections[5].data.columns[2].header",
+      "value": "Online methods"
+    },
+    {
+      "path": "sections[5].data.columns[2].key",
+      "value": "online"
+    },
+    {
+      "path": "sections[5].data.rows[0].type",
+      "value": "Acquisition"
+    },
+    {
+      "path": "sections[5].data.rows[0].offline[0]",
+      "value": "reading books, papers"
+    },
+    {
+      "path": "sections[5].data.rows[0].offline[1]",
+      "value": "listening to teacher presentations"
+    },
+    {
+      "path": "sections[5].data.rows[0].offline[2]",
+      "value": "watching demonstrations"
+    },
+    {
+      "path": "sections[5].data.rows[0].offline[3]",
+      "value": "master classes"
+    },
+    {
+      "path": "sections[5].data.rows[0].online[0]",
+      "value": "attending Zoom lectures"
+    },
+    {
+      "path": "sections[5].data.rows[0].online[1]",
+      "value": "watching videos"
+    },
+    {
+      "path": "sections[5].data.rows[0].online[2]",
+      "value": "reading digital documents"
+    },
+    {
+      "path": "sections[5].data.rows[0].online[3]",
+      "value": "listening to podcasts, webcasts"
+    },
+    {
+      "path": "sections[5].data.rows[1].type",
+      "value": "Collaboration"
+    },
+    {
+      "path": "sections[5].data.rows[1].offline[0]",
+      "value": "small group projects"
+    },
+    {
+      "path": "sections[5].data.rows[1].offline[1]",
+      "value": "discussing others’ outputs"
+    },
+    {
+      "path": "sections[5].data.rows[1].offline[2]",
+      "value": "building joint output"
+    },
+    {
+      "path": "sections[5].data.rows[1].online[0]",
+      "value": "small group projects using Canvas groups"
+    },
+    {
+      "path": "sections[5].data.rows[1].online[1]",
+      "value": "collaborating on a live Office 365 document"
+    },
+    {
+      "path": "sections[5].data.rows[2].type",
+      "value": "Investigation"
+    },
+    {
+      "path": "sections[5].data.rows[2].offline[0]",
+      "value": "analysing ideas in materials"
+    },
+    {
+      "path": "sections[5].data.rows[2].offline[1]",
+      "value": "collecting and analysing data"
+    },
+    {
+      "path": "sections[5].data.rows[2].offline[2]",
+      "value": "comparing texts"
+    },
+    {
+      "path": "sections[5].data.rows[2].online[0]",
+      "value": "analysing digital resources"
+    },
+    {
+      "path": "sections[5].data.rows[2].online[1]",
+      "value": "joint annotation using hypothes.is"
+    },
+    {
+      "path": "sections[5].data.rows[2].online[2]",
+      "value": "using collaborative online tools"
+    },
+    {
+      "path": "sections[5].data.rows[2].online[3]",
+      "value": "Wikipedia editathons"
+    },
+    {
+      "path": "sections[5].data.rows[3].type",
+      "value": "Discussion"
+    },
+    {
+      "path": "sections[5].data.rows[3].offline[0]",
+      "value": "tutorials"
+    },
+    {
+      "path": "sections[5].data.rows[3].offline[1]",
+      "value": "seminars"
+    },
+    {
+      "path": "sections[5].data.rows[3].offline[2]",
+      "value": "discussion groups"
+    },
+    {
+      "path": "sections[5].data.rows[3].offline[3]",
+      "value": "class discussions"
+    },
+    {
+      "path": "sections[5].data.rows[3].online[0]",
+      "value": "Zoom break out rooms"
+    },
+    {
+      "path": "sections[5].data.rows[3].online[1]",
+      "value": "student group study sessions"
+    },
+    {
+      "path": "sections[5].data.rows[3].online[2]",
+      "value": "peer assessment in Canvas"
+    },
+    {
+      "path": "sections[5].data.rows[3].online[3]",
+      "value": "group live editing of documents"
+    },
+    {
+      "path": "sections[5].data.rows[4].type",
+      "value": "Practice"
+    },
+    {
+      "path": "sections[5].data.rows[4].offline[0]",
+      "value": "practising exercises"
+    },
+    {
+      "path": "sections[5].data.rows[4].offline[1]",
+      "value": "doing practice-based projects"
+    },
+    {
+      "path": "sections[5].data.rows[4].offline[2]",
+      "value": "labs"
+    },
+    {
+      "path": "sections[5].data.rows[4].offline[3]",
+      "value": "field trips"
+    },
+    {
+      "path": "sections[5].data.rows[4].offline[4]",
+      "value": "role-play"
+    },
+    {
+      "path": "sections[5].data.rows[4].online[0]",
+      "value": "using models"
+    },
+    {
+      "path": "sections[5].data.rows[4].online[1]",
+      "value": "quizzes"
+    },
+    {
+      "path": "sections[5].data.rows[4].online[2]",
+      "value": "simulations"
+    },
+    {
+      "path": "sections[5].data.rows[4].online[3]",
+      "value": "virtual labs"
+    },
+    {
+      "path": "sections[5].data.rows[4].online[4]",
+      "value": "online role-play activities"
+    },
+    {
+      "path": "sections[5].data.rows[5].type",
+      "value": "Production"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[0]",
+      "value": "student-produced videos"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[1]",
+      "value": "models"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[2]",
+      "value": "artefacts"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[3]",
+      "value": "performances"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[4]",
+      "value": "reports"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[5]",
+      "value": "essays"
+    },
+    {
+      "path": "sections[5].data.rows[5].offline[6]",
+      "value": "physical portfolios"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[0]",
+      "value": "producing digital documents"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[1]",
+      "value": "representations of designs"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[2]",
+      "value": "digital artefacts"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[3]",
+      "value": "slideshows"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[4]",
+      "value": "blogs"
+    },
+    {
+      "path": "sections[5].data.rows[5].online[5]",
+      "value": "e-portfolios"
+    },
+    {
+      "path": "sections[6].id",
+      "value": "modular-planner"
+    },
+    {
+      "path": "sections[6].title",
+      "value": "Modular Course Building"
+    },
+    {
+      "path": "sections[6].shortDescription",
+      "value": "Plan content and interactions for VLE modules."
+    },
+    {
+      "path": "sections[6].icon",
+      "value": "Layers"
+    },
+    {
+      "path": "sections[6].type",
+      "value": "planner"
+    },
+    {
+      "path": "sections[6].data.columns[0].header",
+      "value": "Module / Week"
+    },
+    {
+      "path": "sections[6].data.columns[0].key",
+      "value": "module"
+    },
+    {
+      "path": "sections[6].data.columns[0].width",
+      "value": "20%"
+    },
+    {
+      "path": "sections[6].data.columns[1].header",
+      "value": "Content"
+    },
+    {
+      "path": "sections[6].data.columns[1].key",
+      "value": "content"
+    },
+    {
+      "path": "sections[6].data.columns[2].header",
+      "value": "Interactions"
+    },
+    {
+      "path": "sections[6].data.columns[2].key",
+      "value": "interactions"
+    },
+    {
+      "path": "sections[6].data.rows[0].module",
+      "value": "Introductory matter"
+    },
+    {
+      "path": "sections[6].data.rows[0].content",
+      "value": "Course expectations page\nCourse manual PDF\nAbout lecturers page\nWelcome to the course video"
+    },
+    {
+      "path": "sections[6].data.rows[0].interactions",
+      "value": "Agree to rules and conditions quiz\nIntroduce yourself discussion\nUpload a photo assignment\nSubmit a statement assignment"
+    },
+    {
+      "path": "sections[6].data.rows[1].module",
+      "value": "Week 1 / Module 1"
+    },
+    {
+      "path": "sections[6].data.rows[1].content",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[1].interactions",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[2].module",
+      "value": "Week 2 / Module 2"
+    },
+    {
+      "path": "sections[6].data.rows[2].content",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[2].interactions",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[3].module",
+      "value": "Week ... / Module ..."
+    },
+    {
+      "path": "sections[6].data.rows[3].content",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[3].interactions",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[4].module",
+      "value": "Concluding matter"
+    },
+    {
+      "path": "sections[6].data.rows[4].content",
+      "value": ""
+    },
+    {
+      "path": "sections[6].data.rows[4].interactions",
+      "value": ""
+    },
+    {
+      "path": "sections[7].id",
+      "value": "building-checklist"
+    },
+    {
+      "path": "sections[7].title",
+      "value": "Course Building Checklist"
+    },
+    {
+      "path": "sections[7].shortDescription",
+      "value": "Final checks before launching."
+    },
+    {
+      "path": "sections[7].icon",
+      "value": "ClipboardCheck"
+    },
+    {
+      "path": "sections[7].type",
+      "value": "checklist"
+    },
+    {
+      "path": "sections[7].data[0].title",
+      "value": "Readiness"
+    },
+    {
+      "path": "sections[7].data[0].items[0].id",
+      "value": "bc-1"
+    },
+    {
+      "path": "sections[7].data[0].items[0].text",
+      "value": "All content is organised into modules"
+    },
+    {
+      "path": "sections[7].data[0].items[1].id",
+      "value": "bc-2"
+    },
+    {
+      "path": "sections[7].data[0].items[1].text",
+      "value": "Learning outcomes and course expectations are written"
+    },
+    {
+      "path": "sections[7].data[0].items[2].id",
+      "value": "bc-3"
+    },
+    {
+      "path": "sections[7].data[0].items[2].text",
+      "value": "Office hours and/or contact details have been posted"
+    },
+    {
+      "path": "sections[7].data[0].items[3].id",
+      "value": "bc-4"
+    },
+    {
+      "path": "sections[7].data[0].items[3].text",
+      "value": "Each module has at least 2 interactive activities"
+    },
+    {
+      "path": "sections[7].data[0].items[4].id",
+      "value": "bc-5"
+    },
+    {
+      "path": "sections[7].data[0].items[4].text",
+      "value": "Space for students to learn about the platform is built into timetable"
+    },
+    {
+      "path": "sections[8].id",
+      "value": "appendices"
+    },
+    {
+      "path": "sections[8].title",
+      "value": "Appendices & Theory"
+    },
+    {
+      "path": "sections[8].shortDescription",
+      "value": "In-depth background on Instructional Design, Online Teaching, and Support."
+    },
+    {
+      "path": "sections[8].icon",
+      "value": "BookOpen"
+    },
+    {
+      "path": "sections[8].type",
+      "value": "text"
+    },
+    {
+      "path": "sections[8].data[0].type",
+      "value": "h2"
+    },
+    {
+      "path": "sections[8].data[0].content",
+      "value": "Appendix 1: What is instructional design or learning design"
+    },
+    {
+      "path": "sections[8].data[1].type",
+      "value": "p"
+    },
+    {
+      "path": "sections[8].data[1].content",
+      "value": "Instructional design originated in the military and corporate settings where the need for training large numbers of people in an efficient and replicable ways gave rise to various frameworks. Due of these roots, instructional design frameworks often resemble project management approaches than pedagogical theory."
+    },
+    {
+      "path": "sections[8].data[2].type",
+      "value": "h3"
+    },
+    {
+      "path": "sections[8].data[2].content",
+      "value": "Four Pillars of Instructional Design"
+    },
+    {
+      "path": "sections[8].data[3].type",
+      "value": "list"
+    },
+    {
+      "path": "sections[8].data[3].content[0]",
+      "value": "Social constructivist theory of learning: Learning is a process involving interactions with others."
+    },
+    {
+      "path": "sections[8].data[3].content[1]",
+      "value": "Focus on the principles of adult learning: Adults learn best when learning is relevant."
+    },
+    {
+      "path": "sections[8].data[3].content[2]",
+      "value": "Competency-based approach to learning objectives: The object of learning is to acquire real competence."
+    },
+    {
+      "path": "sections[8].data[3].content[3]",
+      "value": "Project management approach to development: Consistent and high-quality learning experiences require collaborative project approach."
+    },
+    {
+      "path": "sections[8].data[4].type",
+      "value": "h2"
+    },
+    {
+      "path": "sections[8].data[4].content",
+      "value": "Appendix 2: Specifics of fully online teaching"
+    },
+    {
+      "path": "sections[8].data[5].type",
+      "value": "p"
+    },
+    {
+      "path": "sections[8].data[5].content",
+      "value": "Characteristics that set learning online apart from learning in a traditional space can be summarised by two NOs: No back row (all activity is visible) and No corridor (no natural informal spaces)."
+    },
+    {
+      "path": "sections[8].data[6].type",
+      "value": "h3"
+    },
+    {
+      "path": "sections[8].data[6].content",
+      "value": "Mitigation Strategies"
+    },
+    {
+      "path": "sections[8].data[7].type",
+      "value": "list"
+    },
+    {
+      "path": "sections[8].data[7].content[0]",
+      "value": "Design online activities that require student participation."
+    },
+    {
+      "path": "sections[8].data[7].content[1]",
+      "value": "Build a complex support relationship combining pastoral, learning and technical support."
+    },
+    {
+      "path": "sections[8].data[7].content[2]",
+      "value": "Use peer assessment and project-based assessment."
+    },
+    {
+      "path": "sections[8].data[7].content[3]",
+      "value": "Set up regular individual touchpoints for each student."
+    },
+    {
+      "path": "sections[8].data[8].type",
+      "value": "h2"
+    },
+    {
+      "path": "sections[8].data[8].content",
+      "value": "Appendix 3: Developing a support relationship"
+    },
+    {
+      "path": "sections[8].data[9].type",
+      "value": "p"
+    },
+    {
+      "path": "sections[8].data[9].content",
+      "value": "Students learning digitally often report feelings of isolation and confusion. A successful digital program will provide sufficient support to give them a feeling of connectedness. This can only be done by building relationships."
+    },
+    {
+      "path": "sections[8].data[10].type",
+      "value": "h3"
+    },
+    {
+      "path": "sections[8].data[10].content",
+      "value": "Support Roles"
+    },
+    {
+      "path": "sections[8].data[11].type",
+      "value": "list"
+    },
+    {
+      "path": "sections[8].data[11].content[0]",
+      "value": "Course convener / instructor: Sets learning outcomes, delivers lectures."
+    },
+    {
+      "path": "sections[8].data[11].content[1]",
+      "value": "Tutor / teaching assistant: Leads online discussions, provides feedback."
+    },
+    {
+      "path": "sections[8].data[11].content[2]",
+      "value": "Programme administrator: Keeps track of timings, posts announcements."
+    },
+    {
+      "path": "sections[8].data[11].content[3]",
+      "value": "IT support: Monitors the platform, answers technical questions."
+    }
+  ],
+  "omissions": [
+    {
+      "path": "sections[0].data[2].content",
+      "value": "https://picsum.photos/800/200",
+      "reason": "Coordinator-approved random-photo placeholder omission; source alt label and exact licence URL retained."
+    }
+  ],
+  "dispositions": {
+    "section ids/checklist ids": "retained as section/content identifiers",
+    "icon": "source UI metadata only",
+    "table column keys/widths": "keys retained through cell associations; widths are presentation metadata",
+    "empty cells": "retained as empty table cells",
+    "website/lastUpdated": "source metadata only; no canonical edition URL inferred"
+  },
+  "outputs": {
+    "bookSha256": "12b46445cccfcf0997a3f4fef41e9858e040ec450e5c7166d26321bc2c2d66dc"
+  }
+}

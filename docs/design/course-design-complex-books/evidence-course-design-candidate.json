@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "sourceCheck": {
+    "exitCode": 0,
+    "sections": 9,
+    "renderedValues": 311,
+    "embeds": 4,
+    "agentFiles": 12,
+    "independentSourceTraversal": true,
+    "sourceHashesMatch": true
+  },
+  "browserCheck": {
+    "exitCode": 0,
+    "checks": 78,
+    "widths": [
+      390,
+      1280
+    ],
+    "epubChapters": 9
+  },
+  "candidateFiles": [
+    {
+      "path": "apps/reader-demo/interactives/course-design-frameworks/activity-planner/index.html",
+      "sha256": "d9eadfc284269e3d952a6f6e9f99b48bdfc8ed0d7f88e75b0006de9a966a5ee3"
+    },
+    {
+      "path": "apps/reader-demo/interactives/course-design-frameworks/building-checklist/index.html",
+      "sha256": "7829cbdbf078f3b40922219e9beca33433ec4b1619c63358a289a71d5b5bc9d3"
+    },
+    {
+      "path": "apps/reader-demo/interactives/course-design-frameworks/modular-planner/index.html",
+      "sha256": "41e2404cb5a1ec531258263ac4e1a0ef3d9cc6fe54fa7384c2eff9a6404275d5"
+    },
+    {
+      "path": "apps/reader-demo/interactives/course-design-frameworks/qa-checklist/index.html",
+      "sha256": "195e9d96de78b1f78cac210dc730147028c99873cccff91b9a5cc9227e7423ec"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/course-design-frameworks-embed-manifest.json",
+      "sha256": "e276b89dd1b20f6c2a66c9ea7c200e219c40a96e823a7d5f3be3067f587e38a3"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/course-design-frameworks-provenance.json",
+      "sha256": "64f5b2c6209fd573772424c8dc73ece82d902edd527be5bd6bf8403555124fc6"
+    },
+    {
+      "path": "apps/reader-demo/src/books/next-books/course-design-frameworks.book.json",
+      "sha256": "12b46445cccfcf0997a3f4fef41e9858e040ec450e5c7166d26321bc2c2d66dc"
+    }
+  ],
+  "scratchRemaining": [],
+  "scope": "Candidate only; parent integration and release checks outstanding"
+}

@@ -1,0 +1,513 @@
+[
+  {
+    "name": "about served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "about table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "about narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "qa-checklist table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist root and sandbox",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist unsaved notice",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist keyboard toggle",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist reset",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist written version",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "qa-checklist narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "engagement-matrix served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "engagement-matrix table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "engagement-matrix narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "icap-framework served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "icap-framework table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "icap-framework narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "activity-planner table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner root and sandbox",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner unsaved notice",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner editable",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner written version",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "learning-matrix served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "learning-matrix table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "learning-matrix narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "modular-planner table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner root and sandbox",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner unsaved notice",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner editable",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner written version",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "building-checklist table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist root and sandbox",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist unsaved notice",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist keyboard toggle",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist reset",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist written version",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "building-checklist narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "appendices served ordered source values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "appendices table associations",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "appendices narrow overflow",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "assist Paragraph table unit",
+    "passed": true,
+    "detail": [
+      "LI"
+    ]
+  },
+  {
+    "name": "assist Line window table unit",
+    "passed": true,
+    "detail": [
+      "LI"
+    ]
+  },
+  {
+    "name": "assist Ruler table unit",
+    "passed": true,
+    "detail": [
+      "LI"
+    ]
+  },
+  {
+    "name": "search Wikipedia editathons",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "search destination Wikipedia editathons",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "search The overall objective of the course",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "search destination The overall objective of the course",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "reflection persisted after reload",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "anchored semantic note persisted",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "no cross book note leakage",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "integrated EPUB nine chapters",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "EPUB about ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB qa-checklist ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB engagement-matrix ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB icap-framework ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB activity-planner ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB learning-matrix ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB modular-planner ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB building-checklist ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB appendices ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "EPUB excludes private entries",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "served agent excludes private entries",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "served agent about ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent qa-checklist ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent engagement-matrix ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent icap-framework ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent activity-planner ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent learning-matrix ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent modular-planner ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent building-checklist ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "served agent appendices ordered values",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "name": "asset exact qa-checklist",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "asset exact activity-planner",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "asset exact modular-planner",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "asset exact building-checklist",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "engagement-matrix row structure",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "engagement-matrix scoped columns",
+    "passed": true,
+    "detail": 4
+  },
+  {
+    "name": "engagement-matrix scoped rows",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "icap-framework row structure",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "icap-framework scoped columns",
+    "passed": true,
+    "detail": 3
+  },
+  {
+    "name": "icap-framework scoped rows",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner row structure",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "activity-planner scoped columns",
+    "passed": true,
+    "detail": 4
+  },
+  {
+    "name": "activity-planner scoped rows",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "learning-matrix row structure",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "learning-matrix scoped columns",
+    "passed": true,
+    "detail": 3
+  },
+  {
+    "name": "learning-matrix scoped rows",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner row structure",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "modular-planner scoped columns",
+    "passed": true,
+    "detail": 3
+  },
+  {
+    "name": "modular-planner scoped rows",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "assist own paragraph",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "planner keyboard entry",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "planner clears after reload",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "written alternative with failed frame",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "written table keyboard reachable or fits at narrow width",
+    "passed": true,
+    "detail": {
+      "clientWidth": 332,
+      "scrollWidth": 332,
+      "tabindex": null,
+      "wrapper": "<div class=\"table-scroll\" aria-label=\"Modular Course Building\"><table><caption>Modular Course Building</caption><thead><tr><th scope=\"col\" id=\"reader-content-modular-planner-col-0\""
+    }
+  }
+]

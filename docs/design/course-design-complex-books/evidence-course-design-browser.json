@@ -1,0 +1,366 @@
+{
+  "checks": [
+    {
+      "name": "390 qa-checklist sandbox",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist keyboard toggle",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist progress",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist reset",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist reset progress",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist written alternative",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner sandbox",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner labelled",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner editable",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner cleared on reload",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner keyboard scroll region",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner written alternative",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner sandbox",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner labelled",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner editable",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner cleared on reload",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner keyboard scroll region",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner written alternative",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist sandbox",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist keyboard toggle",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist progress",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist reset",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist reset progress",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist written alternative",
+      "pass": true
+    },
+    {
+      "name": "390 about reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 qa-checklist reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 engagement-matrix reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 icap-framework reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 activity-planner reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 learning-matrix reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 modular-planner reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 building-checklist reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "390 appendices reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "EPUB all nine chapters",
+      "pass": true
+    },
+    {
+      "name": "all read-aloud and EPUB source values in order",
+      "pass": true
+    },
+    {
+      "name": "390 no external requests",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist sandbox",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist keyboard toggle",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist progress",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist reset",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist reset progress",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist written alternative",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner sandbox",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner labelled",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner editable",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner cleared on reload",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner keyboard scroll region",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner written alternative",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner sandbox",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner labelled",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner editable",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner cleared on reload",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner keyboard scroll region",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner written alternative",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist sandbox",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist keyboard toggle",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist progress",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist reset",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist reset progress",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist written alternative",
+      "pass": true
+    },
+    {
+      "name": "1280 about reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 qa-checklist reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 engagement-matrix reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 icap-framework reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 activity-planner reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 learning-matrix reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 modular-planner reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 building-checklist reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 appendices reader has no document overflow",
+      "pass": true
+    },
+    {
+      "name": "1280 no external requests",
+      "pass": true
+    }
+  ],
+  "exports": {
+    "chapters": 9,
+    "results": [
+      {
+        "section": "about",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "qa-checklist",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "engagement-matrix",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "icap-framework",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "activity-planner",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "learning-matrix",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "modular-planner",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "building-checklist",
+        "readAloud": true,
+        "epub": true
+      },
+      {
+        "section": "appendices",
+        "readAloud": true,
+        "epub": true
+      }
+    ]
+  }
+}

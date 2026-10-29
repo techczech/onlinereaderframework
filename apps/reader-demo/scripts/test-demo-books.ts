@@ -25,11 +25,11 @@ const repo = path.resolve(app, '../..');
 const flatten = (sections: readonly PublicationSection[]): PublicationSection[] => sections.flatMap(section => [section, ...flatten(section.children ?? [])]);
 const onDisk = JSON.parse(fs.readFileSync(path.join(app, 'src', 'books', 'original-publications.json'), 'utf8')) as PublicationBook[];
 
-test('the registry holds seven books once: three originals unchanged, four converted books registered, none copied into original-publications.json', () => {
-  assert.deepEqual(demoBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
+test('the registry holds eight books once: three originals unchanged, five converted books registered, none copied into original-publications.json', () => {
+  assert.deepEqual(demoBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence', 'course-design-frameworks']);
   assert.deepEqual(onDisk.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics']);
   assert.deepEqual(originalBooks, onDisk);
-  assert.equal(new Set(demoBooks.map(book => book.id)).size, 7);
+  assert.equal(new Set(demoBooks.map(book => book.id)).size, 8);
   assert.deepEqual(nextBooks.map(book => flatten(book.sections).length), [10, 14]);
 });
 
@@ -61,9 +61,9 @@ test('canonical sites: the three originals keep their domains; the converted boo
   for (const book of nextBooks) assert.ok(book.sourceUrl?.startsWith('https://'), `${book.id} keeps its source address`);
 });
 
-test('nine embeds in two books: descriptors are valid, host-owned, rooted at embeds/<book>/ and every anchor is a long prose alternative', () => {
-  assert.deepEqual(Object.keys(demoEmbeds).sort(), ['academic-reading', 'readability-foundations']);
-  for (const book of nextBooks) {
+test('thirteen embeds in three books: descriptors are valid, host-owned, rooted at embeds/<book>/ and every anchor is a long prose alternative', () => {
+  assert.deepEqual(Object.keys(demoEmbeds).sort(), ['academic-reading', 'course-design-frameworks', 'readability-foundations']);
+  for (const book of demoBooks.filter(book => demoEmbeds[book.id])) {
     const embeds = demoEmbeds[book.id];
     assert.ok(embeds && typeof embeds === 'object', book.id);
     assert.equal(embeds.root, embedRootOf(book.id));
@@ -92,7 +92,7 @@ test('every embed file exists, is one self-contained document and is the only fi
   }
 });
 
-test('the demo plugin serves and builds exactly the manifest\'s nine files at embeds/<book>/<id>/index.html', async () => {
+test('the demo plugin serves and builds exactly the manifest\'s thirteen files at embeds/<book>/<id>/index.html', async () => {
   const { demoEmbedAssets } = await import('./demo-embed-assets');
   const plugin = demoEmbedAssets(app) as unknown as { generateBundle: () => void; buildStart: () => void };
   const emitted: string[] = [];
@@ -101,7 +101,7 @@ test('the demo plugin serves and builds exactly the manifest\'s nine files at em
   plugin.generateBundle.call(context);
   const expected = Object.entries(demoEmbeds).flatMap(([bookId, embeds]) => embeds.items.map(item => `embeds/${bookId}/${item.src}`));
   assert.deepEqual(emitted.sort(), expected.sort());
-  assert.equal(emitted.length, 9);
+  assert.equal(emitted.length, 13);
 });
 
 test('agent files: all five books export from the one registry; prose alternatives reach the text, frames and frame chrome never do', () => {
