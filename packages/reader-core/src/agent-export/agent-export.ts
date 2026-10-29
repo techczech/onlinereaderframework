@@ -97,6 +97,7 @@ export function buildAgentBook(book: PublicationBook, options: AgentExportOption
   const top = where(topLevels), fromChapter = where(chapterLevels);
   const unresolved = new Map<string, { section: string; href: string }>();
   const contextFor = (sectionId: string, links: ReturnType<typeof where>): ReaderLinkContext => ({
+    anchorOwner: book.compatibility ? anchor => book.compatibility?.anchorOwners[anchor] : undefined,
     bookId: book.id, has: id => seen.has(id), chapter: links.chapter, index: links.index,
     unresolved: href => { unresolved.set(`${sectionId}\u0000${href}`, { section: sectionId, href }); },
   });

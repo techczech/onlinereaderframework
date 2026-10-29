@@ -11,6 +11,7 @@ export interface FrontPageProps {
   layout: FrontPageLayoutKey;
   onStart: () => void;
   onSelectSection: (id: string) => void;
+  onResume?: (id: string) => void;
   onOpenSearch: () => void;
   onDownloadEbook?: () => void | Promise<void>;
   /** Ids the reader has opened, from the reader's saved state. */
@@ -23,7 +24,7 @@ export interface FrontPageProps {
 const noneRead: ReadonlySet<string> = new Set();
 
 /** One front page for every layout: the book data, contents, actions and saved state are shared; the layout component only arranges them. */
-export function FrontPage({ book, layout, onStart, onSelectSection, onOpenSearch, onDownloadEbook, readSections = noneRead, lastSectionId, agent }: FrontPageProps) {
+export function FrontPage({ book, layout, onStart, onSelectSection, onResume, onOpenSearch, onDownloadEbook, readSections = noneRead, lastSectionId, agent }: FrontPageProps) {
   const id = useId();
   const labels = publicationLabels(book);
   const contents = useMemo(() => frontPageContents(book), [book]);
@@ -40,7 +41,7 @@ export function FrontPage({ book, layout, onStart, onSelectSection, onOpenSearch
     showContents: book.navigation?.showHomeContents !== false && contents.groups.length > 0,
     full, setFull, opened, query, setQuery, matches, filterRef,
     toggle: key => setOpened(previous => { const next = new Set(previous); if (!next.delete(key)) next.add(key); return next; }),
-    onStart, onSelectSection, onOpenSearch, agent,
+    onStart, onSelectSection, onResume, onOpenSearch, agent,
     downloads, canGenerate: !downloads.length && !!onDownloadEbook, generating,
     generate: async () => { setGenerating(true); try { await onDownloadEbook?.(); } finally { setGenerating(false); } },
   };

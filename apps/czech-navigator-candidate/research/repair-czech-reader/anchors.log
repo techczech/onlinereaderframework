@@ -1,0 +1,3 @@
+COMMAND ['python3', 'apps/czech-navigator-candidate/scripts/test-czech-anchor-owners.py']
+EXIT 0
+Actual id attributes retained; data-semantic-table-id excluded.

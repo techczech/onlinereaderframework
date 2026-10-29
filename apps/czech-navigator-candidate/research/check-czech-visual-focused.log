@@ -1,0 +1,12 @@
+✔ legacy overview fragment resolves to new owning chapter (0.403834ms)
+✔ foreign book cannot resolve an anchor (0.058959ms)
+✔ unknown fragment retains overview (0.071083ms)
+✔ outline fold is kept per book and survives blocked storage for the visit (0.353ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 207.054875

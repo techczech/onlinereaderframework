@@ -1,0 +1,57 @@
+COMMAND ['node', '--test', 'packages/reader-core/src/original/test-saved-state-compatibility.mjs', 'packages/reader-core/src/original/test-chapter-fragments.mjs', 'packages/reader-core/src/original/test-original-reader.mjs', 'packages/reader-core/src/original/test-publication-navigation.mjs', 'packages/reader-core/src/original/test-outline-preference.mjs', 'packages/reader-core/src/original/reading-support/test-reading-preferences.mjs', 'packages/reader-core/src/original/frontpage/test-frontpage.mjs']
+EXIT 0
+✔ the six layout keys are exact and invalid values fall back to no layout (0.675542ms)
+✔ an omitted or invalid layout renders the classic home page; a valid one renders that layout (12.425ms)
+✔ flat books group runs of one category for display only; ids and order are preserved (0.209125ms)
+✔ tree books group by top-level section; empty groups are skipped and group pages with text stay reachable (0.184333ms)
+✔ an explicit depth cap never removes a structural topic whose subtree has readable pages (0.350833ms)
+✔ Full contents opens first only for a short list; filtering finds entries in closed groups (0.142375ms)
+✔ Start is the first readable page; Continue needs a real, readable, stored page (1.00575ms)
+✔ progress counts read chapters with the sidebar rule and stays hidden until something is read (1.649333ms)
+✔ titles use the established display title and split only for layout (0.628417ms)
+✔ depth labels are Contents and Full contents, overridable, and absent when nothing differs (0.74875ms)
+✔ colour band numbers groups but not the app guide (0.236833ms)
+✔ real books list every readable page once, in tree order, in every layout (7.495708ms)
+✔ hostile storage and invalid ranges return safe preferences (0.774833ms)
+✔ per-book round trip and reset values remain bounded (0.140417ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.061125ms)
+✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.141083ms)
+✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.089292ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.050083ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.072667ms)
+✔ anchored reading is off by default, kept per book, and invalid values fall back to WriteFlex's contrast default (0.078917ms)
+✔ legacy overview fragment resolves to new owning chapter (0.406209ms)
+✔ foreign book cannot resolve an anchor (0.060459ms)
+✔ unknown fragment retains overview (0.065125ms)
+✔ preorder navigation and lookup include recursive book descendants (0.605542ms)
+✔ original query and Language Muscle hash URLs restore the same leaf (0.138583ms)
+✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.157917ms)
+✔ storage keys isolate every book, including IDs containing separators (0.160791ms)
+✔ notes export includes reflections even when there are no highlights (0.151167ms)
+✔ download boundaries reject executable schemes and retain same-origin assets (0.060292ms)
+✔ full publication identity uses actual adapter words without added punctuation or duplicates (2.627583ms)
+✔ native ESM imports the original reader without a bundler or browser globals (1313.337375ms)
+✔ outline fold is kept per book and survives blocked storage for the visit (0.352917ms)
+✔ home shows two actual tree levels in original order without category duplicates (2.4415ms)
+✔ home depth and visibility are configurable (0.527792ms)
+✔ neutral labels and custom labels are rendered by home and sidebar (8.014542ms)
+✔ sidebar uses original tree exactly once and respects depth (1.276291ms)
+✔ home uses supplied real cover and masthead variant (0.207875ms)
+✔ appearance rejects invalid and injected colours without losing valid values (0.369334ms)
+✔ explicit contents label wins over legacy home copy (0.159208ms)
+✔ sidebar depth follows the book tree unless the author sets one (0.499834ms)
+✔ empty topic groups are skipped by previous and next but meaningful parents stay (0.3635ms)
+✔ progress counts chapters with text, not empty groups (0.093ms)
+✔ topic rows follow the current path, manual toggles win, and arriving reopens a closed topic (0.095334ms)
+✔ sidebar rows: a topic row only toggles, a chapter row navigates, and every row names its full title (0.554833ms)
+✔ multiple records, explicit anchor, exact quote and unknown fields; originals retained and rerun idempotent (0.823208ms)
+✔ ambiguous quote, malformed input, unrelated book and backup failure never guess or lose originals (0.134208ms)
+✔ agent chapter map exports all units and rewrites exact fragment owner only when configured (8.576333ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1566.284375

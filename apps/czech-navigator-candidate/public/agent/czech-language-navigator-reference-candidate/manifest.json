@@ -1,0 +1,389 @@
+{
+  "schema": "online-reader-framework/agent-book@1",
+  "book": {
+    "id": "czech-language-navigator-reference-candidate",
+    "title": "Czech Language Navigator",
+    "displayTitle": "Czech Language Navigator",
+    "author": "Dominik Lukeš and Jitka Kauerová",
+    "description": "Version 1. Check back for updates with more interactive features."
+  },
+  "links": {
+    "index": "https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/index.md",
+    "full": "https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/full.md",
+    "manifest": "https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/manifest.json",
+    "reader": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate"
+  },
+  "counts": {
+    "sections": 22,
+    "withText": 22,
+    "withoutText": 0,
+    "words": 46289,
+    "characters": 280473,
+    "files": 25
+  },
+  "sections": [
+    {
+      "id": "title-and-contents",
+      "title": "Title and contents",
+      "order": 1,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Title and contents"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/title-and-contents.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=title-and-contents",
+      "words": 140,
+      "characters": 1033
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "order": 2,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Introduction"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/introduction.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=introduction",
+      "words": 325,
+      "characters": 2006
+    },
+    {
+      "id": "parts-of-speech-nouns-verbs-and-more",
+      "title": "Parts of speech: Nouns, Verbs and More",
+      "order": 3,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Parts of speech: Nouns, Verbs and More"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/parts-of-speech-nouns-verbs-and-more.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=parts-of-speech-nouns-verbs-and-more",
+      "words": 75,
+      "characters": 454
+    },
+    {
+      "id": "nouns",
+      "title": "Nouns",
+      "order": 4,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Nouns"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/nouns.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=nouns",
+      "words": 5637,
+      "characters": 32954
+    },
+    {
+      "id": "adjectives",
+      "title": "Adjectives",
+      "order": 5,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Adjectives"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/adjectives.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=adjectives",
+      "words": 1068,
+      "characters": 7147
+    },
+    {
+      "id": "pronouns",
+      "title": "Pronouns",
+      "order": 6,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Pronouns"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/pronouns.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=pronouns",
+      "words": 1628,
+      "characters": 10134
+    },
+    {
+      "id": "numerals",
+      "title": "Numerals",
+      "order": 7,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Numerals"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/numerals.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=numerals",
+      "words": 1802,
+      "characters": 10546
+    },
+    {
+      "id": "verbs",
+      "title": "Verbs",
+      "order": 8,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Verbs"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/verbs.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=verbs",
+      "words": 12550,
+      "characters": 79182
+    },
+    {
+      "id": "adverbs",
+      "title": "Adverbs",
+      "order": 9,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Adverbs"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/adverbs.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=adverbs",
+      "words": 450,
+      "characters": 3147
+    },
+    {
+      "id": "prepositions",
+      "title": "Prepositions",
+      "order": 10,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Prepositions"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/prepositions.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=prepositions",
+      "words": 731,
+      "characters": 4772
+    },
+    {
+      "id": "conjunctions",
+      "title": "Conjunctions",
+      "order": 11,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "Conjunctions"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/conjunctions.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=conjunctions",
+      "words": 1647,
+      "characters": 9038
+    },
+    {
+      "id": "how-and-when-czech-words-change-their-forms",
+      "title": "How and when Czech words change their forms",
+      "order": 12,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "How and when Czech words change their forms"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/how-and-when-czech-words-change-their-forms.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=how-and-when-czech-words-change-their-forms",
+      "words": 350,
+      "characters": 2406
+    },
+    {
+      "id": "how-parts-of-speech-interact-when-combined-in-a-sentence",
+      "title": "How parts of speech interact when combined in a sentence",
+      "order": 13,
+      "depth": 1,
+      "parentId": "parts-of-speech-nouns-verbs-and-more",
+      "path": [
+        "Parts of speech: Nouns, Verbs and More",
+        "How parts of speech interact when combined in a sentence"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/how-parts-of-speech-interact-when-combined-in-a-sentence.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=how-parts-of-speech-interact-when-combined-in-a-sentence",
+      "words": 291,
+      "characters": 2001
+    },
+    {
+      "id": "word-order",
+      "title": "Word Order",
+      "order": 14,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Word Order"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/word-order.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=word-order",
+      "words": 1968,
+      "characters": 11312
+    },
+    {
+      "id": "pronunciation",
+      "title": "Pronunciation",
+      "order": 15,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Pronunciation"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/pronunciation.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=pronunciation",
+      "words": 3226,
+      "characters": 18752
+    },
+    {
+      "id": "spelling",
+      "title": "Spelling",
+      "order": 16,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Spelling"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/spelling.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=spelling",
+      "words": 899,
+      "characters": 4945
+    },
+    {
+      "id": "idioms-phraseology-and-vocabulary",
+      "title": "Idioms, Phraseology and Vocabulary",
+      "order": 17,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Idioms, Phraseology and Vocabulary"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/idioms-phraseology-and-vocabulary.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=idioms-phraseology-and-vocabulary",
+      "words": 4790,
+      "characters": 28206
+    },
+    {
+      "id": "differences-between-standard-and-non-standard-czech",
+      "title": "Differences between standard and non-standard Czech",
+      "order": 18,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Differences between standard and non-standard Czech"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/differences-between-standard-and-non-standard-czech.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=differences-between-standard-and-non-standard-czech",
+      "words": 1003,
+      "characters": 6189
+    },
+    {
+      "id": "czech-trivia",
+      "title": "Czech Trivia",
+      "order": 19,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Czech Trivia"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/czech-trivia.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=czech-trivia",
+      "words": 3816,
+      "characters": 23125
+    },
+    {
+      "id": "czech-grammar-as-czechs-learn-it",
+      "title": "Czech Grammar as Czechs Learn It",
+      "order": 20,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Czech Grammar as Czechs Learn It"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/czech-grammar-as-czechs-learn-it.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=czech-grammar-as-czechs-learn-it",
+      "words": 1186,
+      "characters": 7621
+    },
+    {
+      "id": "acknowledgements-and-licensing-details",
+      "title": "Acknowledgements and licensing details",
+      "order": 21,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Acknowledgements and licensing details"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/acknowledgements-and-licensing-details.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=acknowledgements-and-licensing-details",
+      "words": 377,
+      "characters": 2426
+    },
+    {
+      "id": "complete-table-of-contents",
+      "title": "Complete Table of Contents",
+      "order": 22,
+      "depth": 0,
+      "parentId": null,
+      "path": [
+        "Complete Table of Contents"
+      ],
+      "hasContent": true,
+      "format": "html",
+      "file": "chapters/complete-table-of-contents.md",
+      "readerUrl": "https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate&section=complete-table-of-contents",
+      "words": 2330,
+      "characters": 13077
+    }
+  ],
+  "unresolvedLinks": []
+}

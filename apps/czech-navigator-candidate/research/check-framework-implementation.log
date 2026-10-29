@@ -1,0 +1,302 @@
+
+> onlinereaderframework@1.1.0 test
+> npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node packages/reader-core/src/embed/test-embed.mjs && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-publication-navigation.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/frontpage/test-frontpage.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs && npm run test:books && npm run test:release --prefix apps/reader-demo
+
+
+> reader-core@1.1.0 test:publication-content
+> node src/publication-content/test-publication-content.mjs
+
+✔ renders nested formatting, complex destinations and reference links faithfully (9.047792ms)
+✔ preserves reference and inline footnotes with working unique return links (3.639833ms)
+✔ preserves image destinations, titles and meaningful alt text (0.476667ms)
+✔ keeps original Language Muscle HTML classes, quoted > and chapter routes (1.145375ms)
+✔ keeps GFM tables, strikethrough, nested lists and escaped fenced code (2.412042ms)
+✔ renders inline and display math as safe native MathML without CSS (2.712667ms)
+✔ assigns deterministic, unique prefixed heading IDs without DOM clobbering (1.060417ms)
+✔ plain text indexes the complete content, image alt and footnote text (0.663167ms)
+✔ removes executable HTML and unsafe URLs, attack 1 (0.394917ms)
+✔ removes executable HTML and unsafe URLs, attack 2 (0.802667ms)
+✔ removes executable HTML and unsafe URLs, attack 3 (0.484042ms)
+✔ removes executable HTML and unsafe URLs, attack 4 (0.454209ms)
+✔ removes executable HTML and unsafe URLs, attack 5 (0.356042ms)
+✔ removes executable HTML and unsafe URLs, attack 6 (0.454666ms)
+✔ removes executable HTML and unsafe URLs, attack 7 (0.39025ms)
+✔ removes executable HTML and unsafe URLs, attack 8 (2.082291ms)
+✔ sanitisation preserves safe URL schemes and is idempotent for rich content (3.134292ms)
+✔ does not depend on window or document and produces synchronous empty output (0.151292ms)
+✔ exports heading targets and labels from the same model as rendered HTML (0.42525ms)
+✔ math trust remains disabled, malformed math stays readable, and macros do not leak between sections (1.37525ms)
+✔ preserves the original Language Muscle static SVG with paired gradient and marker IDs (2.050084ms)
+✔ static SVG cannot introduce executable or remote resources (0.244833ms)
+✔ preserves supplied namespaced IDs when another supplied ID would collide after prefixing (0.190542ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.257625
+
+> reader-core@1.1.0 test:agent-export
+> node src/agent-export/test-agent-export.mjs
+
+✔ every book: all section ids in reading order, counts, and one file per section (0.882417ms)
+✔ markdown sections are preserved byte for byte in chapter files and, in order, in full.md (49.374291ms)
+✔ code, tables, footnote-like attribution, source lines and the image link survive (0.700875ms)
+✔ html sections keep their structure through the reader sanitiser, with a title heading added (0.498875ms)
+✔ every relative link in every generated file resolves to a generated file; no private paths or browser state (22.148583ms)
+✔ siteUrl makes every link absolute; relative output has none of that host (23.004875ms)
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (0.524833ms)
+✔ reader links match the reader's own publicationUrl; private hosts are recognised (0.49925ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.139625ms)
+✔ canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash (0.14325ms)
+✔ a root index links each book at its own public address, never at another book's (42.678416ms)
+✔ anchored reading: leadLength is WriteFlex's own, and lead spans follow its word walk (28.96475ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (0.670125ms)
+✔ the directory option is validated by both generators before any path is produced (1.005958ms)
+✔ a nested directory keeps every reader link pointing at the reader root (0.360209ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (0.810333ms)
+✔ real Language Muscle step-2 links to the Fine-tuning your aims chapter file (0.1345ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (0.322917ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.262625ms)
+✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (0.291583ms)
+✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.136542ms)
+✔ both generators refuse an unusable public address before producing any file, and never echo it (0.80725ms)
+✔ the reader box rebases its folder from the current reader root onto the public reader prefix (0.956125ms)
+✔ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (7.437709ms)
+✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (0.61475ms)
+✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (0.652458ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 571.719875
+✔ a sound descriptor is normalised (0.876625ms)
+✔ resource paths outside the local embed folder are refused (0.210625ms)
+✔ identity, text and height fields are constrained (0.1555ms)
+✔ runtime URL resolution stays on the page origin inside the root (0.133834ms)
+✔ an edition base keeps embeds inside the edition folder from any address of the edition (0.162083ms)
+✔ height messages: only an exact, bounded payload from an opaque origin (0.163917ms)
+✔ build check requires a real prose alternative at the anchor (7.200958ms)
+✔ manuscript HTML still cannot create frames, scripts or embed chrome (0.8365ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.597792
+✔ the six layout keys are exact and invalid values fall back to no layout (0.627584ms)
+✔ an omitted or invalid layout renders the classic home page; a valid one renders that layout (6.148125ms)
+✔ flat books group runs of one category for display only; ids and order are preserved (0.16925ms)
+✔ tree books group by top-level section; empty groups are skipped and group pages with text stay reachable (0.160791ms)
+✔ an explicit depth cap never removes a structural topic whose subtree has readable pages (0.29975ms)
+✔ Full contents opens first only for a short list; filtering finds entries in closed groups (0.129958ms)
+✔ Start is the first readable page; Continue needs a real, readable, stored page (0.91225ms)
+✔ progress counts read chapters with the sidebar rule and stays hidden until something is read (1.090417ms)
+✔ titles use the established display title and split only for layout (0.618ms)
+✔ depth labels are Contents and Full contents, overridable, and absent when nothing differs (0.704583ms)
+✔ colour band numbers groups but not the app guide (0.217792ms)
+✔ real books list every readable page once, in tree order, in every layout (6.594333ms)
+✔ native Node import exports the React panel without browser globals (1.4655ms)
+✔ source validation rejects executable and disguised schemes while permitting recorded URLs (0.140208ms)
+✔ alignment accepts only finite, non-overlapping, ordered measured ranges (0.346542ms)
+✔ restore is ready at saved position and speed without autoplay; positions stay per book (0.896833ms)
+✔ chapter navigation follows publication order, skips missing recordings and clamps seeking (0.210458ms)
+✔ view/settings rerenders and fresh equivalent arrays preserve the same playing audio (0.159834ms)
+✔ rejected play, media errors and retry have truthful states (2.175375ms)
+✔ pending play and obsolete media events cannot change a new book or restart after pause (0.269125ms)
+✔ loading, buffering and ended transitions preserve intent without auto-advancing (0.175583ms)
+✔ storage denial, corrupt records, prototype names, changed assets and nonfinite inputs stay safe (0.484208ms)
+✔ boundaries contain only supplied measured spans, clear in gaps/errors and never interpolate (0.149291ms)
+✔ empty or unsafe tracks never create audio or substitute browser speech (0.11025ms)
+✔ passage skipping uses supplied starts, honours gaps and disables without measurements (0.095583ms)
+✔ Follow text is opt-in, clears on disable and rejects spans outside duration (0.076ms)
+✔ pause and book changes capture the final media clock between timeupdate events (0.090083ms)
+✔ late metadata after media failure and obsolete pause events do not override current intent (0.302042ms)
+✔ a changed source reloads even when the host acknowledges the already selected chapter (0.06825ms)
+✔ the vendored ReadFlex player is byte-identical to the recorded source file (2.191458ms)
+✔ loading a chapter never starts speech; Start begins at the requested position (1.627334ms)
+✔ voices: saved choice, then book language, then the system default; missing saved voice falls back (0.43375ms)
+✔ choosing a voice or speed is saved and applied to the next utterance (0.29275ms)
+✔ skip moves by sentence and paragraph from the current place, and resumes reading (0.406ms)
+✔ a speed change restarts the current sentence, not the chapter (0.183708ms)
+✔ word highlighting appears only after the engine reports a real boundary (1.531167ms)
+✔ stop clears the highlight; pause keeps the position; sentences end into the next (0.183542ms)
+✔ reaching the end returns to idle without a problem (0.123ms)
+✔ an engine error is reported plainly and does not leave the controller reading (0.17125ms)
+✔ another page cancelling our speech is reported, not shown as reading (0.087292ms)
+✔ a stale end or boundary from a stopped or replaced utterance cannot advance or clear newer playback (0.071083ms)
+✔ ownership: an idle controller never cancels shared speech; a speaking one does on dispose (0.102125ms)
+✔ no speech engine: honest unavailable state, Start explains, nothing throws (0.041917ms)
+✔ an utterance that shows no sign of life is reported instead of reading forever (112.109ms)
+✔ two readers over one engine: the newer one takes it, and the older one can no longer stop or hear it (0.337875ms)
+✔ taking the engine from a paused reader clears the engine pause; only the new owner can pause or resume it (0.16475ms)
+✔ a reader can take the engine back, and its own late callbacks are still ignored (0.084042ms)
+✔ a reader that never spoke does not claim the engine and leaves a speaking reader alone (0.068792ms)
+✔ watchdog: an engine that reports starts and is speaking is never stopped for lacking word events (282.031416ms)
+✔ watchdog: a slow voice may start late; one that never starts is reported after a bounded wait (481.867375ms)
+✔ watchdog: pausing before the voice starts does not lose or spend the wait; resuming re-arms it (673.051417ms)
+✔ watchdog: an engine that gives no start events is judged only by whether it says it is speaking (201.2655ms)
+✔ engage: the host hook runs before the engine speaks or resumes, once per engagement, on every start path (0.343375ms)
+✔ word ranges follow Unicode words, not bytes (2.73325ms)
+✔ hostile storage and invalid ranges return safe preferences (0.758333ms)
+✔ per-book round trip and reset values remain bounded (0.137542ms)
+✔ WriteFlex line-size normalisation and exclusive overlay choice (0.064083ms)
+✔ dimming: Light .72, Medium .9, Dark 1; first-release names keep their name; version 2 numbers are kept (0.119625ms)
+✔ paragraph focus is one of the exclusive overlay choices; stored separate focus migrates once (0.081417ms)
+✔ ruler coverage is 1, 2 or 3 lines and defaults to one (0.052167ms)
+✔ a text size the reader chose is honoured; the default eases down on narrower windows (0.125ms)
+✔ anchored reading is off by default, kept per book, and invalid values fall back to WriteFlex's contrast default (0.075666ms)
+✔ preorder navigation and lookup include recursive book descendants (0.61625ms)
+✔ original query and Language Muscle hash URLs restore the same leaf (0.146708ms)
+✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.159833ms)
+✔ storage keys isolate every book, including IDs containing separators (0.158042ms)
+✔ notes export includes reflections even when there are no highlights (0.144459ms)
+✔ download boundaries reject executable schemes and retain same-origin assets (0.057334ms)
+✔ full publication identity uses actual adapter words without added punctuation or duplicates (2.304375ms)
+✔ native ESM imports the original reader without a bundler or browser globals (1288.740917ms)
+✔ outline fold is kept per book and survives blocked storage for the visit (0.366542ms)
+✔ home shows two actual tree levels in original order without category duplicates (2.356459ms)
+✔ home depth and visibility are configurable (0.458708ms)
+✔ neutral labels and custom labels are rendered by home and sidebar (8.164958ms)
+✔ sidebar uses original tree exactly once and respects depth (1.361792ms)
+✔ home uses supplied real cover and masthead variant (0.229625ms)
+✔ appearance rejects invalid and injected colours without losing valid values (0.367ms)
+✔ explicit contents label wins over legacy home copy (0.1585ms)
+✔ sidebar depth follows the book tree unless the author sets one (0.492708ms)
+✔ empty topic groups are skipped by previous and next but meaningful parents stay (0.371333ms)
+✔ progress counts chapters with text, not empty groups (0.086292ms)
+✔ topic rows follow the current path, manual toggles win, and arriving reopens a closed topic (0.0875ms)
+✔ sidebar rows: a topic row only toggles, a chapter row navigates, and every row names its full title (0.596458ms)
+✔ theme follows the computer by default; Light and Dark are explicit (0.565416ms)
+✔ legacy dark-mode boolean: no record follows the computer; a value equal to the computer is not claimed as a choice; a differing one is kept (0.0625ms)
+✔ tooltip text states the choice and what Follow computer means now (0.07575ms)
+✔ steppers stay inside the saved-preference bounds without float drift (0.436208ms)
+✔ dimming levels map to saved values; older in-between values are reported as custom (0.289125ms)
+✔ changed-setting counts drive Reset and the Assist active state, never a number on a button (0.086416ms)
+✔ assist summary states what is actually on (0.138458ms)
+✔ letter spacing reads Normal at zero (0.048ms)
+✔ Notes is offered on the front page as on a chapter page; only read-aloud depends on being in a chapter (0.641667ms)
+✔ no numeric badge on Formatting or Assist, and Reset formatting leads the Formatting menu (0.183417ms)
+✔ theme is its own small icon control and is not in Formatting (0.152292ms)
+✔ toolbar dim levels equal the preference levels (0.189167ms)
+✔ anchored reading counts as an assistance beside the overlay, and is named and summarised (0.110041ms)
+ℹ tests 96
+ℹ suites 0
+ℹ pass 96
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8421.185958
+
+> onlinereaderframework@1.1.0 test:books
+> npm run test:books --prefix apps/reader-demo
+
+
+> reader-demo@0.1.0 test:books
+> tsx --test scripts/test-original-books.ts scripts/test-demo-books.ts
+
+✔ the registry holds eight books once: three originals unchanged, five converted books registered, none copied into original-publications.json (0.903208ms)
+✔ each converted book keeps its distinct identity and the author-selected cover (0.086958ms)
+✔ licences: Readability keeps CC BY with no version in its link; Academic carries no licence grant (0.273834ms)
+✖ canonical sites: the three originals keep their domains; the converted books have exactly the two agreed dominiklukes.net folders (0.559042ms)
+✔ thirteen embeds in three books: descriptors are valid, host-owned, rooted at embeds/<book>/ and every anchor is a long prose alternative (32.287042ms)
+✔ every embed file exists, is one self-contained document and is the only file copied for that embed (4.335792ms)
+✔ the demo plugin serves and builds exactly the manifest's thirteen files at embeds/<book>/<id>/index.html (3.77775ms)
+✔ agent files: all five books export from the one registry; prose alternatives reach the text, frames and frame chrome never do (164.901041ms)
+✔ release isolation: the linguistics release bundle carries neither converted book, their embeds nor the demo registry (3233.522375ms)
+✔ release isolation: the deliberate-practice release bundle carries neither converted book, their embeds nor the demo registry (1411.738791ms)
+✔ release isolation: the language-muscle release bundle carries neither converted book, their embeds nor the demo registry (1097.630917ms)
+✖ release isolation: the academic-reading folder edition carries only its own book, embeds and cover, scoped to its folder (997.264666ms)
+✖ release isolation: the readability-foundations folder edition carries only its own book, embeds and cover, scoped to its folder (1028.439125ms)
+✔ scratch: no temporary release folder is left behind (0.299666ms)
+✔ real sources retain complete chapter and answer counts (0.399167ms)
+✔ every book has stable unique section identities, including descendants (0.29725ms)
+✔ Language Muscle HTML and its actual cross-reference are preserved (0.155875ms)
+✔ all linguistics answers include source and licence attribution (0.334667ms)
+✔ provenance hashes identify real source snapshots without private machine paths (0.322666ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 16
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8399.668458
+
+✖ failing tests:
+
+test at scripts/test-demo-books.ts:54:1
+✖ canonical sites: the three originals keep their domains; the converted books have exactly the two agreed dominiklukes.net folders (0.559042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'academic-productivity',
+      'academic-reading',
+      'deliberate-practice',
+  +   'developing-competence',
+      'language-muscle',
+      'linguistics',
+      'readability-foundations'
+    ]
+  
+      at TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:55:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'academic-productivity', 'academic-reading', 'deliberate-practice', 'developing-competence', 'language-muscle', 'linguistics', 'readability-foundations' ],
+    expected: [ 'academic-reading', 'deliberate-practice', 'language-muscle', 'linguistics', 'readability-foundations' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/test-demo-books.ts:163:3
+✖ release isolation: the academic-reading folder edition carries only its own book, embeds and cover, scoped to its folder (997.264666ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!files.includes('robots.txt'))
+  
+      at <anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:182:14)
+      at buildReleaseAndVerify (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:141:5)
+      at async TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:168:41)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/test-demo-books.ts:163:3
+✖ release isolation: the readability-foundations folder edition carries only its own book, embeds and cover, scoped to its folder (1028.439125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!files.includes('robots.txt'))
+  
+      at <anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:182:14)
+      at buildReleaseAndVerify (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:141:5)
+      at async TestContext.<anonymous> (/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/reader-demo/scripts/test-demo-books.ts:168:41)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

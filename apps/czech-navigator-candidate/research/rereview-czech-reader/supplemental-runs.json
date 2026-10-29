@@ -1,0 +1,57 @@
+{
+  "mobile": {
+    "exit": 0,
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/mobile.mjs"
+    ],
+    "mode": "mobile",
+    "output": "390px: actual reviewed table popover/Escape/focus and preference persistence passed 19px\n"
+  },
+  "tables-source": {
+    "exit": 0,
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/tables.mjs"
+    ],
+    "mode": "source",
+    "output": "20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 400 malformed reviews refused before attribute writes\n"
+  },
+  "tables-bundle": {
+    "exit": 0,
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/tables.mjs"
+    ],
+    "mode": "bundle",
+    "output": "20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 400 malformed reviews refused before attribute writes\n"
+  },
+  "tables-candidate": {
+    "exit": 0,
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/tables.mjs"
+    ],
+    "mode": "candidate",
+    "output": "20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 400 malformed reviews refused before attribute writes\n"
+  },
+  "storage-paths": {
+    "exit": 0,
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/storage-paths.mjs"
+    ],
+    "mode": "storage-paths",
+    "output": "Backup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\nBackup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\nBackup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\nBackup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\nBackup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\n"
+  },
+  "source-compatibility": {
+    "exit": 0,
+    "command": [
+      "node",
+      "--test",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/source-compatibility-test.mjs"
+    ],
+    "mode": "source-compatibility",
+    "output": "\u2714 multiple records, explicit anchor, exact quote and unknown fields; originals retained and rerun idempotent (0.822833ms)\n\u2714 ambiguous quote, malformed input, unrelated book and backup failure never guess or lose originals (0.138167ms)\n\u2714 agent chapter map exports all units and rewrites exact fragment owner only when configured (6.676416ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 3\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 85.548125\n"
+  }
+}

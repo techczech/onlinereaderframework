@@ -1,0 +1,38 @@
+goto
+goto
+position check 731 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate'
+}
+back
+position check 731 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate',
+  publicationReadingTop: 731
+}
+forward
+position check 613 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate'
+}
+position check 613 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate',
+  publicationReadingTop: 613
+}
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Increase Text size', exact: true })[22m
+
+    at /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/czech-navigator-candidate/research/review-czech-reader/browser.mjs:37:92 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Increase Text size', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v26.12.1

@@ -1,0 +1,46 @@
+✔ the six layout keys are exact and invalid values fall back to no layout (0.634708ms)
+✔ an omitted or invalid layout renders the classic home page; a valid one renders that layout (5.946458ms)
+✔ flat books group runs of one category for display only; ids and order are preserved (0.157791ms)
+✔ tree books group by top-level section; empty groups are skipped and group pages with text stay reachable (0.162875ms)
+✔ an explicit depth cap never removes a structural topic whose subtree has readable pages (0.295542ms)
+✔ Full contents opens first only for a short list; filtering finds entries in closed groups (0.128958ms)
+✔ Start is the first readable page; Continue needs a real, readable, stored page (0.931583ms)
+✔ progress counts read chapters with the sidebar rule and stays hidden until something is read (1.205958ms)
+✔ titles use the established display title and split only for layout (0.666458ms)
+✔ depth labels are Contents and Full contents, overridable, and absent when nothing differs (0.751458ms)
+✔ colour band numbers groups but not the app guide (0.258ms)
+✔ real books list every readable page once, in tree order, in every layout (6.37425ms)
+✔ legacy overview fragment resolves to new owning chapter (0.38475ms)
+✔ foreign book cannot resolve an anchor (0.056917ms)
+✔ unknown fragment retains overview (0.060333ms)
+✔ preorder navigation and lookup include recursive book descendants (0.613125ms)
+✔ original query and Language Muscle hash URLs restore the same leaf (0.136458ms)
+✔ sharing and home preserve host parameters while removing old section fragments and quotes (0.148375ms)
+✔ storage keys isolate every book, including IDs containing separators (0.148041ms)
+✔ notes export includes reflections even when there are no highlights (0.136208ms)
+✔ download boundaries reject executable schemes and retain same-origin assets (0.058ms)
+✔ full publication identity uses actual adapter words without added punctuation or duplicates (2.277417ms)
+✔ native ESM imports the original reader without a bundler or browser globals (1488.51925ms)
+✔ home shows two actual tree levels in original order without category duplicates (2.514042ms)
+✔ home depth and visibility are configurable (0.451834ms)
+✔ neutral labels and custom labels are rendered by home and sidebar (7.906ms)
+✔ sidebar uses original tree exactly once and respects depth (1.560291ms)
+✔ home uses supplied real cover and masthead variant (0.244ms)
+✔ appearance rejects invalid and injected colours without losing valid values (0.388375ms)
+✔ explicit contents label wins over legacy home copy (0.156875ms)
+✔ sidebar depth follows the book tree unless the author sets one (0.533583ms)
+✔ empty topic groups are skipped by previous and next but meaningful parents stay (0.37025ms)
+✔ progress counts chapters with text, not empty groups (0.096666ms)
+✔ topic rows follow the current path, manual toggles win, and arriving reopens a closed topic (0.103291ms)
+✔ sidebar rows: a topic row only toggles, a chapter row navigates, and every row names its full title (0.546458ms)
+✔ multiple records, explicit anchor, exact quote and unknown fields; originals retained and rerun idempotent (0.770167ms)
+✔ ambiguous quote, malformed input, unrelated book and backup failure never guess or lose originals (0.126958ms)
+✔ agent chapter map exports all units and rewrites exact fragment owner only when configured (6.922917ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1708.795

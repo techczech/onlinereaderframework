@@ -1,0 +1,14 @@
+✔ all 22 units have served chapter Markdown, index, full text and canonical links (7.175084ms)
+✔ complete static book needs no scripts and retains all 308 tables / 9652 cells in source order with header semantics (1069.630333ms)
+✔ entry discovery, noindex, no private fields or local paths in public export parcel (5.669291ms)
+✔ Vite deployment contains the complete no-JS route and every agent route (9.348292ms)
+✔ agent HTML source fragments point to real headings in their destination Markdown (7333.702584ms)
+✔ deployment routes return complete text over HTTP without running JavaScript (446.469208ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9014.80925

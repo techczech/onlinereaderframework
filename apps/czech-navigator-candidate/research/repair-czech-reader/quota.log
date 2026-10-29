@@ -1,0 +1,3 @@
+COMMAND ['node', 'apps/czech-navigator-candidate/research/repair-czech-reader/quota-regression.mjs']
+EXIT 0
+Backup failure preserves original position bytes after scrolling. {"positions":"{legacy-unparsed","backup":null}

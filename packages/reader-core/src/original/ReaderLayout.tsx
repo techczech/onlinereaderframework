@@ -53,13 +53,15 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
-    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
+    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleResume, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
   const sectionEmbeds = useMemo(() => embedsForSection(embeds, currentSection?.id), [embeds, currentSection?.id]);
   const support = useReadingSupport(book.id);
   const compactTocRef = useRef<TableOfContentsHandle>(null);
   const labels = publicationLabels(book);
+  const atlas = book.appearance?.readerLayout === 'atlas';
+  const chapterNumber = currentSection ? (sections.find(section => section.children?.some(child => child.id === currentSection.id))?.children || sections.filter(isReadableSection)).findIndex(section => section.id === currentSection.id) + 1 : 0;
   const appearanceStyle = {
     '--publication-accent': publicationColour(book.appearance?.accent),
     '--publication-paper': publicationColour(book.appearance?.paper),
@@ -69,7 +71,8 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
   const breadcrumbTopics = currentSection ? sectionAncestors(book.sections, currentSection.id) : [];
   const wrapReadingSurface = readingSurface ?? ((children: React.ReactNode) => children);
   return (
-    <div style={appearanceStyle} className={`publication-reader ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
+    <div style={appearanceStyle} className={`publication-reader ${book.appearance?.readerLayout === 'atlas' ? 'publication-atlas' : ''} ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
+      {atlas && <header className="publication-atlas-masthead"><div><button onClick={() => handleSectionChange('home')}>{publicationDisplayTitle(book)}</button><span>{book.author}</span></div><div className="publication-atlas-edition">Reading edition</div></header>}
       {/* Left Sidebar: hidden rather than unmounted, so its list position and open topics survive */}
       <Sidebar
         book={book}
@@ -154,6 +157,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                     onOpenSearch={handleOpenSearch}
                     readSections={readSections}
                     lastSectionId={lastSectionId}
+                    onResume={handleResume}
                 />
             ) : (
                 <div className={`publication-reading-layout ${getContainerWidthClass()}`}>
@@ -211,8 +215,9 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                         {/* Main Text */}
                         {currentSection && (
                             <div className="publication-article">
+                                {atlas && <div className="publication-atlas-chapter" aria-hidden="true"><span className="publication-atlas-folio">{String(chapterNumber).padStart(2, '0')}</span><div><div className="publication-atlas-category">{breadcrumbTopics[breadcrumbTopics.length - 1]?.title || currentSection.category}</div><div className="publication-atlas-title">{currentSection.title}</div></div></div>}
                                 {!currentSection.content.trim() && <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{currentSection.title}</h1>}
-                                {wrapReadingSurface(<MarkdownRenderer
+                                {wrapReadingSurface(<MarkdownRenderer tableReviews={book.appearance?.tableReviews} tableControls={book.appearance?.tableControls}
                                     key={currentSection.id}
                                     format={currentSection.format}
                                     language={book.language}

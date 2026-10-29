@@ -1,0 +1,29 @@
+{
+  "tables": [
+    "czech-table-10",
+    "czech-table-25",
+    "czech-table-66",
+    "czech-table-80",
+    "czech-table-118",
+    "czech-table-120",
+    "czech-table-121",
+    "czech-table-123",
+    "czech-table-124",
+    "czech-table-139",
+    "czech-table-140",
+    "czech-table-193",
+    "czech-table-194",
+    "czech-table-195",
+    "czech-table-196",
+    "czech-table-197",
+    "czech-table-198",
+    "czech-table-219",
+    "czech-table-279",
+    "czech-table-280"
+  ],
+  "resetExactText": true,
+  "transposeReset": true,
+  "keyboardFocusReturn": true,
+  "lastContextGuard": true,
+  "mobile390Text200": true
+}

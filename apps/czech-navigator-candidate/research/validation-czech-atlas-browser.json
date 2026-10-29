@@ -1,0 +1,9 @@
+{
+  "fragmentOwner": "nouns",
+  "sourceReset": true,
+  "filterZero": true,
+  "transpose": true,
+  "escapeFocus": true,
+  "mobileOverflow": false,
+  "text200Overflow": false
+}

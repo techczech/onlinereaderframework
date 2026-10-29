@@ -1,0 +1,115 @@
+ M apps/czech-navigator-candidate/book-czech-navigator.json
+ M apps/czech-navigator-candidate/index.html
+ M apps/czech-navigator-candidate/main.tsx
+ M apps/czech-navigator-candidate/package.json
+ M apps/czech-navigator-candidate/public/czech-language-navigator-reference.epub
+ M apps/czech-navigator-candidate/public/media/image2-wmf.png
+ M apps/czech-navigator-candidate/public/media/image3-wmf.png
+ M apps/czech-navigator-candidate/public/media/image4-wmf.png
+ M apps/czech-navigator-candidate/public/media/image5-wmf.png
+ M apps/czech-navigator-candidate/public/media/image6-wmf.png
+ M apps/czech-navigator-candidate/public/media/image60-wmf.png
+ M apps/czech-navigator-candidate/public/media/image61-wmf.png
+ M apps/czech-navigator-candidate/public/media/image62-wmf.png
+ M apps/czech-navigator-candidate/public/media/image63-wmf.png
+ M apps/czech-navigator-candidate/public/media/image64-wmf.png
+ M apps/czech-navigator-candidate/public/media/image65-wmf.png
+ M apps/czech-navigator-candidate/public/media/image66-wmf.png
+ M apps/czech-navigator-candidate/public/media/image67-wmf.png
+ M apps/czech-navigator-candidate/public/media/image68-wmf.png
+ M apps/czech-navigator-candidate/public/media/image69-wmf.png
+ M apps/czech-navigator-candidate/public/media/image7-wmf.png
+ M apps/czech-navigator-candidate/public/media/image70-wmf.png
+ M apps/czech-navigator-candidate/public/media/image92-wmf.png
+ M apps/czech-navigator-candidate/public/media/image93-wmf.png
+ M apps/czech-navigator-candidate/research/_manifest.jsonl
+ M apps/czech-navigator-candidate/research/evidence-czech-navigator-conversion.json
+ M apps/czech-navigator-candidate/research/validation-czech-navigator-coverage.json
+ M apps/czech-navigator-candidate/scripts/build-czech-navigator.py
+ M apps/czech-navigator-candidate/scripts/check-czech-navigator-coverage.py
+ M apps/czech-navigator-candidate/source/edition-czech-navigator.html
+ M apps/czech-navigator-candidate/tables-czech-navigator.css
+ M packages/reader-core/src/agent-export/agent-export.ts
+ M packages/reader-core/src/agent-export/agent-links.ts
+ M packages/reader-core/src/original/Home.tsx
+ M packages/reader-core/src/original/MarkdownRenderer.tsx
+ M packages/reader-core/src/original/ReaderLayout.tsx
+ M packages/reader-core/src/original/frontpage/FrontPage.tsx
+ M packages/reader-core/src/original/frontpage/layouts.tsx
+ M packages/reader-core/src/original/publication-html.ts
+ M packages/reader-core/src/original/publication-model.ts
+ M packages/reader-core/src/original/reader-original.css
+ M packages/reader-core/src/original/types.ts
+ M packages/reader-core/src/original/use-publication-reader.ts
+ M research/_manifest.jsonl
+?? apps/czech-navigator-candidate/node_modules
+?? apps/czech-navigator-candidate/public/agent/
+?? apps/czech-navigator-candidate/public/czech-navigator-complete.html
+?? apps/czech-navigator-candidate/public/llms.txt
+?? apps/czech-navigator-candidate/research/2026-10-29-czech-navigator-semantic-integration-verification.md
+?? apps/czech-navigator-candidate/research/2026-10-29-czech-navigator-served-exports.md
+?? apps/czech-navigator-candidate/research/2026-10-29-evidence-czech-semantic-review.md
+?? apps/czech-navigator-candidate/research/changed-czech-atlas-files.txt
+?? apps/czech-navigator-candidate/research/changed-czech-semantic-integration.txt
+?? apps/czech-navigator-candidate/research/check-candidate-build.log
+?? apps/czech-navigator-candidate/research/check-czech-visual-candidate.log
+?? apps/czech-navigator-candidate/research/check-czech-visual-focused.log
+?? apps/czech-navigator-candidate/research/check-czech-visual-framework.log
+?? apps/czech-navigator-candidate/research/check-framework-implementation.log
+?? apps/czech-navigator-candidate/research/check-reader-build.log
+?? apps/czech-navigator-candidate/research/evidence-czech-semantic-decisions.py
+?? apps/czech-navigator-candidate/research/evidence-czech-semantic-review.py
+?? apps/czech-navigator-candidate/research/hashes-czech-atlas.txt
+?? apps/czech-navigator-candidate/research/result-czech-atlas-implementation.md
+?? apps/czech-navigator-candidate/research/result-czech-compatibility-agent.log
+?? apps/czech-navigator-candidate/research/result-czech-compatibility-browser.log
+?? apps/czech-navigator-candidate/research/result-czech-compatibility-build.log
+?? apps/czech-navigator-candidate/research/result-czech-compatibility-candidate.log
+?? apps/czech-navigator-candidate/research/result-czech-compatibility-tests.log
+?? apps/czech-navigator-candidate/research/result-czech-compatibility.md
+?? apps/czech-navigator-candidate/research/result-czech-compatibility.mjs
+?? apps/czech-navigator-candidate/research/result-czech-semantic-integration.md
+?? apps/czech-navigator-candidate/research/result-czech-semantic-review.md
+?? apps/czech-navigator-candidate/research/result-czech-served-exports-build.log
+?? apps/czech-navigator-candidate/research/result-czech-served-exports-security.json
+?? apps/czech-navigator-candidate/research/result-czech-served-exports-tests.log
+?? apps/czech-navigator-candidate/research/result-czech-served-exports.md
+?? apps/czech-navigator-candidate/research/result-czech-visual-composition.md
+?? apps/czech-navigator-candidate/research/screenshot-czech-atlas-desktop.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-atlas-focus.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-atlas-mobile-200.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-atlas-mobile.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-desktop-200.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-desktop.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-focus.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-mobile-200-reading.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-mobile-200.png
+?? apps/czech-navigator-candidate/research/screenshot-czech-composition-mobile.png
+?? apps/czech-navigator-candidate/research/state-czech-combined-focus.mhtml
+?? apps/czech-navigator-candidate/research/state-czech-combined-reading.mhtml
+?? apps/czech-navigator-candidate/research/validation-czech-atlas-browser.json
+?? apps/czech-navigator-candidate/research/validation-czech-composition.json
+?? apps/czech-navigator-candidate/research/validation-czech-semantic-browser.json
+?? apps/czech-navigator-candidate/research/validation-czech-semantic-build.txt
+?? apps/czech-navigator-candidate/research/validation-czech-semantic-epub.txt
+?? apps/czech-navigator-candidate/research/validation-czech-semantic-merged.json
+?? apps/czech-navigator-candidate/scripts/build-czech-served-exports.mjs
+?? apps/czech-navigator-candidate/scripts/check-czech-atlas-implementation.mjs
+?? apps/czech-navigator-candidate/scripts/check-czech-semantic-bindings.py
+?? apps/czech-navigator-candidate/scripts/check-czech-semantic-integration.mjs
+?? apps/czech-navigator-candidate/scripts/check-czech-visual-composition.mjs
+?? apps/czech-navigator-candidate/scripts/semantic-czech-navigator.py
+?? apps/czech-navigator-candidate/scripts/test-czech-served-exports.mjs
+?? apps/czech-navigator-candidate/source/annotations/
+?? apps/czech-navigator-candidate/source/edition-czech-navigator-epub.json
+?? apps/czech-navigator-candidate/source/heading-roles-czech-navigator.json
+?? docs/design/2026-10-29-czech-navigator-visual-round/
+?? docs/release-book-subdomains-2026-10-29/final/
+?? docs/release-book-subdomains-2026-10-29/infrastructure/
+?? docs/release-book-subdomains-2026-10-29/website/
+?? packages/reader-core/src/original/saved-state-compatibility.ts
+?? packages/reader-core/src/original/table-surface.ts
+?? packages/reader-core/src/original/test-chapter-fragments.mjs
+?? packages/reader-core/src/original/test-saved-state-compatibility.mjs
+?? research/2026-10-29-czech-navigator-combined-visual-composition-implementation.md
+?? research/2026-10-29-czech-navigator-implementation-checks-and-remaining-scope.md

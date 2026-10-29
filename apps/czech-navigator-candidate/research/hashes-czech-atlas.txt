@@ -1,0 +1,2 @@
+bd7a61db8e1b86e304f861586ace63040d2f6a240812eb9c4cf1288c9629916b  apps/czech-navigator-candidate/public/czech-language-navigator-reference.epub
+15cd2e53891ee72399775be88900e9ba867c54302894467545500ed5e187633f  apps/czech-navigator-candidate/source/manuscript-czech-navigator.md

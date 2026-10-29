@@ -1,0 +1,56 @@
+{
+  "tables-source": {
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/tables.mjs"
+    ],
+    "exit": 0,
+    "tail": "20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 320 malformed reviews refused before attribute writes\n"
+  },
+  "tables-bundle": {
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/tables.mjs"
+    ],
+    "exit": 0,
+    "tail": "20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 320 malformed reviews refused before attribute writes\n"
+  },
+  "quota": {
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/quota.mjs"
+    ],
+    "exit": 0,
+    "tail": "Backup failure preserves original position bytes after scrolling. {\"positions\":\"{legacy-unparsed\",\"backup\":null}\n"
+  },
+  "browser": {
+    "command": [
+      "node",
+      "apps/czech-navigator-candidate/research/rereview-czech-reader/browser.mjs"
+    ],
+    "exit": 0,
+    "tail": "goto\ngoto\nposition check 731 {\n  section: 'nouns',\n  book: 'czech-language-navigator-reference-candidate'\n}\nback\nposition check 731 {\n  section: 'nouns',\n  book: 'czech-language-navigator-reference-candidate',\n  publicationReadingTop: 731\n}\nforward\nposition check 613 {\n  section: 'nouns',\n  book: 'czech-language-navigator-reference-candidate'\n}\nposition check 613 {\n  section: 'nouns',\n  book: 'czech-language-navigator-reference-candidate',\n  publicationReadingTop: 613\n}\nPREFERENCE computed 24px\nPREFERENCE reload 24px\nESCAPE returned true\nNAVIGATION PASSED\n"
+  },
+  "focused": {
+    "command": [
+      "node",
+      "--test",
+      "packages/reader-core/src/original/test-saved-state-compatibility.mjs",
+      "packages/reader-core/src/original/test-original-reader.mjs",
+      "packages/reader-core/src/original/test-publication-navigation.mjs",
+      "packages/reader-core/src/original/test-outline-preference.mjs",
+      "packages/reader-core/src/original/reading-support/test-reading-preferences.mjs",
+      "packages/reader-core/src/original/frontpage/test-frontpage.mjs"
+    ],
+    "exit": 0,
+    "tail": "ries reject executable schemes and retain same-origin assets (0.061834ms)\n\u2714 full publication identity uses actual adapter words without added punctuation or duplicates (2.562917ms)\n\u2714 native ESM imports the original reader without a bundler or browser globals (1441.968792ms)\n\u2714 outline fold is kept per book and survives blocked storage for the visit (0.412042ms)\n\u2714 home shows two actual tree levels in original order without category duplicates (2.705667ms)\n\u2714 home depth and visibility are configurable (0.487791ms)\n\u2714 neutral labels and custom labels are rendered by home and sidebar (8.303333ms)\n\u2714 sidebar uses original tree exactly once and respects depth (1.705791ms)\n\u2714 home uses supplied real cover and masthead variant (0.252458ms)\n\u2714 appearance rejects invalid and injected colours without losing valid values (0.412959ms)\n\u2714 explicit contents label wins over legacy home copy (0.174167ms)\n\u2714 sidebar depth follows the book tree unless the author sets one (1.284834ms)\n\u2714 empty topic groups are skipped by previous and next but meaningful parents stay (0.425125ms)\n\u2714 progress counts chapters with text, not empty groups (0.101875ms)\n\u2714 topic rows follow the current path, manual toggles win, and arriving reopens a closed topic (0.107917ms)\n\u2714 sidebar rows: a topic row only toggles, a chapter row navigates, and every row names its full title (0.814166ms)\n\u2714 multiple records, explicit anchor, exact quote and unknown fields; originals retained and rerun idempotent (1.042583ms)\n\u2714 ambiguous quote, malformed input, unrelated book and backup failure never guess or lose originals (0.162375ms)\n\u2714 agent chapter map exports all units and rewrites exact fragment owner only when configured (7.365292ms)\n\u2139 tests 44\n\u2139 suites 0\n\u2139 pass 44\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1696.432708\n"
+  },
+  "anchors": {
+    "command": [
+      "python3",
+      "apps/czech-navigator-candidate/scripts/test-czech-anchor-owners.py"
+    ],
+    "exit": 0,
+    "tail": "Actual id attributes retained; data-semantic-table-id excluded.\n"
+  }
+}

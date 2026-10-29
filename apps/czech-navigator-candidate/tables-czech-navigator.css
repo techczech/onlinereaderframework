@@ -6,3 +6,38 @@
 /* Preserve complete Czech words; wide paradigms scroll instead of splitting syllables. */
 .prose table { table-layout: auto; }
 .prose td, .prose th { min-width: 7em; overflow-wrap: normal; word-break: normal; }
+.publication-atlas { --publication-paper:#faf7ef; --publication-ink:#192e43; background:#faf7ef; color:#192e43; }
+.publication-atlas .publication-content { font-family:Georgia,'Times New Roman',serif; color:inherit; }
+.publication-table { margin:2em 0; border-top:3px solid #192e43; background:#fffdf6; min-width:0; }
+.publication-table-controls { display:flex; flex-wrap:wrap; gap:.6em; align-items:center; padding:1em; background:#eeeade; font:13px/1.5 Arial,sans-serif; }
+.publication-table-controls label { display:flex; gap:.5em; align-items:center; flex-wrap:wrap; }
+.publication-table-controls input,.publication-table-controls select,.publication-table-controls button { border:1px solid #b7b4a6; padding:.5em; color:#192e43; background:#fffdf6; max-width:100%; }
+.publication-table-controls p { margin:0; flex-basis:100%; }
+.publication-table-scroll { overflow:auto; max-width:100%; padding:0 1em; }
+.publication-table-scroll table { display:table; width:100%; }
+.publication-table-focus { position:fixed; inset:24px; z-index:100; overflow:auto; display:grid; grid-template-columns:minmax(0,1fr) 240px; box-shadow:0 0 0 100vmax #192e43b0; margin:0; }
+.publication-table-focus .publication-table-controls { grid-column:2; grid-row:1; align-content:start; display:flex; flex-direction:column; align-items:stretch; border-left:1px solid #c4c1b5; }
+.publication-table-focus .publication-table-scroll { grid-column:1; grid-row:1; }
+.publication-table :focus-visible { outline:3px solid #bb432e; outline-offset:3px; }
+@media(max-width:760px) { .publication-table-focus { inset:8px; display:flex; flex-direction:column; } .publication-table-focus .publication-table-controls { order:0; } .publication-table-focus .publication-table-scroll { order:1; } .publication-atlas .publication-content h1 { font-size:2.4em; } }
+.publication-table-header { display:flex; gap:8px; align-items:center; padding:20px 24px; border-bottom:1px solid #dcd8cb; font:13px/1.5 Arial,sans-serif; }
+.publication-table-header strong { flex:1; color:#bb432e; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; }
+.publication-table-header button { padding:6px 10px; border:1px solid #ccc7ba; border-radius:2px; }
+.publication-table-focus { grid-template-rows:auto minmax(0,1fr); grid-template-columns:minmax(0,1fr) 230px; background:#fcfaf4; }
+.publication-table-focus .publication-table-header { grid-column:1 / -1; grid-row:1; }
+.publication-table-focus .publication-table-controls { grid-row:2; padding:24px; background:#e6e4d8; font-size:12px; gap:14px; overflow:auto; }
+.publication-table-focus .publication-table-controls label { align-items:stretch; flex-direction:column; gap:5px; }
+.publication-table-focus .publication-table-controls label:has(input[type=checkbox]) { flex-direction:row; }
+.publication-table-focus .publication-table-scroll { grid-row:2; padding:24px; min-height:0; }
+.publication-atlas .publication-table table { border:0; box-shadow:none; border-radius:0; margin:16px 0; }
+.publication-atlas .publication-table :is(td,th) { border:0; border-bottom:1px solid #dcd8cb; padding:14px; font-size:16px; }
+.publication-atlas .publication-table th { background:#192e43; color:#fffdf6; font-family:Arial,sans-serif; }
+.publication-atlas .publication-table tr:nth-child(even) { background:#f1eee4; }
+.publication-atlas .publication-table-focus th { background:#dfe4df; color:#192e43; }
+@media(max-width:760px) { .publication-table-focus .publication-table-controls { flex-direction:row; flex-wrap:wrap; padding:12px; gap:8px; max-height:35vh; flex-shrink:0; } .publication-table-focus .publication-table-controls label { flex:1 1 130px; } .publication-table-focus .publication-table-scroll { padding:12px; } .publication-table-header { padding:14px; flex-wrap:wrap; } }
+.publication-table-focus[popover] { width:auto; height:auto; max-width:none; max-height:none; margin:0; color:#192e43; border:0; border-top:3px solid #192e43; }
+.publication-table-focus::backdrop { background:#192e43b0; }
+.publication-table-focus .publication-table-controls { flex-wrap:nowrap; }
+.publication-table-focus .publication-table-controls p { flex-basis:auto; }
+.publication-table-focus .publication-table-controls > * { flex-shrink:0; }
+@media(max-width:760px) { .publication-table-focus .publication-table-controls { flex-wrap:wrap; } }

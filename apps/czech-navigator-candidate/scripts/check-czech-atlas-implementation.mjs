@@ -1,0 +1,37 @@
+import { chromium } from '/Users/dominiklukes/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const evidence='apps/czech-navigator-candidate/research';
+const browser=await chromium.launch({headless:true,executablePath:'/Users/dominiklukes/Library/Caches/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-mac-arm64/chrome-headless-shell'});
+try {
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ await page.goto('http://127.0.0.1:5189/?section=parts-of-speech-nouns-verbs-and-more#gender');
+ await page.locator('[data-publication-content] h1').waitFor();
+ assert.equal(await page.locator('[data-publication-content] h1').first().innerText(),'Nouns');
+ const table=page.locator('#reader-content-czech-table-10');
+ const panel=table.locator('xpath=ancestor::section[contains(@class,"publication-table")]');
+ await table.scrollIntoViewIfNeeded();
+ assert.equal(await panel.getByLabel('Filter rows',{exact:true}).count(),1);
+ const original=await table.innerText();
+ await panel.getByLabel('Filter rows',{exact:true}).fill('impossible');
+ assert.match(await panel.getByRole('status').innerText(),/No matching/);
+ await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
+ assert.equal(await table.innerText(),original);
+ await panel.getByRole('button',{name:'Full width',exact:true}).click();
+ await page.screenshot({path:`${evidence}/screenshot-czech-atlas-focus.png`});
+ await panel.getByRole('button',{name:'Close focus',exact:true}).press('Escape');
+ assert.equal(await panel.getAttribute('class'),'publication-table');
+ await panel.getByRole('button',{name:'Swap axes',exact:true}).click();
+ assert.equal(await table.locator('tr').count(),3);
+ await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
+ assert.equal(await table.innerText(),original);
+ await page.screenshot({path:`${evidence}/screenshot-czech-atlas-desktop.png`});
+ await page.setViewportSize({width:390,height:844});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.screenshot({path:`${evidence}/screenshot-czech-atlas-mobile.png`});
+ await page.evaluate(()=>document.documentElement.style.fontSize='200%');
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.screenshot({path:`${evidence}/screenshot-czech-atlas-mobile-200.png`});
+ fs.writeFileSync(`${evidence}/validation-czech-atlas-browser.json`,JSON.stringify({fragmentOwner:'nouns',sourceReset:true,filterZero:true,transpose:true,escapeFocus:true,mobileOverflow:false,text200Overflow:false},null,2));
+ console.log('Czech atlas browser checks passed');
+} finally { await browser.close(); }

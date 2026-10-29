@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { PublicationAgentAccess, PublicationBook } from './types.js';
 import { AgentAccess } from './agent/AgentAccess.js';
-import { safePublicationHref } from './publication-model.js';
+import { flattenPublicationSections, safePublicationHref } from './publication-model.js';
 import { publicationLabels, publicationNavigation, type PublicationNavigationNode } from './publication-navigation.js';
 import { FrontPage } from './frontpage/FrontPage.js';
 import { frontPageLayoutKey } from './frontpage/frontpage-layouts.js';
@@ -10,6 +10,7 @@ interface HomeProps {
   book: PublicationBook;
   onStart: () => void;
   onSelectSection: (id: string) => void;
+  onResume?: (id: string) => void;
   onOpenSearch: () => void;
   onDownloadEbook?: () => void | Promise<void>;
   /** Saved reader state, used only by the configurable front-page layouts. */
@@ -25,11 +26,12 @@ export const Home: React.FC<HomeProps> = props => {
   return layout ? <FrontPage {...props} layout={layout} /> : <ClassicHome {...props} />;
 };
 
-const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook, agent }) => {
+const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOpenSearch, onDownloadEbook, agent, onResume, lastSectionId }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const labels = publicationLabels(book);
   const contents = publicationNavigation(book.sections, book.navigation?.homeDepth ?? 2);
   const downloads = (book.downloads ?? []).filter(download => safePublicationHref(download.href));
+  const resume = book.compatibility && onResume && flattenPublicationSections(book.sections).find(section => section.id === lastSectionId);
   const cover = book.appearance?.cover;
   const variant = book.appearance?.masthead ?? 'editorial';
   const handleDownload = async () => {
@@ -45,6 +47,7 @@ const ClassicHome: React.FC<HomeProps> = ({ book, onStart, onSelectSection, onOp
         <p className="publication-author">{book.author}</p>
         <p className="publication-description">{book.description}</p>
         <div className="publication-home-actions">
+          {resume && <button onClick={() => onResume?.(resume.id)}>Continue reading: {resume.title}</button>}
           <button className="publication-primary-action" onClick={onStart} disabled={!book.sections.length}><span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span><span>Start Reading</span></button>
           <button onClick={onOpenSearch}><span className="material-symbols-outlined" aria-hidden="true">search</span><span>{labels.search}</span></button>
           {!downloads.length && onDownloadEbook && <button onClick={() => void handleDownload()} disabled={isGenerating}><span className="material-symbols-outlined" aria-hidden="true">download</span><span>{isGenerating ? 'Generating…' : 'Download eBook'}</span></button>}

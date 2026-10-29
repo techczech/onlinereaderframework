@@ -1,0 +1,3 @@
+COMMAND ['node', 'apps/czech-navigator-candidate/research/repair-czech-reader/table-regression.mjs']
+EXIT 0
+20 sanitised tables: all columns sorted, filter/identity/context, transpose/header associations/reset; 320 malformed reviews refused before attribute writes

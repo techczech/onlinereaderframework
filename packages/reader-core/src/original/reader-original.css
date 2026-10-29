@@ -325,3 +325,51 @@
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-heading-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle { justify-content: center; width: 2.25rem; min-height: 2.25rem; opacity: .6; }
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:hover, .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:focus-visible { opacity: 1; }
+
+/* Editorial atlas is an explicit publication choice. Existing books retain their layout. */
+.publication-reader.publication-atlas { --atlas-line:#dcd8cb; padding-top:92px; background:var(--reader-paper); }
+.publication-atlas-masthead { position:absolute; inset:0 0 auto; height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 36px; border-bottom:1px solid var(--atlas-line); background:var(--reader-paper); z-index:51; }
+.publication-atlas-masthead button { font:bold 24px Georgia,serif; letter-spacing:-.6px; text-align:left; }
+.publication-atlas-masthead span { display:block; font:11px Arial,sans-serif; letter-spacing:1px; margin-top:5px; }
+.publication-atlas-edition { font:10px Arial,sans-serif; letter-spacing:1.5px; color:var(--reader-accent); max-width:12rem; text-align:right; }
+.publication-atlas .publication-sidebar { background:color-mix(in srgb,var(--reader-paper),var(--reader-ink) 4%); width:250px; flex-basis:250px; border-color:var(--atlas-line); }
+.publication-atlas .publication-sidebar-header { padding:30px 24px 20px; gap:18px; }
+.publication-atlas .publication-sidebar-cover { width:57px; height:83px; box-shadow:2px 4px 9px #192e4326; }
+.publication-atlas .publication-sidebar-book-title { font:16px/1.35 Georgia,serif; letter-spacing:.5px; }
+.publication-atlas .publication-sidebar-author { white-space:normal; font-size:10px; }
+.publication-atlas .publication-sidebar-row { border-radius:0; padding:12px 10px; font:14px/1.4 Arial,sans-serif; }
+.publication-atlas .publication-sidebar-row[aria-current=page] { background:var(--reader-ink); color:var(--reader-paper); }
+.publication-atlas .publication-sidebar-category { color:var(--reader-accent); letter-spacing:1.5px; }
+.publication-atlas .publication-toolbar { padding:8px 24px; background:var(--reader-paper); }
+.publication-atlas .publication-toolbar-identity { font-size:12px; font-weight:400; }
+.publication-atlas .publication-scroll { background:var(--reader-paper); }
+.publication-reader.publication-atlas .publication-reading-layout { max-width:none; padding:35px 0 60px 64px; gap:48px; font-size:1.125rem; }
+.publication-atlas .publication-reading-column { flex:1; max-width:var(--publication-measure); }
+.publication-atlas .publication-atlas-chapter { display:flex; align-items:center; gap:24px; margin:44px 0 32px; padding-bottom:28px; border-bottom:1px solid var(--atlas-line); }
+.publication-atlas-folio { font:italic 80px/1 Georgia,serif; color:#c6bca7; letter-spacing:-6px; }
+.publication-atlas-category { font:bold 10px/1.5 Arial,sans-serif; text-transform:uppercase; letter-spacing:2px; color:var(--reader-accent); }
+.publication-atlas-title { font:66px/1.1 Georgia,serif; letter-spacing:-2px; margin-top:8px; overflow-wrap:anywhere; }
+.publication-atlas-title::after { content:''; display:block; width:52px; height:4px; background:var(--reader-accent); margin-top:22px; }
+/* Keep the manuscript heading in the semantic tree and stable fragment location. */
+.publication-atlas .publication-article .publication-content > h1:first-child { position:absolute; width:1px; height:1px; padding:0; margin:0; overflow:hidden; clip-path:inset(50%); }
+.publication-atlas .publication-content { font-family:Georgia,'Times New Roman',serif; color:var(--reader-ink); line-height:1.7; }
+.publication-reader.publication-atlas .publication-content h2 { font:normal 36px/1.2 Georgia,serif; margin:48px 0 24px; letter-spacing:-.6px; }
+.publication-reader.publication-atlas .publication-content h3 { font:bold 25px/1.35 Georgia,serif; margin:30px 0 14px; }
+.publication-atlas .publication-content a { color:var(--reader-ink); text-decoration-color:var(--reader-accent); }
+.publication-atlas .publication-content li::marker { color:var(--reader-accent); }
+.publication-reader.publication-atlas .publication-local-contents { display:block; flex:0 0 190px; width:190px; top:0; max-height:calc(100dvh - 160px); padding:12px 20px 24px; border-left:1px solid var(--atlas-line); }
+.publication-atlas .publication-outline-rail { border:0; padding:0; }
+.publication-atlas .publication-outline-heading { font:10px Arial,sans-serif; letter-spacing:1.4px; margin-bottom:22px; }
+.publication-atlas .publication-outline-list { border:0; padding:0; }
+.publication-atlas .publication-outline-link { font:12px/1.5 Arial,sans-serif; padding:9px 0; border-bottom:1px solid var(--atlas-line); }
+.publication-atlas .publication-local-contents-compact { display:none; }
+.publication-atlas .publication-local-contents[data-collapsed] { flex-basis:48px; width:48px; padding-inline:8px; }
+@media(min-width:1024px) { .publication-reader.publication-atlas .publication-sidebar[data-open=false] { margin-left:-250px; } }
+@media(max-width:1200px) { .publication-reader.publication-atlas .publication-reading-layout { padding-left:30px; gap:30px; } .publication-atlas-title { font-size:58px; } .publication-reader.publication-atlas .publication-local-contents { flex-basis:155px; width:155px; padding-inline:14px; } }
+@media(max-width:1023px) { .publication-atlas .publication-sidebar { top:92px; height:calc(100% - 92px); } .publication-reader.publication-atlas .publication-reading-layout { padding:28px 22px 60px; } .publication-reader.publication-atlas .publication-local-contents { display:none; } .publication-atlas .publication-local-contents-compact { display:block; } .publication-atlas-masthead { padding:0 20px; } .publication-atlas-masthead button { font-size:19px; } .publication-atlas-edition { display:none; } .publication-atlas-title { font-size:54px; } .publication-atlas .publication-atlas-chapter { gap:20px; margin-top:28px; } }
+@media(max-width:480px) { .publication-atlas .publication-toolbar { padding:6px 12px; } .publication-atlas-masthead span { font-size:9px; } .publication-atlas-folio { font-size:65px; } .publication-atlas-title { font-size:46px; } }
+.publication-reader.publication-atlas .publication-reading-layout { justify-content:space-between; --publication-measure:78ch; }
+
+.publication-atlas .publication-content > h1:first-child + h2 { margin-top:44px; }
+.publication-atlas .publication-local-contents-compact { border-radius:0; background:color-mix(in srgb,var(--reader-paper),var(--reader-ink) 4%); }
+@media(max-width:1023px) { .publication-reader.publication-atlas { flex-direction:column; } .publication-atlas .publication-sidebar { position:static; transform:none; flex:0 0 auto; width:100%; max-height:35dvh; height:auto; } .publication-atlas .publication-sidebar[data-open=false] { display:none; } .publication-atlas .publication-sidebar-header { padding:12px 22px; } .publication-atlas .publication-sidebar-identity-row,.publication-atlas .publication-sidebar-progress { display:none; } .publication-atlas > .fixed.inset-0 { display:none; } }

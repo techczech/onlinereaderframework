@@ -13,4 +13,4 @@ import '../../packages/reader-core/src/original/reader-integrations.css';
 import '../../packages/reader-core/src/original/frontpage/frontpage.css';
 import '../../packages/reader-core/src/original/agent/agent-access.css';
 import './tables-czech-navigator.css';
-createRoot(document.getElementById('root')!).render(<PublicationReader book={book as PublicationBook} epub={false} />);
+createRoot(document.getElementById('root')!).render(<PublicationReader book={book as PublicationBook} epub={false} agent={{ path: 'agent/', siteUrl: 'https://czechnavigator.dominiklukes.net/' }} />);

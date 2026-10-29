@@ -1,0 +1,18 @@
+{
+  "reader_sections": 12,
+  "epub_chapters": 22,
+  "html_tables": 308,
+  "epub_tables": 308,
+  "html_cells": 9652,
+  "epub_cells": 9652,
+  "cell_text_equal": true,
+  "section_html_lossless": true,
+  "source_text_tokens": 47790,
+  "source_text_token_multiset_preserved": false,
+  "missing_tokens": {
+    "2": 1,
+    "\u21a9\ufe0e": 2
+  },
+  "text_comparison_note": "Only generated footnote numbering and return arrows differ; manuscript words preserved",
+  "source_sha256": "15cd2e53891ee72399775be88900e9ba867c54302894467545500ed5e187633f"
+}

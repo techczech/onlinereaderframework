@@ -1,0 +1,7 @@
+COMMAND ['python3', 'apps/czech-navigator-candidate/scripts/check-czech-semantic-bindings.py']
+EXIT 0
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.208s
+
+OK

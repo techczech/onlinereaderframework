@@ -1,0 +1,18 @@
+
+> czech-navigator-reference-candidate@0.0.0 test:exports
+> node --test scripts/test-czech-served-exports.mjs
+
+✔ all 22 units have served chapter Markdown, index, full text and canonical links (9.592667ms)
+✔ complete static book needs no scripts and retains all 308 tables / 9652 cells in source order with header semantics (1776.422417ms)
+✔ entry discovery, noindex, no private fields or local paths in public export parcel (13.329625ms)
+✔ Vite deployment contains the complete no-JS route and every agent route (33.334667ms)
+✔ agent HTML source fragments point to real headings in their destination Markdown (11984.672542ms)
+✔ deployment routes return complete text over HTTP without running JavaScript (869.584958ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15003.217833

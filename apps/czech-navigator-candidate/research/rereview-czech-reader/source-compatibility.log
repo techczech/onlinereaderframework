@@ -1,0 +1,11 @@
+✔ multiple records, explicit anchor, exact quote and unknown fields; originals retained and rerun idempotent (0.822833ms)
+✔ ambiguous quote, malformed input, unrelated book and backup failure never guess or lose originals (0.138167ms)
+✔ agent chapter map exports all units and rewrites exact fragment owner only when configured (6.676416ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 85.548125

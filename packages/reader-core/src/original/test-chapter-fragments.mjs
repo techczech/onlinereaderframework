@@ -1,0 +1,11 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import ts from 'typescript';
+import { readFileSync } from 'node:fs';
+const source=readFileSync(new URL('./publication-model.ts',import.meta.url),'utf8');
+const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ES2022}}).outputText;
+const {sectionFromUrl}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+const sections=[{id:'parts',content:'<h1 id="parts">Parts</h1>'},{id:'nouns',content:'<h1 id="nouns">Nouns</h1><h2 id="gender">Gender</h2>'}];
+test('legacy overview fragment resolves to new owning chapter',()=>assert.equal(sectionFromUrl('https://x/?section=parts#gender','book',sections),'nouns'));
+test('foreign book cannot resolve an anchor',()=>assert.equal(sectionFromUrl('https://x/?book=other#gender','book',sections),'home'));
+test('unknown fragment retains overview',()=>assert.equal(sectionFromUrl('https://x/?section=parts#missing','book',sections),'parts'));

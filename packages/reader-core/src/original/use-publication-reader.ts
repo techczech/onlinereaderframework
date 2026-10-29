@@ -4,7 +4,8 @@ import type { Highlight, MaxWidth, PublicationBook, Reflection } from './types.j
 import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import { PUBLICATION_LOCATION_EVENT, type TableOfContentsHandle } from './TableOfContents.js';
 import { flattenPublicationSections, publicationUrl, readStoredValue, safePublicationHref, sectionFromUrl, writeStoredValue } from './publication-model.js';
-import { findPublicationTextRange, publicationTextModel } from './publication-html.js';
+import { migrateReaderStorage } from './saved-state-compatibility.js';
+import { findPublicationTextRange, publicationPlainText, publicationTextModel } from './publication-html.js';
 import { isReadableSection, readableNeighbours } from './sidebar-model.js';
 import { useReadingSupport } from './reading-support/use-reading-support.js';
 import { initialThemeChoice, isThemeChoice, resolveDark, type ThemeChoice } from './reader-theme.js';
@@ -19,24 +20,29 @@ const highlightsValid = (value: unknown): value is Highlight[] => Array.isArray(
 const reflectionsValid = (value: unknown): value is Reflection[] => Array.isArray(value) && value.every(item => record(item) && ['id', 'content', 'sectionId', 'sectionTitle'].every(key => typeof item[key] === 'string') && typeof item.date === 'number' && Number.isFinite(item.date));
 const id = () => globalThis.crypto?.randomUUID?.() ?? `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
 
-function useBookState<T>(bookId: string, field: string, fallback: T, valid: (value: unknown) => value is T, onFailure: () => void) {
+function useBookState<T>(bookId: string, field: string, fallback: T, valid: (value: unknown) => value is T, onFailure: () => void, persistenceAvailable = true) {
   const [value, setValue] = useState<T>(() => readStoredValue(bookId, field, fallback, valid));
-  useEffect(() => { if (!writeStoredValue(bookId, field, value)) onFailure(); }, [bookId, field, value, onFailure]);
+  useEffect(() => { if (persistenceAvailable && !writeStoredValue(bookId, field, value)) onFailure(); }, [bookId, field, value, onFailure, persistenceAvailable]);
   return [value, setValue] as const;
 }
 
 /** State is intentionally mounted beneath PublicationReader's book.id key. */
 export function usePublicationReader(book: PublicationBook, epub?: PublicationEpubOptions | false) {
   const sections = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
-  const getInitialSection = useCallback(() => typeof window === 'undefined' ? 'home' : sectionFromUrl(window.location.href, book.id, sections), [book.id, sections]);
+  const [migrationAvailable] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    try { return migrateReaderStorage(book, sections, window.localStorage, section => publicationPlainText(section.content)); }
+    catch { return false; }
+  });
+  const getInitialSection = useCallback(() => typeof window === 'undefined' ? 'home' : sectionFromUrl(window.location.href, book.id, sections, book.compatibility), [book.id, sections, book.compatibility]);
   const [currentSectionId, setCurrentSectionId] = useState(getInitialSection);
-  const [storageUnavailable, setStorageUnavailable] = useState(false);
+  const [storageUnavailable, setStorageUnavailable] = useState(!migrationAvailable);
   const storageFailure = useCallback(() => setStorageUnavailable(true), []);
-  const [readIds, setReadIds] = useBookState(book.id, 'readSections', [] as string[], strings, storageFailure);
-  const [lastSectionId, setLastSectionId] = useBookState<string | null>(book.id, 'lastSection', null, stringOrNull, storageFailure);
-  const [bookmarkIds, setBookmarkIds] = useBookState(book.id, 'bookmarkedSections', [] as string[], strings, storageFailure);
-  const [highlights, setHighlights] = useBookState(book.id, 'highlights', [] as Highlight[], highlightsValid, storageFailure);
-  const [reflections, setReflections] = useBookState(book.id, 'reflections', [] as Reflection[], reflectionsValid, storageFailure);
+  const [readIds, setReadIds] = useBookState(book.id, 'readSections', [] as string[], strings, storageFailure, migrationAvailable);
+  const [lastSectionId, setLastSectionId] = useBookState<string | null>(book.id, 'lastSection', null, stringOrNull, storageFailure, migrationAvailable);
+  const [bookmarkIds, setBookmarkIds] = useBookState(book.id, 'bookmarkedSections', [] as string[], strings, storageFailure, migrationAvailable);
+  const [highlights, setHighlights] = useBookState(book.id, 'highlights', [] as Highlight[], highlightsValid, storageFailure, migrationAvailable);
+  const [reflections, setReflections] = useBookState(book.id, 'reflections', [] as Reflection[], reflectionsValid, storageFailure, migrationAvailable);
   // Theme: follow the computer unless the reader chose Light or Dark for this book. The old reader saved a 'darkMode' boolean on every visit, so it is read once
   // (initialThemeChoice) to seed the new 'theme' field and never written again; notes, highlights and other fields are untouched.
   const systemDark = useSystemDark();
@@ -85,6 +91,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const rendererRef = useRef<MarkdownRendererHandle>(null);
   const tocRef = useRef<TableOfContentsHandle>(null);
   const focusArticleRef = useRef(false);
+  const pendingTop = useRef<number | null>(null);
   const currentSection = sections.find(section => section.id === currentSectionId);
   const isHome = currentSectionId === 'home';
   const isBookmarked = bookmarkedSections.has(currentSectionId);
@@ -115,8 +122,12 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     if (currentSection && isReadableSection(currentSection) && currentSection.category !== 'App Guide' && currentSection.id !== lastSectionId) setLastSectionId(currentSection.id);
   }, [currentSection, lastSectionId, setLastSectionId]);
 
-  const handleSectionChange = useCallback((sectionId: string, text?: string) => {
+  const handleSectionChange = useCallback((sectionId: string, text?: string, resume = false) => {
     if (sectionId !== 'home' && !sections.some(section => section.id === sectionId)) return;
+    if (book.compatibility) {
+      const positions = readStoredValue<Record<string, number>>(book.id, 'readingPositions', {}, (value): value is Record<string, number> => !!value && typeof value === 'object' && Object.values(value).every(n => typeof n === 'number' && Number.isFinite(n) && n >= 0));
+      pendingTop.current = resume ? positions[sectionId] ?? 0 : 0;
+    }
     setCurrentSectionId(sectionId);
     setHighlightToScroll(text ?? null);
     clearSelection();
@@ -138,6 +149,8 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
       const next = getInitialSection();
       const sameChapter = !!event && next === currentSectionRef.current;
       focusArticleRef.current = false;
+      const savedTop = window.history.state?.publicationReadingTop;
+      pendingTop.current = book.compatibility && event?.type === 'popstate' && typeof savedTop === 'number' && Number.isFinite(savedTop) && savedTop >= 0 ? savedTop : null;
       setCurrentSectionId(next);
       clearSelection();
       const params = new URL(window.location.href).searchParams;
@@ -147,7 +160,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
       // Back and Forward between two places in one chapter: the chapter does not change, so the effect that
       // follows a fragment does not run. Return to that subsection here, or to the top when there is none.
       let fragment: HTMLElement | undefined;
-      if (sameChapter && !phrase && window.location.hash && !window.location.hash.startsWith('#/')) {
+      if (sameChapter && pendingTop.current === null && !phrase && window.location.hash && !window.location.hash.startsWith('#/')) {
         try {
           const id = decodeURIComponent(window.location.hash.slice(1));
           fragment = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] [id]') ?? []).find(element => element.id === id);
@@ -157,7 +170,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
         fragment.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
         fragment.tabIndex = -1;
         fragment.focus({ preventScroll: true });
-      } else contentRef.current?.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      } else contentRef.current?.scrollTo({ top: pendingTop.current ?? 0, behavior: 'instant' as ScrollBehavior });
       // The outlines learn the place the URL now names.
       window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));
     };
@@ -166,6 +179,26 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     window.addEventListener('hashchange', restore);
     return () => { window.removeEventListener('popstate', restore); window.removeEventListener('hashchange', restore); };
   }, [getInitialSection, clearSelection]);
+
+  useEffect(() => {
+    if (!book.compatibility) return;
+    const surface = contentRef.current;
+    if (!surface) return;
+    if (pendingTop.current !== null) {
+      surface.scrollTo({ top: pendingTop.current, behavior: 'instant' as ScrollBehavior });
+      pendingTop.current = null;
+    }
+    const save = () => {
+      const top = surface.scrollTop;
+      window.history.replaceState({ ...window.history.state, publicationReadingTop: top }, '', window.location.href);
+      // History remains session-local when migration cannot retain the original bytes.
+      if (currentSectionId === 'home' || !migrationAvailable) return;
+      const positions = readStoredValue<Record<string, unknown>>(book.id, 'readingPositions', {}, (value): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value));
+      if (!writeStoredValue(book.id, 'readingPositions', { ...positions, [currentSectionId]: top })) storageFailure();
+    };
+    surface.addEventListener('scroll', save);
+    return () => surface.removeEventListener('scroll', save);
+  }, [book.id, book.compatibility, currentSectionId, storageFailure, migrationAvailable]);
 
   useEffect(() => {
     const query = window.matchMedia?.('(min-width: 1024px)');
@@ -304,16 +337,29 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     const href = anchor.getAttribute('href') ?? '';
     if (href.startsWith('#/') || href.startsWith('?')) {
       const url = new URL(href, window.location.href);
-      const sectionId = sectionFromUrl(url.href, book.id, sections);
+      const sectionId = sectionFromUrl(url.href, book.id, sections, book.compatibility);
       if (sectionId !== 'home' || (!url.searchParams.has('section') && !href.startsWith('#/'))) {
         event.preventDefault();
         const text = url.searchParams.get('text') ?? new URLSearchParams(url.hash.split('?')[1] ?? '').get('text') ?? undefined;
         handleSectionChange(sectionId, text);
+        if (url.hash && !url.hash.startsWith('#/')) {
+          const targetUrl = new URL(window.location.href); targetUrl.hash = url.hash;
+          window.history.replaceState(window.history.state, '', targetUrl);
+          window.dispatchEvent(new Event('hashchange'));
+        }
       }
     } else if (href.startsWith('#')) {
       try {
         const targetId = decodeURIComponent(href.slice(1));
         const target = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('[data-publication-content] [id]')).find(element => element.id === targetId);
+        const owner = sectionFromUrl(new URL(href, window.location.href).href, book.id, sections, book.compatibility);
+        if (!target && owner !== 'home' && owner !== currentSectionId) {
+          event.preventDefault();
+          handleSectionChange(owner);
+          const url = new URL(window.location.href); url.hash = targetId;
+          window.history.replaceState(window.history.state, '', url);
+          window.dispatchEvent(new Event('hashchange'));
+        }
         if (target) {
           event.preventDefault();
           const url = publicationUrl(window.location.href, book.id, currentSectionId);
@@ -369,7 +415,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
-    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleOpenSearch, handleDownloadEbook,
+    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleResume: (sectionId: string) => handleSectionChange(sectionId, undefined, true), handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink };
 }

@@ -1,0 +1,622 @@
+[
+  {
+    "id": "czech-table-10",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-25",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-66",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-80",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-118",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-120",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-121",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-123",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-124",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-139",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-140",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-193",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-194",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-195",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-196",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-197",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-198",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-219",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-279",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  },
+  {
+    "id": "czech-table-280",
+    "sorts": true,
+    "reset": true,
+    "invalid": [
+      {
+        "mutation": "missingHeaders",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": false
+      },
+      {
+        "mutation": "badReference",
+        "enabled": true,
+        "dangling": true,
+        "duplicates": false
+      },
+      {
+        "mutation": "collision",
+        "enabled": true,
+        "dangling": false,
+        "duplicates": true
+      },
+      {
+        "mutation": "reshuffle",
+        "enabled": false,
+        "dangling": false,
+        "duplicates": false
+      }
+    ]
+  }
+]

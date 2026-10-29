@@ -1,0 +1,20 @@
+COMMAND ['npm', 'run', 'test:exports', '--prefix', 'apps/czech-navigator-candidate']
+EXIT 0
+
+> czech-navigator-reference-candidate@0.0.0 test:exports
+> node --test scripts/test-czech-served-exports.mjs
+
+✔ all 22 units have served chapter Markdown, index, full text and canonical links (4.667083ms)
+✔ complete static book needs no scripts and retains all 308 tables / 9652 cells in source order with header semantics (1068.623084ms)
+✔ entry discovery, noindex, no private fields or local paths in public export parcel (6.253084ms)
+✔ Vite deployment contains the complete no-JS route and every agent route (5.294125ms)
+✔ agent HTML source fragments point to real headings in their destination Markdown (7312.94275ms)
+✔ deployment routes return complete text over HTTP without running JavaScript (450.437375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8952.78875

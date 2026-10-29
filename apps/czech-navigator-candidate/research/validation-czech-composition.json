@@ -1,0 +1,8 @@
+{
+  "desktop": true,
+  "mobile390": true,
+  "text200": true,
+  "chapterSelectionTop": true,
+  "collapse": true,
+  "escapeFocusReturn": true
+}

@@ -1,0 +1,26 @@
+goto
+goto
+position check 731 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate'
+}
+back
+position check 731 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate',
+  publicationReadingTop: 731
+}
+forward
+position check 613 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate'
+}
+position check 613 {
+  section: 'nouns',
+  book: 'czech-language-navigator-reference-candidate',
+  publicationReadingTop: 613
+}
+PREFERENCE computed 24px
+PREFERENCE reload 24px
+ESCAPE returned true
+NAVIGATION PASSED

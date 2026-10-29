@@ -1,0 +1,7 @@
+# Czech Language Navigator
+
+> Books published with the Online Reader Framework. Each book is available as plain Markdown: an index, the whole text in one file, and one file per section.
+
+## Books
+
+- [Czech Language Navigator](https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/index.md): Dominik Lukeš and Jitka Kauerová. 22 sections (22 with text), about 46,289 words. [Full text](https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/full.md) · [Manifest](https://czechnavigator.dominiklukes.net/agent/czech-language-navigator-reference-candidate/manifest.json) · [Read in the browser](https://czechnavigator.dominiklukes.net/?book=czech-language-navigator-reference-candidate)
