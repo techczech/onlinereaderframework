@@ -1,0 +1,5 @@
+
+> reader-demo@0.1.0 verify:release
+> tsx scripts/release/verify-existing-edition.ts --book academic-productivity
+
+academic-productivity: PASS, deployable (tree 0e4cc1969aa3df9ffe3b611791a6160f98da3f83a5d3b49949382eff8f6b4b4c, 138 files)

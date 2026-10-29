@@ -1,0 +1,12 @@
+[
+  {
+    "book": "academic-productivity",
+    "treeSha256": "0e4cc1969aa3df9ffe3b611791a6160f98da3f83a5d3b49949382eff8f6b4b4c",
+    "sourceHead": "fa9891783b4f430af01c197a4142c368ff1b8426"
+  },
+  {
+    "book": "developing-competence",
+    "treeSha256": "54c6b9edd3004f5d68f9acc8e83bc4a7036addf2cd1a1431f4d434cce5887e72",
+    "sourceHead": "fa9891783b4f430af01c197a4142c368ff1b8426"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "book": "academic-productivity",
+    "width": 1280,
+    "cover": true,
+    "noOverflow": true,
+    "noDemoControls": true,
+    "chapters": 7,
+    "errors": []
+  },
+  {
+    "book": "academic-productivity",
+    "width": 390,
+    "cover": true,
+    "noOverflow": true,
+    "noDemoControls": true,
+    "chapters": 7,
+    "errors": []
+  },
+  {
+    "book": "developing-competence",
+    "width": 1280,
+    "cover": true,
+    "noOverflow": true,
+    "noDemoControls": true,
+    "chapters": 9,
+    "errors": []
+  },
+  {
+    "book": "developing-competence",
+    "width": 390,
+    "cover": true,
+    "noOverflow": true,
+    "noDemoControls": true,
+    "chapters": 9,
+    "errors": []
+  }
+]

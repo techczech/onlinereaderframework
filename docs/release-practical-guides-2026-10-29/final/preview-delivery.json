@@ -1,0 +1,74 @@
+{
+  "base": "https://f3b0017c.dominiklukes-net.pages.dev",
+  "checks": [
+    {
+      "path": "/books/academic-productivity/",
+      "sha256": "996ba5d2fa1b4f6cc1c31e284cdd6efb50c7ab5a055016fd023b6fa66a29b576",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/llms.txt",
+      "sha256": "fa044e0dbe5ee985f99e45d721b68e23d2c126ca5c3962dd6269778710b419c4",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/sitemap.xml",
+      "sha256": "3114529c29deb9a60b5f20dfb5a15a7f46b5e76d0e6b69ba7c04ea1c1262de59",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/agent/academic-productivity/full.md",
+      "sha256": "ff7e33ed1cdabdc157da9e43eeb7d93571db03117b4aa4c794267198358b3588",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/agent/academic-productivity/manifest.json",
+      "sha256": "cfc165f0d3d80b83382f83a63ff73414a7f7c8c04c77f0d4cede0ad17bbaaa10",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/covers/academic-productivity.jpg",
+      "sha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+      "exactBytes": true
+    },
+    {
+      "book": "academic-productivity",
+      "headers": "http/2 200 \ndate: thu, 29 oct 2026 18:36:45 gmt\ncontent-type: text/html; charset=utf-8\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\netag: \"c0550a42ea49729ebd84dc04c64e41fe\"\ncontent-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: deny\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gqpx8wpgluqu%2fu6%2fnhprrlg%2fumv%2frljz5e1%2bzcnfykhqb3kc05dvvk3x9r7b5olz9gcmcbk8mo%2fsy4xy504nhhjvhwadoqtb0oacylmyessrj4pchhgl9%2f58yns%2bn6kyidasvwrow44na1d9uzp3egrwquoria%3d%3d\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a524499e2818c3ab-ewr\nalt-svc: h3=\":443\"; ma=86400\n\n"
+    },
+    {
+      "path": "/books/developing-competence/",
+      "sha256": "fc68ca7ede26df1d635b2a66f23fdd3fc4c422ee514e4f10ebc0823b479f6acf",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/llms.txt",
+      "sha256": "7b451470ad9e39639f5a5b78a56bc71fa8003519915c5e12e498d6475575d149",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/sitemap.xml",
+      "sha256": "2b2dd1c9ab51548c56075dfb0a722f2a63942600fb77a1cdc20339a7c421b799",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/agent/developing-competence/full.md",
+      "sha256": "64da1d028e5bc98914f4b09afc8ebebe873f1804a4c2805a0caf23cc6a670bde",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/agent/developing-competence/manifest.json",
+      "sha256": "1ad7c8dcf9957d1c06f49fcf16065f9f273c4d28004333fffeaf7c0549fa94c6",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/covers/developing-competence.jpg",
+      "sha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+      "exactBytes": true
+    },
+    {
+      "book": "developing-competence",
+      "headers": "http/2 200 \ndate: thu, 29 oct 2026 18:36:49 gmt\ncontent-type: text/html; charset=utf-8\naccess-control-allow-origin: *\ncache-control: public, max-age=0, must-revalidate\netag: \"12a47dd5c92586984000f3382348052e\"\ncontent-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: deny\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=to9%2bxd6fdrnixpwnicaiaiejftazmybk9qbqys%2fuuciqcnuvcdmcywysnpet8zhcmepxf9hcvrqpjjta0poblenycjzlsh8jaygml3fxz%2bp4gjdeyh2oha0qyybl3j8iesgylm7cul3io7yb0o3bkd06b%2b7eca%3d%3d\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a52449b6ecd8c34a-ewr\nalt-svc: h3=\":443\"; ma=86400\n\n"
+    }
+  ],
+  "note": "Initial additional no-transform assertion was removed: current reviewed policy does not declare it; all fetched resources match expected bytes."
+}

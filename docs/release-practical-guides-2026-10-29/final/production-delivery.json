@@ -1,0 +1,175 @@
+{
+  "production": "https://dominiklukes.net",
+  "deployment": "https://01ebfc48.dominiklukes-net.pages.dev",
+  "checks": [
+    {
+      "path": "/books/academic-productivity/",
+      "sha256": "996ba5d2fa1b4f6cc1c31e284cdd6efb50c7ab5a055016fd023b6fa66a29b576",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/llms.txt",
+      "sha256": "fa044e0dbe5ee985f99e45d721b68e23d2c126ca5c3962dd6269778710b419c4",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/sitemap.xml",
+      "sha256": "3114529c29deb9a60b5f20dfb5a15a7f46b5e76d0e6b69ba7c04ea1c1262de59",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/agent/academic-productivity/full.md",
+      "sha256": "ff7e33ed1cdabdc157da9e43eeb7d93571db03117b4aa4c794267198358b3588",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/agent/academic-productivity/manifest.json",
+      "sha256": "cfc165f0d3d80b83382f83a63ff73414a7f7c8c04c77f0d4cede0ad17bbaaa10",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/covers/academic-productivity.jpg",
+      "sha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/listen/",
+      "sha256": "117d6759e7594c9d381feb7495b7b8372bf19a589ae906468f7f083dae5a2edd",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/principle/",
+      "sha256": "ec4a12af39f1644730c97fdee2a843af0b5d5d5c3ca2ef2fef160738262c2c28",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/how-it-works/",
+      "sha256": "c2cff514783d1497d8e8a98c739eefc757b5efc590bbea9238d20ba6d976f7e7",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/outline/",
+      "sha256": "dc71c8c7e88c87a75015e018bf3b8a179fc164ab2efef8dfe9195211c79a42c3",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/enlarge/",
+      "sha256": "b353e371a7a1e58763edeea04b8ef83f71070b1e623f3955c4a3fd538cd221f7",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/dictate/",
+      "sha256": "34ba5db2135b1aa5ad6404de11ffd2b6d7d7eff34fd35114d84be32b5f0065b2",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/academic-productivity/blockers/",
+      "sha256": "946078151b781ce6c96c1c1a7870972435c8551608c5c1612de7f3e2245107d6",
+      "exactBytes": true
+    },
+    {
+      "book": "academic-productivity",
+      "securityHeaders": true,
+      "indexable": true
+    },
+    {
+      "path": "/books/developing-competence/",
+      "sha256": "fc68ca7ede26df1d635b2a66f23fdd3fc4c422ee514e4f10ebc0823b479f6acf",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/llms.txt",
+      "sha256": "7b451470ad9e39639f5a5b78a56bc71fa8003519915c5e12e498d6475575d149",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/sitemap.xml",
+      "sha256": "2b2dd1c9ab51548c56075dfb0a722f2a63942600fb77a1cdc20339a7c421b799",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/agent/developing-competence/full.md",
+      "sha256": "64da1d028e5bc98914f4b09afc8ebebe873f1804a4c2805a0caf23cc6a670bde",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/agent/developing-competence/manifest.json",
+      "sha256": "1ad7c8dcf9957d1c06f49fcf16065f9f273c4d28004333fffeaf7c0549fa94c6",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/covers/developing-competence.jpg",
+      "sha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/knowledge_vs_fluency/",
+      "sha256": "a33eeb21ce5f8e0709418342996494415d40eb11f7909691765bb47d017449c5",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/foundations/",
+      "sha256": "288a6ffb84a3fee82fadc69c043b9626fc6212fc207a71581496c4af11e4035f",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/engagement/",
+      "sha256": "cfe3826732c1d8b119c84ed0b0e1b83445c9f910707bc165ccd6e99841d4915c",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/components_expertise/",
+      "sha256": "a82ed3a14b9bd920c6c093b181481ea1c51dd3c686b4ce2c5163b962a167224c",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/learning_types/",
+      "sha256": "2db98af1dacb27fd6ed076780e100d8a2cae68883f86a8eb5cb0107855edc27a",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/complexity_scale/",
+      "sha256": "f7c10e6a988260ca175055514c58316f5794ef2cc9f0e4a8beaa4d86910ada8c",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/dimensions/",
+      "sha256": "a1316f1d3add52430511a2e39e7c48fb6b4a2c4c8abcb72820f3b312d6953e2b",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/overview/",
+      "sha256": "bc61d132dad52189e48583650c4e581d75e676efeb0dc9691de8af2e21666040",
+      "exactBytes": true
+    },
+    {
+      "path": "/books/developing-competence/accessibility/",
+      "sha256": "0ce35caf2483572e3332fe9d8a767e3bf936c31936ba3edcbec3a410d32a442a",
+      "exactBytes": true
+    },
+    {
+      "book": "developing-competence",
+      "securityHeaders": true,
+      "indexable": true
+    },
+    {
+      "path": "/resources/",
+      "bothBooksListed": true,
+      "bothCoverImages": true
+    },
+    {
+      "path": "/academic-productivity/",
+      "bothBooksListed": true,
+      "bothCoverImages": true
+    },
+    {
+      "path": "/writing/",
+      "bothBooksListed": true,
+      "bothCoverImages": false
+    }
+  ],
+  "notes": [
+    "Chapter requests use canonical slash paths; index.html redirects.",
+    "Writing lists links, while Resources and Academic Productivity show cover cards."
+  ]
+}

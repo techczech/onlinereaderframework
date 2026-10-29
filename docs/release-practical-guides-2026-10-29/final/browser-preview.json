@@ -1,0 +1,14 @@
+[
+  {
+    "book": "academic-productivity",
+    "mobile": true,
+    "download": true,
+    "errors": []
+  },
+  {
+    "book": "developing-competence",
+    "mobile": true,
+    "download": true,
+    "errors": []
+  }
+]

@@ -1,0 +1,10 @@
+
+> reader-demo@0.1.0 build:release
+> tsx scripts/build-release.ts --book academic-productivity
+
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+academic-productivity: 138 files, tree 0e4cc1969aa3, artefact checks pass
