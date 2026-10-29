@@ -1,7 +1,7 @@
 {
   "name": "onlinereaderframework",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A React reader framework for publishing a book as a readable, searchable, accessible web edition.",
   "license": "MIT",
   "author": "Dominik Lukeš",
@@ -14,12 +14,16 @@
     "url": "https://github.com/techczech/onlinereaderframework/issues"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12"
   },
   "scripts": {
-    "setup": "npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7",
+    "setup": "npm ci --prefix packages/reader-core --ignore-scripts --min-release-age=7 && npm ci --prefix examples/reader-example --ignore-scripts --min-release-age=7",
     "build": "npm run build --prefix packages/reader-core",
-    "test": "npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
-    "test:native": "node scripts/test-reader-native-import.mjs"
+    "test": "npm run test:publication-content --prefix packages/reader-core && npm run test:agent-export --prefix packages/reader-core && node packages/reader-core/src/embed/test-embed.mjs && node --test packages/reader-core/src/original/test-original-reader.mjs packages/reader-core/src/original/test-outline-preference.mjs packages/reader-core/src/original/reading-support/test-reading-preferences.mjs packages/reader-core/src/original/toolbar/test-toolbar-model.mjs packages/reader-core/src/original/test-reader-theme.mjs packages/reader-core/src/original/listening/test-reader-listening.mjs packages/reader-core/src/original/read-aloud/test-read-aloud.mjs",
+    "test:native": "node scripts/test-reader-native-import.mjs",
+    "example": "npm run build --prefix examples/reader-example",
+    "example:no-embeds": "npm run build:no-embeds --prefix examples/reader-example",
+    "example:preview": "npm run preview --prefix examples/reader-example",
+    "test:example": "npm test --prefix examples/reader-example"
   }
 }

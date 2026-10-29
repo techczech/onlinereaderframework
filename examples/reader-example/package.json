@@ -1,0 +1,22 @@
+{
+  "name": "reader-example",
+  "private": true,
+  "version": "1.1.0",
+  "description": "A small runnable example book for the Online Reader Framework.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:no-embeds": "node build.mjs --without-embeds",
+    "preview": "node serve.mjs",
+    "test": "node --test test-example.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "reader-core": "file:../../packages/reader-core"
+  },
+  "devDependencies": {
+    "vite": "7.3.7"
+  }
+}

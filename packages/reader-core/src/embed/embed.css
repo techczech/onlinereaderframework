@@ -1,0 +1,18 @@
+/* Host-registered interactive embeds (src/embed). Full column width at every size; the frame grows to its reported height. */
+.publication-content .publication-embed { margin: 2rem 0 1rem; border: 1px solid #e5e7eb; border-radius: .75rem; overflow: hidden; background: #fff; }
+.publication-content .publication-embed-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; padding: .75rem 1rem; border-bottom: 1px solid #e5e7eb; font-size: .9375rem; line-height: 1.5; }
+.publication-content .publication-embed-label { font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #4f46e5; }
+.publication-content .publication-embed-title { font-weight: 600; color: #111827; }
+.publication-content .publication-embed-caption { flex-basis: 100%; color: #4b5563; }
+.publication-content .publication-embed-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; flex-basis: 100%; }
+.publication-content .publication-embed-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.publication-content .publication-embed-hint { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.publication-content .publication-embed-frame { display: block; width: 100%; max-width: 100%; border: 0; background: #fff; }
+.publication-content .publication-embed-frame:focus-visible { outline: 3px solid #4f46e5; outline-offset: -3px; }
+.publication-reader.dark .publication-content .publication-embed { border-color: #374151; background: #111827; }
+.publication-reader.dark .publication-content .publication-embed-header { border-color: #374151; }
+.publication-reader.dark .publication-content .publication-embed-title { color: #f9fafb; }
+.publication-reader.dark .publication-content .publication-embed-caption { color: #d1d5db; }
+.publication-reader.dark .publication-content .publication-embed-label { color: #a5b4fc; }
+@media (min-width: 640px) { .publication-content .publication-embed-links { flex-basis: auto; margin-left: auto; } }
+@media print { .publication-content .publication-embed { display: none; } }

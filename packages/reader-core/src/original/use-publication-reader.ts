@@ -319,7 +319,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
           const url = publicationUrl(window.location.href, book.id, currentSectionId);
           url.hash = targetId;
           window.history.pushState(null, '', url);
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.scrollIntoView({ behavior: 'smooth', block: target.getBoundingClientRect().height > (contentRef.current?.clientHeight ?? window.innerHeight) ? 'start' : 'center' });
           target.tabIndex = -1;
           target.focus({ preventScroll: true });
           window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));

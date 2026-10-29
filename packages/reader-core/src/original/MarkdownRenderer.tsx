@@ -5,6 +5,10 @@ import { renderPublicationContent } from '../publication-content/index.js';
 import { preparePublicationHTML } from './publication-html.js';
 import { useReadAloud, type ReadAloudActions } from './read-aloud/use-read-aloud.js';
 import type { ReadAloudSnapshot } from './read-aloud/read-aloud-controller.js';
+import type { ValidPublicationEmbed } from '../embed/embed-model.js';
+import { PublicationEmbedSlots } from '../embed/PublicationEmbedFrame.js';
+
+const noEmbeds: readonly ValidPublicationEmbed[] = [];
 
 export interface MarkdownRendererHandle {
     toggleReadAloud: () => void;
@@ -30,6 +34,8 @@ interface MarkdownRendererProps {
   maxWidth?: MaxWidth;
   /** Reading assistance is on: the reflection prompt and editor are hidden, not unmounted, so a draft and the saved reflection are kept. */
   reflectionHidden?: boolean;
+  /** This chapter's validated host embeds; each frame is placed before its prose alternative. */
+  embeds?: readonly ValidPublicationEmbed[];
 }
 
 const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRendererProps>(({ 
@@ -44,7 +50,8 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     onBrowserSpeechStart,
     onReadAloudChange,
     maxWidth = 'md',
-    reflectionHidden = false
+    reflectionHidden = false,
+    embeds = noEmbeds
 }, ref) => {
   const [reflectionText, setReflectionText] = useState('');
   const contentElement = useRef<HTMLDivElement>(null);
@@ -109,6 +116,7 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
     <div className="relative" ref={containerRef}>
         <div className="relative">
           <div ref={contentElement} data-publication-content className={`${proseClass} publication-content`} dangerouslySetInnerHTML={{ __html: annotatedHTML }} />
+          {embeds.length > 0 && <PublicationEmbedSlots embeds={embeds} contentElement={contentElement} html={annotatedHTML} />}
           {notePositions.map(({ highlight: h, top }) => (
             <div key={h.id} className="publication-margin-note absolute right-0" style={{ top }}>
               {maxWidth !== 'full' && <div className="hidden xl:flex flex-col gap-3 absolute left-full top-0 ml-8 w-64 z-10 animate-fade-in-up">

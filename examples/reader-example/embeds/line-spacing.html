@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line spacing explorer</title>
+<!-- Example interactive for the Online Reader Framework, MIT licence. One self-contained file: inline style and script, no network, no storage. -->
+<style>
+  :root { color-scheme: light dark; --ink: #1d1d1b; --paper: #fffdf8; --muted: #5a5a55; --accent: #2a5d8f; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #ecebe6; --paper: #1b1c1e; --muted: #b5b4ae; --accent: #8fbbe6; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; font: 16px/1.5 Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper); }
+  form { display: grid; gap: 12px; margin-bottom: 16px; font-family: system-ui, sans-serif; }
+  label { display: grid; gap: 4px; font-weight: 600; }
+  input[type=range] { width: 100%; min-height: 44px; accent-color: var(--accent); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  button { min-height: 44px; padding: 8px 14px; font: inherit; color: var(--ink); background: transparent; border: 2px solid var(--accent); border-radius: 6px; cursor: pointer; }
+  button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  output { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 400; }
+  #sample { margin: 0; max-width: 34em; transition: max-width 0.2s; }
+  #sample.wide { max-width: none; }
+  @media (prefers-reduced-motion: reduce) { #sample { transition: none; } }
+</style>
+</head>
+<body>
+<form id="controls" onsubmit="return false">
+  <label for="spacing">Line spacing <output id="spacing-value" for="spacing">1.5</output></label>
+  <input id="spacing" type="range" min="1" max="2.4" step="0.1" value="1.5" aria-describedby="spacing-help">
+  <span id="spacing-help" class="row">1.0 is tight; 2.0 and above is very open.</span>
+  <div class="row"><button id="width" type="button" aria-pressed="false">Use a wide column</button></div>
+</form>
+<p id="sample" style="line-height: 1.5">This sample paragraph is here to be read. When the lines sit close together, your eye has to find the start of the next line in a narrow gap. When they are further apart, each line stands on its own. Read a few lines at each setting and notice which one lets you keep your place without effort.</p>
+<script>
+  const spacing = document.getElementById('spacing');
+  const value = document.getElementById('spacing-value');
+  const sample = document.getElementById('sample');
+  const width = document.getElementById('width');
+  spacing.addEventListener('input', () => {
+    const number = Number(spacing.value).toFixed(1);
+    sample.style.lineHeight = number;
+    value.textContent = number;
+  });
+  width.addEventListener('click', () => {
+    const wide = sample.classList.toggle('wide');
+    width.setAttribute('aria-pressed', String(wide));
+    width.textContent = wide ? 'Use a narrow column' : 'Use a wide column';
+  });
+</script>
+<!-- reader-embed-child -->
+</body>
+</html>
