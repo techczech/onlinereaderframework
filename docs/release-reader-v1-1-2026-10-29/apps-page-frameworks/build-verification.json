@@ -1,0 +1,10 @@
+{
+  "commit": "e7f0c8f686267652ec919ede03ce147b08c41e82",
+  "category": "Frameworks",
+  "screenshot": "assets/online-reader-framework-screenshot.png",
+  "screenshotSha256": "a5baa050f40a5a38dd89c75ad53e58987506077db1a2eabf980f4103036e2726",
+  "build": 0,
+  "tests": 0,
+  "testCount": 1094,
+  "note": "Earlier extra assertion assumed record pages render screenshots; screenshot is on the requested Apps card."
+}

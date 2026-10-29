@@ -1,0 +1,29 @@
+{
+  "deployment": "https://258c4da7.dominiklukes-net.pages.dev",
+  "checks": [
+    {
+      "url": "https://dominiklukes.net/apps/",
+      "matchesBuild": true,
+      "bytes": 98236,
+      "sha256": "6b315b79937b3ecb8b8697866de0590a69b61be1a968f708114bcc30f47f584d"
+    },
+    {
+      "url": "https://dominiklukes.net/apps/online-reader-framework/",
+      "matchesBuild": true,
+      "bytes": 30031,
+      "sha256": "97ac588c4230131a93d289b7018a8d7425ef96a4833f2413bcdf430df3bcacdc"
+    },
+    {
+      "url": "https://dominiklukes.net/apps-data.json",
+      "matchesBuild": true,
+      "bytes": 25198,
+      "sha256": "5f5b37ee2bce366a94cd3aeabed86237572ddbe2c3c3e3a94e0ba1c8aab6ee11"
+    },
+    {
+      "url": "https://dominiklukes.net/assets/online-reader-framework-screenshot.png",
+      "matchesBuild": true,
+      "bytes": 210472,
+      "sha256": "a5baa050f40a5a38dd89c75ad53e58987506077db1a2eabf980f4103036e2726"
+    }
+  ]
+}
