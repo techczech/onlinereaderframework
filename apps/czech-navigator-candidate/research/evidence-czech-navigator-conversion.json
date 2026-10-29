@@ -1,0 +1,95 @@
+{
+  "source": "Preserved archive Markdown extraction; NOT verified against latest Word",
+  "sha256": "15cd2e53891ee72399775be88900e9ba867c54302894467545500ed5e187633f",
+  "chapters": [
+    {
+      "id": "title-and-contents",
+      "title": "Title and contents"
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "id": "parts-of-speech-nouns-verbs-and-more",
+      "title": "Parts of speech: Nouns, Verbs and More"
+    },
+    {
+      "id": "word-order",
+      "title": "Word Order"
+    },
+    {
+      "id": "pronunciation",
+      "title": "Pronunciation"
+    },
+    {
+      "id": "spelling",
+      "title": "Spelling"
+    },
+    {
+      "id": "idioms-phraseology-and-vocabulary",
+      "title": "Idioms, Phraseology and Vocabulary"
+    },
+    {
+      "id": "differences-between-standard-and-non-standard-czech",
+      "title": "Differences between standard and non-standard Czech"
+    },
+    {
+      "id": "czech-trivia",
+      "title": "Czech Trivia"
+    },
+    {
+      "id": "czech-grammar-as-czechs-learn-it",
+      "title": "Czech Grammar as Czechs Learn It"
+    },
+    {
+      "id": "acknowledgements-and-licensing-details",
+      "title": "Acknowledgements and licensing details"
+    },
+    {
+      "id": "complete-table-of-contents",
+      "title": "Complete Table of Contents"
+    }
+  ],
+  "html_counts": {
+    "p": 3177,
+    "img": 69,
+    "strong": 2354,
+    "ul": 49,
+    "li": 170,
+    "br": 128,
+    "a": 442,
+    "figure": 1,
+    "figcaption": 1,
+    "h2": 11,
+    "h4": 144,
+    "table": 308,
+    "colgroup": 308,
+    "col": 1353,
+    "tbody": 308,
+    "tr": 1950,
+    "td": 9516,
+    "h3": 55,
+    "h5": 192,
+    "em": 1513,
+    "sup": 41,
+    "u": 261,
+    "thead": 36,
+    "th": 136,
+    "h6": 79,
+    "blockquote": 179,
+    "ol": 4,
+    "del": 1,
+    "hr": 3,
+    "section": 1
+  },
+  "table_cell_text_sha256": "99d6753e0dddf6d47a700ffcefbd4668422005d73dbc65943953eb6523ea8a4a",
+  "limitations": [
+    "Latest Word and PDF reads time out in OneDrive",
+    "No Word-to-HTML fidelity claim",
+    "Original manuscript licence states CC BY-NC-SA 4.0; preserved without relicensing",
+    "WMF figures deterministically rendered with LibreOffice Draw; original WMFs retained",
+    "Original Collocation bookmark _Toc55636603 has no supported target; only its hyperlink is unwrapped in web and EPUB derivatives, retaining exact visible text",
+    "Archive text includes existing draft markers and errors; no editorial changes"
+  ]
+}

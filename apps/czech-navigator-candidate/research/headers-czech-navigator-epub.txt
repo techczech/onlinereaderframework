@@ -1,0 +1,17 @@
+HTTP/2 200 
+date: Thu, 29 Oct 2026 18:45:50 GMT
+content-type: application/epub+zip
+content-length: 409884
+x-robots-tag: noindex, nofollow
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=sXaRwD69p1oLwR42Gry%2BrqZOBsoCRXK5tsgM7KWoyG1MaABVOMJy%2B1dnySn6XLADW3KNzCqgBqSxFtxnsdV582vTfejJDTjqw68fsrJ9juUI59dtlGjBLW3oPK5Q0J143mF%2FvOp1A0fy4otQf2k0%2BK4C"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate, no-transform
+etag: "af2125f18425f25f2f69f6005611e05d"
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+server: cloudflare
+cf-cache-status: DYNAMIC
+cf-ray: a52456eedeeb0956-EWR
+alt-svc: h3=":443"; ma=86400
+

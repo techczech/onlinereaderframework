@@ -1,0 +1,41 @@
+{
+  "authority": "Historical archive manifest; live Word access failed",
+  "source": "/Users/dominiklukes/gitrepos/08_czech-teaching-projects/czech-materials-archive/manifests/onedrive-manifest.json",
+  "records": [
+    {
+      "path": "/Users/dominiklukes/Library/CloudStorage/OneDrive-Personal/0 Documents/1. Big writing projects/Czech Language Project/05 Czech Navigator-Grammar and Usage for Learners/Czech Navigator-Czech Grammar and Usage from Learners' Perspective copy.docx",
+      "filename": "Czech Navigator-Czech Grammar and Usage from Learners' Perspective copy.docx",
+      "extension": ".docx",
+      "size": 888969,
+      "modified_at": "2025-02-11T05:00:12",
+      "content_hash": "31fbb10f15e8f3e3",
+      "inferred_type": "document",
+      "inferred_category": "grammar",
+      "parent_folder": "05 Czech Navigator-Grammar and Usage for Learners"
+    },
+    {
+      "path": "/Users/dominiklukes/Library/CloudStorage/OneDrive-Personal/0 Documents/1. Big writing projects/Czech Language Project/05 Czech Navigator-Grammar and Usage for Learners/Czech Navigator-Czech Grammar and Usage from Learners' Perspective.pdf",
+      "filename": "Czech Navigator-Czech Grammar and Usage from Learners' Perspective.pdf",
+      "extension": ".pdf",
+      "size": 2844634,
+      "modified_at": "2021-10-30T16:59:19",
+      "content_hash": "47072b32526344ad",
+      "inferred_type": "document",
+      "inferred_category": "grammar",
+      "parent_folder": "05 Czech Navigator-Grammar and Usage for Learners"
+    },
+    {
+      "path": "/Users/dominiklukes/Library/CloudStorage/OneDrive-Personal/0 Documents/1. Big writing projects/Czech Language Project/05 Czech Navigator-Grammar and Usage for Learners/Czech Navigator-Czech Grammar and Usage from Learners' Perspective.docx",
+      "filename": "Czech Navigator-Czech Grammar and Usage from Learners' Perspective.docx",
+      "extension": ".docx",
+      "size": 880134,
+      "modified_at": "2025-12-04T00:21:16",
+      "content_hash": "c287532fe2c98c2d",
+      "inferred_type": "document",
+      "inferred_category": "grammar",
+      "parent_folder": "05 Czech Navigator-Grammar and Usage for Learners"
+    }
+  ],
+  "framework_revision": "4731652da30d6f3a9301b5e525fe715386364740",
+  "pandoc": "pandoc 3.12.1"
+}

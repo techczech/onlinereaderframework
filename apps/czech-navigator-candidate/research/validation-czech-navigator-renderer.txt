@@ -1,0 +1,35 @@
+
+> reader-core@1.1.0 test:publication-content
+> node src/publication-content/test-publication-content.mjs
+
+✔ renders nested formatting, complex destinations and reference links faithfully (10.601541ms)
+✔ preserves reference and inline footnotes with working unique return links (4.196958ms)
+✔ preserves image destinations, titles and meaningful alt text (0.614959ms)
+✔ keeps original Language Muscle HTML classes, quoted > and chapter routes (1.709458ms)
+✔ keeps GFM tables, strikethrough, nested lists and escaped fenced code (2.73775ms)
+✔ renders inline and display math as safe native MathML without CSS (3.157875ms)
+✔ assigns deterministic, unique prefixed heading IDs without DOM clobbering (1.288916ms)
+✔ plain text indexes the complete content, image alt and footnote text (0.79075ms)
+✔ removes executable HTML and unsafe URLs, attack 1 (0.46725ms)
+✔ removes executable HTML and unsafe URLs, attack 2 (0.941875ms)
+✔ removes executable HTML and unsafe URLs, attack 3 (0.529291ms)
+✔ removes executable HTML and unsafe URLs, attack 4 (0.526ms)
+✔ removes executable HTML and unsafe URLs, attack 5 (0.418666ms)
+✔ removes executable HTML and unsafe URLs, attack 6 (0.539375ms)
+✔ removes executable HTML and unsafe URLs, attack 7 (0.447875ms)
+✔ removes executable HTML and unsafe URLs, attack 8 (2.167666ms)
+✔ sanitisation preserves safe URL schemes and is idempotent for rich content (3.356083ms)
+✔ does not depend on window or document and produces synchronous empty output (0.197166ms)
+✔ exports heading targets and labels from the same model as rendered HTML (0.492708ms)
+✔ math trust remains disabled, malformed math stays readable, and macros do not leak between sections (1.70375ms)
+✔ preserves the original Language Muscle static SVG with paired gradient and marker IDs (2.390916ms)
+✔ static SVG cannot introduce executable or remote resources (0.283458ms)
+✔ preserves supplied namespaced IDs when another supplied ID would collide after prefixing (0.223291ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222.969417

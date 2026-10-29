@@ -1,0 +1,8 @@
+@import '../reader-demo/src/index.css';
+.prose table { display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; font-size: .95em; }
+.prose td, .prose th { border: 1px solid #b7c4cc; padding: .55em .75em; vertical-align: top; min-width: 4em; }
+.prose th { background: #e7edf3; color: #172e46; font-weight: 600; }
+.prose tbody tr:nth-child(even) { background: #f3f6f8; }
+/* Preserve complete Czech words; wide paradigms scroll instead of splitting syllables. */
+.prose table { table-layout: auto; }
+.prose td, .prose th { min-width: 7em; overflow-wrap: normal; word-break: normal; }

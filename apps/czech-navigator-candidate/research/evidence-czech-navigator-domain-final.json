@@ -1,0 +1,30 @@
+{
+  "result": [
+    {
+      "id": "c9d7ffc3-cbd6-4416-bc78-c66e3b33250a",
+      "domain_id": "c9d7ffc3-cbd6-4416-bc78-c66e3b33250a",
+      "name": "czechnavigator.dominiklukes.net",
+      "status": "pending",
+      "verification_data": {
+        "status": "active"
+      },
+      "validation_data": {
+        "status": "pending",
+        "method": "http"
+      },
+      "certificate_authority": "google",
+      "zone_tag": "8d257a90664ab89d4c8b1366ab0cff28",
+      "created_on": "2026-10-29T18:43:56.403597Z"
+    }
+  ],
+  "success": true,
+  "errors": [],
+  "messages": [],
+  "result_info": {
+    "page": 1,
+    "per_page": 20,
+    "count": 1,
+    "total_count": 1,
+    "total_pages": 1
+  }
+}

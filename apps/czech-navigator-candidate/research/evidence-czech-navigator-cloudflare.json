@@ -1,0 +1,81 @@
+{
+  "name": "czechnavigator",
+  "subdomain": "czechnavigator.pages.dev",
+  "domains": [
+    "czechnavigator.pages.dev"
+  ],
+  "canonical_deployment": {
+    "id": "b2da53ce-caf5-46b5-8276-06967afe8e30",
+    "short_id": "b2da53ce",
+    "project_id": "f1f96d95-5cf9-4144-b3ae-13dffd5840c8",
+    "project_name": "czechnavigator",
+    "environment": "production",
+    "url": "https://b2da53ce.czechnavigator.pages.dev",
+    "created_on": "2026-10-29T18:43:25.126101Z",
+    "modified_on": "2026-10-29T18:43:27.506293Z",
+    "latest_stage": {
+      "name": "deploy",
+      "started_on": null,
+      "ended_on": "2026-10-29T18:43:27.506293Z",
+      "status": "success"
+    },
+    "deployment_trigger": {
+      "type": "ad_hoc",
+      "metadata": {
+        "branch": "main",
+        "commit_hash": "9853fb5cb31b869968aa2b4013ccb8505d2fef4f",
+        "commit_message": "Record verified publication of the two practical guides\r\n\r\nCo-Authored-By: Codex <codex@openai.com>",
+        "commit_dirty": true
+      }
+    },
+    "stages": [
+      {
+        "name": "queued",
+        "started_on": "2026-10-29T18:43:25.126101Z",
+        "ended_on": null,
+        "status": "active"
+      },
+      {
+        "name": "initialize",
+        "started_on": null,
+        "ended_on": null,
+        "status": "idle"
+      },
+      {
+        "name": "clone_repo",
+        "started_on": null,
+        "ended_on": null,
+        "status": "idle"
+      },
+      {
+        "name": "build",
+        "started_on": null,
+        "ended_on": null,
+        "status": "idle"
+      },
+      {
+        "name": "deploy",
+        "started_on": null,
+        "ended_on": "2026-10-29T18:43:27.506293Z",
+        "status": "success"
+      }
+    ],
+    "build_config": {
+      "build_command": null,
+      "destination_dir": null,
+      "build_caching": null,
+      "root_dir": null,
+      "web_analytics_tag": null,
+      "web_analytics_token": null
+    },
+    "env_vars": {},
+    "compatibility_date": "2026-10-29",
+    "compatibility_flags": [],
+    "build_image_major_version": 3,
+    "usage_model": null,
+    "aliases": null,
+    "is_skipped": false,
+    "production_branch": "main",
+    "uses_functions": false
+  }
+}

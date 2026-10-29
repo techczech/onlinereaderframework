@@ -1,0 +1,16 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { PublicationReader, type PublicationBook } from 'reader-core';
+import book from './book-czech-navigator.json';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/merriweather/400.css';
+import '@fontsource/material-symbols-outlined/400.css';
+import '../../packages/reader-core/src/original/reader-original.css';
+import '../../packages/reader-core/src/original/reading-support/support.css';
+import '../../packages/reader-core/src/original/listening/listening.css';
+import '../../packages/reader-core/src/original/reader-integrations.css';
+import '../../packages/reader-core/src/original/frontpage/frontpage.css';
+import '../../packages/reader-core/src/original/agent/agent-access.css';
+import './tables-czech-navigator.css';
+createRoot(document.getElementById('root')!).render(<PublicationReader book={book as PublicationBook} epub={false} />);

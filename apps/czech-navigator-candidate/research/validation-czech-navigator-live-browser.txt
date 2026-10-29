@@ -1,0 +1,49 @@
+[
+  {
+    tag: 'A',
+    text: 'cloudflare.com',
+    href: 'https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=czechnavigator.dominiklukes.net',
+    visible: true
+  },
+  {
+    tag: 'A',
+    text: '',
+    href: 'https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=czechnavigator.dominiklukes.net',
+    visible: true
+  },
+  {
+    tag: 'A',
+    text: 'Cloudflare',
+    href: 'https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=czechnavigator.dominiklukes.net',
+    visible: true
+  },
+  {
+    tag: 'A',
+    text: 'Additional troubleshooting information here.',
+    href: 'https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-522/',
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'Click to reveal', href: null, visible: true },
+  {
+    tag: 'A',
+    text: 'Cloudflare',
+    href: 'https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=czechnavigator.dominiklukes.net',
+    visible: true
+  }
+]
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Parts of speech: Nouns, Verbs and More', exact: true }).visible().first()[22m
+
+    at /Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework/apps/czech-navigator-candidate/research/check-czech-navigator-live.mjs:8:123 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Parts of speech: Nouns, Verbs and More', exact: true }).visible().first()"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v26.12.1

@@ -1,0 +1,1 @@
+{"name":"czech-navigator-reference-candidate","version":"0.0.0","private":true,"type":"module","scripts":{"build":"python3 scripts/build-czech-navigator.py && vite build","dev":"vite --host 127.0.0.1","preview":"vite preview --host 127.0.0.1"}}
