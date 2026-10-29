@@ -139,6 +139,14 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
   const supplied = new Map((options.assets ?? []).map(asset => [asset.href, asset]));
   if (supplied.size !== (options.assets ?? []).length) throw new Error('Duplicate EPUB supplied asset href.');
   const embedded = new Map<string, PreparedAsset>();
+  const covers = (options.assets ?? []).filter(asset => asset.role === 'cover');
+  if ((options.assets ?? []).some(asset => asset.role !== undefined && asset.role !== 'cover')) throw new Error('Unsupported EPUB asset role.');
+  if (covers.length > 1) throw new Error('Duplicate EPUB cover role.');
+  const cover = covers[0];
+  if (cover) {
+    embedded.set(cover.href, await prepareAsset(cover, embedded.size));
+    assertTotalAssetSize([...embedded.values()]);
+  }
 
   for (const chapter of flat) {
     chapter.document = createXhtml(chapter.section.title, language, '../style.css');
@@ -179,18 +187,27 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
   const oebps = zip.folder('OEBPS')!;
   oebps.file('style.css', stylesheet);
   oebps.file('intro.xhtml', createIntroduction(book, language));
+  if (cover) {
+    const document = createXhtml(publicationDisplayTitle(book), language, 'style.css');
+    const body = document.getElementsByTagNameNS(XHTML_NS, 'body')[0];
+    const image = document.createElementNS(XHTML_NS, 'img');
+    image.setAttribute('src', embedded.get(cover.href)!.filename);
+    image.setAttribute('alt', publicationDisplayTitle(book));
+    body.appendChild(image);
+    oebps.file('cover.xhtml', serializeXml(document));
+  }
   for (const chapter of flat) oebps.file(chapter.filename, serializeXml(chapter.document!));
   for (const asset of embedded.values()) oebps.file(asset.filename, asset.bytes);
 
   // Original Language Muscle createNavLi recursion, using escaped labels and
   // traversal-generated hrefs instead of interpolating unsafe section IDs.
   const createNavLi = (chapter: Chapter): string => `<li><a href="${chapter.filename}">${escapeXml(chapter.section.title)}</a>${chapter.children.length ? `<ol>${chapter.children.map(createNavLi).join('')}</ol>` : ''}</li>`;
-  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>${escapeXml(publicationDisplayTitle(book))} — Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(publicationDisplayTitle(book))}</a></li>${roots.map(createNavLi).join('')}</ol></nav></body></html>`);
+  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>${escapeXml(publicationDisplayTitle(book))} — Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(publicationDisplayTitle(book))}</a></li>${roots.map(createNavLi).join('')}</ol></nav>${cover ? '<nav epub:type="landmarks"><h2>Landmarks</h2><ol><li><a epub:type="cover" href="cover.xhtml">Cover</a></li></ol></nav>' : ''}</body></html>`);
   const manifestItems = flat.map(chapter => `<item id="${chapter.id}" href="${chapter.filename}" media-type="application/xhtml+xml"${chapter.properties!.length ? ` properties="${chapter.properties!.join(' ')}"` : ''}/>`).join('\n');
-  const assetItems = [...embedded.values()].map((asset, index) => `<item id="asset-${index + 1}" href="${asset.filename}" media-type="${asset.mediaType}"/>`).join('\n');
+  const assetItems = [...embedded.values()].map((asset, index) => `<item id="asset-${index + 1}" href="${asset.filename}" media-type="${asset.mediaType}"${cover && asset === embedded.get(cover.href) ? ' properties="cover-image"' : ''}/>`).join('\n');
   const spineItems = flat.map(chapter => `<itemref idref="${chapter.id}"/>`).join('\n');
   const modified = new Date().toISOString().split('.')[0] + 'Z';
-  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(publicationDisplayTitle(book))}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${manifestItems}${assetItems}</manifest><spine><itemref idref="intro"/>${spineItems}</spine></package>`);
+  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(publicationDisplayTitle(book))}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${cover ? '<item id="cover-page" href="cover.xhtml" media-type="application/xhtml+xml"/>' : ''}${manifestItems}${assetItems}</manifest><spine>${cover ? '<itemref idref="cover-page"/>' : ''}<itemref idref="intro"/>${spineItems}</spine></package>`);
   // Validate the final serialised documents, after content, route and asset rewrites.
   const documents = new Map<string, Document>();
   for (const [path, file] of Object.entries(zip.files)) {

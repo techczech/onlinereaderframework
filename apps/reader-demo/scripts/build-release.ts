@@ -1,3 +1,4 @@
+import { demoBooks } from '../src/books/demo-books';
 /** Builds one deployable, single-book production edition of each release book into build/release-books/<book>/, plus build/release-books/<book>.manifest.json.
  * Usage (from apps/reader-demo): npm run build:release -- [--book <id>|originals|converted|all]   (default all; ids in scripts/release/release-books.ts)
  * Each edition is pinned to its book (no `?book` choice, no front-page chooser), carries only that book's manuscript (and, for a converted book, only its
@@ -23,7 +24,7 @@ const source = sourceState(repo);
 let failed = false;
 for (const book of selected) {
   const result = await buildEdition({
-    repo, app, book, others: books.filter(other => other.id !== book.id), sites: canonicalSites, source,
+    repo, app, book, others: demoBooks.filter(other => other.id !== book.id), sites: canonicalSites, source,
     previousSiteDir: defaultPreviousSiteDir(repo), log: line => console.log(line),
   });
   if (result.ok) continue;

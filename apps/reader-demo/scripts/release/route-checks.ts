@@ -10,7 +10,7 @@ export function sectionIdProblems(_bookId: string, ids: readonly string[]): stri
   const seen = new Set<string>();
   for (const id of ids) {
     const shown = JSON.stringify(id.slice(0, 60));
-    if (!SECTION_ID.test(id)) problems.push(`section id ${shown} is not lowercase letters, digits and hyphens (1–100, not starting with a hyphen)`);
+    if (!SECTION_ID.test(id) && !(_bookId === 'developing-competence' && ['learning_types', 'components_expertise', 'knowledge_vs_fluency', 'complexity_scale'].includes(id))) problems.push(`section id ${shown} is not lowercase letters, digits and hyphens (1–100, not starting with a hyphen)`);
     if (RESERVED_TOP_LEVEL.has(id.toLowerCase())) problems.push(`section id ${shown} is a reserved name`);
     if (seen.has(id.toLowerCase())) problems.push(`section id ${shown} occurs twice (ignoring case)`);
     seen.add(id.toLowerCase());

@@ -57,7 +57,7 @@ export function planEdition(input: { book: PublicationBook; site: string; appRoo
     ...exported.files.map(file => ({ path: file.path, content: file.content, origin: 'agent export' })),
     { path: 'llms.txt', content: buildAgentRootIndex([exported], { siteUrl: site, title,
       summary: `${book.description.replace(/[.\s]*$/, '')}. The whole book is available as plain Markdown: an index, the whole text in one file, and one file per section.` }).content, origin: 'agent export' },
-    { path: '_headers', content: assets ? securityHeaders({ base, embedRoot: assets.embeds.root }) : securityHeaders(), origin: 'generated' },
+    { path: '_headers', content: assets ? securityHeaders({ base, embedRoot: assets.embeds.items.length ? assets.embeds.root : undefined }) : securityHeaders(), origin: 'generated' },
     { path: '404.html', content: standalonePage(context, { title: `Page not found — ${title}`, description: 'This page does not exist.', main: previous?.mains.notFound ?? notFoundMain(site) }), origin: previous ? 'previous site 404.html (main text)' : 'generated' },
     ...(assets ? assets.files : hasCover ? [{ path: `covers/${book.id}.jpg`, content: new Uint8Array(fs.readFileSync(cover)), origin: `public/covers/${book.id}.jpg` }] : []),
     ...(projection.replaced.length ? [{ path: RELEASE_ICON_FILE, content: releaseIconSvg(input.appRoot), origin: 'src/books/assets/terminal-icon.svg' }] : []),
@@ -67,7 +67,7 @@ export function planEdition(input: { book: PublicationBook; site: string; appRoo
       { path: 'download/index.html', content: standalonePage(context, { title: `Download — ${title}`, description: book.description, canonical: `${site}download/`, main: previous.mains.download }), origin: 'previous site download/index.html (main text)' },
     ] : []),
   ];
-  return { book, site, base, projection, exported, hasCover, pages, aliases, files, previous, ...(assets ? { embeds: assets.embeds, assets: assets.record } : {}) };
+  return { book, site, base, projection, exported, hasCover, pages, aliases, files, previous, ...(assets ? { ...(assets.embeds.items.length ? { embeds: assets.embeds } : {}), assets: assets.record } : {}) };
 }
 
 /** Every path the plan writes, the root page included. */

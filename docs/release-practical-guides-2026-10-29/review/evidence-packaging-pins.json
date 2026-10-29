@@ -1,0 +1,106 @@
+[
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/build-release.ts",
+    "sha256": "4dcc468852c04b8dd89a52b534b1aa21961f9fb1707b6c9a5309d54e9b4768f8",
+    "actual": "4dcc468852c04b8dd89a52b534b1aa21961f9fb1707b6c9a5309d54e9b4768f8",
+    "matches": true,
+    "finalSha256": "4dcc468852c04b8dd89a52b534b1aa21961f9fb1707b6c9a5309d54e9b4768f8"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/converted-book-assets.json",
+    "sha256": "c902337677e2555e0143c51e749dad573867463d4dfd5468496bb847d16c8c2a",
+    "actual": "c902337677e2555e0143c51e749dad573867463d4dfd5468496bb847d16c8c2a",
+    "matches": true,
+    "finalSha256": "c902337677e2555e0143c51e749dad573867463d4dfd5468496bb847d16c8c2a"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/edition-assets.ts",
+    "sha256": "4fcfa558c2a220e7acd866310a411d7af7ced3502a99ff043ce5eb322abf2d79",
+    "actual": "4fcfa558c2a220e7acd866310a411d7af7ced3502a99ff043ce5eb322abf2d79",
+    "matches": true,
+    "finalSha256": "4fcfa558c2a220e7acd866310a411d7af7ced3502a99ff043ce5eb322abf2d79"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/edition-plan.ts",
+    "sha256": "1cbafa0017f310c6dd1634a12d166e7bbed648d8679f1e6ab5577bd6a64b870d",
+    "actual": "1cbafa0017f310c6dd1634a12d166e7bbed648d8679f1e6ab5577bd6a64b870d",
+    "matches": true,
+    "finalSha256": "1cbafa0017f310c6dd1634a12d166e7bbed648d8679f1e6ab5577bd6a64b870d"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/release-books.ts",
+    "sha256": "9d3bdb031192aa5a7a69d85f24c29266e0e246e093694260963fd53969429f7f",
+    "actual": "9d3bdb031192aa5a7a69d85f24c29266e0e246e093694260963fd53969429f7f",
+    "matches": true,
+    "finalSha256": "9d3bdb031192aa5a7a69d85f24c29266e0e246e093694260963fd53969429f7f"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/route-checks.ts",
+    "sha256": "5ec25108d52bc2e34c2bbb41f0cd0aece66ebf6b56d2d79eaecf9762cd6a61a7",
+    "actual": "5ec25108d52bc2e34c2bbb41f0cd0aece66ebf6b56d2d79eaecf9762cd6a61a7",
+    "matches": true,
+    "finalSha256": "5ec25108d52bc2e34c2bbb41f0cd0aece66ebf6b56d2d79eaecf9762cd6a61a7"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/test-release-books.ts",
+    "sha256": "2e026e639361abfc9fcaee9987acaa5d50f0644319fb6a36a4bf0ae3e46c4f45",
+    "actual": "2e026e639361abfc9fcaee9987acaa5d50f0644319fb6a36a4bf0ae3e46c4f45",
+    "matches": true,
+    "finalSha256": "2e026e639361abfc9fcaee9987acaa5d50f0644319fb6a36a4bf0ae3e46c4f45"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/verify-edition.ts",
+    "sha256": "35d52982ea1398c47a42dea15bff38199ee3e179bfcd44c33f4fcc9a028873c0",
+    "actual": "35d52982ea1398c47a42dea15bff38199ee3e179bfcd44c33f4fcc9a028873c0",
+    "matches": true,
+    "finalSha256": "35d52982ea1398c47a42dea15bff38199ee3e179bfcd44c33f4fcc9a028873c0"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/scripts/release/verify-existing-edition.ts",
+    "sha256": "dc4b4e90e406a84a350d33f172ee571ec13b9c091f1816bb671feb8bfe27b1d6",
+    "actual": "dc4b4e90e406a84a350d33f172ee571ec13b9c091f1816bb671feb8bfe27b1d6",
+    "matches": true,
+    "finalSha256": "dc4b4e90e406a84a350d33f172ee571ec13b9c091f1816bb671feb8bfe27b1d6"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/onlinereaderframework",
+    "path": "apps/reader-demo/src/canonical-sites.ts",
+    "sha256": "318165e71d447b4ed5416f3833db0fae1fe6d4ee8599b8a278880d831bb52575",
+    "actual": "318165e71d447b4ed5416f3833db0fae1fe6d4ee8599b8a278880d831bb52575",
+    "matches": true,
+    "finalSha256": "318165e71d447b4ed5416f3833db0fae1fe6d4ee8599b8a278880d831bb52575"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet",
+    "path": "scripts/import-reader-books.ts",
+    "sha256": "9691d1199dfbc329ee5ada38b59d14e391814d42d325fe241d929eb893273cc4",
+    "actual": "9691d1199dfbc329ee5ada38b59d14e391814d42d325fe241d929eb893273cc4",
+    "matches": true,
+    "finalSha256": "9691d1199dfbc329ee5ada38b59d14e391814d42d325fe241d929eb893273cc4"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet",
+    "path": "src/lib/reader-books.ts",
+    "sha256": "c87b44ef62d9e43a0e0b1082997f07c6f55efb8d8ad502b3dc7994da9f6736b0",
+    "actual": "c87b44ef62d9e43a0e0b1082997f07c6f55efb8d8ad502b3dc7994da9f6736b0",
+    "matches": true,
+    "finalSha256": "c87b44ef62d9e43a0e0b1082997f07c6f55efb8d8ad502b3dc7994da9f6736b0"
+  },
+  {
+    "repo": "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet",
+    "path": "tests/reader-books.test.ts",
+    "sha256": "4b39d0ba7764b1a7bdf1c60187351a3bc21291affd3961d0c83de6b8267e0616",
+    "actual": "4b39d0ba7764b1a7bdf1c60187351a3bc21291affd3961d0c83de6b8267e0616",
+    "matches": true,
+    "finalSha256": "4b39d0ba7764b1a7bdf1c60187351a3bc21291affd3961d0c83de6b8267e0616"
+  }
+]

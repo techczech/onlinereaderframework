@@ -1,0 +1,19 @@
+
+warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+warn - Configure your content sources or your generated CSS will be missing styles.
+warn - https://tailwindcss.com/docs/content-configuration
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ independent review: exact underscore IDs reject encoded, case, separator, reserved and duplicate variants (1903.792125ms)
+✔ independent review: new cover-only plans refuse changed cover bytes and unexpected embeds (11.148667ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2399.906625

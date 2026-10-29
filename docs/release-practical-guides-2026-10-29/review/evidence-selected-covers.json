@@ -1,0 +1,18 @@
+[
+  {
+    "book": "academic-productivity",
+    "choice": 2,
+    "selectedSha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+    "assetSha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+    "originalSelectedSourceSha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+    "bytes": 928070
+  },
+  {
+    "book": "developing-competence",
+    "choice": 2,
+    "selectedSha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+    "assetSha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+    "originalSelectedSourceSha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+    "bytes": 1191715
+  }
+]

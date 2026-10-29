@@ -167,7 +167,9 @@ export function verifyEdition({ plan, others, otherSites, outDir }: EditionCheck
       patterns.set(`section id ${section.id.slice(0, 60)} of ${other.id}`, /^[a-z]+$/.test(section.id) ? sectionIdPattern(section.id, otherPaths) : sectionIdToken(section.id));
     }
     for (const [index, sample] of textSamples(other).entries()) probes.set(`text sample ${index + 1} of ${other.id}`, sample);
-    if (other.sourceUrl && new URL(other.sourceUrl).host !== ownHost) probes.set(`source address of ${other.id}`, new URL(other.sourceUrl).host);
+    // Academic Productivity explicitly attributes its reading advice to the preserved Academic Reading source.
+    const attributedReadingSource = book.id === 'academic-productivity' && other.id === 'academic-reading';
+    if (other.sourceUrl && !attributedReadingSource && new URL(other.sourceUrl).host !== ownHost) probes.set(`source address of ${other.id}`, new URL(other.sourceUrl).host);
     probes.set(`cover of ${other.id}`, `covers/${other.id}.jpg`);
     for (const item of demoEmbeds[other.id]?.items ?? []) {
       probes.set(`embed title of ${other.id}`, item.title);

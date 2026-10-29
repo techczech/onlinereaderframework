@@ -17,6 +17,22 @@
       "variant": "readability-foundations-02-paper-clear-structure",
       "name": "Clear structure",
       "source": "book-covers/readability-foundations/round-2026-10-28-reader-covers/readability-foundations-02-paper-clear-structure.jpg"
+    },
+    "academic-productivity": {
+      "file": "public/covers/academic-productivity.jpg",
+      "sha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
+      "bytes": 928070,
+      "variant": "academic-productivity-02-open-structure",
+      "name": "academic-productivity-02-open-structure",
+      "source": "book-covers/academic-productivity/round-2026-10-29-reader-covers/academic-productivity-02-open-structure.jpg"
+    },
+    "developing-competence": {
+      "file": "public/covers/developing-competence.jpg",
+      "sha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+      "bytes": 1191715,
+      "variant": "developing-competence-02-practice-field",
+      "name": "developing-competence-02-practice-field",
+      "source": "book-covers/developing-competence/round-2026-10-29-reader-covers/developing-competence-02-practice-field.jpg"
     }
   }
 }

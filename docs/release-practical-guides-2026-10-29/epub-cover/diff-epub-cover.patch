@@ -1,0 +1,202 @@
+diff --git a/apps/reader-demo/src/App.tsx b/apps/reader-demo/src/App.tsx
+index cad5c8e..2749d98 100644
+--- a/apps/reader-demo/src/App.tsx
++++ b/apps/reader-demo/src/App.tsx
+@@ -1,3 +1,5 @@
++import academicCover from '../public/covers/academic-productivity.jpg?inline';
++import competenceCover from '../public/covers/developing-competence.jpg?inline';
+ import React, { useEffect, useMemo, useState } from 'react';
+ import { FRONT_PAGE_LAYOUTS, PublicationReader, frontPageLayoutKey, publicationDisplayTitle, type FrontPageLayoutKey, type PublicationBook, type PublicationEmbeds } from 'reader-core';
+ import { epubAssets } from './books/epub-assets';
+@@ -64,7 +66,14 @@ function Reader({ library }: { library: Library }) {
+   }, [books]);
+   useEffect(() => { document.title = RELEASE_BOOK ? publicationDisplayTitle(book) : `${publicationDisplayTitle(book)} — Online Reader Framework`; }, [book]);
+   /* A release build swaps this mapping for its own book's (scripts/release/projection.ts). */
+-  const assets = epubAssets[book.id];
++  const assets = useMemo(() => {
++    const cover = (!RELEASE_BOOK || RELEASE_BOOK === 'academic-productivity') && book.id === 'academic-productivity' ? academicCover
++      : (!RELEASE_BOOK || RELEASE_BOOK === 'developing-competence') && book.id === 'developing-competence' ? competenceCover : undefined;
++    return cover ? [...(epubAssets[book.id] ?? []), {
++      href: `cover:${book.id}`, role: 'cover' as const, mediaType: 'image/jpeg' as const,
++      data: Uint8Array.from(atob(cover.split(',')[1]), character => character.charCodeAt(0)),
++    }] : epubAssets[book.id];
++  }, [book.id]);
+   const epub = assets ? { assets } : undefined;
+   const choose = (value: string) => {
+     const url = new URL(window.location.href);
+diff --git a/packages/reader-core/src/services/publication-epub/README.md b/packages/reader-core/src/services/publication-epub/README.md
+index 1e92ef8..e184a75 100644
+--- a/packages/reader-core/src/services/publication-epub/README.md
++++ b/packages/reader-core/src/services/publication-epub/README.md
+@@ -23,6 +23,7 @@ interface PublicationEpubOptions {
+ }
+ interface PublicationEpubAsset {
+   href: string;
++  role?: 'cover';
+   mediaType: 'image/png' | 'image/jpeg' | 'image/gif' | 'image/svg+xml';
+   data: Blob | Uint8Array | ArrayBuffer;
+ }
+@@ -75,3 +76,14 @@ The final run passed all five archives: the rich XHTML fixture, the standalone s
+ Negative checks rejected missing image bytes, invalid raster bytes, unsupported media types, duplicate section IDs, unknown chapter routes, and SVG script/event/CSS/external-resource/entity payloads. Blob, Uint8Array and ArrayBuffer asset inputs worked. A real browser download event completed, and the browser recorded **zero network requests**. A bundled Node import succeeded without DOM globals, and browser-only generation rejected clearly. A no-emit core TypeScript check passed during implementation.
+ 
+ `report-publication-epub-verification.json` records runtime versions, source hashes, archive hashes/sizes, exact image hrefs and full EPUBCheck results. ZIP timestamps and OPF modification time mean separate exports need not have identical hashes. Temporary test archives were removed after inspection. These checks verify the service and generated ebooks; the parent owns package integration and reader UI acceptance. Only files in this service folder were changed by this implementation, with no dependency, shared manifest, original-source or Git changes.
++
++## Optional cover
++
++Supply one asset with `role: 'cover'` to add a cover image, a first spine XHTML page and a navigation landmark. The image receives the EPUB 3 `cover-image` manifest property. The href is a host-owned identifier, never fetched. Cover bytes pass the same format, SVG, dimension and size validation as chapter images and count towards the total limit. A cover also used by a chapter is embedded once. Duplicate cover roles and duplicate hrefs reject. Without a cover role the existing output structure is preserved.
++
++```ts
++await downloadPublicationEpub(book, { assets: [{
++  href: 'cover:my-book', role: 'cover', mediaType: 'image/jpeg',
++  data: vettedJpegBytes, // Uint8Array supplied by the host
++}] });
++```
+diff --git a/packages/reader-core/src/services/publication-epub/epub-assets.ts b/packages/reader-core/src/services/publication-epub/epub-assets.ts
+index 710332c..97e8dc2 100644
+--- a/packages/reader-core/src/services/publication-epub/epub-assets.ts
++++ b/packages/reader-core/src/services/publication-epub/epub-assets.ts
+@@ -5,6 +5,8 @@ export type PublicationEpubImageType = 'image/png' | 'image/jpeg' | 'image/gif'
+ export interface PublicationEpubAsset {
+   /** Exact image src in rendered publication content; no URL is fetched. */
+   href: string;
++  /** Optional cover role; at most one supplied asset may have it. */
++  role?: 'cover';
+   mediaType: PublicationEpubImageType;
+   data: Blob | Uint8Array | ArrayBuffer;
+ }
+diff --git a/packages/reader-core/src/services/publication-epub/index.ts b/packages/reader-core/src/services/publication-epub/index.ts
+index 4bf38cc..4edf0b2 100644
+--- a/packages/reader-core/src/services/publication-epub/index.ts
++++ b/packages/reader-core/src/services/publication-epub/index.ts
+@@ -139,6 +139,14 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
+   const supplied = new Map((options.assets ?? []).map(asset => [asset.href, asset]));
+   if (supplied.size !== (options.assets ?? []).length) throw new Error('Duplicate EPUB supplied asset href.');
+   const embedded = new Map<string, PreparedAsset>();
++  const covers = (options.assets ?? []).filter(asset => asset.role === 'cover');
++  if ((options.assets ?? []).some(asset => asset.role !== undefined && asset.role !== 'cover')) throw new Error('Unsupported EPUB asset role.');
++  if (covers.length > 1) throw new Error('Duplicate EPUB cover role.');
++  const cover = covers[0];
++  if (cover) {
++    embedded.set(cover.href, await prepareAsset(cover, embedded.size));
++    assertTotalAssetSize([...embedded.values()]);
++  }
+ 
+   for (const chapter of flat) {
+     chapter.document = createXhtml(chapter.section.title, language, '../style.css');
+@@ -179,18 +187,27 @@ export async function generatePublicationEpub(book: PublicationBook, options: Pu
+   const oebps = zip.folder('OEBPS')!;
+   oebps.file('style.css', stylesheet);
+   oebps.file('intro.xhtml', createIntroduction(book, language));
++  if (cover) {
++    const document = createXhtml(publicationDisplayTitle(book), language, 'style.css');
++    const body = document.getElementsByTagNameNS(XHTML_NS, 'body')[0];
++    const image = document.createElementNS(XHTML_NS, 'img');
++    image.setAttribute('src', embedded.get(cover.href)!.filename);
++    image.setAttribute('alt', publicationDisplayTitle(book));
++    body.appendChild(image);
++    oebps.file('cover.xhtml', serializeXml(document));
++  }
+   for (const chapter of flat) oebps.file(chapter.filename, serializeXml(chapter.document!));
+   for (const asset of embedded.values()) oebps.file(asset.filename, asset.bytes);
+ 
+   // Original Language Muscle createNavLi recursion, using escaped labels and
+   // traversal-generated hrefs instead of interpolating unsafe section IDs.
+   const createNavLi = (chapter: Chapter): string => `<li><a href="${chapter.filename}">${escapeXml(chapter.section.title)}</a>${chapter.children.length ? `<ol>${chapter.children.map(createNavLi).join('')}</ol>` : ''}</li>`;
+-  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>${escapeXml(publicationDisplayTitle(book))} — Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(publicationDisplayTitle(book))}</a></li>${roots.map(createNavLi).join('')}</ol></nav></body></html>`);
++  oebps.file('nav.xhtml', `<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="${XHTML_NS}" xmlns:epub="http://www.idpf.org/2007/ops" lang="${escapeXml(language)}" xml:lang="${escapeXml(language)}"><head><title>${escapeXml(publicationDisplayTitle(book))} — Table of Contents</title></head><body><nav epub:type="toc" id="toc"><h1>Table of Contents</h1><ol><li><a href="intro.xhtml">${escapeXml(publicationDisplayTitle(book))}</a></li>${roots.map(createNavLi).join('')}</ol></nav>${cover ? '<nav epub:type="landmarks"><h2>Landmarks</h2><ol><li><a epub:type="cover" href="cover.xhtml">Cover</a></li></ol></nav>' : ''}</body></html>`);
+   const manifestItems = flat.map(chapter => `<item id="${chapter.id}" href="${chapter.filename}" media-type="application/xhtml+xml"${chapter.properties!.length ? ` properties="${chapter.properties!.join(' ')}"` : ''}/>`).join('\n');
+-  const assetItems = [...embedded.values()].map((asset, index) => `<item id="asset-${index + 1}" href="${asset.filename}" media-type="${asset.mediaType}"/>`).join('\n');
++  const assetItems = [...embedded.values()].map((asset, index) => `<item id="asset-${index + 1}" href="${asset.filename}" media-type="${asset.mediaType}"${cover && asset === embedded.get(cover.href) ? ' properties="cover-image"' : ''}/>`).join('\n');
+   const spineItems = flat.map(chapter => `<itemref idref="${chapter.id}"/>`).join('\n');
+   const modified = new Date().toISOString().split('.')[0] + 'Z';
+-  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(publicationDisplayTitle(book))}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${manifestItems}${assetItems}</manifest><spine><itemref idref="intro"/>${spineItems}</spine></package>`);
++  oebps.file('content.opf', `<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="3.0"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${escapeXml(publicationDisplayTitle(book))}</dc:title><dc:creator>${escapeXml(book.author)}</dc:creator><dc:language>${escapeXml(language)}</dc:language><dc:identifier id="BookId">urn:publication:${escapeXml(encodeURIComponent(book.id))}</dc:identifier><dc:description>${escapeXml(book.description)}</dc:description>${book.sourceUrl ? `<dc:source>${escapeXml(book.sourceUrl)}</dc:source>` : ''}${book.home?.license ? `<dc:rights>${escapeXml(book.home.license.label)}</dc:rights>` : ''}<meta property="dcterms:modified">${modified}</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="style" href="style.css" media-type="text/css"/><item id="intro" href="intro.xhtml" media-type="application/xhtml+xml"/>${cover ? '<item id="cover-page" href="cover.xhtml" media-type="application/xhtml+xml"/>' : ''}${manifestItems}${assetItems}</manifest><spine>${cover ? '<itemref idref="cover-page"/>' : ''}<itemref idref="intro"/>${spineItems}</spine></package>`);
+   // Validate the final serialised documents, after content, route and asset rewrites.
+   const documents = new Map<string, Document>();
+   for (const [path, file] of Object.entries(zip.files)) {
+diff --git a/packages/reader-core/src/services/publication-epub/publication-epub-covers.browser-test.mjs b/packages/reader-core/src/services/publication-epub/publication-epub-covers.browser-test.mjs
+new file mode 100644
+index 0000000..2543321
+--- /dev/null
++++ b/packages/reader-core/src/services/publication-epub/publication-epub-covers.browser-test.mjs
+@@ -0,0 +1,80 @@
++import { generatePublicationEpub, downloadPublicationEpub } from './index.js';
++import { assertTotalAssetSize } from './epub-assets.js';
++import JSZip from 'jszip';
++import { renderPublicationContent } from '../../publication-content/index.js';
++const assert = (ok, message) => { if (!ok) throw new Error(message); };
++const xml = async (zip, name) => new DOMParser().parseFromString(await zip.file(name).async('string'), 'application/xml');
++const text = html => { const div = document.createElement('div'); div.innerHTML = html; return div.textContent.replace(/\s+/g, ' ').trim(); };
++const digest = async bytes => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(n => n.toString(16).padStart(2, '0')).join('');
++const flatten = sections => sections.flatMap(s => [s, ...flatten(s.children ?? [])]);
++window.coverOptions = id => ({ assets: [{ href: `cover:${id}`, role: 'cover', mediaType: 'image/jpeg', data: Uint8Array.from(atob(window.coverFixtures[id].base64), c => c.charCodeAt(0)) }] });
++window.downloadCoverBook = id => downloadPublicationEpub(window.coverFixtures[id].book, window.coverOptions(id));
++window.checkCoverZip = async (base64, id, covered = true) => {
++  const zip = await JSZip.loadAsync(base64, { base64: true });
++  const fixture = window.coverFixtures[id];
++  const opf = await xml(zip, 'OEBPS/content.opf');
++  const cover = opf.querySelector('item[properties="cover-image"]');
++  assert(Boolean(cover) === covered, 'Cover manifest role');
++  if (covered) {
++    assert(cover.getAttribute('media-type') === 'image/jpeg', 'JPEG MIME');
++    const bytes = await zip.file('OEBPS/' + cover.getAttribute('href')).async('uint8array');
++    assert(bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255, 'JPEG signature');
++    assert(await digest(bytes) === fixture.sha256, 'Exact selected cover hash');
++    const page = await xml(zip, 'OEBPS/cover.xhtml');
++    assert(page.querySelector('img').getAttribute('src') === cover.getAttribute('href'), 'Cover XHTML image reference');
++    assert(opf.querySelector('item[id="cover-page"]').getAttribute('href') === 'cover.xhtml', 'Cover page manifest');
++    assert(opf.querySelector('spine itemref').getAttribute('idref') === 'cover-page', 'Cover first in spine');
++    const nav = await xml(zip, 'OEBPS/nav.xhtml');
++    assert(nav.querySelector('a[href="cover.xhtml"]'), 'Cover landmark');
++  } else assert(!zip.file('OEBPS/cover.xhtml'), 'No cover page by default');
++  const sections = flatten(fixture.book.sections);
++  assert(sections.length === fixture.chapters, 'Expected actual chapter count');
++  assert(Object.keys(zip.files).filter(p => /^OEBPS\/Text\/chapter-\d+.xhtml$/.test(p)).length === fixture.chapters, 'Archive chapter count');
++  for (const [i, section] of sections.entries()) {
++    const doc = await xml(zip, `OEBPS/Text/chapter-${String(i + 1).padStart(4, '0')}.xhtml`);
++    assert(text(doc.documentElement.querySelector('body').innerHTML) === text(renderPublicationContent(section.content, section.format ?? 'markdown')), `Source text ${section.id}`);
++  }
++  return { id, covered, chapters: sections.length, zipSha256: await digest(await zip.generateAsync({ type: 'arraybuffer' })) };
++};
++window.coverNegatives = async () => {
++  const fixture = Object.values(window.coverFixtures)[0];
++  const asset = window.coverOptions(fixture.book.id).assets[0];
++  const reject = async (assets, expected) => {
++    let error = '';
++    try { await generatePublicationEpub(fixture.book, { assets }); } catch (e) { error = String(e); }
++    assert(error.includes(expected), `Expected ${expected}: ${error}`);
++  };
++  await reject([asset, { ...asset, href: 'other' }], 'Duplicate EPUB cover role');
++  await reject([asset, asset], 'Duplicate EPUB supplied asset href');
++  await reject([{ ...asset, data: new Uint8Array() }], 'must contain');
++  await reject([{ ...asset, data: new Uint8Array(20 * 1024 * 1024 + 1) }], 'must contain');
++  await reject([{ ...asset, data: new Uint8Array([255, 216, 255]) }], 'cannot be decoded');
++  await reject([{ ...asset, data: new Uint8Array([1, 2, 3]) }], 'do not match');
++  await reject([{ ...asset, role: 'unknown' }], 'Unsupported EPUB asset role');
++  await reject([{ ...asset, mediaType: 'image/svg+xml', data: new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"><script/></svg>') }], 'Unsafe SVG');
++  await reject([{ ...asset, mediaType: 'image/svg+xml', data: new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"><use href="#missing"/></svg>') }], 'Missing SVG fragment');
++  const canvas = document.createElement('canvas'); canvas.width = 32769; canvas.height = 1;
++  const oversized = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
++  await reject([{ ...asset, mediaType: 'image/png', data: oversized }], 'pixel limit');
++  let totalError = '';
++  try { assertTotalAssetSize([{ bytes: new Uint8Array(100 * 1024 * 1024 + 1) }]); } catch (e) { totalError = String(e); }
++  assert(totalError.includes('100 MiB'), 'Aggregate limit');
++  const shared = { ...fixture.book, sections: [{ id: 'shared', title: 'Shared', content: `<img src="shared-cover.jpg" alt="">`, format: 'html' }] };
++  const zip = await JSZip.loadAsync(await (await generatePublicationEpub(shared, { assets: [{ ...asset, href: 'shared-cover.jpg' }] })).arrayBuffer());
++  assert(Object.keys(zip.files).filter(p => /^OEBPS\/Assets\/image-/.test(p)).length === 1, 'Shared cover/chapter embedded once');
++  return { passed: true, checks: 12 };
++};
++
++window.noCoverControls = async () => {
++  const results = [];
++  for (const book of [...window.coverControls.books, ...Object.values(window.coverFixtures).map(f => f.book)]) {
++    const assets = book.id === 'deliberate-practice' ? [{ href: 'https://www.notion.so/icons/command-line_gray.svg', mediaType: 'image/svg+xml', data: new TextEncoder().encode(window.coverControls.svg) }] : [];
++    const zip = await JSZip.loadAsync(await (await generatePublicationEpub(book, { assets })).arrayBuffer());
++    const opf = await xml(zip, 'OEBPS/content.opf');
++    assert(!opf.querySelector('[properties="cover-image"]') && !zip.file('OEBPS/cover.xhtml'), 'Default no-cover structure');
++    assert(opf.querySelector('spine itemref').getAttribute('idref') === 'intro', 'Default spine');
++    assert(Object.keys(zip.files).filter(p => /^OEBPS\/Text\/chapter-\d+.xhtml$/.test(p)).length === flatten(book.sections).length, 'Control chapters');
++    results.push({ id: book.id, noCover: true, chapters: flatten(book.sections).length });
++  }
++  return { controls: results };
++};

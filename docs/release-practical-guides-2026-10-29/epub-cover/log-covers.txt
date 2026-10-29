@@ -1,0 +1,63 @@
+{
+  "results": [
+    {
+      "id": "academic-productivity",
+      "covered": true,
+      "chapters": 7,
+      "zipSha256": "7c6a500fa5725fe1590b74d90c59defcb6c06fb921e3815bfab76f7ad99f9043",
+      "downloadSha256": "ae163fd914dd916065d839d891098eb9ad443fe12fd3c5b8fb32d682681f80c3"
+    },
+    {
+      "id": "developing-competence",
+      "covered": true,
+      "chapters": 9,
+      "zipSha256": "7ae2086230c29a2fc3b90321362f1403e24a07f41722d9942b0a00d1b8d699ab",
+      "downloadSha256": "e07bced70cf93558383fb61efc6413d835acc2689c86c2dd446b1502dfab68d8"
+    },
+    {
+      "controls": [
+        {
+          "id": "deliberate-practice",
+          "noCover": true,
+          "chapters": 21
+        },
+        {
+          "id": "language-muscle",
+          "noCover": true,
+          "chapters": 12
+        },
+        {
+          "id": "linguistics",
+          "noCover": true,
+          "chapters": 262
+        },
+        {
+          "id": "academic-reading",
+          "noCover": true,
+          "chapters": 10
+        },
+        {
+          "id": "readability-foundations",
+          "noCover": true,
+          "chapters": 14
+        },
+        {
+          "id": "academic-productivity",
+          "noCover": true,
+          "chapters": 7
+        },
+        {
+          "id": "developing-competence",
+          "noCover": true,
+          "chapters": 9
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "checks": 12
+    }
+  ],
+  "network": [],
+  "browser": "149.0.7827.55"
+}

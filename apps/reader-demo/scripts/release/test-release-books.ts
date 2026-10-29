@@ -7,7 +7,7 @@ import path from 'node:path';
 import test, { after, before } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { canonicalSites } from '../../src/canonical-sites';
-import { demoEmbeds } from '../../src/books/demo-books';
+import { demoBooks, demoEmbeds } from '../../src/books/demo-books';
 import { releaseLocation, sectionIdsOf } from '../../src/release-routes';
 import { buildEdition, hashEdition } from './build-edition';
 import { convertedEditionAssets, readAppFile } from './edition-assets';
@@ -17,6 +17,7 @@ import { defaultPreviousSiteDir } from './previous-site';
 import { editionBase, releaseBooks, selectReleaseBooks } from './release-books';
 import { bookIdPattern, sectionIdPattern, sectionIdToken, sitePrefix, verifyEdition } from './verify-edition';
 import { verifyExistingEdition } from './verify-existing-edition';
+import { sectionIdProblems } from './route-checks';
 import { releaseRootOf } from './write-guard';
 
 const app = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -26,11 +27,11 @@ after(() => fs.rmSync(scratch, { recursive: true, force: true }));
 const previousSiteDir = defaultPreviousSiteDir(codeRepo);
 const clean = { head: 'test', dirty: false, dirtyPaths: [] };
 const byId = (id: string) => releaseBooks.find(book => book.id === id)!;
-const othersOf = (id: string) => releaseBooks.filter(book => book.id !== id);
+const othersOf = (id: string) => demoBooks.filter(book => book.id !== id);
 
-test('release registry: five books, folder editions only for the two converted books at their agreed addresses', () => {
-  assert.deepEqual(releaseBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations']);
-  assert.deepEqual(selectReleaseBooks('converted').map(book => book.id), ['academic-reading', 'readability-foundations']);
+test('release registry: seven books, four converted folder editions at their agreed addresses', () => {
+  assert.deepEqual(releaseBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
+  assert.deepEqual(selectReleaseBooks('converted').map(book => book.id), ['academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
   assert.deepEqual(selectReleaseBooks('originals').map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics']);
   assert.equal(selectReleaseBooks('nonsense').length, 0);
   assert.equal(editionBase(canonicalSites['academic-reading']), '/books/academic-reading/');
@@ -205,4 +206,38 @@ test('verifier red cases on a real converted edition: each tampering is reported
   expect('robots', dir => fs.writeFileSync(path.join(dir, 'robots.txt'), 'User-agent: *\nDisallow: /\n'), /robots\.txt in a folder edition|unplanned file robots\.txt/);
   expect('demo-ui', dir => fs.appendFileSync(bundleOf(dir), '\n;var d="demo-frontpage-chooser";'), /demo chooser/);
   expect('private-path', dir => fs.appendFileSync(path.join(dir, 'llms.txt'), '\n/Users/someone/private\n'), /private path/);
+});
+
+for (const id of ['academic-productivity', 'developing-competence']) test(`${id}: selected cover bytes, canonical folder, chapters and no embeds`, async () => {
+  const decision = JSON.parse(fs.readFileSync(path.join(codeRepo, 'docs/design/2026-10-29-next-practical-guides/selected-covers.json'), 'utf8')).books.find((b: any) => b.book === id);
+  const plan = planEdition({ book: byId(id), site: canonicalSites[id], appRoot: app, previousSiteDir });
+  fs.mkdirSync(releaseRootOf(path.join(scratch, id)), { recursive: true });
+  const result = await buildEdition({ repo: path.join(scratch, id), app, book: byId(id), others: othersOf(id), sites: canonicalSites, source: clean, previousSiteDir });
+  assert.ok(result.ok, JSON.stringify(result));
+  assert.deepEqual(verifyEdition({ plan, others: othersOf(id), otherSites: Object.entries(canonicalSites).filter(([key]) => key !== id).map(([,site]) => site), outDir: result.folder }), []);
+  const bundle = bundleOf(result.folder);
+  const original = fs.readFileSync(bundle);
+  try {
+    for (const other of othersOf(id)) {
+      fs.writeFileSync(bundle, Buffer.concat([original, Buffer.from(`;globalThis.foreignBook={id:"${other.id}",sections:[]};`)]));
+      assert.ok(verifyEdition({ plan, others: othersOf(id), otherSites: [], outDir: result.folder }).some(f => f.includes('book id')));
+    }
+  } finally { fs.writeFileSync(bundle, original); }
+  assert.equal(plan.base, `/books/${id}/`);
+  assert.equal(plan.book.sections.length, id === 'academic-productivity' ? 7 : 9);
+  assert.equal(plan.embeds, undefined);
+  assert.equal(plan.assets!.cover.sha256, decision.sha256);
+  assert.equal(plan.assets!.cover.variant.includes('-02-'), true);
+  assert.deepEqual(plan.assets!.embeds, []);
+  const cover = plan.files.find(f => f.path === `covers/${id}.jpg`)!;
+  assert.deepEqual(Buffer.from(cover.content), fs.readFileSync(path.join(app, 'public', 'covers', `${id}.jpg`)));
+  assert.ok(plan.files.every(f => !f.path.startsWith('embeds/')));
+  assert.ok(plan.files.find(f => f.path === '_headers')!.content.toString().startsWith(`/books/${id}/*`));
+});
+
+test('source underscore IDs are confined to the four preserved Developing Competence IDs', () => {
+  const ids = ['learning_types', 'components_expertise', 'knowledge_vs_fluency', 'complexity_scale'];
+  assert.deepEqual(sectionIdProblems('developing-competence', ids), []);
+  assert.equal(sectionIdProblems('academic-productivity', ids).length, 4);
+  assert.equal(sectionIdProblems('developing-competence', ['other_id', '../learning_types', 'learning_types/x']).length, 3);
 });

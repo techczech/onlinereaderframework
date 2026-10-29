@@ -1,0 +1,35 @@
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ release registry: seven books, four converted folder editions at their agreed addresses (2161.586333ms)
+✔ book identity probes reject foreign registry values without matching prose or longer ids (0.402917ms)
+✔ folder routes: a chapter folder, a slash-less edition address and demo parameters become the edition address; nothing outside the folder is read (0.363584ms)
+✔ headers: the domain-root policy is unchanged byte for byte; a folder policy scopes every rule to the folder (0.249958ms)
+✔ section id probes: identifiers are found, ordinary words and longer heading anchors are not (0.282833ms)
+✔ asset plan: pinned cover and nine provenance-pinned embeds; descriptors carry the edition folder (20.263375ms)
+✔ asset plan refuses changed bytes, symbolic links, traversal and a manifest that differs from the registry (77.501167ms)
+✔ write path: a converted edition is staged, verified, swapped and recorded; verify:release passes it and the manifest records folder, cover and embeds (200.335167ms)
+✔ verifier red cases on a real converted edition: each tampering is reported (4304.77575ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ academic-productivity: selected cover bytes, canonical folder, chapters and no embeds (1748.884292ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ developing-competence: selected cover bytes, canonical folder, chapters and no embeds (1735.150458ms)
+✔ source underscore IDs are confined to the four preserved Developing Competence IDs (0.160542ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11400.286291

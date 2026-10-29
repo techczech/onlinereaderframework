@@ -1,0 +1,241 @@
+diff --git a/apps/reader-demo/scripts/build-release.ts b/apps/reader-demo/scripts/build-release.ts
+index f6e352c..09e46ce 100644
+--- a/apps/reader-demo/scripts/build-release.ts
++++ b/apps/reader-demo/scripts/build-release.ts
+@@ -1,3 +1,4 @@
++import { demoBooks } from '../src/books/demo-books';
+ /** Builds one deployable, single-book production edition of each release book into build/release-books/<book>/, plus build/release-books/<book>.manifest.json.
+  * Usage (from apps/reader-demo): npm run build:release -- [--book <id>|originals|converted|all]   (default all; ids in scripts/release/release-books.ts)
+  * Each edition is pinned to its book (no `?book` choice, no front-page chooser), carries only that book's manuscript (and, for a converted book, only its
+@@ -23,7 +24,7 @@ const source = sourceState(repo);
+ let failed = false;
+ for (const book of selected) {
+   const result = await buildEdition({
+-    repo, app, book, others: books.filter(other => other.id !== book.id), sites: canonicalSites, source,
++    repo, app, book, others: demoBooks.filter(other => other.id !== book.id), sites: canonicalSites, source,
+     previousSiteDir: defaultPreviousSiteDir(repo), log: line => console.log(line),
+   });
+   if (result.ok) continue;
+diff --git a/apps/reader-demo/scripts/release/converted-book-assets.json b/apps/reader-demo/scripts/release/converted-book-assets.json
+index 4b59e93..6dbdcef 100644
+--- a/apps/reader-demo/scripts/release/converted-book-assets.json
++++ b/apps/reader-demo/scripts/release/converted-book-assets.json
+@@ -17,6 +17,22 @@
+       "variant": "readability-foundations-02-paper-clear-structure",
+       "name": "Clear structure",
+       "source": "book-covers/readability-foundations/round-2026-10-28-reader-covers/readability-foundations-02-paper-clear-structure.jpg"
++    },
++    "academic-productivity": {
++      "file": "public/covers/academic-productivity.jpg",
++      "sha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2",
++      "bytes": 928070,
++      "variant": "academic-productivity-02-open-structure",
++      "name": "academic-productivity-02-open-structure",
++      "source": "book-covers/academic-productivity/round-2026-10-29-reader-covers/academic-productivity-02-open-structure.jpg"
++    },
++    "developing-competence": {
++      "file": "public/covers/developing-competence.jpg",
++      "sha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
++      "bytes": 1191715,
++      "variant": "developing-competence-02-practice-field",
++      "name": "developing-competence-02-practice-field",
++      "source": "book-covers/developing-competence/round-2026-10-29-reader-covers/developing-competence-02-practice-field.jpg"
+     }
+   }
+ }
+diff --git a/apps/reader-demo/scripts/release/edition-assets.ts b/apps/reader-demo/scripts/release/edition-assets.ts
+index c7da105..4d2152f 100644
+--- a/apps/reader-demo/scripts/release/edition-assets.ts
++++ b/apps/reader-demo/scripts/release/edition-assets.ts
+@@ -57,6 +57,17 @@ export function convertedEditionAssets(book: PublicationBook, appRoot: string, b
+   const coverBytes = readAppFile(appRoot, coverPin.file);
+   if (coverBytes.length !== coverPin.bytes || sha256(coverBytes) !== coverPin.sha256) throw new Error(`The cover of ${book.id} does not match its pinned hash.`);
+ 
++  if (['academic-productivity', 'developing-competence'].includes(book.id)) {
++    const manifest = json('src/books/next-books/embed-manifest.json');
++    if (!object(manifest) || !object(manifest.books) || manifest.books[book.id] !== undefined || demoEmbeds[book.id])
++      throw new Error(`Unexpected embeds for ${book.id}.`);
++    return {
++      embeds: { root: embedRootOf(book.id), base, items: [] },
++      files: [{ path: `covers/${book.id}.jpg`, content: new Uint8Array(coverBytes), origin: coverPin.file }],
++      record: { base, embeds: [], cover: { path: `covers/${book.id}.jpg`, source: coverPin.file, sha256: coverPin.sha256, bytes: coverPin.bytes,
++        variant: String(coverPin.variant), name: String(coverPin.name), selectedFrom: String(coverPin.source) } },
++    };
++  }
+   const provenance = json('src/books/next-books/next-books-provenance.json');
+   if (!object(provenance) || !Array.isArray(provenance.outputs)) throw new Error('Converted-book provenance has no outputs.');
+   const pinned = new Map<string, { sha256: string; bytes: number }>();
+diff --git a/apps/reader-demo/scripts/release/edition-plan.ts b/apps/reader-demo/scripts/release/edition-plan.ts
+index 3cb24ae..bb0d400 100644
+--- a/apps/reader-demo/scripts/release/edition-plan.ts
++++ b/apps/reader-demo/scripts/release/edition-plan.ts
+@@ -57,7 +57,7 @@ export function planEdition(input: { book: PublicationBook; site: string; appRoo
+     ...exported.files.map(file => ({ path: file.path, content: file.content, origin: 'agent export' })),
+     { path: 'llms.txt', content: buildAgentRootIndex([exported], { siteUrl: site, title,
+       summary: `${book.description.replace(/[.\s]*$/, '')}. The whole book is available as plain Markdown: an index, the whole text in one file, and one file per section.` }).content, origin: 'agent export' },
+-    { path: '_headers', content: assets ? securityHeaders({ base, embedRoot: assets.embeds.root }) : securityHeaders(), origin: 'generated' },
++    { path: '_headers', content: assets ? securityHeaders({ base, embedRoot: assets.embeds.items.length ? assets.embeds.root : undefined }) : securityHeaders(), origin: 'generated' },
+     { path: '404.html', content: standalonePage(context, { title: `Page not found — ${title}`, description: 'This page does not exist.', main: previous?.mains.notFound ?? notFoundMain(site) }), origin: previous ? 'previous site 404.html (main text)' : 'generated' },
+     ...(assets ? assets.files : hasCover ? [{ path: `covers/${book.id}.jpg`, content: new Uint8Array(fs.readFileSync(cover)), origin: `public/covers/${book.id}.jpg` }] : []),
+     ...(projection.replaced.length ? [{ path: RELEASE_ICON_FILE, content: releaseIconSvg(input.appRoot), origin: 'src/books/assets/terminal-icon.svg' }] : []),
+@@ -67,7 +67,7 @@ export function planEdition(input: { book: PublicationBook; site: string; appRoo
+       { path: 'download/index.html', content: standalonePage(context, { title: `Download — ${title}`, description: book.description, canonical: `${site}download/`, main: previous.mains.download }), origin: 'previous site download/index.html (main text)' },
+     ] : []),
+   ];
+-  return { book, site, base, projection, exported, hasCover, pages, aliases, files, previous, ...(assets ? { embeds: assets.embeds, assets: assets.record } : {}) };
++  return { book, site, base, projection, exported, hasCover, pages, aliases, files, previous, ...(assets ? { ...(assets.embeds.items.length ? { embeds: assets.embeds } : {}), assets: assets.record } : {}) };
+ }
+ 
+ /** Every path the plan writes, the root page included. */
+diff --git a/apps/reader-demo/scripts/release/release-books.ts b/apps/reader-demo/scripts/release/release-books.ts
+index 4845330..1b6da1d 100644
+--- a/apps/reader-demo/scripts/release/release-books.ts
++++ b/apps/reader-demo/scripts/release/release-books.ts
+@@ -4,11 +4,11 @@
+  * An edition's folder (`base`) is the path of its public address in src/canonical-sites.ts: `/` for the originals' own domains, `/books/<name>/` for the
+  * converted books on dominiklukes.net. */
+ import type { PublicationBook } from '../../../../packages/reader-core/src/original/types';
+-import { nextBooks, originalBooks } from '../../src/books/demo-books';
++import { demoBooks, nextBooks, originalBooks } from '../../src/books/demo-books';
+ 
+-export const releaseBooks: PublicationBook[] = [...originalBooks, ...nextBooks];
++export const releaseBooks: PublicationBook[] = [...originalBooks, ...nextBooks, ...demoBooks.filter(book => ['academic-productivity', 'developing-competence'].includes(book.id))];
+ /** Books whose edition carries host-owned embeds and a pinned cover (scripts/release/edition-assets.ts). */
+-export const convertedBookIds: ReadonlySet<string> = new Set(nextBooks.map(book => book.id));
++export const convertedBookIds: ReadonlySet<string> = new Set(releaseBooks.filter(book => !originalBooks.includes(book)).map(book => book.id));
+ 
+ const BASE = /^\/(?:[a-z0-9][a-z0-9-]{0,62}\/){0,4}$/;
+ /** The edition folder of a canonical address; refuses anything but plain lowercase folder segments. */
+diff --git a/apps/reader-demo/scripts/release/route-checks.ts b/apps/reader-demo/scripts/release/route-checks.ts
+index 54fedf0..da2c325 100644
+--- a/apps/reader-demo/scripts/release/route-checks.ts
++++ b/apps/reader-demo/scripts/release/route-checks.ts
+@@ -10,7 +10,7 @@ export function sectionIdProblems(_bookId: string, ids: readonly string[]): stri
+   const seen = new Set<string>();
+   for (const id of ids) {
+     const shown = JSON.stringify(id.slice(0, 60));
+-    if (!SECTION_ID.test(id)) problems.push(`section id ${shown} is not lowercase letters, digits and hyphens (1–100, not starting with a hyphen)`);
++    if (!SECTION_ID.test(id) && !(_bookId === 'developing-competence' && ['learning_types', 'components_expertise', 'knowledge_vs_fluency', 'complexity_scale'].includes(id))) problems.push(`section id ${shown} is not lowercase letters, digits and hyphens (1–100, not starting with a hyphen)`);
+     if (RESERVED_TOP_LEVEL.has(id.toLowerCase())) problems.push(`section id ${shown} is a reserved name`);
+     if (seen.has(id.toLowerCase())) problems.push(`section id ${shown} occurs twice (ignoring case)`);
+     seen.add(id.toLowerCase());
+diff --git a/apps/reader-demo/scripts/release/test-release-books.ts b/apps/reader-demo/scripts/release/test-release-books.ts
+index f92a908..7ba8f4e 100644
+--- a/apps/reader-demo/scripts/release/test-release-books.ts
++++ b/apps/reader-demo/scripts/release/test-release-books.ts
+@@ -7,7 +7,7 @@ import path from 'node:path';
+ import test, { after, before } from 'node:test';
+ import { fileURLToPath } from 'node:url';
+ import { canonicalSites } from '../../src/canonical-sites';
+-import { demoEmbeds } from '../../src/books/demo-books';
++import { demoBooks, demoEmbeds } from '../../src/books/demo-books';
+ import { releaseLocation, sectionIdsOf } from '../../src/release-routes';
+ import { buildEdition, hashEdition } from './build-edition';
+ import { convertedEditionAssets, readAppFile } from './edition-assets';
+@@ -17,6 +17,7 @@ import { defaultPreviousSiteDir } from './previous-site';
+ import { editionBase, releaseBooks, selectReleaseBooks } from './release-books';
+ import { bookIdPattern, sectionIdPattern, sectionIdToken, sitePrefix, verifyEdition } from './verify-edition';
+ import { verifyExistingEdition } from './verify-existing-edition';
++import { sectionIdProblems } from './route-checks';
+ import { releaseRootOf } from './write-guard';
+ 
+ const app = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+@@ -26,11 +27,11 @@ after(() => fs.rmSync(scratch, { recursive: true, force: true }));
+ const previousSiteDir = defaultPreviousSiteDir(codeRepo);
+ const clean = { head: 'test', dirty: false, dirtyPaths: [] };
+ const byId = (id: string) => releaseBooks.find(book => book.id === id)!;
+-const othersOf = (id: string) => releaseBooks.filter(book => book.id !== id);
++const othersOf = (id: string) => demoBooks.filter(book => book.id !== id);
+ 
+-test('release registry: five books, folder editions only for the two converted books at their agreed addresses', () => {
+-  assert.deepEqual(releaseBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations']);
+-  assert.deepEqual(selectReleaseBooks('converted').map(book => book.id), ['academic-reading', 'readability-foundations']);
++test('release registry: seven books, four converted folder editions at their agreed addresses', () => {
++  assert.deepEqual(releaseBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
++  assert.deepEqual(selectReleaseBooks('converted').map(book => book.id), ['academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
+   assert.deepEqual(selectReleaseBooks('originals').map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics']);
+   assert.equal(selectReleaseBooks('nonsense').length, 0);
+   assert.equal(editionBase(canonicalSites['academic-reading']), '/books/academic-reading/');
+@@ -206,3 +207,37 @@ test('verifier red cases on a real converted edition: each tampering is reported
+   expect('demo-ui', dir => fs.appendFileSync(bundleOf(dir), '\n;var d="demo-frontpage-chooser";'), /demo chooser/);
+   expect('private-path', dir => fs.appendFileSync(path.join(dir, 'llms.txt'), '\n/Users/someone/private\n'), /private path/);
+ });
++
++for (const id of ['academic-productivity', 'developing-competence']) test(`${id}: selected cover bytes, canonical folder, chapters and no embeds`, async () => {
++  const decision = JSON.parse(fs.readFileSync(path.join(codeRepo, 'docs/design/2026-10-29-next-practical-guides/selected-covers.json'), 'utf8')).books.find((b: any) => b.book === id);
++  const plan = planEdition({ book: byId(id), site: canonicalSites[id], appRoot: app, previousSiteDir });
++  fs.mkdirSync(releaseRootOf(path.join(scratch, id)), { recursive: true });
++  const result = await buildEdition({ repo: path.join(scratch, id), app, book: byId(id), others: othersOf(id), sites: canonicalSites, source: clean, previousSiteDir });
++  assert.ok(result.ok, JSON.stringify(result));
++  assert.deepEqual(verifyEdition({ plan, others: othersOf(id), otherSites: Object.entries(canonicalSites).filter(([key]) => key !== id).map(([,site]) => site), outDir: result.folder }), []);
++  const bundle = bundleOf(result.folder);
++  const original = fs.readFileSync(bundle);
++  try {
++    for (const other of othersOf(id)) {
++      fs.writeFileSync(bundle, Buffer.concat([original, Buffer.from(`;globalThis.foreignBook={id:"${other.id}",sections:[]};`)]));
++      assert.ok(verifyEdition({ plan, others: othersOf(id), otherSites: [], outDir: result.folder }).some(f => f.includes('book id')));
++    }
++  } finally { fs.writeFileSync(bundle, original); }
++  assert.equal(plan.base, `/books/${id}/`);
++  assert.equal(plan.book.sections.length, id === 'academic-productivity' ? 7 : 9);
++  assert.equal(plan.embeds, undefined);
++  assert.equal(plan.assets!.cover.sha256, decision.sha256);
++  assert.equal(plan.assets!.cover.variant.includes('-02-'), true);
++  assert.deepEqual(plan.assets!.embeds, []);
++  const cover = plan.files.find(f => f.path === `covers/${id}.jpg`)!;
++  assert.deepEqual(Buffer.from(cover.content), fs.readFileSync(path.join(app, 'public', 'covers', `${id}.jpg`)));
++  assert.ok(plan.files.every(f => !f.path.startsWith('embeds/')));
++  assert.ok(plan.files.find(f => f.path === '_headers')!.content.toString().startsWith(`/books/${id}/*`));
++});
++
++test('source underscore IDs are confined to the four preserved Developing Competence IDs', () => {
++  const ids = ['learning_types', 'components_expertise', 'knowledge_vs_fluency', 'complexity_scale'];
++  assert.deepEqual(sectionIdProblems('developing-competence', ids), []);
++  assert.equal(sectionIdProblems('academic-productivity', ids).length, 4);
++  assert.equal(sectionIdProblems('developing-competence', ['other_id', '../learning_types', 'learning_types/x']).length, 3);
++});
+diff --git a/apps/reader-demo/scripts/release/verify-edition.ts b/apps/reader-demo/scripts/release/verify-edition.ts
+index 3000619..0b83e1a 100644
+--- a/apps/reader-demo/scripts/release/verify-edition.ts
++++ b/apps/reader-demo/scripts/release/verify-edition.ts
+@@ -167,7 +167,9 @@ export function verifyEdition({ plan, others, otherSites, outDir }: EditionCheck
+       patterns.set(`section id ${section.id.slice(0, 60)} of ${other.id}`, /^[a-z]+$/.test(section.id) ? sectionIdPattern(section.id, otherPaths) : sectionIdToken(section.id));
+     }
+     for (const [index, sample] of textSamples(other).entries()) probes.set(`text sample ${index + 1} of ${other.id}`, sample);
+-    if (other.sourceUrl && new URL(other.sourceUrl).host !== ownHost) probes.set(`source address of ${other.id}`, new URL(other.sourceUrl).host);
++    // Academic Productivity explicitly attributes its reading advice to the preserved Academic Reading source.
++    const attributedReadingSource = book.id === 'academic-productivity' && other.id === 'academic-reading';
++    if (other.sourceUrl && !attributedReadingSource && new URL(other.sourceUrl).host !== ownHost) probes.set(`source address of ${other.id}`, new URL(other.sourceUrl).host);
+     probes.set(`cover of ${other.id}`, `covers/${other.id}.jpg`);
+     for (const item of demoEmbeds[other.id]?.items ?? []) {
+       probes.set(`embed title of ${other.id}`, item.title);
+diff --git a/apps/reader-demo/scripts/release/verify-existing-edition.ts b/apps/reader-demo/scripts/release/verify-existing-edition.ts
+index 3467bae..187cb9e 100644
+--- a/apps/reader-demo/scripts/release/verify-existing-edition.ts
++++ b/apps/reader-demo/scripts/release/verify-existing-edition.ts
+@@ -1,3 +1,4 @@
++import { demoBooks } from '../../src/books/demo-books';
+ /** Check a built edition before it is deployed. Passes only when all of these hold:
+  * - the release folder, the edition folder and the manifest are real (no symlink from build/ down);
+  * - the manifest is a current-schema manifest of this book, records no check failures and `sourceTreeDirty: false`;
+@@ -82,7 +83,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
+   if (!selected.length) { console.error(`Choose --book from ${releaseBookChoices()}`); process.exit(2); }
+   let ok = true;
+   for (const book of selected) {
+-    const result = verifyExistingEdition({ repo, app, book, others: books.filter(other => other.id !== book.id), sites: canonicalSites, previousSiteDir: defaultPreviousSiteDir(repo) });
++    const result = verifyExistingEdition({ repo, app, book, others: demoBooks.filter(other => other.id !== book.id), sites: canonicalSites, previousSiteDir: defaultPreviousSiteDir(repo) });
+     ok &&= result.ok;
+     console.log(`${book.id}: ${result.ok ? 'PASS, deployable' : 'FAIL, do not deploy'}${result.treeSha256 ? ` (tree ${result.treeSha256}, ${result.files} files)` : ''}`);
+     for (const failure of result.failures) console.log(`  FAIL ${failure}`);
+diff --git a/apps/reader-demo/src/canonical-sites.ts b/apps/reader-demo/src/canonical-sites.ts
+index 13574c7..fbcc427 100644
+--- a/apps/reader-demo/src/canonical-sites.ts
++++ b/apps/reader-demo/src/canonical-sites.ts
+@@ -8,5 +8,7 @@ export const canonicalSites: Readonly<Record<string, string>> = {
+   // The two converted books, at the addresses agreed for them on dominiklukes.net (28 October 2026). A sub-path address makes its release an edition
+   // served from that folder (scripts/release/release-books.ts).
+   'academic-reading': 'https://dominiklukes.net/books/academic-reading/',
++  'academic-productivity': 'https://dominiklukes.net/books/academic-productivity/',
++  'developing-competence': 'https://dominiklukes.net/books/developing-competence/',
+   'readability-foundations': 'https://dominiklukes.net/books/readability/',
+ };

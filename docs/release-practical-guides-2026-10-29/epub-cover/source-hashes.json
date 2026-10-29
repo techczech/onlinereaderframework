@@ -1,0 +1,11 @@
+{
+  "apps/reader-demo/src/App.tsx": "113e515a14270b946aaebf1f670efb34a8b83fdd573a1bc59bf345c0d8dbdc3c",
+  "packages/reader-core/src/services/publication-epub/epub-assets.ts": "192444b539d1c32a9668858a282be7830ab6bc7be81076aa75a65e7d9fdee09e",
+  "packages/reader-core/src/services/publication-epub/publication-epub-covers.browser-test.mjs": "8018767673b0849638677fe631a8ce9a92b30037494e681b6e3941e81c40219b",
+  "packages/reader-core/src/services/publication-epub/README.md": "f0f1b7c90ccc98bd234e4a8d6b0c0f926b013701c390663873291c45032dab95",
+  "packages/reader-core/src/services/publication-epub/index.ts": "78f4380fb42381525617a3e668b700d11682f214216f3a60dbaa4fcfe7f8fd40",
+  "docs/release-practical-guides-2026-10-29/epub-cover/academic-productivity.epub": "ae163fd914dd916065d839d891098eb9ad443fe12fd3c5b8fb32d682681f80c3",
+  "docs/release-practical-guides-2026-10-29/epub-cover/developing-competence.epub": "e07bced70cf93558383fb61efc6413d835acc2689c86c2dd446b1502dfab68d8",
+  "apps/reader-demo/public/covers/developing-competence.jpg": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33",
+  "apps/reader-demo/public/covers/academic-productivity.jpg": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2"
+}

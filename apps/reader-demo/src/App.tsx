@@ -1,3 +1,5 @@
+import academicCover from '../public/covers/academic-productivity.jpg?inline';
+import competenceCover from '../public/covers/developing-competence.jpg?inline';
 import React, { useEffect, useMemo, useState } from 'react';
 import { FRONT_PAGE_LAYOUTS, PublicationReader, frontPageLayoutKey, publicationDisplayTitle, type FrontPageLayoutKey, type PublicationBook, type PublicationEmbeds } from 'reader-core';
 import { epubAssets } from './books/epub-assets';
@@ -64,7 +66,14 @@ function Reader({ library }: { library: Library }) {
   }, [books]);
   useEffect(() => { document.title = RELEASE_BOOK ? publicationDisplayTitle(book) : `${publicationDisplayTitle(book)} — Online Reader Framework`; }, [book]);
   /* A release build swaps this mapping for its own book's (scripts/release/projection.ts). */
-  const assets = epubAssets[book.id];
+  const assets = useMemo(() => {
+    const cover = (!RELEASE_BOOK || RELEASE_BOOK === 'academic-productivity') && book.id === 'academic-productivity' ? academicCover
+      : (!RELEASE_BOOK || RELEASE_BOOK === 'developing-competence') && book.id === 'developing-competence' ? competenceCover : undefined;
+    return cover ? [...(epubAssets[book.id] ?? []), {
+      href: `cover:${book.id}`, role: 'cover' as const, mediaType: 'image/jpeg' as const,
+      data: Uint8Array.from(atob(cover.split(',')[1]), character => character.charCodeAt(0)),
+    }] : epubAssets[book.id];
+  }, [book.id]);
   const epub = assets ? { assets } : undefined;
   const choose = (value: string) => {
     const url = new URL(window.location.href);

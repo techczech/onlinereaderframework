@@ -1,0 +1,64 @@
+diff --git a/scripts/import-reader-books.ts b/scripts/import-reader-books.ts
+index 2aeca2b..244bcaa 100644
+--- a/scripts/import-reader-books.ts
++++ b/scripts/import-reader-books.ts
+@@ -20,8 +20,11 @@ export const MANIFEST_SCHEMA = "online-reader-framework/release-manifest@2";
+ export interface ReaderBook { book: string; folder: string; site: string; base: string }
+ /** The only books and destinations this importer writes. */
+ export const READER_BOOKS: readonly ReaderBook[] = [
++
+   { book: "academic-reading", folder: "academic-reading", site: "https://dominiklukes.net/books/academic-reading/", base: "/books/academic-reading/" },
+   { book: "readability-foundations", folder: "readability", site: "https://dominiklukes.net/books/readability/", base: "/books/readability/" },
++  { book: "academic-productivity", folder: "academic-productivity", site: "https://dominiklukes.net/books/academic-productivity/", base: "/books/academic-productivity/" },
++  { book: "developing-competence", folder: "developing-competence", site: "https://dominiklukes.net/books/developing-competence/", base: "/books/developing-competence/" },
+ ];
+ const ALLOWED_HEADERS = new Set(["X-Content-Type-Options", "Referrer-Policy", "X-Frame-Options", "Permissions-Policy", "Content-Security-Policy", "Cache-Control"]);
+ const DETACHABLE = new Set(["Content-Security-Policy", "X-Frame-Options"]);
+diff --git a/src/lib/reader-books.ts b/src/lib/reader-books.ts
+index e9854d6..4c97307 100644
+--- a/src/lib/reader-books.ts
++++ b/src/lib/reader-books.ts
+@@ -8,7 +8,7 @@ export type ReaderBook = {
+   book: string; path: string; url: string; title: string; description: string;
+   llms: string; sitemap: string; agentIndex: string; agentFull: string;
+ };
+-const FOLDERS: Record<string, string> = { "academic-reading": "/books/academic-reading/", "readability-foundations": "/books/readability/" };
++const FOLDERS: Record<string, string> = { "academic-productivity": "/books/academic-productivity/", "developing-competence": "/books/developing-competence/", "academic-reading": "/books/academic-reading/", "readability-foundations": "/books/readability/" };
+ 
+ function checked(entry: ReaderBook): ReaderBook {
+   const base = FOLDERS[entry.book];
+diff --git a/tests/reader-books.test.ts b/tests/reader-books.test.ts
+index 631e43f..864e6db 100644
+--- a/tests/reader-books.test.ts
++++ b/tests/reader-books.test.ts
+@@ -76,7 +76,7 @@ describe("import: sound editions", () => {
+     expect(headers).toContain("https://dominiklukes-net.pages.dev/*\n  X-Robots-Tag: noindex");
+     const record = JSON.parse(readFileSync(join(f.host, "src", "content", "reader-books.json"), "utf8"));
+     expect(record.books[0].title).toBe("Title of academic-reading: A subtitle");
+-    expect(record.books.map((b: any) => [b.book, b.url])).toEqual([["academic-reading", "https://dominiklukes.net/books/academic-reading/"], ["readability-foundations", "https://dominiklukes.net/books/readability/"]]);
++    expect(record.books.map((b: any) => [b.book, b.url])).toEqual(READER_BOOKS.map(b => [b.book, b.site]));
+     expect(existsSync(join(f.host, ".reader-books-import"))).toBe(false);
+   });
+   test("a second import replaces each book folder and block once, and records what it replaced", () => {
+@@ -97,7 +97,7 @@ describe("import: sound editions", () => {
+     writeEdition(f.reader, "academic-reading", "v3");
+     expect(run(f, { books: ["academic-reading"] }).ok).toBe(true);
+     expect(snapshot(join(f.host, "public", "books", "readability"))).toEqual(other);
+-    expect(JSON.parse(readFileSync(join(f.host, "src", "content", "reader-books.json"), "utf8")).books.length).toBe(2);
++    expect(JSON.parse(readFileSync(join(f.host, "src", "content", "reader-books.json"), "utf8")).books.length).toBe(READER_BOOKS.length);
+   });
+ });
+ 
+@@ -210,3 +210,12 @@ describe("built site with imported books", () => {
+     expect(headers).toContain("https://dominiklukes-net.pages.dev/*\n  X-Robots-Tag: noindex");
+   });
+ });
++
++test('only the four exact reader folders are allowed; arbitrary folders and Course Design refuse before mutation', () => {
++  expect(READER_BOOKS.map(b => b.folder)).toEqual(['academic-reading', 'readability', 'academic-productivity', 'developing-competence']);
++  const f = fixture(), before = hostState(f.host);
++  for (const book of ['course-design-frameworks', '../academic-productivity', 'other-book', '/books/academic-productivity/']) {
++    expect(run(f, { books: [book] }).ok).toBe(false);
++    expect(hostState(f.host)).toEqual(before);
++  }
++});

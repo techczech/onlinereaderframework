@@ -1,0 +1,12 @@
+{
+  "sourceHead": "87caafd895b7f2442890b7db916d0ee78bb7ee89",
+  "overlaidFiles": [
+    "scripts/import-reader-books.ts",
+    "src/lib/reader-books.ts",
+    "tests/reader-books.test.ts"
+  ],
+  "testExit": 0,
+  "dependencyMode": "existing local node_modules symlink; no install",
+  "buildRun": false,
+  "actualPublicImport": false
+}

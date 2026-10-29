@@ -4,11 +4,11 @@
  * An edition's folder (`base`) is the path of its public address in src/canonical-sites.ts: `/` for the originals' own domains, `/books/<name>/` for the
  * converted books on dominiklukes.net. */
 import type { PublicationBook } from '../../../../packages/reader-core/src/original/types';
-import { nextBooks, originalBooks } from '../../src/books/demo-books';
+import { demoBooks, nextBooks, originalBooks } from '../../src/books/demo-books';
 
-export const releaseBooks: PublicationBook[] = [...originalBooks, ...nextBooks];
+export const releaseBooks: PublicationBook[] = [...originalBooks, ...nextBooks, ...demoBooks.filter(book => ['academic-productivity', 'developing-competence'].includes(book.id))];
 /** Books whose edition carries host-owned embeds and a pinned cover (scripts/release/edition-assets.ts). */
-export const convertedBookIds: ReadonlySet<string> = new Set(nextBooks.map(book => book.id));
+export const convertedBookIds: ReadonlySet<string> = new Set(releaseBooks.filter(book => !originalBooks.includes(book)).map(book => book.id));
 
 const BASE = /^\/(?:[a-z0-9][a-z0-9-]{0,62}\/){0,4}$/;
 /** The edition folder of a canonical address; refuses anything but plain lowercase folder segments. */

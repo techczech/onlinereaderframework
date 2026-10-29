@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "name": "query routes, legacy queries and encoded fragments (no source URL)",
+      "passed": true
+    },
+    {
+      "name": "query routes, legacy queries and encoded fragments (source URL)",
+      "passed": true
+    },
+    {
+      "name": "book identity, unrelated host parameters, home route and genuine external links",
+      "passed": true
+    },
+    {
+      "name": "external URLs retain fragments and never use the route parser fallback as host identity",
+      "passed": true
+    },
+    {
+      "name": "XML-forbidden IDs a+U+0001+b versus ab reject before collapsing",
+      "passed": true
+    },
+    {
+      "name": "XML-forbidden SVG gradient IDs reject before collapsing",
+      "passed": true
+    },
+    {
+      "name": "entity-decoded XML-forbidden IDs reject explicitly",
+      "passed": true
+    },
+    {
+      "name": "missing local fragment rejects explicitly",
+      "passed": true
+    },
+    {
+      "name": "missing chapter fragment rejects explicitly",
+      "passed": true
+    },
+    {
+      "name": "missing query chapter rejects explicitly",
+      "passed": true
+    },
+    {
+      "name": "encoded local fragments and repeated footnote backlinks remain paired",
+      "passed": true
+    },
+    {
+      "name": "SVG paint references resolve to final gradient IDs",
+      "passed": true
+    },
+    {
+      "name": "supplied SVG missing fragment rejects explicitly",
+      "passed": true
+    },
+    {
+      "name": "final validation rejects duplicate IDs and unresolved SVG paint after serialisation",
+      "passed": true
+    },
+    {
+      "name": "full book identity: Building Your Language Muscle (Building Your)",
+      "passed": true
+    },
+    {
+      "name": "full book identity: Deliberate Practice: A Universal Learning Method (Deliberate Practice:)",
+      "passed": true
+    },
+    {
+      "name": "full book identity: Introduction to Key Issues in Language Through Stack Exchange Answers from Linguistics Stack Exchange, 2013–2016 (Introduction to Key Issues in Language Through Stack Exchange Answers)",
+      "passed": true
+    },
+    {
+      "name": "full book identity: Linguistics (Linguistics)",
+      "passed": true
+    },
+    {
+      "name": "full book identity: Building Your Language Muscle (Building Your Language Muscle)",
+      "passed": true
+    }
+  ],
+  "network_requests": [],
+  "chromium": "149.0.7827.55"
+}

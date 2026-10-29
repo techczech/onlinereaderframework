@@ -1,3 +1,4 @@
+import { demoBooks } from '../../src/books/demo-books';
 /** Check a built edition before it is deployed. Passes only when all of these hold:
  * - the release folder, the edition folder and the manifest are real (no symlink from build/ down);
  * - the manifest is a current-schema manifest of this book, records no check failures and `sourceTreeDirty: false`;
@@ -82,7 +83,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (!selected.length) { console.error(`Choose --book from ${releaseBookChoices()}`); process.exit(2); }
   let ok = true;
   for (const book of selected) {
-    const result = verifyExistingEdition({ repo, app, book, others: books.filter(other => other.id !== book.id), sites: canonicalSites, previousSiteDir: defaultPreviousSiteDir(repo) });
+    const result = verifyExistingEdition({ repo, app, book, others: demoBooks.filter(other => other.id !== book.id), sites: canonicalSites, previousSiteDir: defaultPreviousSiteDir(repo) });
     ok &&= result.ok;
     console.log(`${book.id}: ${result.ok ? 'PASS, deployable' : 'FAIL, do not deploy'}${result.treeSha256 ? ` (tree ${result.treeSha256}, ${result.files} files)` : ''}`);
     for (const failure of result.failures) console.log(`  FAIL ${failure}`);

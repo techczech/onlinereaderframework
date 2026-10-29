@@ -23,6 +23,7 @@ interface PublicationEpubOptions {
 }
 interface PublicationEpubAsset {
   href: string;
+  role?: 'cover';
   mediaType: 'image/png' | 'image/jpeg' | 'image/gif' | 'image/svg+xml';
   data: Blob | Uint8Array | ArrayBuffer;
 }
@@ -75,3 +76,14 @@ The final run passed all five archives: the rich XHTML fixture, the standalone s
 Negative checks rejected missing image bytes, invalid raster bytes, unsupported media types, duplicate section IDs, unknown chapter routes, and SVG script/event/CSS/external-resource/entity payloads. Blob, Uint8Array and ArrayBuffer asset inputs worked. A real browser download event completed, and the browser recorded **zero network requests**. A bundled Node import succeeded without DOM globals, and browser-only generation rejected clearly. A no-emit core TypeScript check passed during implementation.
 
 `report-publication-epub-verification.json` records runtime versions, source hashes, archive hashes/sizes, exact image hrefs and full EPUBCheck results. ZIP timestamps and OPF modification time mean separate exports need not have identical hashes. Temporary test archives were removed after inspection. These checks verify the service and generated ebooks; the parent owns package integration and reader UI acceptance. Only files in this service folder were changed by this implementation, with no dependency, shared manifest, original-source or Git changes.
+
+## Optional cover
+
+Supply one asset with `role: 'cover'` to add a cover image, a first spine XHTML page and a navigation landmark. The image receives the EPUB 3 `cover-image` manifest property. The href is a host-owned identifier, never fetched. Cover bytes pass the same format, SVG, dimension and size validation as chapter images and count towards the total limit. A cover also used by a chapter is embedded once. Duplicate cover roles and duplicate hrefs reject. Without a cover role the existing output structure is preserved.
+
+```ts
+await downloadPublicationEpub(book, { assets: [{
+  href: 'cover:my-book', role: 'cover', mediaType: 'image/jpeg',
+  data: vettedJpegBytes, // Uint8Array supplied by the host
+}] });
+```

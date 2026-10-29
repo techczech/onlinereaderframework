@@ -57,6 +57,17 @@ export function convertedEditionAssets(book: PublicationBook, appRoot: string, b
   const coverBytes = readAppFile(appRoot, coverPin.file);
   if (coverBytes.length !== coverPin.bytes || sha256(coverBytes) !== coverPin.sha256) throw new Error(`The cover of ${book.id} does not match its pinned hash.`);
 
+  if (['academic-productivity', 'developing-competence'].includes(book.id)) {
+    const manifest = json('src/books/next-books/embed-manifest.json');
+    if (!object(manifest) || !object(manifest.books) || manifest.books[book.id] !== undefined || demoEmbeds[book.id])
+      throw new Error(`Unexpected embeds for ${book.id}.`);
+    return {
+      embeds: { root: embedRootOf(book.id), base, items: [] },
+      files: [{ path: `covers/${book.id}.jpg`, content: new Uint8Array(coverBytes), origin: coverPin.file }],
+      record: { base, embeds: [], cover: { path: `covers/${book.id}.jpg`, source: coverPin.file, sha256: coverPin.sha256, bytes: coverPin.bytes,
+        variant: String(coverPin.variant), name: String(coverPin.name), selectedFrom: String(coverPin.source) } },
+    };
+  }
   const provenance = json('src/books/next-books/next-books-provenance.json');
   if (!object(provenance) || !Array.isArray(provenance.outputs)) throw new Error('Converted-book provenance has no outputs.');
   const pinned = new Map<string, { sha256: string; bytes: number }>();

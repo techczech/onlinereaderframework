@@ -1,0 +1,134 @@
+{
+  "results": [
+    {
+      "id": "academic-productivity",
+      "covered": true,
+      "chapters": 7,
+      "zipSha256": "261ef560ffce431a485095122fa9919a1d573faa7e761c800ee09eed9464694b",
+      "downloadSha256": "08f2580ad3cf8653f09ada0d07bff6cfb9e8570d2850a2fcf1c29ff54d081dce"
+    },
+    {
+      "id": "developing-competence",
+      "covered": true,
+      "chapters": 9,
+      "zipSha256": "6132f272103f9b0736a6c46d110b118bf4ddb1b9d245da201af33a1c73101dec",
+      "downloadSha256": "da2b0e7f1b9ad1ffea724de4ab20e993be20d0dc8a5959837a91c5534a2ca9a8"
+    },
+    {
+      "controls": [
+        {
+          "id": "deliberate-practice",
+          "noCover": true,
+          "chapters": 21
+        },
+        {
+          "id": "language-muscle",
+          "noCover": true,
+          "chapters": 12
+        },
+        {
+          "id": "linguistics",
+          "noCover": true,
+          "chapters": 262
+        },
+        {
+          "id": "academic-reading",
+          "noCover": true,
+          "chapters": 10
+        },
+        {
+          "id": "readability-foundations",
+          "noCover": true,
+          "chapters": 14
+        },
+        {
+          "id": "academic-productivity",
+          "noCover": true,
+          "chapters": 7
+        },
+        {
+          "id": "developing-competence",
+          "noCover": true,
+          "chapters": 9
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "checks": 12
+    },
+    {
+      "independent": [
+        {
+          "label": "uint8",
+          "passed": true
+        },
+        {
+          "label": "buffer",
+          "passed": true
+        },
+        {
+          "label": "blob",
+          "passed": true
+        },
+        {
+          "label": "null-role",
+          "error": "Error: Unsupported EPUB asset role."
+        },
+        {
+          "label": "object-role",
+          "error": "Error: Unsupported EPUB asset role."
+        },
+        {
+          "label": "array-role",
+          "error": "Error: Unsupported EPUB asset role."
+        },
+        {
+          "label": "case-role",
+          "error": "Error: Unsupported EPUB asset role."
+        },
+        {
+          "label": "number-role",
+          "error": "Error: Unsupported EPUB asset role."
+        },
+        {
+          "label": "null-data",
+          "error": "TypeError: Cannot read properties of null (reading 'byteLength')"
+        },
+        {
+          "label": "string-data",
+          "error": "Error: EPUB image bytes do not match image/jpeg: cover:academic-productivity"
+        },
+        {
+          "label": "object-data",
+          "error": "TypeError: asset.data.slice is not a function"
+        },
+        {
+          "label": "array-data",
+          "error": "Error: EPUB image cannot be decoded: cover:academic-productivity"
+        },
+        {
+          "label": "wrong-mime",
+          "error": "Error: Unsupported EPUB image media type: text/html"
+        },
+        {
+          "label": "opaque-href",
+          "href": "../../escape.jpg",
+          "passed": true
+        },
+        {
+          "label": "opaque-href",
+          "href": "https://evil.invalid/cover.jpg",
+          "passed": true
+        },
+        {
+          "label": "opaque-href",
+          "href": "x\"/><script>bad</script>",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "network": [],
+  "browser": "149.0.7827.55"
+}
