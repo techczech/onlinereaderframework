@@ -40,7 +40,8 @@ export function planEdition(input: { book: PublicationBook; site: string; appRoo
   const { site } = input;
   const base = editionBase(site);
   const converted = convertedBookIds.has(input.book.id);
-  if (converted === (base === '/')) throw new Error(`${input.book.id}: ${converted ? 'a converted book needs a folder address' : 'an original book keeps its domain-root address'}.`);
+  // Asset identity follows the book, independently of its host path. Originals retain their root-only contract.
+  if (!converted && base !== '/') throw new Error(`${input.book.id}: an original book keeps its domain-root address.`);
   const projection = releaseProjection(input.book, base);
   const { book } = projection;
   const assets = converted ? convertedEditionAssets(book, input.appRoot, base) : undefined;

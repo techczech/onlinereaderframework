@@ -1,0 +1,159 @@
+
+> reader-demo@0.1.0 test:release
+> tsx --test scripts/release/test-release.ts scripts/release/test-release-repair.ts scripts/release/test-release-write.ts scripts/release/test-release-books.ts
+
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ release registry: seven books, four converted folder editions at their agreed addresses (2347.05225ms)
+✔ book identity probes reject foreign registry values without matching prose or longer ids (0.383375ms)
+✔ folder routes: a chapter folder, a slash-less edition address and demo parameters become the edition address; nothing outside the folder is read (0.286084ms)
+✔ headers: the domain-root policy is unchanged byte for byte; a folder policy scopes every rule to the folder (0.211791ms)
+✔ section id probes: identifiers are found, ordinary words and longer heading anchors are not (0.186541ms)
+✔ asset plan: pinned cover and nine provenance-pinned embeds; descriptors carry the edition folder (16.409458ms)
+✔ asset plan refuses changed bytes, symbolic links, traversal and a manifest that differs from the registry (214.875334ms)
+✔ write path: a converted edition is staged, verified, swapped and recorded; verify:release passes it and the manifest records folder, cover and embeds (195.520625ms)
+✔ verifier red cases on a real converted edition: each tampering is reported (7440.000667ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ academic-productivity: selected cover bytes, canonical folder, chapters and no embeds (2539.229708ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ developing-competence: selected cover bytes, canonical folder, chapters and no embeds (2867.465833ms)
+✔ source underscore IDs are confined to the four preserved Developing Competence IDs (0.132958ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ deliberate-practice: canonical root build keeps own assets and excludes every foreign demo book (2325.61175ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ language-muscle: canonical root build keeps own assets and excludes every foreign demo book (1988.685416ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ linguistics: canonical root build keeps own assets and excludes every foreign demo book (5628.390042ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ academic-reading: canonical root build keeps own assets and excludes every foreign demo book (1983.457375ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ readability-foundations: canonical root build keeps own assets and excludes every foreign demo book (2089.772083ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ academic-productivity: canonical root build keeps own assets and excludes every foreign demo book (2364.750042ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ developing-competence: canonical root build keeps own assets and excludes every foreign demo book (2874.881667ms)
+✔ the guard refuses a symlinked edition folder, release root, build folder or manifest, and leaves the outside sentinel alone (17.500083ms)
+✔ a $ in book text, title or head reaches the page verbatim: one html, head and title, no marker left (0.212625ms)
+✔ section ids: unsafe, reserved and case-colliding ids are refused; every real id passes (0.656583ms)
+✔ output paths: duplicates ignoring case and a file that is also a folder are refused (0.12225ms)
+✔ static licence metadata uses the reader URL boundary (142.492042ms)
+✔ Linguistics release exposes the existing book-wide grant without changing the canonical book or its section bytes (5.006125ms)
+✔ a symlinked edition folder, release folder or manifest is refused before anything is built, deleted or written (42.661042ms)
+✔ an unsafe section id is refused before any write, and the previous manifest and folder stay as they were (8.083166ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a $ in the book builds verbatim pages; a failed verification keeps the previous edition and leaves no manifest; verify:release checks the folder (3724.173375ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ all late publication failures identify only incomplete output, preserving the previous edition and no manifest (8399.245541ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✔ a rollback failure names the retained good edition separately from incomplete output (2473.899875ms)
+✔ a section path and the previous Linguistics addresses open the section; nothing else does (1.091542ms)
+✔ every Linguistics section has exactly one previous-site route (0.174375ms)
+✔ release location drops demo parameters, keeps section and hash, and ignores an unknown book (0.165666ms)
+✔ hash routes of the original single-page books still open their sections (0.223667ms)
+✔ deliberate-practice: one static page per section, a root page, aliases only where routes exist (76.292583ms)
+✔ language-muscle: one static page per section, a root page, aliases only where routes exist (21.098791ms)
+✔ linguistics: one static page per section, a root page, aliases only where routes exist (142.847291ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38687.398167

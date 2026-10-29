@@ -1,0 +1,23 @@
+✔ independent root/folder plans preserve all converted bytes and original root contract (508.921042ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+INDEPENDENT_SYNTHETIC_TREE academic-reading 3ec21c5e06ad93633d62ba2e6c9ba441beb8ae1db408fb83534d8100fd78e13c
+✔ independent build and negative controls academic-reading https://academicreading.dominiklukes.net/ (4835.278792ms)
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+INDEPENDENT_SYNTHETIC_TREE readability-foundations b7a752ab42797a3010598783747f1f06ca5e5afe296f91e0a23442a639f2c666
+✔ independent build and negative controls readability-foundations https://legacy.invalid/archive/v2/ (3751.630041ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9717.290958

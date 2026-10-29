@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test, { after, before } from 'node:test';
 import { fileURLToPath } from 'node:url';
-import { canonicalSites } from '../../src/canonical-sites';
+import { canonicalSites as rootSites } from '../../src/canonical-sites';
 import { demoBooks, demoEmbeds } from '../../src/books/demo-books';
 import { releaseLocation, sectionIdsOf } from '../../src/release-routes';
 import { buildEdition, hashEdition } from './build-edition';
@@ -20,6 +20,13 @@ import { verifyExistingEdition } from './verify-existing-edition';
 import { sectionIdProblems } from './route-checks';
 import { releaseRootOf } from './write-guard';
 
+// Retain the folder compatibility and hostile-input regression fixtures independently of live host configuration.
+const canonicalSites = { ...rootSites,
+  'academic-reading': 'https://dominiklukes.net/books/academic-reading/',
+  'readability-foundations': 'https://dominiklukes.net/books/readability/',
+  'academic-productivity': 'https://dominiklukes.net/books/academic-productivity/',
+  'developing-competence': 'https://dominiklukes.net/books/developing-competence/',
+};
 const app = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const codeRepo = path.resolve(app, '../..');
 const scratch = path.join(codeRepo, 'build', `test-release-books-${process.pid}`);
@@ -38,7 +45,7 @@ test('release registry: seven books, four converted folder editions at their agr
   assert.equal(editionBase(canonicalSites['readability-foundations']), '/books/readability/');
   for (const id of ['linguistics', 'deliberate-practice', 'language-muscle']) assert.equal(editionBase(canonicalSites[id]), '/');
   for (const bad of ['https://x.test/Books/', 'https://x.test/a_b/', 'https://x.test/a', 'https://x.test/a/b/c/d/e/', 'https://x.test/a%20b/', 'https://x.test/a%2fb/']) assert.throws(() => editionBase(bad), /Unsupported edition folder/, bad);
-  assert.throws(() => planEdition({ book: byId('academic-reading'), site: 'https://academic.example/', appRoot: app, previousSiteDir }), /needs a folder address/);
+  assert.equal(planEdition({ book: byId('academic-reading'), site: 'https://academic.example/', appRoot: app, previousSiteDir }).base, '/');
   assert.throws(() => planEdition({ book: byId('language-muscle'), site: 'https://dominiklukes.net/books/language-muscle/', appRoot: app, previousSiteDir }), /keeps its domain-root address/);
 });
 
@@ -240,4 +247,48 @@ test('source underscore IDs are confined to the four preserved Developing Compet
   assert.deepEqual(sectionIdProblems('developing-competence', ids), []);
   assert.equal(sectionIdProblems('academic-productivity', ids).length, 4);
   assert.equal(sectionIdProblems('developing-competence', ['other_id', '../learning_types', 'learning_types/x']).length, 3);
+});
+
+for (const book of releaseBooks) test(`${book.id}: canonical root build keeps own assets and excludes every foreign demo book`, async () => {
+  const site = rootSites[book.id];
+  assert.equal(editionBase(site), '/');
+  assert.equal(new URL(site).hostname, ({ linguistics: 'linguistics', 'deliberate-practice': 'deliberatepractice', 'language-muscle': 'buildingyourlanguagemuscle', 'academic-reading': 'academicreading', 'readability-foundations': 'readability', 'academic-productivity': 'academicproductivity', 'developing-competence': 'developingcompetence' }[book.id]) + '.dominiklukes.net');
+  const plan = planEdition({ book, site, appRoot: app, previousSiteDir });
+  const repo = path.join(scratch, `root-${book.id}`);
+  // Synthetic test provenance only. This is not a clean-source release acceptance.
+  const result = await buildEdition({ repo, app, book, others: othersOf(book.id), sites: rootSites, source: clean, previousSiteDir });
+  assert.ok(result.ok, JSON.stringify(result));
+  const read = (name: string) => fs.readFileSync(path.join(result.folder, name), 'utf8');
+  assert.match(read('robots.txt'), new RegExp(site.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.ok(read('sitemap.xml').includes(site));
+  assert.ok(read('index.html').includes(`<link rel="canonical" href="${site}">`));
+  assert.ok(read('index.html').includes('"@type":"Book"'));
+  assert.ok(read('llms.txt').includes(site));
+  assert.ok(read('_headers').startsWith('/*\n'));
+  if (plan.assets) {
+    const folderPlan = planEdition({ book, site: canonicalSites[book.id], appRoot: app, previousSiteDir });
+    assert.deepEqual(plan.assets.cover, folderPlan.assets!.cover);
+    assert.deepEqual(plan.assets.embeds, folderPlan.assets!.embeds);
+    assert.equal(plan.assets.embeds.length, book.id === 'academic-reading' ? 3 : book.id === 'readability-foundations' ? 6 : 0);
+    assert.ok(read(path.relative(result.folder, bundleOf(result.folder))).includes(`/covers/${book.id}.jpg`));
+  }
+  const manifestPath = path.join(releaseRootOf(repo), `${book.id}.manifest.json`);
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  console.log('ROOT_BUILD_EVIDENCE ' + JSON.stringify({ ...manifest, provenance: 'synthetic scratch repository; real app build; not release acceptance' }));
+  assert.ok(read('index.html').includes(`"url":"${site}"`));
+  if (book.id === 'academic-reading') {
+    fs.writeFileSync(manifestPath, JSON.stringify({ ...manifest, sourceTreeDirty: true }));
+    assert.ok(verifyExistingEdition({ repo, app, book, others: othersOf(book.id), sites: rootSites, previousSiteDir }).failures.some(f => /dirty|uncommitted/i.test(f)));
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest));
+  }
+  const ids = sectionIdsOf(book.sections);
+  for (const id of ids) assert.equal(releaseLocation(book.id, `${site}#/${id}`, ids, '/'), undefined);
+  const bundle = bundleOf(result.folder);
+  const original = fs.readFileSync(bundle);
+  try {
+    for (const other of othersOf(book.id)) {
+      fs.writeFileSync(bundle, Buffer.concat([original, Buffer.from(`;globalThis.foreignBook={id:"${other.id}",sections:[]};`)]));
+      assert.ok(verifyEdition({ plan, others: othersOf(book.id), otherSites: [], outDir: result.folder }).some(f => f.includes('book id')), other.id);
+    }
+  } finally { fs.writeFileSync(bundle, original); }
 });
