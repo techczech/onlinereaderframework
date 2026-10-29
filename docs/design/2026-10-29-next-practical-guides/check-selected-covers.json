@@ -1,0 +1,46 @@
+[
+  {
+    "book": "academic-productivity",
+    "viewport": 1280,
+    "loaded": true,
+    "natural": [
+      1600,
+      2560
+    ],
+    "width": 256,
+    "height": 400
+  },
+  {
+    "book": "academic-productivity",
+    "viewport": 390,
+    "loaded": true,
+    "natural": [
+      1600,
+      2560
+    ],
+    "width": 120,
+    "height": 192
+  },
+  {
+    "book": "developing-competence",
+    "viewport": 1280,
+    "loaded": true,
+    "natural": [
+      1600,
+      2560
+    ],
+    "width": 256,
+    "height": 400
+  },
+  {
+    "book": "developing-competence",
+    "viewport": 390,
+    "loaded": true,
+    "natural": [
+      1600,
+      2560
+    ],
+    "width": 120,
+    "height": 192
+  }
+]

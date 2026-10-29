@@ -1,0 +1,22 @@
+{
+  "decision": "number 2 for both",
+  "selectedOn": "2026-10-29",
+  "books": [
+    {
+      "book": "academic-productivity",
+      "choice": 2,
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-covers/academic-productivity/round-2026-10-29-reader-covers/academic-productivity-02-open-structure.jpg",
+      "asset": "/covers/academic-productivity.jpg",
+      "alt": "Academic Productivity cover with intersecting blue frames and a cream path",
+      "sha256": "67587c4ea8dbed5dbd25431ac282d45edb69f3e404a4d24bf61db65f0351b1e2"
+    },
+    {
+      "book": "developing-competence",
+      "choice": 2,
+      "source": "/Users/dominiklukes/gitrepos/07_webapps-websites/05_publications/book-covers/developing-competence/round-2026-10-29-reader-covers/developing-competence-02-practice-field.jpg",
+      "asset": "/covers/developing-competence.jpg",
+      "alt": "Developing Competence cover with layered indigo panels and a flowing cream and lavender path",
+      "sha256": "43302cc035cbd5437baba02340eea048f191c942cbcd3bd17162c2d97a860f33"
+    }
+  ]
+}

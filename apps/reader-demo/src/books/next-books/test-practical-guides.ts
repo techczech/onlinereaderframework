@@ -32,7 +32,7 @@ test('current agent route retains all chapter destinations, licences and externa
   const exported=buildAgentBook(b,{});assert.equal(exported.manifest.counts.sections,b.sections.length);
   const text=exported.files.map(f=>f.content).join('\n');
   for(const s of b.sections)assert.ok(text.includes(s.title),s.title);
-  assert.ok(text.includes(b.sourceUrl!));assert.equal(b.appearance?.cover,undefined);
+  assert.ok(text.includes(b.sourceUrl!));assert.equal(b.appearance?.cover?.src,`/covers/${b.id}.jpg`);
  }
  assert.equal(demoBooks[5].home?.license?.href,'https://creativecommons.org/licenses/by/4.0/');
  assert.equal(demoBooks[6].home?.license,undefined);

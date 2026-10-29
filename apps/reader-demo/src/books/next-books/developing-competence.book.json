@@ -8,7 +8,11 @@
     "accent": "#4f46e5",
     "paper": "#f8fafc",
     "ink": "#0f172a",
-    "masthead": "practical"
+    "masthead": "practical",
+    "cover": {
+      "src": "/covers/developing-competence.jpg",
+      "alt": "Developing Competence cover with layered indigo panels and a flowing cream and lavender path"
+    }
   },
   "home": {},
   "navigation": {

@@ -8,7 +8,11 @@
     "accent": "#2563eb",
     "paper": "#f8fafc",
     "ink": "#0f172a",
-    "masthead": "practical"
+    "masthead": "practical",
+    "cover": {
+      "src": "/covers/academic-productivity.jpg",
+      "alt": "Academic Productivity cover with intersecting blue frames and a cream path"
+    }
   },
   "home": {
     "authorNote": "Based on resources developed by Dominik Lukeš for the Reading and Writing Innovation Lab.",
