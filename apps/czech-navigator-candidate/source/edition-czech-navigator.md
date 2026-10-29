@@ -9,11 +9,9 @@ Navigator**
 
 - includes information about history, dialects of Czech and other trivia
 
-**Revised Edition\
-PREVIEW**
+**Version 1**
 
-**NOTE:** This is a draft of an expanded revised edition. More material
-will be added and further revisions will be made.
+Check back for updates with more interactive features.
 
 If you would like toender contribute to the development you can givve
 feedback with corrections, questions or more material via

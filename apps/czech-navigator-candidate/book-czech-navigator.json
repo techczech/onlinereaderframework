@@ -2,12 +2,18 @@
   "id": "czech-language-navigator-reference-candidate",
   "title": "Czech Language Navigator",
   "author": "Dominik Lukeš and Jitka Kauerová",
-  "description": "Reference candidate from the preserved archive extraction. The latest Word source could not be read; source freshness and conversion fidelity remain unverified.",
+  "description": "Version 1. Check back for updates with more interactive features.",
+  "appearance": {
+    "cover": {
+      "src": "cover-czech-navigator-v1.jpg",
+      "alt": "Czech Language Navigator cover"
+    }
+  },
   "sections": [
     {
       "id": "title-and-contents",
       "title": "Title and contents",
-      "content": "<p><img src=\"media/image2-wmf.png\" /><strong>Czech Language Navigator</strong></p>\n<p><strong>Czech Grammar and Usage for Learners</strong></p>\n<ul>\n<li><p>almost everything you need to know about the Czech language</p></li>\n<li><p>grammar and explanations going beyond grammar</p></li>\n<li><p>includes information about history, dialects of Czech and other trivia</p></li>\n</ul>\n<p><strong>Revised Edition<br />\nPREVIEW</strong></p>\n<p><strong>NOTE:</strong> This is a draft of an expanded revised edition. More material will be added and further revisions will be made.</p>\n<p>If you would like toender contribute to the development you can givve feedback with corrections, questions or more material via <a href=\"http://bit.ly/navigator-feedback\">bit.ly/navigator-feedback</a>.</p>\n<p>Copyright 2015 Dominik Lukeš and Jitka Kauerová</p>\n<p>Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</p>\n<figure>\n<img src=\"media/image2.png\" style=\"width:1.29184in;height:0.45283in\" alt=\"Creative Commons License\" />\n<figcaption aria-hidden=\"true\">Creative Commons License</figcaption>\n</figure>\n<p>ISBN 978-1-4717-8509-2</p>\n<p>Table of Contents</p>\n<p>Introduction <a href=\"#introduction\">5</a></p>\n<p>Parts of speech: Nouns, Verbs and More <a href=\"#parts-of-speech-nouns-verbs-and-more\">6</a></p>\n<p>Word Order <a href=\"#word-order\">97</a></p>\n<p>Pronunciation <a href=\"#pronunciation\">104</a></p>\n<p>Spelling <a href=\"#spelling\">115</a></p>\n<p>Idioms, Phraseology and Vocabulary <a href=\"#idioms-phraseology-and-vocabulary\">118</a></p>\n<p>Differences between standard and non-standard Czech <a href=\"#differences-between-standard-and-non-standard-czech\">133</a></p>\n<p>Czech Trivia <a href=\"#czech-trivia\">136</a></p>\n<p>Czech Grammar as Czechs Learn It <a href=\"#czech-grammar-as-czechs-learn-it\">145</a></p>\n<p>Acknowledgements and licensing details <a href=\"#acknowledgements-and-licensing-details\">150</a></p>\n<p>Complete Table of Contents <a href=\"#complete-table-of-contents\">151</a></p>\n",
+      "content": "<p><img src=\"media/image2-wmf.png\" /><strong>Czech Language Navigator</strong></p>\n<p><strong>Czech Grammar and Usage for Learners</strong></p>\n<ul>\n<li><p>almost everything you need to know about the Czech language</p></li>\n<li><p>grammar and explanations going beyond grammar</p></li>\n<li><p>includes information about history, dialects of Czech and other trivia</p></li>\n</ul>\n<p><strong>Version 1</strong></p>\n<p>Check back for updates with more interactive features.</p>\n<p>If you would like toender contribute to the development you can givve feedback with corrections, questions or more material via <a href=\"http://bit.ly/navigator-feedback\">bit.ly/navigator-feedback</a>.</p>\n<p>Copyright 2015 Dominik Lukeš and Jitka Kauerová</p>\n<p>Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</p>\n<figure>\n<img src=\"media/image2.png\" style=\"width:1.29184in;height:0.45283in\" alt=\"Creative Commons License\" />\n<figcaption aria-hidden=\"true\">Creative Commons License</figcaption>\n</figure>\n<p>ISBN 978-1-4717-8509-2</p>\n<p>Table of Contents</p>\n<p>Introduction <a href=\"#introduction\">5</a></p>\n<p>Parts of speech: Nouns, Verbs and More <a href=\"#parts-of-speech-nouns-verbs-and-more\">6</a></p>\n<p>Word Order <a href=\"#word-order\">97</a></p>\n<p>Pronunciation <a href=\"#pronunciation\">104</a></p>\n<p>Spelling <a href=\"#spelling\">115</a></p>\n<p>Idioms, Phraseology and Vocabulary <a href=\"#idioms-phraseology-and-vocabulary\">118</a></p>\n<p>Differences between standard and non-standard Czech <a href=\"#differences-between-standard-and-non-standard-czech\">133</a></p>\n<p>Czech Trivia <a href=\"#czech-trivia\">136</a></p>\n<p>Czech Grammar as Czechs Learn It <a href=\"#czech-grammar-as-czechs-learn-it\">145</a></p>\n<p>Acknowledgements and licensing details <a href=\"#acknowledgements-and-licensing-details\">150</a></p>\n<p>Complete Table of Contents <a href=\"#complete-table-of-contents\">151</a></p>\n",
       "format": "html"
     },
     {
@@ -84,7 +90,7 @@
   },
   "downloads": [
     {
-      "label": "Download reference EPUB",
+      "label": "Download EPUB",
       "href": "czech-language-navigator-reference.epub"
     }
   ]

@@ -1,0 +1,200 @@
+cover-and-copy {
+  src: 'cover-czech-navigator-v1.jpg',
+  naturalWidth: 1600,
+  naturalHeight: 2560,
+  width: 256,
+  height: 400,
+  left: 185.59375,
+  right: 441.59375,
+  viewport: 1440,
+  objectFit: 'contain'
+}
+cover-and-copy {
+  src: 'cover-czech-navigator-v1.jpg',
+  naturalWidth: 1600,
+  naturalHeight: 2560,
+  width: 120,
+  height: 192,
+  left: 24,
+  right: 144,
+  viewport: 390,
+  objectFit: 'contain'
+}
+[
+  {
+    tag: 'A',
+    text: '',
+    href: '?book=czech-language-navigator-reference-candidate',
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'close', href: null, visible: false },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  { tag: 'BUTTON', text: '', href: null, visible: true },
+  {
+    tag: 'BUTTON',
+    text: 'menu\nTable of contents',
+    href: null,
+    visible: true
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Czech Language Navigator',
+    href: null,
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'headphones', href: null, visible: true },
+  { tag: 'BUTTON', text: 'text_fields', href: null, visible: true },
+  { tag: 'BUTTON', text: 'eyeglasses', href: null, visible: true },
+  { tag: 'BUTTON', text: 'ink_highlighter', href: null, visible: true },
+  { tag: 'BUTTON', text: 'brightness_auto', href: null, visible: true },
+  {
+    tag: 'BUTTON',
+    text: 'arrow_forward\nStart Reading',
+    href: null,
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'search\nSearch', href: null, visible: true },
+  {
+    tag: 'A',
+    text: 'download\nDownload EPUB',
+    href: 'czech-language-navigator-reference.epub',
+    visible: true
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Title and contents',
+    href: null,
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'Introduction', href: null, visible: true },
+  {
+    tag: 'BUTTON',
+    text: 'Parts of speech: Nouns, Verbs and More',
+    href: null,
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'Word Order', href: null, visible: true },
+  { tag: 'BUTTON', text: 'Pronunciation', href: null, visible: true },
+  { tag: 'BUTTON', text: 'Spelling', href: null, visible: true },
+  {
+    tag: 'BUTTON',
+    text: 'Idioms, Phraseology and Vocabulary',
+    href: null,
+    visible: true
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Differences between standard and non-standard Czech',
+    href: null,
+    visible: true
+  },
+  { tag: 'BUTTON', text: 'Czech Trivia', href: null, visible: true },
+  {
+    tag: 'BUTTON',
+    text: 'Czech Grammar as Czechs Learn It',
+    href: null,
+    visible: true
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Acknowledgements and licensing details',
+    href: null,
+    visible: true
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Complete Table of Contents',
+    href: null,
+    visible: true
+  }
+]
+Czech Language Navigator
+Dominik Lukeš and Jitka Kauerová
+search
+1 of 12 read
+TABLE OF CONTENTS
+Title and contents
+Introduction
+Parts of speech: Nouns, Verbs and More
+check
+Word Order
+Pronunciation
+Spelling
+Idioms, Phraseology and Vocabulary
+Differences between standard and non-standard Czech
+Czech Trivia
+Czech Grammar as Czechs Learn It
+Acknowledgements and licensing details
+Complete Table of Contents
+menu
+Table of contents
+Czech Language Navigator
+headphones
+text_fields
+eyeglasses
+ink_highlighter
+brightness_auto
+Home
+/
+/
+Parts of speech: Nouns, Verbs and More
+link
+Share
+bookmark_border
+Save
+Parts of speech: Nouns, Verbs and More
+
+This section describes in detail the forms and functions of all the different parts of speech in Czech:
+
+Nouns
+
+Adjectives
+
+Pronouns
+
+Numerals
+
+Verbs
+
+Adverbs
+
+Prepositions
+
+Conjunctions
+
+At the end, you will also find a chart on How and when Czech words change their forms and How parts of speech interact when combined. This is the longest part of the navigator because it is what most learners find challenging.
+
+Nouns
+Gender
+What is gender?
+
+All Czech nouns have what is called gender. The gender of the noun is most important when you need to decide on the form of numbers, pronouns, and adjectives describing it. The words describing or determing the noun must change their form to match the noun’s gender. It also happens with verbs in the past tense.
+
+To match the noun’s gender, the other words have to either add an appropriate ending or changing an existing one. For example, ten bílý dům byl vs ta bílá kniha byla - that‑masculine white‑masculine house was‑feminine vs. that‑feminine white‑feminine book was‑feminine.
+
+English only has natural gend
+tables 167
+sidebar closed
+search-results Czech Language NavigatorDominik Lukeš and Jitka Kauerováclosesearchclose1 of 12 read2 Results FoundCzech Grammar as Czechs Learn It...jmena Numerals číslovky Verbs slovesa Adverbs příslovce Prepositions předložk......f, two pairs of, ...) Verbs - slovesa For verbs we can identify these feature...Complete Table of Contents...merals - číslovky 146 Verbs - slovesa 146 Adverbs - příslovce 147 Preposition...
+horizontal-scroll-proof { found: true, scrollLeft: 50, width: 332, scrollWidth: 919 }
+dimensions {
+  width: 390,
+  scroll: 390,
+  tables: [
+    { cols: 12, scroll: 1660, client: 332, merged: 0 },
+    { cols: 10, scroll: 1261, client: 332, merged: 34 },
+    { cols: 10, scroll: 1264, client: 332, merged: 0 },
+    { cols: 9, scroll: 1135, client: 332, merged: 0 },
+    { cols: 9, scroll: 1135, client: 332, merged: 0 }
+  ]
+}

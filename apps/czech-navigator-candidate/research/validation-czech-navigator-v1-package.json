@@ -1,0 +1,34 @@
+{
+  "cover_sha256": "c657eaef11a644c75f252d68aa36379646d4e8e98e07ca06f41320f1659f8564",
+  "cover_dimensions": [
+    1600,
+    2560
+  ],
+  "epub_sha256": "d0b7a49295a9426fc9c0f1c515f99b24b6fcfe2d1b28df8f3da99c3fba77dfda",
+  "epub_cover_exact_bytes": true,
+  "title": "Czech Language Navigator",
+  "author": "Dominik Luke\u0161 and Jitka Kauerov\u00e1",
+  "regenerated_figures": {
+    "image66-wmf.png": "identical decoded pixels",
+    "image92-wmf.png": "identical decoded pixels",
+    "image6-wmf.png": "identical decoded pixels",
+    "image7-wmf.png": "identical decoded pixels",
+    "image67-wmf.png": "identical decoded pixels",
+    "image93-wmf.png": "identical decoded pixels",
+    "image5-wmf.png": "identical decoded pixels",
+    "image65-wmf.png": "identical decoded pixels",
+    "image64-wmf.png": "identical decoded pixels",
+    "image4-wmf.png": "identical decoded pixels",
+    "image68-wmf.png": "identical decoded pixels",
+    "image61-wmf.png": "identical decoded pixels",
+    "image70-wmf.png": "identical decoded pixels",
+    "image60-wmf.png": "identical decoded pixels",
+    "image69-wmf.png": "identical decoded pixels",
+    "image62-wmf.png": "identical decoded pixels",
+    "image2-wmf.png": "identical decoded pixels",
+    "image3-wmf.png": "identical decoded pixels",
+    "image63-wmf.png": "identical decoded pixels"
+  },
+  "security": "0 critical, 0 high, 2 medium",
+  "git_limit": "Local branch 47 ahead / 2 behind origin/main; no merge or force push authorised."
+}

@@ -54,10 +54,9 @@
   "html_counts": {
     "p": 3177,
     "img": 69,
-    "strong": 2354,
+    "strong": 2353,
     "ul": 49,
     "li": 170,
-    "br": 128,
     "a": 442,
     "figure": 1,
     "figcaption": 1,
@@ -78,6 +77,7 @@
     "th": 136,
     "h6": 79,
     "blockquote": 179,
+    "br": 127,
     "ol": 4,
     "del": 1,
     "hr": 3,
@@ -90,6 +90,6 @@
     "Original manuscript licence states CC BY-NC-SA 4.0; preserved without relicensing",
     "WMF figures deterministically rendered with LibreOffice Draw; original WMFs retained",
     "Original Collocation bookmark _Toc55636603 has no supported target; only its hyperlink is unwrapped in web and EPUB derivatives, retaining exact visible text",
-    "Archive text includes existing draft markers and errors; no editorial changes"
+    "Only derivative Revised Edition PREVIEW and draft NOTE replaced with approved Version 1 notice; all other manuscript wording preserved"
   ]
 }
