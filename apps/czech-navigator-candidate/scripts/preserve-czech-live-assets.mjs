@@ -1,0 +1,5 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+const base='apps/czech-navigator-candidate/';const hashes=JSON.parse(fs.readFileSync(base+'research/refine-czech-visuals/preserved-live-wmf.json'));const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+for(const [n,h] of Object.entries(hashes)){const r=await fetch('https://czechnavigator.dominiklukes.net/media/'+n);assert.ok(r.ok);const b=Buffer.from(await r.arrayBuffer());assert.equal(hash(b),h);fs.writeFileSync(base+'dist/media/'+n,b);}
+assert.equal(hash(fs.readFileSync(base+'dist/czech-language-navigator-reference.epub')),'b70a8f756f26ee92e6a7807beaf6da0f4e41c8d778d28345d99420aba23d36e5');
+for(const file of fs.readdirSync(base+'dist/agent',{recursive:true})){const p='agent/'+file;if(fs.statSync(base+'dist/'+p).isFile())assert.equal(hash(fs.readFileSync(base+'dist/'+p)),hash(fs.readFileSync(base+'public/'+p)));}console.log('Preserved all live WMF bytes; EPUB hash and static agent bytes unchanged');

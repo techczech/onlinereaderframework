@@ -1,0 +1,4 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+const root='apps/czech-navigator-candidate/';const sha=b=>crypto.createHash('sha256').update(b).digest('hex');const files=fs.readdirSync(root+'dist',{recursive:true}).filter(p=>!['_headers','_redirects'].includes(p)&&fs.statSync(root+'dist/'+p).isFile());const results=[];
+for(let i=0;i<files.length;i+=8)await Promise.all(files.slice(i,i+8).map(async p=>{const r=await fetch('https://czechnavigator.dominiklukes.net/'+p);assert.ok(r.ok,p);const actual=sha(Buffer.from(await r.arrayBuffer()));const expected=sha(fs.readFileSync(root+'dist/'+p));assert.equal(actual,expected,p);results.push({path:p,sha256:actual});}));
+fs.writeFileSync(root+'research/refine-czech-visuals/live-hashes.json',JSON.stringify(results,null,2));console.log(`${results.length} live files match verified dist`);

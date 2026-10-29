@@ -54,3 +54,33 @@
 .publication-table [hidden] { display:none !important; }
 .publication-table-focus:not(:has(.publication-table-controls:not([hidden]))) { grid-template-columns:minmax(0,1fr); }
 @media(max-width:760px) { .publication-table-header { padding:3px 6px; } }
+
+/* Requested quiet chrome; existing disclosure and manuscript remain intact. */
+.publication-table-header button { width:34px; height:34px; padding:5px; display:inline-flex; align-items:center; justify-content:center; }
+.publication-table-header .material-symbols-outlined { font-size:20px; }
+.publication-table-header button:is([aria-expanded=true]:first-of-type,[aria-pressed=true]) { background:#eeeade; border-color:#dcd8cb; }
+/* Exact authored axes: How parts of speech interact, table 168. Presentation only. */
+.publication-atlas #reader-content-czech-table-168 tr:first-child > td,
+.publication-atlas #reader-content-czech-table-168 tr > td:first-child,
+.publication-atlas #reader-content-czech-table-168 tr:first-child > td *,
+.publication-atlas #reader-content-czech-table-168 tr > td:first-child * { font-weight:700; }
+.publication-atlas #reader-content-czech-table-168 tr:first-child > td { border-bottom:2px solid #dcd8cb; }
+/* Exact monochrome location/direction assets; source pixels stay unchanged. */
+.publication-atlas .publication-content img:is([src$="/image62-wmf.png"],[src$="/image63-wmf.png"],[src$="/image64-wmf.png"],[src$="/image65-wmf.png"],[src$="/image66-wmf.png"],[src$="/image67-wmf.png"]) { mix-blend-mode:multiply; }
+.publication-atlas [data-publication-reflection] { margin-top:32px; padding-top:18px; border-top:1px solid var(--atlas-line); font:14px/1.5 Arial,sans-serif; color:var(--reader-ink); }
+.publication-atlas [data-publication-reflection] > div { background:transparent; border:0; border-radius:0; padding:0; box-shadow:none; }
+.publication-atlas [data-publication-reflection] > div > div:first-child { color:inherit; gap:0; margin-bottom:8px; }
+.publication-atlas [data-publication-reflection] > div > div:first-child > div { display:none; }
+.publication-atlas [data-publication-reflection] h3 { font:600 16px/1.5 Arial,sans-serif; margin:0; color:inherit; }
+.publication-atlas [data-publication-reflection] p { font:13px/1.5 Arial,sans-serif; color:inherit; margin:0 0 12px; }
+.publication-atlas [data-publication-reflection] textarea { font:14px/1.5 Arial,sans-serif; min-height:88px; padding:10px; border:1px solid #b7b4a6; border-radius:3px; background:#fffdf6; color:#192e43; box-shadow:none; }
+.publication-atlas [data-publication-reflection] button { font:13px/1.5 Arial,sans-serif; min-height:34px; padding:6px 10px; border:1px solid #b7b4a6; border-radius:3px; color:#192e43; background:transparent; box-shadow:none; }
+.publication-atlas [data-publication-reflection] button span { display:none; }
+.publication-atlas [data-publication-reflection] :is(button,textarea):focus-visible { outline:2px solid var(--reader-accent); outline-offset:3px; }
+/* Ivory table and notes surfaces retain readable ink under either system preference. */
+.publication-reader.publication-atlas .publication-table :is(td,td p,td strong,td em) { color:#192e43; }
+.publication-reader.publication-atlas .publication-table tr:nth-child(even) { background:#f1eee4; }
+.publication-reader.publication-atlas [data-publication-reflection] { background:#faf7ef; color:#192e43; }
+.publication-reader.publication-atlas [data-publication-reflection] p { color:#465666; }
+.publication-reader.publication-atlas [data-publication-reflection] button { color:#192e43; }
+.publication-table-header { padding-block:0; }

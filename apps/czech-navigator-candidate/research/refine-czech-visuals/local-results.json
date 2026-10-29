@@ -1,0 +1,74 @@
+[
+  {
+    "width": 1440,
+    "scale": 1,
+    "axisWeights": [
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700"
+    ],
+    "cellTextAndSpansUnchanged": true,
+    "notesSaveReload": true,
+    "unknownStoragePreserved": true,
+    "diagramBlend": "multiply"
+  },
+  {
+    "width": 1440,
+    "scale": 2,
+    "axisWeights": [
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700"
+    ],
+    "cellTextAndSpansUnchanged": true,
+    "notesSaveReload": true,
+    "unknownStoragePreserved": true,
+    "diagramBlend": "multiply"
+  },
+  {
+    "width": 390,
+    "scale": 1,
+    "axisWeights": [
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700"
+    ],
+    "cellTextAndSpansUnchanged": true,
+    "notesSaveReload": true,
+    "unknownStoragePreserved": true,
+    "diagramBlend": "multiply"
+  },
+  {
+    "width": 390,
+    "scale": 2,
+    "axisWeights": [
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700",
+      "700"
+    ],
+    "cellTextAndSpansUnchanged": true,
+    "notesSaveReload": true,
+    "unknownStoragePreserved": true,
+    "diagramBlend": "multiply"
+  }
+]

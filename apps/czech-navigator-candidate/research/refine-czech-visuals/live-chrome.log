@@ -1,0 +1,29 @@
+[
+  {
+    kind: 'two-row',
+    id: 'reader-content-czech-table-147',
+    headerHeight: 34,
+    textUnchanged: true,
+    keyboardDisclosure: true,
+    phone390: true,
+    focusEscape: true
+  },
+  {
+    kind: 'regular',
+    id: 'reader-content-czech-table-10',
+    headerHeight: 34,
+    textUnchanged: true,
+    keyboardDisclosure: true,
+    phone390: true,
+    focusEscape: true
+  },
+  {
+    kind: 'merged',
+    id: 'reader-content-czech-table-2',
+    headerHeight: 34,
+    textUnchanged: true,
+    keyboardDisclosure: true,
+    phone390: true,
+    focusEscape: true
+  }
+]
