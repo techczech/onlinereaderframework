@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "80e56524ffe72d7545f7cb89c57e7c93dd00c4f2",
+  "onlySourceFileChanged": "src/content/apps.json",
+  "sourceWasCommitted": true,
+  "buildExit": 0,
+  "testsExit": 0,
+  "frameworkListingAndRecordPresent": true,
+  "artifact": "/Users/dominiklukes/gitrepos/07_webapps-websites/01_dlwebs/dlnet/build/reader-framework-apps-publication/dist",
+  "pageSha256": "2eb4f0791631ef17ea26b0cd86e4232683c6ffb7d19becb018a9559c34e6fbe6",
+  "recordSha256": "80e7643eda98a2221c9281b8298c4e390d0730fb206e2d4febd24a4f9f0f6d83",
+  "dataSha256": "003908d67a2547be19abf4630461a6073825b59964921f6a855c81a5c0399255",
+  "unrelatedWorkingTreeEditsExcluded": true,
+  "tests": [
+    "tests/apps-page.test.ts",
+    "tests/record-pages.test.ts",
+    "tests/exports.test.ts",
+    "tests/search-records.test.ts",
+    "tests/agent-layer.test.ts",
+    "tests/dead-links.test.ts"
+  ]
+}

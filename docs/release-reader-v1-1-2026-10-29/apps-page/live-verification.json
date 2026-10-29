@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://dominiklukes.net/apps/",
+    "matchesBuiltBytes": true,
+    "sha256": "2eb4f0791631ef17ea26b0cd86e4232683c6ffb7d19becb018a9559c34e6fbe6"
+  },
+  {
+    "url": "https://dominiklukes.net/apps/online-reader-framework/",
+    "matchesBuiltBytes": true,
+    "sha256": "80e7643eda98a2221c9281b8298c4e390d0730fb206e2d4febd24a4f9f0f6d83"
+  },
+  {
+    "url": "https://dominiklukes.net/apps-data.json",
+    "matchesBuiltBytes": true,
+    "sha256": "003908d67a2547be19abf4630461a6073825b59964921f6a855c81a5c0399255"
+  }
+]
