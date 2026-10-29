@@ -15,6 +15,7 @@ try {
   console.log('opened',review.id);
   const table=page.locator('#reader-content-'+review.id);await table.waitFor();
   const panel=table.locator('xpath=ancestor::section[contains(@class,"publication-table")]');
+  await panel.getByRole('button',{name:'Table tools',exact:true}).click();
   await panel.getByLabel('Sort table',{exact:true}).waitFor();
   const original=await table.textContent();
   assert.ok(await table.locator('[headers]').count()>0);
@@ -23,10 +24,12 @@ try {
   await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
   assert.equal(await table.textContent(),original);
   console.log('reset',review.id);
+  await panel.getByRole('button',{name:'Table tools',exact:true}).click();
   const boxes=panel.getByRole('checkbox');
   for(let i=0;i<await boxes.count();i++) await boxes.nth(i).click();
   assert.equal(await boxes.evaluateAll(nodes=>nodes.filter(n=>n.checked).length),1);
   await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
+  await panel.getByRole('button',{name:'Table tools',exact:true}).click();
   await panel.getByRole('button',{name:'Swap axes',exact:true}).click();
   await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
   assert.equal(await table.textContent(),original);

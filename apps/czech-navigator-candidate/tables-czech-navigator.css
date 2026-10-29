@@ -41,3 +41,16 @@
 .publication-table-focus .publication-table-controls p { flex-basis:auto; }
 .publication-table-focus .publication-table-controls > * { flex-shrink:0; }
 @media(max-width:760px) { .publication-table-focus .publication-table-controls { flex-wrap:wrap; } }
+
+/* Keep the manuscript primary; tools are an explicit disclosure. */
+.publication-table { border-top:1px solid #dcd8cb; }
+.publication-table-header { padding:3px 8px; gap:6px; justify-content:flex-end; border-bottom:0; }
+.publication-table-header strong { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.publication-table-header button { font:12px/1.4 Arial,sans-serif; padding:4px 6px; color:#465666; background:transparent; border:1px solid transparent; }
+.publication-table-header button:hover { background:#eeeade; border-color:#dcd8cb; }
+.publication-table-controls { padding:10px; gap:8px; }
+.publication-table-controls p { font:13px/1.5 Arial,sans-serif; margin:0; }
+.publication-table-controls p:empty { display:none; }
+.publication-table [hidden] { display:none !important; }
+.publication-table-focus:not(:has(.publication-table-controls:not([hidden]))) { grid-template-columns:minmax(0,1fr); }
+@media(max-width:760px) { .publication-table-header { padding:3px 6px; } }

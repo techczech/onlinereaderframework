@@ -12,6 +12,7 @@ try {
  const panel=table.locator('xpath=ancestor::section[contains(@class,"publication-table")]');
  await table.scrollIntoViewIfNeeded();
  assert.equal(await panel.getByLabel('Filter rows',{exact:true}).count(),1);
+ await panel.getByRole('button',{name:'Table tools',exact:true}).click();
  const original=await table.innerText();
  await panel.getByLabel('Filter rows',{exact:true}).fill('impossible');
  assert.match(await panel.getByRole('status').innerText(),/No matching/);
@@ -21,7 +22,8 @@ try {
  await page.screenshot({path:`${evidence}/screenshot-czech-atlas-focus.png`});
  await panel.getByRole('button',{name:'Close focus',exact:true}).press('Escape');
  assert.equal(await panel.getAttribute('class'),'publication-table');
- await panel.getByRole('button',{name:'Swap axes',exact:true}).click();
+ await panel.getByRole('button',{name:'Table tools',exact:true}).click();
+  await panel.getByRole('button',{name:'Swap axes',exact:true}).click();
  assert.equal(await table.locator('tr').count(),3);
  await panel.getByRole('button',{name:'Reset / source',exact:true}).click();
  assert.equal(await table.innerText(),original);
