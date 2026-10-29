@@ -26,5 +26,10 @@
     "count": 1,
     "total_count": 1,
     "total_pages": 1
+  },
+  "final_followup": {
+    "status": "active",
+    "verified_at": "2026-10-29T18:47:00Z",
+    "note": "Final follow-up API request returned active."
   }
 }

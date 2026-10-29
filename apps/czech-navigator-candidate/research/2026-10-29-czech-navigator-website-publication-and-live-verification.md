@@ -16,3 +16,5 @@ Live custom-host checks: all 134 served file hashes match approved manifest (ind
 Edition limits: approved rough archive source; latest Word comparison remains pending. Original licence/credits and source notice retained. No editorial changes, rebuild, store upload, authentication grant changes or background service.
 
 Detailed evidence: validation-czech-navigator-live-http-final.json; validation-czech-navigator-live-browser-final.txt; headers-czech-navigator-epub.txt; evidence-czech-navigator-cloudflare.json; evidence-czech-navigator-domain-final.json.
+
+Final follow-up: Cloudflare domain API returned active before handoff. Custom-domain activation is now confirmed as well as working HTTPS.

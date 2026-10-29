@@ -1,6 +1,6 @@
 ---
 title: Czech Navigator Cloudflare Pages hosting preparation
-status: published-https-working-domain-api-pending
+status: published-domain-active
 updated: 2026-10-29
 ---
 
@@ -40,3 +40,5 @@ The upload folder is technically prepared for a preview of the archive-based ref
 ## Publication receipt — 2026-10-29
 
 Published the unchanged verified dist to production branch main. Website: https://czechnavigator.dominiklukes.net/ . Deployment: https://b2da53ce.czechnavigator.pages.dev/ (b2da53ce-caf5-46b5-8276-06967afe8e30). All 134 served files matched approved hashes, including the EPUB. Custom HTTPS and hidden bundled Chromium checks passed; Cloudflare API domain validation still pending at last check. See research/2026-10-29-czech-navigator-website-publication-and-live-verification.md for evidence and limits. Earlier preparation sections describe the prepublication state.
+
+Final follow-up: Cloudflare domain API returned active before handoff.
