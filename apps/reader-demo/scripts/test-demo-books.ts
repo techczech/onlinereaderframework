@@ -25,11 +25,11 @@ const repo = path.resolve(app, '../..');
 const flatten = (sections: readonly PublicationSection[]): PublicationSection[] => sections.flatMap(section => [section, ...flatten(section.children ?? [])]);
 const onDisk = JSON.parse(fs.readFileSync(path.join(app, 'src', 'books', 'original-publications.json'), 'utf8')) as PublicationBook[];
 
-test('the registry holds five books once: three originals unchanged, two converted books registered, none copied into original-publications.json', () => {
-  assert.deepEqual(demoBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations']);
+test('the registry holds seven books once: three originals unchanged, four converted books registered, none copied into original-publications.json', () => {
+  assert.deepEqual(demoBooks.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics', 'academic-reading', 'readability-foundations', 'academic-productivity', 'developing-competence']);
   assert.deepEqual(onDisk.map(book => book.id), ['deliberate-practice', 'language-muscle', 'linguistics']);
   assert.deepEqual(originalBooks, onDisk);
-  assert.equal(new Set(demoBooks.map(book => book.id)).size, 5);
+  assert.equal(new Set(demoBooks.map(book => book.id)).size, 7);
   assert.deepEqual(nextBooks.map(book => flatten(book.sections).length), [10, 14]);
 });
 

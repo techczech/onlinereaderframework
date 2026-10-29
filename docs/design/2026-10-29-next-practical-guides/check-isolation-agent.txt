@@ -1,0 +1,14 @@
+✔ agent files: all five books export from the one registry; prose alternatives reach the text, frames and frame chrome never do (193.289541ms)
+✔ release isolation: the linguistics release bundle carries neither converted book, their embeds nor the demo registry (3407.20625ms)
+✔ release isolation: the deliberate-practice release bundle carries neither converted book, their embeds nor the demo registry (1481.582667ms)
+✔ release isolation: the language-muscle release bundle carries neither converted book, their embeds nor the demo registry (1928.449584ms)
+✔ release isolation: the academic-reading folder edition carries only its own book, embeds and cover, scoped to its folder (1931.502792ms)
+✔ release isolation: the readability-foundations folder edition carries only its own book, embeds and cover, scoped to its folder (2786.849584ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12347.8995

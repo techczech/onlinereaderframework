@@ -1,0 +1,12 @@
+✔ seven isolated demo identities, originals and previous conversions unchanged (0.907459ms)
+✔ practical strategies preserve all authored descriptions and actions in source order (0.752416ms)
+✔ seven theory sections preserve every paragraph, example and table cell (1.051125ms)
+✔ current agent route retains all chapter destinations, licences and external-tool links (197.713666ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1384.487166

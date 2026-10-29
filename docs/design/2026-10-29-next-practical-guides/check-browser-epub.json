@@ -1,0 +1,36 @@
+[
+  {
+    "book": "academic-productivity",
+    "chapters": 7,
+    "epubXml": "valid",
+    "epubTables": 1,
+    "externalTools": "original app root",
+    "chapterRoutes": "all seven passed"
+  },
+  {
+    "book": "developing-competence",
+    "chapters": 7,
+    "epubXml": "valid",
+    "epubTables": 2,
+    "externalTools": "original app root",
+    "chapterRoutes": "all seven passed"
+  },
+  {
+    "storageKeys": [
+      "publication-reader:academic-productivity:highlights",
+      "publication-reader:developing-competence:lastSection",
+      "publication-reader:academic-productivity:reflections",
+      "publication-reader:developing-competence:bookmarkedSections",
+      "publication-reader:academic-productivity:textWidth",
+      "publication-reader:developing-competence:theme",
+      "publication-reader:academic-productivity:readSections",
+      "publication-reader:developing-competence:textWidth",
+      "publication-reader:developing-competence:highlights",
+      "publication-reader:developing-competence:reflections",
+      "publication-reader:academic-productivity:lastSection",
+      "publication-reader:academic-productivity:theme",
+      "publication-reader:academic-productivity:bookmarkedSections",
+      "publication-reader:developing-competence:readSections"
+    ]
+  }
+]

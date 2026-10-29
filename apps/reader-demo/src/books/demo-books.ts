@@ -1,4 +1,4 @@
-/** The demo's one registry of all five books: the three originals (`original-publications.json`, unchanged) and the two converted books in `next-books/`.
+/** The demo's one registry of all seven books: the three originals (`original-publications.json`, unchanged) and the two converted books in `next-books/`.
  * Every consumer of "all demo books" reads this file: the demo app (loaded lazily, see App.tsx), the agent files and `llms.txt` (scripts/build-agent-files.ts),
  * and the integration tests. The converted books are registered here once and are not copied into original-publications.json.
  *
@@ -10,6 +10,8 @@ import type { PublicationBook, PublicationEmbeds } from 'reader-core';
 import originals from './original-publications.json';
 import academic from './next-books/academic-reading-framework.book.json';
 import readability from './next-books/readability-foundations.book.json';
+import productivity from './next-books/academic-productivity.book.json';
+import competence from './next-books/developing-competence.book.json';
 import manifest from './next-books/embed-manifest.json';
 
 /** Folder of a book's embeds below the page, per the embed contract's `root`: `embeds/<book id>/`. The built copy of `<id>/index.html` lives there. */
@@ -25,7 +27,7 @@ const unversionedReadability = (book: PublicationBook): PublicationBook => ({ ..
 /** Converted books keep their canonical per-book identity and author-selected covers. */
 export const nextBooks: PublicationBook[] = [academic as unknown as PublicationBook, unversionedReadability(readability as unknown as PublicationBook)];
 export const originalBooks = originals as unknown as PublicationBook[];
-export const demoBooks: PublicationBook[] = [...originalBooks, ...nextBooks];
+export const demoBooks: PublicationBook[] = [...originalBooks, ...nextBooks, productivity as unknown as PublicationBook, competence as unknown as PublicationBook];
 
 /** Host-owned embeds per book id, built once at module load so the objects are stable across renders. `placement` in the manifest is explanation only. */
 export const demoEmbeds: Readonly<Record<string, PublicationEmbeds>> = Object.fromEntries(Object.entries(embedManifest).map(([bookId, entry]) => [bookId, {

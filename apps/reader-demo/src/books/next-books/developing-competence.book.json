@@ -1,0 +1,74 @@
+{
+  "id": "developing-competence",
+  "title": "Developing Competence",
+  "author": "Dominik Lukeš",
+  "description": "This framework provides a structure for understanding and developing competence in any domain, though it is particularly optimized for digital skills. It draws inspiration from language acquisition frameworks like CEFR.",
+  "sourceUrl": "https://developingcompetence.edutools.fyi/",
+  "appearance": {
+    "accent": "#4f46e5",
+    "paper": "#f8fafc",
+    "ink": "#0f172a",
+    "masthead": "practical"
+  },
+  "home": {},
+  "navigation": {
+    "homeDepth": 2,
+    "showHomeContents": true
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "format": "markdown",
+      "content": "# Overview\n\nThis framework provides a structure for understanding and developing competence in any domain, though it is particularly optimized for digital skills. It draws inspiration from language acquisition frameworks like CEFR.\n\nThe framework enables you to:\n\n1. **Self-assess** your current skill level honestly.\n2. **Track progress** from being a novice to an expert.\n3. **Design strategies** that actually work for your current level.\n4. **Estimate effort** required to reach the next milestone.\n\n> This approach focuses on the *process* of becoming competent, not just a checklist of things you know.\n"
+    },
+    {
+      "id": "dimensions",
+      "title": "Dimensions & Levels",
+      "format": "markdown",
+      "content": "# Dimensions & Levels\n\nCompetence is measured across specific dimensions using four distinct levels. Understanding these levels is crucial for accurate self-assessment.\n\n## The Four Levels\n\n- **Novice:** Can perform basic tasks only with assistance or by following strict recipes. Makes frequent errors. Focus is on *survival*.\n- **Apprentice (Intermediate):** Can perform common tasks independently. Can solve simple problems. Focus is on *functionality*.\n- **Practitioner (Advanced):** Can perform uncommon tasks with ease. Troubleshoots complex issues. Focus is on *efficiency*.\n- **Expert:** Innovates and understands the deep system. Helps others. Focus is on *mastery and strategy*.\n\n> Progression is non-linear. Moving from Novice to Apprentice is often faster than moving from Apprentice to Practitioner.\n"
+    },
+    {
+      "id": "learning_types",
+      "title": "Two Types of Learning",
+      "format": "markdown",
+      "content": "# Two Types of Learning\n\nTo move between levels, you must engage in two distinct types of learning. Most people fail because they focus on only one.\n\n1. **Conceptual Learning (Mental Maps):** Understanding *what* things are and *why* they work. This is 'book smarts'. You develop this by reading, watching tutorials, and studying the system.\n2. **Procedural Learning (Fluency):** Developing the 'muscle memory' to do things quickly and accurately. This is 'street smarts'. You develop this only through repetition and practice.\n\nIn the early stages (Novice), procedural recipes are effective. To become an Expert, however, deep conceptual understanding is required.\n"
+    },
+    {
+      "id": "components_expertise",
+      "title": "Three Elements of Expertise",
+      "format": "markdown",
+      "content": "# Three Elements of Expertise\n\nWhen planning your development, you need to build three specific internal tools:\n\n1. **1. Mental Maps:** The ability to place a new problem in context. A mental map helps you predict what will happen before you click.\n2. **2. The Perceptive Eye:** The ability to spot the difference between 'good' and 'bad' work instantly. You must learn to recognize your own mistakes.\n3. **3. The Fluent Muscle:** The ability to execute tasks without conscious thought, freeing up your brain for higher-level problem solving.\n\n> Goal setting is simple: Ask yourself, 'Do I need a better map (knowledge), a sharper eye (standards), or a faster muscle (practice)?'\n"
+    },
+    {
+      "id": "knowledge_vs_fluency",
+      "title": "From Knowledge to Fluency",
+      "format": "markdown",
+      "content": "# From Knowledge to Fluency\n\nThere is a critical difference between knowing *about* something and being able to *do* it. We distinguish between:\n\n| Feature | Encyclopaedic Knowledge | Practical Fluency |\n| --- | --- | --- |\n| Definition | Look up and know | Look and know |\n| Memory | Retrieves from long-term memory | Immediate access |\n| Mental Effort | High cognitive load | Low cognitive load |\n| Utility | Good for planning/strategy | Necessary for performance |\n\nYou cannot think your way to fluency. You must practice your way there.\n"
+    },
+    {
+      "id": "complexity_scale",
+      "title": "Competence Complexity",
+      "format": "markdown",
+      "content": "# Competence Complexity\n\nNot all skills are created equal. When designing your learning plan, identify the complexity of the skill:\n\n1. **Discrete/Modular Skills:** Can be learned in isolation in a short time. \n   *Example: Saving a file as a PDF.* \n   *Strategy: Learn it once, use it immediately.*\n2. **Diffuse/Integrated Skills:** Can only be developed over time within a context. \n   *Example: Managing a complex project file system.* \n   *Strategy: Requires consistent habit formation over weeks.*\n"
+    },
+    {
+      "id": "foundations",
+      "title": "Example: Digital Foundations",
+      "format": "markdown",
+      "content": "# Example: Digital Foundations\n\nTo illustrate, here is a comparison of Novice vs. Practitioner mindsets in key digital productivity areas.\n\n| Area | Novice (Avoid) | Practitioner (Target) |\n| --- | --- | --- |\n| Files | Idiosyncratic system. Loses files. Uses email for version control. | Rich mental map of storage. Synced and backed up. Uses version history. |\n| Accounts | Uses same password everywhere. Forgets logins. No recovery plan. | Uses password manager. Understands 2FA. Distinct accounts for services. |\n| Troubleshooting | Gives up immediately. 'Computer hates me'. | Isolates variables. Searches error codes. Reads documentation. |\n\n\n[Self-assessment, framework builder and AI development planning on the original app](https://developingcompetence.edutools.fyi/).\n"
+    },
+    {
+      "id": "engagement",
+      "title": "Engagement Types",
+      "format": "markdown",
+      "content": "# Engagement Types\n\nGeneric description of skills across modes of engagement.\n\n## Consuming\n\n### Novice\n\nCan consume content in default setting using predefined tools. Struggles with non-default settings or compatibility.\n\n### Apprentice\n\nCan choose right tool. Uses basic features. Aware of content locations but struggles with format compatibility.\n\n### Practitioner\n\nUses multiple tools. Uses hidden features/customization. Troubleshoots incompatibilities. Good storage strategies.\n\n### Expert\n\nFull understanding of formats. Converts between formats. Uses keyboard shortcuts. Participates in expert forums.\n\n## Creating\n\n### Novice\n\nText modality only. Abandons efforts due to lack of skill. Frequently recreates content due to saving issues.\n\n### Apprentice\n\nMultiple modalities at basic level. Uses predefined functions. Struggles with complex instructions.\n\n### Practitioner\n\nCreates in several modalities. Customizes tools. Relies on sophisticated abstractions when troubleshooting.\n\n### Expert\n\nProfessional level. Advanced workflows. Discovers and shares new methods of troubleshooting.\n\n## Interacting\n\n### Novice\n\nBasic text/audio visual. No troubleshooting ability. Frequently does not participate due to lack of skill.\n\n### Apprentice\n\nInteracts across most modalities. Default features only. Asks for help with complex interactions.\n\n### Practitioner\n\nInteracts across all modalities. Customizes tools. Troubleshoots for the group.\n\n### Expert\n\nEffortlessly switches modes. Uses hidden features. Anticipates problems like security.\n\n## Improving\n\n### Novice\n\nResistant to change. Relies on defaults. Never installs new tools.\n\n### Apprentice\n\nBasic strategies (observing, asking). Occasional basic customization.\n\n### Practitioner\n\nAdvanced strategies. Reads manuals. Focuses on productivity. Installs new tools.\n\n### Expert\n\nParticipates in communities. Seeks improvement of existing tools. Tests multiple tools.\n"
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "format": "markdown",
+      "content": "# Accessibility\n\nFocused on creation mode of engagement.\n\n## Text Accessibility\n\n### Novice\n\nBasic awareness. Inconsistent structure. Default apps only.\n\n### Apprentice\n\nUses headings/lists consistently. Misses advanced features. Can use accessibility check but not always fix.\n\n### Practitioner\n\nAdvanced features. Adds structure where missing. Modifies styles/templates. Produces accessible docs in multiple formats.\n\n### Expert\n\nDetailed awareness of screen readers. Can conduct basic accessibility audit.\n\n## Images Accessibility\n\n### Novice\n\nAwareness but inconsistent application of descriptions.\n\n### Apprentice\n\nConsistently applies ALT text but relies on visual description.\n\n### Practitioner\n\nConsistently applies ALT text in context. Distinguishes decorative vs functional.\n\n### Expert\n\nUnderstands screen reader interaction. Makes judgements across variety of contexts.\n"
+    }
+  ]
+}

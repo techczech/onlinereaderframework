@@ -1,0 +1,38 @@
+
+> reader-core@1.1.0 test:agent-export
+> node src/agent-export/test-agent-export.mjs
+
+✔ every book: all section ids in reading order, counts, and one file per section (1.409125ms)
+✔ markdown sections are preserved byte for byte in chapter files and, in order, in full.md (151.975625ms)
+✔ code, tables, footnote-like attribution, source lines and the image link survive (1.02625ms)
+✔ html sections keep their structure through the reader sanitiser, with a title heading added (0.765292ms)
+✔ every relative link in every generated file resolves to a generated file; no private paths or browser state (33.633959ms)
+✔ siteUrl makes every link absolute; relative output has none of that host (94.094084ms)
+✔ book and section ids become safe, distinct path segments; unusable ids are refused (0.599ms)
+✔ reader links match the reader's own publicationUrl; private hosts are recognised (0.632916ms)
+✔ prompts point at the book and chapter addresses and ask for citations; the attached prompt names no address (0.172375ms)
+✔ canonicalSiteUrl accepts only public http(s) addresses and normalises the trailing slash (0.1975ms)
+✔ a root index links each book at its own public address, never at another book's (173.101416ms)
+✔ anchored reading: leadLength is WriteFlex's own, and lead spans follow its word walk (69.093042ms)
+✔ Markdown is exported verbatim, including trailing newlines, spaces and a code hard break (0.906042ms)
+✔ the directory option is validated by both generators before any path is produced (1.437667ms)
+✔ a nested directory keeps every reader link pointing at the reader root (0.522625ms)
+✔ reader chapter references resolve to exported chapter files in chapter and full-book contexts (1.6445ms)
+✔ real Language Muscle step-2 links to the Fine-tuning your aims chapter file (0.257584ms)
+✔ Markdown reader references stay verbatim; resolved files are listed in a note after the section (31.682959ms)
+✔ whitespace-only Markdown keeps its bytes; only an empty string gets the structural explanation (0.72325ms)
+✔ canonicalSiteUrl applies the exact-URL rules to the raw value before the URL parser can repair it (2.586125ms)
+✔ private-host aliases are private: final DNS dots, numeric IPv4 forms and IPv4 inside IPv6 (0.263792ms)
+✔ both generators refuse an unusable public address before producing any file, and never echo it (4.655875ms)
+✔ the reader box rebases its folder from the current reader root onto the public reader prefix (3.469375ms)
+✔ a folder given as its full public address: downloads under the current reader root, the prompt under siteUrl, whatever the two prefixes are (18.881959ms)
+✔ an unsafe or out-of-scope folder is ignored for the default folder; it never becomes an active link (1.027708ms)
+✔ a private or malformed configured address is ignored: no private address reaches a hosted-fetch prompt (3.5725ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2234.186166

@@ -1,0 +1,68 @@
+{
+  "id": "academic-productivity",
+  "title": "Academic Productivity",
+  "author": "Dominik Lukeš",
+  "sourceUrl": "https://academicproductivity.edutools.fyi/",
+  "description": "There is ultimately only one principle of academic productivity: decreasing cognitive load and increasing fluency.",
+  "appearance": {
+    "accent": "#2563eb",
+    "paper": "#f8fafc",
+    "ink": "#0f172a",
+    "masthead": "practical"
+  },
+  "home": {
+    "authorNote": "Based on resources developed by Dominik Lukeš for the Reading and Writing Innovation Lab.",
+    "license": {
+      "label": "Creative Commons Attribution 4.0 International License",
+      "href": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "navigation": {
+    "homeDepth": 2,
+    "showHomeContents": true
+  },
+  "sections": [
+    {
+      "id": "principle",
+      "title": "The Single Principle of Productivity",
+      "format": "markdown",
+      "content": "# The Single Principle of Productivity\n\nThere is ultimately only one principle of academic productivity: **decreasing cognitive load and increasing fluency**.\n\nThe four \"strategies\" below are actually four distinct ways to reduce the cognitive load of reading and writing, freeing up your mental energy for understanding and insight.\n\n[Read more details at academicreading.edutools.fyi](https://academicreading.edutools.fyi/)"
+    },
+    {
+      "id": "listen",
+      "title": "Listen: Read with your ears",
+      "format": "markdown",
+      "content": "# Listen: Read with your ears\n\nListen instead of reading or while reading to improve concentration and comprehension.\n\nListening to text helps slower readers speed up, reduces eye strain, and improves understanding. It is also a powerful tool for proofreading your own writing to catch errors that eyes might skip over.\n\n## Actionable Steps\n\n- Use Read Aloud in Microsoft Edge & Office.\n- Listen to PDFs with Voice Dream Reader.\n- Use text-to-speech for proofreading drafts.\n- Crop headers/footers in PDFs for smoother listening.\n"
+    },
+    {
+      "id": "enlarge",
+      "title": "Enlarge: Speed up reading",
+      "format": "markdown",
+      "content": "# Enlarge: Speed up reading\n\nReduce visual clutter and increase font size to reduce cognitive load.\n\nThe smaller the font, the more effort is spent on decoding. Increasing font size, line spacing, and reducing line length can significantly speed up reading and reduce mental fatigue.\n\n## Actionable Steps\n\n- Use Immersive Reader in Edge/OneNote.\n- Reflow PDFs on mobile devices.\n- Increase zoom level on browser pages.\n- Use \"Liquid Mode\" in Adobe Acrobat.\n"
+    },
+    {
+      "id": "outline",
+      "title": "Outline and Navigate",
+      "format": "markdown",
+      "content": "# Outline and Navigate\n\nSee the bigger picture using outlines, navigation panes, and mind maps.\n\nUnderstanding the structure of a text helps strategic reading. Using Heading Styles in Word allows for navigation, automatic table of contents, and better accessibility.\n\n## Actionable Steps\n\n- Use the Navigation Pane in Word.\n- Apply Heading Styles (H1, H2, H3) rigorously.\n- Create mind maps to visualize complex concepts.\n- Scan headings and lists before deep reading.\n"
+    },
+    {
+      "id": "dictate",
+      "title": "Dictate",
+      "format": "markdown",
+      "content": "# Dictate\n\nSave your hands and improve spelling by speaking your text.\n\nDictation technology is now highly accurate and free. It reduces physical strain and helps formulate complex thoughts without the barrier of typing and spelling mechanics.\n\n## Actionable Steps\n\n- Use Dictate in Microsoft Office (Alt + `).\n- Use Windows Dictation (Win + H).\n- Use Voice Typing in Google Docs.\n- Speak in complete sentences and review by listening.\n"
+    },
+    {
+      "id": "how-it-works",
+      "title": "How It Works",
+      "format": "markdown",
+      "content": "# How It Works\n\n### Cognitive Load Theory\n\nBy offloading decoding tasks (through text-to-speech) or visual processing (larger fonts), you reduce *extraneous* load, reserving working memory for *intrinsic* load (the actual content).\n\n### Fluency\n\nFluency is the ability to read or write with speed, accuracy, and proper expression. Tools like dictation and outlining remove mechanical friction, allowing thoughts to flow freely.\n\n### Accessibility is Productivity\n\nStrategies originally designed for accessibility (like screen readers for visual impairment) turn out to be powerful productivity multipliers for all users by offering multi-modal engagement."
+    },
+    {
+      "id": "blockers",
+      "title": "Blockers to Productivity",
+      "format": "markdown",
+      "content": "# Blockers to Productivity\n\nUnderstanding the barriers to academic success and how to overcome them.\n\n## What do people need assistance with?\n\n## Reasons people need assistance\n\nCognition\n\n- Decoding (dyslexia)\n- Attention (ADHD)\n- Understanding (SLI)\n\nOrganisation\n\n- Cognitive (dyslexia, ADHD)\n- Task-based (dyslexia, ADHD)\n- Physical (dyspraxia)\n\nSocialisation\n\n- Social cues (ASD)\n- Convention compliance\n- Extroversion/introversion\n\nEmotion\n\n- Anxiety/depression\n- Sensitivity to stimuli\n- Sense of self worth\n\nPerception\n\n- Accuity\n- Discrimination\n- Inner imagery\n\n## Neurodiversity Overlap\n\n### ADHD\n\nAttention, Concentration, Planning, Regulating\n\n### Dyslexia\n\nWords, Sounds, Memory, Sequencing\n\n### Dyspraxia (DCD)\n\nSpatial Awareness, Motor-skills, Co-ordination\n\n### Autism Spectrum Disorders\n\nSocial skills, Sensitivity\n\n### Dyscalculia\n\nBasic maths, Estimating numbers\n\n### SLI/LD (Center Intersection)\n\nUnderstanding, Speaking\n\n## Everybody’s needs and difficulties are different\n\n## Perception blockers\n\nSIGHT\n\nHEARING\n\n## Perception has a hidden impact on cognition.\n\n### Perception impact on cognition\n\nSlower processing\n\nWorking memory load\n\nLimits organisation\n\n## Neurodiversity is not straightforward\n\nPermanent Situational Temporary\n\n## Microsoft Inclusive Design Principles\n\n| Sense | Permanent | Temporary     | Situational       |\n|-------|-----------|---------------|-------------------|\n| Touch | One arm   | Arm injury    | New parent        |\n| See   | Blind     | Cataract      | Distracted driver |\n| Hear  | Deaf      | Ear infection | Bartender         |\n\n## Many more dimensions, so we are really talking about non-compliance more than diversity.\n\n### Better distinction\n\n#### Neuro-compliant\n\n- Can sit still for hours\n- Can focus without breaks\n- Can ignore noise\n\n#### Neuro-non-compliant\n\n- Needs breaks\n- Needs to break activities into smaller chunks\n- Needs silence\n\n## Compliance is relative to structure not person\n\n9:5 working day\n\nLong narrative emails\n\nOpen plan offices\n\n## Everyone is dyslexic when they are …\n\nBusy\n\nTired\n\nNew\n\n- language\n- culture\n- environment\n- subject\n\n[Tools, hardware and AI searches on the original app](https://academicproductivity.edutools.fyi/).\n"
+    }
+  ]
+}
