@@ -8,4 +8,4 @@ Online Reader Framework 1.1.0 adds interactive examples and a runnable example b
 
 **Also changed.** Front-page actions show icons; a link to a passage taller than the screen scrolls to its start. The README and project page list five live editions, including [Increasing Reading Productivity](https://dominiklukes.net/books/academic-reading/) and [Foundations of Readability](https://dominiklukes.net/books/readability/).
 
-The package is still not on npm. Software: MIT. Fonts: SIL Open Font License 1.1. Published books are not included and not covered. Full list: [CHANGELOG.md](CHANGELOG.md).
+The package is still not on npm. Software: MIT. Fonts: SIL Open Font License 1.1. Published books are not included and not covered. Full list: [CHANGELOG.md](https://github.com/techczech/onlinereaderframework/blob/v1.1.0/CHANGELOG.md).

@@ -1,0 +1,27 @@
+[
+  {
+    "url": "https://techczech.github.io/onlinereaderframework/",
+    "ok": true,
+    "sha256": "64de4cf703801f2e886f43ee748d1ed63edc105bcebc3e532411105a89cf1a89"
+  },
+  {
+    "url": "https://techczech.github.io/onlinereaderframework/style.css",
+    "ok": true,
+    "sha256": "74da2a658390a9e793859cd0fa268d8853110bbda33224a76d76555f685f6772"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/techczech/onlinereaderframework/v1.1.0/CHANGELOG.md",
+    "ok": true,
+    "sha256": "b90d14d9e65b4fc78da81fd8786cb71202da21f1e6671588463120fa485eba93"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/techczech/onlinereaderframework/v1.1.0/LICENSE",
+    "ok": true,
+    "sha256": "e03b2f3461d86a2d8b396eb5b049d4cc8cbe8bc8b024f4cb56ccbe48164f1c99"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/techczech/onlinereaderframework/v1.1.0/examples/reader-example/README.md",
+    "ok": true,
+    "sha256": "25f9d072c449a7790debed4346f5dc75d03e9a244fc2ab2c5ea95e53f090e043"
+  }
+]

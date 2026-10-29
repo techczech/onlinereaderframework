@@ -1,0 +1,35 @@
+{
+  "publicCommit": "caa3c8670db3e7fb51dc519164aa7c5ab7a68fec",
+  "releaseUrl": "https://github.com/techczech/onlinereaderframework/releases/tag/v1.1.0",
+  "v1TagReference": {
+    "sha": "a9e67de06b0d444b80d0f62b1c3794dff10c501f",
+    "type": "tag",
+    "url": "https://api.github.com/repos/techczech/onlinereaderframework/git/tags/a9e67de06b0d444b80d0f62b1c3794dff10c501f"
+  },
+  "v1OriginalCommitRetained": true,
+  "v11TagReference": {
+    "sha": "caa3c8670db3e7fb51dc519164aa7c5ab7a68fec",
+    "type": "commit",
+    "url": "https://api.github.com/repos/techczech/onlinereaderframework/git/commits/caa3c8670db3e7fb51dc519164aa7c5ab7a68fec"
+  },
+  "assets": [
+    {
+      "name": "reader-source-release.tar.gz",
+      "bytes": 263514,
+      "sha256": "479728473301002b3fc6ad5da09166bc0f30653a805bb2abc0eb1ac51e05c390",
+      "matchesReviewedBytes": true
+    },
+    {
+      "name": "reader-source-release.manifest.json",
+      "bytes": 27502,
+      "sha256": "aa92a6a5b748c6dbbfd73cc32a6216813c7f2f8448d9edf306ae5cf06ba7e6f9",
+      "matchesReviewedBytes": true
+    },
+    {
+      "name": "reader-source-release.sha256",
+      "bytes": 95,
+      "sha256": "8003b251adeac7e1854a574579260f7cbbad9924ff2866d3e712332a14c60fad",
+      "matchesReviewedBytes": true
+    }
+  ]
+}

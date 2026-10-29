@@ -1,0 +1,10 @@
+{
+  "sourceHead": "45976efbfa7261da079633f6d24d55f341c1989d",
+  "sourceState": "clean-commit",
+  "files": 146,
+  "archiveSha256": "479728473301002b3fc6ad5da09166bc0f30653a805bb2abc0eb1ac51e05c390",
+  "uncompressedTarSha256": "a24e3d2054bee50b879fc0570c951f07e35a00dbafd183e9d4c9c18c5ff5790f",
+  "reviewedMembersByteIdentical": true,
+  "reviewedTarIdentical": true,
+  "allChecksPass": true
+}
