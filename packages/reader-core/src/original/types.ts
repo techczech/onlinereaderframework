@@ -30,6 +30,13 @@ export interface PublicationBook {
   sourceUrl?: string;
   language?: string;
   labels?: { search?: string; tableOfContents?: string; readingSettings?: string; listen?: string; contents?: string; fullContents?: string };
+  compatibility?: {
+    /** Explicit retained source anchors and the reading unit that now owns each. */
+    anchorOwners: Record<string, string>;
+    /** Old unit and its possible destinations, including the retained overview. */
+    splitSections: Record<string, string[]>;
+    version: string;
+  };
   navigation?: {
     /** Number of visible tree levels, including roots. Default: 2. Zero hides the list. */
     homeDepth?: number;
@@ -42,6 +49,9 @@ export interface PublicationBook {
     accent?: string;
     paper?: string;
     ink?: string;
+    tableControls?: boolean;
+    tableReviews?: readonly import('./table-surface.js').TableReview[];
+    readerLayout?: 'atlas';
     masthead?: 'editorial' | 'practical' | 'literary';
     cover?: { src: string; alt: string };
     /** Front-page layout for this book. Omitted or unrecognised values keep the classic home page. */

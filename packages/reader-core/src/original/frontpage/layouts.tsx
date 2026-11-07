@@ -27,6 +27,7 @@ export interface FrontPageContext {
   filterRef: React.RefObject<HTMLInputElement>;
   onStart: () => void;
   onSelectSection: (id: string) => void;
+  onResume?: (id: string) => void;
   onOpenSearch: () => void;
   downloads: { label: string; href: string }[];
   canGenerate: boolean;
@@ -85,7 +86,7 @@ function Progress({ c }: Ctx) {
 function ReadAction({ c, compact = false }: Ctx & { compact?: boolean }) {
   const target = c.targets.resume ?? c.targets.start;
   return <button type="button" className={`publication-primary-action publication-front-primary${compact ? ' is-compact' : ''}`} disabled={!target}
-    onClick={() => c.targets.resume ? c.onSelectSection(c.targets.resume.id) : c.onStart()}>
+    onClick={() => c.targets.resume ? (c.onResume ?? c.onSelectSection)(c.targets.resume.id) : c.onStart()}>
     <Icon name={c.targets.resume ? 'history' : 'arrow_forward'} />
     <span className="publication-front-primary-text">
       <span className="publication-front-primary-label">{c.targets.resume ? copy.continue : copy.start}</span>

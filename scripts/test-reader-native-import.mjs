@@ -30,6 +30,7 @@ for (const name of ['startReaderEmbedHeightReporting', 'postReaderEmbedHeight'])
 const { readFileSync } = await import('node:fs');
 const css = readFileSync(new URL(import.meta.resolve('reader-core/reader.css')), 'utf8');
 assert.ok(css.includes('.publication-embed-frame') && css.includes('url(./fonts/'), 'packaged stylesheet carries embed styles and local fonts');
+assert.ok(css.includes('.publication-table-search'), 'packaged stylesheet carries the table tool styles');
 console.log('Native package-name import, existing/new APIs (incl. embeds and embed-child), agent-file generation and browser-only EPUB boundary passed.');
 `], { cwd, stdio: 'inherit' });
 process.exitCode = result.status ?? 1;

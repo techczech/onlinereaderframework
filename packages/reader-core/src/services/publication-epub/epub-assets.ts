@@ -5,6 +5,8 @@ export type PublicationEpubImageType = 'image/png' | 'image/jpeg' | 'image/gif' 
 export interface PublicationEpubAsset {
   /** Exact image src in rendered publication content; no URL is fetched. */
   href: string;
+  /** Optional cover role; at most one supplied asset may have it. */
+  role?: 'cover';
   mediaType: PublicationEpubImageType;
   data: Blob | Uint8Array | ArrayBuffer;
 }

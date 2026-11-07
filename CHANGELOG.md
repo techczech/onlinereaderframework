@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.2.0 (2026-11-07)
+
+Additive release. Books and code written for 1.1.0 keep working without changes; the new table tools are off unless a book switches them on.
+
+### Added
+
+- **Table tools.** Set `appearance: { tableControls: true }` on a book to give each table a small row of icon buttons: search, swap rows and columns, collapse and full width. Search opens a box above the table; typing narrows it to the matching rows and highlights the matches (tables with merged rows are highlighted only, so their layout stays intact). A reset button returns the table to its original layout. The tools are part of the reader: search across the book, read-aloud, EPUB and agent files still use the table as written.
+- Optional `appearance.tableReviews` for regular tables whose header structure the host has checked: they also get sorting and column choice.
+- Table styling ships with the framework, in `reader-core/reader.css`. A new book gets the table toolbar, search box and scroll area styles without copying any CSS.
+- Optional `role: 'cover'` asset for `downloadPublicationEpub`: adds a cover image, a cover page and the EPUB 3 `cover-image` property.
+- Optional `compatibility` settings for a book whose chapters have been split: links to old anchors and saved highlights and notes are moved to the chapter that now holds them, after a backup of the saved data. A front-page button offers to continue reading where the reader left off.
+- Optional `appearance.readerLayout: 'atlas'`, a book layout with a masthead, chapter numbers and a ruled outline.
+- The example book switches the table tools on and has a new chapter, "Large tables", with a table to try them on.
+
+### Fixed
+
+- On phones, table cells keep whole words; a wide table scrolls sideways instead of squeezing its columns to single letters.
+- In the outline, the current entry keeps its indent, and its marker and text share one colour.
+- Search results open at the matching text, and each result has an accessible name.
+- Reader controls inside a chapter, such as the table toolbar, are ignored when the reader collects the chapter text.
+
+### Changed
+
+- The atlas layout has four distinct heading levels and an outline that mirrors them. This applies only to books that choose that layout.
+- The native-import test also checks that the packaged stylesheet carries the table styles; the example tests check that the table tools are on.
+
+### Not changed
+
+- The package is still not published to npm (`"private": true`).
+- No dependency of `reader-core` changed.
+
 ## 1.1.0 (2026-10-29)
 
 Additive release. Existing books and code written for 1.0.0 keep working without changes.

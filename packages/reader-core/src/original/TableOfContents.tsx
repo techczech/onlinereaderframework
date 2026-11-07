@@ -220,7 +220,7 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
           className={`
             publication-outline-link block transition-colors duration-200 outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm
             ${activeId === heading.id
-              ? 'text-indigo-600 dark:text-indigo-400 font-medium border-l-2 border-indigo-600 dark:border-indigo-400 -ml-[1.1rem] pl-[calc(1.1rem-2px)]'
+              ? 'text-indigo-600 dark:text-indigo-400 font-medium border-l-2 border-indigo-600 dark:border-indigo-400 pl-2'
               : `text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 ${compact ? '' : 'line-clamp-2'}`}
           `}
         >

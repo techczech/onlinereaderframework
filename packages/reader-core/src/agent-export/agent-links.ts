@@ -4,6 +4,7 @@
 
 export interface ReaderLinkContext {
   bookId: string;
+  anchorOwner?(anchor: string): string | undefined;
   /** True for the id of a section in this book. */
   has(sectionId: string): boolean;
   /** Address of that section's exported file, from the file that carries the link (a chapter file or full.md). */
@@ -33,7 +34,13 @@ export function resolveReaderHref(rawHref: string, context: ReaderLinkContext): 
     if (book !== null && book !== context.bookId) return undefined;
     id = params.get('section');
     if (book === null && id === null) return undefined;
+  } else if (href.startsWith('#') && context.anchorOwner) {
+    fragment = href; id = null;
   } else return undefined;
+  if (fragment && context.anchorOwner) {
+    try { id = context.anchorOwner(decodeURIComponent(fragment.slice(1))) ?? id; } catch { return undefined; }
+  }
+  if (id === null && href.startsWith('#') && !href.startsWith('#/')) return undefined;
   if (!id || id === 'home') return context.index;
   if (!context.has(id)) { context.unresolved(rawHref); return undefined; }
   return `${context.chapter(id)}${fragment}`;

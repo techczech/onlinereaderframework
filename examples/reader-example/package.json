@@ -1,7 +1,7 @@
 {
   "name": "reader-example",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A small runnable example book for the Online Reader Framework.",
   "license": "MIT",
   "type": "module",

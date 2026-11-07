@@ -1,4 +1,5 @@
 
+import { attachTableSurfaces, type TableReview } from './table-surface.js';
 import React, { useState, useEffect, useRef, memo, forwardRef, useImperativeHandle, useMemo } from 'react';
 import { Highlight, Reflection, PublicationContentFormat } from './types.js';
 import { renderPublicationContent } from '../publication-content/index.js';
@@ -20,6 +21,8 @@ type MaxWidth = 'sm' | 'md' | 'lg' | 'full';
 
 interface MarkdownRendererProps {
   content: string;
+  tableControls?: boolean;
+  tableReviews?: readonly TableReview[];
   format?: PublicationContentFormat;
   language?: string;
   highlights?: Highlight[];
@@ -40,6 +43,8 @@ interface MarkdownRendererProps {
 
 const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRendererProps>(({ 
     content,
+    tableControls = false,
+    tableReviews,
     format = 'markdown',
     language,
     highlights = [], 
@@ -57,6 +62,9 @@ const MarkdownRendererComponent = forwardRef<MarkdownRendererHandle, MarkdownRen
   const contentElement = useRef<HTMLDivElement>(null);
   const renderedHTML = useMemo(() => renderPublicationContent(content, format), [content, format]);
   const annotatedHTML = useMemo(() => preparePublicationHTML(renderedHTML, highlights), [renderedHTML, highlights]);
+  useEffect(() => {
+    if (tableControls && contentElement.current) return attachTableSurfaces(contentElement.current, tableReviews);
+  }, [annotatedHTML, tableControls, tableReviews]);
   const [notePositions, setNotePositions] = useState<{ highlight: Highlight; top: number }[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 

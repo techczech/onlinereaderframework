@@ -33,6 +33,15 @@ test('the embed registry matches the book, and the text version is ordinary cont
   assert.ok(publicationContentToText(section.content, section.format).includes(ALTERNATIVE));
 });
 
+test('table tools are switched on and their styles ship in the packaged stylesheet', () => {
+  assert.equal(exampleBook.appearance?.tableControls, true);
+  const section = exampleBook.sections.flatMap(s => [s, ...(s.children ?? [])]).find(s => s.id === 'large-tables');
+  assert.ok(section && (section.content.match(/^\| /gm) ?? []).length > 12, 'a large table');
+  const html = read('index.html');
+  const css = read(html.match(/href="\.\/(assets\/[^"]+\.css)"/)[1]);
+  assert.ok(css.includes('.publication-table-search') && css.includes('.publication-table-scroll'), 'table tool styles');
+});
+
 test('agent files carry the text version and no frame', () => {
   const full = built.agentFiles.find(path => path.endsWith('/full.md'));
   assert.ok(full, 'full-text agent file');

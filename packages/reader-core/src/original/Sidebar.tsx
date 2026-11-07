@@ -168,6 +168,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             
             contentMatches.push({
                 snippet,
+                navigationText: text.substring(start, end),
                 textToHighlight: text.substring(idx, idx + query.length)
             });
             
@@ -278,7 +279,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                 {result.contentMatches.map((match, i: number) => (
                                     <button
                                         key={i}
-                                        onClick={() => onSelectSection(result.section.id, match.textToHighlight)}
+                                        aria-label={`Open match in ${result.section.title}: ${match.snippet}`}
+                                        title="Open this match in the book"
+                                        onClick={() => onSelectSection(result.section.id, match.navigationText)}
                                         className="w-full text-left text-xs text-gray-600 dark:text-gray-300 p-2 bg-gray-50 dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-gray-700 rounded border border-gray-100 dark:border-gray-700 transition-colors block"
                                     >
                                         <span className="line-clamp-2">

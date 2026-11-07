@@ -63,12 +63,23 @@ export function publicationUrl(href: string, bookId: string, sectionId: string, 
   return url;
 }
 
-export function sectionFromUrl(href: string, bookId: string, sections: PublicationSection[]): string {
+export function sectionFromUrl(href: string, bookId: string, sections: PublicationSection[], compatibility?: PublicationBook['compatibility']): string {
   const url = new URL(href);
   if (url.searchParams.has('book') && url.searchParams.get('book') !== bookId) return 'home';
   let legacyId: string | undefined;
   if (url.hash.startsWith('#/')) {
     try { legacyId = decodeURIComponent(url.hash.slice(2).split('?')[0]); } catch { /* Ignore malformed fragments. */ }
+  }
+  // Retained source anchors may now belong to a child reading unit.
+  if (url.hash && !url.hash.startsWith('#/')) {
+    try {
+      const fragment = decodeURIComponent(url.hash.slice(1));
+      const mapped = compatibility?.anchorOwners[fragment];
+      if (mapped && sections.some(section => section.id === mapped)) return mapped;
+      const owner = sections.find(section => section.format !== 'markdown' &&
+        (section.content.includes(`id="${fragment.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"`) || section.content.includes(`id="${fragment}"`)));
+      if (owner) return owner.id;
+    } catch { /* Malformed legacy anchors retain their section route. */ }
   }
   const id = legacyId ?? url.searchParams.get('section');
   return id && sections.some(section => section.id === id) ? id : 'home';

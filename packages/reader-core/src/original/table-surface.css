@@ -1,0 +1,46 @@
+/* Table chrome shared by every book: a quiet icon toolbar, a search bar that filters rows, and a focus view.
+   Colours come from the book theme (--reader-ink, --reader-paper, --reader-accent). */
+.publication-table { --table-line: color-mix(in srgb, var(--reader-ink), transparent 85%); --table-muted: color-mix(in srgb, var(--reader-ink), transparent 30%); margin: 2em 0; min-width: 0; border-top: 1px solid var(--table-line); }
+.publication-table [hidden] { display: none !important; }
+.publication-table :focus-visible { outline: 2px solid var(--reader-accent); outline-offset: 2px; }
+
+.publication-table-header { display: flex; align-items: center; justify-content: flex-end; gap: 4px; padding: 2px 6px; font: 12px/1.4 system-ui, -apple-system, sans-serif; }
+.publication-table-header strong { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.publication-table-header button { flex: 0 0 auto; width: 34px; height: 34px; padding: 5px; display: inline-flex; align-items: center; justify-content: center; color: var(--table-muted); background: transparent; border: 1px solid transparent; border-radius: 4px; cursor: pointer; }
+.publication-table-header button:hover { color: var(--reader-ink); background: color-mix(in srgb, var(--reader-ink), transparent 94%); }
+.publication-table-header button:is([aria-expanded=true][aria-controls^=publication-table-tools], [aria-pressed=true]) { color: var(--reader-ink); background: color-mix(in srgb, var(--reader-ink), transparent 92%); border-color: var(--table-line); }
+.publication-table-header .material-symbols-outlined { font-size: 20px; }
+.publication-table-overflow-hint { margin-right: auto; color: var(--table-muted); }
+.publication-table-header:has(.publication-table-status:not(:empty)) { flex-wrap: wrap; }
+.publication-reader .publication-table .publication-table-header .publication-table-status { flex-basis: 100%; margin: 0; padding: 2px 0 4px; font: 12px/1.4 system-ui, -apple-system, sans-serif; color: var(--table-muted); text-align: right; }
+.publication-table-status:empty { display: none; }
+
+.publication-table-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 10px; background: color-mix(in srgb, var(--reader-ink), transparent 95%); font: 13px/1.4 system-ui, -apple-system, sans-serif; color: var(--reader-ink); }
+.publication-table-search-field { flex: 1 1 220px; display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 10px; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 70%); border-radius: 6px; background: var(--reader-paper); }
+.publication-reader .publication-table-search-field input:focus-visible { outline: none; }
+.publication-table-search-field:focus-within { outline: 2px solid var(--reader-accent); outline-offset: 1px; }
+.publication-table-search-field .material-symbols-outlined { font-size: 20px; color: var(--table-muted); }
+.publication-table-search-field input { flex: 1; min-width: 0; padding: 6px 0; border: 0; background: transparent; color: inherit; font: inherit; font-size: 15px; outline: none; box-shadow: none; }
+.publication-table-count { color: var(--table-muted); white-space: nowrap; }
+.publication-table-count:empty { display: none; }
+.publication-table-search :is(select, button) { min-height: 34px; padding: 4px 8px; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 75%); border-radius: 4px; background: var(--reader-paper); color: inherit; font: inherit; cursor: pointer; }
+.publication-table-search :is(select, input):disabled { opacity: .5; cursor: not-allowed; }
+.publication-table-columns { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding: 0; border: 0; }
+.publication-table-columns legend { float: left; padding: 0; margin-right: 2px; font-weight: 600; }
+.publication-table-columns label { display: inline-flex; align-items: center; gap: 4px; }
+.publication-table-reset { margin-left: auto; }
+.publication-table mark { background: color-mix(in srgb, var(--reader-accent), transparent 72%); color: inherit; border-radius: 2px; }
+
+.publication-table-scroll { overflow: auto; max-width: 100%; padding: 0 1em; }
+.publication-table-scroll table { display: table; width: 100%; }
+
+.publication-table-focus[popover] { position: fixed; inset: 24px; z-index: 100; width: auto; height: auto; max-width: none; max-height: none; margin: 0; display: flex; flex-direction: column; overflow: hidden; border: 0; border-top: 3px solid var(--reader-ink); background: var(--reader-paper); color: var(--reader-ink); }
+.publication-table-focus::backdrop { background: rgb(0 0 0 / .55); }
+.publication-table-focus .publication-table-header { padding: 8px 12px; border-bottom: 1px solid var(--table-line); }
+.publication-table-focus .publication-table-scroll { flex: 1; min-height: 0; padding: 16px 24px; }
+@media (max-width: 760px) {
+  .publication-table-focus[popover] { inset: 8px; }
+  .publication-table-focus .publication-table-scroll { padding: 12px; }
+  .publication-table-search { padding: 8px; }
+  .publication-table-reset { margin-left: 0; }
+}

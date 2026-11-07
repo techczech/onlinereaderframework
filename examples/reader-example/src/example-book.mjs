@@ -9,6 +9,8 @@ export const exampleBook = {
   description: 'A small invented book that shows chapters, formatting, reading settings, notes, read-aloud, an interactive example, EPUB download and agent files.',
   language: 'en-GB',
   navigation: { homeDepth: 2 },
+  // Table tools (search, swap rows and columns, collapse, full width, reset) are off by default; this book switches them on.
+  appearance: { tableControls: true },
   home: {
     badge: 'Example',
     overviewTitle: 'What this example shows',
@@ -27,7 +29,7 @@ This book is **demonstration text**. It was written for the Online Reader Framew
 It is deliberately short. Each chapter shows one part of the reader:
 
 1. a contents tree with chapters inside chapters;
-2. ordinary formatting: headings, lists, a table, a quotation and a footnote;
+2. ordinary formatting: headings, lists, tables with search, a quotation and a footnote;
 3. reading settings and reading assists;
 4. highlights, notes and bookmarks, kept in your own browser;
 5. read-aloud with your browser's voices;
@@ -42,7 +44,7 @@ Nothing in this book comes from a published book.`,
       category: 'Reading',
       content: `# Reading on screen
 
-This chapter has two shorter chapters inside it. Open the contents to see the tree, or use the links at the end of each page to move to the next one.`,
+This chapter has three shorter chapters inside it. Open the contents to see the tree, or use the links at the end of each page to move to the next one.`,
       children: [
         {
           id: 'reading-settings',
@@ -79,6 +81,41 @@ The reading assists help you keep your place:
 <p><strong>Text version of the interactive example.</strong> The example shows one sample paragraph and a slider labelled “Line spacing”. The slider starts at 1.5, which means each line takes one and a half times the height of the letters. Moving it down to 1.0 packs the lines closely together, so the eye can slip to the wrong line when it returns to the left edge. Moving it up to 2.0 or more spreads the lines apart; this can help some readers, but very wide spacing breaks the paragraph into separate strips. A second control switches the paragraph between a narrow and a wide column, because the best spacing also depends on how long each line is. The values shown here are examples, not rules.</p>
 </div>
 <p>The same text version is used everywhere the interactive example cannot run: in search, in read-aloud, in the EPUB and in the agent files.</p>`,
+        },
+        {
+          id: 'large-tables',
+          title: 'Large tables',
+          category: 'Reading',
+          content: `# Large tables
+
+A long table is easier to use when you can narrow it down. Above each table in this book there is a small row of buttons:
+
+- **Search** opens a box above the table. Type a word and only the rows that contain it stay visible, with the word highlighted. Press Escape to clear the search.
+- **Swap rows and columns** turns the table on its side. Press it again to go back.
+- **Collapse** hides the table, and **Full width** opens it over the page.
+
+On a phone, the cells keep whole words and the table scrolls sideways.
+
+| Reading tool | Group | What it changes | Saved for next time |
+| --- | --- | --- | --- |
+| Theme | Reading settings | Light, dark or device colours | Yes |
+| Font | Reading settings | Serif or sans-serif letters | Yes |
+| Text size | Reading settings | Size of the letters | Yes |
+| Line height | Reading settings | Space between lines | Yes |
+| Paragraph spacing | Reading settings | Space between paragraphs | Yes |
+| Letter spacing | Reading settings | Space between letters | Yes |
+| Text width | Reading settings | Words on one line | Yes |
+| Focus | Reading assists | Dims the other paragraphs | Yes |
+| Window | Reading assists | Shows a few lines at a time | Yes |
+| Ruler | Reading assists | Band under the current line | Yes |
+| Anchored reading | Reading assists | Bolder first letters | Yes |
+| Highlight | Notes | Marks a passage | Yes |
+| Note | Notes | Adds your words to a passage | Yes |
+| Bookmark | Notes | Marks the chapter | Yes |
+| Listen | Toolbar | Reads the chapter aloud | No |
+| Search | Toolbar | Finds words in every chapter | No |
+
+The table tools are part of the reader, not of the book text. Search, read-aloud, the EPUB and the agent files see the table as it is written.`,
         },
       ],
     },

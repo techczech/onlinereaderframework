@@ -31,7 +31,7 @@ export function publicationTextModel(root: Node): PublicationTextModel {
     }
     if (node.nodeType === 1) {
       const element = node as Element;
-      if (element.matches('script, style, template, noscript, [hidden], [aria-hidden="true"], .publication-margin-note, [data-publication-embed]')) return;
+      if (element.matches('script, style, template, noscript, [hidden], [aria-hidden="true"], .publication-margin-note, [data-publication-embed], [data-publication-ui]')) return;
       // MathML alternatives and phantoms retain markup but contribute no visible text.
       if (element.namespaceURI === 'http://www.w3.org/1998/Math/MathML' && nonRenderedMathMLTags.has(element.localName)) return;
       if (blockTags.has(element.tagName)) space();
@@ -161,4 +161,10 @@ export function findPublicationTextRange(root: Node, phrase: string): Range | nu
   const last = points[points.length - 1];
   range.setEnd(last.node, last.offset + 1);
   return range;
+}
+
+/** A saved quote must be locatable in the immutable chapter, regardless of its current view. */
+export function canRestorePublicationQuote(html: string, phrase: string): boolean {
+  if (typeof document === 'undefined') return false;
+  return findPublicationTextRange(templateFor(html).content, phrase) !== null;
 }

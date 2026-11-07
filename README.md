@@ -2,7 +2,7 @@
 
 Online Reader Framework is a React library that turns a book, guide or long manual into a web edition that is comfortable to read. You give it a book as plain data (title, author, and a tree of sections written in Markdown or sanitised HTML). It supplies the reader: contents, search, reading settings, highlights, notes, bookmarks, progress, read-aloud, sandboxed interactive examples, EPUB export and Markdown files for AI agents.
 
-Version 1.1.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
+Version 1.2.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
 
 The framework carries no published book; the small example book in `examples/reader-example` was written for this repository. Five editions built on the framework are live: [Deliberate Practice](https://deliberatepractice.dominiklukes.net/), [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/), [Key Issues in Language](https://linguistics.dominiklukes.net/), [Increasing Reading Productivity](https://dominiklukes.net/books/academic-reading/) and [Foundations of Readability](https://dominiklukes.net/books/readability/). Their text is not in this repository and is not covered by its licence.
 
@@ -17,6 +17,7 @@ The framework carries no published book; the small example book in `examples/rea
 - **EPUB.** Builds an EPUB 3 file of the book in the browser.
 - **Agent files.** Generates, at build time, a Markdown copy of the book (an index, one file per section, a full-text file and a JSON manifest) and a prompt, so a reader can ask an AI agent about it. The reader links to the files; it does not call any AI service.
 - **Rich content.** Sanitised HTML and Markdown, tables, footnotes, static SVG and MathML.
+- **Table tools.** Optional, per book (`appearance: { tableControls: true }`): search a large table and see only the matching rows, swap rows and columns, collapse a table or open it full width, and reset it. On phones, cells keep whole words and the table scrolls sideways.
 - **Interactive examples.** A host can place a self-contained HTML document, such as a diagram or a simulator, before a passage of a chapter. It runs in a sandboxed frame. The passage is its written text version, and search, notes, read-aloud, EPUB and agent files use that text. See [Interactive examples](#interactive-examples-embeds).
 - **Optional extension.** A host can mount its own coaching panel through a render function. The framework has no AI client and no credentials.
 
@@ -48,7 +49,7 @@ npm run test:native
 
 ## Run the example book
 
-`examples/reader-example` is a small book with a working reader. Its text is invented demonstration text, released under the MIT licence with the code. It shows chapters inside chapters, headings, lists, a table, a quotation and a footnote, the reading settings and assists, notes, read-aloud, one interactive example with its text version, an EPUB download and agent files.
+`examples/reader-example` is a small book with a working reader. Its text is invented demonstration text, released under the MIT licence with the code. It shows chapters inside chapters, headings, lists, tables with the table tools switched on, a quotation and a footnote, the reading settings and assists, notes, read-aloud, one interactive example with its text version, an EPUB download and agent files.
 
 ```sh
 npm run build            # the example uses the built package, so build it first

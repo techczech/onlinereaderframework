@@ -4,7 +4,8 @@ A small book in the Online Reader Framework reader. Its text is invented demonst
 
 ## What it shows
 
-- Chapters inside chapters, and Markdown and HTML sections with headings, lists, a table, a quotation and a footnote.
+- Chapters inside chapters, and Markdown and HTML sections with headings, lists, tables, a quotation and a footnote.
+- The table tools, switched on with `appearance: { tableControls: true }`: a search box that narrows a large table to the matching rows, a swap-rows-and-columns button, collapse, full width and reset. The chapter "Large tables" has a table to try them on.
 - The reading settings and assists, notes, bookmarks and read-aloud that every reader has.
 - One interactive example, `embeds/line-spacing.html`, placed before its written text version in the chapter "Line spacing: an interactive example".
 - An EPUB download (the "Download eBook" button on the front page) and agent files under `dist/agent/`.
