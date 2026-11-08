@@ -1,4 +1,5 @@
 import { transposedTableBody } from './table-orientation.js';
+import { addFormChangeToggle } from './form-changes.js';
 /** Optional table views. The immutable publication content remains the export source. */
 export interface TableReview { id: string; source: string; columns: string[]; reason: string; cellPrefix?: string; headers?: Record<string, string[]>; rowHeaders?: string[]; columnHeaders?: string[]; requiredColumns?: number[]; cells?: { text: string; tag: string; role: string }[][] }
 /** Fail closed before restoring sanitised attributes or exposing transformations. */
@@ -101,7 +102,9 @@ export function attachTableSurfaces(root: HTMLElement, reviews: readonly TableRe
         while (offset >= 0) { fragment.append(value.slice(start, offset)); const mark = document.createElement('mark'); mark.textContent = value.slice(offset, offset + query.length); marks.push(mark); fragment.append(mark); hits++; start = offset + query.length; offset = value.toLocaleLowerCase().indexOf(query, start); }
         fragment.append(value.slice(start)); node.replaceWith(fragment);
       }
-      count.textContent = !hits ? 'No matches' : canHide ? `${shown} of ${total} rows` : `${hits} ${hits === 1 ? 'match' : 'matches'}`;
+      // A word split by inline markup matches its row but not one text node; trust the row count.
+      const found = Math.max(hits, shown);
+      count.textContent = !found ? 'No matches' : canHide ? `${shown} of ${total} rows` : `${found} ${found === 1 ? 'match' : 'matches'}`;
     };
     find.oninput = applySearch;
     const collapse = button('Collapse', element => { scroll.hidden = !scroll.hidden; icon(element, scroll.hidden ? 'Show table' : 'Collapse', scroll.hidden ? 'expand_more' : 'expand_less'); element.setAttribute('aria-expanded', String(!scroll.hidden)); }, header);
@@ -177,9 +180,10 @@ export function attachTableSurfaces(root: HTMLElement, reviews: readonly TableRe
     // Keep this common action visible beside search.
     if (transposedTableBody(table)) header.insertBefore(orientation, disclosure);
     else orientation.remove();
+    const stopForms = addFormChangeToggle(table, header, wrapper, header.querySelector('[data-table-orientation]') ?? disclosure);
     const reset = button('Reset table', () => { cleanup(); cleanups.push(attachTableSurfaces(root, reviews)); });
     reset.className = 'publication-table-reset';
-    const cleanup = () => { overflowObserver.disconnect(); window.clearTimeout(statusTimer); if (!wrapper.isConnected) return; wrapper.removeEventListener('keydown', escape); table.innerHTML = source; wrapper.before(table); wrapper.remove(); };
+    const cleanup = () => { stopForms?.(); overflowObserver.disconnect(); window.clearTimeout(statusTimer); if (!wrapper.isConnected) return; wrapper.removeEventListener('keydown', escape); table.innerHTML = source; wrapper.before(table); wrapper.remove(); };
     cleanups.push(cleanup);
   });
   return () => cleanups.slice().forEach(cleanup => cleanup());

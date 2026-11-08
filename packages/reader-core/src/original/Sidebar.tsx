@@ -55,6 +55,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const asideRef = useRef<HTMLElement>(null);
+    const atlas = book.appearance?.readerLayout === 'atlas';
   const labels = publicationLabels(book);
   const navigation = useMemo(() => publicationNavigation(book.sections, sidebarDepth(book.sections, book.navigation?.sidebarDepth)), [book.sections, book.navigation?.sidebarDepth]);
   const runs = useMemo(() => categoryRuns(navigation), [navigation]);
@@ -91,8 +93,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
     const box = list.getBoundingClientRect(), rowBox = row.getBoundingClientRect();
     if (onlyIfHidden && rowBox.top >= box.top && rowBox.bottom <= box.bottom) return;
     const offset = rowBox.top - box.top + list.scrollTop;
-    list.scrollTop = mode === 'center' ? offset - (list.clientHeight - row.offsetHeight) / 2
-      : rowBox.top < box.top ? offset - 8 : offset - list.clientHeight + row.offsetHeight + 8;
+    // A row that fits on screen with the list at its top leaves the list there, so the first entries are never cut off for nothing.
+    if (mode === 'center' && offset + row.offsetHeight <= list.clientHeight - 16) { list.scrollTop = 0; return; }
+    if (mode === 'center') {
+      // Centre the row, then move up to the nearest row boundary so the list starts on a whole entry, never a sliced one.
+      const target = offset - (list.clientHeight - row.offsetHeight) / 2;
+      const tops = Array.from(list.querySelectorAll<HTMLElement>('[data-section-id], h2, h3')).map(element => element.getBoundingClientRect().top - box.top + list.scrollTop);
+      const start = tops.filter(top => top <= target).pop();
+      list.scrollTop = Math.max(0, (start ?? target) - 8);
+      return;
+    }
+    list.scrollTop = rowBox.top < box.top ? offset - 8 : offset - list.clientHeight + row.offsetHeight + 8;
   };
 
   useBrowserLayoutEffect(() => { if (listRef.current) listRef.current.scrollTop = scrollTopRef.current; }, []);
@@ -141,6 +152,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
     // Closing navigation, a book change or unmount ends the request instead of leaving it to revive on the next opening.
     return () => { cancelAnimationFrame(frame); finish(); };
   }, [shouldFocusSearch, isOpen]);
+
+  // Atlas: opening the contents as an overlay drawer (narrow windows) moves focus into it.
+  // A search request focuses the field instead (above); a desktop pane leaves focus on the toggle.
+  const wasOpen = useRef(isOpen);
+  useEffect(() => {
+    const opened = isOpen && !wasOpen.current;
+    wasOpen.current = isOpen;
+    if (!atlas || !opened || shouldFocusSearch || window.matchMedia?.('(min-width: 1024px)').matches) return;
+    // Focus is refused for the first frames while the drawer is still becoming visible, so retry for about half a second.
+    let frame = 0, tries = 0;
+    const attempt = () => {
+      if (asideRef.current?.contains(document.activeElement)) return;
+      // The drawer itself takes focus (its label is read out); no row looks chosen until the reader moves.
+      asideRef.current?.focus({ preventScroll: true });
+      if (!asideRef.current?.contains(document.activeElement) && ++tries < 30) frame = requestAnimationFrame(attempt);
+    };
+    frame = requestAnimationFrame(attempt);
+    return () => cancelAnimationFrame(frame);
+  }, [isOpen, atlas, shouldFocusSearch]);
 
   // Search Logic
   const searchResults = useMemo(() => {
@@ -204,15 +234,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Mobile Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="publication-sidebar-scrim fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
           onClick={onClose}
         ></div>
       )}
 
       {/* Sidebar Content */}
-      <aside data-open={isOpen} aria-label={labels.tableOfContents}
+      <aside ref={asideRef} id="publication-sidebar" tabIndex={atlas ? -1 : undefined} data-open={isOpen} aria-label={labels.tableOfContents} onKeyDown={atlas ? event => {
+          // Atlas: Escape anywhere in the open contents closes it (the layout returns focus to the toolbar toggle); a search field with text clears first.
+          const target = event.target as HTMLElement;
+          if (event.key !== 'Escape' || !isOpen || (target instanceof HTMLInputElement && target.value)) return;
+          event.stopPropagation(); onClose();
+        } : undefined}
         className="publication-sidebar bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
         <div className="publication-sidebar-header">
+          {/* Atlas: the same header as the outline panel: a heading and a small close button. While closed, the toolbar's hamburger brings it back. */}
+          {atlas && <div className="publication-panel-head">
+            <h2 className="publication-panel-heading">{labels.tableOfContents}</h2>
+            <button type="button" onClick={onClose} aria-label={`Close the ${labels.tableOfContents.toLowerCase()}`} title="Close" className="publication-sidebar-close publication-panel-close"><span aria-hidden="true" className="material-symbols-outlined">close</span></button>
+          </div>}
           <div className="publication-sidebar-identity-row">
             <a href={homeHref} className="publication-sidebar-identity" title={`${displayTitle}, ${book.author}`} aria-label={`${displayTitle}: book home`}
               onClick={event => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; event.preventDefault(); select('home'); }}>
@@ -220,7 +260,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="publication-sidebar-book"><span className="publication-sidebar-book-title">{displayTitle}</span>
                 <span className="publication-sidebar-author">{book.author}</span></span>
             </a>
-            <button onClick={onClose} aria-label="Close navigation" className="publication-sidebar-close"><span className="material-symbols-outlined">close</span></button>
+            {!atlas && <button type="button" onClick={onClose} aria-label="Close navigation" className="publication-sidebar-close"><span aria-hidden="true" className="material-symbols-outlined">close</span></button>}
           </div>
           <div className="relative">
             <input 
@@ -336,7 +376,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </div>
                         )}
 
-                        <h2 className="px-2 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{labels.tableOfContents}</h2>
+                        {!atlas && <h2 className="px-2 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{labels.tableOfContents}</h2>}
                         <div className="space-y-1">
                           {runs.map((run, index) => {
                             const items = run.nodes.map(node => <SidebarItem key={node.section.id} section={node.section}

@@ -2,7 +2,7 @@
 
 Online Reader Framework is a React library that turns a book, guide or long manual into a web edition that is comfortable to read. You give it a book as plain data (title, author, and a tree of sections written in Markdown or sanitised HTML). It supplies the reader: contents, search, reading settings, highlights, notes, bookmarks, progress, read-aloud, sandboxed interactive examples, EPUB export and Markdown files for AI agents.
 
-Version 1.2.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
+Version 1.3.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
 
 The framework carries no published book; the small example book in `examples/reader-example` was written for this repository. Five editions built on the framework are live: [Deliberate Practice](https://deliberatepractice.dominiklukes.net/), [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/), [Key Issues in Language](https://linguistics.dominiklukes.net/), [Increasing Reading Productivity](https://dominiklukes.net/books/academic-reading/) and [Foundations of Readability](https://dominiklukes.net/books/readability/). Their text is not in this repository and is not covered by its licence.
 

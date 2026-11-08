@@ -42,6 +42,8 @@ export const publicationSchema: Schema = {
     td: ['colSpan', 'rowSpan', ['align', 'left', 'right', 'center']],
     th: ['colSpan', 'rowSpan', 'scope', ['align', 'left', 'right', 'center']],
     details: ['open'],
+    // Word-form markup: the letters a changed ending replaced, replayed by the table toggle.
+    span: ['dataFormFrom'],
     section: ['dataFootnotes'],
     input: [['disabled', true], ['type', 'checkbox'], 'checked'],
     ...Object.fromEntries(mathTags.map(tag => [tag, mathAttributes])),

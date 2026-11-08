@@ -332,11 +332,7 @@
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:hover, .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail-toggle:focus-visible { opacity: 1; }
 
 /* Editorial atlas is an explicit publication choice. Existing books retain their layout. */
-.publication-reader.publication-atlas { --atlas-line:#dcd8cb; padding-top:92px; background:var(--reader-paper); }
-.publication-atlas-masthead { position:absolute; inset:0 0 auto; height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 36px; border-bottom:1px solid var(--atlas-line); background:var(--reader-paper); z-index:51; }
-.publication-atlas-masthead button { font:bold 24px Georgia,serif; letter-spacing:-.6px; text-align:left; }
-.publication-atlas-masthead span { display:block; font:11px Arial,sans-serif; letter-spacing:1px; margin-top:5px; }
-.publication-atlas-edition { font:10px Arial,sans-serif; letter-spacing:1.5px; color:var(--reader-accent); max-width:12rem; text-align:right; }
+.publication-reader.publication-atlas { --atlas-line:#dcd8cb; background:var(--reader-paper); }
 .publication-atlas .publication-sidebar { background:color-mix(in srgb,var(--reader-paper),var(--reader-ink) 4%); width:250px; flex-basis:250px; border-color:var(--atlas-line); }
 .publication-atlas .publication-sidebar-header { padding:30px 24px 20px; gap:18px; }
 .publication-atlas .publication-sidebar-cover { width:57px; height:83px; box-shadow:2px 4px 9px #192e4326; }
@@ -348,7 +344,7 @@
 .publication-atlas .publication-toolbar { padding:8px 24px; background:var(--reader-paper); }
 .publication-atlas .publication-toolbar-identity { font-size:12px; font-weight:400; }
 .publication-atlas .publication-scroll { background:var(--reader-paper); }
-.publication-reader.publication-atlas .publication-reading-layout { max-width:none; padding:35px 0 60px 64px; gap:48px; font-size:1.125rem; }
+.publication-reader.publication-atlas .publication-reading-layout { max-width:none; padding:14px 0 60px 64px; gap:48px; font-size:1.125rem; }
 .publication-atlas .publication-reading-column { flex:1; max-width:var(--publication-measure); }
 .publication-atlas .publication-atlas-chapter { display:flex; align-items:center; gap:24px; margin:44px 0 32px; padding-bottom:28px; border-bottom:1px solid var(--atlas-line); }
 .publication-atlas-folio { font:italic 80px/1 Georgia,serif; color:#c6bca7; letter-spacing:-6px; }
@@ -383,11 +379,115 @@
 .publication-atlas .publication-local-contents-compact { display:none; }
 .publication-atlas .publication-local-contents[data-collapsed] { flex-basis:48px; width:48px; padding-inline:8px; }
 @media(min-width:1024px) { .publication-reader.publication-atlas .publication-sidebar[data-open=false] { margin-left:-250px; } }
-@media(max-width:1200px) { .publication-reader.publication-atlas .publication-reading-layout { padding-left:30px; gap:30px; } .publication-atlas-title { font-size:58px; } .publication-reader.publication-atlas .publication-local-contents { flex-basis:155px; width:155px; padding-inline:14px; } }
-@media(max-width:1023px) { .publication-atlas .publication-sidebar { top:92px; height:calc(100% - 92px); } .publication-reader.publication-atlas .publication-reading-layout { padding:28px 22px 60px; } .publication-reader.publication-atlas .publication-local-contents { display:none; } .publication-atlas .publication-local-contents-compact { display:block; } .publication-atlas-masthead { padding:0 20px; } .publication-atlas-masthead button { font-size:19px; } .publication-atlas-edition { display:none; } .publication-atlas-title { font-size:54px; } .publication-atlas .publication-atlas-chapter { gap:20px; margin-top:28px; } }
-@media(max-width:480px) { .publication-atlas .publication-toolbar { padding:6px 12px; } .publication-atlas-masthead span { font-size:9px; } .publication-atlas-folio { font-size:65px; } .publication-atlas-title { font-size:46px; } }
+/* Laptop-size windows (narrower than 1600 px or shorter than 900 px): the chapter numeral and title a little smaller, so the text starts higher. */
+@media (max-width:1600px), (max-height:900px) { .publication-atlas-folio { font-size:68px; letter-spacing:-5px; } .publication-atlas-title { font-size:56px; } .publication-atlas .publication-atlas-chapter { margin:32px 0 26px; padding-bottom:22px; } .publication-atlas-title::after { margin-top:18px; } }
+@media(max-width:1200px) { .publication-reader.publication-atlas .publication-reading-layout { padding-left:30px; gap:30px; } .publication-atlas-title { font-size:52px; } .publication-reader.publication-atlas .publication-local-contents { flex-basis:155px; width:155px; padding-inline:14px; } }
+@media(max-width:1023px) { .publication-reader.publication-atlas .publication-reading-layout { padding:12px 22px 60px; } .publication-atlas-title { font-size:50px; } .publication-atlas .publication-atlas-chapter { gap:20px; margin-top:28px; } }
+@media(max-width:480px) { .publication-atlas .publication-toolbar { padding:6px 12px; } .publication-atlas-folio { font-size:65px; } .publication-atlas-title { font-size:46px; } }
 .publication-reader.publication-atlas .publication-reading-layout { justify-content:space-between; --publication-measure:78ch; }
 
 .publication-atlas .publication-content > h1:first-child + h2 { margin-top:44px; }
 .publication-atlas .publication-local-contents-compact { border-radius:0; background:color-mix(in srgb,var(--reader-paper),var(--reader-ink) 4%); }
-@media(max-width:1023px) { .publication-reader.publication-atlas { flex-direction:column; } .publication-atlas .publication-sidebar { position:static; transform:none; flex:0 0 auto; width:100%; max-height:35dvh; height:auto; } .publication-atlas .publication-sidebar[data-open=false] { display:none; } .publication-atlas .publication-sidebar-header { padding:12px 22px; } .publication-atlas .publication-sidebar-identity-row,.publication-atlas .publication-sidebar-progress { display:none; } .publication-atlas > .fixed.inset-0 { display:none; } }
+/* Atlas reading chrome. Two modes: the book's front page is a landing page with no toolbar and no contents panel (.publication-landing); reading a
+   chapter adds one slim toolbar over the text, while the panels run the full height beside it. One visible control per panel state: an open panel
+   has a small close X in its header; a closed panel leaves an icon in the toolbar (hamburger at the left for the contents, list icon at the right
+   for the outline). All chrome is borderless icon buttons in muted ink; no red. Overlays (contents below 1024 px, the outline below 1024 px) have a
+   scrim and close on Escape. */
+.publication-reader.publication-atlas { flex-direction:column; }
+.publication-reader .publication-frame { display:contents; }
+.publication-reader.publication-atlas .publication-frame { display:flex; flex:1 1 auto; min-height:0; }
+/* The toolbar lies over the top of the text, so it can slide away while the reader scrolls down without moving the text; it returns on any
+   scroll up. It stays while one of its menus is open or a key has moved focus into it. Tools sit at the right, away from where reading starts;
+   the chevron folds them into one "more" button (kept per book). */
+.publication-reader.publication-atlas .publication-main { --atlas-toolbar-h:44px; }
+.publication-reader.publication-atlas .publication-main > .publication-toolbar { position:absolute; top:0; left:0; right:0; z-index:30; display:flex; flex-wrap:nowrap; align-items:center; gap:2px; height:var(--atlas-toolbar-h); box-sizing:border-box; padding:0 12px;
+  border-bottom:1px solid transparent; background:var(--reader-paper); transition:transform .25s ease, border-color .2s; }
+.publication-reader.publication-atlas:not(.publication-landing) .publication-scroll { padding-top:var(--atlas-toolbar-h); }
+.publication-reader.publication-atlas .publication-main[data-scrolled] > .publication-toolbar { border-bottom-color:var(--atlas-line); }
+.publication-reader.publication-atlas .publication-main[data-toolbar-away]:not(:has(> .publication-toolbar :focus-visible, > .publication-toolbar [data-reader-menu])) > .publication-toolbar { transform:translateY(-100%); border-bottom-color:transparent; }
+.publication-reader.publication-atlas .publication-local-contents:not([data-sheet]) { top:var(--atlas-toolbar-h); transition:top .25s ease; }
+.publication-reader.publication-atlas .publication-main[data-toolbar-away]:not(:has(> .publication-toolbar :focus-visible, > .publication-toolbar [data-reader-menu])) .publication-local-contents:not([data-sheet]) { top:0; }
+/* The read-aloud dock sits below the toolbar and follows it up when it slides away; the text then needs no room of its own under the toolbar. */
+.publication-reader.publication-atlas .publication-main > .publication-read-aloud-dock { margin-top:var(--atlas-toolbar-h); transition:margin-top .25s ease; }
+.publication-reader.publication-atlas .publication-main[data-toolbar-away]:not(:has(> .publication-toolbar :focus-visible, > .publication-toolbar [data-reader-menu])) > .publication-read-aloud-dock { margin-top:0; }
+.publication-reader.publication-atlas .publication-main:has(> .publication-read-aloud-dock) .publication-scroll { padding-top:0; }
+.publication-reader.publication-atlas .publication-main:has(> .publication-read-aloud-dock) .publication-local-contents:not([data-sheet]) { top:0; }
+@media (prefers-reduced-motion: reduce) { .publication-reader.publication-atlas .publication-main > :is(.publication-toolbar, .publication-read-aloud-dock), .publication-reader.publication-atlas .publication-local-contents { transition:none; } }
+.publication-reader.publication-atlas .publication-toolbar > :is(.publication-toolbar-actions, .publication-toolbar-restore) { margin-left:auto; }
+.publication-reader.publication-atlas .publication-toolbar > .publication-toolbar-actions { flex:none; flex-wrap:nowrap; justify-content:flex-end; gap:2px; }
+.publication-reader.publication-atlas .publication-toolbar > .publication-toolbar-minimise { margin-left:4px; }
+.publication-reader.publication-atlas .publication-toolbar > :is(.publication-toolbar-minimise, .publication-toolbar-restore)[data-tooltip]::after { left:auto; right:0; transform:none; }
+/* Headings reached from the outline or a link stop just below the toolbar. */
+.publication-atlas .publication-content :is(h1,h2,h3,h4,h5,h6) { scroll-margin-top:3.75rem; }
+.publication-reader.publication-atlas .publication-toolbar button.publication-toolbar-control { width:2rem; min-width:2rem; height:2rem; min-height:2rem; padding:0; border:0; border-radius:.375rem; background:transparent;
+  color:color-mix(in srgb, var(--reader-ink), transparent 40%); }
+@media (hover: hover) { .publication-reader.publication-atlas .publication-toolbar button.publication-toolbar-control:hover { background:color-mix(in srgb, var(--reader-ink), transparent 94%); color:var(--reader-ink); } }
+.publication-reader.publication-atlas .publication-toolbar button.publication-toolbar-control:is([aria-expanded="true"], [data-active]) { background:color-mix(in srgb, var(--reader-ink), transparent 90%); color:var(--reader-ink); }
+.publication-reader.publication-atlas .publication-toolbar .publication-toolbar-control .material-symbols-outlined { font-size:1.25rem; }
+.publication-reader.publication-atlas .publication-toolbar > .publication-navigation-toggle[data-tooltip]::after { left:0; transform:none; }
+/* The older layouts hide the hamburger's text on a phone (its last span); here the icon is the only span. */
+.publication-reader.publication-atlas .publication-navigation-toggle > span:last-child { display:inline-block; }
+.publication-reader.publication-atlas .publication-toolbar > .publication-toolbar-outline[data-tooltip]::after { left:auto; right:0; transform:none; }
+/* The text column sits centred in whatever room the open panels leave. */
+.publication-reader.publication-atlas .publication-reading-column { margin-inline:auto; }
+/* Focus: an opened panel takes focus as a whole, without a ring; entries show the reader's own palette ring only for keyboard focus. */
+.publication-atlas :is(.publication-sidebar, .publication-local-contents):focus { outline:none; box-shadow:none; }
+.publication-reader.publication-atlas .publication-outline-link:focus { box-shadow:none; }
+.publication-reader.publication-atlas .publication-outline-link:focus-visible { outline:2px solid var(--reader-accent); outline-offset:2px; }
+/* A quiet hover in the contents list, so a row under the pointer never looks like the current page. */
+.publication-reader.publication-atlas .publication-sidebar-row:not([aria-current]):hover { background:color-mix(in srgb, var(--reader-ink), transparent 95%); }
+/* Panel headers: a small heading and a small close X, the X the same size and colour as the toolbar icons. */
+.publication-atlas .publication-panel-head { display:flex; align-items:center; justify-content:space-between; gap:.5rem; min-height:2rem; }
+.publication-atlas .publication-local-contents-panel .publication-panel-head { margin:-.4rem 0 10px; }
+.publication-atlas .publication-panel-heading { margin:0; font:600 10px/1.4 Arial,sans-serif; letter-spacing:1.4px; text-transform:uppercase; color:color-mix(in srgb, var(--reader-ink), transparent 35%); }
+.publication-atlas :is(.publication-sidebar-close, .publication-outline-sheet-close) { display:inline-flex; flex:none; align-items:center; justify-content:center; width:2rem; height:2rem; margin:0 -.45rem 0 0; padding:0; border-radius:.375rem;
+  color:color-mix(in srgb, var(--reader-ink), transparent 40%); }
+@media (hover: hover) { .publication-atlas :is(.publication-sidebar-close, .publication-outline-sheet-close):hover { background:color-mix(in srgb, var(--reader-ink), transparent 92%); color:var(--reader-ink); } }
+.publication-atlas :is(.publication-sidebar-close, .publication-outline-sheet-close) .material-symbols-outlined { font-size:1.25rem; }
+/* Desktop: the contents header row sits level with the toolbar row, so its X is where the eye looks for the hamburger. */
+@media (min-width: 1024px) { .publication-atlas .publication-sidebar-header { padding-top:6px; } .publication-atlas .publication-sidebar-header > .publication-panel-head { margin-right:-10px; } }
+
+/* Docked outline: gone while closed (the toolbar's list icon brings it back). */
+.publication-atlas .publication-local-contents[data-collapsed]:not([data-sheet]) { display:none; }
+
+/* Page actions above the chapter: quiet text buttons, no outlines, so the breadcrumb row does not read as a second toolbar. */
+.publication-reader.publication-atlas .publication-breadcrumb-row > div:last-child > button { border-color:transparent; background:transparent; padding:.3rem .5rem; gap:.35rem; border-radius:.375rem; }
+.publication-reader.publication-atlas .publication-breadcrumb-row > div:last-child > button:hover { background:color-mix(in srgb, var(--reader-ink), transparent 94%); }
+
+/* Outline as an overlay sheet below 1024 px, opened from the toolbar's list icon. */
+.publication-reader.publication-atlas .publication-local-contents[data-sheet] { display:none; }
+.publication-reader.publication-atlas .publication-local-contents[data-sheet]:not([data-collapsed]) { display:flex; flex-direction:column; position:fixed; top:0; right:0; bottom:0; z-index:50; width:min(20rem, calc(100% - 3rem)); max-height:none; padding:0; overflow:hidden;
+  background:color-mix(in srgb, var(--reader-paper), var(--reader-ink) 4%); border-left:1px solid var(--atlas-line); box-shadow:-8px 0 24px #192e4326; }
+.publication-atlas .publication-local-contents[data-sheet] .publication-outline-rail { display:flex; flex-direction:column; flex:1; min-height:0; }
+.publication-atlas .publication-local-contents[data-sheet] .publication-panel-head { flex:none; margin:0; padding:10px 16px 10px 22px; border-bottom:1px solid var(--atlas-line); }
+.publication-atlas .publication-local-contents[data-sheet] .publication-outline-body { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:8px 22px 28px; }
+.publication-atlas .publication-local-contents[data-sheet] .publication-outline-link { font-size:14px; padding-block:11px; }
+.publication-atlas .publication-outline-scrim { position:fixed; inset:0; z-index:40; background:#192e43a6; }
+
+/* Contents as an overlay drawer below 1024 px; its X is a full touch-size target. */
+@media (max-width: 1023px) {
+  .publication-reader.publication-atlas .publication-sidebar { width:min(20rem, calc(100% - 3rem)); max-width:none; flex-basis:auto; box-shadow:8px 0 24px #192e4326; }
+  .publication-atlas .publication-sidebar-header { padding:10px 16px 16px 22px; gap:14px; }
+  .publication-atlas .publication-sidebar-identity-row { align-items:flex-start; }
+  .publication-atlas .publication-sidebar-cover { width:44px; height:64px; }
+  .publication-atlas .publication-sidebar-scrim { display:block; position:fixed; inset:0; z-index:40; background:#192e43a6; }
+  .publication-atlas .publication-sidebar-header > .publication-panel-head { margin:0 -10px 0 0; }
+  .publication-atlas :is(.publication-sidebar-close, .publication-outline-sheet-close) { width:2.75rem; height:2.75rem; }
+}
+/* Phone: the same row, with touch-size targets. Page actions above the chapter are icons, so the breadcrumb keeps the current page whole. */
+@media (max-width: 639px) {
+  .publication-reader.publication-atlas .publication-main { --atlas-toolbar-h:48px; }
+  .publication-reader.publication-atlas .publication-main > .publication-toolbar { gap:0; padding:0 4px; }
+  .publication-reader.publication-atlas .publication-toolbar > .publication-toolbar-minimise { margin-left:0; }
+  .publication-reader.publication-atlas .publication-toolbar button.publication-toolbar-control { width:2.75rem; min-width:2.75rem; height:2.75rem; min-height:2.75rem; }
+  .publication-reader.publication-atlas .publication-sidebar, .publication-reader.publication-atlas .publication-local-contents[data-sheet]:not([data-collapsed]) { width:calc(100% - 3.5rem); }
+  .publication-atlas .publication-page-action-label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  .publication-atlas .publication-breadcrumb > [aria-current], .publication-atlas .publication-breadcrumb > :last-child { flex:none; max-width:60%; }
+  .publication-atlas .publication-breadcrumb-row > div:last-child > button { padding:.45rem; }
+}
+/* The text never runs to the window's right edge when no outline is docked beside it (outline hidden, or shown as a sheet). */
+@media (min-width: 1024px) { .publication-reader.publication-atlas .publication-reading-layout { padding-right:32px; } }
+.publication-reader.publication-atlas .publication-reading-layout:has(> .publication-local-contents) { max-width:none; }
+
+/* Room after a chapter's last section, added only when a link or the outline sends a heading there, so it can reach the top of the window. */
+.publication-reader .publication-reading-column { margin-bottom:var(--publication-tail, 0px); }

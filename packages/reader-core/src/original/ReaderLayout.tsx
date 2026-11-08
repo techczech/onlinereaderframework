@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Sidebar } from './Sidebar.js';
 import { MarkdownRenderer } from './MarkdownRenderer.js';
 import { embedsForSection, type ValidPublicationEmbed } from '../embed/embed-model.js';
@@ -7,6 +7,7 @@ const noEmbeds: readonly ValidPublicationEmbed[] = [];
 import { HighlightsDrawer } from './HighlightsDrawer.js';
 import { Home } from './Home.js';
 import { TableOfContents, type TableOfContentsHandle } from './TableOfContents.js';
+import { browserStorage, readOutlineCollapsed, writeOutlineCollapsed } from './outline-preference.js';
 import { QuoteImageModal } from './QuoteImageModal.js';
 import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
@@ -20,6 +21,7 @@ import { ReaderToolbar } from './toolbar/ReaderToolbar.js';
 import type { ReadAloudActions } from './read-aloud/use-read-aloud.js';
 import type { ReadAloudSnapshot } from './read-aloud/read-aloud-controller.js';
 import { useReadingSupport } from './reading-support/use-reading-support.js';
+import { useViewportWidth } from './reading-support/use-viewport-width.js';
 
 export interface ReaderLayoutProps {
   reader: ReturnType<typeof usePublicationReader>;
@@ -59,8 +61,85 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
   const sectionEmbeds = useMemo(() => embedsForSection(embeds, currentSection?.id), [embeds, currentSection?.id]);
   const support = useReadingSupport(book.id);
   const compactTocRef = useRef<TableOfContentsHandle>(null);
+  // The side outline's folded state lives here so the toolbar button and the outline's own close button share it (remembered per book).
+  const [outlineCollapsed, setOutlineCollapsedState] = useState(() => readOutlineCollapsed(book.id, browserStorage()));
+  const outlineBook = useRef(book.id);
+  if (outlineBook.current !== book.id) { outlineBook.current = book.id; const next = readOutlineCollapsed(book.id, browserStorage()); if (next !== outlineCollapsed) setOutlineCollapsedState(next); }
+  const setOutlineCollapsed = useCallback((next: boolean) => { setOutlineCollapsedState(next); writeOutlineCollapsed(book.id, next, browserStorage()); }, [book.id]);
+  const [outlineAvailable, setOutlineAvailable] = useState(false);
   const labels = publicationLabels(book);
   const atlas = book.appearance?.readerLayout === 'atlas';
+  // Atlas below 1024 px: both panels are overlay drawers (contents from the left, outline from the right), opened only for this visit.
+  // The outline's remembered desktop choice is not used there, so a phone never opens on a covering sheet.
+  const viewportWidth = useViewportWidth();
+  const narrow = viewportWidth < 1024;
+  const [outlineSheetOpen, setOutlineSheetOpen] = useState(false);
+  const outlineSheet = atlas && narrow;
+  // Atlas has two modes. The book's front page is a landing page: no reading toolbar and no contents panel (Search there opens the contents for the visit).
+  // Reading starts with the first chapter: the toolbar appears and the contents opens on a desktop until the reader closes it.
+  const landing = atlas && isHome;
+  const [landingContents, setLandingContents] = useState(false);
+  useEffect(() => { if (landing && isSearchTriggered) setLandingContents(true); }, [landing, isSearchTriggered]);
+  useEffect(() => { if (!landing) setLandingContents(false); }, [landing]);
+  const contentsOpen = landing ? landingContents : isSidebarOpen && !isImmersiveMode;
+  // A hairline under the toolbar only once the text has scrolled beneath it.
+  const [scrolled, setScrolled] = useState(false);
+  // Atlas: the toolbar slides away while the reader scrolls down through the text and comes back on any scroll up or near the top.
+  // Direction is measured from where the reader last turned, so a slow scroll counts as much as a flick.
+  const [toolbarAway, setToolbarAway] = useState(false);
+  const scrollTrack = useRef({ last: 0, turn: 0, direction: 0 });
+  // Opening a chapter, or returning to a saved place in it, shows the toolbar; the reader's own scrolling decides after that.
+  const settleUntil = useRef(0);
+  useEffect(() => { setToolbarAway(false); settleUntil.current = performance.now() + 800; }, [currentSectionId]);
+  const onReadingScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const top = event.currentTarget.scrollTop;
+    setScrolled(top > 4);
+    if (!atlas) return;
+    const track = scrollTrack.current;
+    if (performance.now() < settleUntil.current) { track.last = track.turn = top; track.direction = 0; return; }
+    const direction = Math.sign(top - track.last);
+    if (direction && direction !== track.direction) { track.direction = direction; track.turn = track.last; }
+    track.last = top;
+    if (top < 56) setToolbarAway(false);
+    else if (track.direction > 0 && top - track.turn > 32) setToolbarAway(true);
+    else if (track.direction < 0 && track.turn - top > 32) setToolbarAway(false);
+  };
+  const railCollapsed = outlineSheet ? !outlineSheetOpen : outlineCollapsed;
+  const setRailCollapsed = useCallback((next: boolean) => { if (outlineSheet) setOutlineSheetOpen(!next); else setOutlineCollapsed(next); }, [outlineSheet, setOutlineCollapsed]);
+  const focusWhenShown = (target: () => HTMLElement | null) => {
+    // Focus is refused while an overlay is still becoming visible, so retry for about half a second.
+    let tries = 0;
+    const attempt = () => { const element = target(); element?.focus({ preventScroll: true }); if (document.activeElement !== element && ++tries < 30) requestAnimationFrame(attempt); };
+    requestAnimationFrame(attempt);
+  };
+  // The outline's visible control (toolbar button, or variant A's Hide button or tab) takes focus back after it closes.
+  const focusOutlineToggle = () => focusWhenShown(() => Array.from(document.querySelectorAll<HTMLElement>('[data-outline-toggle]')).find(element => element.getClientRects().length) ?? null);
+  const dismissOutline = () => { const hadFocus = !!document.activeElement?.closest('#toc-container'); setRailCollapsed(true); if (hadFocus) focusOutlineToggle(); };
+  const toggleOutline = () => {
+    if (!railCollapsed) { setRailCollapsed(true); return; }
+    // The opened sheet takes focus as a whole (its label is read out); no entry looks chosen until the reader moves.
+    if (outlineSheet) { setIsSidebarOpen(false); setOutlineSheetOpen(true); }
+    else setOutlineCollapsed(false);
+    // The list icon disappears once the outline shows, so focus moves into the outline (its label is read out).
+    focusWhenShown(() => document.getElementById('toc-container'));
+  };
+  // One overlay at a time, and moving to another page closes the outline sheet.
+  useEffect(() => { if (outlineSheet && isSidebarOpen) setOutlineSheetOpen(false); }, [outlineSheet, isSidebarOpen]);
+  useEffect(() => { setOutlineSheetOpen(false); }, [currentSectionId]);
+  // While an overlay drawer is open, everything behind its scrim is inert: no focus, no clicks, nothing read out.
+  const rootRef = useRef<HTMLDivElement>(null);
+  const contentsOverlay = atlas && narrow && contentsOpen;
+  const outlineOverlay = outlineSheet && outlineSheetOpen;
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const behind = [
+      ...(contentsOverlay ? [root.querySelector('.publication-main'), root.querySelector('.publication-toolbar')] : []),
+      ...(outlineOverlay ? [root.querySelector('.publication-sidebar'), root.querySelector('.publication-toolbar'), root.querySelector('.publication-reading-column')] : []),
+    ].filter((element): element is HTMLElement => !!element);
+    behind.forEach(element => element.setAttribute('inert', ''));
+    return () => behind.forEach(element => element.removeAttribute('inert'));
+  }, [contentsOverlay, outlineOverlay]);
   const chapterNumber = currentSection ? (sections.find(section => section.children?.some(child => child.id === currentSection.id))?.children || sections.filter(isReadableSection)).findIndex(section => section.id === currentSection.id) + 1 : 0;
   const appearanceStyle = {
     '--publication-accent': publicationColour(book.appearance?.accent),
@@ -69,19 +148,47 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
   } as React.CSSProperties;
   // Each topic above the page is a link to its own page; the sidebar's topic rows only open and close.
   const breadcrumbTopics = currentSection ? sectionAncestors(book.sections, currentSection.id) : [];
+  // Atlas: the toolbar lies over the top of the text column and the outline; the contents panel runs the full height beside it.
+  const toolbar = (
+    <ReaderToolbar
+      navigationLabel={labels.tableOfContents} navigationOpen={contentsOpen}
+      onToggleNavigation={() => {
+        if (isImmersiveMode) { setIsSidebarOpen(true); setIsImmersiveMode(false); } else setIsSidebarOpen(value => !value);
+        // Atlas: the hamburger disappears once the contents shows, so focus moves into the panel.
+        if (atlas && !contentsOpen) focusWhenShown(() => document.getElementById('publication-sidebar'));
+      }}
+      title={publicationDisplayTitle(book)} onHome={() => handleSectionChange('home')} isHome={isHome} listenLabel={labels.listen}
+      support={support} themeChoice={themeChoice} systemDark={systemDark} onTheme={setThemeChoice}
+      maxWidth={maxWidth} onMaxWidth={setMaxWidth} immersive={isImmersiveMode} onImmersive={setIsImmersiveMode}
+      readAloud={readAloud?.snapshot ?? null} readAloudActions={readAloud?.actions ?? null} language={book.language}
+      hasRecordedAudio={!!hasRecordedAudio && !!onOpenRecordedAudio} onOpenRecordedAudio={trigger => onOpenRecordedAudio?.(trigger)}
+      panelToggles={atlas} bookId={book.id}
+      outline={atlas && !isHome && !isImmersiveMode && outlineAvailable && railCollapsed ? { open: false, onToggle: toggleOutline } : undefined}
+      onOpenNotes={() => setIsHighlightsOpen(true)} onOpenShortcuts={() => setIsShortcutsOpen(true)} />
+  );
   const wrapReadingSurface = readingSurface ?? ((children: React.ReactNode) => children);
   return (
-    <div style={appearanceStyle} className={`publication-reader ${book.appearance?.readerLayout === 'atlas' ? 'publication-atlas' : ''} ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
-      {atlas && <header className="publication-atlas-masthead"><div><button onClick={() => handleSectionChange('home')}>{publicationDisplayTitle(book)}</button><span>{book.author}</span></div><div className="publication-atlas-edition">Reading edition</div></header>}
+    <div ref={rootRef} style={appearanceStyle} className={`publication-reader ${atlas ? `publication-atlas${landing ? ' publication-landing' : ''}` : ''} ${isDarkMode ? 'dark' : ''} flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} >
+      {/* Atlas lays the panels and the text out in a row under the toolbar; other layouts ignore this wrapper (display: contents). */}
+      <div className="publication-frame">
       {/* Left Sidebar: hidden rather than unmounted, so its list position and open topics survive */}
       <Sidebar
         book={book}
         currentSectionId={currentSectionId} 
         onSelectSection={handleSectionChange}
-        isOpen={isSidebarOpen && !isImmersiveMode}
+        isOpen={contentsOpen}
         onClose={() => {
+          const hadFocus = !!document.activeElement?.closest('.publication-sidebar');
+          if (landing) {
+            setLandingContents(false); setIsSearchTriggered(false);
+            // The front page has no toolbar: focus returns to the page's title.
+            if (hadFocus) setTimeout(() => { const title = contentRef.current?.querySelector<HTMLElement>('h1'); if (title) { title.tabIndex = -1; title.focus({ preventScroll: true }); } }, 0);
+            return;
+          }
           setIsSidebarOpen(false);
           setIsSearchTriggered(false);
+          // The sidebar is about to be hidden: focus goes to the toolbar toggle that reopens it.
+          if (hadFocus) setTimeout(() => document.querySelector<HTMLElement>('.publication-navigation-toggle')?.focus(), 0);
         }}
         readSections={readSections}
         bookmarkedSections={bookmarkedSections}
@@ -90,16 +197,8 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
       />
 
       {/* Main Content Area */}
-      <main className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
-        <ReaderToolbar
-          navigationLabel={labels.tableOfContents} navigationOpen={isSidebarOpen && !isImmersiveMode}
-          onToggleNavigation={() => { if (isImmersiveMode) { setIsSidebarOpen(true); setIsImmersiveMode(false); } else setIsSidebarOpen(value => !value); }}
-          title={publicationDisplayTitle(book)} onHome={() => handleSectionChange('home')} isHome={isHome} listenLabel={labels.listen}
-          support={support} themeChoice={themeChoice} systemDark={systemDark} onTheme={setThemeChoice}
-          maxWidth={maxWidth} onMaxWidth={setMaxWidth} immersive={isImmersiveMode} onImmersive={setIsImmersiveMode}
-          readAloud={readAloud?.snapshot ?? null} readAloudActions={readAloud?.actions ?? null} language={book.language}
-          hasRecordedAudio={!!hasRecordedAudio && !!onOpenRecordedAudio} onOpenRecordedAudio={trigger => onOpenRecordedAudio?.(trigger)}
-          onOpenNotes={() => setIsHighlightsOpen(true)} onOpenShortcuts={() => setIsShortcutsOpen(true)} />
+      <main data-scrolled={scrolled || undefined} data-toolbar-away={(atlas && toolbarAway) || undefined} className="publication-main min-w-0 flex-1 flex flex-col h-full overflow-hidden relative w-full transition-all duration-500 ease-in-out">
+        {!landing && toolbar}
 
         {/* Floating Highlight Tooltip */}
         {selectionRect && (
@@ -146,7 +245,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
         )}
 
         {/* Content Body */}
-        <div ref={contentRef} onClick={handleContentLink} className="publication-scroll flex-1 overflow-y-auto scroll-smooth bg-white dark:bg-gray-950">
+        <div ref={contentRef} onClick={handleContentLink} onScroll={onReadingScroll} className="publication-scroll flex-1 overflow-y-auto scroll-smooth bg-white dark:bg-gray-950">
             {isHome ? (
                 <Home
                     onDownloadEbook={handleDownloadEbook}
@@ -165,8 +264,8 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                     <div className="publication-reading-column">
                          {/* Breadcrumb & Controls */}
                          {currentSection && !isImmersiveMode && (
-                            <div className="mb-6 flex min-w-0 items-center justify-between gap-3 text-sm text-gray-500 dark:text-gray-400">
-                                <div className="flex min-w-0 flex-1 items-center">
+                            <div className="publication-breadcrumb-row mb-6 flex min-w-0 items-center justify-between gap-3 text-sm text-gray-500 dark:text-gray-400">
+                                <div className="publication-breadcrumb flex min-w-0 flex-1 items-center">
                                     <button 
                                         onClick={() => handleSectionChange('home')}
                                         className="shrink-0 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
@@ -175,7 +274,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                                     </button>
                                     {breadcrumbTopics.map(topic => <React.Fragment key={topic.id}><span className="mx-2 shrink-0">/</span>
                                     <button onClick={() => handleSectionChange(topic.id)} title={topic.title} className="max-w-[40%] shrink truncate hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{topic.title}</button></React.Fragment>)}
-                                    {!breadcrumbTopics.length && currentSection.category !== currentSection.title && <><span className="mx-2 shrink-0">/</span>
+                                    {!breadcrumbTopics.length && currentSection.category && currentSection.category !== currentSection.title && <><span className="mx-2 shrink-0">/</span>
                                     <span title={currentSection.category} className="max-w-[40%] shrink-0 truncate uppercase tracking-wider font-medium text-xs">{currentSection.category}</span></>}
                                     <span className="mx-2 shrink-0">/</span>
                                     <span title={currentSection.title} className="min-w-0 truncate text-gray-900 dark:text-white font-medium">{currentSection.title}</span>
@@ -188,7 +287,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                                         title="Copy Link to Page (l)"
                                     >
                                         <span className="material-symbols-outlined text-lg">link</span>
-                                        <span className="text-xs font-semibold">Share</span>
+                                        <span className="publication-page-action-label text-xs font-semibold">Share</span>
                                     </button>
 
                                     <button
@@ -203,14 +302,14 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                                         <span className={`material-symbols-outlined text-lg ${isBookmarked ? 'material-symbols-filled' : ''}`}>
                                             {isBookmarked ? 'bookmark' : 'bookmark_border'}
                                         </span>
-                                        <span className="text-xs font-semibold">{isBookmarked ? 'Saved' : 'Save'}</span>
+                                        <span className="publication-page-action-label text-xs font-semibold">{isBookmarked ? 'Saved' : 'Save'}</span>
                                     </button>
                                 </div>
                             </div>
                         )}
 
                         {/* Windows too narrow for the side outline get the same outline here, collapsed above the chapter. */}
-                        {currentSection && !isImmersiveMode && <TableOfContents ref={compactTocRef} variant="compact" content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
+                        {currentSection && !isImmersiveMode && !atlas && <TableOfContents ref={compactTocRef} variant="compact" content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
 
                         {/* Main Text */}
                         {currentSection && (
@@ -275,7 +374,12 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                     </div>
 
                     {/* Right TOC Sidebar - Hidden in Immersive Mode */}
-                    {currentSection && !isImmersiveMode && <TableOfContents ref={tocRef} fallbackRef={compactTocRef} bookId={book.id} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />}
+                    {currentSection && !isImmersiveMode && (atlas
+                      // Atlas: the outline has a small close button in its header; while it is closed a list icon at the right of the toolbar brings it back. Below 1024 px it is an overlay sheet with a scrim.
+                      ? <>{outlineSheet && outlineSheetOpen && <div className="publication-outline-scrim" aria-hidden="true" onClick={dismissOutline} />}
+                        <TableOfContents ref={tocRef} bookId={book.id} toolbarControlled sheet={outlineSheet} collapsed={railCollapsed} onCollapsedChange={setRailCollapsed} onDismiss={dismissOutline}
+                          onLinkChosen={outlineSheet ? () => setOutlineSheetOpen(false) : undefined} onAvailableChange={setOutlineAvailable} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} /></>
+                      : <TableOfContents ref={tocRef} fallbackRef={compactTocRef} bookId={book.id} collapsed={outlineCollapsed} onCollapsedChange={setOutlineCollapsed} onAvailableChange={setOutlineAvailable} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />)}
                 </div>
             )}
         </div>
@@ -295,6 +399,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
             </button>
         )}
       </main>
+      </div>
 
       {listeningPanel}
       <HighlightsDrawer

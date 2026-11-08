@@ -26,6 +26,22 @@ export interface ReaderToolbarProps {
   readAloud: ReadAloudSnapshot | null; readAloudActions: ReadAloudActions | null; language?: string;
   hasRecordedAudio: boolean; onOpenRecordedAudio(trigger: HTMLElement | null): void;
   onOpenNotes(): void; onOpenShortcuts(): void;
+  /** The side outline ("On this page"), when the layout offers a toolbar button for it. */
+  outline?: { open: boolean; onToggle(): void };
+  /** Atlas: a hamburger at the left while the contents is closed and, when `outline` is given, a list icon at the right; both icon-only with tooltips. */
+  panelToggles?: boolean;
+  /** Atlas: the reading tools can be folded into one button; the choice is kept per book on this device. */
+  bookId?: string;
+}
+
+const minimisedKey = (bookId: string) => `publication-toolbar-minimised:${bookId}`;
+function readMinimised(bookId?: string): boolean {
+  if (!bookId) return false;
+  try { return window.localStorage.getItem(minimisedKey(bookId)) === '1'; } catch { return false; }
+}
+function writeMinimised(bookId: string | undefined, value: boolean) {
+  if (!bookId) return;
+  try { if (value) window.localStorage.setItem(minimisedKey(bookId), '1'); else window.localStorage.removeItem(minimisedKey(bookId)); } catch { /* Kept for this visit only. */ }
 }
 
 const MENUS: { id: Exclude<ToolbarMenuId, 'theme'>; label: string; icon: string }[] = [
@@ -43,6 +59,18 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   const anchoredAvailable = useAnchoredReadingSupport();
   const anchoredOn = p.anchored && anchoredAvailable;
   const [open, setOpen] = useState<ToolbarMenuId | null>(null);
+  const [minimisedChoice, setMinimisedChoice] = useState(() => readMinimised(props.bookId));
+  const minimised = !!props.panelToggles && minimisedChoice;
+  const restoreRef = useRef<HTMLButtonElement>(null);
+  const minimiseRef = useRef<HTMLButtonElement>(null);
+  const moveFocus = useRef<'restore' | 'minimise' | null>(null);
+  const setMinimised = (value: boolean) => { setOpen(null); moveFocus.current = value ? 'restore' : 'minimise'; setMinimisedChoice(value); writeMinimised(props.bookId, value); };
+  // The button that was pressed disappears, so focus goes to the one that replaces it.
+  useEffect(() => {
+    const target = moveFocus.current === 'restore' ? restoreRef.current : moveFocus.current === 'minimise' ? minimiseRef.current : null;
+    moveFocus.current = null;
+    target?.focus({ preventScroll: true });
+  }, [minimised]);
   const actions = useRef<HTMLDivElement>(null);
   const buttons = useRef<Partial<Record<ToolbarMenuId, HTMLButtonElement | null>>>({});
   const panel = useRef<HTMLDivElement>(null);
@@ -112,7 +140,8 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
     return () => document.removeEventListener('keydown', dismiss);
   }, []);
 
-  const toggle = (id: ToolbarMenuId, from?: HTMLElement | null) => { opener.current = from ?? buttons.current[id] ?? null; focusOnOpen.current = open !== id; setOpen(open === id ? null : id); };
+  // A menu opened from outside the tools (the read-aloud dock) unfolds them, since the menus live there.
+  const toggle = (id: ToolbarMenuId, from?: HTMLElement | null) => { if (minimised) { setMinimisedChoice(false); writeMinimised(props.bookId, false); } opener.current = from ?? buttons.current[id] ?? null; focusOnOpen.current = open !== id; setOpen(open === id ? null : id); };
   const viewport = useViewportWidth();
   const fontSize = effectiveFontSize(p, viewport);
   const formatting: FormattingState = { fontFamily: p.fontFamily, fontSize, lineHeight: p.lineHeight, paragraphSpacing: p.paragraphSpacing, letterSpacing: p.letterSpacing, maxWidth: props.maxWidth };
@@ -147,12 +176,21 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   const startReading = () => { if (!readAloudActions) return; focusDockNext.current = true; close(false); readAloudActions.start(); };
 
   return <>
-  <header className="publication-toolbar">
-    <button className="publication-navigation-toggle" onClick={props.onToggleNavigation} aria-expanded={props.navigationOpen} aria-label={props.navigationOpen ? 'Close navigation' : 'Open navigation'}>
-      <span aria-hidden="true" className="material-symbols-outlined">menu</span><span>{props.navigationLabel}</span>
-    </button>
-    <button className="publication-toolbar-identity" onClick={props.onHome} title={props.title}>{props.title}</button>
-    <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
+  <header className="publication-toolbar" data-navigation-open={props.navigationOpen || undefined}>
+    {props.panelToggles
+      // Atlas: the hamburger shows only while the contents is closed; the open panel has its own close button in the same corner, so one control is visible per state.
+      ? !props.navigationOpen && <button type="button" className="publication-navigation-toggle publication-toolbar-control publication-panel-toggle" onClick={props.onToggleNavigation} aria-expanded={false} aria-controls="publication-sidebar" aria-label={props.navigationLabel} data-tooltip={props.navigationLabel}>
+          <span aria-hidden="true" className="material-symbols-outlined">menu</span>
+        </button>
+      : <button className="publication-navigation-toggle" onClick={props.onToggleNavigation} aria-expanded={props.navigationOpen} aria-label={props.navigationOpen ? 'Close navigation' : 'Open navigation'}>
+          <span aria-hidden="true" className="material-symbols-outlined">menu</span><span>{props.navigationLabel}</span>
+        </button>}
+    {/* Atlas: the toolbar holds controls only. The book's title card is in the contents panel and Home leads the breadcrumb, so a title here only repeated them and changed with the panel's state. */}
+    {!props.panelToggles && <button className="publication-toolbar-identity" onClick={props.onHome} title={props.title}>{props.title}</button>}
+    {minimised && <button type="button" ref={restoreRef} className="publication-toolbar-control publication-toolbar-restore" onClick={() => setMinimised(false)} aria-label="Show reading tools" data-tooltip="Show reading tools">
+      <span aria-hidden="true" className="material-symbols-outlined">more_horiz</span>
+    </button>}
+    {!minimised && <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
       {MENUS.map(menu => {
         // Icon only: the name is the accessible name and the tooltip (hover and keyboard focus), plus the current state where there is one.
         const stateText = menu.id === 'listen' && speech !== 'idle' ? (speech === 'speaking' ? 'reading aloud' : 'paused') : menu.id === 'assist' ? assistName(p.overlay, anchoredOn) : null;
@@ -168,7 +206,8 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
       <button type="button" className="publication-toolbar-control publication-toolbar-notes" data-tooltip="Notes" onClick={() => { close(false); props.onOpenNotes(); }} aria-label="Open notes and highlights" {...tipProps}>
         <span aria-hidden="true" className="material-symbols-outlined">ink_highlighter</span>
       </button>
-      <span className="publication-toolbar-divider" aria-hidden="true" />
+      {/* Atlas keeps Theme with the other reading tools; the panel toggles at the two ends are the separate group. */}
+      {!props.panelToggles && <span className="publication-toolbar-divider" aria-hidden="true" />}
       <button type="button" ref={element => { buttons.current.theme = element; }} className="publication-toolbar-control publication-toolbar-theme" data-tooltip={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`}
         data-active={open === 'theme' || undefined} aria-haspopup="dialog" aria-expanded={open === 'theme'} aria-controls={open === 'theme' ? 'publication-menu-theme' : undefined}
         aria-label={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`} onClick={() => toggle('theme')} {...tipProps}>
@@ -275,7 +314,14 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
           </footer>
         </>}
       </div>}
-    </div>
+    </div>}
+    {props.panelToggles && !minimised && <button type="button" ref={minimiseRef} className="publication-toolbar-control publication-toolbar-minimise" onClick={() => setMinimised(true)} aria-label="Hide reading tools" data-tooltip="Hide reading tools">
+      <span aria-hidden="true" className="material-symbols-outlined">chevron_right</span>
+    </button>}
+    {props.outline && <button type="button" data-outline-toggle className="publication-panel-toggle publication-toolbar-control publication-toolbar-outline" aria-expanded={props.outline.open} aria-controls="toc-container" aria-label="On this page" data-tooltip="On this page"
+      onClick={() => { close(false); props.outline!.onToggle(); }}>
+      <span aria-hidden="true" className="material-symbols-outlined">toc</span>
+    </button>}
   </header>
   {readAloud && readAloudActions && (readAloud.status !== 'idle' || readAloud.problem) && !props.isHome &&
     <ReadAloudTransport ref={dockPrimary} snapshot={readAloud} actions={readAloudActions} onOpenSettings={trigger => toggle('listen', trigger)} />}

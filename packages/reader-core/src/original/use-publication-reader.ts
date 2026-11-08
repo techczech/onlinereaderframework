@@ -28,6 +28,24 @@ function useBookState<T>(bookId: string, field: string, fallback: T, valid: (val
 }
 
 /** State is intentionally mounted beneath PublicationReader's book.id key. */
+
+/** Moves the text to a place in the chapter. A heading goes to the top of the window, below its scroll margin; when the text after a
+ * heading is shorter than the window (the last section of a chapter), room is added after the chapter so it can still reach the top.
+ * Any other target (a footnote, a figure) is centred, or put at the top when it is taller than the window. */
+export function scrollToPlace(target: HTMLElement, scroller: HTMLElement | null, behavior: ScrollBehavior) {
+  if (!scroller || !/^H[1-6]$/.test(target.tagName)) {
+    target.scrollIntoView({ behavior, block: target.getBoundingClientRect().height > (scroller?.clientHeight ?? window.innerHeight) ? 'start' : 'center' });
+    return;
+  }
+  const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+  const tail = parseFloat(scroller.style.getPropertyValue('--publication-tail')) || 0;
+  const top = Math.max(0, target.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop - margin);
+  const room = Math.ceil(top + scroller.clientHeight - (scroller.scrollHeight - tail));
+  if (room > 0) scroller.style.setProperty('--publication-tail', `${room}px`);
+  else scroller.style.removeProperty('--publication-tail');
+  scroller.scrollTo({ top, behavior });
+}
+
 export function usePublicationReader(book: PublicationBook, epub?: PublicationEpubOptions | false) {
   const sections = useMemo(() => flattenPublicationSections(book.sections), [book.sections]);
   const [migrationAvailable] = useState(() => {
@@ -100,11 +118,13 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   const currentSectionHighlights = useMemo(() => highlights.filter(highlight => highlight.sectionId === currentSectionId), [highlights, currentSectionId]);
   const currentSectionReflection = reflections.find(reflection => reflection.sectionId === currentSectionId);
   const { prev: prevSection, next: nextSection } = readableNeighbours(sections, currentSectionId);
-  const isSidebarOpen = isDesktop ? desktopChoice ?? !isHome : isDrawerOpen;
-  const layoutRef = useRef({ isDesktop, isHome });
-  layoutRef.current = { isDesktop, isHome };
+  // Atlas opens the contents on a desktop everywhere, the book home included, until the reader chooses; other layouts open it for chapters only.
+  const contentsOpenByDefault = book.appearance?.readerLayout === 'atlas' || !isHome;
+  const isSidebarOpen = isDesktop ? desktopChoice ?? contentsOpenByDefault : isDrawerOpen;
+  const layoutRef = useRef({ isDesktop, openByDefault: contentsOpenByDefault });
+  layoutRef.current = { isDesktop, openByDefault: contentsOpenByDefault };
   const setIsSidebarOpen = useCallback((next: boolean | ((open: boolean) => boolean)) => {
-    if (layoutRef.current.isDesktop) setDesktopChoice(previous => typeof next === 'function' ? next(previous ?? !layoutRef.current.isHome) : next);
+    if (layoutRef.current.isDesktop) setDesktopChoice(previous => typeof next === 'function' ? next(previous ?? layoutRef.current.openByDefault) : next);
     else setIsDrawerOpen(previous => typeof next === 'function' ? next(previous) : next);
   }, []);
   // The measure applies only to the article; navigation has its own width budget.
@@ -169,7 +189,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
         } catch { /* A malformed fragment goes to the top of the chapter. */ }
       }
       if (fragment) {
-        fragment.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
+        scrollToPlace(fragment, contentRef.current, 'instant' as ScrollBehavior);
         fragment.tabIndex = -1;
         fragment.focus({ preventScroll: true });
       } else contentRef.current?.scrollTo({ top: pendingTop.current ?? 0, behavior: 'instant' as ScrollBehavior });
@@ -211,6 +231,9 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     return () => query.removeEventListener('change', update);
   }, []);
 
+  // Room added below one chapter's last section is not carried into the next.
+  useEffect(() => { contentRef.current?.style.removeProperty('--publication-tail'); }, [currentSectionId]);
+
   // Choosing a chapter puts the keyboard in the text, so Space, Page Down and the arrows read it rather than move the contents.
   useEffect(() => {
     if (!focusArticleRef.current) return;
@@ -235,7 +258,8 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     } else if (window.location.hash && !window.location.hash.startsWith('#/')) {
       try {
         const fragment = decodeURIComponent(window.location.hash.slice(1));
-        Array.from(root.querySelectorAll<HTMLElement>('[id]')).find(element => element.id === fragment)?.scrollIntoView({ block: 'center' });
+        const target = Array.from(root.querySelectorAll<HTMLElement>('[id]')).find(element => element.id === fragment);
+        if (target) scrollToPlace(target, contentRef.current, 'auto');
       } catch { /* A malformed external fragment does not prevent reading. */ }
     }
   }, [currentSectionId, highlightToScroll, isDarkMode]);
@@ -372,7 +396,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
           const url = publicationUrl(window.location.href, book.id, currentSectionId);
           url.hash = targetId;
           window.history.pushState(null, '', url);
-          target.scrollIntoView({ behavior: 'smooth', block: target.getBoundingClientRect().height > (contentRef.current?.clientHeight ?? window.innerHeight) ? 'start' : 'center' });
+          scrollToPlace(target, contentRef.current, 'smooth');
           target.tabIndex = -1;
           target.focus({ preventScroll: true });
           window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));

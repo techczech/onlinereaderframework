@@ -14,6 +14,19 @@ interface TableOfContentsProps {
   variant?: 'rail' | 'compact';
   /** The rail hands keyboard focus to this outline when the rail is not on screen. */
   fallbackRef?: React.RefObject<TableOfContentsHandle>;
+  /** The layout may own the folded state (so a toolbar button can share it); the rail then follows it and reports changes. */
+  collapsed?: boolean;
+  onCollapsedChange?: (collapsed: boolean) => void;
+  /** Tells the layout whether this chapter has an outline at all. */
+  onAvailableChange?: (available: boolean) => void;
+  /** Atlas: a small close button in the header closes the outline; while closed, the toolbar's list icon reopens it.
+   * Escape and the close button call `onDismiss`, so the layout can return focus to the toolbar icon. */
+  toolbarControlled?: boolean;
+  /** Atlas: the outline is an overlay sheet (narrow windows); its header carries a close button. */
+  sheet?: boolean;
+  onDismiss?: () => void;
+  /** Called after a link is chosen, so an overlay sheet can close. */
+  onLinkChosen?: () => void;
 }
 
 export interface TableOfContentsHandle {
@@ -66,15 +79,16 @@ function extractHeadings(root: HTMLElement | null, canonical: Map<string, string
   });
 }
 
-export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContentsProps>(({ content, contentRef, format, sectionId, bookId, variant = 'rail', fallbackRef }, ref) => {
+export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContentsProps>(({ content, contentRef, format, sectionId, bookId, variant = 'rail', fallbackRef, collapsed: controlledCollapsed, onCollapsedChange, onAvailableChange, toolbarControlled, sheet, onDismiss, onLinkChosen }, ref) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>('');
   const [open, setOpen] = useState(false);
   // The side outline can be folded away to a small reopen control; the choice is remembered per book.
-  const [collapsed, setCollapsedState] = useState(() => bookId ? readOutlineCollapsed(bookId, browserStorage()) : false);
+  const [ownCollapsed, setCollapsedState] = useState(() => bookId ? readOutlineCollapsed(bookId, browserStorage()) : false);
+  const collapsed = controlledCollapsed ?? ownCollapsed;
   const bookOfCollapse = useRef(bookId);
-  if (bookOfCollapse.current !== bookId) { bookOfCollapse.current = bookId; const next = bookId ? readOutlineCollapsed(bookId, browserStorage()) : false; if (next !== collapsed) setCollapsedState(next); }
-  const setCollapsed = (next: boolean) => { setCollapsedState(next); if (bookId) writeOutlineCollapsed(bookId, next, browserStorage()); };
+  if (bookOfCollapse.current !== bookId) { bookOfCollapse.current = bookId; const next = bookId ? readOutlineCollapsed(bookId, browserStorage()) : false; if (next !== ownCollapsed) setCollapsedState(next); }
+  const setCollapsed = (next: boolean) => { setCollapsedState(next); onCollapsedChange?.(next); if (bookId && !onCollapsedChange) writeOutlineCollapsed(bookId, next, browserStorage()); };
   const focusAfterExpand = useRef(false);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const navRef = useRef<HTMLElement>(null);
@@ -202,6 +216,9 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
     if (nextIndex !== -1) linkRefs.current[nextIndex]?.focus();
   };
 
+  const hasOutline = headings.length > 0;
+  useEffect(() => { if (!compact) onAvailableChange?.(hasOutline); }, [hasOutline, compact, onAvailableChange]);
+  useEffect(() => () => { if (!compact) onAvailableChange?.(false); }, [compact, onAvailableChange]);
   if (headings.length < 1) return null;
   // Authored levels are kept; indentation is measured from the shallowest level listed, so an outline that starts at h3 is not pushed right.
   const shallowest = Math.min(...headings.map(heading => heading.level));
@@ -216,7 +233,7 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
           data-outline-level={heading.level}
           onKeyDown={e => handleKeyDown(e, index)}
           // The click is left to the reader's anchor handling: it updates the URL, scrolls and moves focus into the passage.
-          onClick={() => { chooseRef.current(heading.id); if (compact) setOpen(false); }}
+          onClick={() => { chooseRef.current(heading.id); if (compact) setOpen(false); onLinkChosen?.(); }}
           className={`
             publication-outline-link block transition-colors duration-200 outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm
             ${activeId === heading.id
@@ -245,6 +262,24 @@ export const TableOfContents = forwardRef<TableOfContentsHandle, TableOfContents
     );
   }
   const listId = `${outlineId.rail}-list`;
+  if (toolbarControlled) {
+    const dismiss = () => onDismiss ? onDismiss() : setCollapsed(true);
+    return (
+      <nav id={outlineId.rail} ref={navRef} aria-label="On this page" tabIndex={-1} data-collapsed={collapsed || undefined} data-sheet={sheet || undefined}
+        className="publication-local-contents publication-local-contents-panel focus:outline-none"
+        onKeyDown={e => { if (e.key === 'Escape' && !collapsed) { e.stopPropagation(); dismiss(); } }}>
+        <div className="publication-outline-rail">
+          <div className="publication-panel-head">
+            <h2 className="publication-panel-heading">On this page</h2>
+            <button type="button" className="publication-outline-sheet-close publication-panel-close" aria-label="Close the page outline" title="Close" onClick={dismiss}>
+              <span aria-hidden="true" className="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <div id={listId} hidden={collapsed} className="publication-outline-body">{list}</div>
+        </div>
+      </nav>
+    );
+  }
   return (
     <nav
         id={outlineId.rail}

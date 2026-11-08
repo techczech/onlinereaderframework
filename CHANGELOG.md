@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.3.0 (2026-11-08)
+
+Books and code written for 1.2.0 keep working without changes. Most of the changes apply only to books that choose the atlas layout (`appearance.readerLayout: 'atlas'`).
+
+### Added
+
+- **Atlas reading mode.** In the atlas layout the book's front page is a plain landing page, with no reading toolbar and no contents panel. Opening a chapter adds a slim toolbar and opens the contents beside the text on wide windows.
+- **Panel controls in the atlas layout.** Each side panel (the contents and "On this page") closes with a small close button in its own header. While a panel is closed, a single icon in the toolbar reopens it: the standard menu icon at the left for the contents and a list icon at the right for the outline. Below 1024 pixels both panels open as overlays with a dimmed background and close with Escape.
+- **A quieter toolbar in the atlas layout.** The reading tools are small borderless icons at the right, with their names on hover and keyboard focus. The toolbar slides away while the reader scrolls down and returns on any scroll up. A chevron folds the tools into one "more" button, and the reader's choice is kept for that book on that device.
+- **Word-form markup in tables.** A book can mark endings that are added, changed or removed with `form-*` spans inside a `.form-word` element, and give a changed piece the replaced letters in `data-form-from`. Tables that contain such markup get a button that hides the markup or shows it again; showing it replays the changes as a short animation, which is skipped when the reader has asked for reduced motion. The book supplies the colours.
+
+### Fixed
+
+- Choosing an entry in "On this page", or following a link to a heading, puts the heading at the top of the window instead of the middle. When the last section of a chapter is shorter than the window, room is added after the chapter so its heading can still reach the top.
+- The table search count no longer reports "No matches" when inline markup splits a matching word across elements.
+- The breadcrumb no longer shows an empty segment ("Home / / chapter") for a chapter without a category.
+
+### Changed
+
+- In the atlas layout, the chapter number and title are slightly smaller on laptop-size windows (narrower than 1600 pixels or shorter than 900 pixels). The "Share" and "Save" page actions are plain text buttons.
+- The atlas layout no longer repeats the masthead (book title, authors and "Reading edition") above each chapter; the book's title card is at the top of the contents panel.
+- In the atlas layout the read-aloud controls sit just below the toolbar and move up with it when it slides away.
+- In every layout, the contents list opens at its top when the current chapter is visible there; otherwise it scrolls so the current chapter's row is shown whole. Closing the contents from inside it returns keyboard focus to the button that reopens it.
+
 ## 1.2.0 (2026-11-07)
 
 Additive release. Books and code written for 1.1.0 keep working without changes; the new table tools are off unless a book switches them on.

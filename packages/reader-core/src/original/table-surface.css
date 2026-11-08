@@ -44,3 +44,14 @@
   .publication-table-search { padding: 8px; }
   .publication-table-reset { margin-left: 0; }
 }
+
+/* Word-form markup switch (form-changes.ts). Books colour the form-* spans; the
+   framework only hides them and replays the change. */
+.publication-table.publication-forms-off .form-word :is(.form-add,.form-change,.form-stem,.form-soft,.form-irregular) { color: inherit; font-weight: inherit; text-decoration: none; outline: none; }
+.publication-table.publication-forms-off .form-word :is(.form-drop,.form-same,.form-lost)::after { content: none; }
+.form-animating .form-from { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; text-decoration: line-through 2px; animation: publication-form-out 2.2s ease forwards; }
+.form-animating .form-word :is(.form-add,.form-change,.form-stem,.form-soft) { display: inline-block; animation: publication-form-in 2.2s ease both; }
+.form-animating .form-word :is(.form-drop,.form-same,.form-lost)::after { display: inline-block; animation: publication-form-in 2.2s ease both; }
+@keyframes publication-form-out { 0%, 25% { max-width: 4em; opacity: 1; text-decoration-color: transparent; } 45% { max-width: 4em; opacity: 1; text-decoration-color: currentColor; } 60% { max-width: 4em; opacity: .55; text-decoration-color: currentColor; } 100% { max-width: 0; opacity: 0; text-decoration-color: currentColor; } }
+@keyframes publication-form-in { 0%, 55% { opacity: 0; transform: translateY(-0.35em); } 100% { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .form-animating .form-from { display: none; } .form-animating * { animation: none !important; } }
