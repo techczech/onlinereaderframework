@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from 'react';
+import { scrollBehavior } from '../../utils/scroll-behavior.js';
 import { SectionConfig, SectionId, TextBlock } from '../../types.js';
 import { BlockRenderer } from '../blocks/BlockRenderer.js';
 import { ScrollLayout } from '../layouts/ScrollLayout.js';
@@ -99,7 +100,7 @@ export function ReaderContent({
         if (after) fragment.appendChild(document.createTextNode(after));
 
         textNode.replaceWith(fragment);
-        mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        mark.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
         break;
       }
       node = walker.nextNode();

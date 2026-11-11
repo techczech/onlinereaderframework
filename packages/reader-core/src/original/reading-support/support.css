@@ -1,6 +1,6 @@
 /* Include through build-reader-styles.mjs, after reader-original.css; no JS CSS import. */
 .reading-support-surface { position: relative; isolation: isolate; }
-.reading-support-surface:focus-visible { outline: 2px solid #6366f1; outline-offset: 4px; }
+.reading-support-surface:focus-visible { outline: 2px solid var(--reader-focus, #6366f1); outline-offset: 4px; }
 .reading-support-surface .publication-content,
 .reading-support-surface [data-publication-content],
 .reading-support-surface > :is(p,ul,ol,blockquote,article,section) {
@@ -39,7 +39,7 @@
 .reading-support-field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; margin-block: .5rem; }
 .reading-support-field input { width: 5rem; }
 .reading-support-controls :is(button,input,select) { font: inherit; color: inherit; background-color: inherit; border: 1px solid currentColor; border-radius: .25rem; padding: .35rem .5rem; }
-.reading-support-controls :is(button,input,select):focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.reading-support-controls :is(button,input,select):focus-visible { outline: 2px solid var(--reader-focus, #6366f1); outline-offset: 2px; }
 .reading-support-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 
 /* Anchored reading (WriteFlex lead styles, bold left out): the lead-in of each word is a CSS highlight over the unchanged text.

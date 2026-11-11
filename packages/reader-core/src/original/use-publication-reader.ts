@@ -1,5 +1,6 @@
 import type { PublicationEpubOptions } from '../services/publication-epub/index.js';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { scrollBehavior } from '../utils/scroll-behavior.js';
 import type { Highlight, MaxWidth, PublicationBook, Reflection } from './types.js';
 import type { MarkdownRendererHandle } from './MarkdownRenderer.js';
 import { PUBLICATION_LOCATION_EVENT, type TableOfContentsHandle } from './TableOfContents.js';
@@ -252,7 +253,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     if (highlightToScroll) {
       const range = findPublicationTextRange(root, highlightToScroll);
       const node = range?.startContainer.parentElement;
-      node?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      node?.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
       node?.animate?.([{ backgroundColor: isDarkMode ? '#4338ca' : '#fef3c7' }, { backgroundColor: 'transparent' }], { duration: 2000 });
       setHighlightToScroll(null);
     } else if (window.location.hash && !window.location.hash.startsWith('#/')) {
@@ -396,7 +397,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
           const url = publicationUrl(window.location.href, book.id, currentSectionId);
           url.hash = targetId;
           window.history.pushState(null, '', url);
-          scrollToPlace(target, contentRef.current, 'smooth');
+          scrollToPlace(target, contentRef.current, scrollBehavior());
           target.tabIndex = -1;
           target.focus({ preventScroll: true });
           window.dispatchEvent(new Event(PUBLICATION_LOCATION_EVENT));
@@ -408,12 +409,12 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement;
-      // Native settings dialogs own their keyboard interaction, including Escape.
-      if (target.closest('dialog[open]')) return;
+      // A modal <dialog> owns the keyboard while it is open, Escape included (it closes itself and reports through its close event).
+      if (document.querySelector('dialog[open]')) return;
       // Toolbar menus close themselves on Escape and own their keys.
       if (target.closest('[data-reader-menu]')) return;
       if (event.key === 'Escape') {
-        setIsShortcutsOpen(false); setQuoteModalData(null); setIsHighlightsOpen(false); setIsChatOpen(false); setIsImmersiveMode(false); clearSelection();
+        setIsHighlightsOpen(false); setIsChatOpen(false); setIsImmersiveMode(false); clearSelection();
         return;
       }
       if (event.ctrlKey || event.altKey || event.metaKey || target.closest('input, textarea, select, [contenteditable="true"], [role="dialog"]')) return;
@@ -433,7 +434,7 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
           const headings = Array.from(contentRef.current?.querySelectorAll<HTMLElement>('[data-publication-content] h1,[data-publication-content] h2,[data-publication-content] h3') ?? []);
           const top = contentRef.current?.getBoundingClientRect().top ?? 0;
           const next = event.key.toLowerCase() === 'j' ? headings.find(heading => heading.getBoundingClientRect().top > top + 80) : headings.reverse().find(heading => heading.getBoundingClientRect().top < top + 60);
-          next?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          next?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
         }
       }
     };

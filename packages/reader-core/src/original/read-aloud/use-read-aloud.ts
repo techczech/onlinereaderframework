@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore, type RefObject } from 'react';
+import { scrollBehavior } from '../../utils/scroll-behavior.js';
 import { readStoredValue, writeStoredValue } from '../publication-model.js';
 import { publicationTextModel, type PublicationTextModel } from '../publication-html.js';
 import {
@@ -88,7 +89,7 @@ export function useReadAloud(options: {
     if (!element || !sentence || sentenceStart === null || !snapshot.follow || snapshot.status !== 'speaking' || !mayFollowReading()) return;
     if (!model.current || model.current.html !== annotatedHTML) model.current = { html: annotatedHTML, value: publicationTextModel(element) };
     const block = rangeForSpan(model.current.value, sentence)?.startContainer.parentElement;
-    block?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    block?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contentElement, annotatedHTML, sentenceStart, snapshot.follow, snapshot.status]);
 

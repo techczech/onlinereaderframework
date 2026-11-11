@@ -63,10 +63,13 @@
   --reader-accent: var(--publication-accent, #4f46e5);
   --reader-paper: var(--publication-paper, #ffffff);
   --reader-ink: var(--publication-ink, #25303c);
+  --reader-focus: var(--reader-accent);
+  color-scheme: light;
   background: var(--reader-paper);
   color: var(--reader-ink);
 }
 .publication-reader.dark {
+  color-scheme: dark;
   --reader-paper: #111827;
   --reader-ink: #e5e7eb;
   --reader-accent: color-mix(in srgb, var(--publication-accent, #818cf8), white 45%);
@@ -135,7 +138,7 @@
 .publication-reader .publication-toolbar-actions > button { border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 75%); }
 .publication-reader .publication-toolbar button:hover { background: color-mix(in srgb, var(--reader-accent), transparent 92%); }
 .publication-reader button:disabled { opacity: .5; cursor: default; }
-.publication-reader :is(button, a, select, input):focus-visible { outline: 2px solid var(--reader-accent); outline-offset: 3px; }
+.publication-reader :is(button, a, select, input):focus-visible { outline: 2px solid var(--reader-focus); outline-offset: 3px; }
 .publication-reader .publication-home { color: var(--reader-ink); background: var(--reader-paper); }
 .publication-reader .publication-masthead { display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 4rem); max-width: 74rem; margin: auto; padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 4vw, 4rem); border-bottom: 1px solid color-mix(in srgb, var(--reader-accent), transparent 60%); }
 .publication-reader .publication-home-cover { width: clamp(10rem, 22vw, 16rem); max-width: 35%; max-height: 25rem; height: auto; object-fit: contain; filter: drop-shadow(.5rem .75rem .65rem #0002); }
@@ -209,7 +212,7 @@
 .publication-reader .publication-toolbar-actions[data-tip-dismissed] .publication-toolbar-control[data-tooltip]::after { opacity: 0; visibility: hidden; }
 .publication-reader .publication-toolbar-actions > .publication-toolbar-control:first-child[data-tooltip]::after { left: 0; transform: none; }
 .publication-reader .publication-toolbar-actions > .publication-toolbar-theme[data-tooltip]::after { left: auto; right: 0; transform: none; }
-.publication-reader .publication-menu.publication-theme-menu { position: absolute; top: calc(100% + .5rem); right: 0; bottom: auto; left: auto; width: min(17rem, calc(100vw - 1.5rem)); max-height: none; padding: .7rem .8rem; border-radius: .9rem; box-shadow: 0 12px 40px #0003; }
+.publication-reader .publication-menu.publication-theme-menu { position: fixed; top: var(--menu-top, 3.5rem); right: var(--menu-right, .75rem); bottom: auto; left: auto; margin: 0; width: min(17rem, calc(100vw - 1.5rem)); max-height: none; padding: .7rem .8rem; border-radius: .9rem; box-shadow: 0 12px 40px #0003; }
 .publication-reader .publication-choice-group[data-stacked] { flex-direction: column; }
 .publication-reader .publication-choice-group[data-stacked] button { display: flex; justify-content: flex-start; align-items: center; gap: .6rem; padding-inline: .7rem; text-align: left; }
 .publication-reader .publication-choice-group[data-stacked] .material-symbols-outlined { font-size: 1.25rem; }
@@ -221,7 +224,8 @@
 .publication-reader .publication-toolbar-badge { position: absolute; top: -.35rem; right: -.35rem; min-width: 1.1rem; height: 1.1rem; padding-inline: .25rem; border-radius: 999px; background: var(--reader-accent); color: var(--reader-paper); font-size: .7rem; font-weight: 700; line-height: 1.1rem; text-align: center; }
 .publication-reader .publication-speech-status { display: inline-flex; align-items: center; gap: .3rem; padding: .15rem .3rem .15rem .6rem; border: 1px solid var(--reader-accent); border-radius: 999px; color: var(--reader-accent); font-weight: 600; }
 .publication-reader .publication-speech-status button { min-height: 2rem; padding: .2rem; border-radius: 999px; }
-.publication-reader .publication-menu { position: absolute; top: calc(100% + .5rem); right: 0; z-index: 65; width: min(23rem, calc(100vw - 1.5rem)); max-height: min(34rem, calc(100dvh - 7rem)); overflow-y: auto; overscroll-behavior: contain; padding: 1rem 1.1rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 80%); border-radius: .9rem; background: var(--reader-paper); color: var(--reader-ink); box-shadow: 0 12px 40px #0003; font-size: .875rem; }
+/* The menus are popovers (top layer), so they are placed against the window: ReaderToolbar sets --menu-top and --menu-right from the tools' position. */
+.publication-reader .publication-menu { position: fixed; top: var(--menu-top, 3.5rem); right: var(--menu-right, .75rem); bottom: auto; left: auto; margin: 0; z-index: 65; width: min(23rem, calc(100vw - 1.5rem)); max-height: min(34rem, calc(100dvh - 7rem)); overflow-y: auto; overscroll-behavior: contain; padding: 1rem 1.1rem; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 80%); border-radius: .9rem; background: var(--reader-paper); color: var(--reader-ink); box-shadow: 0 12px 40px #0003; font-size: .875rem; }
 .publication-reader .publication-menu section + section, .publication-reader .publication-menu section + footer { margin-top: .9rem; }
 .publication-reader .publication-menu h3 { margin: 0 0 .45rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
 .publication-reader .publication-menu h4 { margin: .8rem 0 .4rem; font-size: .8rem; font-weight: 600; }
@@ -250,7 +254,7 @@
 .publication-reader .publication-toolbar .publication-switch[aria-checked="true"] > span { transform: translateX(1.2rem); }
 .publication-reader .publication-menu-sheet-head { display: none; }
 @media (max-width: 639px) {
-  .publication-reader .publication-menu { position: fixed; top: auto; right: 0; bottom: 0; left: 0; z-index: 65; width: auto; max-height: 72dvh; padding: .5rem 1rem calc(1rem + env(safe-area-inset-bottom)); border-radius: 1rem 1rem 0 0; box-shadow: 0 -10px 40px #0004; }
+  .publication-reader .publication-menu:not(.publication-theme-menu) { position: fixed; top: auto; right: 0; bottom: 0; left: 0; z-index: 65; width: auto; max-height: 72dvh; padding: .5rem 1rem calc(1rem + env(safe-area-inset-bottom)); border-radius: 1rem 1rem 0 0; box-shadow: 0 -10px 40px #0004; }
   .publication-reader .publication-menu-sheet-head { display: block; position: sticky; top: -.5rem; z-index: 1; margin: -.5rem -1rem .5rem; padding: .5rem 1rem; background: var(--reader-paper); }
   .publication-reader .publication-menu-handle { display: block; width: 2.5rem; height: .25rem; margin: 0 auto .5rem; border-radius: 999px; background: color-mix(in srgb, var(--reader-ink), transparent 70%); }
   .publication-reader .publication-menu-switch { display: flex; gap: .35rem; }
@@ -323,7 +327,7 @@
 .publication-reader .publication-outline-heading { margin: 0 0 .75rem; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .publication-reader .publication-outline-rail-toggle { display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: 100%; min-height: 2rem; padding: 0; text-align: left; color: color-mix(in srgb, var(--reader-ink), transparent 35%); text-transform: inherit; letter-spacing: inherit; font: inherit; border-radius: .25rem; }
 .publication-reader .publication-outline-rail-toggle:hover { color: var(--reader-ink); }
-.publication-reader .publication-outline-rail-toggle:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.publication-reader .publication-outline-rail-toggle:focus-visible { outline: 2px solid var(--reader-focus); outline-offset: 2px; }
 .publication-reader .publication-outline-rail-toggle .material-symbols-outlined { font-size: 1.25rem; }
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-rail { border-left: 0; padding: .5rem 0; }
 .publication-reader .publication-local-contents[data-collapsed] .publication-outline-heading { margin: 0; }
@@ -433,7 +437,7 @@
 /* Focus: an opened panel takes focus as a whole, without a ring; entries show the reader's own palette ring only for keyboard focus. */
 .publication-atlas :is(.publication-sidebar, .publication-local-contents):focus { outline:none; box-shadow:none; }
 .publication-reader.publication-atlas .publication-outline-link:focus { box-shadow:none; }
-.publication-reader.publication-atlas .publication-outline-link:focus-visible { outline:2px solid var(--reader-accent); outline-offset:2px; }
+.publication-reader.publication-atlas .publication-outline-link:focus-visible { outline:2px solid var(--reader-focus); outline-offset:2px; }
 /* A quiet hover in the contents list, so a row under the pointer never looks like the current page. */
 .publication-reader.publication-atlas .publication-sidebar-row:not([aria-current]):hover { background:color-mix(in srgb, var(--reader-ink), transparent 95%); }
 /* Panel headers: a small heading and a small close X, the X the same size and colour as the toolbar icons. */
@@ -491,3 +495,27 @@
 
 /* Room after a chapter's last section, added only when a link or the outline sends a heading there, so it can reach the top of the window. */
 .publication-reader .publication-reading-column { margin-bottom:var(--publication-tail, 0px); }
+
+/* Modals are native <dialog>s opened with showModal(); the card is the dialog and ::backdrop is the dimmed page. */
+.publication-reader dialog.publication-modal { box-sizing: border-box; width: calc(100% - 2rem); max-width: 42rem; max-height: none; margin: auto; padding: 0; border: 0; border-radius: 1rem; overflow: hidden; background: #fff; color: inherit; box-shadow: 0 25px 50px -12px rgb(0 0 0 / .25); }
+.publication-reader dialog.publication-modal[data-size="narrow"] { max-width: 32rem; }
+.publication-reader.dark dialog.publication-modal { background: #111827; }
+.publication-reader dialog.publication-modal::backdrop { background: rgb(17 24 39 / .8); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+
+/* Windows high contrast and other forced-colour modes drop backgrounds and shadows, so what they carried is drawn with borders and system colours. */
+@media (forced-colors: active) {
+  .publication-reader :is(button, a, select, input, summary, [tabindex]):focus-visible,
+  .publication-reader .reading-support-surface:focus-visible,
+  .publication-reader .publication-embed-frame:focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+  .publication-reader :is(.publication-toolbar-control, .publication-menu-action, .publication-stepper, .publication-choice-group, .publication-choice-group button, .publication-menu-switch button, .publication-outline-rail-toggle, .publication-sidebar-close, .publication-outline-sheet-close) { border: 1px solid ButtonText; }
+  .publication-reader :is(.publication-menu, .publication-sidebar, .publication-read-aloud-dock, dialog.publication-modal) { border: 1px solid CanvasText; }
+  .publication-reader dialog.publication-modal::backdrop { background: transparent; backdrop-filter: none; }
+  .publication-reader :is(.publication-toolbar-control[data-active], .publication-toolbar .publication-switch[aria-checked="true"], .publication-choice-group button[aria-checked="true"], .publication-menu-switch button[aria-pressed="true"]) { border: 2px solid Highlight; color: HighlightText; background: Highlight; forced-color-adjust: none; }
+  .publication-reader .publication-toolbar .publication-switch { border: 1px solid ButtonText; }
+  .publication-reader .publication-toolbar .publication-switch > span { background: ButtonText; }
+  .publication-reader .publication-toolbar-control[data-tooltip]::after { border: 1px solid CanvasText; background: Canvas; color: CanvasText; }
+  .publication-reader .publication-toolbar-badge { border: 1px solid CanvasText; background: Highlight; color: HighlightText; forced-color-adjust: none; }
+  .publication-reader :is(.publication-content, .publication-table) mark { background: Highlight; color: HighlightText; forced-color-adjust: none; }
+  .publication-reader .publication-outline-link[aria-current="location"] { border-color: Highlight; color: Highlight; }
+  .publication-reader .publication-table-search-field:focus-within, .publication-reader .publication-front .publication-front-filter:focus-within { outline: 3px solid Highlight; }
+}

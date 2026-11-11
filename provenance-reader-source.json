@@ -215,13 +215,13 @@
     },
     {
       "path": "packages/reader-core/src/components/reader/ReaderContent.tsx",
-      "sha256": "56fb4e2ca92ff79f4f5464b4c3be827c69cb5737a87b492387712577b0875ff2",
-      "bytes": 4264
+      "sha256": "e4dd4fcfc6c450b669cde03a4a76471372bfe13a6dc2642a2dbccabd04052b18",
+      "bytes": 4337
     },
     {
       "path": "packages/reader-core/src/components/reader/ReaderShell.tsx",
-      "sha256": "9bc3016b385d922b3d4634b92ea194ba2e3ed1423216cd483bbfee3a5e98bf05",
-      "bytes": 10489
+      "sha256": "21a68b48e85a7e28777e7eeebf345aeed810469a443f81b2681975841265de02",
+      "bytes": 10931
     },
     {
       "path": "packages/reader-core/src/components/reader/SelectionToolbar.tsx",
@@ -290,8 +290,8 @@
     },
     {
       "path": "packages/reader-core/src/embed/embed.css",
-      "sha256": "104115e9313b7f41d5739fb6ea25bc1ce35e7aad4141b30d69fd019b99bcd8d9",
-      "bytes": 2126
+      "sha256": "6ba9ea2751aa2ae86a950cb3e98e842b76c455f897a2e1db2c7a25de09e1dd61",
+      "bytes": 2147
     },
     {
       "path": "packages/reader-core/src/embed/index.ts",
@@ -300,8 +300,8 @@
     },
     {
       "path": "packages/reader-core/src/index.ts",
-      "sha256": "921734c5de36d702e8278a81b539271f2731044f7f34f4b60991ea7267bfb640",
-      "bytes": 2764
+      "sha256": "3997e34b190a5acd93e8a1d588f513839c6dcccdda4994f3635ba3ce81a37a06",
+      "bytes": 3195
     },
     {
       "path": "packages/reader-core/src/original/HighlightsDrawer.tsx",
@@ -325,8 +325,8 @@
     },
     {
       "path": "packages/reader-core/src/original/QuoteImageModal.tsx",
-      "sha256": "f42a2958af88db479145fb335aaccba210114377d96c826b4b4db2fc7de34889",
-      "bytes": 10139
+      "sha256": "21b1aef298106d418925c5cbc042ebb992fcf06f236f9c0e24c61632b83066ee",
+      "bytes": 10065
     },
     {
       "path": "packages/reader-core/src/original/ReaderLayout.tsx",
@@ -335,8 +335,8 @@
     },
     {
       "path": "packages/reader-core/src/original/ShortcutsModal.tsx",
-      "sha256": "19463518655ce581e86b8e6994c6513df3a8dd1b2295ef4d8ec63940ce37705d",
-      "bytes": 3276
+      "sha256": "03351f58199ade2a43326ec94ade77d719b620812d0d8d9e270731a79b038d0f",
+      "bytes": 3274
     },
     {
       "path": "packages/reader-core/src/original/Sidebar.tsx",
@@ -350,8 +350,8 @@
     },
     {
       "path": "packages/reader-core/src/original/Toast.tsx",
-      "sha256": "f3fe946cf054362c8189a49f1e8fe467694076122031457976e07e7c51f4c7ba",
-      "bytes": 745
+      "sha256": "129ff5dc0a85bf0aa6e57b0d88c4cd8260afcc448fce10e8b0bc3d08f36a410b",
+      "bytes": 1204
     },
     {
       "path": "packages/reader-core/src/original/agent/AgentAccess.tsx",
@@ -390,8 +390,8 @@
     },
     {
       "path": "packages/reader-core/src/original/frontpage/frontpage.css",
-      "sha256": "6a9ad46003bd389f7658c414d0149bf3d0f4b734efb9690ab464eddfe09c8b19",
-      "bytes": 30219
+      "sha256": "07f4657c51fca2a0cac92c68977a0c9b7a1e7bfda9c4e4035d818f9350d9383a",
+      "bytes": 30240
     },
     {
       "path": "packages/reader-core/src/original/frontpage/layouts.tsx",
@@ -480,8 +480,8 @@
     },
     {
       "path": "packages/reader-core/src/original/read-aloud/use-read-aloud.ts",
-      "sha256": "cbe9c5ad928c7df6d5d59e27e766938a1d3a8c06138433dbef8ccb2e85daed3c",
-      "bytes": 6474
+      "sha256": "6b9d67ba216039ff5b43550c205cf5860399e38a55647e6ba3f6182dff376e91",
+      "bytes": 6547
     },
     {
       "path": "packages/reader-core/src/original/reader-integrations.css",
@@ -490,8 +490,8 @@
     },
     {
       "path": "packages/reader-core/src/original/reader-original.css",
-      "sha256": "9368c93b6e01a184f0fc06ec1acae326017b35e362e48922b9b0902e464f5180",
-      "bytes": 57824
+      "sha256": "011ed43eb40585777ad737cef9f8cac427b20a4062945d6b78a587f48ab77bfb",
+      "bytes": 61267
     },
     {
       "path": "packages/reader-core/src/original/reader-theme.ts",
@@ -535,8 +535,8 @@
     },
     {
       "path": "packages/reader-core/src/original/reading-support/support.css",
-      "sha256": "51c8ac88d7481c0dd7bc074ce75e7fb9e6ecafc2da34dc15cdf68e77d32cc258",
-      "bytes": 4691
+      "sha256": "6451bb9fb723f39e34113072c28a3bdd762fef19b593df3bd66d981e0625d61a",
+      "bytes": 4733
     },
     {
       "path": "packages/reader-core/src/original/reading-support/use-anchored-reading.ts",
@@ -570,8 +570,8 @@
     },
     {
       "path": "packages/reader-core/src/original/table-surface.css",
-      "sha256": "e13172bd87c724307a1e195ac1df042f4cb4704b33e2a3da254706b26dbd1531",
-      "bytes": 6721
+      "sha256": "32d03e656e150eedfaff659983ebdb3b447b38677b90100f16d551a1e96c3d46",
+      "bytes": 6742
     },
     {
       "path": "packages/reader-core/src/original/table-surface.ts",
@@ -580,8 +580,8 @@
     },
     {
       "path": "packages/reader-core/src/original/toolbar/ReaderToolbar.tsx",
-      "sha256": "c62942c9aa0dd465d0ac9151411eea00226bc57ad29c0334288e51f88b87d0fe",
-      "bytes": 27419
+      "sha256": "ad8e357caed35d7a5fc46e64abe4ddc668dbc3b6e575d4930ab62a0401cf8b4d",
+      "bytes": 28867
     },
     {
       "path": "packages/reader-core/src/original/toolbar/controls.tsx",
@@ -600,13 +600,18 @@
     },
     {
       "path": "packages/reader-core/src/original/use-listening-highlight.ts",
-      "sha256": "e9bf28edf5b36dea7cb439e087191a537814b75f088ed82bba71fda21b972521",
-      "bytes": 2261
+      "sha256": "2342c55bfa7309aa3fc2d27c20f0470f0b3c2672311c208c11411b6420dfd361",
+      "bytes": 2331
+    },
+    {
+      "path": "packages/reader-core/src/original/use-modal-dialog.ts",
+      "sha256": "7bb1969a3dd860cc4e03fe3fa9df9e96271ea325789894da6fe91c08969e4a72",
+      "bytes": 1588
     },
     {
       "path": "packages/reader-core/src/original/use-publication-reader.ts",
-      "sha256": "d17db50ea6b3bb03bdc786c8a177feb1ba641dd78db7ba9bae94100b9ea6b55c",
-      "bytes": 31972
+      "sha256": "af4854da8fbb134c31c2052ac88084cce9fdf9bf46595a10378e20a7ae144c45",
+      "bytes": 32065
     },
     {
       "path": "packages/reader-core/src/original/use-system-dark.ts",
@@ -674,18 +679,23 @@
       "bytes": 873
     },
     {
+      "path": "packages/reader-core/src/utils/scroll-behavior.ts",
+      "sha256": "94a88640b6d9b28f4e7099fc79ffc7145bf8c3d21db78e5344afd74085d28014",
+      "bytes": 466
+    },
+    {
       "path": "packages/reader-core/src/utils/search.ts",
       "sha256": "016fadd5765cfe02d0793e55a5a60994c30597c047e58ecba868eedb2178f863",
       "bytes": 1002
     },
     {
       "path": "packages/reader-core/package.json",
-      "sha256": "1876147ce71d9fe1a94a6ced7f876a9a7c770dcd7c3ec3950ad039c0555c05d5",
+      "sha256": "015a98d2caf819d42058a3bef537afb3515ac9fdb51d1f2a1c481a45e3d3923d",
       "bytes": 2281
     },
     {
       "path": "packages/reader-core/package-lock.json",
-      "sha256": "93efb06d020d1f17ccbf1ae246d5c7693c20709b7aa7bacf5626494feff9859c",
+      "sha256": "f5198b65aa3c0350232173ecccf812ab169625033ad9a0d69c2bcad1a0eb75f3",
       "bytes": 92663
     },
     {
@@ -730,12 +740,12 @@
     },
     {
       "path": "examples/reader-example/package.json",
-      "sha256": "97067f67043f0ef59d8c12782444cf42da893a43f125ca350c2e246db978aee4",
+      "sha256": "618ae04879eef2fbff298d08751335cf99d80fc97df3b7a03efc47f7b63fb40e",
       "bytes": 556
     },
     {
       "path": "examples/reader-example/package-lock.json",
-      "sha256": "1336bee2a8f135110c32232490c732c31c6aaf27deadd8dc8511dd3813203193",
+      "sha256": "ca51f7840aced04b188a640b0c839e9ae8146255ee8102ca4f40b51841338e1a",
       "bytes": 38760
     },
     {
@@ -855,7 +865,7 @@
     },
     {
       "path": "package.json",
-      "sha256": "80eff4f5528810054661c4e6d1bcf3eba9e12434f182b6953ebc9a18f746c093",
+      "sha256": "65615228e11bd318178d893410a32d1db2f54539b84614643dd443e86d1a2a53",
       "bytes": 1825
     },
     {
@@ -870,7 +880,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "72a20eb07e4f364cc03c2faff24c3033fa440afd0d1d70a04272c96f0b0717f3",
+      "sha256": "3143423223ecb99cd6fe8461b4e9c3f1d8547bfc785d62abeae30cdda7860612",
       "bytes": 15786
     },
     {
@@ -880,12 +890,12 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "28e4f9ea4dfd09e0ddd7697b1dca80ecbb88658fc2a6d5c600bc60969cea3f06",
-      "bytes": 7873
+      "sha256": "aebc12995a5384f4453c37978ab8cdeb673b1b294dea67945b5bb54d706f71c3",
+      "bytes": 9789
     },
     {
       "path": "docs/index.html",
-      "sha256": "204d8ba76c3c7c0f60a52418b1c02607161848444f73faf112b08e9ee3b805a3",
+      "sha256": "83a4683b81aa10a3655a89176c63fd6ade4dd5e3f83c99036b20e50f139d887f",
       "bytes": 10939
     },
     {

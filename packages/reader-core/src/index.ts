@@ -6,6 +6,11 @@ export * from './utils/highlightExport.js';
 export * from './utils/llmsExport.js';
 export * from './services/epub/epubGenerator.js';
 
+/**
+ * @deprecated The `components/` family below (BlockRenderer, Home, ScrollLayout, ReaderContent, ReaderShell, SelectionToolbar, Sidebar,
+ * TableOfContents, BookmarkButton, HighlightsPanel, ProgressPanel, ReadabilityControls, SearchModal) is the legacy block-based reader.
+ * Nothing in this repository mounts it. Use `PublicationReader`. These exports stay for compatibility and will be removed in a future major version.
+ */
 export * from './components/blocks/BlockRenderer.js';
 export * from './components/home/Home.js';
 export * from './components/layouts/ScrollLayout.js';

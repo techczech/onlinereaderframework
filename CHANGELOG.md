@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.4.0 (2026-11-11)
+
+Books and code written for 1.3.0 keep working without changes. This release moves the reader's pop-ups onto the browser's built-in dialog and popover features and makes it behave better for readers who ask for less motion or use high-contrast colours.
+
+### Changed
+
+- **Native dialogs.** The keyboard-shortcuts window and the quote-image window are now built on the browser's `<dialog>` element. The page behind is locked while one is open, Tab stays inside it, Escape closes it, and keyboard focus returns to where it was. The windows look the same as before.
+- **Native menus.** The toolbar menus are now popovers: Escape and a click outside close them without hand-written code, and they are no longer announced as dialogs.
+- **Reduced motion.** Every scroll the reader performs (to a heading, to a search result, to the sentence being read aloud) jumps instead of gliding when the reader has asked for reduced motion.
+- **High-contrast colours.** When the browser is in forced-colors mode, highlights, toolbar buttons, tooltips and focus rings use the system colours.
+- **Colour scheme and focus.** The reader tells the browser which colour scheme it is using, so scrollbars and form controls match the theme. Focus outlines share one colour setting, `--reader-focus`.
+- **Toast messages.** Short notices ("Copied") use a popover and stay visible above an open dialog.
+
+### Deprecated
+
+- The older block-based reader exported from the package root (`BlockRenderer`, `Home`, `ScrollLayout`, `ReaderContent`, `ReaderShell`, `SelectionToolbar`, `Sidebar`, `TableOfContents`, `BookmarkButton`, `HighlightsPanel`, `ProgressPanel`, `ReadabilityControls` and `SearchModal`) is marked `@deprecated`. Nothing in this repository uses it; use `PublicationReader`. It is still exported and will be removed in a future major version. Its saved settings no longer fail when the browser blocks storage.
+
 ## 1.3.0 (2026-11-08)
 
 Books and code written for 1.2.0 keep working without changes. Most of the changes apply only to books that choose the atlas layout (`appearance.readerLayout: 'atlas'`).

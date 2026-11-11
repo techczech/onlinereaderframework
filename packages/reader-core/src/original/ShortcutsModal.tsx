@@ -1,12 +1,15 @@
 import React from 'react';
+import { useModalDialog } from './use-modal-dialog.js';
 
 interface ShortcutsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const ShortcutsModal: React.FC<ShortcutsModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+export const ShortcutsModal: React.FC<ShortcutsModalProps> = ({ isOpen, onClose }) => isOpen ? <ShortcutsDialog onClose={onClose} /> : null;
+
+const ShortcutsDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const dialog = useModalDialog(onClose);
 
   const shortcuts = [
     { key: '?', description: 'Show this help' },
@@ -24,8 +27,8 @@ export const ShortcutsModal: React.FC<ShortcutsModalProps> = ({ isOpen, onClose 
   ];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/80 backdrop-blur-sm" onClick={onClose}>
-      <div role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden animate-fade-in-up" onClick={e => e.stopPropagation()}>
+    <dialog ref={dialog.ref} onClick={dialog.onClick} aria-label="Keyboard shortcuts" className="publication-modal animate-fade-in-up">
+      <div>
         <div className="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400">keyboard</span>
@@ -53,6 +56,6 @@ export const ShortcutsModal: React.FC<ShortcutsModalProps> = ({ isOpen, onClose 
             Press <kbd className="font-bold">Shift + ?</kbd> at any time to view this menu
         </div>
       </div>
-    </div>
+    </dialog>
   );
 };

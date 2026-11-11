@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { DEFAULT_READING_PREFERENCES, effectiveFontSize } from '../reading-support/reading-preferences.js';
 import { useViewportWidth } from '../reading-support/use-viewport-width.js';
 import { useAnchoredReadingSupport } from '../reading-support/use-anchored-reading.js';
@@ -116,13 +116,44 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
     const candidates = near.length ? near : usable(element).filter(item => !item.closest('.publication-menu-sheet-head'));
     (candidates.find(item => item.matches('[aria-checked="true"]')) ?? candidates[0])?.focus({ preventScroll: true });
   });
-  // A press anywhere else, including in the text, closes the menu without taking focus or clearing a selection.
-  useEffect(() => {
-    if (!open) return;
-    const outside = (event: PointerEvent) => { if (!actions.current?.contains(event.target as Node)) setOpen(null); };
-    document.addEventListener('pointerdown', outside);
-    return () => document.removeEventListener('pointerdown', outside);
-  }, [open]);
+  // The menus are popovers: the browser closes them on Escape and on a press anywhere else (the text included, without taking focus or
+  // clearing a selection). The two handlers below keep React's state in step and put focus back where it came from.
+  const openRef = useRef(open);
+  openRef.current = open;
+  // A press on the button that opened the menu light-dismisses it before the button's own click arrives; that click must not open it again.
+  const dismissed = useRef<{ id: ToolbarMenuId; at: number } | null>(null);
+  const lastPress = useRef<{ target: Node; at: number } | null>(null);
+  useLayoutEffect(() => {
+    const element = panel.current;
+    if (!open || !element) return;
+    if (!element.matches(':popover-open')) element.showPopover();
+    const place = () => {
+      const bar = actions.current?.getBoundingClientRect();
+      if (!bar) return;
+      element.style.setProperty('--menu-top', `${Math.round(bar.bottom + 8)}px`);
+      element.style.setProperty('--menu-right', `${Math.max(0, Math.round(document.documentElement.clientWidth - bar.right))}px`);
+    };
+    place();
+    const onBeforeToggle = (event: Event) => {
+      if ((event as Event & { newState?: string }).newState !== 'closed') return;
+      if (openRef.current && lastPress.current && performance.now() - lastPress.current.at < 1000 && actions.current?.contains(lastPress.current.target)) dismissed.current = { id: openRef.current, at: performance.now() };
+      // Focus inside the menu goes back to the control that opened it; after a press elsewhere it has already moved on and is left alone.
+      const target = opener.current?.isConnected ? opener.current : openRef.current ? buttons.current[openRef.current] : null;
+      if (element.contains(document.activeElement)) target?.focus();
+      setOpen(null);
+    };
+    const onPress = (event: PointerEvent) => { lastPress.current = { target: event.target as Node, at: performance.now() }; };
+    document.addEventListener('pointerdown', onPress, true);
+    element.addEventListener('beforetoggle', onBeforeToggle);
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
+    return () => {
+      document.removeEventListener('pointerdown', onPress, true);
+      element.removeEventListener('beforetoggle', onBeforeToggle);
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+    };
+  }, [open === 'theme', open !== null]);
 
   // Escape dismisses a visible tooltip (hovered or focused) without moving focus or closing anything; a new hover or focus on a control shows it again.
   const [tipDismissed, setTipDismissed] = useState(false);
@@ -141,7 +172,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   }, []);
 
   // A menu opened from outside the tools (the read-aloud dock) unfolds them, since the menus live there.
-  const toggle = (id: ToolbarMenuId, from?: HTMLElement | null) => { if (minimised) { setMinimisedChoice(false); writeMinimised(props.bookId, false); } opener.current = from ?? buttons.current[id] ?? null; focusOnOpen.current = open !== id; setOpen(open === id ? null : id); };
+  const toggle = (id: ToolbarMenuId, from?: HTMLElement | null) => { const last = dismissed.current; dismissed.current = null; if (last && last.id === id && performance.now() - last.at < 400) return; if (minimised) { setMinimisedChoice(false); writeMinimised(props.bookId, false); } opener.current = from ?? buttons.current[id] ?? null; focusOnOpen.current = open !== id; setOpen(open === id ? null : id); };
   const viewport = useViewportWidth();
   const fontSize = effectiveFontSize(p, viewport);
   const formatting: FormattingState = { fontFamily: p.fontFamily, fontSize, lineHeight: p.lineHeight, paragraphSpacing: p.paragraphSpacing, letterSpacing: p.letterSpacing, maxWidth: props.maxWidth };
@@ -156,16 +187,6 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
   const stepper = (key: 'fontSize' | 'lineHeight' | 'paragraphSpacing' | 'letterSpacing', label: string, icon: string, text: string) =>
     <Stepper label={label} icon={icon} text={text} onStep={step(key)} minDisabled={atLimit(key, shown(key), -1)} maxDisabled={atLimit(key, shown(key), 1)} />;
 
-  const onKeyDown = (event: React.KeyboardEvent) => {
-    if (!open) return;
-    if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); close(true); return; }
-    if (event.key !== 'Tab' || !panel.current?.contains(event.target as Node)) return;
-    const items = Array.from(panel.current.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(element => element.tabIndex >= 0 && element.getClientRects().length);
-    if (!items.length) return;
-    const first = items[0], last = items[items.length - 1];
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-  };
   const level = dimLevel(p.dim);
   // After Start the menu has closed; focus moves to the docked transport, or to Try again when nothing started.
   useEffect(() => {
@@ -190,7 +211,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
     {minimised && <button type="button" ref={restoreRef} className="publication-toolbar-control publication-toolbar-restore" onClick={() => setMinimised(false)} aria-label="Show reading tools" data-tooltip="Show reading tools">
       <span aria-hidden="true" className="material-symbols-outlined">more_horiz</span>
     </button>}
-    {!minimised && <div className="publication-toolbar-actions" ref={actions} onKeyDown={onKeyDown} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
+    {!minimised && <div className="publication-toolbar-actions" ref={actions} onPointerEnter={() => { pointerOver.current = true; }} onPointerLeave={() => { pointerOver.current = false; }} data-tip-dismissed={tipDismissed || undefined}>
       {MENUS.map(menu => {
         // Icon only: the name is the accessible name and the tooltip (hover and keyboard focus), plus the current state where there is one.
         const stateText = menu.id === 'listen' && speech !== 'idle' ? (speech === 'speaking' ? 'reading aloud' : 'paused') : menu.id === 'assist' ? assistName(p.overlay, anchoredOn) : null;
@@ -198,7 +219,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
         return <button key={menu.id} type="button" ref={element => { buttons.current[menu.id] = element; }} className="publication-toolbar-control"
           data-tooltip={stateText ? `${base}: ${stateText}` : base}
           data-active={open === menu.id || (menu.id === 'listen' && speech !== 'idle') || (menu.id === 'assist' && counts.assist > 0) || undefined}
-          aria-haspopup="dialog" aria-expanded={open === menu.id} aria-controls={open === menu.id ? `publication-menu-${menu.id}` : undefined}
+          aria-expanded={open === menu.id} aria-controls={open === menu.id ? `publication-menu-${menu.id}` : undefined}
           aria-label={stateText ? `${base}: ${stateText}` : base} onClick={() => toggle(menu.id)} {...tipProps}>
           <span aria-hidden="true" className="material-symbols-outlined">{menu.icon}</span>
         </button>;
@@ -209,19 +230,19 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
       {/* Atlas keeps Theme with the other reading tools; the panel toggles at the two ends are the separate group. */}
       {!props.panelToggles && <span className="publication-toolbar-divider" aria-hidden="true" />}
       <button type="button" ref={element => { buttons.current.theme = element; }} className="publication-toolbar-control publication-toolbar-theme" data-tooltip={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`}
-        data-active={open === 'theme' || undefined} aria-haspopup="dialog" aria-expanded={open === 'theme'} aria-controls={open === 'theme' ? 'publication-menu-theme' : undefined}
+        data-active={open === 'theme' || undefined} aria-expanded={open === 'theme'} aria-controls={open === 'theme' ? 'publication-menu-theme' : undefined}
         aria-label={`Theme: ${themeDescription(props.themeChoice, props.systemDark)}`} onClick={() => toggle('theme')} {...tipProps}>
         <span aria-hidden="true" className="material-symbols-outlined">{themeIcon(props.themeChoice)}</span>
       </button>
 
-      {open === 'theme' && <div ref={panel} id="publication-menu-theme" role="dialog" aria-label="Theme" className="publication-menu publication-theme-menu" data-reader-menu>
+      {open === 'theme' && <div ref={panel} id="publication-menu-theme" role="group" aria-label="Theme" className="publication-menu publication-theme-menu" data-reader-menu {...{ popover: 'auto' }}>
         <ChoiceGroup label="Theme" stacked value={props.themeChoice} onChange={props.onTheme} choices={THEME_CHOICES} />
         <small className="publication-menu-note">{props.themeChoice === 'system'
           ? `Follows your computer's light or dark setting, which is ${props.systemDark ? 'dark' : 'light'} now.`
           : 'Kept for this book on this device. Choose Follow computer to follow your computer again.'}</small>
       </div>}
 
-      {open && open !== 'theme' && <div ref={panel} id={`publication-menu-${open}`} role="dialog" aria-label={MENUS.find(menu => menu.id === open)!.label} className="publication-menu" data-reader-menu>
+      {open && open !== 'theme' && <div ref={panel} id={`publication-menu-${open}`} role="group" aria-label={MENUS.find(menu => menu.id === open)!.label} className="publication-menu" data-reader-menu {...{ popover: 'auto' }}>
         <div className="publication-menu-sheet-head">
           <span className="publication-menu-handle" aria-hidden="true" />
           <div role="group" aria-label="Menu" className="publication-menu-switch">
@@ -310,7 +331,7 @@ export function ReaderToolbar(props: ReaderToolbarProps) {
             <p role="status" className="publication-menu-state">{assistSummary({ overlay: p.overlay, immersive: props.immersive, anchored: anchoredOn, lines: p.lines, rulerLines: p.rulerLines })}</p>
             <button type="button" className="publication-menu-action" disabled={counts.assist === 0} onClick={() => { if (p.overlay !== 'off' || p.anchored) support.update({ overlay: 'off', lines: d.lines, rulerLines: d.rulerLines, dim: d.dim, anchored: false, leadStyle: d.leadStyle }); else props.onImmersive(false); }}>
               <span aria-hidden="true" className="material-symbols-outlined">restart_alt</span>Turn all off</button>
-            <button type="button" className="publication-menu-action" onClick={() => { close(false); props.onOpenShortcuts(); }}><span aria-hidden="true" className="material-symbols-outlined">keyboard</span>Keyboard shortcuts</button>
+            <button type="button" className="publication-menu-action" onClick={() => { close(true); props.onOpenShortcuts(); }}><span aria-hidden="true" className="material-symbols-outlined">keyboard</span>Keyboard shortcuts</button>
           </footer>
         </>}
       </div>}

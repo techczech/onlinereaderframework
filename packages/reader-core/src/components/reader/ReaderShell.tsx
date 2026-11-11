@@ -1,4 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { scrollBehavior } from '../../utils/scroll-behavior.js';
+
+/** localStorage that never throws: reads give null and writes are dropped when storage is blocked. */
+const safeStorage = {
+  getItem(key: string): string | null { try { return window.localStorage.getItem(key); } catch { return null; } },
+  setItem(key: string, value: string): void { try { window.localStorage.setItem(key, value); } catch { /* Kept for this visit only. */ } },
+};
 import { SectionConfig, SectionId, Highlight } from '../../types.js';
 import { Sidebar } from './Sidebar.js';
 import { ReaderContent } from './ReaderContent.js';
@@ -57,7 +64,7 @@ export function ReaderShell({
 
   const [highlights, setHighlights] = useState<Highlight[]>(() => {
     try {
-      const saved = localStorage.getItem(HIGHLIGHTS_KEY);
+      const saved = safeStorage.getItem(HIGHLIGHTS_KEY);
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -66,7 +73,7 @@ export function ReaderShell({
 
   const [readSections, setReadSections] = useState<Set<string>>(() => {
     try {
-      const saved = localStorage.getItem(READ_KEY);
+      const saved = safeStorage.getItem(READ_KEY);
       return saved ? new Set(JSON.parse(saved)) : new Set();
     } catch {
       return new Set();
@@ -75,7 +82,7 @@ export function ReaderShell({
 
   const [bookmarks, setBookmarks] = useState<Set<string>>(() => {
     try {
-      const saved = localStorage.getItem(BOOKMARK_KEY);
+      const saved = safeStorage.getItem(BOOKMARK_KEY);
       return saved ? new Set(JSON.parse(saved)) : new Set();
     } catch {
       return new Set();
@@ -83,41 +90,41 @@ export function ReaderShell({
   });
 
   const [fontSize, setFontSize] = useState<FontSize>(() => {
-    return (localStorage.getItem(FONT_SIZE_KEY) as FontSize) || 'base';
+    return (safeStorage.getItem(FONT_SIZE_KEY) as FontSize) || 'base';
   });
   const [lineHeight, setLineHeight] = useState<LineHeight>(() => {
-    return (localStorage.getItem(LINE_HEIGHT_KEY) as LineHeight) || 'relaxed';
+    return (safeStorage.getItem(LINE_HEIGHT_KEY) as LineHeight) || 'relaxed';
   });
   const [contentWidth, setContentWidth] = useState<ContentWidth>(() => {
-    return (localStorage.getItem(CONTENT_WIDTH_KEY) as ContentWidth) || 'md';
+    return (safeStorage.getItem(CONTENT_WIDTH_KEY) as ContentWidth) || 'md';
   });
   const [showReadingStats, setShowReadingStats] = useState<boolean>(() => {
-    const saved = localStorage.getItem(READING_STATS_KEY);
+    const saved = safeStorage.getItem(READING_STATS_KEY);
     return saved ? JSON.parse(saved) : false;
   });
 
   useEffect(() => {
-    localStorage.setItem(FONT_SIZE_KEY, fontSize);
+    safeStorage.setItem(FONT_SIZE_KEY, fontSize);
   }, [fontSize]);
 
   useEffect(() => {
-    localStorage.setItem(LINE_HEIGHT_KEY, lineHeight);
+    safeStorage.setItem(LINE_HEIGHT_KEY, lineHeight);
   }, [lineHeight]);
 
   useEffect(() => {
-    localStorage.setItem(CONTENT_WIDTH_KEY, contentWidth);
+    safeStorage.setItem(CONTENT_WIDTH_KEY, contentWidth);
   }, [contentWidth]);
 
   useEffect(() => {
-    localStorage.setItem(READING_STATS_KEY, JSON.stringify(showReadingStats));
+    safeStorage.setItem(READING_STATS_KEY, JSON.stringify(showReadingStats));
   }, [showReadingStats]);
 
   useEffect(() => {
-    localStorage.setItem(READ_KEY, JSON.stringify(Array.from(readSections)));
+    safeStorage.setItem(READ_KEY, JSON.stringify(Array.from(readSections)));
   }, [readSections]);
 
   useEffect(() => {
-    localStorage.setItem(BOOKMARK_KEY, JSON.stringify(Array.from(bookmarks)));
+    safeStorage.setItem(BOOKMARK_KEY, JSON.stringify(Array.from(bookmarks)));
   }, [bookmarks]);
 
   useEffect(() => {
@@ -154,7 +161,7 @@ export function ReaderShell({
     };
     const updated = [next, ...highlights];
     setHighlights(updated);
-    localStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(updated));
+    safeStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(updated));
     setSelectedText('');
     window.getSelection()?.removeAllRanges();
   };
@@ -162,7 +169,7 @@ export function ReaderShell({
   const removeHighlight = (id: string) => {
     const updated = highlights.filter((item) => item.id !== id);
     setHighlights(updated);
-    localStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(updated));
+    safeStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(updated));
   };
 
   const handleExport = () => {
@@ -179,7 +186,7 @@ export function ReaderShell({
 
   const handleTocNavigate = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: scrollBehavior() });
   };
 
   const toggleRead = () => {

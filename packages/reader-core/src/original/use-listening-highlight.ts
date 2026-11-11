@@ -1,4 +1,5 @@
 import { useEffect, type RefObject } from 'react';
+import { scrollBehavior } from '../utils/scroll-behavior.js';
 import { publicationTextModel } from './publication-html.js';
 
 export interface ListeningTextBoundary {
@@ -33,7 +34,7 @@ export function useListeningHighlight(
     else block?.setAttribute('data-publication-audio-active', '');
     const selection = window.getSelection();
     const editing = document.activeElement?.closest('input, textarea, select, [contenteditable="true"]');
-    if (!editing && (!selection || selection.isCollapsed)) block?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    if (!editing && (!selection || selection.isCollapsed)) block?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() });
     return () => {
       if (host.CSS?.highlights?.get('publication-audiobook') === highlight) host.CSS?.highlights?.delete('publication-audiobook');
       block?.removeAttribute('data-publication-audio-active');

@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
+import { useModalDialog } from './use-modal-dialog.js';
 
 interface QuoteImageModalProps {
   text: string;
@@ -16,6 +17,7 @@ export const QuoteImageModal: React.FC<QuoteImageModalProps> = ({ text, author, 
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copySuccess, setCopySuccess] = useState(false);
+  const dialog = useModalDialog(onClose);
 
   useEffect(() => {
     let cancelled = false;
@@ -183,8 +185,8 @@ export const QuoteImageModal: React.FC<QuoteImageModalProps> = ({ text, author, 
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/80 backdrop-blur-sm" onClick={onClose}>
-      <div role="dialog" aria-modal="true" aria-label="Share quote" className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col max-h-[90vh] animate-fade-in-up" onClick={e => e.stopPropagation()}>
+    <dialog ref={dialog.ref} onClick={dialog.onClick} aria-label="Share quote" data-size="narrow" className="publication-modal animate-fade-in-up">
+      <div className="flex flex-col max-h-[90vh]">
         <div className="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
             <h3 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                 <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400">image</span>
@@ -241,6 +243,6 @@ export const QuoteImageModal: React.FC<QuoteImageModalProps> = ({ text, author, 
             )}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 };
