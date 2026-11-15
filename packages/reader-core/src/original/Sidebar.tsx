@@ -14,6 +14,8 @@ interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
   readSections: Set<string>;
+  /** Clears pages read, Continue and scroll positions; the sidebar asks once before calling it. */
+  onClearProgress?: () => void;
   bookmarkedSections: Set<string>;
   shouldFocusSearch?: boolean;
   /** Called once the requested focus has landed or been given up, so the next request is a new one. */
@@ -46,6 +48,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   onClose,
   readSections,
+  onClearProgress,
   bookmarkedSections,
   shouldFocusSearch,
   onSearchFocusHandled,
@@ -226,6 +229,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   // Get bookmarked section objects
   const bookmarks = GUIDE_CONTENT.filter(s => bookmarkedSections.has(s.id));
   const progress = chapterProgress(GUIDE_CONTENT, readSections);
+  const [confirmClear, setConfirmClear] = useState(false);
   const cover = book.appearance?.cover;
   const homeHref = `?book=${encodeURIComponent(book.id)}`;
 
@@ -287,7 +291,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div role="progressbar" aria-label="Chapters read" aria-valuemin={0} aria-valuemax={progress.total} aria-valuenow={progress.read} className="publication-sidebar-progress-bar">
               <div style={{ width: `${progress.total ? Math.round(progress.read / progress.total * 100) : 0}%` }} />
             </div>
-            <span>{progress.read} of {progress.total} read</span>
+            {confirmClear ? (
+              <span className="publication-sidebar-progress-confirm" role="group" aria-label="Clear reading progress">
+                <span>Clear?</span>
+                <button type="button" autoFocus onClick={() => { setConfirmClear(false); onClearProgress?.(); }}>Yes</button>
+                <button type="button" onClick={() => setConfirmClear(false)}>No</button>
+              </span>
+            ) : (
+              <>
+                <span>{progress.read} of {progress.total} read</span>
+                {onClearProgress && progress.read > 0 && <button type="button" className="publication-sidebar-progress-clear" onClick={() => setConfirmClear(true)} title="Clear reading progress: pages read, Continue and scroll positions. Highlights, notes and bookmarks stay.">Clear</button>}
+              </>
+            )}
           </div>
         </div>
 

@@ -57,7 +57,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
     contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleResume, handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
-    handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink  } = reader;
+    handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink, clearProgress  } = reader;
   const sectionEmbeds = useMemo(() => embedsForSection(embeds, currentSection?.id), [embeds, currentSection?.id]);
   const support = useReadingSupport(book.id);
   const compactTocRef = useRef<TableOfContentsHandle>(null);
@@ -191,6 +191,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
           if (hadFocus) setTimeout(() => document.querySelector<HTMLElement>('.publication-navigation-toggle')?.focus(), 0);
         }}
         readSections={readSections}
+        onClearProgress={clearProgress}
         bookmarkedSections={bookmarkedSections}
         shouldFocusSearch={isSearchTriggered}
         onSearchFocusHandled={() => setIsSearchTriggered(false)}

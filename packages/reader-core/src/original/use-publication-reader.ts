@@ -442,12 +442,22 @@ export function usePublicationReader(book: PublicationBook, epub?: PublicationEp
     return () => window.removeEventListener('keydown', keydown);
   }, [selectedText, support, saveHighlight, shareHighlightLink, sharePageLink, toggleBookmark, clearSelection, setIsImmersiveMode]);
 
+  // Clear progress resets what a reader who only clicked around has left behind: pages read, Continue and scroll positions.
+  // Highlights, notes and bookmarks are the reader's own work and stay. The front page follows, so nothing is re-marked as read.
+  const clearProgress = useCallback(() => {
+    handleSectionChange('home');
+    setReadIds([]);
+    setLastSectionId(null);
+    if (!writeStoredValue(book.id, 'readingPositions', {})) storageFailure();
+    showToast('Reading progress cleared');
+  }, [handleSectionChange, setReadIds, setLastSectionId, book.id, storageFailure, showToast]);
+
   return { book, sections, currentSectionId, currentSection, isHome, readSections, lastSectionId, bookmarkedSections, isBookmarked, highlights, reflections, currentSectionHighlights, currentSectionReflection,
     isDarkMode, themeChoice, setThemeChoice, systemDark, isAssistActive: assistActive, maxWidth, setMaxWidth, getContainerWidthClass,
     isSidebarOpen, setIsSidebarOpen, isChatOpen, setIsChatOpen, isHighlightsOpen, setIsHighlightsOpen, isShortcutsOpen, setIsShortcutsOpen, isImmersiveMode, setIsImmersiveMode,
     isSearchTriggered, setIsSearchTriggered,
     quoteModalData, setQuoteModalData, toastMessage, setToastMessage, selectionRect, selectedText, storageUnavailable,
-    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, handleResume: (sectionId: string) => handleSectionChange(sectionId, undefined, true), handleOpenSearch, handleDownloadEbook,
+    contentRef, rendererRef, tocRef, prevSection, nextSection, handleSectionChange, clearProgress, handleResume: (sectionId: string) => handleSectionChange(sectionId, undefined, true), handleOpenSearch, handleDownloadEbook,
     saveHighlight, shareHighlightLink, shareHighlightImage, sharePageLink, toggleBookmark, handleSaveReflection, handleOpenHighlightCallback,
     handleDrawerShareLink, handleDrawerShareImage, deleteHighlight, updateHighlightNote, deleteReflection, showToast, handleContentLink };
 }

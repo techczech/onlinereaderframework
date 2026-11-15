@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.5.0 (2026-11-15)
+
+Books and code written for 1.4.0 keep working without changes. This release makes tables follow dark mode and lets readers clear their reading progress.
+
+### Added
+
+- **Clear reading progress.** The contents sidebar shows a Clear link next to "N of M read" once anything has been read. After one confirmation it clears the pages marked as read, the front page's Continue and the saved scroll positions, then opens the front page. Highlights, notes and bookmarks are kept.
+- **Table colour settings.** A book can set its table colours with `--publication-table-surface`, `-ink`, `-line`, `-head`, `-head-ink`, `-stripe` and `-tools`, and their dark-mode counterparts with the same names ending in `-dark`.
+
+### Fixed
+
+- **Tables in dark mode.** Dark mode no longer uses a book's light table colours: without `-dark` values, tables take their colours from the dark theme, so a light-coloured book no longer shows a light box on a dark page.
+- **Sidebar text in dark mode.** The contents sidebar always uses the theme's text colour, so the book title stays readable when a book sets a dark text colour on the page.
+
 ## 1.4.0 (2026-11-11)
 
 Books and code written for 1.3.0 keep working without changes. This release moves the reader's pop-ups onto the browser's built-in dialog and popover features and makes it behave better for readers who ask for less motion or use high-contrast colours.

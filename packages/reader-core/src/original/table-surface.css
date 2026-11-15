@@ -1,6 +1,33 @@
 /* Table chrome shared by every book: a quiet icon toolbar, a search bar that filters rows, and a focus view.
    Colours come from the book theme (--reader-ink, --reader-paper, --reader-accent). */
-.publication-table { --table-line: color-mix(in srgb, var(--reader-ink), transparent 85%); --table-muted: color-mix(in srgb, var(--reader-ink), transparent 30%); margin: 2em 0; min-width: 0; border-top: 1px solid var(--table-line); }
+/* Table colours. A book sets the light look with --publication-table-* on its root; dark mode ignores those
+   and uses --publication-table-*-dark, falling back to the dark theme, so a light book never leaves a light box on a dark page. */
+.publication-reader {
+  --reader-table-surface: var(--publication-table-surface, transparent);
+  --reader-table-ink: var(--publication-table-ink, var(--reader-ink));
+  --reader-table-line: var(--publication-table-line, color-mix(in srgb, var(--reader-ink), transparent 85%));
+  --reader-table-head: var(--publication-table-head, color-mix(in srgb, var(--reader-ink), transparent 92%));
+  --reader-table-head-ink: var(--publication-table-head-ink, var(--reader-ink));
+  --reader-table-stripe: var(--publication-table-stripe, color-mix(in srgb, var(--reader-ink), transparent 96%));
+  --reader-table-tools: var(--publication-table-tools, color-mix(in srgb, var(--reader-ink), transparent 95%));
+}
+.publication-reader.dark {
+  --reader-table-surface: var(--publication-table-surface-dark, transparent);
+  --reader-table-ink: var(--publication-table-ink-dark, var(--reader-ink));
+  --reader-table-line: var(--publication-table-line-dark, color-mix(in srgb, var(--reader-ink), transparent 80%));
+  --reader-table-head: var(--publication-table-head-dark, color-mix(in srgb, var(--reader-ink), transparent 88%));
+  --reader-table-head-ink: var(--publication-table-head-ink-dark, var(--reader-ink));
+  --reader-table-stripe: var(--publication-table-stripe-dark, color-mix(in srgb, var(--reader-ink), transparent 95%));
+  --reader-table-tools: var(--publication-table-tools-dark, color-mix(in srgb, var(--reader-ink), transparent 93%));
+}
+.publication-table { --table-line: var(--reader-table-line); --table-muted: color-mix(in srgb, var(--reader-table-ink), transparent 30%); margin: 2em 0; min-width: 0; border-top: 1px solid var(--table-line); background: var(--reader-table-surface); color: var(--reader-table-ink); }
+/* :is(.dark,:not(.dark)) only lifts specificity above the generic .publication-content table rules in reader-original.css. */
+.publication-reader:is(.dark, :not(.dark)) .publication-table :is(td, th) { border-color: var(--table-line); }
+.publication-reader:is(.dark, :not(.dark)) .publication-table td :is(p, strong, em, b, i) { color: inherit; }
+.publication-reader:is(.dark, :not(.dark)) .publication-table th { background: var(--reader-table-head); color: var(--reader-table-head-ink); }
+.publication-reader:is(.dark, :not(.dark)) .publication-table th :is(p, strong, em, span, a) { color: inherit; }
+.publication-reader:is(.dark, :not(.dark)) .publication-table tr:nth-child(2n) { background: var(--reader-table-stripe); }
+.publication-reader:is(.dark, :not(.dark)) .publication-table thead tr { background: transparent; }
 .publication-table [hidden] { display: none !important; }
 .publication-table :focus-visible { outline: 2px solid var(--reader-focus, var(--reader-accent)); outline-offset: 2px; }
 
@@ -15,7 +42,7 @@
 .publication-reader .publication-table .publication-table-header .publication-table-status { flex-basis: 100%; margin: 0; padding: 2px 0 4px; font: 12px/1.4 system-ui, -apple-system, sans-serif; color: var(--table-muted); text-align: right; }
 .publication-table-status:empty { display: none; }
 
-.publication-table-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 10px; background: color-mix(in srgb, var(--reader-ink), transparent 95%); font: 13px/1.4 system-ui, -apple-system, sans-serif; color: var(--reader-ink); }
+.publication-table-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 10px; background: var(--reader-table-tools); font: 13px/1.4 system-ui, -apple-system, sans-serif; color: var(--reader-ink); }
 .publication-table-search-field { flex: 1 1 220px; display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 10px; border: 1px solid color-mix(in srgb, var(--reader-ink), transparent 70%); border-radius: 6px; background: var(--reader-paper); }
 .publication-reader .publication-table-search-field input:focus-visible { outline: none; }
 .publication-table-search-field:focus-within { outline: 2px solid var(--reader-accent); outline-offset: 1px; }
