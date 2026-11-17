@@ -28,6 +28,15 @@ export interface PublicationBook {
   sections: PublicationSection[];
   downloads?: { label: string; href: string }[];
   sourceUrl?: string;
+  /** Public citation configuration. Readable builds require a canonical base URL. */
+  citation?: {
+    canonicalBaseUrl: string;
+    authors?: string[];
+    organisations?: string[];
+    date?: string;
+    siteName?: string;
+    isbn?: string;
+  };
   language?: string;
   labels?: { search?: string; tableOfContents?: string; readingSettings?: string; listen?: string; contents?: string; fullContents?: string };
   compatibility?: {
@@ -88,6 +97,8 @@ export interface PublicationAgentAccess {
 export interface PublicationReaderProps {
   book: PublicationBook;
   coaching?: PublicationCoaching;
+  /** Canonical metadata and citation footer, supplied by the publishing host. */
+  citation?: (section?: PublicationSection) => import('../citation/citation.js').CitePage;
   audio?: readonly import('./listening/listening-types.js').PublicationAudioTrack[];
   /** Supply image bytes for self-contained export; false disables generated EPUB. */
   epub?: PublicationEpubOptions | false;

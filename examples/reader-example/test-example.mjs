@@ -20,7 +20,9 @@ test('the reader page loads only its own built files', () => {
   const html = read('index.html');
   assert.match(html, /<script type="module" crossorigin src="\.\/assets\/[^"]+\.js"><\/script>/);
   assert.match(html, /<link rel="stylesheet" crossorigin href="\.\/assets\/[^"]+\.css">/);
-  assert.doesNotMatch(html, /(?:src|href)="(?:https?:)?\/\//, 'no outside script or style');
+  const resources = [...html.matchAll(/<script\b[^>]*>|<link\b(?=[^>]*rel="stylesheet")[^>]*>/g)].map(match => match[0]).join('\n');
+  assert.doesNotMatch(resources, /(?:src|href)="(?:https?:)?\/\//, 'no outside script or style');
+  assert.ok(html.includes('<link rel="canonical" href="' + exampleBook.citation.canonicalBaseUrl + '">'), 'public canonical is metadata, not a fetched resource');
   const css = read(html.match(/href="\.\/(assets\/[^"]+\.css)"/)[1]);
   const fonts = [...css.matchAll(/url\(([^)]+\.woff2)\)/g)].map(match => match[1]);
   assert.ok(fonts.length > 0, 'bundled fonts');
@@ -172,5 +174,18 @@ test('a preview root replaced by a link after startup cannot serve outside files
   } finally {
     if (server?.listening) await new Promise(done => server.close(done));
     rmSync(scratch, { recursive: true, force: true });
+  }
+});
+
+test('readable pages identify the book and every chapter with one citation record', () => {
+  const home = read('index.html');
+  assert.ok(home.includes('name="DC.type" content="book"'));
+  const sections = exampleBook.sections.flatMap(function walk(section) { return [section, ...(section.children ?? []).flatMap(walk)]; });
+  for (const section of sections) {
+    const html = read(encodeURIComponent(section.id) + '/index.html');
+    assert.equal((html.match(/name="citation_title"/g) ?? []).length, 1);
+    assert.ok(html.includes('name="DC.type" content="bookSection"'));
+    assert.ok(html.includes('citation_inbook_title') && html.includes('Cite this page'));
+    assert.ok(!/Z3988|citation_journal_title/.test(html));
   }
 });

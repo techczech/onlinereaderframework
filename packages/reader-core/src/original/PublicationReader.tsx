@@ -1,3 +1,4 @@
+import { publicationCitation } from '../citation/publication-citation.js';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { validatePublicationEmbeds } from '../embed/embed-model.js';
 import type { PublicationReaderProps } from './types.js';
@@ -21,7 +22,7 @@ export function PublicationReader(props: PublicationReaderProps) {
   return <BookReader key={props.book.id} {...props} />;
 }
 
-function BookReader({ book, coaching, epub, audio, agent, embeds }: PublicationReaderProps) {
+function BookReader({ book, coaching, epub, audio, agent, embeds, citation }: PublicationReaderProps) {
   const reader = usePublicationReader(book, epub);
   // Host-registered embeds; a refused descriptor is dropped and its prose alternative still renders.
   const validEmbeds = useMemo(() => {
@@ -47,7 +48,7 @@ function BookReader({ book, coaching, epub, audio, agent, embeds }: PublicationR
     listenTrigger.current = trigger;
     setListeningOpen(true);
   };
-  return <ReaderLayout reader={reader} coaching={coaching} agent={agent || undefined} embeds={validEmbeds}
+  return <ReaderLayout reader={reader} coaching={coaching} citation={citation ?? (book.citation ? section => publicationCitation(book, section) : undefined)} agent={agent || undefined} embeds={validEmbeds}
     readingSurface={children => <ReadingSupportSurface bookId={book.id} sectionId={reader.currentSectionId}>{children}</ReadingSupportSurface>}
     hasRecordedAudio={hasRecordedAudio} onOpenRecordedAudio={openListening}
     onBrowserSpeechStart={() => { pauseRecording.current?.(); setPauseSignal(value => value + 1); setBoundary(null); }}

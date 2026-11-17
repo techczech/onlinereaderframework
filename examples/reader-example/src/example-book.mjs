@@ -8,6 +8,7 @@ export const exampleBook = {
   author: 'Online Reader Framework contributors',
   description: 'A small invented book that shows chapters, formatting, reading settings, notes, read-aloud, an interactive example, EPUB download and agent files.',
   language: 'en-GB',
+  citation: { canonicalBaseUrl: 'https://books.example.org/reader/', authors: ['Online Reader Framework contributors'], organisations: ['Online Reader Framework contributors'] },
   navigation: { homeDepth: 2 },
   // Table tools (search, swap rows and columns, collapse, full width, reset) are off by default; this book switches them on.
   appearance: { tableControls: true },

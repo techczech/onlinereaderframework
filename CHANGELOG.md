@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0 (2026-11-17)
+
+- Hosts can supply a canonical citation record for each book or chapter. The reader shows a copyable citation and updates reference-manager metadata when the chapter changes.
+- Existing hosts keep their current behaviour unless they supply the optional citation callback.
+
+
 ## 1.5.0 (2026-11-15)
 
 Books and code written for 1.4.0 keep working without changes. This release makes tables follow dark mode and lets readers clear their reading progress.

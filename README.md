@@ -2,7 +2,7 @@
 
 Online Reader Framework is a React library that turns a book, guide or long manual into a web edition that is comfortable to read. You give it a book as plain data (title, author, and a tree of sections written in Markdown or sanitised HTML). It supplies the reader: contents, search, reading settings, highlights, notes, bookmarks, progress, read-aloud, sandboxed interactive examples, EPUB export and Markdown files for AI agents.
 
-Version 1.5.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
+Version 1.6.0 ([changes](CHANGELOG.md)). Licence: [MIT](LICENSE) for the software (see [LICENSING.md](LICENSING.md) for what the licence does and does not cover). Project page: <https://techczech.github.io/onlinereaderframework/>.
 
 The framework carries no published book; the small example book in `examples/reader-example` was written for this repository. Five editions built on the framework are live: [Deliberate Practice](https://deliberatepractice.dominiklukes.net/), [Building Your Language Muscle](https://buildingyourlanguagemuscle.edutools.fyi/), [Key Issues in Language](https://linguistics.dominiklukes.net/), [Increasing Reading Productivity](https://dominiklukes.net/books/academic-reading/) and [Foundations of Readability](https://dominiklukes.net/books/readability/). Their text is not in this repository and is not covered by its licence.
 
@@ -204,3 +204,40 @@ The reader is the author's own work, assembled from his earlier applications: th
 ## Licence
 
 Software: MIT, copyright 2026 Dominik Lukeš. Example book text: MIT, like the code. Fonts: separate open licences, reproduced in `packages/reader-core/notices`. Published books: not included, and not covered. See [LICENSING.md](LICENSING.md).
+
+## Citations and readable pages
+
+Citation metadata is part of the framework. Configure it on the book; the readable builder and the reader use the same record.
+
+```tsx
+const book: PublicationBook = {
+  id: 'guide', title: 'My Guide', author: 'Ada Example',
+  description: 'An example guide.', sections: [],
+  citation: {
+    canonicalBaseUrl: 'https://books.example.org/my-guide/',
+    authors: ['Ada Example', 'Ben Sample'],
+    siteName: 'My Guide',
+    // date: '2024-03-12',  // first publication, never the build date
+    // isbn: '9780000000002', // only when the book has an ISBN
+  },
+};
+```
+
+`authors` defaults to `[book.author]`; supply separate names for co-authors. For an organisation, also list its exact name in `organisations`. `siteName` defaults to the displayed book title, including its subtitle; language defaults to `en-GB`. Omit an unknown date or ISBN. Dates accept `YYYY` or `YYYY-MM-DD`. The canonical base URL must be an absolute HTTP(S) URL ending in `/`, without credentials, query or fragment. A missing title or canonical URL makes the readable build fail before it writes files.
+
+```js
+import { buildReadableBookPages, publicationRis } from 'reader-core';
+const pages = buildReadableBookPages(book);
+// Each record has path, html, head, body and page. Write them below your build output.
+// Landing: index.html; chapters: <encoded-section-id>/index.html, including nested sections.
+// Add your stylesheet or reader bundle to the returned complete HTML, or use head/body in your template.
+const ris = publicationRis(book); // serve as application/x-research-info-systems
+```
+
+Every landing page emits `DC.type=book` and, when configured, `citation_isbn`. Every chapter emits `DC.type=bookSection`, its chapter title and `citation_inbook_title` naming the book. Highwire and Dublin Core author/date/language/URL fields and `og:site_name` come from the same record. No COinS or journal-title tags are emitted. The unchanged element-16 kit is in `src/citation/citation.ts`.
+
+A host with its own readable template can call `readablePublicationHead(book, section, options)` or `publicationCitation(book, section, options)`. The optional `canonicalBaseUrl` and `sectionUrl` options adapt existing routes. Keep canonical links and descriptions in the host template; avoid duplicating the kit's OG fields. `buildReadableBookPages` includes canonical and description tags itself.
+
+`<PublicationReader book={book} />` enables the footer automatically when `book.citation` exists. The footer says “Cite this book” on the landing page and “Cite this page” in a chapter, copies citation text with visible success/failure feedback, and offers a book RIS download. Chapter changes replace the live citation tags and canonical link. The optional `citation(section)` prop adapts existing host routing; the callback must return the book record when no section is supplied. Hash-only books should return that book record for every view. Keep the same metadata in the server's initial HTML: browser updates alone do not cover no-JavaScript readers.
+
+The shipped example uses the shared readable builder and the citation-configured reader. Its `books.example.org` address is a demonstration value; replace it before publishing. The framework contains no reference-manager service or network client.

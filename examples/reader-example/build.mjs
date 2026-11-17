@@ -7,7 +7,7 @@ import { dirname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'vite';
 import { buildAgentBook } from 'reader-core/agent';
-import { checkPublicationEmbeds } from 'reader-core';
+import { checkPublicationEmbeds, buildReadableBookPages } from 'reader-core';
 import { exampleBook, exampleEmbeds } from './src/example-book.mjs';
 import { EMBED_ROOT, headerRules, renderHeaders } from './hosting-headers.mjs';
 
@@ -49,6 +49,7 @@ function write(path, content) {
 notLinked(here); notLinked(dist);
 if (realpathSync(here) !== here) throw new Error('Run the build from the example folder\'s real path, not through a link.');
 
+const readablePages = buildReadableBookPages(exampleBook);
 const problems = withEmbeds ? checkPublicationEmbeds(exampleBook, exampleEmbeds) : [];
 if (problems.length) throw new Error(`Embed check failed:\n${problems.join('\n')}`);
 // Refuse linked sources before the previous output can be replaced.
@@ -62,6 +63,10 @@ await build({
   resolve: { dedupe: ['react', 'react-dom'] },
   build: { outDir: dist, emptyOutDir: true, chunkSizeWarningLimit: 2000 },
 });
+
+// Keep the Vite entry and add readable text and head tags from the shared builder.
+const shell = readFileSync(inside('index.html'), 'utf8').replace(/<meta name="description"[^>]*>/g, '');
+for (const page of readablePages) write(page.path, (page.path === 'index.html' ? shell : shell.replaceAll('./assets/', '../assets/')).replace(/<title>[^<]*<\/title>/, page.head).replace('<div id="root"></div>', '<div id="root">' + page.body + '</div>'));
 
 if (withEmbeds) {
   // The embed document may contain only inline script: inline the package's height helper, which must be a plain module with no imports.

@@ -51,3 +51,9 @@ export {
   PUBLICATION_EMBED_SANDBOX, PUBLICATION_EMBED_ALLOW, PUBLICATION_EMBED_MESSAGE_TYPE,
 } from './embed/index.js';
 export type { PublicationEmbed, PublicationEmbeds, ValidPublicationEmbed } from './embed/index.js';
+
+export { citationHead, citationTags, citeText, citeBlockHtml, applyCitation } from './citation/citation.js';
+export type { CitePage } from './citation/citation.js';
+export { publicationCitation, readablePublicationHead, publicationRis } from './citation/publication-citation.js';
+export type { PublicationCitationOptions } from './citation/publication-citation.js';
+export { buildReadableBookPages } from './citation/readable-pages.js';

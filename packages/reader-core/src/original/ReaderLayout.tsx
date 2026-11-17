@@ -13,6 +13,7 @@ import { Toast } from './Toast.js';
 import { ShortcutsModal } from './ShortcutsModal.js';
 import { publicationLabels, publicationColour } from './publication-navigation.js';
 import type { PublicationAgentAccess, PublicationCoaching } from './types.js';
+import { PublicationCitation } from '../citation/PublicationCitation.js';
 import { AgentAccess } from './agent/AgentAccess.js';
 import { publicationDisplayTitle, publicationUrl } from './publication-model.js';
 import { isReadableSection, sectionAncestors } from './sidebar-model.js';
@@ -26,6 +27,7 @@ import { useViewportWidth } from './reading-support/use-viewport-width.js';
 export interface ReaderLayoutProps {
   reader: ReturnType<typeof usePublicationReader>;
   coaching?: PublicationCoaching;
+  citation?: import('./types.js').PublicationReaderProps['citation'];
   /** Generated agent files exist for this book: show the ask-an-agent box. */
   agent?: PublicationAgentAccess;
   readingSurface?: (children: React.ReactNode) => React.ReactNode;
@@ -39,7 +41,7 @@ export interface ReaderLayoutProps {
 }
 
 /** Original reader actions and annotations, with independently measured article and navigation. */
-export function ReaderLayout({ reader, coaching, agent, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart, embeds = noEmbeds }: ReaderLayoutProps) {
+export function ReaderLayout({ reader, coaching, citation, agent, readingSurface, listeningPanel, hasRecordedAudio, onOpenRecordedAudio, onBrowserSpeechStart, embeds = noEmbeds }: ReaderLayoutProps) {
   // The toolbar needs the read-aloud state but not the sentence and word positions, so the layout does not re-render for every spoken word.
   const [readAloud, setReadAloud] = useState<{ snapshot: ReadAloudSnapshot; actions: ReadAloudActions } | null>(null);
   const onReadAloudChange = useCallback((snapshot: ReadAloudSnapshot | null, actions: ReadAloudActions | null) => {
@@ -383,6 +385,7 @@ export function ReaderLayout({ reader, coaching, agent, readingSurface, listenin
                       : <TableOfContents ref={tocRef} fallbackRef={compactTocRef} bookId={book.id} collapsed={outlineCollapsed} onCollapsedChange={setOutlineCollapsed} onAvailableChange={setOutlineAvailable} content={currentSection.content} format={currentSection.format} sectionId={currentSection.id} contentRef={contentRef} />)}
                 </div>
             )}
+            {citation && <PublicationCitation page={citation(currentSection)} bookPage={citation()} />}
         </div>
 
         {storageUnavailable && <p role="status" className="absolute bottom-2 left-2 right-2 text-center text-xs text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-gray-900 rounded p-2 z-30">Browser storage is unavailable. Your notes and progress are kept for this session only.</p>}
